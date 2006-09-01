@@ -19,7 +19,7 @@
 #include <kio/job.h>
 #include <kprocess.h>
 
-#include <qapp.h>
+#include <qapplication.h>
 #include <qdir.h>
 #include <qfileinfo.h>
 #include <qcursor.h>
