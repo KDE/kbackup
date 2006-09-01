@@ -1,0 +1,16 @@
+Begin3
+Title:          kbackup -- An easy to use backup program
+Version:        0.4
+Entered-date:   
+Description:    An easy to use backup program
+Keywords:       KDE Qt
+Author:         Martin Koller <m.koller@surfeu.at>
+Maintained-by:  Martin Koller <m.koller@surfeu.at>
+Home-page:      
+Alternate-site: 
+Primary-site:   ftp://ftp.kde.org/pub/kde/unstable/apps/KDE3.x/utils
+                xxxxxx  kbackup-0.4.tar.gz
+                xxx     kbackup-0.4.lsm
+Platform:       Linux. Needs KDE
+Copying-policy: GPL
+End

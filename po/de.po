@@ -1,0 +1,315 @@
+# translation of de.po to Deutsch
+# translation of kbackup.po to
+# This file is put in the public domain.
+# Martin Koller <koller@etm.at>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-31 22:29+0200\n"
+"PO-Revision-Date: 2006-08-31 22:23+0200\n"
+"Last-Translator: Martin Koller <koller@etm.at>\n"
+"Language-Team: Deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: Archiver.cxx:62
+msgid "Nothing selected for backup"
+msgstr "Nichts zum Sichern ausgewählt"
+
+#: Archiver.cxx:68
+msgid "The target dir is not valid"
+msgstr "Das Zielverzeichnis ist ungültig"
+
+#: Archiver.cxx:117
+msgid "-- Backup successfully finished --"
+msgstr "-- Sicherung erfolgreich abgeschlossen --"
+
+#: Archiver.cxx:119
+msgid "...Backup aborted!"
+msgstr "...Sicherung abgebrochen!"
+
+#: Archiver.cxx:135
+msgid "Backup cancelled"
+msgstr "Sicherung abgebrochen"
+
+#: Archiver.cxx:172
+msgid "...uploading archive to %1"
+msgstr "...kopiere Archiv zu %1"
+
+#: Archiver.cxx:180
+msgid "Do you want to retry the upload?"
+msgstr "Wollen sie das Kopieren nochmals versuchen?"
+
+#: Archiver.cxx:239
+msgid "The script '%1' could not be started."
+msgstr "Das script '%1' konnte nicht gestartet werden."
+
+#: Archiver.cxx:276
+msgid "The medium is full. Please insert medium Nr. %1"
+msgstr ""
+"Das Medium ist voll. Bitte geben sie das Medium Nr. %1 in das Laufwerk."
+
+#: Archiver.cxx:320
+msgid ""
+"The file '%1' can not be opened for writing.\n"
+"\n"
+"Do you want to retry?"
+msgstr ""
+"Die Datei '%1' konnte nicht zum Schreiben geöffnet werden.\n"
+"\n"
+"Wollen sie es nochmals versuchen?"
+
+#: Archiver.cxx:345
+msgid ""
+"Could not get information of directory: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Konnte keine Information über das Verzeichnis '%1' lesen.\n"
+"Meldung des Betriebssystems: %2"
+
+#: Archiver.cxx:355
+msgid "Directory '%1' is not readable. Skipping."
+msgstr "Verzeichnis '%1' ist nicht lesbar. Überspringe es"
+
+#: Archiver.cxx:367
+msgid ""
+"Could not write directory '%1' to archive.\n"
+"Maybe the medium is full."
+msgstr ""
+"Konnte das Verzeichnis '%1' nicht in das Archiv schreiben.\n"
+" Vielleicht is das Medium voll."
+
+#: Archiver.cxx:405
+msgid "File '%1' is not readable. Skipping."
+msgstr "Datei '%1' ist nicht lesbar. Überspringe sie"
+
+#: Archiver.cxx:459 Archiver.cxx:534
+msgid ""
+"Could not get information of file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Konnte keine Information über die Datei '%1' lesen.\n"
+"Meldung des Betriebssystems: %2"
+
+#: Archiver.cxx:472 Archiver.cxx:488 Archiver.cxx:501 Archiver.cxx:553
+#: Archiver.cxx:571 Archiver.cxx:608
+msgid "Could not write to archive. Maybe the medium is full."
+msgstr "Konnte nicht in das Archiv schreiben. Vielleicht is das Medium voll."
+
+#: Archiver.cxx:545
+msgid "Could not open file '%1' for reading."
+msgstr "Konnte die Datei '%1' nicht zum Lesen öffnen"
+
+#: Archiver.cxx:594
+msgid "...archiving file %1"
+msgstr "...archiviere Datei %1"
+
+#: Archiver.cxx:622
+msgid ""
+"Could not read file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Datei '%1' konnte nicht gelesen werden.\n"
+"Meldung des Betriebssystems: %2"
+
+#: Archiver.cxx:668
+msgid "...compressing file %1"
+msgstr "...komprimiere Datei %1"
+
+#. i18n: file ./MainWidget.ui line 18
+#: MainWidget.cxx:207 main.cxx:22 rc.cpp:3
+#, no-c-format
+msgid "KBackup"
+msgstr "KBackup"
+
+#. i18n: file ./MainWidget.ui line 56
+#: MainWidget.cxx:208 rc.cpp:6
+#, no-c-format
+msgid "Start Backup"
+msgstr "Starte Sicherung"
+
+#. i18n: file ./MainWidget.ui line 84
+#: MainWidget.cxx:209 rc.cpp:9
+#, no-c-format
+msgid "Cancel Backup"
+msgstr "Sicherung Abbrechen"
+
+#. i18n: file ./MainWidget.ui line 97
+#: MainWidget.cxx:210 rc.cpp:12
+#, no-c-format
+msgid "Target"
+msgstr "Ziel"
+
+#. i18n: file ./MainWidget.ui line 108
+#: MainWidget.cxx:211 rc.cpp:15
+#, no-c-format
+msgid "Folder:"
+msgstr "Verzeichnis:"
+
+#. i18n: file ./MainWidget.ui line 127
+#. i18n: file ./MainWidget.ui line 253
+#: MainWidget.cxx:213 MainWidget.cxx:220 rc.cpp:19 rc.cpp:40
+#, no-c-format
+msgid "Size:"
+msgstr "Größe:"
+
+#. i18n: file ./MainWidget.ui line 143
+#: MainWidget.cxx:214 rc.cpp:22
+#, no-c-format
+msgid "Medium:"
+msgstr "Medium:"
+
+#. i18n: file ./MainWidget.ui line 165
+#. i18n: file ./MainWidget.ui line 234
+#. i18n: file ./MainWidget.ui line 261
+#: MainWidget.cxx:215 MainWidget.cxx:219 MainWidget.cxx:221 rc.cpp:25
+#: rc.cpp:37 rc.cpp:43
+#, no-c-format
+msgid "0"
+msgstr "0"
+
+#. i18n: file ./MainWidget.ui line 197
+#: MainWidget.cxx:216 rc.cpp:28
+#, no-c-format
+msgid "0 MB"
+msgstr "0 MB"
+
+#. i18n: file ./MainWidget.ui line 207
+#: MainWidget.cxx:217 rc.cpp:31
+#, no-c-format
+msgid "Totals"
+msgstr "Summen"
+
+#. i18n: file ./MainWidget.ui line 226
+#: MainWidget.cxx:218 rc.cpp:34
+#, no-c-format
+msgid "Files:"
+msgstr "Dateien:"
+
+#. i18n: file ./MainWidget.ui line 272
+#: MainWidget.cxx:222 rc.cpp:46
+#, no-c-format
+msgid "MB"
+msgstr "MB"
+
+#. i18n: file ./MainWidget.ui line 308
+#: MainWidget.cxx:223 rc.cpp:49
+#, no-c-format
+msgid "Duration:"
+msgstr "Dauer:"
+
+#. i18n: file ./MainWidget.ui line 316
+#: MainWidget.cxx:224 rc.cpp:52
+#, no-c-format
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: file ./MainWidget.ui line 373
+#: MainWidget.cxx:225 rc.cpp:55
+#, no-c-format
+msgid "Warnings:"
+msgstr "Warnungen:"
+
+#. i18n: file ./MainWidget.ui line 398
+#: MainWidget.cxx:226 rc.cpp:58
+#, no-c-format
+msgid "Progress:"
+msgstr "Fortschritt:"
+
+#: MainWindow.cxx:32
+msgid "Load Profile"
+msgstr "Lade Profil"
+
+#: MainWindow.cxx:35
+msgid "Save Profile"
+msgstr "Speichere Profil"
+
+#: MainWindow.cxx:55 MainWindow.cxx:114
+msgid "KBackup Profile (*.kbp)"
+msgstr "KBackup Profile (*.kbp)"
+
+#: MainWindow.cxx:70
+msgid "Could not open profile '%1' for reading: %2"
+msgstr "Konnte das Profil '%1' nicht laden: %2"
+
+#: MainWindow.cxx:73 MainWindow.cxx:139
+msgid "Open failed"
+msgstr "Öffnen fehlgeschlagen"
+
+#: MainWindow.cxx:123
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Das Profil '%1' existiert bereits.\n"
+"Soll es überschrieben werden?"
+
+#: MainWindow.cxx:126
+msgid "Profile exists"
+msgstr "Profil existiert"
+
+#: MainWindow.cxx:136
+msgid "Could not open profile '%1' for writing: %2"
+msgstr "Konnte das Profil '%1' nicht schreiben: %2"
+
+#: Selector.cxx:67
+msgid "Name"
+msgstr "Name"
+
+#: Selector.cxx:68
+msgid "Size"
+msgstr "Größe"
+
+#: Selector.cxx:69
+msgid "Last Modified"
+msgstr "Zuletzt Geändert"
+
+#: main.cxx:23
+msgid "An easy to use backup program"
+msgstr "Ein einfach zu bedienendes Sicherungs Programm"
+
+#: main.cxx:30
+msgid "Developer"
+msgstr "Entwickler"
+
+#: main.cxx:34
+msgid "Start with given profile"
+msgstr "Starte mit angegebenem Profil"
+
+#: main.cxx:35
+msgid "Script to run after finishing one archive slice"
+msgstr "Starte Script nach Fertigstellung eines Archives"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Martin Koller"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "m.koller@surfeu.at"
+
+#~ msgid "Elapsed Time:"
+#~ msgstr "Vergangene Zeit:"
+
+#~ msgid "Compression:"
+#~ msgstr "Komprimierung:"
+
+#~ msgid "Medium Size:"
+#~ msgstr "Medium Größe:"
+
+#~ msgid "unlimited"
+#~ msgstr "unlimitiert"
+
+#~ msgid "Files written:"
+#~ msgstr "Dateien geschrieben:"
+
+#~ msgid "MB written:"
+#~ msgstr "MB geschrieben:"

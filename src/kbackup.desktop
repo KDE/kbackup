@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Exec=kbackup %f
+Name=KBackup (Backup Program)
+Comment=Backup your data with an easy to use user interface
+Icon=kbackup
+MimeType=text/x-kbp;
+Terminal=false
+Categories=System;KDE;X-SuSE-Backup;
+
+Name[de]=KBackup (Datensicherungs Programm)
+Comment[de]=Datensicherung mit einem einfach zu bedienended User Interface
