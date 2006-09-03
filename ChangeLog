@@ -1,0 +1,9 @@
+3.Sept 2006:
+- added german handbook
+- added french GUI translation (thanks to Régis FLORET)
+- added missing "unlimited" translation string
+- added the RPM .spec file
+- added missing .mo translation files into RPM
+
+31.Aug 2006:
+- first release as 0.4
