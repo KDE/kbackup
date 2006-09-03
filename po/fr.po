@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-31 22:29+0200\n"
-"PO-Revision-Date: 2006-09-02 11:08+0200\n"
+"POT-Creation-Date: 2006-09-03 13:06+0200\n"
+"PO-Revision-Date: 2006-09-03 13:08+0200\n"
 "Last-Translator: Martin Koller <koller@etm.at>\n"
 "Language-Team: Deutsch\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgstr ""
 "\n"
 "Voulez-vous recommencer ?"
 
-#: Archiver.cxx:345
+#: Archiver.cxx:346
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -71,11 +71,11 @@ msgstr ""
 "Impossible d'obtenir des information sur le répertoire : %1\n"
 "Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:355
+#: Archiver.cxx:356
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Le répertoire '%1' n'est pas lisible. Passe."
 
-#: Archiver.cxx:367
+#: Archiver.cxx:368
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -83,11 +83,11 @@ msgstr ""
 "Impossible d'écrire le répertoire '%1' dans l'archive.\n"
 "Peut-être le medium est-il plein ?"
 
-#: Archiver.cxx:405
+#: Archiver.cxx:406
 msgid "File '%1' is not readable. Skipping."
 msgstr "Le fichier '%1' n'est pas lisible. Passe."
 
-#: Archiver.cxx:459 Archiver.cxx:534
+#: Archiver.cxx:461 Archiver.cxx:537
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -95,28 +95,28 @@ msgstr ""
 "Impossible d'obtenire des informations du fichier : %1\n"
 "Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:472 Archiver.cxx:488 Archiver.cxx:501 Archiver.cxx:553
-#: Archiver.cxx:571 Archiver.cxx:608
+#: Archiver.cxx:474 Archiver.cxx:490 Archiver.cxx:503 Archiver.cxx:556
+#: Archiver.cxx:574 Archiver.cxx:611
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Impossible d'écrire dans l'archive. Peut-être le medium est-il plein ?"
 
-#: Archiver.cxx:545
+#: Archiver.cxx:548
 msgid "Could not open file '%1' for reading."
 msgstr "Impossible d'ouvrir le fichier '%1' pour la lecture"
 
-#: Archiver.cxx:594
+#: Archiver.cxx:597
 msgid "...archiving file %1"
 msgstr "...archivate du fichier %1"
 
-#: Archiver.cxx:622
+#: Archiver.cxx:625
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Impossible de lire le fichier : %1\n "
-"Le système d'exploitation retourne : %2"
+"Impossible de lire le fichier : %1\n"
+" Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:668
+#: Archiver.cxx:671
 msgid "...compressing file %1"
 msgstr "... compression du fichier %1"
 
@@ -295,4 +295,8 @@ msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
 msgstr "regis <r.floret@laposte.net>"
+
+#: MainWidget.ui.h:135
+msgid "unlimited"
+msgstr "illimité"
 

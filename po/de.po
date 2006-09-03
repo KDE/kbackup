@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-31 22:29+0200\n"
+"POT-Creation-Date: 2006-09-03 13:06+0200\n"
 "PO-Revision-Date: 2006-08-31 22:23+0200\n"
 "Last-Translator: Martin Koller <koller@etm.at>\n"
 "Language-Team: Deutsch\n"
@@ -63,7 +63,7 @@ msgstr ""
 "\n"
 "Wollen sie es nochmals versuchen?"
 
-#: Archiver.cxx:345
+#: Archiver.cxx:346
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -71,11 +71,11 @@ msgstr ""
 "Konnte keine Information über das Verzeichnis '%1' lesen.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:355
+#: Archiver.cxx:356
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Verzeichnis '%1' ist nicht lesbar. Überspringe es"
 
-#: Archiver.cxx:367
+#: Archiver.cxx:368
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -83,11 +83,11 @@ msgstr ""
 "Konnte das Verzeichnis '%1' nicht in das Archiv schreiben.\n"
 " Vielleicht is das Medium voll."
 
-#: Archiver.cxx:405
+#: Archiver.cxx:406
 msgid "File '%1' is not readable. Skipping."
 msgstr "Datei '%1' ist nicht lesbar. Überspringe sie"
 
-#: Archiver.cxx:459 Archiver.cxx:534
+#: Archiver.cxx:461 Archiver.cxx:537
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -95,20 +95,20 @@ msgstr ""
 "Konnte keine Information über die Datei '%1' lesen.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:472 Archiver.cxx:488 Archiver.cxx:501 Archiver.cxx:553
-#: Archiver.cxx:571 Archiver.cxx:608
+#: Archiver.cxx:474 Archiver.cxx:490 Archiver.cxx:503 Archiver.cxx:556
+#: Archiver.cxx:574 Archiver.cxx:611
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Konnte nicht in das Archiv schreiben. Vielleicht is das Medium voll."
 
-#: Archiver.cxx:545
+#: Archiver.cxx:548
 msgid "Could not open file '%1' for reading."
 msgstr "Konnte die Datei '%1' nicht zum Lesen öffnen"
 
-#: Archiver.cxx:594
+#: Archiver.cxx:597
 msgid "...archiving file %1"
 msgstr "...archiviere Datei %1"
 
-#: Archiver.cxx:622
+#: Archiver.cxx:625
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -116,7 +116,7 @@ msgstr ""
 "Datei '%1' konnte nicht gelesen werden.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:668
+#: Archiver.cxx:671
 msgid "...compressing file %1"
 msgstr "...komprimiere Datei %1"
 
@@ -296,6 +296,10 @@ msgid ""
 "Your emails"
 msgstr "m.koller@surfeu.at"
 
+#: MainWidget.ui.h:135
+msgid "unlimited"
+msgstr "unlimitiert"
+
 #~ msgid "Elapsed Time:"
 #~ msgstr "Vergangene Zeit:"
 
@@ -304,9 +308,6 @@ msgstr "m.koller@surfeu.at"
 
 #~ msgid "Medium Size:"
 #~ msgstr "Medium Größe:"
-
-#~ msgid "unlimited"
-#~ msgstr "unlimitiert"
 
 #~ msgid "Files written:"
 #~ msgstr "Dateien geschrieben:"

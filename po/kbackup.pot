@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-31 22:29+0200\n"
+"POT-Creation-Date: 2006-09-03 13:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,52 +58,52 @@ msgid ""
 "Do you want to retry?"
 msgstr ""
 
-#: Archiver.cxx:345
+#: Archiver.cxx:346
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:355
+#: Archiver.cxx:356
 msgid "Directory '%1' is not readable. Skipping."
 msgstr ""
 
-#: Archiver.cxx:367
+#: Archiver.cxx:368
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
 msgstr ""
 
-#: Archiver.cxx:405
+#: Archiver.cxx:406
 msgid "File '%1' is not readable. Skipping."
 msgstr ""
 
-#: Archiver.cxx:459 Archiver.cxx:534
+#: Archiver.cxx:461 Archiver.cxx:537
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:472 Archiver.cxx:488 Archiver.cxx:501 Archiver.cxx:553
-#: Archiver.cxx:571 Archiver.cxx:608
+#: Archiver.cxx:474 Archiver.cxx:490 Archiver.cxx:503 Archiver.cxx:556
+#: Archiver.cxx:574 Archiver.cxx:611
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr ""
 
-#: Archiver.cxx:545
+#: Archiver.cxx:548
 msgid "Could not open file '%1' for reading."
 msgstr ""
 
-#: Archiver.cxx:594
+#: Archiver.cxx:597
 msgid "...archiving file %1"
 msgstr ""
 
-#: Archiver.cxx:622
+#: Archiver.cxx:625
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:668
+#: Archiver.cxx:671
 msgid "...compressing file %1"
 msgstr ""
 
@@ -279,4 +279,8 @@ msgstr ""
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
+msgstr ""
+
+#: MainWidget.ui.h:135
+msgid "unlimited"
 msgstr ""
