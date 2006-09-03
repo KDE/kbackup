@@ -26,7 +26,7 @@ METASOURCES = AUTO
 
 messages: rc.cpp
 	$(EXTRACTRC) `find . -name \*.ui -o -name \*.rc` > rc.cpp
-	$(XGETTEXT) *.cxx *.cpp -o $(podir)/kbackup.pot
+	$(XGETTEXT) *.cxx *.cpp *.h *.hxx -o $(podir)/kbackup.pot
 
 KDE_ICON = AUTO
 
