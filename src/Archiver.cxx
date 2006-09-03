@@ -340,6 +340,7 @@ void Archiver::addDirFiles(QDir &dir)
 
   // add the dir itself
   struct stat status;
+  memset(&status, 0, sizeof(status));
   if ( stat(dir.absPath(), &status) == -1 )
   {
     emit warning(i18n("Could not get information of directory: %1\n"
@@ -453,6 +454,7 @@ void Archiver::addFile(const QFileInfo &info)
     // to fill the file into the archive with the following:
     {
       struct stat status;
+      memset(&status, 0, sizeof(status));
 
       if ( stat(QFile::encodeName(info.absFilePath()), &status) == -1 )
       {
@@ -528,6 +530,7 @@ void Archiver::addFile(const QFileInfo &info)
 bool Archiver::addLocalFile(const QFileInfo &info)
 {
   struct stat status;
+  memset(&status, 0, sizeof(status));
 
   if ( stat(QFile::encodeName(info.absFilePath()), &status) == -1 )
   {
@@ -690,6 +693,7 @@ bool Archiver::compressFile(const QString &origName, const QString &comprName)
 bool Archiver::getDiskFree(const QString &path, KIO::filesize_t &capacityB, KIO::filesize_t &freeB)
 {
   struct statvfs vfs;
+  memset(&vfs, 0, sizeof(vfs));
 
   if ( ::statvfs(QFile::encodeName(path), &vfs) == -1 )
     return false;
