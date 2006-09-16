@@ -1,10 +1,10 @@
 Summary: kbackup is an application which lets you back up your data in a simple, user friendly way.
 Name: kbackup
-Version: 0.4.1
+Version: 0.4.2
 Release: 1
 Copyright: GPL
 Group: Applications/Archiving
-Source: http://members.aon.at/m.koller/kbackup-0.4.1.tar.bz2
+Source: http://members.aon.at/m.koller/kbackup-0.4.2.tar.bz2
 
 %description
 KBackup is a program that lets you back up any directories or files,
@@ -15,8 +15,12 @@ so that it can be used by non-computer experts.
  
 The storage format is the well known TAR format, whereby the data
 is still stored in compressed format (bzip2 or gzip).
- 
-It also includes a german and french translation for the user interface.
+
+Included Languages:
+- User interface:
+  English, German, French, Italian, Russian
+- Handbook:
+  English, German
 
 %prep
 %setup
@@ -43,3 +47,5 @@ make install
 /opt/kde3/share/apps/kbackup/
 /opt/kde3/share/locale/de/LC_MESSAGES/kbackup.mo
 /opt/kde3/share/locale/fr/LC_MESSAGES/kbackup.mo
+/opt/kde3/share/locale/it/LC_MESSAGES/kbackup.mo
+/opt/kde3/share/locale/ru/LC_MESSAGES/kbackup.mo
