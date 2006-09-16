@@ -1,4 +1,8 @@
-3.Sept 2006:
+16.Sept 2006 (0.4.2):
+- added russian GUI translation (thanks to Alexey Kouznetsov)
+- added italian GUI translation (thanks to Andrea Sciucca)
+
+3.Sept 2006 (0.4.1):
 - added german handbook
 - added french GUI translation (thanks to Régis FLORET)
 - added missing "unlimited" translation string
