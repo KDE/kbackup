@@ -179,8 +179,13 @@ Um eine Auswahl wieder zu Laden verwenden sie das Datei Menü "Lade Profil".
 </para>
 
 <para>
+Um alle Einstellungen und Selektionen wieder zu entfernen verwenden sie das Datei Menü
+"Neues Profil".
+</para>
+
+<para>
 &kbackup; speichert in einem Profil die Selektionen für alle inkludierten Dateien und Verzeichnisse,
-für alle exkludierten Dateien und Verzeichnisse, sowie das Ziel für die Sicherung.
+für alle exkludierten Dateien und Verzeichnisse, das Ziel für die Sicherung sowie das gewählte Archiv-Präfix.
 </para>
 
 <para>
@@ -220,6 +225,10 @@ backup_2006.08.26-13.04.44_1.tar
 <para>
 Der Name beinhält das Datum und die Uhrzeit der Sicherung (welche für jeden Teil
 der Sicherung gleich bleibt), und eine angehängte Teil-Nummer (_1 in diesem Beispiel).
+</para>
+<para>
+Über das Menü Datei/Profil Einstellungen kann ein anderes Präfix als "backup" für die
+Archive eingestellt werden.
 </para>
 </sect1>
 

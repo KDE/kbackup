@@ -36,6 +36,7 @@ using namespace std;
 //--------------------------------------------------------------------------------
 
 QString Archiver::sliceScript;
+QString Archiver::filePrefix;
 
 //--------------------------------------------------------------------------------
 
@@ -280,10 +281,12 @@ bool Archiver::getNextSlice()
 
   if ( baseName.isEmpty() )
   {
+    QString prefix = filePrefix.isEmpty() ? QString::fromLatin1("backup") : filePrefix;
+
     if ( targetURL.isLocalFile() )
-      baseName = targetURL.path() + "/" + QDateTime::currentDateTime().toString("backup_yyyy.MM.dd-hh.mm.ss");
+      baseName = targetURL.path() + "/" + prefix + QDateTime::currentDateTime().toString("_yyyy.MM.dd-hh.mm.ss");
     else
-      baseName = ::locateLocal("tmp", QDateTime::currentDateTime().toString("backup_yyyy.MM.dd-hh.mm.ss"));
+      baseName = ::locateLocal("tmp", prefix + QDateTime::currentDateTime().toString("_yyyy.MM.dd-hh.mm.ss"));
   }
 
   archiveName = baseName + QString("_%1.tar").arg(sliceNum);

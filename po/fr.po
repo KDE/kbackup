@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-03 13:06+0200\n"
+"POT-Creation-Date: 2006-09-17 13:31+0200\n"
 "PO-Revision-Date: 2006-09-03 13:08+0200\n"
 "Last-Translator: Martin Koller <koller@etm.at>\n"
 "Language-Team: Deutsch\n"
@@ -17,43 +17,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10\n"
 
-#: Archiver.cxx:62
+#: Archiver.cxx:63
 msgid "Nothing selected for backup"
 msgstr "Rien n'est sélectionné pour l'archivage"
 
-#: Archiver.cxx:68
+#: Archiver.cxx:69
 msgid "The target dir is not valid"
 msgstr "Le répertoire de destination n'est pas valide."
 
-#: Archiver.cxx:117
+#: Archiver.cxx:118
 msgid "-- Backup successfully finished --"
 msgstr "-- La sauvegarde s'est terminée avec succés --"
 
-#: Archiver.cxx:119
+#: Archiver.cxx:120
 msgid "...Backup aborted!"
 msgstr "... Sauvegarde annulée !"
 
-#: Archiver.cxx:135
+#: Archiver.cxx:136
 msgid "Backup cancelled"
 msgstr "Sauvegarde annulée"
 
-#: Archiver.cxx:172
+#: Archiver.cxx:173
 msgid "...uploading archive to %1"
 msgstr "...téléchargement de l'archive vers %1"
 
-#: Archiver.cxx:180
+#: Archiver.cxx:181
 msgid "Do you want to retry the upload?"
 msgstr "Voulez-vous retenter le téléchargement ?"
 
-#: Archiver.cxx:239
+#: Archiver.cxx:240
 msgid "The script '%1' could not be started."
 msgstr "Le script '%1' ne peut pas être démarré"
 
-#: Archiver.cxx:276
+#: Archiver.cxx:277
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Le medium est plein. Veuillez insérer un nouveau medium Nr. %1"
 
-#: Archiver.cxx:320
+#: Archiver.cxx:323
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -63,7 +63,7 @@ msgstr ""
 "\n"
 "Voulez-vous recommencer ?"
 
-#: Archiver.cxx:346
+#: Archiver.cxx:349
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -71,11 +71,11 @@ msgstr ""
 "Impossible d'obtenir des information sur le répertoire : %1\n"
 "Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:356
+#: Archiver.cxx:359
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Le répertoire '%1' n'est pas lisible. Passe."
 
-#: Archiver.cxx:368
+#: Archiver.cxx:371
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -83,11 +83,11 @@ msgstr ""
 "Impossible d'écrire le répertoire '%1' dans l'archive.\n"
 "Peut-être le medium est-il plein ?"
 
-#: Archiver.cxx:406
+#: Archiver.cxx:409
 msgid "File '%1' is not readable. Skipping."
 msgstr "Le fichier '%1' n'est pas lisible. Passe."
 
-#: Archiver.cxx:461 Archiver.cxx:537
+#: Archiver.cxx:464 Archiver.cxx:540
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -95,20 +95,20 @@ msgstr ""
 "Impossible d'obtenire des informations du fichier : %1\n"
 "Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:474 Archiver.cxx:490 Archiver.cxx:503 Archiver.cxx:556
-#: Archiver.cxx:574 Archiver.cxx:611
+#: Archiver.cxx:477 Archiver.cxx:493 Archiver.cxx:506 Archiver.cxx:559
+#: Archiver.cxx:577 Archiver.cxx:614
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Impossible d'écrire dans l'archive. Peut-être le medium est-il plein ?"
 
-#: Archiver.cxx:548
+#: Archiver.cxx:551
 msgid "Could not open file '%1' for reading."
 msgstr "Impossible d'ouvrir le fichier '%1' pour la lecture"
 
-#: Archiver.cxx:597
+#: Archiver.cxx:600
 msgid "...archiving file %1"
 msgstr "...archivate du fichier %1"
 
-#: Archiver.cxx:625
+#: Archiver.cxx:628
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -116,7 +116,7 @@ msgstr ""
 "Impossible de lire le fichier : %1\n"
 " Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:671
+#: Archiver.cxx:674
 msgid "...compressing file %1"
 msgstr "... compression du fichier %1"
 
@@ -220,27 +220,38 @@ msgstr "Attention :"
 msgid "Progress:"
 msgstr "Progression"
 
-#: MainWindow.cxx:32
+#: MainWindow.cxx:34
+#, fuzzy
+msgid "New Profile"
+msgstr "Sauvegarde du profile"
+
+#: MainWindow.cxx:37
 msgid "Load Profile"
 msgstr "Chargement du profile"
 
-#: MainWindow.cxx:35
+#: MainWindow.cxx:40
 msgid "Save Profile"
 msgstr "Sauvegarde du profile"
 
-#: MainWindow.cxx:55 MainWindow.cxx:114
+#. i18n: file ./SettingsDialog.ui line 18
+#: MainWindow.cxx:43 SettingsDialog.cxx:75 rc.cpp:64
+#, fuzzy, no-c-format
+msgid "Profile Settings"
+msgstr "Le profile existe"
+
+#: MainWindow.cxx:63 MainWindow.cxx:127
 msgid "KBackup Profile (*.kbp)"
 msgstr "Profile KBackup (*.kbp)"
 
-#: MainWindow.cxx:70
+#: MainWindow.cxx:78
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Impossible d'ouvrir le profile '%1' en lecture : %2"
 
-#: MainWindow.cxx:73 MainWindow.cxx:139
+#: MainWindow.cxx:81 MainWindow.cxx:152
 msgid "Open failed"
 msgstr "Échec à l'ouverture"
 
-#: MainWindow.cxx:123
+#: MainWindow.cxx:136
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
@@ -248,11 +259,11 @@ msgstr ""
 "Le profile '%1' existe déjà.\n"
 "Voulez-vous le réécrire ?"
 
-#: MainWindow.cxx:126
+#: MainWindow.cxx:139
 msgid "Profile exists"
 msgstr "Le profile existe"
 
-#: MainWindow.cxx:136
+#: MainWindow.cxx:149
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Impossible d'ouvrir le profile '%1' pour l'écriture : %2"
 
@@ -267,6 +278,12 @@ msgstr "Taille"
 #: Selector.cxx:69
 msgid "Last Modified"
 msgstr "Dernière modification"
+
+#. i18n: file ./SettingsDialog.ui line 29
+#: SettingsDialog.cxx:76 rc.cpp:67
+#, no-c-format
+msgid "Archive Prefix (empty for default):"
+msgstr ""
 
 #: main.cxx:23
 msgid "An easy to use backup program"
@@ -299,4 +316,3 @@ msgstr "regis <r.floret@laposte.net>"
 #: MainWidget.ui.h:135
 msgid "unlimited"
 msgstr "illimité"
-

@@ -25,6 +25,8 @@ class MainWindow : public KMainWindow
   private slots:
     void loadProfile();
     void saveProfile();
+    void profileSettings();
+    void newProfile();
 
   private:
     Selector *selector;

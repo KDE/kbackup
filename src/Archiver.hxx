@@ -42,6 +42,7 @@ class Archiver : public QObject
 
     // TODO: put probably in some global settings object
     static QString sliceScript;
+    static QString filePrefix;  // default = "backup"
 
   public slots:
     void cancel();  // cancel a running creation

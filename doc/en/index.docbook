@@ -177,7 +177,7 @@ To reload a selection into &kbackup;, use the File Menu "Load Profile".
 
 <para>
 &kbackup; saves in a profile the selections for all included directories/files,
-exclucded directories/files and also the target directory/URL.
+excluded directories/files, the target directory/URL and the defined archive prefix.
 </para>
 
 <para>
@@ -216,6 +216,10 @@ backup_2006.08.26-13.04.44_1.tar
 <para>
 The name contains the creation date and time (which will be the same for all
 slices of one backup) and a trailing slice sequence number (_1 in this example).
+</para>
+<para>
+In the menu File/Profile Settings you can define a different archive prefix than the
+default "backup".
 </para>
 </sect1>
 

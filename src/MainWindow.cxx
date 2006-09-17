@@ -8,8 +8,10 @@
  ***************************************************************************/
 
 #include <MainWindow.hxx>
-#include <MainWidget.h>
 #include <Selector.hxx>
+#include <Archiver.hxx>
+#include <MainWidget.h>
+#include <SettingsDialog.h>
 
 #include <qapplication.h>
 #include <qsplitter.h>
@@ -29,11 +31,17 @@ MainWindow::MainWindow()
 {
   KStdAction::quit(this, SLOT(close()), actionCollection());
 
+  new KAction(i18n("New Profile"), "filenew", 0, this,
+              SLOT(newProfile()), actionCollection(), "newProfile");
+
   new KAction(i18n("Load Profile"), "fileopen", 0, this,
               SLOT(loadProfile()), actionCollection(), "loadProfile");
 
   new KAction(i18n("Save Profile"), "filesave", 0, this,
               SLOT(saveProfile()), actionCollection(), "saveProfile");
+
+  new KAction(i18n("Profile Settings"), "", 0, this,
+              SLOT(profileSettings()), actionCollection(), "profileSettings");
 
   createGUI();
 
@@ -78,22 +86,27 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
   char type;
   QTextStream stream(&file);
 
+  Archiver::filePrefix = "";  // back to default (in case old profile read which does not include prefix)
+
   while ( ! stream.atEnd() )
   {
     stream >> type;
+    stream.skipWhiteSpace();
+
     if ( type == 'M' )
     {
-      stream.skipWhiteSpace();
       mainWidget->setTargetURL(stream.readLine());  // include white space
+    }
+    else if ( type == 'P' )
+    {
+      Archiver::filePrefix = stream.readLine();  // include white space
     }
     else if ( type == 'I' )
     {
-      stream.skipWhiteSpace();
       includes.append(stream.readLine());
     }
     else if ( type == 'E' )
     {
-      stream.skipWhiteSpace();
       excludes.append(stream.readLine());
     }
   }
@@ -143,6 +156,7 @@ void MainWindow::saveProfile()
   QTextStream stream(&file);
 
   stream << "M " << mainWidget->targetDir->text() << endl;
+  stream << "P " << Archiver::filePrefix << endl;
 
   for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
     stream << "I " << *it << endl;
@@ -151,6 +165,30 @@ void MainWindow::saveProfile()
     stream << "E " << *it << endl;
   
   file.close();
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::profileSettings()
+{
+  SettingsDialog dialog(this);
+
+  dialog.prefix->setText(Archiver::filePrefix);
+
+  if ( dialog.exec() == QDialog::Accepted )
+    Archiver::filePrefix = dialog.prefix->text().stripWhiteSpace();
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::newProfile()
+{
+  Archiver::filePrefix = "";  // back to default
+  mainWidget->setTargetURL("");
+
+  // clear selection
+  QStringList includes, excludes;
+  selector->setBackupList(includes, excludes);
 }
 
 //--------------------------------------------------------------------------------

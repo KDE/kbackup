@@ -16,7 +16,7 @@ kbackup_LDFLAGS = $(KDE_RPATH) $(all_libraries)
 kbackup_LDADD   = $(LIB_KDECORE) $(LIB_KIO) $(LIB_KDEUI)
 
 # which sources should be compiled for kbackup
-kbackup_SOURCES = Archiver.cxx MainWindow.cxx Selector.cxx main.cxx MainWidget.ui
+kbackup_SOURCES = Archiver.cxx MainWindow.cxx Selector.cxx main.cxx MainWidget.ui SettingsDialog.ui
 
 # these are the headers for your project
 noinst_HEADERS = Archiver.hxx MainWindow.hxx Selector.hxx MainWidget.ui.h

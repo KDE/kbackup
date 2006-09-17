@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-03 13:06+0200\n"
+"POT-Creation-Date: 2006-09-17 13:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,95 +15,95 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Archiver.cxx:62
+#: Archiver.cxx:63
 msgid "Nothing selected for backup"
 msgstr ""
 
-#: Archiver.cxx:68
+#: Archiver.cxx:69
 msgid "The target dir is not valid"
 msgstr ""
 
-#: Archiver.cxx:117
+#: Archiver.cxx:118
 msgid "-- Backup successfully finished --"
 msgstr ""
 
-#: Archiver.cxx:119
+#: Archiver.cxx:120
 msgid "...Backup aborted!"
 msgstr ""
 
-#: Archiver.cxx:135
+#: Archiver.cxx:136
 msgid "Backup cancelled"
 msgstr ""
 
-#: Archiver.cxx:172
+#: Archiver.cxx:173
 msgid "...uploading archive to %1"
 msgstr ""
 
-#: Archiver.cxx:180
+#: Archiver.cxx:181
 msgid "Do you want to retry the upload?"
 msgstr ""
 
-#: Archiver.cxx:239
+#: Archiver.cxx:240
 msgid "The script '%1' could not be started."
 msgstr ""
 
-#: Archiver.cxx:276
+#: Archiver.cxx:277
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr ""
 
-#: Archiver.cxx:320
+#: Archiver.cxx:323
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
 "Do you want to retry?"
 msgstr ""
 
-#: Archiver.cxx:346
+#: Archiver.cxx:349
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:356
+#: Archiver.cxx:359
 msgid "Directory '%1' is not readable. Skipping."
 msgstr ""
 
-#: Archiver.cxx:368
+#: Archiver.cxx:371
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
 msgstr ""
 
-#: Archiver.cxx:406
+#: Archiver.cxx:409
 msgid "File '%1' is not readable. Skipping."
 msgstr ""
 
-#: Archiver.cxx:461 Archiver.cxx:537
+#: Archiver.cxx:464 Archiver.cxx:540
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:474 Archiver.cxx:490 Archiver.cxx:503 Archiver.cxx:556
-#: Archiver.cxx:574 Archiver.cxx:611
+#: Archiver.cxx:477 Archiver.cxx:493 Archiver.cxx:506 Archiver.cxx:559
+#: Archiver.cxx:577 Archiver.cxx:614
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr ""
 
-#: Archiver.cxx:548
+#: Archiver.cxx:551
 msgid "Could not open file '%1' for reading."
 msgstr ""
 
-#: Archiver.cxx:597
+#: Archiver.cxx:600
 msgid "...archiving file %1"
 msgstr ""
 
-#: Archiver.cxx:625
+#: Archiver.cxx:628
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:671
+#: Archiver.cxx:674
 msgid "...compressing file %1"
 msgstr ""
 
@@ -207,37 +207,47 @@ msgstr ""
 msgid "Progress:"
 msgstr ""
 
-#: MainWindow.cxx:32
+#: MainWindow.cxx:34
+msgid "New Profile"
+msgstr ""
+
+#: MainWindow.cxx:37
 msgid "Load Profile"
 msgstr ""
 
-#: MainWindow.cxx:35
+#: MainWindow.cxx:40
 msgid "Save Profile"
 msgstr ""
 
-#: MainWindow.cxx:55 MainWindow.cxx:114
+#. i18n: file ./SettingsDialog.ui line 18
+#: MainWindow.cxx:43 SettingsDialog.cxx:75 rc.cpp:64
+#, no-c-format
+msgid "Profile Settings"
+msgstr ""
+
+#: MainWindow.cxx:63 MainWindow.cxx:127
 msgid "KBackup Profile (*.kbp)"
 msgstr ""
 
-#: MainWindow.cxx:70
+#: MainWindow.cxx:78
 msgid "Could not open profile '%1' for reading: %2"
 msgstr ""
 
-#: MainWindow.cxx:73 MainWindow.cxx:139
+#: MainWindow.cxx:81 MainWindow.cxx:152
 msgid "Open failed"
 msgstr ""
 
-#: MainWindow.cxx:123
+#: MainWindow.cxx:136
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
 
-#: MainWindow.cxx:126
+#: MainWindow.cxx:139
 msgid "Profile exists"
 msgstr ""
 
-#: MainWindow.cxx:136
+#: MainWindow.cxx:149
 msgid "Could not open profile '%1' for writing: %2"
 msgstr ""
 
@@ -251,6 +261,12 @@ msgstr ""
 
 #: Selector.cxx:69
 msgid "Last Modified"
+msgstr ""
+
+#. i18n: file ./SettingsDialog.ui line 29
+#: SettingsDialog.cxx:76 rc.cpp:67
+#, no-c-format
+msgid "Archive Prefix (empty for default):"
 msgstr ""
 
 #: main.cxx:23
