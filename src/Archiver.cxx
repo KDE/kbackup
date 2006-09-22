@@ -344,7 +344,7 @@ void Archiver::addDirFiles(QDir &dir)
   // add the dir itself
   struct stat status;
   memset(&status, 0, sizeof(status));
-  if ( stat(dir.absPath(), &status) == -1 )
+  if ( stat(QFile::encodeName(dir.absPath()), &status) == -1 )
   {
     emit warning(i18n("Could not get information of directory: %1\n"
                       "The operating system reports: %2")
