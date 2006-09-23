@@ -1,6 +1,7 @@
 [Desktop Entry]
 Comment=KBackup Profile
 Comment[de]=KBackup Profil
+Comment[fr]=Profil KBackup
 Icon=kbackup
 MimeType=text/x-kbp
 Patterns=*.kbp;

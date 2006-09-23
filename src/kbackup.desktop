@@ -10,3 +10,6 @@ Categories=System;KDE;X-SuSE-Backup;
 
 Name[de]=KBackup (Datensicherungs Programm)
 Comment[de]=Datensicherung mit einem einfach zu bedienended User Interface
+
+Name[fr]=KBackup (Programme de sauvegarde)
+Comment[fr]=Sauvegarder vos données avec une interface utilisateur facile à utiliser
