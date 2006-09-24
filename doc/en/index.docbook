@@ -57,8 +57,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2006-08-26</date>
-<releaseinfo>1.01.00</releaseinfo>
+<date>2006-09-24</date>
+<releaseinfo>1.02.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -79,6 +79,7 @@ Please at least include KDE, the KDE package it is in, the name
 <keyword>backup</keyword>
 <keyword>storage</keyword>
 <keyword>archive</keyword>
+<keyword>zip</keyword>
 </keywordset>
 
 </bookinfo>
@@ -277,9 +278,19 @@ or menu bars. -->
 </para>
 
 <sect2>
-<title>The File Menu</title>
+<title>The <guimenu>File</guimenu> Menu</title>
 <para>
 <variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>New Profile</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Clears the selection and the target input field, to be able to define
+a new profile.</action></para></listitem>
+</varlistentry>
+
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
@@ -287,6 +298,7 @@ or menu bars. -->
 </menuchoice></term>
 <listitem><para><action>Loads a profile</action></para></listitem>
 </varlistentry>
+
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
@@ -294,6 +306,18 @@ or menu bars. -->
 </menuchoice></term>
 <listitem><para><action>Saves all settings into a profile</action></para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Profile Settings</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>In the settings, you can define whether the archive-slice files
+start with the default name "backup" or with an alternative name.
+This setting is also stored into the profile.
+</action></para></listitem>
+</varlistentry>
+
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -304,10 +328,37 @@ or menu bars. -->
 </menuchoice></term>
 <listitem><para><action>Quits</action> &kbackup;</para></listitem>
 </varlistentry>
+
 </variablelist>
 </para>
-
 </sect2>
+
+<sect2>
+<title>The <guimenu>Settings</guimenu> Menu</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Dock in System Tray</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>
+When this option is activated, an icon is shown in the system tray, which reflects the current
+status of a backup operation. An animation is shown when a backup is in progress, else you see
+a static icon.
+If this option is selected, the closing of the mainwindow will not terminate &kbackup;.
+The application must be explicitely terminated by selecting the "Quit" action.
+Via the context menu of the &kbackup; system tray icon you can start and cancel a backup operation -
+which is the same as you can do in the mainwindow.
+The tooltip on this icon also gives progress information (Number of saved files, size of the backup and
+the last saved file).
+</action></para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
 
 <sect2>
 <title>The <guimenu>Help</guimenu> Menu</title>

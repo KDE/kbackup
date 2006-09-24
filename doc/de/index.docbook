@@ -57,8 +57,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2006-09-03</date>
-<releaseinfo>1.01.00</releaseinfo>
+<date>2006-09-24</date>
+<releaseinfo>1.02.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -80,6 +80,7 @@ Please at least include KDE, the KDE package it is in, the name
 <keyword>Archivierung</keyword>
 <keyword>Sicherung</keyword>
 <keyword>Archiv</keyword>
+<keyword>ZIP</keyword>
 </keywordset>
 
 </bookinfo>
@@ -285,9 +286,20 @@ or menu bars. -->
 </para>
 
 <sect2>
-<title>Das Datei Menü</title>
+<title>Das <guimenu>Datei</guimenu> Menü</title>
 <para>
 <variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Datei</guimenu>
+<guimenuitem>Neues Profil</guimenuitem>
+</menuchoice></term>
+<listitem><para>
+<action>Löscht die Selektion und das Ziel Eingabefeld, um ein neues Profil definieren zu können</action>
+</para></listitem>
+</varlistentry>
+
 <varlistentry>
 <term><menuchoice>
 <guimenu>Datei</guimenu>
@@ -295,6 +307,7 @@ or menu bars. -->
 </menuchoice></term>
 <listitem><para><action>Lädt ein Profil</action></para></listitem>
 </varlistentry>
+
 <varlistentry>
 <term><menuchoice>
 <guimenu>Datei</guimenu>
@@ -302,6 +315,17 @@ or menu bars. -->
 </menuchoice></term>
 <listitem><para><action>Speichert alle Einstellungen in eine Profil Datei</action></para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Datei</guimenu>
+<guimenuitem>Profil Einstellungen</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>In den Profileinstellungen kann man definieren, ob ein Archiv Datei
+mit dem Namen "backup" beginnen soll, oder ob ein alternativer Name verwendet werden soll.
+Diese Einstellung wird mit in die Profil Datei gespeichert.</action></para></listitem>
+</varlistentry>
+
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -312,9 +336,37 @@ or menu bars. -->
 </menuchoice></term>
 <listitem><para><action>Beendet</action> &kbackup;</para></listitem>
 </varlistentry>
+
 </variablelist>
 </para>
 
+</sect2>
+
+<sect2>
+<title>Das <guimenu>Einstellungen</guimenu> Menü</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Einstellungen</guimenu>
+<guimenuitem>Im Systembereich der Kontrollleiste andocken</guimenuitem>
+</menuchoice></term>
+<listitem><para>
+<action>Wird diese Option eingeschaltet, wird im Systembereich ein Symbol angezeigt, welches den Status einer
+Sicherung anzeigt. Eine Animation bedeutet, daß gerade eine Sicherung läuft. Ansonsten wird ein statisches
+Symbol angezeigt.
+Wenn diese Option gewählt wurde, wird &kbackup; mit dem Schließen des Hauptfensters nicht beendet.
+Das Programm bleibt so lange verfügbar, bis es explizit durch die "Beenden" Aktion beendet wird.
+Über das Kontextmenü am Symbol im Systembereich kann eine Sicherung - genau wie im Hauptfenster - gestartet
+oder abgebrochen werden. Im Tooltip des Symbols wird der Sicherungs Status angezeigt (Anzahl schon gesicherter
+Dateien, Summe des Sicherungsvolumens und die zuletzt gesicherte Datei).
+</action>
+</para></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
 </sect2>
 
 <sect2>
