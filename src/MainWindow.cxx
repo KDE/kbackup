@@ -275,7 +275,7 @@ void MainWindow::loggingSlot(const QString &message)
 void MainWindow::changeSystrayTip()
 {
   QString text = KGlobal::instance()->aboutData()->programName() + " - " +
-                 tr("Files: %1 Size: %2 MB\n%3")
+                 i18n("Files: %1 Size: %2 MB\n%3")
                     .arg(Archiver::instance->getTotalFiles())
                     .arg(QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2))
                     .arg(KStringHandler::csqueeze(lastLog, 60));
