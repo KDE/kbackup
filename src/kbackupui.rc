@@ -7,5 +7,8 @@
     <Action name="saveProfile"/>
     <Action name="profileSettings"/>
   </Menu>
+  <Menu name="settings"><text>&amp;Settings</text>
+    <Action name="dockInSysTray"/>
+  </Menu>
 </MenuBar>
 </kpartgui>

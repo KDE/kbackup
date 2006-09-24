@@ -31,20 +31,23 @@
 #include <errno.h>
 #include <sys/statvfs.h>
 
-#include <iostream>
-using namespace std;
+//#include <iostream>
+//using namespace std;
 //--------------------------------------------------------------------------------
 
 QString Archiver::sliceScript;
 QString Archiver::filePrefix;
+Archiver *Archiver::instance;
 
 //--------------------------------------------------------------------------------
 
 Archiver::Archiver(QWidget *parent)
   : QObject(parent),
     archive(0), totalBytes(0), totalFiles(0), sliceNum(0), sliceCapacity(0),
-    cancelled(false), jobResult(0)
+    cancelled(false), runs(false), jobResult(0)
 {
+  instance = this;
+
   ext = ".bz2";
   filterBase = KFilterBase::findFilterByMimeType("application/x-bzip2");
   if ( !filterBase )
@@ -94,6 +97,9 @@ void Archiver::createArchive(const KURL &target, const QStringList &includes, co
 
   if ( ! getNextSlice() ) return;
 
+  runs = true;
+  emit inProgress(true);
+
   for (QStringList::const_iterator it = includes.begin(); !cancelled && (it != includes.end()); ++it)
   {
     QString entry = *it;
@@ -118,12 +124,17 @@ void Archiver::createArchive(const KURL &target, const QStringList &includes, co
     emit logging(i18n("-- Backup successfully finished --"));
   else
     emit logging(i18n("...Backup aborted!"));
+
+  runs = false;
+  emit inProgress(false);
 }
 
 //--------------------------------------------------------------------------------
 
 void Archiver::cancel()
 {
+  if ( !runs ) return;
+
   if ( job )
   {
     job->kill();

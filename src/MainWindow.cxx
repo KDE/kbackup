@@ -13,23 +13,32 @@
 #include <MainWidget.h>
 #include <SettingsDialog.h>
 
-#include <qapplication.h>
 #include <qsplitter.h>
 #include <qspinbox.h>
+#include <qtooltip.h>
+#include <qmovie.h>
 
+#include <kapplication.h>
 #include <kstdaction.h>
-#include <kaction.h>
+#include <kactionclasses.h>
 #include <klocale.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
 #include <klineedit.h>
 #include <kio/global.h>
+#include <ksystemtray.h>
+#include <kglobal.h>
+#include <kaboutdata.h>
+#include <kiconloader.h>
+#include <kstringhandler.h>
+#include <kpopupmenu.h>
 
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
+  : KMainWindow(0, 0, 0)
 {
-  KStdAction::quit(this, SLOT(close()), actionCollection());
+  KStdAction::quit(this, SLOT(maybeQuit()), actionCollection());
 
   new KAction(i18n("New Profile"), "filenew", 0, this,
               SLOT(newProfile()), actionCollection(), "newProfile");
@@ -43,6 +52,11 @@ MainWindow::MainWindow()
   new KAction(i18n("Profile Settings"), "", 0, this,
               SLOT(profileSettings()), actionCollection(), "profileSettings");
 
+  docked = new KToggleAction(i18n("Dock in System Tray"), KShortcut(), this,
+                             SLOT(dockInSysTray()), actionCollection(), "dockInSysTray");
+
+  docked->setChecked(KGlobal::instance()->config()->readBoolEntry("dockInSysTray", false));
+
   createGUI();
 
   QSplitter *splitter = new QSplitter(Qt::Horizontal, this);
@@ -54,6 +68,63 @@ MainWindow::MainWindow()
   splitter->setCollapsible(mainWidget, false);
 
   setCentralWidget(splitter);
+
+  // system tray icon
+  sysTray = new KSystemTray(this);
+  sysTray->setPixmap(sysTray->loadIcon("kbackup"));
+  sysTray->setShown(docked->isChecked());
+
+  connect(sysTray, SIGNAL(quitSelected()), this, SLOT(maybeQuit()));
+
+  connect(Archiver::instance, SIGNAL(totalFilesChanged(int)), this, SLOT(changeSystrayTip()));
+  connect(Archiver::instance, SIGNAL(logging(const QString &)), this, SLOT(loggingSlot(const QString &)));
+  connect(Archiver::instance, SIGNAL(inProgress(bool)), this, SLOT(inProgress(bool)));
+
+  startBackup = new KAction(i18n("Start Backup"), "kbackup_start", 0, mainWidget,
+                            SLOT(startBackup()), actionCollection(), "startBackup");
+  startBackup->plug(sysTray->contextMenu(), 1);
+
+  cancelBackup = new KAction(i18n("Cancel Backup"), "kbackup_cancel", 0, Archiver::instance,
+                             SLOT(cancel()), actionCollection(), "cancelBackup");
+  cancelBackup->plug(sysTray->contextMenu(), 2);
+  cancelBackup->setEnabled(false);
+
+  changeSystrayTip();
+}
+
+//--------------------------------------------------------------------------------
+
+bool MainWindow::stopAllowed()
+{
+  if ( Archiver::instance->isInProgress() )
+  {
+    if ( KMessageBox::warningYesNo(this,
+            i18n("There is a backup in progress. Do you want to abort it?")) == KMessageBox::No )
+      return false;
+
+    Archiver::instance->cancel();
+  }
+
+  return true;
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::maybeQuit()
+{
+  if ( stopAllowed() )
+    kapp->quit();
+}
+
+//--------------------------------------------------------------------------------
+
+bool MainWindow::queryClose()
+{
+  if ( kapp->sessionSaving() || !sysTray->isShown() )
+    return stopAllowed();
+
+  hide();
+  return false;
 }
 
 //--------------------------------------------------------------------------------
@@ -77,7 +148,7 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
     KMessageBox::error(this,
                 i18n("Could not open profile '%1' for reading: %2")
                      .arg(fileName)
-                     .arg(qApp->translate("QFile", file.errorString())),
+                     .arg(kapp->translate("QFile", file.errorString())),
                 i18n("Open failed"));
     return;
   }
@@ -148,7 +219,7 @@ void MainWindow::saveProfile()
     KMessageBox::error(this,
                 i18n("Could not open profile '%1' for writing: %2")
                      .arg(fileName)
-                     .arg(qApp->translate("QFile", file.errorString())),
+                     .arg(kapp->translate("QFile", file.errorString())),
                 i18n("Open failed"));
     return;
   }
@@ -160,10 +231,10 @@ void MainWindow::saveProfile()
 
   for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
     stream << "I " << *it << endl;
-  
+
   for (QStringList::const_iterator it = excludes.begin(); it != excludes.end(); ++it)
     stream << "E " << *it << endl;
-  
+
   file.close();
 }
 
@@ -189,6 +260,54 @@ void MainWindow::newProfile()
   // clear selection
   QStringList includes, excludes;
   selector->setBackupList(includes, excludes);
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::loggingSlot(const QString &message)
+{
+  lastLog = message;
+  changeSystrayTip();
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::changeSystrayTip()
+{
+  QString text = KGlobal::instance()->aboutData()->programName() + " - " +
+                 tr("Files: %1 Size: %2 MB\n%3")
+                    .arg(Archiver::instance->getTotalFiles())
+                    .arg(QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2))
+                    .arg(KStringHandler::csqueeze(lastLog, 60));
+
+  QToolTip::add(sysTray, text);
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::inProgress(bool runs)
+{
+  if ( runs )
+  {
+    sysTray->setMovie(KGlobal::instance()->iconLoader()->loadMovie("kbackup_runs", KIcon::Panel));
+    startBackup->setEnabled(false);
+    cancelBackup->setEnabled(true);
+  }
+  else
+  {
+    sysTray->setPixmap(sysTray->loadIcon("kbackup"));
+    startBackup->setEnabled(true);
+    cancelBackup->setEnabled(false);
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::dockInSysTray()
+{
+  KGlobal::instance()->config()->writeEntry("dockInSysTray", docked->isChecked());
+
+  sysTray->setShown(docked->isChecked());
 }
 
 //--------------------------------------------------------------------------------

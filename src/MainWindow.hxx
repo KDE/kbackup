@@ -13,6 +13,9 @@
 #include <kmainwindow.h>
 class Selector;
 class MainWidget;
+class KSystemTray;
+class KToggleAction;
+class KAction;
 
 class MainWindow : public KMainWindow
 {
@@ -22,15 +25,31 @@ class MainWindow : public KMainWindow
     MainWindow();
     void loadProfile(const QString &fileName, bool adaptTreeWidth = false);
 
+  protected:
+    virtual bool queryClose();
+
   private slots:
     void loadProfile();
     void saveProfile();
     void profileSettings();
     void newProfile();
+    void loggingSlot(const QString &message);
+    void changeSystrayTip();
+    void inProgress(bool);
+    void dockInSysTray();
+    void maybeQuit();
+
+  private:
+    bool stopAllowed();
 
   private:
     Selector *selector;
     MainWidget *mainWidget;
+    KSystemTray *sysTray;
+    QString lastLog;
+    KToggleAction *docked;
+    KAction *startBackup;
+    KAction *cancelBackup;
 };
 
 #endif

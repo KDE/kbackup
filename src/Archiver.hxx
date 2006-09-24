@@ -34,9 +34,14 @@ class Archiver : public QObject
   public:
     Archiver(QWidget *parent);
 
+    static Archiver *instance;
+
     void createArchive(const KURL &target, const QStringList &includes, const QStringList &excludes);
 
     KIO::filesize_t getTotalBytes() const { return totalBytes; }
+    int getTotalFiles() const { return totalFiles; }
+
+    bool isInProgress() const { return runs; }
 
     static bool getDiskFree(const QString &path, KIO::filesize_t &capacityBytes, KIO::filesize_t &freeBytes);
 
@@ -48,6 +53,7 @@ class Archiver : public QObject
     void cancel();  // cancel a running creation
 
   signals:
+    void inProgress(bool runs);
     void logging(const QString &);
     void warning(const QString &);
     void targetCapacity(KIO::filesize_t bytes);
@@ -82,7 +88,7 @@ class Archiver : public QObject
 
     KTar *archive;
     KIO::filesize_t totalBytes;
-    uint totalFiles;
+    int totalFiles;
 
     KURL targetURL;
     QString baseName;
@@ -95,6 +101,7 @@ class Archiver : public QObject
     QString ext;
 
     bool cancelled;
+    bool runs;
 
     QGuardedPtr<KIO::CopyJob> job;
     int jobResult;
