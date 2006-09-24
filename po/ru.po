@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-17 13:31+0200\n"
+"POT-Creation-Date: 2006-09-24 18:48+0200\n"
 "PO-Revision-Date: 2006-09-04 22:22+0300\n"
 "Last-Translator: Alexey Kouznetsov <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -15,43 +15,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Archiver.cxx:63
+#: Archiver.cxx:66
 msgid "Nothing selected for backup"
 msgstr "Не выбрано ни одного объекта для резервирования"
 
-#: Archiver.cxx:69
+#: Archiver.cxx:72
 msgid "The target dir is not valid"
 msgstr "Неверно указан целевой каталог"
 
-#: Archiver.cxx:118
+#: Archiver.cxx:124
 msgid "-- Backup successfully finished --"
 msgstr "-- Резервное копирование заершено успешно --"
 
-#: Archiver.cxx:120
+#: Archiver.cxx:126
 msgid "...Backup aborted!"
 msgstr "...Резервирование прервано!"
 
-#: Archiver.cxx:136
+#: Archiver.cxx:147
 msgid "Backup cancelled"
 msgstr "Резервирование отменено"
 
-#: Archiver.cxx:173
+#: Archiver.cxx:184
 msgid "...uploading archive to %1"
 msgstr "...выгрузка архива в %1"
 
-#: Archiver.cxx:181
+#: Archiver.cxx:192
 msgid "Do you want to retry the upload?"
 msgstr "Попытаться повторить выгрузку?"
 
-#: Archiver.cxx:240
+#: Archiver.cxx:251
 msgid "The script '%1' could not be started."
 msgstr "Не могу запустить сценарий '%1'"
 
-#: Archiver.cxx:277
+#: Archiver.cxx:288
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Носитель полон. Вставьте носитель № %1"
 
-#: Archiver.cxx:323
+#: Archiver.cxx:334
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -61,7 +61,7 @@ msgstr ""
 "\n"
 "Попытаться ещё раз?"
 
-#: Archiver.cxx:349
+#: Archiver.cxx:360
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -69,11 +69,11 @@ msgstr ""
 "Не могу получить информацию о каталоге %1\n"
 "Сообщение операционной системы: %2"
 
-#: Archiver.cxx:359
+#: Archiver.cxx:370
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Невозможно прочесть каталог '%1'. Пропускаю."
 
-#: Archiver.cxx:371
+#: Archiver.cxx:382
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -81,11 +81,11 @@ msgstr ""
 "Не могу записать каталог '%1' архив.\n"
 "Вероятно, носитель полон."
 
-#: Archiver.cxx:409
+#: Archiver.cxx:420
 msgid "File '%1' is not readable. Skipping."
 msgstr "Не могу прочесть файл '%1'. Пропускаю."
 
-#: Archiver.cxx:464 Archiver.cxx:540
+#: Archiver.cxx:475 Archiver.cxx:551
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -93,20 +93,20 @@ msgstr ""
 "Не могу получить информацию о файле: %1\n"
 "Сообщение операционной системы: %1"
 
-#: Archiver.cxx:477 Archiver.cxx:493 Archiver.cxx:506 Archiver.cxx:559
-#: Archiver.cxx:577 Archiver.cxx:614
+#: Archiver.cxx:488 Archiver.cxx:504 Archiver.cxx:517 Archiver.cxx:570
+#: Archiver.cxx:588 Archiver.cxx:625
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Не могу произвести запись в архив. Вероятно, носитель полон."
 
-#: Archiver.cxx:551
+#: Archiver.cxx:562
 msgid "Could not open file '%1' for reading."
 msgstr "Не могу открыть для чтения файл '%1'"
 
-#: Archiver.cxx:600
+#: Archiver.cxx:611
 msgid "...archiving file %1"
 msgstr "...архивирую файл '%1'"
 
-#: Archiver.cxx:628
+#: Archiver.cxx:639
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -114,7 +114,7 @@ msgstr ""
 "Не могу прочесть файл: %1\n"
 "Сообщение операционной системы: %2"
 
-#: Archiver.cxx:674
+#: Archiver.cxx:685
 msgid "...compressing file %1"
 msgstr "...сжимаю файл '%1'"
 
@@ -125,13 +125,13 @@ msgid "KBackup"
 msgstr ""
 
 #. i18n: file ./MainWidget.ui line 56
-#: MainWidget.cxx:208 rc.cpp:6
+#: MainWidget.cxx:208 MainWindow.cxx:83 rc.cpp:6
 #, no-c-format
 msgid "Start Backup"
 msgstr "Начать архивирование"
 
 #. i18n: file ./MainWidget.ui line 84
-#: MainWidget.cxx:209 rc.cpp:9
+#: MainWidget.cxx:209 MainWindow.cxx:87 rc.cpp:9
 #, no-c-format
 msgid "Cancel Backup"
 msgstr "Прекратить архивирование"
@@ -218,38 +218,49 @@ msgstr "Предупреждения:"
 msgid "Progress:"
 msgstr "Уровень выполнения"
 
-#: MainWindow.cxx:34
+#: MainWindow.cxx:43
 #, fuzzy
 msgid "New Profile"
 msgstr "Сохранить профиль"
 
-#: MainWindow.cxx:37
+#: MainWindow.cxx:46
 msgid "Load Profile"
 msgstr "Загрузить профиль"
 
-#: MainWindow.cxx:40
+#: MainWindow.cxx:49
 msgid "Save Profile"
 msgstr "Сохранить профиль"
 
 #. i18n: file ./SettingsDialog.ui line 18
-#: MainWindow.cxx:43 SettingsDialog.cxx:75 rc.cpp:64
+#: MainWindow.cxx:52 SettingsDialog.cxx:75 rc.cpp:67
 #, fuzzy, no-c-format
 msgid "Profile Settings"
 msgstr "Профиль уже существует"
 
-#: MainWindow.cxx:63 MainWindow.cxx:127
+#: MainWindow.cxx:55
+msgid "Dock in System Tray"
+msgstr ""
+
+#: MainWindow.cxx:102
+#, fuzzy
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr ""
+"Профиль '%1' уже существует.\n"
+"Перезаписать его?"
+
+#: MainWindow.cxx:134 MainWindow.cxx:198
 msgid "KBackup Profile (*.kbp)"
 msgstr "Профили KBackup (*.kbp)"
 
-#: MainWindow.cxx:78
+#: MainWindow.cxx:149
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Не могу открыть для чтения профиль '%1': %2"
 
-#: MainWindow.cxx:81 MainWindow.cxx:152
+#: MainWindow.cxx:152 MainWindow.cxx:223
 msgid "Open failed"
 msgstr "Ошибка открытия"
 
-#: MainWindow.cxx:136
+#: MainWindow.cxx:207
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
@@ -257,13 +268,19 @@ msgstr ""
 "Профиль '%1' уже существует.\n"
 "Перезаписать его?"
 
-#: MainWindow.cxx:139
+#: MainWindow.cxx:210
 msgid "Profile exists"
 msgstr "Профиль уже существует"
 
-#: MainWindow.cxx:149
+#: MainWindow.cxx:220
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Не могу открыть файл профиля '%1' для чтения: %2"
+
+#: MainWindow.cxx:278
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
 
 #: Selector.cxx:67
 msgid "Name"
@@ -278,7 +295,7 @@ msgid "Last Modified"
 msgstr "Последнее изменение"
 
 #. i18n: file ./SettingsDialog.ui line 29
-#: SettingsDialog.cxx:76 rc.cpp:67
+#: SettingsDialog.cxx:76 rc.cpp:70
 #, no-c-format
 msgid "Archive Prefix (empty for default):"
 msgstr ""

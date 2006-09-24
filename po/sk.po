@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KBackUp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-03 13:06+0200\n"
+"POT-Creation-Date: 2006-09-24 18:48+0200\n"
 "PO-Revision-Date: 2006-09-16 16:19+0100\n"
 "Last-Translator: Jozef Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak\n"
@@ -16,43 +16,43 @@ msgstr ""
 "X-Poedit-Language: Slovak\n"
 "X-Poedit-Country: SLOVAKIA\n"
 
-#: Archiver.cxx:62
+#: Archiver.cxx:66
 msgid "Nothing selected for backup"
 msgstr "Nevybrali ste nič pre zálohovanie"
 
-#: Archiver.cxx:68
+#: Archiver.cxx:72
 msgid "The target dir is not valid"
 msgstr "Chybné určenie cieľového adresára"
 
-#: Archiver.cxx:117
+#: Archiver.cxx:124
 msgid "-- Backup successfully finished --"
 msgstr "-- Zálohovanie úspešne dokončené --"
 
-#: Archiver.cxx:119
+#: Archiver.cxx:126
 msgid "...Backup aborted!"
 msgstr "...Zálohovanie zrušené!"
 
-#: Archiver.cxx:135
+#: Archiver.cxx:147
 msgid "Backup cancelled"
 msgstr "Zálohovanie zrušené"
 
-#: Archiver.cxx:172
+#: Archiver.cxx:184
 msgid "...uploading archive to %1"
 msgstr "...uploadujem archív na %1"
 
-#: Archiver.cxx:180
+#: Archiver.cxx:192
 msgid "Do you want to retry the upload?"
 msgstr "Chcete znovu skúsiť upload?"
 
-#: Archiver.cxx:239
+#: Archiver.cxx:251
 msgid "The script '%1' could not be started."
 msgstr "Nemôžem spustiť skript '%1'."
 
-#: Archiver.cxx:276
+#: Archiver.cxx:288
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Médium je plné. Prosím vložte médium č. %1"
 
-#: Archiver.cxx:320
+#: Archiver.cxx:334
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "\n"
 "Chcete sa o to pokúsiť znovu?"
 
-#: Archiver.cxx:346
+#: Archiver.cxx:360
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -70,11 +70,11 @@ msgstr ""
 "Nepodarilo sa získať informácie o adresári: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:356
+#: Archiver.cxx:370
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Adresár '%1' nemožno prečítať. Preskakujem."
 
-#: Archiver.cxx:368
+#: Archiver.cxx:382
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -82,12 +82,11 @@ msgstr ""
 "Nepodarilo sa zapísať adresár '%1' do archívu.\n"
 "Možno je médium plné."
 
-#: Archiver.cxx:406
+#: Archiver.cxx:420
 msgid "File '%1' is not readable. Skipping."
 msgstr "Súbor '%1' nemožno prečítať. Preskakujem."
 
-#: Archiver.cxx:461
-#: Archiver.cxx:537
+#: Archiver.cxx:475 Archiver.cxx:551
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -95,24 +94,20 @@ msgstr ""
 "Nepodarilo sa získať informácie súboru: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:474
-#: Archiver.cxx:490
-#: Archiver.cxx:503
-#: Archiver.cxx:556
-#: Archiver.cxx:574
-#: Archiver.cxx:611
+#: Archiver.cxx:488 Archiver.cxx:504 Archiver.cxx:517 Archiver.cxx:570
+#: Archiver.cxx:588 Archiver.cxx:625
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Nepodaril sa zápis do archívu. Možno je médium plné."
 
-#: Archiver.cxx:548
+#: Archiver.cxx:562
 msgid "Could not open file '%1' for reading."
 msgstr "Súbor '%1' nemožno otvoriť na čítanie."
 
-#: Archiver.cxx:597
+#: Archiver.cxx:611
 msgid "...archiving file %1"
 msgstr "...archivujem súbor %1"
 
-#: Archiver.cxx:625
+#: Archiver.cxx:639
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -120,59 +115,49 @@ msgstr ""
 "Nemožno prečítať súbor: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:671
+#: Archiver.cxx:685
 msgid "...compressing file %1"
 msgstr "...komprimujem súbor %1"
 
 #. i18n: file ./MainWidget.ui line 18
-#: MainWidget.cxx:207
-#: main.cxx:22
-#: rc.cpp:3
+#: MainWidget.cxx:207 main.cxx:22 rc.cpp:3
 #, no-c-format
 msgid "KBackup"
 msgstr "KBackup"
 
 #. i18n: file ./MainWidget.ui line 56
-#: MainWidget.cxx:208
-#: rc.cpp:6
+#: MainWidget.cxx:208 MainWindow.cxx:83 rc.cpp:6
 #, no-c-format
 msgid "Start Backup"
 msgstr "Spustiť zálohovanie"
 
 #. i18n: file ./MainWidget.ui line 84
-#: MainWidget.cxx:209
-#: rc.cpp:9
+#: MainWidget.cxx:209 MainWindow.cxx:87 rc.cpp:9
 #, no-c-format
 msgid "Cancel Backup"
 msgstr "Zrušiť zálohovanie"
 
 #. i18n: file ./MainWidget.ui line 97
-#: MainWidget.cxx:210
-#: rc.cpp:12
+#: MainWidget.cxx:210 rc.cpp:12
 #, no-c-format
 msgid "Target"
 msgstr "Cieľ"
 
 #. i18n: file ./MainWidget.ui line 108
-#: MainWidget.cxx:211
-#: rc.cpp:15
+#: MainWidget.cxx:211 rc.cpp:15
 #, no-c-format
 msgid "Folder:"
 msgstr "Priečinok:"
 
 #. i18n: file ./MainWidget.ui line 127
 #. i18n: file ./MainWidget.ui line 253
-#: MainWidget.cxx:213
-#: MainWidget.cxx:220
-#: rc.cpp:19
-#: rc.cpp:40
+#: MainWidget.cxx:213 MainWidget.cxx:220 rc.cpp:19 rc.cpp:40
 #, no-c-format
 msgid "Size:"
 msgstr "Veľkosť"
 
 #. i18n: file ./MainWidget.ui line 143
-#: MainWidget.cxx:214
-#: rc.cpp:22
+#: MainWidget.cxx:214 rc.cpp:22
 #, no-c-format
 msgid "Medium:"
 msgstr "Médium:"
@@ -180,95 +165,103 @@ msgstr "Médium:"
 #. i18n: file ./MainWidget.ui line 165
 #. i18n: file ./MainWidget.ui line 234
 #. i18n: file ./MainWidget.ui line 261
-#: MainWidget.cxx:215
-#: MainWidget.cxx:219
-#: MainWidget.cxx:221
-#: rc.cpp:25
-#: rc.cpp:37
-#: rc.cpp:43
+#: MainWidget.cxx:215 MainWidget.cxx:219 MainWidget.cxx:221 rc.cpp:25
+#: rc.cpp:37 rc.cpp:43
 #, no-c-format
 msgid "0"
 msgstr "0"
 
 #. i18n: file ./MainWidget.ui line 197
-#: MainWidget.cxx:216
-#: rc.cpp:28
+#: MainWidget.cxx:216 rc.cpp:28
 #, no-c-format
 msgid "0 MB"
 msgstr "0 MB"
 
 #. i18n: file ./MainWidget.ui line 207
-#: MainWidget.cxx:217
-#: rc.cpp:31
+#: MainWidget.cxx:217 rc.cpp:31
 #, no-c-format
 msgid "Totals"
 msgstr "Celkom"
 
 #. i18n: file ./MainWidget.ui line 226
-#: MainWidget.cxx:218
-#: rc.cpp:34
+#: MainWidget.cxx:218 rc.cpp:34
 #, no-c-format
 msgid "Files:"
 msgstr "Súbory:"
 
 #. i18n: file ./MainWidget.ui line 272
-#: MainWidget.cxx:222
-#: rc.cpp:46
+#: MainWidget.cxx:222 rc.cpp:46
 #, no-c-format
 msgid "MB"
 msgstr "MB"
 
 #. i18n: file ./MainWidget.ui line 308
-#: MainWidget.cxx:223
-#: rc.cpp:49
+#: MainWidget.cxx:223 rc.cpp:49
 #, no-c-format
 msgid "Duration:"
 msgstr "Dĺžka:"
 
 #. i18n: file ./MainWidget.ui line 316
-#: MainWidget.cxx:224
-#: rc.cpp:52
+#: MainWidget.cxx:224 rc.cpp:52
 #, no-c-format
 msgid "00:00:00"
 msgstr "00:00:00"
 
 #. i18n: file ./MainWidget.ui line 373
-#: MainWidget.cxx:225
-#: rc.cpp:55
+#: MainWidget.cxx:225 rc.cpp:55
 #, no-c-format
 msgid "Warnings:"
 msgstr "Varovania:"
 
 #. i18n: file ./MainWidget.ui line 398
-#: MainWidget.cxx:226
-#: rc.cpp:58
+#: MainWidget.cxx:226 rc.cpp:58
 #, no-c-format
 msgid "Progress:"
 msgstr "Priebeh:"
 
-#: MainWindow.cxx:32
+#: MainWindow.cxx:43
+#, fuzzy
+msgid "New Profile"
+msgstr "Uložiť profil"
+
+#: MainWindow.cxx:46
 msgid "Load Profile"
 msgstr "Načítať profil"
 
-#: MainWindow.cxx:35
+#: MainWindow.cxx:49
 msgid "Save Profile"
 msgstr "Uložiť profil"
 
+#. i18n: file ./SettingsDialog.ui line 18
+#: MainWindow.cxx:52 SettingsDialog.cxx:75 rc.cpp:67
+#, fuzzy, no-c-format
+msgid "Profile Settings"
+msgstr "Profil existuje"
+
 #: MainWindow.cxx:55
-#: MainWindow.cxx:114
+msgid "Dock in System Tray"
+msgstr ""
+
+#: MainWindow.cxx:102
+#, fuzzy
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr ""
+"Profil  '%1' už existuje.\n"
+"Chcete ho prepísať?"
+
+#: MainWindow.cxx:134 MainWindow.cxx:198
 msgid "KBackup Profile (*.kbp)"
 msgstr "KBackup profil (*.kbp)"
 
-#: MainWindow.cxx:70
+#: MainWindow.cxx:149
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Nepodarilo sa otvoriť profil  '%1' na čítanie: %2"
 
-#: MainWindow.cxx:73
-#: MainWindow.cxx:139
+#: MainWindow.cxx:152 MainWindow.cxx:223
 msgid "Open failed"
 msgstr "Otváranie zlyhalo"
 
-#: MainWindow.cxx:123
+#: MainWindow.cxx:207
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
@@ -276,13 +269,19 @@ msgstr ""
 "Profil  '%1' už existuje.\n"
 "Chcete ho prepísať?"
 
-#: MainWindow.cxx:126
+#: MainWindow.cxx:210
 msgid "Profile exists"
 msgstr "Profil existuje"
 
-#: MainWindow.cxx:136
+#: MainWindow.cxx:220
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Nepodarilo sa otvoriť profil  '%1' na zápis: %2"
+
+#: MainWindow.cxx:278
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
 
 #: Selector.cxx:67
 msgid "Name"
@@ -295,6 +294,12 @@ msgstr "Veľkosť"
 #: Selector.cxx:69
 msgid "Last Modified"
 msgstr "Posledná úprava"
+
+#. i18n: file ./SettingsDialog.ui line 29
+#: SettingsDialog.cxx:76 rc.cpp:70
+#, no-c-format
+msgid "Archive Prefix (empty for default):"
+msgstr ""
 
 #: main.cxx:23
 msgid "An easy to use backup program"
@@ -327,4 +332,3 @@ msgstr "jose1711@gmail.com"
 #: MainWidget.ui.h:135
 msgid "unlimited"
 msgstr "neobmedzené"
-
