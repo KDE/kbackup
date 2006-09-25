@@ -4,6 +4,7 @@
   <Menu name="file"><text>&amp;File</text>
     <Action name="newProfile"/>
     <Action name="loadProfile"/>
+    <Action name="recentProfiles"/>
     <Action name="saveProfile"/>
     <Action name="profileSettings"/>
   </Menu>

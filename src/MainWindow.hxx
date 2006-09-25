@@ -16,6 +16,8 @@ class MainWidget;
 class KSystemTray;
 class KToggleAction;
 class KAction;
+class KRecentFilesAction;
+class KURL;
 
 class MainWindow : public KMainWindow
 {
@@ -38,6 +40,7 @@ class MainWindow : public KMainWindow
     void inProgress(bool);
     void dockInSysTray();
     void maybeQuit();
+    void recentProfileSelected(const KURL &url);
 
   private:
     bool stopAllowed();
@@ -50,6 +53,7 @@ class MainWindow : public KMainWindow
     KToggleAction *docked;
     KAction *startBackup;
     KAction *cancelBackup;
+    KRecentFilesAction *recentFiles;
 };
 
 #endif

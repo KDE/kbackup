@@ -32,6 +32,7 @@
 #include <kiconloader.h>
 #include <kstringhandler.h>
 #include <kpopupmenu.h>
+#include <kurl.h>
 
 //--------------------------------------------------------------------------------
 
@@ -56,6 +57,10 @@ MainWindow::MainWindow()
                              SLOT(dockInSysTray()), actionCollection(), "dockInSysTray");
 
   docked->setChecked(KGlobal::instance()->config()->readBoolEntry("dockInSysTray", false));
+
+  recentFiles = KStdAction::openRecent(this, SLOT(recentProfileSelected(const KURL &)),
+                                       actionCollection(), "recentProfiles");
+  recentFiles->loadEntries(KGlobal::instance()->config());
 
   createGUI();
 
@@ -129,6 +134,13 @@ bool MainWindow::queryClose()
 
 //--------------------------------------------------------------------------------
 
+void MainWindow::recentProfileSelected(const KURL &url)
+{
+  loadProfile(url.path());
+}
+
+//--------------------------------------------------------------------------------
+
 void MainWindow::loadProfile()
 {
   QString fileName = KFileDialog::getOpenFileName(QString::null, "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
@@ -152,6 +164,11 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
                 i18n("Open failed"));
     return;
   }
+
+  KURL url;
+  url.setPath(fileName);
+  recentFiles->addURL(url);
+  recentFiles->saveEntries(KGlobal::instance()->config());
 
   QStringList includes, excludes;
   char type;
