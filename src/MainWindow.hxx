@@ -29,6 +29,7 @@ class MainWindow : public KMainWindow
 
   protected:
     virtual bool queryClose();
+    virtual bool queryExit();
 
   private slots:
     void loadProfile();

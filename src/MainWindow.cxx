@@ -10,7 +10,7 @@
 #include <MainWindow.hxx>
 #include <Selector.hxx>
 #include <Archiver.hxx>
-#include <MainWidget.h>
+#include <MainWidget.hxx>
 #include <SettingsDialog.h>
 
 #include <qsplitter.h>
@@ -34,6 +34,8 @@
 #include <kpopupmenu.h>
 #include <kurl.h>
 
+//#include <iostream>
+//using namespace std;
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
@@ -134,6 +136,13 @@ bool MainWindow::queryClose()
 
 //--------------------------------------------------------------------------------
 
+bool MainWindow::queryExit()
+{
+  return stopAllowed();
+}
+
+//--------------------------------------------------------------------------------
+
 void MainWindow::recentProfileSelected(const KURL &url)
 {
   loadProfile(url.path());
@@ -143,7 +152,7 @@ void MainWindow::recentProfileSelected(const KURL &url)
 
 void MainWindow::loadProfile()
 {
-  QString fileName = KFileDialog::getOpenFileName(QString::null, "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+  QString fileName = KFileDialog::getOpenFileName(":profile", "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
 
   if ( fileName.isEmpty() ) return;
 
@@ -171,23 +180,34 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
   recentFiles->saveEntries(KGlobal::instance()->config());
 
   QStringList includes, excludes;
-  char type;
+  QString target;
+  QChar type, blank;
   QTextStream stream(&file);
 
-  Archiver::filePrefix = "";  // back to default (in case old profile read which does not include prefix)
+  // back to default (in case old profile read which does not include these)
+  Archiver::instance->setFilePrefix("");
+  Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
 
   while ( ! stream.atEnd() )
   {
-    stream >> type;
     stream.skipWhiteSpace();
+    stream >> type;            // read a QChar without skipping whitespace
+    stream >> blank;           // read a QChar without skipping whitespace
 
     if ( type == 'M' )
     {
-      mainWidget->setTargetURL(stream.readLine());  // include white space
+      target = stream.readLine();  // include white space
     }
     else if ( type == 'P' )
     {
-      Archiver::filePrefix = stream.readLine();  // include white space
+      QString prefix = stream.readLine();  // include white space
+      Archiver::instance->setFilePrefix(prefix);
+    }
+    else if ( type == 'S' )
+    {
+      int max;
+      stream >> max;
+      Archiver::instance->setMaxSliceMBs(max);
     }
     else if ( type == 'I' )
     {
@@ -204,6 +224,9 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
   // now fill the Selector tree with those settings
   selector->setBackupList(includes, excludes);
 
+  mainWidget->targetDir->setText(target);
+  Archiver::instance->setTarget(KURL::fromPathOrURL(target));
+
   if ( adaptTreeWidth )
     selector->adjustColumn(0);
 }
@@ -212,7 +235,7 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
 
 void MainWindow::saveProfile()
 {
-  QString fileName = KFileDialog::getSaveFileName(QString::null, "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+  QString fileName = KFileDialog::getSaveFileName(":profile", "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
 
   if ( fileName.isEmpty() ) return;
 
@@ -244,7 +267,8 @@ void MainWindow::saveProfile()
   QTextStream stream(&file);
 
   stream << "M " << mainWidget->targetDir->text() << endl;
-  stream << "P " << Archiver::filePrefix << endl;
+  stream << "P " << Archiver::instance->getFilePrefix() << endl;
+  stream << "S " << Archiver::instance->getMaxSliceMBs() << endl;
 
   for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
     stream << "I " << *it << endl;
@@ -261,22 +285,29 @@ void MainWindow::profileSettings()
 {
   SettingsDialog dialog(this);
 
-  dialog.prefix->setText(Archiver::filePrefix);
+  dialog.prefix->setText(Archiver::instance->getFilePrefix());
+  dialog.maxSliceSize->setValue(Archiver::instance->getMaxSliceMBs());
 
   if ( dialog.exec() == QDialog::Accepted )
-    Archiver::filePrefix = dialog.prefix->text().stripWhiteSpace();
+  {
+    Archiver::instance->setFilePrefix(dialog.prefix->text().stripWhiteSpace());
+    Archiver::instance->setMaxSliceMBs(dialog.maxSliceSize->value());
+  }
 }
 
 //--------------------------------------------------------------------------------
 
 void MainWindow::newProfile()
 {
-  Archiver::filePrefix = "";  // back to default
-  mainWidget->setTargetURL("");
+  Archiver::instance->setFilePrefix("");  // back to default
+  Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
+  Archiver::instance->setTarget("");
 
   // clear selection
   QStringList includes, excludes;
   selector->setBackupList(includes, excludes);
+
+  mainWidget->targetDir->setText("");
 }
 
 //--------------------------------------------------------------------------------

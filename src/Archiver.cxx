@@ -36,7 +36,6 @@
 //--------------------------------------------------------------------------------
 
 QString Archiver::sliceScript;
-QString Archiver::filePrefix;
 Archiver *Archiver::instance;
 
 //--------------------------------------------------------------------------------
@@ -47,6 +46,8 @@ Archiver::Archiver(QWidget *parent)
     cancelled(false), runs(false), jobResult(0)
 {
   instance = this;
+
+  maxSliceMBs = Archiver::UNLIMITED;
 
   ext = ".bz2";
   filterBase = KFilterBase::findFilterByMimeType("application/x-bzip2");
@@ -59,7 +60,70 @@ Archiver::Archiver(QWidget *parent)
 
 //--------------------------------------------------------------------------------
 
-void Archiver::createArchive(const KURL &target, const QStringList &includes, const QStringList &excludes)
+void Archiver::setTarget(const KURL &target)
+{
+  targetURL = target;
+  calculateCapacity();
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::setMaxSliceMBs(int mbs)
+{
+  maxSliceMBs = mbs;
+  calculateCapacity();
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::setFilePrefix(const QString &prefix)
+{
+  filePrefix = prefix;
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::calculateCapacity()
+{
+  if ( targetURL.isLocalFile() || (maxSliceMBs != UNLIMITED) )
+  {
+    KIO::filesize_t freeBytes = 0;
+
+    if ( targetURL.isLocalFile() )
+      getDiskFree(targetURL.path(), sliceCapacity, freeBytes);
+
+    if ( maxSliceMBs != UNLIMITED )
+    {
+      KIO::filesize_t max = static_cast<KIO::filesize_t>(maxSliceMBs) * 1024 * 1024;
+
+      if ( targetURL.isLocalFile() )
+        sliceCapacity = QMIN(freeBytes, max);  // still limit to the size we have available
+      else
+        sliceCapacity = max;  // remote target
+
+      freeBytes = sliceCapacity;
+    }
+
+    startSize = sliceBytes = sliceCapacity - freeBytes;  // how much is already used on that medium
+
+    if ( sliceCapacity == 0 )
+      emit sliceProgress(100);
+    else
+      emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
+
+    emit targetCapacity(sliceCapacity);
+  }
+  else
+  {
+    sliceCapacity = UNLIMITED;
+    startSize = sliceBytes = 0;
+    emit targetCapacity(0);
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::createArchive(const QStringList &includes, const QStringList &excludes)
 {
   if ( includes.count() == 0 )
   {
@@ -67,13 +131,11 @@ void Archiver::createArchive(const KURL &target, const QStringList &includes, co
     return;
   }
 
-  if ( ! target.isValid() )
+  if ( ! targetURL.isValid() )
   {
     emit warning(i18n("The target dir is not valid"));
     return;
   }
-
-  targetURL = target;
 
   excludeDirs.clear();
   excludeFiles.clear();
@@ -186,7 +248,9 @@ void Archiver::finishSlice()
       while ( job )
         qApp->processEvents();
 
-      if ( jobResult != 0 )
+      if ( jobResult == 0 )
+        break;
+      else
       {
         if ( KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
                i18n("Do you want to retry the upload?")) == KMessageBox::No )
@@ -284,8 +348,13 @@ bool Archiver::getNextSlice()
     finishSlice();
     if ( cancelled ) return false;
 
-    KMessageBox::information(static_cast<QWidget*>(parent()),
-                             i18n("The medium is full. Please insert medium Nr. %1").arg(sliceNum));
+    if ( KMessageBox::warningContinueCancel(static_cast<QWidget*>(parent()),
+                             i18n("The medium is full. Please insert medium Nr. %1").arg(sliceNum)) ==
+          KMessageBox::Cancel )
+    {
+      cancel();
+      return false;
+    }
   }
 
   emit newSlice(sliceNum);
@@ -304,25 +373,7 @@ bool Archiver::getNextSlice()
 
   runScript("slice_init");
 
-  if ( targetURL.isLocalFile() )
-  {
-    KIO::filesize_t freeBytes;
-    getDiskFree(targetURL.path(), sliceCapacity, freeBytes);
-    startSize = sliceBytes = sliceCapacity - freeBytes;  // how much is already used on that medium
-
-    if ( sliceCapacity == 0 )
-      emit sliceProgress(100);
-    else
-      emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
-
-    emit targetCapacity(sliceCapacity);
-  }
-  else
-  {
-    sliceCapacity = UNLIMITED;
-    startSize = sliceBytes = 0;
-    emit targetCapacity(0);
-  }
+  calculateCapacity();
 
   // don't create a bz2 compressed file as we compress each file on its own
   // Even if we have sliceCapacity == UNLIMITED, as we will compress that later

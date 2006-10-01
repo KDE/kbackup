@@ -36,7 +36,18 @@ class Archiver : public QObject
 
     static Archiver *instance;
 
-    void createArchive(const KURL &target, const QStringList &includes, const QStringList &excludes);
+    // always call after you have already set maxSliceMBs, as the sliceCpacity
+    // might be limited with it
+    void setTarget(const KURL &target);
+
+    enum { UNLIMITED = 0 };
+    void setMaxSliceMBs(int mbs);
+    int getMaxSliceMBs() const { return maxSliceMBs; }
+
+    void setFilePrefix(const QString &prefix);
+    const QString &getFilePrefix() const { return filePrefix; }
+
+    void createArchive(const QStringList &includes, const QStringList &excludes);
 
     KIO::filesize_t getTotalBytes() const { return totalBytes; }
     int getTotalFiles() const { return totalFiles; }
@@ -47,7 +58,6 @@ class Archiver : public QObject
 
     // TODO: put probably in some global settings object
     static QString sliceScript;
-    static QString filePrefix;  // default = "backup"
 
   public slots:
     void cancel();  // cancel a running creation
@@ -68,6 +78,7 @@ class Archiver : public QObject
     void receivedStderr(KProcess *proc, char *buffer, int buflen);
 
   private:
+    void calculateCapacity();  // also emits signals
     void addDirFiles(QDir &dir);
     void addFile(const QFileInfo &info);
     bool addLocalFile(const QFileInfo &info);
@@ -79,12 +90,11 @@ class Archiver : public QObject
     void runScript(const QString &mode);
 
   private:
-    enum { UNLIMITED = 0 };
-
     QMap<QString, char> excludeFiles;
     QMap<QString, char> excludeDirs;
 
     QString archiveName;
+    QString filePrefix;  // default = "backup"
 
     KTar *archive;
     KIO::filesize_t totalBytes;
@@ -93,6 +103,8 @@ class Archiver : public QObject
     KURL targetURL;
     QString baseName;
     int sliceNum;
+    int maxSliceMBs;
+
     KIO::filesize_t startSize;
     KIO::filesize_t sliceBytes;
     KIO::filesize_t sliceCapacity;
