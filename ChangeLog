@@ -1,5 +1,7 @@
-25.Sept 2006
+1.Oct 2006
 - added "recent files" action
+- add profile setting to define a maximum slice size
+- store recent directory for file dialog
 
 24.Sept 2006 (0.5)
 - added systray functionality

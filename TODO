@@ -1,1 +1,4 @@
 - implement a way for restoring backups
+- directories which are not completely selected shall show
+  the parent checkbox greyed
+- fix the exit-question dialog when exiting due to session stop
