@@ -186,7 +186,8 @@ Um alle Einstellungen und Selektionen wieder zu entfernen verwenden sie das Date
 
 <para>
 &kbackup; speichert in einem Profil die Selektionen für alle inkludierten Dateien und Verzeichnisse,
-für alle exkludierten Dateien und Verzeichnisse, das Ziel für die Sicherung sowie das gewählte Archiv-Präfix.
+für alle exkludierten Dateien und Verzeichnisse, das Ziel für die Sicherung, das gewählte Archiv-Präfix,
+sowie das gewählte Größenlimit für einen Archiv Teil.
 </para>
 
 <para>
@@ -230,6 +231,16 @@ der Sicherung gleich bleibt), und eine angehängte Teil-Nummer (_1 in diesem Bei
 <para>
 Über das Menü Datei/Profil Einstellungen kann ein anderes Präfix als "backup" für die
 Archive eingestellt werden.
+</para>
+
+<para>
+Um unabhängig von der verfügbaren Kapazität des Zielverzeichnisses eine Sicherung
+in mehrere Archiv Teile einer maximalen Größe aufteilen zu können, kann man
+im Profile Einstellungen Dialog eine Maximalgröße pro Archiv Teil festlegen.
+Dies hat z.B. dann Sinn, wenn man eine Sicherung für das nachträgliche Brennen auf
+eine CD/DVD vorbereiten will.
+Wenn sie die Größe eines Archiv Teiles explizit limitieren, dann erscheint die
+verfügbare Größe mit der Markierung (*) im Hauptfenster.
 </para>
 </sect1>
 

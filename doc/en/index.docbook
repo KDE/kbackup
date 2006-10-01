@@ -222,6 +222,16 @@ slices of one backup) and a trailing slice sequence number (_1 in this example).
 In the menu File/Profile Settings you can define a different archive prefix than the
 default "backup".
 </para>
+
+<para>
+In the Profile Settings Dialog you can also define a maximum archive slice size,
+which limits the slice size even if there would be more space left on the target
+device.
+This helps to create archive slices which can then be later burned on a CD/DVD, etc.
+If you explicitely limit the size of an archive slice, the available size
+will be marked with (*) in the mainwindow.
+</para>
+
 </sect1>
 
 <sect1 id="archive-compression">
