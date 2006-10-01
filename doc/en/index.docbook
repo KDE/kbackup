@@ -57,8 +57,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2006-09-24</date>
-<releaseinfo>1.02.00</releaseinfo>
+<date>2006-10-01</date>
+<releaseinfo>1.03.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -178,7 +178,8 @@ To reload a selection into &kbackup;, use the File Menu "Load Profile".
 
 <para>
 &kbackup; saves in a profile the selections for all included directories/files,
-excluded directories/files, the target directory/URL and the defined archive prefix.
+excluded directories/files, the target directory/URL, the defined archive prefix
+and the defined maximum slice file size.
 </para>
 
 <para>
