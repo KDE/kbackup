@@ -1,6 +1,6 @@
 Summary: kbackup is an application which lets you back up your data in a simple, user friendly way.
 Name: kbackup
-Version: 0.5
+Version: 0.5.1
 Release: 1
 Copyright: GPL
 Group: Applications/Archiving
@@ -18,9 +18,9 @@ is still stored in compressed format (bzip2 or gzip).
 
 Included Languages:
 - User interface:
-  English, German, French, Italian, Russian
+  English, German, French, Italian, Russian, Slovak
 - Handbook:
-  English, German
+  English, German, French
 
 %prep
 %setup
@@ -37,8 +37,7 @@ make install
 
 /opt/kde3/bin/kbackup
 /opt/kde3/share/applications/kde/kbackup.desktop
-/opt/kde3/share/doc/HTML/en/kbackup/
-/opt/kde3/share/doc/HTML/de/kbackup/
+/opt/kde3/share/doc/HTML/*/kbackup/
 /opt/kde3/share/mimelnk/text/x-kbp.desktop
 /opt/kde3/share/icons/hicolor/16x16/mimetypes/kbackup.png
 /opt/kde3/share/icons/hicolor/32x32/mimetypes/kbackup.png
