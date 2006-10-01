@@ -11,7 +11,7 @@
             <x>0</x>
             <y>0</y>
             <width>330</width>
-            <height>112</height>
+            <height>161</height>
         </rect>
     </property>
     <property name="caption">
@@ -32,6 +32,31 @@
         <widget class="QLineEdit">
             <property name="name">
                 <cstring>prefix</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1_2</cstring>
+            </property>
+            <property name="text">
+                <string>Maximum Archive Slice Size:</string>
+            </property>
+        </widget>
+        <widget class="QSpinBox">
+            <property name="name">
+                <cstring>maxSliceSize</cstring>
+            </property>
+            <property name="suffix">
+                <string>MB</string>
+            </property>
+            <property name="specialValueText">
+                <string>unlimited</string>
+            </property>
+            <property name="maxValue">
+                <number>999999999</number>
+            </property>
+            <property name="minValue">
+                <number>0</number>
             </property>
         </widget>
         <widget class="QLayoutWidget">
