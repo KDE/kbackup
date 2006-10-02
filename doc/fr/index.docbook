@@ -69,8 +69,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2006-09-24</date>
-<releaseinfo>1.02.00</releaseinfo>
+<date>2006-10-01</date>
+<releaseinfo>1.03.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -196,7 +196,8 @@ Pour recharger une sélection dans &kbackup;, utilisez l'entrée du menu Fichier
 <para>
 &kbackup; enregistre dans un fichier profil une sélection de tous les fichiers
 et répertoires inclus, les fichiers et répertoires exclus, le répertoire ou
-l'URL cible et le préfixe de l'archive.
+l'URL cible, le préfixe de l'archive et la taille maximum d'une tranche
+d'archive.
 </para>
 
 <para>
@@ -244,6 +245,16 @@ les tranches d'une sauvegarde) ainsi qu'un numéro de séquence à la fin
 Dans le menu Fichier/Configuration du profil, vous pouvez définir un préfixe
 pour l'archive différent que la valeur par défaut «&nbsp;defaut&nbsp;»
 </para>
+
+<para>
+Vous pouvez également définir la taille maximum d'une tranche d'archive.
+Cela permet donc de limiter la taille d'une tranche d'archive, même s'il
+reste de l'espace sur le périphérique cible. Cela permet de créer des tranches
+d'archive qui peuvent être ensuite gravées sur un CD ou un DVD.
+Si vous avez explicitement limité la taille d'une archive, la taille disponible
+sera marquée par une «&nbsp;*&nbsp;» dans la fenêtre principale.
+</para>
+
 </sect1>
 
 <sect1 id="archive-compression">
