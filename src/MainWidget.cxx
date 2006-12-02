@@ -6,6 +6,7 @@
 #include <kdirselectdialog.h>
 #include <klocale.h>
 #include <klineedit.h>
+#include <kurlcompletion.h>
 
 #include <qtimer.h>
 #include <qtextedit.h>
@@ -37,6 +38,9 @@ MainWidget::MainWidget(QWidget *parent)
 
   connect(folder, SIGNAL(clicked()), this, SLOT(getMediaSize()));
   connect(targetDir, SIGNAL(returnPressed(const QString &)), this, SLOT(setTargetURL(const QString &)));
+
+  KURLCompletion *kc = new KURLCompletion(KURLCompletion::DirCompletion);
+  targetDir->setCompletionObject(kc);
 }
 
 //--------------------------------------------------------------------------------
