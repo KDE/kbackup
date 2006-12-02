@@ -84,7 +84,7 @@ void MainWidget::getMediaSize()
 
   if ( url.isEmpty() ) return;  // cancelled
 
-  targetDir->setText(url.pathOrURL());
+  targetDir->setText(KURL_pathOrURL(url));
   archiver->setTarget(targetDir->text());
 }
 

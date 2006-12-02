@@ -15,6 +15,7 @@ class MainWidget : public MainWidgetBase
 
   public slots:
     void setTargetURL(const QString &url);
+    void startBackup();
 
   private:
     Selector *selector;
@@ -22,7 +23,6 @@ class MainWidget : public MainWidgetBase
     QTime elapsed;
 
   private slots:
-    void startBackup();
     void getMediaSize();
     void updateElapsed();
     void updateTotalBytes();

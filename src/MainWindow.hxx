@@ -27,6 +27,9 @@ class MainWindow : public KMainWindow
     MainWindow();
     void loadProfile(const QString &fileName, bool adaptTreeWidth = false);
 
+    // start backup and quit application after it's finished
+    void runBackup();
+
   protected:
     virtual bool queryClose();
     virtual bool queryExit();
@@ -52,9 +55,10 @@ class MainWindow : public KMainWindow
     KSystemTray *sysTray;
     QString lastLog;
     KToggleAction *docked;
-    KAction *startBackup;
-    KAction *cancelBackup;
+    KAction *startBackupAction;
+    KAction *cancelBackupAction;
     KRecentFilesAction *recentFiles;
+    bool autorun;
 };
 
 #endif

@@ -17,6 +17,7 @@
 #include <qspinbox.h>
 #include <qtooltip.h>
 #include <qmovie.h>
+#include <qtimer.h>
 
 #include <kapplication.h>
 #include <kstdaction.h>
@@ -39,7 +40,7 @@
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
-  : KMainWindow(0, 0, 0)
+  : KMainWindow(0, 0, 0), autorun(false)
 {
   KStdAction::quit(this, SLOT(maybeQuit()), actionCollection());
 
@@ -87,16 +88,24 @@ MainWindow::MainWindow()
   connect(Archiver::instance, SIGNAL(logging(const QString &)), this, SLOT(loggingSlot(const QString &)));
   connect(Archiver::instance, SIGNAL(inProgress(bool)), this, SLOT(inProgress(bool)));
 
-  startBackup = new KAction(i18n("Start Backup"), "kbackup_start", 0, mainWidget,
-                            SLOT(startBackup()), actionCollection(), "startBackup");
-  startBackup->plug(sysTray->contextMenu(), 1);
+  startBackupAction = new KAction(i18n("Start Backup"), "kbackup_start", 0, mainWidget,
+                                  SLOT(startBackup()), actionCollection(), "startBackup");
+  startBackupAction->plug(sysTray->contextMenu(), 1);
 
-  cancelBackup = new KAction(i18n("Cancel Backup"), "kbackup_cancel", 0, Archiver::instance,
-                             SLOT(cancel()), actionCollection(), "cancelBackup");
-  cancelBackup->plug(sysTray->contextMenu(), 2);
-  cancelBackup->setEnabled(false);
+  cancelBackupAction = new KAction(i18n("Cancel Backup"), "kbackup_cancel", 0, Archiver::instance,
+                                   SLOT(cancel()), actionCollection(), "cancelBackup");
+  cancelBackupAction->plug(sysTray->contextMenu(), 2);
+  cancelBackupAction->setEnabled(false);
 
   changeSystrayTip();
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::runBackup()
+{
+  autorun = true;
+  QTimer::singleShot(0, mainWidget, SLOT(startBackup()));
 }
 
 //--------------------------------------------------------------------------------
@@ -338,14 +347,17 @@ void MainWindow::inProgress(bool runs)
   if ( runs )
   {
     sysTray->setMovie(KGlobal::instance()->iconLoader()->loadMovie("kbackup_runs", KIcon::Panel));
-    startBackup->setEnabled(false);
-    cancelBackup->setEnabled(true);
+    startBackupAction->setEnabled(false);
+    cancelBackupAction->setEnabled(true);
   }
   else
   {
     sysTray->setPixmap(sysTray->loadIcon("kbackup"));
-    startBackup->setEnabled(true);
-    cancelBackup->setEnabled(false);
+    startBackupAction->setEnabled(true);
+    cancelBackupAction->setEnabled(false);
+
+    if ( autorun )
+      kapp->quit();
   }
 }
 

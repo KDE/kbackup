@@ -33,6 +33,8 @@ int main(int argc, char **argv)
   {
      { "+[profile]", I18N_NOOP("Start with given profile"), 0 },
      { "script <file>", I18N_NOOP("Script to run after finishing one archive slice"), 0 },
+     { "auto", I18N_NOOP("Automatically run the backup and terminate when done."
+                         " Works only if also a profile is given"), 0 },
      KCmdLineLastOption // End of options.
   };
 
@@ -46,12 +48,19 @@ int main(int argc, char **argv)
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-  if ( args->count() > 0 )
-    mainWin->loadProfile(QFile::decodeName(args->arg(0)), true);
 
   QCString file = args->getOption("script");
   if ( file.length() )
     Archiver::sliceScript = QFile::decodeName(file);
+
+  if ( args->count() > 0 )
+  {
+    mainWin->loadProfile(QFile::decodeName(args->arg(0)), true);
+
+    bool autorun = args->getOption("auto");
+    if ( autorun )
+      mainWin->runBackup();
+  }
 
   return app.exec();
 }
