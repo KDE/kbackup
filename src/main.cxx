@@ -48,7 +48,6 @@ int main(int argc, char **argv)
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-
   QCString file = args->getOption("script");
   if ( file.length() )
     Archiver::sliceScript = QFile::decodeName(file);
@@ -57,7 +56,7 @@ int main(int argc, char **argv)
   {
     mainWin->loadProfile(QFile::decodeName(args->arg(0)), true);
 
-    bool autorun = args->getOption("auto");
+    bool autorun = args->isSet("auto");
     if ( autorun )
       mainWin->runBackup();
   }
