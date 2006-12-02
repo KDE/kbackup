@@ -300,7 +300,7 @@ void Archiver::runScript(const QString &mode)
     *proc << sliceScript
           << mode
           << QFile::encodeName(archiveName)
-          << QFile::encodeName(targetURL.pathOrURL())
+          << QFile::encodeName(KURL_pathOrURL(targetURL))
           << QFile::encodeName(mountPoint);
 
     connect(proc, SIGNAL(receivedStdout(KProcess *, char *, int )),
@@ -767,6 +767,16 @@ bool Archiver::getDiskFree(const QString &path, KIO::filesize_t &capacityB, KIO:
   freeB = static_cast<KIO::filesize_t>(vfs.f_bavail) * static_cast<KIO::filesize_t>(vfs.f_frsize);
 
   return true;
+}
+
+//--------------------------------------------------------------------------------
+
+QString KURL_pathOrURL(const KURL &kurl)
+{
+  if ( kurl.isLocalFile() && kurl.ref().isNull() && kurl.query().isNull() )
+    return kurl.path();
+  else
+    return kurl.prettyURL();
 }
 
 //--------------------------------------------------------------------------------

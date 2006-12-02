@@ -119,4 +119,7 @@ class Archiver : public QObject
     int jobResult;
 };
 
+// to be compileable for KDE <= 3.4
+QString KURL_pathOrURL(const KURL &kurl);
+
 #endif
