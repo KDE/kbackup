@@ -1,20 +1,20 @@
 # translation of de.po to Deutsch
 # translation of kbackup.po to
 # This file is put in the public domain.
-# Martin Koller <koller@etm.at>, 2006.
 #
+# Martin Koller <koller@etm.at>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-01 20:10+0200\n"
-"PO-Revision-Date: 2006-10-01 20:11+0200\n"
+"POT-Creation-Date: 2007-01-06 12:07+0100\n"
+"PO-Revision-Date: 2007-01-06 12:11+0100\n"
 "Last-Translator: Martin Koller <koller@etm.at>\n"
 "Language-Team: Deutsch\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: Archiver.cxx:130
 msgid "Nothing selected for backup"
@@ -120,50 +120,50 @@ msgid "...compressing file %1"
 msgstr "...komprimiere Datei %1"
 
 #. i18n: file ./SettingsDialog.ui line 53
-#: MainWidget.cxx:139 SettingsDialog.cxx:88 rc.cpp:21
+#: MainWidget.cxx:143 SettingsDialog.cxx:88 rc.cpp:21
 #, no-c-format
 msgid "unlimited"
 msgstr "unlimitiert"
 
 #. i18n: file ./MainWidgetBase.ui line 18
-#: MainWidgetBase.cxx:198 main.cxx:22 rc.cpp:30
+#: MainWidgetBase.cxx:197 main.cxx:22 rc.cpp:30
 #, no-c-format
 msgid "KBackup"
 msgstr "KBackup"
 
 #. i18n: file ./MainWidgetBase.ui line 56
-#: MainWidgetBase.cxx:199 MainWindow.cxx:90 rc.cpp:33
+#: MainWidgetBase.cxx:198 MainWindow.cxx:91 rc.cpp:33
 #, no-c-format
 msgid "Start Backup"
 msgstr "Starte Sicherung"
 
 #. i18n: file ./MainWidgetBase.ui line 84
-#: MainWidgetBase.cxx:200 MainWindow.cxx:94 rc.cpp:36
+#: MainWidgetBase.cxx:199 MainWindow.cxx:95 rc.cpp:36
 #, no-c-format
 msgid "Cancel Backup"
 msgstr "Sicherung Abbrechen"
 
 #. i18n: file ./MainWidgetBase.ui line 97
-#: MainWidgetBase.cxx:201 rc.cpp:39
+#: MainWidgetBase.cxx:200 rc.cpp:39
 #, no-c-format
 msgid "Target"
 msgstr "Ziel"
 
 #. i18n: file ./MainWidgetBase.ui line 108
-#: MainWidgetBase.cxx:202 rc.cpp:42
+#: MainWidgetBase.cxx:201 rc.cpp:42
 #, no-c-format
 msgid "Folder:"
 msgstr "Verzeichnis:"
 
 #. i18n: file ./MainWidgetBase.ui line 127
 #. i18n: file ./MainWidgetBase.ui line 253
-#: MainWidgetBase.cxx:204 MainWidgetBase.cxx:211 rc.cpp:46 rc.cpp:67
+#: MainWidgetBase.cxx:203 MainWidgetBase.cxx:210 rc.cpp:46 rc.cpp:67
 #, no-c-format
 msgid "Size:"
 msgstr "Größe:"
 
 #. i18n: file ./MainWidgetBase.ui line 143
-#: MainWidgetBase.cxx:205 rc.cpp:49
+#: MainWidgetBase.cxx:204 rc.cpp:49
 #, no-c-format
 msgid "Medium:"
 msgstr "Medium:"
@@ -171,100 +171,100 @@ msgstr "Medium:"
 #. i18n: file ./MainWidgetBase.ui line 165
 #. i18n: file ./MainWidgetBase.ui line 234
 #. i18n: file ./MainWidgetBase.ui line 261
-#: MainWidgetBase.cxx:206 MainWidgetBase.cxx:210 MainWidgetBase.cxx:212
+#: MainWidgetBase.cxx:205 MainWidgetBase.cxx:209 MainWidgetBase.cxx:211
 #: rc.cpp:52 rc.cpp:64 rc.cpp:70
 #, no-c-format
 msgid "0"
 msgstr "0"
 
 #. i18n: file ./MainWidgetBase.ui line 197
-#: MainWidgetBase.cxx:207 rc.cpp:55
+#: MainWidgetBase.cxx:206 rc.cpp:55
 #, no-c-format
 msgid "0 MB"
 msgstr "0 MB"
 
 #. i18n: file ./MainWidgetBase.ui line 207
-#: MainWidgetBase.cxx:208 rc.cpp:58
+#: MainWidgetBase.cxx:207 rc.cpp:58
 #, no-c-format
 msgid "Totals"
 msgstr "Summen"
 
 #. i18n: file ./MainWidgetBase.ui line 226
-#: MainWidgetBase.cxx:209 rc.cpp:61
+#: MainWidgetBase.cxx:208 rc.cpp:61
 #, no-c-format
 msgid "Files:"
 msgstr "Dateien:"
 
 #. i18n: file ./SettingsDialog.ui line 50
 #. i18n: file ./MainWidgetBase.ui line 272
-#: MainWidgetBase.cxx:213 SettingsDialog.cxx:87 rc.cpp:18 rc.cpp:73
+#: MainWidgetBase.cxx:212 SettingsDialog.cxx:87 rc.cpp:18 rc.cpp:73
 #, no-c-format
 msgid "MB"
 msgstr "MB"
 
 #. i18n: file ./MainWidgetBase.ui line 308
-#: MainWidgetBase.cxx:214 rc.cpp:76
+#: MainWidgetBase.cxx:213 rc.cpp:76
 #, no-c-format
 msgid "Duration:"
 msgstr "Dauer:"
 
 #. i18n: file ./MainWidgetBase.ui line 316
-#: MainWidgetBase.cxx:215 rc.cpp:79
+#: MainWidgetBase.cxx:214 rc.cpp:79
 #, no-c-format
 msgid "00:00:00"
 msgstr "00:00:00"
 
 #. i18n: file ./MainWidgetBase.ui line 373
-#: MainWidgetBase.cxx:216 rc.cpp:82
+#: MainWidgetBase.cxx:215 rc.cpp:82
 #, no-c-format
 msgid "Warnings:"
 msgstr "Warnungen:"
 
 #. i18n: file ./MainWidgetBase.ui line 398
-#: MainWidgetBase.cxx:217 rc.cpp:85
+#: MainWidgetBase.cxx:216 rc.cpp:85
 #, no-c-format
 msgid "Progress:"
 msgstr "Fortschritt:"
 
-#: MainWindow.cxx:46
+#: MainWindow.cxx:47
 msgid "New Profile"
 msgstr "Neues Profil"
 
-#: MainWindow.cxx:49
+#: MainWindow.cxx:50
 msgid "Load Profile"
 msgstr "Lade Profil"
 
-#: MainWindow.cxx:52
+#: MainWindow.cxx:53
 msgid "Save Profile"
 msgstr "Speichere Profil"
 
 #. i18n: file ./SettingsDialog.ui line 18
-#: MainWindow.cxx:55 SettingsDialog.cxx:84 rc.cpp:9
+#: MainWindow.cxx:56 SettingsDialog.cxx:84 rc.cpp:9
 #, no-c-format
 msgid "Profile Settings"
 msgstr "Profil Einstellungen"
 
-#: MainWindow.cxx:58
+#: MainWindow.cxx:59
 msgid "Dock in System Tray"
 msgstr "Im Systembereich der Kontrollleiste andocken"
 
-#: MainWindow.cxx:109
+#: MainWindow.cxx:118
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Eine Sicherung läuft gerade. Soll sie abgebrochen werden?"
 
-#: MainWindow.cxx:155 MainWindow.cxx:238
+#: MainWindow.cxx:164 MainWindow.cxx:247
 msgid "KBackup Profile (*.kbp)"
 msgstr "KBackup Profile (*.kbp)"
 
-#: MainWindow.cxx:170
+#: MainWindow.cxx:179
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Konnte das Profil '%1' nicht laden: %2"
 
-#: MainWindow.cxx:173 MainWindow.cxx:263
+#: MainWindow.cxx:182 MainWindow.cxx:272
 msgid "Open failed"
 msgstr "Öffnen fehlgeschlagen"
 
-#: MainWindow.cxx:247
+#: MainWindow.cxx:256
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
@@ -272,15 +272,15 @@ msgstr ""
 "Das Profil '%1' existiert bereits.\n"
 "Soll es überschrieben werden?"
 
-#: MainWindow.cxx:250
+#: MainWindow.cxx:259
 msgid "Profile exists"
 msgstr "Profil existiert"
 
-#: MainWindow.cxx:260
+#: MainWindow.cxx:269
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Konnte das Profil '%1' nicht schreiben: %2"
 
-#: MainWindow.cxx:326
+#: MainWindow.cxx:335
 msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
@@ -327,6 +327,12 @@ msgstr "Starte mit angegebenem Profil"
 #: main.cxx:35
 msgid "Script to run after finishing one archive slice"
 msgstr "Starte Script nach Fertigstellung eines Archives"
+
+#: main.cxx:36
+msgid ""
+"Automatically run the backup and terminate when done. Works only if also a "
+"profile is given"
+msgstr "Automatischer Start der Sicherung und Programmende nach fertiger Sicherung. Funktioniert nur wenn auch ein Profil angegeben wurde"
 
 #: _translatorinfo.cpp:1
 msgid ""
