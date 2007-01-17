@@ -10,8 +10,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>330</width>
-            <height>161</height>
+            <width>340</width>
+            <height>182</height>
         </rect>
     </property>
     <property name="caption">
@@ -34,30 +34,53 @@
                 <cstring>prefix</cstring>
             </property>
         </widget>
-        <widget class="QLabel">
+        <widget class="QGroupBox">
             <property name="name">
-                <cstring>textLabel1_2</cstring>
+                <cstring>groupBox2</cstring>
             </property>
-            <property name="text">
-                <string>Maximum Archive Slice Size:</string>
+            <property name="title">
+                <string>Maximum Archive Size:</string>
             </property>
-        </widget>
-        <widget class="QSpinBox">
-            <property name="name">
-                <cstring>maxSliceSize</cstring>
-            </property>
-            <property name="suffix">
-                <string>MB</string>
-            </property>
-            <property name="specialValueText">
-                <string>unlimited</string>
-            </property>
-            <property name="maxValue">
-                <number>999999999</number>
-            </property>
-            <property name="minValue">
-                <number>0</number>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout2</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QComboBox">
+                            <property name="name">
+                                <cstring>predefSizes</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QSpinBox">
+                            <property name="name">
+                                <cstring>maxSliceSize</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="suffix">
+                                <string>MB</string>
+                            </property>
+                            <property name="specialValueText">
+                                <string>unlimited</string>
+                            </property>
+                            <property name="maxValue">
+                                <number>999999999</number>
+                            </property>
+                            <property name="minValue">
+                                <number>0</number>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
         </widget>
         <widget class="QLayoutWidget">
             <property name="name">
@@ -117,7 +140,23 @@
         <receiver>SettingsDialog</receiver>
         <slot>reject()</slot>
     </connection>
+    <connection>
+        <sender>predefSizes</sender>
+        <signal>activated(int)</signal>
+        <receiver>SettingsDialog</receiver>
+        <slot>sizeSelected(int)</slot>
+    </connection>
 </connections>
+<includes>
+    <include location="local" impldecl="in implementation">SettingsDialog.ui.h</include>
+</includes>
+<slots>
+    <slot access="private" specifier="non virtual">sizeSelected( int idx )</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function specifier="non virtual">setMaxMB( int mb )</function>
+</functions>
 <layoutdefaults spacing="6" margin="11"/>
 <layoutfunctions spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
 </UI>

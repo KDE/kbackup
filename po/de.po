@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-06 12:07+0100\n"
-"PO-Revision-Date: 2007-01-06 12:11+0100\n"
+"POT-Creation-Date: 2007-01-17 19:34+0100\n"
+"PO-Revision-Date: 2007-01-17 19:36+0100\n"
 "Last-Translator: Martin Koller <koller@etm.at>\n"
 "Language-Team: Deutsch\n"
 "MIME-Version: 1.0\n"
@@ -119,8 +119,8 @@ msgstr ""
 msgid "...compressing file %1"
 msgstr "...komprimiere Datei %1"
 
-#. i18n: file ./SettingsDialog.ui line 53
-#: MainWidget.cxx:143 SettingsDialog.cxx:88 rc.cpp:21
+#. i18n: file ./SettingsDialog.ui line 72
+#: MainWidget.cxx:143 SettingsDialog.cxx:105 rc.cpp:21 SettingsDialog.ui.h:17
 #, no-c-format
 msgid "unlimited"
 msgstr "unlimitiert"
@@ -195,9 +195,9 @@ msgstr "Summen"
 msgid "Files:"
 msgstr "Dateien:"
 
-#. i18n: file ./SettingsDialog.ui line 50
+#. i18n: file ./SettingsDialog.ui line 69
 #. i18n: file ./MainWidgetBase.ui line 272
-#: MainWidgetBase.cxx:212 SettingsDialog.cxx:87 rc.cpp:18 rc.cpp:73
+#: MainWidgetBase.cxx:212 SettingsDialog.cxx:104 rc.cpp:18 rc.cpp:73
 #, no-c-format
 msgid "MB"
 msgstr "MB"
@@ -239,7 +239,7 @@ msgid "Save Profile"
 msgstr "Speichere Profil"
 
 #. i18n: file ./SettingsDialog.ui line 18
-#: MainWindow.cxx:56 SettingsDialog.cxx:84 rc.cpp:9
+#: MainWindow.cxx:56 SettingsDialog.cxx:101 rc.cpp:9
 #, no-c-format
 msgid "Profile Settings"
 msgstr "Profil Einstellungen"
@@ -301,15 +301,15 @@ msgid "Last Modified"
 msgstr "Zuletzt Geändert"
 
 #. i18n: file ./SettingsDialog.ui line 29
-#: SettingsDialog.cxx:85 rc.cpp:12
+#: SettingsDialog.cxx:102 rc.cpp:12
 #, no-c-format
 msgid "Archive Prefix (empty for default):"
 msgstr "Archiv Präfix (leer für Standardvorgabe):"
 
 #. i18n: file ./SettingsDialog.ui line 42
-#: SettingsDialog.cxx:86 rc.cpp:15
+#: SettingsDialog.cxx:103 rc.cpp:15
 #, no-c-format
-msgid "Maximum Archive Slice Size:"
+msgid "Maximum Archive Size:"
 msgstr "Maximale Archiv Teil Größe:"
 
 #: main.cxx:23
@@ -332,7 +332,9 @@ msgstr "Starte Script nach Fertigstellung eines Archives"
 msgid ""
 "Automatically run the backup and terminate when done. Works only if also a "
 "profile is given"
-msgstr "Automatischer Start der Sicherung und Programmende nach fertiger Sicherung. Funktioniert nur wenn auch ein Profil angegeben wurde"
+msgstr ""
+"Automatischer Start der Sicherung und Programmende nach fertiger Sicherung. "
+"Funktioniert nur wenn auch ein Profil angegeben wurde"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -345,6 +347,34 @@ msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
 msgstr "m.koller@surfeu.at"
+
+#: SettingsDialog.ui.h:18
+msgid "650 MB"
+msgstr "650 MB"
+
+#: SettingsDialog.ui.h:19
+msgid "700 MB"
+msgstr "700 MB"
+
+#: SettingsDialog.ui.h:20
+msgid "4.7 GB"
+msgstr "4,7 GB"
+
+#: SettingsDialog.ui.h:21
+msgid "8.5 GB"
+msgstr "8,5 GB"
+
+#: SettingsDialog.ui.h:22
+msgid "9.4 GB"
+msgstr "9,4 GB"
+
+#: SettingsDialog.ui.h:23
+msgid "17 GB"
+msgstr "17 GB"
+
+#: SettingsDialog.ui.h:24
+msgid "custom"
+msgstr "benutzerdefiniert"
 
 #~ msgid "Elapsed Time:"
 #~ msgstr "Vergangene Zeit:"

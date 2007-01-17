@@ -295,7 +295,7 @@ void MainWindow::profileSettings()
   SettingsDialog dialog(this);
 
   dialog.prefix->setText(Archiver::instance->getFilePrefix());
-  dialog.maxSliceSize->setValue(Archiver::instance->getMaxSliceMBs());
+  dialog.setMaxMB(Archiver::instance->getMaxSliceMBs());
 
   if ( dialog.exec() == QDialog::Accepted )
   {
