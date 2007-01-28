@@ -182,13 +182,17 @@ void Archiver::createArchive(const QStringList &includes, const QStringList &exc
 
   finishSlice();
 
-  if ( !cancelled )
-    emit logging(i18n("-- Backup successfully finished --"));
-  else
-    emit logging(i18n("...Backup aborted!"));
-
   runs = false;
   emit inProgress(false);
+
+  if ( !cancelled )
+  {
+    emit logging(i18n("-- Backup successfully finished --"));
+    KMessageBox::information(static_cast<QWidget*>(parent()),
+                             i18n("The backup has finished successfully."), QString::null, "showDoneInfo");
+  }
+  else
+    emit logging(i18n("...Backup aborted!"));
 }
 
 //--------------------------------------------------------------------------------
