@@ -77,6 +77,9 @@ MainWindow::MainWindow()
 
   setCentralWidget(splitter);
 
+  // save/restore window settings and size
+  setAutoSaveSettings();
+
   // system tray icon
   sysTray = new KSystemTray(this);
   sysTray->setPixmap(sysTray->loadIcon("kbackup"));
