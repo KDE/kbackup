@@ -22,7 +22,7 @@ class Selector : public QListView
     Selector(QWidget *parent = 0);
 
     void getBackupList(QStringList &includes, QStringList &excludes) const;
-    void setBackupList(QStringList &includes, QStringList &excludes);
+    void setBackupList(const QStringList &includes, const QStringList &excludes);
 
     virtual QSize minimumSizeHint() const;
 

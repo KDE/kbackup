@@ -16,26 +16,65 @@
 
 #include <qdir.h>
 
-//#include <iostream>
-//using namespace std;
+#include <iostream>
+using namespace std;
 //--------------------------------------------------------------------------------
 
 class ListItem : public QCheckListItem
 {
   public:
     ListItem(QListView *parent, const QString &text, bool dir)
-      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir)
+      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir), onPath(false)
     {
     }
 
     ListItem(QListViewItem *parent, const QString &text, bool dir)
-      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir)
+      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir), onPath(false)
     {
+    }
+
+    // mark all parents up to the root as "onPath"
+    void recursOnPathUp()
+    {
+      onPath = true;
+      repaint();
+
+      if ( parent() )
+        static_cast<ListItem*>(parent())->recursOnPathUp();
+    }
+
+    // if all siblings are off, the parent onPath flag can be cleared
+    // but only if the parent itself is not checked
+    void recursSiblingsOnPathUp()
+    {
+      if ( !parent() || static_cast<ListItem*>(parent())->isOn() ) return;
+
+      bool allOff = true;
+      for (QListViewItem *item = parent()->firstChild(); item; item = item->nextSibling())
+        if ( static_cast<ListItem*>(item)->onPath )
+        {
+          allOff = false;
+          break;
+        }
+
+      if ( allOff )
+      {
+        static_cast<ListItem*>(parent())->onPath = false;
+        parent()->repaint();
+        static_cast<ListItem*>(parent())->recursSiblingsOnPathUp();
+      }
     }
 
     virtual void stateChange(bool b)
     {
       QCheckListItem::stateChange(b);
+
+      onPath = b;
+
+      if ( b )  // if mark set, all parents recursively up are on the path
+        recursOnPathUp();
+      else
+        recursSiblingsOnPathUp();
 
       if ( ! isExpandable() ) return;
 
@@ -46,6 +85,7 @@ class ListItem : public QCheckListItem
     void recursActivate(bool on)
     {
       setOn(on);
+      onPath = on;
 
       for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
         static_cast<ListItem*>(item)->recursActivate(on);
@@ -53,8 +93,19 @@ class ListItem : public QCheckListItem
 
     bool isDir() const { return isDir_; }
 
+    virtual void paintCell(QPainter *p, const QColorGroup & cg, int column, int width, int align)
+    {
+      QColorGroup colorGroup(cg);
+
+      if ( onPath )
+        colorGroup.setColor(QColorGroup::Text, Qt::blue);
+
+      QCheckListItem::paintCell(p, colorGroup, column, width, align);
+    }
+
   private:
     bool isDir_;
+    bool onPath;  // is this an item on the path down to a marked one
 };
 
 //--------------------------------------------------------------------------------
@@ -198,7 +249,7 @@ void Selector::getBackupLists(QListViewItem *start, QStringList &includes, QStri
 
 //--------------------------------------------------------------------------------
 
-void Selector::setBackupList(QStringList &includes, QStringList &excludes)
+void Selector::setBackupList(const QStringList &includes, const QStringList &excludes)
 {
   // clear all current settings
   for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
