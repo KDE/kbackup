@@ -24,44 +24,36 @@ class ListItem : public QCheckListItem
 {
   public:
     ListItem(QListView *parent, const QString &text, bool dir)
-      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir), onPath(false)
+      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir), partly(false)
     {
     }
 
     ListItem(QListViewItem *parent, const QString &text, bool dir)
-      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir), onPath(false)
+      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir), partly(false)
     {
     }
 
-    // mark all parents up to the root as "onPath"
-    void recursOnPathUp()
+    // check if all siblings have the same state as the parent or are partly marked
+    // If not, then the parent must have the partly flag set, otherwise the parents
+    // partly flag can be cleared
+    void recursSiblingsUp()
     {
-      onPath = true;
-      repaint();
+      if ( !parent() ) return;
 
-      if ( parent() )
-        static_cast<ListItem*>(parent())->recursOnPathUp();
-    }
-
-    // if all siblings are off, the parent onPath flag can be cleared
-    // but only if the parent itself is not checked
-    void recursSiblingsOnPathUp()
-    {
-      if ( !parent() || static_cast<ListItem*>(parent())->isOn() ) return;
-
-      bool allOff = true;
+      bool allSame = true, state = static_cast<ListItem*>(parent())->isOn();
       for (QListViewItem *item = parent()->firstChild(); item; item = item->nextSibling())
-        if ( static_cast<ListItem*>(item)->onPath )
+        if ( (static_cast<ListItem*>(item)->isOn() != state) || static_cast<ListItem*>(item)->partly )
         {
-          allOff = false;
+          allSame = false;
           break;
         }
 
-      if ( allOff )
+      // only continue upwards if the parents partly status changes
+      if ( static_cast<ListItem*>(parent())->partly != !allSame )
       {
-        static_cast<ListItem*>(parent())->onPath = false;
+        static_cast<ListItem*>(parent())->partly = !allSame;
         parent()->repaint();
-        static_cast<ListItem*>(parent())->recursSiblingsOnPathUp();
+        static_cast<ListItem*>(parent())->recursSiblingsUp();
       }
     }
 
@@ -69,23 +61,15 @@ class ListItem : public QCheckListItem
     {
       QCheckListItem::stateChange(b);
 
-      onPath = b;
-
-      if ( b )  // if mark set, all parents recursively up are on the path
-        recursOnPathUp();
-      else
-        recursSiblingsOnPathUp();
-
-      if ( ! isExpandable() ) return;
-
       recursActivate(isOn());
+      recursSiblingsUp();
     }
 
     // set all children recursively below this to on
     void recursActivate(bool on)
     {
       setOn(on);
-      onPath = on;
+      partly = false;  // all children will get the same state
 
       for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
         static_cast<ListItem*>(item)->recursActivate(on);
@@ -97,7 +81,7 @@ class ListItem : public QCheckListItem
     {
       QColorGroup colorGroup(cg);
 
-      if ( onPath )
+      if ( partly )
         colorGroup.setColor(QColorGroup::Text, Qt::blue);
 
       QCheckListItem::paintCell(p, colorGroup, column, width, align);
@@ -105,7 +89,7 @@ class ListItem : public QCheckListItem
 
   private:
     bool isDir_;
-    bool onPath;  // is this an item on the path down to a marked one
+    bool partly;  // is this an item which is not fully (but partly - some of the children) selected
 };
 
 //--------------------------------------------------------------------------------
