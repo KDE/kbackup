@@ -1,5 +1,5 @@
 /***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
+ *   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -18,6 +18,7 @@
 #include <qtooltip.h>
 #include <qmovie.h>
 #include <qtimer.h>
+#include <qcursor.h>
 
 #include <kapplication.h>
 #include <kstdaction.h>
@@ -186,6 +187,8 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
     return;
   }
 
+  QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
   KURL url;
   url.setPath(fileName);
   recentFiles->addURL(url);
@@ -241,6 +244,8 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
 
   if ( adaptTreeWidth )
     selector->adjustColumn(0);
+
+  QApplication::restoreOverrideCursor();
 }
 
 //--------------------------------------------------------------------------------
