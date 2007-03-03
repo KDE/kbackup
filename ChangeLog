@@ -1,4 +1,7 @@
 21.Dec. 2006 (0.5.2)
+- Whenever a directory is only partly included, show it with blue color
+- Show a dialog when the backup has finished
+- automatically save/restore window size
 - add "auto" commandline option to automatically start a backup
   and quit kbackup when done.
 - added predefined slice sizes (for CDs, DVDs) in profile settings dialog
