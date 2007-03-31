@@ -188,8 +188,15 @@ void Archiver::createArchive(const QStringList &includes, const QStringList &exc
   if ( !cancelled )
   {
     emit logging(i18n("-- Backup successfully finished --"));
-    KMessageBox::information(static_cast<QWidget*>(parent()),
-                             i18n("The backup has finished successfully."), QString::null, "showDoneInfo");
+
+    int ret = KMessageBox::questionYesNo(static_cast<QWidget*>(parent()),
+                             i18n("The backup has finished successfully.\n"
+                                  "What do you want to do now?"), QString::null,
+                             KStdGuiItem::cont(), KStdGuiItem::quit(),
+                             "showDoneInfo");
+
+    if ( ret == KMessageBox::No ) // quit
+      qApp->quit();
   }
   else
     emit logging(i18n("...Backup aborted!"));
