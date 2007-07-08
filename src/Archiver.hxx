@@ -36,7 +36,7 @@ class Archiver : public QObject
 
     static Archiver *instance;
 
-    // always call after you have already set maxSliceMBs, as the sliceCpacity
+    // always call after you have already set maxSliceMBs, as the sliceCapacity
     // might be limited with it
     void setTarget(const KURL &target);
 
@@ -46,6 +46,12 @@ class Archiver : public QObject
 
     void setFilePrefix(const QString &prefix);
     const QString &getFilePrefix() const { return filePrefix; }
+
+    void setMediaNeedsChange(bool b) { mediaNeedsChange = b; }
+    bool getMediaNeedsChange() const { return mediaNeedsChange; }
+
+    void setCompressFiles(bool b);
+    bool getCompressFiles() const { return filterBase != 0; }
 
     void createArchive(const QStringList &includes, const QStringList &excludes);
 
@@ -104,6 +110,8 @@ class Archiver : public QObject
     QString baseName;
     int sliceNum;
     int maxSliceMBs;
+    bool mediaNeedsChange;
+    bool compressFiles;
 
     KIO::filesize_t startSize;
     KIO::filesize_t sliceBytes;

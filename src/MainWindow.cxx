@@ -1,11 +1,11 @@
-/***************************************************************************
- *   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at                      *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
+//**************************************************************************
+//   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//**************************************************************************
 
 #include <MainWindow.hxx>
 #include <Selector.hxx>
@@ -19,6 +19,7 @@
 #include <qmovie.h>
 #include <qtimer.h>
 #include <qcursor.h>
+#include <qcheckbox.h>
 
 #include <kapplication.h>
 #include <kstdaction.h>
@@ -56,6 +57,9 @@ MainWindow::MainWindow()
 
   new KAction(i18n("Profile Settings"), "", 0, this,
               SLOT(profileSettings()), actionCollection(), "profileSettings");
+
+  new KAction(i18n("Enable All Messages"), "", 0, this,
+              SLOT(enableAllMessages()), actionCollection(), "enableAllMessages");
 
   docked = new KToggleAction(i18n("Dock in System Tray"), KShortcut(), this,
                              SLOT(dockInSysTray()), actionCollection(), "dockInSysTray");
@@ -224,6 +228,18 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
       stream >> max;
       Archiver::instance->setMaxSliceMBs(max);
     }
+    else if ( type == 'C' )
+    {
+      int change;
+      stream >> change;
+      Archiver::instance->setMediaNeedsChange(change);
+    }
+    else if ( type == 'Z' )
+    {
+      int compress;
+      stream >> compress;
+      Archiver::instance->setCompressFiles(compress);
+    }
     else if ( type == 'I' )
     {
       includes.append(stream.readLine());
@@ -286,6 +302,8 @@ void MainWindow::saveProfile()
   stream << "M " << mainWidget->targetDir->text() << endl;
   stream << "P " << Archiver::instance->getFilePrefix() << endl;
   stream << "S " << Archiver::instance->getMaxSliceMBs() << endl;
+  stream << "C " << static_cast<int>(Archiver::instance->getMediaNeedsChange()) << endl;
+  stream << "Z " << static_cast<int>(Archiver::instance->getCompressFiles()) << endl;
 
   for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
     stream << "I " << *it << endl;
@@ -304,11 +322,15 @@ void MainWindow::profileSettings()
 
   dialog.prefix->setText(Archiver::instance->getFilePrefix());
   dialog.setMaxMB(Archiver::instance->getMaxSliceMBs());
+  dialog.mediaNeedsChange->setChecked(Archiver::instance->getMediaNeedsChange());
+  dialog.compressFiles->setChecked(Archiver::instance->getCompressFiles());
 
   if ( dialog.exec() == QDialog::Accepted )
   {
     Archiver::instance->setFilePrefix(dialog.prefix->text().stripWhiteSpace());
     Archiver::instance->setMaxSliceMBs(dialog.maxSliceSize->value());
+    Archiver::instance->setMediaNeedsChange(dialog.mediaNeedsChange->isChecked());
+    Archiver::instance->setCompressFiles(dialog.compressFiles->isChecked());
   }
 }
 
@@ -318,6 +340,7 @@ void MainWindow::newProfile()
 {
   Archiver::instance->setFilePrefix("");  // back to default
   Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
+  Archiver::instance->setMediaNeedsChange(true);
   Archiver::instance->setTarget("");
 
   // clear selection
@@ -376,6 +399,13 @@ void MainWindow::dockInSysTray()
   KGlobal::instance()->config()->writeEntry("dockInSysTray", docked->isChecked());
 
   sysTray->setShown(docked->isChecked());
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::enableAllMessages()
+{
+  KMessageBox::enableAllMessages();
 }
 
 //--------------------------------------------------------------------------------

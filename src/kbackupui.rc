@@ -10,6 +10,7 @@
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>
     <Action name="dockInSysTray"/>
+    <Action name="enableAllMessages"/>
   </Menu>
 </MenuBar>
 </kpartgui>

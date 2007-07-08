@@ -1,11 +1,11 @@
-/***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
+//**************************************************************************
+//   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//**************************************************************************
 
 #include <Selector.hxx>
 
@@ -68,8 +68,8 @@ class ListItem : public QCheckListItem
     // set all children recursively below this to on
     void recursActivate(bool on)
     {
-      setOn(on);
       partly = false;  // all children will get the same state
+      setOn(on);
 
       for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
         static_cast<ListItem*>(item)->recursActivate(on);
@@ -114,6 +114,18 @@ Selector::Selector(QWidget *parent)
   minSize = QSize(columnWidth(0) + columnWidth(1), -1);
 
   connect(this, SIGNAL(expanded(QListViewItem *)), this, SLOT(expandedSlot(QListViewItem*)));
+
+  // for convenience, open the tree at the HOME directory
+  char *home = ::getenv("HOME");
+  if ( home )
+  {
+    QListViewItem *item = findItemByPath(QFile::decodeName(home));
+    if ( item )
+    {
+      item->setOpen(true);
+      ensureItemVisible(item);
+    }
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -235,6 +247,9 @@ void Selector::getBackupLists(QListViewItem *start, QStringList &includes, QStri
 
 void Selector::setBackupList(const QStringList &includes, const QStringList &excludes)
 {
+  int sortCol = sortColumn();
+  setSorting(-1);  // otherwise the performance is very bad as firstChild() always sorts
+
   // clear all current settings
   for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
     static_cast<ListItem*>(item)->recursActivate(false);
@@ -252,6 +267,8 @@ void Selector::setBackupList(const QStringList &includes, const QStringList &exc
     if ( item )
       static_cast<ListItem*>(item)->setOn(false);
   }
+
+  setSorting(sortCol);
 }
 
 //--------------------------------------------------------------------------------

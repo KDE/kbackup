@@ -45,6 +45,7 @@ class MainWindow : public KMainWindow
     void dockInSysTray();
     void maybeQuit();
     void recentProfileSelected(const KURL &url);
+    void enableAllMessages();
 
   private:
     bool stopAllowed();

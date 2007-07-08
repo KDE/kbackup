@@ -1,13 +1,18 @@
-21.Dec. 2006 (0.5.2)
+17.June 2007 (0.5.2)
+- start with the HOME folder opened
+- add a profile option to avoid media change dialog
+- add a profile option to avoid compressing files at all
+
+21.Dec. 2006
 - Whenever a directory is only partly included, show it with blue color
 - Show a dialog when the backup has finished
 - automatically save/restore window size
 - add "auto" commandline option to automatically start a backup
   and quit kbackup when done.
 - added predefined slice sizes (for CDs, DVDs) in profile settings dialog
-- added portugese translation thanks to Carlos Gonçalves
+- added portugese translation thanks to Carlos GonÃ§alves
 
-1.Oct 2006
+1.Oct 2006 (0.5.1)
 - added "recent files" action
 - add profile setting to define a maximum slice size
 - store recent directory for file dialog

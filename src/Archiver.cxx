@@ -1,11 +1,11 @@
-/***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
+//**************************************************************************
+//   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//**************************************************************************
 
 #include <Archiver.hxx>
 
@@ -42,19 +42,34 @@ Archiver *Archiver::instance;
 
 Archiver::Archiver(QWidget *parent)
   : QObject(parent),
-    archive(0), totalBytes(0), totalFiles(0), sliceNum(0), sliceCapacity(0),
-    cancelled(false), runs(false), jobResult(0)
+    archive(0), totalBytes(0), totalFiles(0), sliceNum(0), mediaNeedsChange(true),
+    sliceCapacity(0), cancelled(false), runs(false), jobResult(0)
 {
   instance = this;
 
   maxSliceMBs = Archiver::UNLIMITED;
 
-  ext = ".bz2";
-  filterBase = KFilterBase::findFilterByMimeType("application/x-bzip2");
-  if ( !filterBase )
+  setCompressFiles(true);
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::setCompressFiles(bool b)
+{
+  if ( b )
   {
-    filterBase = KFilterBase::findFilterByMimeType("application/x-gzip");
-    ext = ".gz";
+    ext = ".bz2";
+    filterBase = KFilterBase::findFilterByMimeType("application/x-bzip2");
+    if ( !filterBase )
+    {
+      filterBase = KFilterBase::findFilterByMimeType("application/x-gzip");
+      ext = ".gz";
+    }
+  }
+  else
+  {
+    ext = "";
+    filterBase = 0;
   }
 }
 
@@ -223,17 +238,25 @@ void Archiver::finishSlice()
 
   if ( sliceCapacity == UNLIMITED )
   {
-    // now let's compress the file
-    if ( ! cancelled )
-      compressFile(archiveName, archiveName + ext);
+    if ( filterBase )  // user wants compression
+    {
+      // now let's compress the file
+      if ( ! cancelled )
+        compressFile(archiveName, archiveName + ext);
 
-    QFile(archiveName).remove();  // remove uncompressed file
+      QFile(archiveName).remove();  // remove uncompressed file
 
-    archiveName += ext; // this is now the final name
+      archiveName += ext; // this is now the final name
+    }
   }
 
   if ( ! cancelled )
+  {
     runScript("slice_closed");
+
+    if ( targetURL.isLocalFile() )
+      emit logging(i18n("...finished slice %1").arg(archiveName));
+  }
 
   if ( !cancelled && !targetURL.isLocalFile() )
   {
@@ -247,7 +270,7 @@ void Archiver::finishSlice()
 
       connect(job, SIGNAL(result(KIO::Job *)), this, SLOT(slotResult(KIO::Job *)));
 
-      emit logging(i18n("...uploading archive to %1").arg(targetURL.prettyURL()));
+      emit logging(i18n("...uploading archive %1 to %2").arg(source.fileName()).arg(targetURL.prettyURL()));
 
       while ( job )
         qApp->processEvents();
@@ -352,7 +375,8 @@ bool Archiver::getNextSlice()
     finishSlice();
     if ( cancelled ) return false;
 
-    if ( KMessageBox::warningContinueCancel(static_cast<QWidget*>(parent()),
+    if ( mediaNeedsChange &&
+         KMessageBox::warningContinueCancel(static_cast<QWidget*>(parent()),
                              i18n("The medium is full. Please insert medium Nr. %1").arg(sliceNum)) ==
           KMessageBox::Cancel )
     {
@@ -490,15 +514,15 @@ void Archiver::addFile(const QFileInfo &info)
     return;
   }
 
-  if ( sliceCapacity == UNLIMITED )
+  if ( (sliceCapacity == UNLIMITED) || !getCompressFiles() )
   {
-    if ( ! addLocalFile(info.absFilePath()) )  // this also increases totalBytes
+    if ( ! addLocalFile(info) )  // this also increases totalBytes
     {
       cancel();  //  we must cancel as the tar-file is now corrupt (file was only partly written)
       return;
     }
   }
-  else
+  else  // add the file compressed
   {
     // as we can't know which size the file will have after compression,
     // we create a compressed file and put this into the archive
@@ -618,6 +642,9 @@ bool Archiver::addLocalFile(const QFileInfo &info)
     return false;
   }
 
+  if ( sliceCapacity && ((sliceBytes + info.size()) > sliceCapacity) )
+    if ( ! getNextSlice() ) return false;
+
   if ( ! archive->prepareWriting(QString(".") + info.absFilePath(),
                                  info.owner(), info.group(), sourceFile.size(),
                                  status.st_mode, status.st_atime, status.st_mtime, status.st_ctime) )
@@ -671,6 +698,12 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   }
   emit fileProgress(100);
   sourceFile.close();
+
+  sliceBytes = startSize + QFileInfo(archiveName).size();  // account for tar overhead
+  if ( sliceCapacity )
+    emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
+  else
+    emit sliceProgress(100);
 
   if ( msgShown )
     QApplication::restoreOverrideCursor();
