@@ -1,13 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
+# Translation of KBackUp to Slovak.
 # This file is put in the public domain.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jozef Riha <jose1711@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KBackUp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-17 19:34+0100\n"
-"PO-Revision-Date: 2006-09-16 16:19+0100\n"
+"POT-Creation-Date: 2007-06-17 19:52+0200\n"
+"PO-Revision-Date: 2007-07-18 20:12+0200\n"
 "Last-Translator: Jozef Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak\n"
 "MIME-Version: 1.0\n"
@@ -16,43 +16,51 @@ msgstr ""
 "X-Poedit-Language: Slovak\n"
 "X-Poedit-Country: SLOVAKIA\n"
 
-#: Archiver.cxx:130
+#: Archiver.cxx:145
 msgid "Nothing selected for backup"
 msgstr "Nevybrali ste nič pre zálohovanie"
 
-#: Archiver.cxx:136
+#: Archiver.cxx:151
 msgid "The target dir is not valid"
 msgstr "Chybné určenie cieľového adresára"
 
-#: Archiver.cxx:186
+#: Archiver.cxx:205
 msgid "-- Backup successfully finished --"
 msgstr "-- Zálohovanie úspešne dokončené --"
 
-#: Archiver.cxx:188
+#: Archiver.cxx:207
+msgid "The backup has finished successfully."
+msgstr "Záloha bola úspešne dokončená."
+
+#: Archiver.cxx:210
 msgid "...Backup aborted!"
 msgstr "...Zálohovanie zrušené!"
 
-#: Archiver.cxx:209
+#: Archiver.cxx:228
 msgid "Backup cancelled"
 msgstr "Zálohovanie zrušené"
 
-#: Archiver.cxx:246
-msgid "...uploading archive to %1"
-msgstr "...uploadujem archív na %1"
+#: Archiver.cxx:258
+msgid "...finished slice %1"
+msgstr "...dokončená časť %1"
 
-#: Archiver.cxx:256
+#: Archiver.cxx:273
+msgid "...uploading archive %1 to %2"
+msgstr "...uploadujem archív %1 na %2"
+
+#: Archiver.cxx:283
 msgid "Do you want to retry the upload?"
 msgstr "Chcete znovu skúsiť upload?"
 
-#: Archiver.cxx:315
+#: Archiver.cxx:342
 msgid "The script '%1' could not be started."
 msgstr "Nemôžem spustiť skript '%1'."
 
-#: Archiver.cxx:352
+#: Archiver.cxx:380
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Médium je plné. Prosím vložte médium č. %1"
 
-#: Archiver.cxx:385
+#: Archiver.cxx:413
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -62,7 +70,7 @@ msgstr ""
 "\n"
 "Chcete sa o to pokúsiť znovu?"
 
-#: Archiver.cxx:411
+#: Archiver.cxx:439
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -70,11 +78,11 @@ msgstr ""
 "Nepodarilo sa získať informácie o adresári: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:421
+#: Archiver.cxx:449
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Adresár '%1' nemožno prečítať. Preskakujem."
 
-#: Archiver.cxx:433
+#: Archiver.cxx:461
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -82,11 +90,11 @@ msgstr ""
 "Nepodarilo sa zapísať adresár '%1' do archívu.\n"
 "Možno je médium plné."
 
-#: Archiver.cxx:471
+#: Archiver.cxx:499
 msgid "File '%1' is not readable. Skipping."
 msgstr "Súbor '%1' nemožno prečítať. Preskakujem."
 
-#: Archiver.cxx:526 Archiver.cxx:602
+#: Archiver.cxx:554 Archiver.cxx:630
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -94,20 +102,20 @@ msgstr ""
 "Nepodarilo sa získať informácie súboru: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:539 Archiver.cxx:555 Archiver.cxx:568 Archiver.cxx:621
-#: Archiver.cxx:639 Archiver.cxx:676
+#: Archiver.cxx:567 Archiver.cxx:583 Archiver.cxx:596 Archiver.cxx:652
+#: Archiver.cxx:670 Archiver.cxx:713
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Nepodaril sa zápis do archívu. Možno je médium plné."
 
-#: Archiver.cxx:613
+#: Archiver.cxx:641
 msgid "Could not open file '%1' for reading."
 msgstr "Súbor '%1' nemožno otvoriť na čítanie."
 
-#: Archiver.cxx:662
+#: Archiver.cxx:693
 msgid "...archiving file %1"
 msgstr "...archivujem súbor %1"
 
-#: Archiver.cxx:690
+#: Archiver.cxx:727
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -115,55 +123,55 @@ msgstr ""
 "Nemožno prečítať súbor: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:736
+#: Archiver.cxx:773
 msgid "...compressing file %1"
 msgstr "...komprimujem súbor %1"
 
 #. i18n: file ./SettingsDialog.ui line 72
-#: MainWidget.cxx:143 SettingsDialog.cxx:105 rc.cpp:21 SettingsDialog.ui.h:17
+#: MainWidget.cxx:143 SettingsDialog.cxx:119 rc.cpp:73 SettingsDialog.ui.h:17
 #, no-c-format
 msgid "unlimited"
 msgstr "neobmedzené"
 
 #. i18n: file ./MainWidgetBase.ui line 18
-#: MainWidgetBase.cxx:197 main.cxx:22 rc.cpp:30
+#: MainWidgetBase.cxx:197 main.cxx:22 rc.cpp:3
 #, no-c-format
 msgid "KBackup"
 msgstr "KBackup"
 
 #. i18n: file ./MainWidgetBase.ui line 56
-#: MainWidgetBase.cxx:198 MainWindow.cxx:91 rc.cpp:33
+#: MainWidgetBase.cxx:198 MainWindow.cxx:99 rc.cpp:6
 #, no-c-format
 msgid "Start Backup"
 msgstr "Spustiť zálohovanie"
 
 #. i18n: file ./MainWidgetBase.ui line 84
-#: MainWidgetBase.cxx:199 MainWindow.cxx:95 rc.cpp:36
+#: MainWidgetBase.cxx:199 MainWindow.cxx:103 rc.cpp:9
 #, no-c-format
 msgid "Cancel Backup"
 msgstr "Zrušiť zálohovanie"
 
 #. i18n: file ./MainWidgetBase.ui line 97
-#: MainWidgetBase.cxx:200 rc.cpp:39
+#: MainWidgetBase.cxx:200 rc.cpp:12
 #, no-c-format
 msgid "Target"
 msgstr "Cieľ"
 
 #. i18n: file ./MainWidgetBase.ui line 108
-#: MainWidgetBase.cxx:201 rc.cpp:42
+#: MainWidgetBase.cxx:201 rc.cpp:15
 #, no-c-format
 msgid "Folder:"
 msgstr "Priečinok:"
 
 #. i18n: file ./MainWidgetBase.ui line 127
 #. i18n: file ./MainWidgetBase.ui line 253
-#: MainWidgetBase.cxx:203 MainWidgetBase.cxx:210 rc.cpp:46 rc.cpp:67
+#: MainWidgetBase.cxx:203 MainWidgetBase.cxx:210 rc.cpp:19 rc.cpp:40
 #, no-c-format
 msgid "Size:"
 msgstr "Veľkosť"
 
 #. i18n: file ./MainWidgetBase.ui line 143
-#: MainWidgetBase.cxx:204 rc.cpp:49
+#: MainWidgetBase.cxx:204 rc.cpp:22
 #, no-c-format
 msgid "Medium:"
 msgstr "Médium:"
@@ -172,103 +180,103 @@ msgstr "Médium:"
 #. i18n: file ./MainWidgetBase.ui line 234
 #. i18n: file ./MainWidgetBase.ui line 261
 #: MainWidgetBase.cxx:205 MainWidgetBase.cxx:209 MainWidgetBase.cxx:211
-#: rc.cpp:52 rc.cpp:64 rc.cpp:70
+#: rc.cpp:25 rc.cpp:37 rc.cpp:43
 #, no-c-format
 msgid "0"
 msgstr "0"
 
 #. i18n: file ./MainWidgetBase.ui line 197
-#: MainWidgetBase.cxx:206 rc.cpp:55
+#: MainWidgetBase.cxx:206 rc.cpp:28
 #, no-c-format
 msgid "0 MB"
 msgstr "0 MB"
 
 #. i18n: file ./MainWidgetBase.ui line 207
-#: MainWidgetBase.cxx:207 rc.cpp:58
+#: MainWidgetBase.cxx:207 rc.cpp:31
 #, no-c-format
 msgid "Totals"
 msgstr "Celkom"
 
 #. i18n: file ./MainWidgetBase.ui line 226
-#: MainWidgetBase.cxx:208 rc.cpp:61
+#: MainWidgetBase.cxx:208 rc.cpp:34
 #, no-c-format
 msgid "Files:"
 msgstr "Súbory:"
 
-#. i18n: file ./SettingsDialog.ui line 69
 #. i18n: file ./MainWidgetBase.ui line 272
-#: MainWidgetBase.cxx:212 SettingsDialog.cxx:104 rc.cpp:18 rc.cpp:73
+#. i18n: file ./SettingsDialog.ui line 69
+#: MainWidgetBase.cxx:212 SettingsDialog.cxx:118 rc.cpp:46 rc.cpp:70
 #, no-c-format
 msgid "MB"
 msgstr "MB"
 
 #. i18n: file ./MainWidgetBase.ui line 308
-#: MainWidgetBase.cxx:213 rc.cpp:76
+#: MainWidgetBase.cxx:213 rc.cpp:49
 #, no-c-format
 msgid "Duration:"
 msgstr "Dĺžka:"
 
 #. i18n: file ./MainWidgetBase.ui line 316
-#: MainWidgetBase.cxx:214 rc.cpp:79
+#: MainWidgetBase.cxx:214 rc.cpp:52
 #, no-c-format
 msgid "00:00:00"
 msgstr "00:00:00"
 
 #. i18n: file ./MainWidgetBase.ui line 373
-#: MainWidgetBase.cxx:215 rc.cpp:82
+#: MainWidgetBase.cxx:215 rc.cpp:55
 #, no-c-format
 msgid "Warnings:"
 msgstr "Varovania:"
 
 #. i18n: file ./MainWidgetBase.ui line 398
-#: MainWidgetBase.cxx:216 rc.cpp:85
+#: MainWidgetBase.cxx:216 rc.cpp:58
 #, no-c-format
 msgid "Progress:"
 msgstr "Priebeh:"
 
-#: MainWindow.cxx:47
-#, fuzzy
+#: MainWindow.cxx:49
 msgid "New Profile"
-msgstr "Uložiť profil"
+msgstr "Nový profil"
 
-#: MainWindow.cxx:50
+#: MainWindow.cxx:52
 msgid "Load Profile"
 msgstr "Načítať profil"
 
-#: MainWindow.cxx:53
+#: MainWindow.cxx:55
 msgid "Save Profile"
 msgstr "Uložiť profil"
 
 #. i18n: file ./SettingsDialog.ui line 18
-#: MainWindow.cxx:56 SettingsDialog.cxx:101 rc.cpp:9
-#, fuzzy, no-c-format
+#: MainWindow.cxx:58 SettingsDialog.cxx:115 rc.cpp:61
+#, no-c-format
 msgid "Profile Settings"
-msgstr "Profil existuje"
+msgstr "Nastavenia profilu"
 
-#: MainWindow.cxx:59
+#: MainWindow.cxx:61
+msgid "Enable All Messages"
+msgstr "Zapnúť všetky správy"
+
+#: MainWindow.cxx:64
 msgid "Dock in System Tray"
-msgstr ""
+msgstr "Dokovať v systémovej lište"
 
-#: MainWindow.cxx:118
-#, fuzzy
+#: MainWindow.cxx:126
 msgid "There is a backup in progress. Do you want to abort it?"
-msgstr ""
-"Profil  '%1' už existuje.\n"
-"Chcete ho prepísať?"
+msgstr "Záloha už prebieha. Chcete ju zrušiť?"
 
-#: MainWindow.cxx:164 MainWindow.cxx:247
+#: MainWindow.cxx:172 MainWindow.cxx:271
 msgid "KBackup Profile (*.kbp)"
 msgstr "KBackup profil (*.kbp)"
 
-#: MainWindow.cxx:179
+#: MainWindow.cxx:187
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Nepodarilo sa otvoriť profil  '%1' na čítanie: %2"
 
-#: MainWindow.cxx:182 MainWindow.cxx:272
+#: MainWindow.cxx:190 MainWindow.cxx:296
 msgid "Open failed"
 msgstr "Otváranie zlyhalo"
 
-#: MainWindow.cxx:256
+#: MainWindow.cxx:280
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
@@ -276,43 +284,71 @@ msgstr ""
 "Profil  '%1' už existuje.\n"
 "Chcete ho prepísať?"
 
-#: MainWindow.cxx:259
+#: MainWindow.cxx:283
 msgid "Profile exists"
 msgstr "Profil existuje"
 
-#: MainWindow.cxx:269
+#: MainWindow.cxx:293
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Nepodarilo sa otvoriť profil  '%1' na zápis: %2"
 
-#: MainWindow.cxx:335
+#: MainWindow.cxx:366
 msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
 msgstr ""
+"Súborov: %1 Veľkosť: %2 MB\n"
+"%3"
 
-#: Selector.cxx:67
+#: Selector.cxx:102
 msgid "Name"
 msgstr "Názov"
 
-#: Selector.cxx:68
+#: Selector.cxx:103
 msgid "Size"
 msgstr "Veľkosť"
 
-#: Selector.cxx:69
+#: Selector.cxx:104
 msgid "Last Modified"
 msgstr "Posledná úprava"
 
 #. i18n: file ./SettingsDialog.ui line 29
-#: SettingsDialog.cxx:102 rc.cpp:12
+#: SettingsDialog.cxx:116 rc.cpp:64
 #, no-c-format
 msgid "Archive Prefix (empty for default):"
-msgstr ""
+msgstr "Prípona archívu (prázdna pre východziu):"
 
 #. i18n: file ./SettingsDialog.ui line 42
-#: SettingsDialog.cxx:103 rc.cpp:15
+#: SettingsDialog.cxx:117 rc.cpp:67
 #, no-c-format
 msgid "Maximum Archive Size:"
-msgstr ""
+msgstr "Maximálna veľkosť archívu:"
+
+#. i18n: file ./SettingsDialog.ui line 90
+#: SettingsDialog.cxx:120 rc.cpp:76
+#, no-c-format
+msgid "Target needs media change"
+msgstr "Cieľ potrebuje vymeniť médium"
+
+#. i18n: file ./SettingsDialog.ui line 93
+#: SettingsDialog.cxx:121 rc.cpp:79
+#, no-c-format
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr "Odškrtnite, ak sa chcete vyhnúť potvrdzovaciemu oknu na výmenu média po dokončení časti"
+
+#. i18n: file ./SettingsDialog.ui line 101
+#: SettingsDialog.cxx:122 rc.cpp:82
+#, no-c-format
+msgid "Compress Files"
+msgstr "Skomprimovať súbory"
+
+#. i18n: file ./SettingsDialog.ui line 104
+#: SettingsDialog.cxx:123 rc.cpp:85
+#, no-c-format
+msgid "Uncheck if you want to avoid compressing files or archive slices at all"
+msgstr "Odškrtnite, ak sa chcete vyhnúť akejkoľvek kompresie dáť alebo častí archívu"
 
 #: main.cxx:23
 msgid "An easy to use backup program"
@@ -335,6 +371,8 @@ msgid ""
 "Automatically run the backup and terminate when done. Works only if also a "
 "profile is given"
 msgstr ""
+"Spustiť zálohu automaticky a skončiť, keď je hotová. Funguje iba vtedy, ak "
+"je zadaný profil"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -349,31 +387,29 @@ msgid ""
 msgstr "jose1711@gmail.com"
 
 #: SettingsDialog.ui.h:18
-#, fuzzy
-msgid "650 MB"
-msgstr "0 MB"
+msgid "650 MB CD"
+msgstr "650 MB CD"
 
 #: SettingsDialog.ui.h:19
-#, fuzzy
-msgid "700 MB"
-msgstr "0 MB"
+msgid "700 MB CD"
+msgstr "700 MB CD"
 
 #: SettingsDialog.ui.h:20
-msgid "4.7 GB"
-msgstr ""
+msgid "4.7 GB DVD"
+msgstr "4.7 GB DVD"
 
 #: SettingsDialog.ui.h:21
-msgid "8.5 GB"
-msgstr ""
+msgid "8.5 GB DVD"
+msgstr "8.5 GB DVD"
 
 #: SettingsDialog.ui.h:22
-msgid "9.4 GB"
-msgstr ""
+msgid "9.4 GB DVD"
+msgstr "9.4 GB DVD"
 
 #: SettingsDialog.ui.h:23
-msgid "17 GB"
-msgstr ""
+msgid "17.1 GB DVD"
+msgstr "17.1 GB DVD"
 
 #: SettingsDialog.ui.h:24
 msgid "custom"
-msgstr ""
+msgstr "vlastné"
