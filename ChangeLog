@@ -10,7 +10,7 @@
 - add "auto" commandline option to automatically start a backup
   and quit kbackup when done.
 - added predefined slice sizes (for CDs, DVDs) in profile settings dialog
-- added portugese translation thanks to Carlos Gonçalves
+- added portuguese translation thanks to Carlos Gonçalves
 
 1.Oct 2006 (0.5.1)
 - added "recent files" action
