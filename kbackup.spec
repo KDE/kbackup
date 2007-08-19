@@ -1,7 +1,7 @@
 Summary: kbackup is an application which lets you back up your data in a simple, user friendly way.
 Name: kbackup
 Version: 0.5.2
-Release: 1
+Release: 2
 License: GPL
 Group: Applications/Archiving
 Source: http://members.aon.at/m.koller/kbackup-%{version}.tar.bz2
@@ -18,7 +18,7 @@ is still stored in compressed format (bzip2 or gzip).
 
 Included Languages:
 - User interface:
-  English, German, French, Italian, Russian, Slovak
+  English, German, French, Italian, Russian, Slovak, Portuguese, Spanish, Swedish
 - Handbook:
   English, German, French
 
