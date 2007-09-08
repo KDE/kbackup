@@ -662,7 +662,7 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   KIO::filesize_t fileSize = sourceFile.size();
   KIO::filesize_t written = 0;
 
-  while ( ! sourceFile.atEnd() && !cancelled )
+  while ( fileSize && !sourceFile.atEnd() && !cancelled )
   {
     len = sourceFile.readBlock(buffer.data(), buffer.size());
     if ( ! archive->writeData(buffer.data(), len) )
@@ -748,7 +748,7 @@ bool Archiver::compressFile(const QString &origName, const QString &comprName)
     KIO::filesize_t fileSize = origFile.size();
     KIO::filesize_t written = 0;
 
-    while ( ! origFile.atEnd() && ! cancelled )
+    while ( fileSize && !origFile.atEnd() && !cancelled )
     {
       len = origFile.readBlock(buffer.data(), buffer.size());
       filter.writeBlock(buffer.data(), len);
