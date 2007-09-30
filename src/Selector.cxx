@@ -14,6 +14,11 @@
 #include <klocale.h>
 #include <kiconloader.h>
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <kde_file.h>
+
 #include <qdir.h>
 
 #include <iostream>
@@ -158,7 +163,12 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
 
     item->setOn(on);
 
-    item->setText(1, KIO::convertSize(info->size()));
+    KDE_struct_stat status;
+    memset(&status, 0, sizeof(status));
+
+    // QFileInfo has no large file support (only files up to 2GB)
+    KDE_stat(QFile::encodeName(info->absFilePath()), &status);
+    item->setText(1, KIO::convertSize(status.st_size));
     item->setText(2, KGlobal::locale()->formatDateTime(info->lastModified()));
 
     if ( item->isDir() )

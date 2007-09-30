@@ -18,6 +18,7 @@
 #include <kstandarddirs.h>
 #include <kio/job.h>
 #include <kprocess.h>
+#include <kde_file.h>
 
 #include <qapplication.h>
 #include <qdir.h>
@@ -432,9 +433,9 @@ void Archiver::addDirFiles(QDir &dir)
     return;
 
   // add the dir itself
-  struct stat status;
+  KDE_struct_stat status;
   memset(&status, 0, sizeof(status));
-  if ( stat(QFile::encodeName(dir.absPath()), &status) == -1 )
+  if ( KDE_stat(QFile::encodeName(dir.absPath()), &status) == -1 )
   {
     emit warning(i18n("Could not get information of directory: %1\n"
                       "The operating system reports: %2")
@@ -537,19 +538,23 @@ void Archiver::addFile(const QFileInfo &info)
 
     // here we have the compressed file in tmpFile
 
-    // get info (size) from the now compressed file
-    QFileInfo compressedInfo(tmpFile.name());
+    // get stat (size) from the now compressed file
+    KDE_struct_stat compressedStatus;
+    memset(&compressedStatus, 0, sizeof(compressedStatus));
 
-    if ( sliceCapacity && ((sliceBytes + compressedInfo.size()) > sliceCapacity) )
+    // QFileInfo has no large file support (only files up to 2GB)
+    KDE_stat(QFile::encodeName(tmpFile.name()), &compressedStatus);
+
+    if ( sliceCapacity && ((sliceBytes + compressedStatus.st_size) > sliceCapacity) )
       if ( ! getNextSlice() ) return;
 
     // to be able to create the exact same metadata (permission, date, owner) we need
     // to fill the file into the archive with the following:
     {
-      struct stat status;
+      KDE_struct_stat status;
       memset(&status, 0, sizeof(status));
 
-      if ( stat(QFile::encodeName(info.absFilePath()), &status) == -1 )
+      if ( KDE_stat(QFile::encodeName(info.absFilePath()), &status) == -1 )
       {
         emit warning(i18n("Could not get information of file: %1\n"
                           "The operating system reports: %2")
@@ -561,7 +566,7 @@ void Archiver::addFile(const QFileInfo &info)
       }
 
       if ( ! archive->prepareWriting(QString(".") + info.absFilePath() + ext,
-                                     info.owner(), info.group(), compressedInfo.size(),
+                                     info.owner(), info.group(), compressedStatus.st_size,
                                      status.st_mode, status.st_atime, status.st_mtime, status.st_ctime) )
       {
         emit warning(i18n("Could not write to archive. Maybe the medium is full."));
@@ -591,7 +596,7 @@ void Archiver::addFile(const QFileInfo &info)
           qApp->processEvents(5);
       }
       compressedFile.close();
-      if ( ! archive->doneWriting(compressedInfo.size()) )
+      if ( ! archive->doneWriting(compressedStatus.st_size) )
       {
         emit warning(i18n("Could not write to archive. Maybe the medium is full."));
         tmpFile.unlink();
@@ -600,8 +605,13 @@ void Archiver::addFile(const QFileInfo &info)
       }
     }
 
-    sliceBytes = startSize + QFileInfo(archiveName).size();  // account for tar overhead
-    totalBytes += compressedInfo.size();
+    // get filesize
+    KDE_struct_stat archiveStat;
+    memset(&archiveStat, 0, sizeof(archiveStat));
+    KDE_stat(QFile::encodeName(archiveName), &archiveStat);
+
+    sliceBytes = startSize + archiveStat.st_size;  // account for tar overhead
+    totalBytes += compressedStatus.st_size;
 
     tmpFile.unlink();
 
@@ -622,10 +632,10 @@ void Archiver::addFile(const QFileInfo &info)
 
 bool Archiver::addLocalFile(const QFileInfo &info)
 {
-  struct stat status;
-  memset(&status, 0, sizeof(status));
+  KDE_struct_stat sourceStat;
+  memset(&sourceStat, 0, sizeof(sourceStat));
 
-  if ( stat(QFile::encodeName(info.absFilePath()), &status) == -1 )
+  if ( KDE_stat(QFile::encodeName(info.absFilePath()), &sourceStat) == -1 )
   {
     emit warning(i18n("Could not get information of file: %1\n"
                       "The operating system reports: %2")
@@ -642,12 +652,12 @@ bool Archiver::addLocalFile(const QFileInfo &info)
     return false;
   }
 
-  if ( sliceCapacity && ((sliceBytes + info.size()) > sliceCapacity) )
+  if ( sliceCapacity && ((sliceBytes + sourceStat.st_size) > sliceCapacity) )
     if ( ! getNextSlice() ) return false;
 
   if ( ! archive->prepareWriting(QString(".") + info.absFilePath(),
-                                 info.owner(), info.group(), sourceFile.size(),
-                                 status.st_mode, status.st_atime, status.st_mtime, status.st_ctime) )
+                                 info.owner(), info.group(), sourceStat.st_size,
+                                 sourceStat.st_mode, sourceStat.st_atime, sourceStat.st_mtime, sourceStat.st_ctime) )
   {
     emit warning(i18n("Could not write to archive. Maybe the medium is full."));
     return false;
@@ -659,7 +669,7 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   QTime timer;
   timer.start();
   bool msgShown = false;
-  KIO::filesize_t fileSize = sourceFile.size();
+  KIO::filesize_t fileSize = sourceStat.st_size;
   KIO::filesize_t written = 0;
 
   while ( fileSize && !sourceFile.atEnd() && !cancelled )
@@ -699,7 +709,12 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   emit fileProgress(100);
   sourceFile.close();
 
-  sliceBytes = startSize + QFileInfo(archiveName).size();  // account for tar overhead
+  // get filesize
+  KDE_struct_stat archiveStat;
+  memset(&archiveStat, 0, sizeof(archiveStat));
+  KDE_stat(QFile::encodeName(archiveName), &archiveStat);
+
+  sliceBytes = startSize + archiveStat.st_size;  // account for tar overhead
   if ( sliceCapacity )
     emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
   else
@@ -708,7 +723,7 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   if ( msgShown )
     QApplication::restoreOverrideCursor();
 
-  if ( !cancelled && !archive->doneWriting(sourceFile.size()) )
+  if ( !cancelled && !archive->doneWriting(sourceStat.st_size) )
   {
     emit warning(i18n("Could not write to archive. Maybe the medium is full."));
     return false;
@@ -745,7 +760,13 @@ bool Archiver::compressFile(const QString &origName, const QString &comprName)
     QTime timer;
     timer.start();
     bool msgShown = false;
-    KIO::filesize_t fileSize = origFile.size();
+
+    // get filesize
+    KDE_struct_stat origStat;
+    memset(&origStat, 0, sizeof(origStat));
+    KDE_stat(QFile::encodeName(origName), &origStat);
+
+    KIO::filesize_t fileSize = origStat.st_size;
     KIO::filesize_t written = 0;
 
     while ( fileSize && !origFile.atEnd() && !cancelled )
