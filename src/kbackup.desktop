@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Application
+Encoding=UTF-8
 Exec=kbackup %f
 Name=KBackup (Backup Program)
 Comment=Backup your data with an easy to use user interface
