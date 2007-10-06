@@ -20,7 +20,7 @@
 int main(int argc, char **argv)
 {
   KAboutData about("kbackup", I18N_NOOP("KBackup"),
-                   "0.5.2", I18N_NOOP("An easy to use backup program"), KAboutData::License_GPL_V2,
+                   "0.5.3", I18N_NOOP("An easy to use backup program"), KAboutData::License_GPL_V2,
                    "(c) 2006, 2007, Martin Koller",  // copyright
                    0,  // added text
                    "http://www.kde-apps.org/content/show.php?content=44998",  // homepage
