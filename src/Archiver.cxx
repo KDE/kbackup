@@ -504,7 +504,21 @@ void Archiver::addFile(const QFileInfo &info)
   // emit before we do the compression, so that the receiver can already show
   // with which file we work
 
-  emit logging(info.absFilePath());
+  // get filesize
+  KDE_struct_stat origStat;
+  memset(&origStat, 0, sizeof(origStat));
+  KDE_stat(QFile::encodeName(info.absFilePath()), &origStat);
+
+  // TODO: KDE-3.x limits filesize argument to "uint" == 4GB on 32bit systems
+  // KDE 4.0 no longer an issue
+  if ( origStat.st_size > UINT_MAX )
+  {
+    emit warning(i18n("Sorry, but file '%1' is too large for this KDE version. Skipping.").arg(info.absFilePath()));
+    return;
+  }
+
+  // show filename + size
+  emit logging(info.absFilePath() + QString(" (%1)").arg(KIO::convertSize(origStat.st_size)));
   qApp->processEvents(5);
 
   if ( info.isSymLink() )
