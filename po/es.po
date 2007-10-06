@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-17 19:52+0200\n"
-"PO-Revision-Date: 2007-08-16 14:13+0200\n"
+"POT-Creation-Date: 2007-10-06 20:24+0200\n"
+"PO-Revision-Date: 2007-10-06 22:32+0200\n"
 "Last-Translator: gerardo <gejobj@gmail.com>\n"
 "Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,61 +15,77 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: Archiver.cxx:145
+#: Archiver.cxx:146
 msgid "Nothing selected for backup"
 msgstr "Nada seleccionado para copia de seguridad"
 
-#: Archiver.cxx:151
+#: Archiver.cxx:152
 msgid "The target dir is not valid"
 msgstr "El directorio no es válido"
 
-#: Archiver.cxx:205
+#: Archiver.cxx:208
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr "¡¡ Copia de seguridad finalizada <b>pero los ficheros fueron ignorados</b> !!"
+
+#: Archiver.cxx:210
 msgid "-- Backup successfully finished --"
 msgstr "-- Copia de seguridad finalizada correctamente --"
 
-#: Archiver.cxx:207
-msgid "The backup has finished successfully."
-msgstr "La copia de seguridad ha terminado satisfactoriamente."
+#: Archiver.cxx:214
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"La copia de seguridad terminó pero los archivos fueron ignorados.\n"
+"¿Qué quieres hacer ahora?"
 
-#: Archiver.cxx:210
+#: Archiver.cxx:216
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"La copia de seguridad ha terminado satisfactoriamente.\n"
+"¿Qué quieres hacer ahora?"
+
+#: Archiver.cxx:226
 msgid "...Backup aborted!"
-msgstr "Copia de seguridad anulada"
+msgstr "...Copia de seguridad anulada!"
 
-#: Archiver.cxx:228
+#: Archiver.cxx:244
 msgid "Backup cancelled"
 msgstr "Copia de seguridad cancelada"
 
-#: Archiver.cxx:258
+#: Archiver.cxx:274
 msgid "...finished slice %1"
 msgstr "...terminada parte %1"
 
-#: Archiver.cxx:273
+#: Archiver.cxx:289
 msgid "...uploading archive %1 to %2"
 msgstr "...actualizando archivo %1 a %2"
 
-#: Archiver.cxx:283
+#: Archiver.cxx:299
 msgid "Do you want to retry the upload?"
 msgstr "¿Quieres reintentar la carga?"
 
-#: Archiver.cxx:342
+#: Archiver.cxx:358
 msgid "The script '%1' could not be started."
 msgstr "El script '%1' no puede ser iniciado."
 
-#: Archiver.cxx:380
+#: Archiver.cxx:396
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "El medio está lleno. Por favor, inserte medio Nr. %1"
 
-#: Archiver.cxx:413
+#: Archiver.cxx:429
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
 "Do you want to retry?"
 msgstr ""
-"El archivo '%1' no puede ser abierto para escritura.\n"
+"El fichero '%1' no puede ser abierto para escritura.\n"
 "\n"
 "¿Quiere intentarlo de nuevo?"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:455
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -77,23 +93,29 @@ msgstr ""
 "No se pudo obtener información del directorio: %1\n"
 "El sistema operativo reportó: %2"
 
-#: Archiver.cxx:449
+#: Archiver.cxx:465
 msgid "Directory '%1' is not readable. Skipping."
-msgstr "No es posible leer el directorio '%1'. Ignorandolo."
+msgstr "No se puede leer el directorio '%1'. Ignorándolo."
 
-#: Archiver.cxx:461
+#: Archiver.cxx:478
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
 msgstr ""
-"No se puede escribir en el directorio '%1' el archivo.\n"
+"No se puede escribir el directorio '%1' en el archivo.\n"
 "Quizás el medio esté lleno."
 
-#: Archiver.cxx:499
+#: Archiver.cxx:516
 msgid "File '%1' is not readable. Skipping."
-msgstr "No se puede leer el archivo '%1'. Ignorandolo."
+msgstr "No se puede leer el fichero '%1'. Ignorándolo."
 
-#: Archiver.cxx:554 Archiver.cxx:630
+#: Archiver.cxx:533
+msgid ""
+"Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
+"version. Skipping."
+msgstr "Lo siento, el fichero '%1' (%2) es demasiado largo y no puede ser archivado con esta versión de KDE. Ignorando."
+
+#: Archiver.cxx:592 Archiver.cxx:673
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -101,30 +123,30 @@ msgstr ""
 "No se puede obtener información del archivo: %1\n"
 "El sistema operativo reportó: %2"
 
-#: Archiver.cxx:567 Archiver.cxx:583 Archiver.cxx:596 Archiver.cxx:652
-#: Archiver.cxx:670 Archiver.cxx:713
+#: Archiver.cxx:605 Archiver.cxx:621 Archiver.cxx:634 Archiver.cxx:695
+#: Archiver.cxx:713 Archiver.cxx:761
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "No se puede escribir el archivo. Quizás el medio esté lleno."
 
-#: Archiver.cxx:641
+#: Archiver.cxx:684
 msgid "Could not open file '%1' for reading."
 msgstr "No se puede abrir el archivo '%1' para ser leído."
 
-#: Archiver.cxx:693
+#: Archiver.cxx:736
 msgid "...archiving file %1"
-msgstr "...guardando el archivo %1"
+msgstr "...archivando fichero %1"
 
-#: Archiver.cxx:727
+#: Archiver.cxx:775
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"No se puede leer el archivo: %1\n"
-"Ellll sistema operativvo reportó: %2"
+"No se puede leer el fichero: %1\n"
+"El sistema operativo reportó: %2"
 
-#: Archiver.cxx:773
+#: Archiver.cxx:827
 msgid "...compressing file %1"
-msgstr "...comprimiendo el archivo %1"
+msgstr "...comprimiendo fichero %1"
 
 #. i18n: file ./SettingsDialog.ui line 72
 #: MainWidget.cxx:143 SettingsDialog.cxx:119 rc.cpp:73 SettingsDialog.ui.h:17
@@ -148,7 +170,7 @@ msgstr "Iniciar copia de seguridad"
 #: MainWidgetBase.cxx:199 MainWindow.cxx:103 rc.cpp:9
 #, no-c-format
 msgid "Cancel Backup"
-msgstr "Cancelar la copia de seguridad"
+msgstr "Cancelar copia de seguridad"
 
 #. i18n: file ./MainWidgetBase.ui line 97
 #: MainWidgetBase.cxx:200 rc.cpp:12
@@ -225,7 +247,7 @@ msgstr "00:00:00"
 #: MainWidgetBase.cxx:215 rc.cpp:55
 #, no-c-format
 msgid "Warnings:"
-msgstr "Peligros:"
+msgstr "Avisos:"
 
 #. i18n: file ./MainWidgetBase.ui line 398
 #: MainWidgetBase.cxx:216 rc.cpp:58
@@ -265,7 +287,7 @@ msgstr "Hay una copia de seguridad en proceso. ¿Deseas anularla?"
 
 #: MainWindow.cxx:172 MainWindow.cxx:271
 msgid "KBackup Profile (*.kbp)"
-msgstr "KBackup Profile (*.kbp)"
+msgstr "Perfil KBackup (*.kbp)"
 
 #: MainWindow.cxx:187
 msgid "Could not open profile '%1' for reading: %2"
@@ -280,7 +302,7 @@ msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"El perfil '%1' ya exite.\n"
+"El perfil '%1' ya existe.\n"
 "¿Deseas sobreescribirlo?"
 
 #: MainWindow.cxx:283
@@ -299,29 +321,29 @@ msgstr ""
 "Archivos: %1 Tamaño: %2 MB\n"
 "%3"
 
-#: Selector.cxx:102
+#: Selector.cxx:108
 msgid "Name"
 msgstr "Nombre"
 
-#: Selector.cxx:103
+#: Selector.cxx:109
 msgid "Size"
 msgstr "Tamaño"
 
-#: Selector.cxx:104
+#: Selector.cxx:110
 msgid "Last Modified"
-msgstr "Úlima modificación"
+msgstr "Última modificación"
 
 #. i18n: file ./SettingsDialog.ui line 29
 #: SettingsDialog.cxx:116 rc.cpp:64
 #, no-c-format
 msgid "Archive Prefix (empty for default):"
-msgstr "Prefijo de Archivo (vacío por defecto)"
+msgstr "Prefijo del Archivo (vacío por defecto)"
 
 #. i18n: file ./SettingsDialog.ui line 42
 #: SettingsDialog.cxx:117 rc.cpp:67
 #, no-c-format
 msgid "Maximum Archive Size:"
-msgstr "Máximo Tamaño de Fichero:"
+msgstr "Máximo Tamaño del Archivo:"
 
 #. i18n: file ./SettingsDialog.ui line 90
 #: SettingsDialog.cxx:120 rc.cpp:76
@@ -335,19 +357,21 @@ msgstr "El objetivo necesita un cambio de medio"
 msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
-msgstr "No seleccione si quiere evitar un mensaje de confirmación para cambiar el medio cuando una parte haya terminado"
+msgstr ""
+"No seleccionar si desea evitar un mensaje de confirmación para cambiar el "
+"medio cuando una parte haya terminado"
 
 #. i18n: file ./SettingsDialog.ui line 101
 #: SettingsDialog.cxx:122 rc.cpp:82
 #, no-c-format
 msgid "Compress Files"
-msgstr "Comprimir Archivos"
+msgstr "Comprimir Ficheros"
 
 #. i18n: file ./SettingsDialog.ui line 104
 #: SettingsDialog.cxx:123 rc.cpp:85
 #, no-c-format
 msgid "Uncheck if you want to avoid compressing files or archive slices at all"
-msgstr "No seleccione si quiere evitar comprimir los archivos o partes de archivos"
+msgstr "No seleccionar si quiere evitar comprimir los ficheros o partes del archivo"
 
 #: main.cxx:23
 msgid "An easy to use backup program"
@@ -363,13 +387,15 @@ msgstr "Inicio con un perfil dado"
 
 #: main.cxx:35
 msgid "Script to run after finishing one archive slice"
-msgstr "Script para ejecutar después de terminar un corte de fichero"
+msgstr "Script a ejecutar al terminar cada parte del archivo"
 
 #: main.cxx:36
 msgid ""
 "Automatically run the backup and terminate when done. Works only if also a "
 "profile is given"
-msgstr "Automáticamente ejecutar la copia de seguridad y terminar cuando finalice. Funciona solo si un perfil ha sido dado."
+msgstr ""
+"Ejecutar automáticamente la copia de seguridad y terminar cuando finalice. "
+"Funciona sólo si se ha especificado un perfil."
 
 #: _translatorinfo.cpp:1
 msgid ""
