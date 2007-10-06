@@ -1,3 +1,8 @@
+6.10.2007 (0.5.3)
+- show symbolic links with an overlayed "link" icon
+- fix handling of files larger than 2GB
+- avoid crash when writing special files (below /proc) which have fileSize == 0
+
 16.8.2007
 - Added spanish translation (thanks to Gerardo Bueno)
 

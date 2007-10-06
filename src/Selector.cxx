@@ -13,6 +13,7 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kiconloader.h>
+#include <kiconeffect.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -177,10 +178,44 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
       if ( (dir.count() - 2) > 0)  // skip "." and ".."
         item->setExpandable(true);
 
-      item->setPixmap(0, SmallIcon("folder"));
+      static QPixmap folderIcon;
+      static QPixmap folderLinkIcon;
+
+      if ( folderIcon.isNull() )  // only get the icons once
+      {
+        folderIcon = SmallIcon("folder");
+
+        // create a "link" icon and make sure the "folder" icon has
+        // the same size as the "link" icon as otherwise the overlay operation
+        // would not be done
+        QImage overlay(SmallIcon("link").convertToImage());
+        QImage src(folderIcon.convertToImage().scale(overlay.size()));
+        KIconEffect::overlay(src, overlay);
+        folderLinkIcon = src;
+      }
+
+      item->setPixmap(0, info->isSymLink() ? folderLinkIcon : folderIcon);
     }
     else
-      item->setPixmap(0, SmallIcon("document"));
+    {
+      static QPixmap documentIcon;
+      static QPixmap documentLinkIcon;
+
+      if ( documentIcon.isNull() )  // only get the icons once
+      {
+        documentIcon = SmallIcon("document");
+
+        // create a "link" icon and make sure the "document" icon has
+        // the same size as the "link" icon as otherwise the overlay operation
+        // would not be done (kdeclassic has 18x18 but link has 16x16; crystalsvg is ok)
+        QImage overlay(SmallIcon("link").convertToImage());
+        QImage src(documentIcon.convertToImage().scale(overlay.size()));
+        KIconEffect::overlay(src, overlay);
+        documentLinkIcon = src;
+      }
+
+      item->setPixmap(0, info->isSymLink() ? documentLinkIcon : documentIcon);
+    }
   }
 }
 
