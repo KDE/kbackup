@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-17 19:52+0200\n"
+"POT-Creation-Date: 2007-10-06 20:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,103 +15,121 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Archiver.cxx:145
+#: Archiver.cxx:146
 msgid "Nothing selected for backup"
 msgstr ""
 
-#: Archiver.cxx:151
+#: Archiver.cxx:152
 msgid "The target dir is not valid"
 msgstr ""
 
-#: Archiver.cxx:205
-msgid "-- Backup successfully finished --"
-msgstr ""
-
-#: Archiver.cxx:207
-msgid "The backup has finished successfully."
+#: Archiver.cxx:208
+msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 
 #: Archiver.cxx:210
+msgid "-- Backup successfully finished --"
+msgstr ""
+
+#: Archiver.cxx:214
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+
+#: Archiver.cxx:216
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+
+#: Archiver.cxx:226
 msgid "...Backup aborted!"
 msgstr ""
 
-#: Archiver.cxx:228
+#: Archiver.cxx:244
 msgid "Backup cancelled"
 msgstr ""
 
-#: Archiver.cxx:258
+#: Archiver.cxx:274
 msgid "...finished slice %1"
 msgstr ""
 
-#: Archiver.cxx:273
+#: Archiver.cxx:289
 msgid "...uploading archive %1 to %2"
 msgstr ""
 
-#: Archiver.cxx:283
+#: Archiver.cxx:299
 msgid "Do you want to retry the upload?"
 msgstr ""
 
-#: Archiver.cxx:342
+#: Archiver.cxx:358
 msgid "The script '%1' could not be started."
 msgstr ""
 
-#: Archiver.cxx:380
+#: Archiver.cxx:396
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr ""
 
-#: Archiver.cxx:413
+#: Archiver.cxx:429
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
 "Do you want to retry?"
 msgstr ""
 
-#: Archiver.cxx:439
+#: Archiver.cxx:455
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:449
+#: Archiver.cxx:465
 msgid "Directory '%1' is not readable. Skipping."
 msgstr ""
 
-#: Archiver.cxx:461
+#: Archiver.cxx:478
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
 msgstr ""
 
-#: Archiver.cxx:499
+#: Archiver.cxx:516
 msgid "File '%1' is not readable. Skipping."
 msgstr ""
 
-#: Archiver.cxx:554 Archiver.cxx:630
+#: Archiver.cxx:533
+msgid ""
+"Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
+"version. Skipping."
+msgstr ""
+
+#: Archiver.cxx:592 Archiver.cxx:673
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:567 Archiver.cxx:583 Archiver.cxx:596 Archiver.cxx:652
-#: Archiver.cxx:670 Archiver.cxx:713
+#: Archiver.cxx:605 Archiver.cxx:621 Archiver.cxx:634 Archiver.cxx:695
+#: Archiver.cxx:713 Archiver.cxx:761
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr ""
 
-#: Archiver.cxx:641
+#: Archiver.cxx:684
 msgid "Could not open file '%1' for reading."
 msgstr ""
 
-#: Archiver.cxx:693
+#: Archiver.cxx:736
 msgid "...archiving file %1"
 msgstr ""
 
-#: Archiver.cxx:727
+#: Archiver.cxx:775
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: Archiver.cxx:773
+#: Archiver.cxx:827
 msgid "...compressing file %1"
 msgstr ""
 
@@ -284,15 +302,15 @@ msgid ""
 "%3"
 msgstr ""
 
-#: Selector.cxx:102
+#: Selector.cxx:108
 msgid "Name"
 msgstr ""
 
-#: Selector.cxx:103
+#: Selector.cxx:109
 msgid "Size"
 msgstr ""
 
-#: Selector.cxx:104
+#: Selector.cxx:110
 msgid "Last Modified"
 msgstr ""
 
