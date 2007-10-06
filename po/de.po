@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-06 20:06+0200\n"
-"PO-Revision-Date: 2007-10-06 20:07+0200\n"
+"POT-Creation-Date: 2007-10-06 20:24+0200\n"
+"PO-Revision-Date: 2007-10-06 20:24+0200\n"
 "Last-Translator: Martin Koller <m.koller@surfeu.at>\n"
 "Language-Team: Deutsch\n"
 "MIME-Version: 1.0\n"
@@ -34,42 +34,50 @@ msgid "-- Backup successfully finished --"
 msgstr "-- Sicherung erfolgreich abgeschlossen --"
 
 #: Archiver.cxx:214
-msgid "The backup has finished but files were skipped."
-msgstr "Die Sicherung wurde abgeschlossen aber Dateien wurden übersprungen."
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"Die Sicherung wurde abgeschlossen aber Dateien wurden übersprungen.\n"
+"Was wollen sie jetzt tun?"
 
-#: Archiver.cxx:215
-msgid "The backup has finished successfully."
-msgstr "Die Sicherung wurde erfolgreich beendet."
+#: Archiver.cxx:216
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"Die Sicherung wurde erfolgreich beendet.\n"
+"Was wollen sie jetzt tun?"
 
-#: Archiver.cxx:219
+#: Archiver.cxx:226
 msgid "...Backup aborted!"
 msgstr "...Sicherung abgebrochen!"
 
-#: Archiver.cxx:237
+#: Archiver.cxx:244
 msgid "Backup cancelled"
 msgstr "Sicherung abgebrochen"
 
-#: Archiver.cxx:267
+#: Archiver.cxx:274
 msgid "...finished slice %1"
 msgstr "...Archiv %1 abgeschlossen"
 
-#: Archiver.cxx:282
+#: Archiver.cxx:289
 msgid "...uploading archive %1 to %2"
 msgstr "...kopiere Archiv %1 zu %2"
 
-#: Archiver.cxx:292
+#: Archiver.cxx:299
 msgid "Do you want to retry the upload?"
 msgstr "Wollen sie das Kopieren nochmals versuchen?"
 
-#: Archiver.cxx:351
+#: Archiver.cxx:358
 msgid "The script '%1' could not be started."
 msgstr "Das script '%1' konnte nicht gestartet werden."
 
-#: Archiver.cxx:389
+#: Archiver.cxx:396
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Das Medium ist voll. Bitte geben sie das Medium Nr. %1 in das Laufwerk."
 
-#: Archiver.cxx:422
+#: Archiver.cxx:429
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -79,7 +87,7 @@ msgstr ""
 "\n"
 "Wollen sie es nochmals versuchen?"
 
-#: Archiver.cxx:448
+#: Archiver.cxx:455
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -87,11 +95,11 @@ msgstr ""
 "Konnte keine Information über das Verzeichnis '%1' lesen.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:458
+#: Archiver.cxx:465
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Verzeichnis '%1' ist nicht lesbar. Überspringe es"
 
-#: Archiver.cxx:471
+#: Archiver.cxx:478
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -99,11 +107,11 @@ msgstr ""
 "Konnte das Verzeichnis '%1' nicht in das Archiv schreiben.\n"
 " Vielleicht is das Medium voll."
 
-#: Archiver.cxx:509
+#: Archiver.cxx:516
 msgid "File '%1' is not readable. Skipping."
 msgstr "Datei '%1' ist nicht lesbar. Überspringe sie"
 
-#: Archiver.cxx:526
+#: Archiver.cxx:533
 msgid ""
 "Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
 "version. Skipping."
@@ -111,7 +119,7 @@ msgstr ""
 "Leider ist die Datei '%1' (%2) zu groß und kann mit dieser KDE Version nicht "
 "archiviert werden. Überspringe sie."
 
-#: Archiver.cxx:585 Archiver.cxx:666
+#: Archiver.cxx:592 Archiver.cxx:673
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -119,20 +127,20 @@ msgstr ""
 "Konnte keine Information über die Datei '%1' lesen.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:598 Archiver.cxx:614 Archiver.cxx:627 Archiver.cxx:688
-#: Archiver.cxx:706 Archiver.cxx:754
+#: Archiver.cxx:605 Archiver.cxx:621 Archiver.cxx:634 Archiver.cxx:695
+#: Archiver.cxx:713 Archiver.cxx:761
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Konnte nicht in das Archiv schreiben. Vielleicht is das Medium voll."
 
-#: Archiver.cxx:677
+#: Archiver.cxx:684
 msgid "Could not open file '%1' for reading."
 msgstr "Konnte die Datei '%1' nicht zum Lesen öffnen"
 
-#: Archiver.cxx:729
+#: Archiver.cxx:736
 msgid "...archiving file %1"
 msgstr "...archiviere Datei %1"
 
-#: Archiver.cxx:768
+#: Archiver.cxx:775
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -140,7 +148,7 @@ msgstr ""
 "Datei '%1' konnte nicht gelesen werden.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:820
+#: Archiver.cxx:827
 msgid "...compressing file %1"
 msgstr "...komprimiere Datei %1"
 
