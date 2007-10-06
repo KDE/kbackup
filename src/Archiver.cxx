@@ -44,7 +44,7 @@ Archiver *Archiver::instance;
 Archiver::Archiver(QWidget *parent)
   : QObject(parent),
     archive(0), totalBytes(0), totalFiles(0), sliceNum(0), mediaNeedsChange(true),
-    sliceCapacity(0), cancelled(false), runs(false), jobResult(0)
+    sliceCapacity(0), cancelled(false), runs(false), skippedFiles(false), jobResult(0)
 {
   instance = this;
 
@@ -172,6 +172,7 @@ void Archiver::createArchive(const QStringList &includes, const QStringList &exc
   totalBytes = 0;
   totalFiles = 0;
   cancelled = false;
+  skippedFiles = false;
 
   if ( ! getNextSlice() ) return;
 
@@ -203,9 +204,16 @@ void Archiver::createArchive(const QStringList &includes, const QStringList &exc
 
   if ( !cancelled )
   {
-    emit logging(i18n("-- Backup successfully finished --"));
+    if ( skippedFiles )
+      emit logging(i18n("!! Backup finished <b>but files were skipped</b> !!"));
+    else
+      emit logging(i18n("-- Backup successfully finished --"));
+
     KMessageBox::information(static_cast<QWidget*>(parent()),
-                             i18n("The backup has finished successfully."), QString::null, "showDoneInfo");
+                             skippedFiles ?
+                               i18n("The backup has finished but files were skipped.") :
+                               i18n("The backup has finished successfully."),
+                             QString::null, "showDoneInfo");
   }
   else
     emit logging(i18n("...Backup aborted!"));
@@ -448,6 +456,7 @@ void Archiver::addDirFiles(QDir &dir)
   if ( ! dirInfo.isReadable() )
   {
     emit warning(i18n("Directory '%1' is not readable. Skipping.").arg(dir.absPath()));
+    skippedFiles = true;
     return;
   }
 
@@ -498,6 +507,7 @@ void Archiver::addFile(const QFileInfo &info)
   if ( ! info.isReadable() )
   {
     emit warning(i18n("File '%1' is not readable. Skipping.").arg(info.absFilePath()));
+    skippedFiles = true;
     return;
   }
 
@@ -513,7 +523,9 @@ void Archiver::addFile(const QFileInfo &info)
   // KDE 4.0 no longer an issue
   if ( origStat.st_size > UINT_MAX )
   {
-    emit warning(i18n("Sorry, but file '%1' is too large for this KDE version. Skipping.").arg(info.absFilePath()));
+    emit warning(i18n("Sorry, file '%1' (%2) is too large and cannot be archived with this KDE version. Skipping.")
+           .arg(info.absFilePath()).arg(KIO::convertSize(origStat.st_size)));
+    skippedFiles = true;
     return;
   }
 

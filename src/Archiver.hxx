@@ -122,6 +122,7 @@ class Archiver : public QObject
 
     bool cancelled;
     bool runs;
+    bool skippedFiles;  // did we skip files during backup ?
 
     QGuardedPtr<KIO::CopyJob> job;
     int jobResult;
