@@ -2,3 +2,4 @@
 - fix the exit-question dialog when exiting due to session stop
 - when we have to create a tmp file before uploading to an URL,
   limit the size of this tmp file at least to what is available in the tmp partition
+- when errors occured, mention that in the "success" end dialog (e.g. "finished with warnings", "not all files backed up", etc.)
