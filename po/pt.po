@@ -2,65 +2,82 @@
 # translation of pt.po_[u3icsb].po to
 # This file is put in the public domain.
 #
-# Carlos Gonçalves <carlos@pinguix.com>, 2006, 2007.
+# Carlos Gonçalves <mail@cgoncalves.info>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-17 19:52+0200\n"
-"PO-Revision-Date: 2007-07-18 23:13+0100\n"
-"Last-Translator: Carlos Gonçalves <carlos@pinguix.com>\n"
+"POT-Creation-Date: 2007-10-06 20:24+0200\n"
+"PO-Revision-Date: 2007-10-06 23:36+0100\n"
+"Last-Translator: Carlos Gonçalves <mail@cgoncalves.info>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n !=1);\n"
 
-#: Archiver.cxx:145
+#: Archiver.cxx:146
 msgid "Nothing selected for backup"
 msgstr "Nada seleccionado para salvaguardar"
 
-#: Archiver.cxx:151
+#: Archiver.cxx:152
 msgid "The target dir is not valid"
 msgstr "A directoria de destino não é válida"
 
-#: Archiver.cxx:205
+#: Archiver.cxx:208
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr "!! A cópia de segurança terminou <b>mas os ficheiros foram saltados</b> !!"
+
+#: Archiver.cxx:210
 msgid "-- Backup successfully finished --"
 msgstr "-- Cópia de segurança terminou com sucesso --"
 
-#: Archiver.cxx:207
-msgid "The backup has finished successfully."
-msgstr "A cópia de segurança terminou com sucesso."
+#: Archiver.cxx:214
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"A copia de segurança terminou mas os ficheiros foram saltados.\n"
+"O que deseja fazer agora?"
 
-#: Archiver.cxx:210
+#: Archiver.cxx:216
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"A cópia de segurança terminou com sucesso.\n"
+"O que deseja fazer agora?"
+
+#: Archiver.cxx:226
 msgid "...Backup aborted!"
 msgstr "...Cópia de segurança abortada!"
 
-#: Archiver.cxx:228
+#: Archiver.cxx:244
 msgid "Backup cancelled"
 msgstr "Cópia de segurança cancelada"
 
-#: Archiver.cxx:258
+#: Archiver.cxx:274
 msgid "...finished slice %1"
 msgstr "...terminada a divisão %1"
 
-#: Archiver.cxx:273
+#: Archiver.cxx:289
 msgid "...uploading archive %1 to %2"
 msgstr "...a enviar arquivo %1 para %2"
 
-#: Archiver.cxx:283
+#: Archiver.cxx:299
 msgid "Do you want to retry the upload?"
 msgstr "Quer voltar a tentar o upload?"
 
-#: Archiver.cxx:342
+#: Archiver.cxx:358
 msgid "The script '%1' could not be started."
 msgstr "O 'script' '%1' não pôde ser iniciado."
 
-#: Archiver.cxx:380
+#: Archiver.cxx:396
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "O disco está cheio. Por favor insira o disco Nr. %1"
 
-#: Archiver.cxx:413
+#: Archiver.cxx:429
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -70,7 +87,7 @@ msgstr ""
 "\n"
 "Quer voltar a tentar?"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:455
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -78,11 +95,11 @@ msgstr ""
 "Não foi possível obter informações da directoria: %1\n"
 "O sistema operativo reporta: %2"
 
-#: Archiver.cxx:449
+#: Archiver.cxx:465
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "A directoria '%1' não está acessível. A ignorar."
 
-#: Archiver.cxx:461
+#: Archiver.cxx:478
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -90,11 +107,19 @@ msgstr ""
 "Não foi possível escrever a directoria '%1' para arquivar.\n"
 "Talvez o disco esteja cheio."
 
-#: Archiver.cxx:499
+#: Archiver.cxx:516
 msgid "File '%1' is not readable. Skipping."
 msgstr "Ficheiro '%1' não está acessível. A ignorar."
 
-#: Archiver.cxx:554 Archiver.cxx:630
+#: Archiver.cxx:533
+msgid ""
+"Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
+"version. Skipping."
+msgstr ""
+"Desculpe, o ficheiro '%1' (%2) é desamiado grande e não pôde ser arquivado "
+"com esta versão do KDE. A saltar."
+
+#: Archiver.cxx:592 Archiver.cxx:673
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -102,20 +127,20 @@ msgstr ""
 "Não foi possível obter informações do ficheiro: %1\n"
 "O sistema operativo reporta: %2"
 
-#: Archiver.cxx:567 Archiver.cxx:583 Archiver.cxx:596 Archiver.cxx:652
-#: Archiver.cxx:670 Archiver.cxx:713
+#: Archiver.cxx:605 Archiver.cxx:621 Archiver.cxx:634 Archiver.cxx:695
+#: Archiver.cxx:713 Archiver.cxx:761
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Não foi possível escrever para o arquivo. Talvez o disco esteja cheio."
 
-#: Archiver.cxx:641
+#: Archiver.cxx:684
 msgid "Could not open file '%1' for reading."
 msgstr "Não foi possível abrir o ficheiro'%1' para leitura."
 
-#: Archiver.cxx:693
+#: Archiver.cxx:736
 msgid "...archiving file %1"
 msgstr "...a arquivar o ficheiro %1"
 
-#: Archiver.cxx:727
+#: Archiver.cxx:775
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -123,7 +148,7 @@ msgstr ""
 "Não foi possível ler o ficheiro: %1\n"
 "O sistema operativo reporta: %2"
 
-#: Archiver.cxx:773
+#: Archiver.cxx:827
 msgid "...compressing file %1"
 msgstr "... a comprimir ficheiro %1"
 
@@ -300,15 +325,15 @@ msgstr ""
 "Ficheiros: %1 Tamanho: %2 MB\n"
 "%3"
 
-#: Selector.cxx:102
+#: Selector.cxx:108
 msgid "Name"
 msgstr "Nome"
 
-#: Selector.cxx:103
+#: Selector.cxx:109
 msgid "Size"
 msgstr "Tamanho"
 
-#: Selector.cxx:104
+#: Selector.cxx:110
 msgid "Last Modified"
 msgstr "Última Modificação"
 
@@ -337,8 +362,8 @@ msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
 msgstr ""
-"Desmarque se desejar evitar uma janela de confirmação para alterar o disco quando "
-"uma divisão estiver completa"
+"Desmarque se desejar evitar uma janela de confirmação para alterar o disco "
+"quando uma divisão estiver completa"
 
 #. i18n: file ./SettingsDialog.ui line 101
 #: SettingsDialog.cxx:122 rc.cpp:82
@@ -350,7 +375,9 @@ msgstr "Comprimir Ficheiros"
 #: SettingsDialog.cxx:123 rc.cpp:85
 #, no-c-format
 msgid "Uncheck if you want to avoid compressing files or archive slices at all"
-msgstr "Desmarque se quiser evitar comprimir de todo divisões de ficheiros ou arquivos"
+msgstr ""
+"Desmarque se quiser evitar comprimir de todo divisões de ficheiros ou "
+"arquivos"
 
 #: main.cxx:23
 msgid "An easy to use backup program"
