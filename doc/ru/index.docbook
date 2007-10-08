@@ -1,0 +1,610 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY kbackup "<application>KBackup</application>">
+  <!ENTITY kappname "&kbackup;"><!-- replace kmyapplication here
+                                            do *not* replace kappname-->
+  <!ENTITY package "kde-module"><!-- kdebase, kdeadmin, etc.  Leave
+                                     this unchanged if your
+                                     application is not maintained in KDE CVS -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE"> <!-- ONLY If you are writing non-English
+                                     original documentation, change
+                                     the language here -->
+
+  <!-- Do not define any other entities; instead, use the entities
+       from entities/general.entities and $LANG/user.entities. -->
+]>
+
+<!-- ................................................................ -->
+
+<!-- The language must NOT be changed here. -->
+<!-- If you are writing original documentation in a language other -->
+<!-- than English, change the language above ONLY, not here -->
+<book lang="&language;">
+
+<!-- This header contains all of the meta-information for the document such
+as Authors, publish date, the abstract, and Keywords -->
+
+<bookinfo>
+<title>Руководство &kbackup;</title>
+
+<authorgroup>
+<author>
+<!-- This is just put in as an example.  For real documentation, please
+     define a general entity in entities/contributor.entities, e.g.
+<!ENTITY George.N.Ugnacious "<personname><firstname>George</firstname><othername>N.</othername><surname>Ugnacious</surname></personname>">
+<!ENTITY George.N.Ugnacious.mail "<email>gnu@kde.org</email>">
+and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
+ -->
+<personname>
+<firstname>Martin</firstname>
+<surname>Koller</surname>
+</personname>
+<email>m.koller@surfeu.at</email>
+</author>
+</authorgroup>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<othercredit role="translator">
+<firstname>Алексей</firstname>
+<surname>Кузнецов</surname>
+<affiliation>
+<address>
+<email>Alexey.Kouznetsov@gmail.com</email>
+</address>
+</affiliation>
+<contrib>Русский перевод&nbsp;</contrib>
+</othercredit>
+
+<copyright>
+<year>2006</year>
+<year>2007</year>
+<holder>Martin Koller</holder>
+</copyright>
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice>&FDLNotice;</legalnotice>
+
+<date>2007-07-08</date>
+<releaseinfo>1.04.00</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para>
+&kbackup; &mdash; инструмент для создания резервных копий.
+</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>system</keyword>
+<keyword>KBackup</keyword>
+<keyword>backup</keyword>
+<keyword>storage</keyword>
+<keyword>archive</keyword>
+<keyword>zip</keyword>
+<keyword>архив</keyword>
+<keyword>резерв</keyword>
+<keyword>архивирование</keyword>
+<keyword>система</keyword>
+<keyword>носитель</keyword>
+<keyword>накопитель</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title>Введение</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+
+<para>
+&kbackup; &mdash; программа, позволяющая копировать любые файлы и каталоги с 
+использованием удобного интерфейса выбора. Программа позволяет сохранять настройки
+резервирование в так называемых файлах профилей; они представляют собой обычные
+текстовые файлы, где записывается информация о файлах и каталогах, включённых в
+процесс резервирования или исключённых из него. 
+
+Также можно определять место хранения архива. Это может быть как локальный каталог
+(т.&nbsp;е. смонтированное устройство, такое как привод&nbsp;ZIP, карта
+флэш-памяти и т.&nbsp;п.), так и удалённое хранилище (вроде smb://remote/some_path) для
+централизованного хранения архивов.
+</para>
+
+<para>
+Основное назначение программы &mdash; быть достаточно простой для использования людьми, далёкими от компьютеров.
+</para>
+
+<para>
+Форматом хранения архивов является популярный формат TAR, причём данные можно сжимать
+(с помощью gzip или bzip2).
+</para>
+
+<para>
+В текущей версии реализована лишь архивация данных. Для их восстановления требуется файл-менеджер,
+например, konqueror, для распаковки содержимого архива TAR в систему.
+Хорошая поддержка формата TAR является основной причиной его выбора в качестве формата хранения резервных копий.
+</para>
+
+</chapter>
+
+<chapter id="using-kbackup">
+<title>Использование &kbackup;</title>
+
+<para>
+Всё, что вам нужно &mdash; это выбрать копируемые каталоги. Для этого
+выставьте отметки напротив нужных каталогов в левой чатси окна программы. 
+</para>
+
+<para>
+При выборе каталога &kbackup; автоматически включит в резерв все его подкаталоги и вохоядщие в них файлы. Для отмены выбора части содержимого каталога, просто снимите отметку с неё внутри каталога.
+</para>
+
+<para>
+В двух словах: выбранный каталогбудет содержать всё, что в нём находится, кроме того, выбор чего
+вручную отменён. 
+Также это означает, что при использовании сохранённого профиля (см.&nbsp;ниже)
+новые файлы, появившиеся в выбранных ранее каталогах, будут сохранены.
+</para>
+
+<para>
+
+<screenshot>
+<screeninfo>Снимок &kbackup;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="mainwindow.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Снимок главного окна</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="kbackup-profiles">
+<title>Работа с профилями</title>
+
+<para>
+Выбор каталогов, предназначенных для резервного копирования, можно сохранять в файлах профилей &kbackup;. Для этого выберите пункт "Сохранить профиль" в меню "Файл"
+</para>
+
+<para>
+Для загрузки сохранённого выделения используйте пункт "Загрузить профиль" меню "Файл".
+</para>
+
+<para>
+&kbackup; сохраняет в профиле выбор включённых и исключённых каталогов и файлов, каталог/URL назначения, префикс (общее имя) архива и наибольший допустимый размер тома.
+</para>
+
+<para>
+Для упрощения каждодневного резервирования одних и тех же каталогов,
+сохраните настройки в каком-либо файле профиля (файл с расширением "kbp"),
+а затем передавайте его имя прорамме &kbackup;.
+</para>
+
+<para>
+Например:
+</para>
+
+<para>
+kbackup myData.kbp
+</para>
+
+<para>
+Подсказка: вы можете создать на своём рабочем столе ярлык или ссылку
+на .kbp файл, так как это расширение связывается с программой &kbackup;.
+</para>
+
+</sect1>
+
+<sect1 id="archive-slices">
+<title>Тома архива</title>
+<para>
+Так как накопители данных обычно имеют ограниченный объём (н-р, 100Мб для ZIP-диска), &kbackup;
+разбивает архив на несколько томов.
+</para>
+<para>
+Наждый том имеет собственное имя, вроде:
+</para>
+<para>
+backup_2006.08.26-13.04.44_1.tar
+</para>
+<para>
+Имя содержит дату и время копирования (одинаковые для всех томов архива) и порядковый
+номер тома (в этом примере&nbsp;&mdash;&nbsp;_1)
+</para>
+<para> 
+Перфикс архива (по умолчанию "backup") можно определить через пункт "Настройки профиля" меню "Файл".
+</para>
+
+<para>
+Там вы таке можете задать наибольший допустимый размер тома, причём это ограничение будет работать даже если на носителе ещё остаётся свободное место.
+Это нужно для создания файлов, которые позже нужно будет копировать на оптические диски и т.&nbsp;п.
+Если размер тома ограничен, то доступное количество свободного место будет отмечено значком '*'.
+</para>
+
+</sect1>
+
+<sect1 id="archive-compression">
+<title>Сжатие архива</title>
+<para>
+&kbackup; по умолчанию сжимает резервируемые файлы (эту опцию можно отключить). Для сжатия используется внешняя программа bzip2 или gzip.
+</para>
+
+<para>
+
+При создании архива на локальной файловой системе &kbackup; может разбить архив на тома,
+размеры которых зависят от объёма накопителя. Программа будет сжимать все файлы <emphasis>перед</emphasis> упаковкой и затем добавлять их в несжатый TAR-файл.
+</para>
+<para>
+н-р: backup_2006.08.26-13.04.44_1.tar
+</para>
+
+<para>
+Если в качестве каталога назначения указан URL, что понимается как хранилище
+неограниченного размера, &kbackup; создаст один архив с <emphasis>несжатыми</emphasis>
+файлами и потом сожмёт архив в целом.
+</para>
+<para>
+В этом случае расширение архива будет .tar.bzip2 или .tar.gz
+</para>
+<para>
+н-р: backup_2006.08.26-13.04.44_1.tar.bzip2
+</para>
+
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title>Управление</title>
+
+<!-- (OPTIONAL, BUT RECOMMENDED) This chapter should list all of the
+application windows and their menubar and toolbar commands for easy reference.
+Also include any keys that have a special function but have no equivalent in the
+menus or toolbars. This may not be necessary for small apps or apps with no tool
+or menu bars. -->
+
+<sect1 id="kapp-mainwindow">
+<title>Главное окно &kbackup;</title>
+
+<para>
+</para>
+
+<sect2>
+<title>Меню <guimenu>Файл</guimenu></title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Файл</guimenu>
+<guimenuitem>Новый профиль</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Убирает выделение и очищает строку ввода каталога назначения, так что можно создать новый профиль резервирования.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Файл</guimenu>
+<guimenuitem>Загрузить профиль</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Загружает профиль из файла</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>файл</guimenu>
+<guimenuitem>Сохранить профиль</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Сохраняет все параметры в файл</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Файл</guimenu>
+<guimenuitem>Настройки профиля</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Здесь можно указать префикс (обще имя) архива и размер тома.
+См. главу "Тома архива". Эти настройки сохраняются в профиле.
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+</shortcut>
+<guimenu>Файл</guimenu>
+<guimenuitem>Выход</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Завершение работы</action> &kbackup;</para></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title>Меню <guimenu>Настройка</guimenu></title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Настройка</guimenu>
+<guimenuitem>Убирать в системный лоток</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>
+Когда этот параметр включён,показывается иконка программы в системеном лотке. Она отображает текущее состояние программы (во время резервирования она заменяется анимированной 
+При этом закрытие главного окна программы не приведёт к выходу из неё. Для завершения работы нужно будет выбрать пункт "Выход" меню "Файл". 
+С помощью контекстного меню иконки вы можеет приостанавливать, возобновлять и отменять резервирование.
+Всплывающая подсказка даёт информацию о процессе резервирования (число сохранённых файлов, размер архива и имя последнего сохранённого файла).
+</action></para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+
+<sect2>
+<title>Меню <guimenu>Справка</guimenu></title>
+
+<!-- Assuming you have a standard help menu (help, what's this, about -->
+<!-- &kbackup;, about KDE) then the documentation is already written. -->
+<!-- The following entity is valid anywhere that a variablelist is -->
+<!-- valid.  -->
+
+&help.menu.documentation;
+
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title>Справка для разработчиков &kbackup;</title>
+
+<!-- (OPTIONAL) A Programming/Scripting reference chapter should be
+used for apps that use plugins or that provide their own scripting hooks
+and/or development libraries. -->
+
+<para>
+Функциональность &kbackup; может быть расширена за счёт сценариев оболочки
+(или исполняемых файлов), которые могут вызываться в трёх точках процесса
+резервирования.
+Идея в том, чтобы позволить производить монтирование, отмонтирование и смену
+накопителей системно зависимым способом и обрабатывать готовый архив.
+</para>
+
+<para>
+Сценарий для исполнения должен быть передан с помощью ключа --script.
+</para>
+
+<para>Пример сценария</para>
+
+<example><title>sliceScript.sh</title>
+<programlisting>
+#!/bin/sh
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+    if [ "$mountPoint" != "" ]
+    then
+      mount /media/zip
+      rm -f /media/zip/backup_2*.tar*
+    fi
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+    if [ "$mountPoint" != "" ]
+    then
+      umount /media/zip
+      eject /media/zip
+    fi
+ ;;
+esac
+</programlisting>
+</example>
+
+<para>
+Сценарию всегда передаются четыре аргумента:
+</para>
+<itemizedlist>
+<listitem><para>режим</para> </listitem>
+<listitem><para>имя архива (тома)</para> </listitem>
+<listitem><para>каталог назначения/URL</para> </listitem>
+<listitem><para>точка монтирования каталога назначения, если это&nbsp;&mdash; локальный каталог, иначе пустая строка.</para> </listitem>
+</itemizedlist>
+
+<para>
+Режимы:
+</para>
+
+<para>
+<itemizedlist>
+
+<listitem><para>slice_init</para>
+<para>перед созданием тома</para>
+ </listitem>
+
+<listitem><para>slice_closed</para>
+<para>после завершения создания тома, но до перемещения его в каталог назначения</para>
+<para>
+Этот режим может пригодиться для дополнительного копирования архива в другое место (например, для посылки его на центральный сервер).
+</para>
+</listitem>
+
+<listitem><para>slice_finished</para>
+<para>после копирования тома в каталог назначения</para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+<para>
+Пример, показывающий, как можно ограничить число архивов в каталоге назначения:
+</para>
+
+<example><title>rotateScript.sh</title>
+<programlisting>
+#!/bin/sh
+# сценарий kbackup для сохранения лишь определённого количества последних архивов 
+
+NUM_BACKUPS=20
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+   count=`ls -A1 $target | wc -l`
+   if [ $count -ge $NUM_BACKUPS ]
+   then
+     removeCount=`expr $count - $NUM_BACKUPS`
+     oldest=`ls -A1 ${target}/* | sort | head -n $removeCount`
+     rm -f ${oldest}
+   fi
+ ;;
+esac
+
+</programlisting>
+</example>
+
+
+
+</chapter>
+
+<chapter id="faq">
+<title>Вопросы и ответы</title>
+
+<!-- (OPTIONAL but recommended) This chapter should include all of the silly
+(and not-so-silly) newbie questions that fill up your mailbox. This chapter
+should be reserved for BRIEF questions and answers! If one question uses more
+than a page or so then it should probably be part of the
+"Using this Application" chapter instead. You should use links to
+cross-reference questions to the parts of your documentation that answer them.
+This is also a great place to provide pointers to other FAQ's if your users
+must do some complicated configuration on other programs in order for your
+application work. -->
+
+
+&reporting.bugs;
+&updating.documentation;
+
+</chapter>
+
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title>Благодарности и лицензирование</title>
+
+<para>
+&kbackup;
+</para>
+<para>
+Права на программу (2006, 2007) &copy;  Martin Koller <email>m.koller@surfeu.at</email>
+</para>
+
+<para>
+Права на документацию (2006, 2007) &copy; 2006, 2007 Martin Koller
+</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+<para>
+Перевод на руский язык: Алексей Кузнецов <email>Alexey.Kouznetsov@gmail.com</email>
+</para>
+
+
+&underFDL;               <!-- FDL: do not remove -->
+
+<!-- Determine which license your application is licensed under,
+     and delete all the remaining licenses below:
+
+     (NOTE:  All documentation are licensed under the FDL,
+     regardless of what license the application uses) -->
+
+&underGPL;        	 <!-- GPL License -->
+
+</chapter>
+
+<appendix id="installation">
+<title>Установка</title>
+
+
+<sect1 id="getting-kapp">
+<title>Где достать  &kbackup;</title>
+
+<!-- This first entity contains boiler plate for applications that are
+part of KDE CVS.  You should remove it if you are releasing your
+application -->
+
+<para>
+&kbackup; можно скачать с сайта http://www.kde-apps.org
+</para>
+</sect1>
+
+<sect1 id="compilation">
+<title>Сборка и установка</title>
+
+<!-- This entity contains the boilerplate text for standard -->
+<!-- compilation instructions.  If your application requires any -->
+<!-- special handling, remove it, and replace with your own text. -->
+
+&install.compile.documentation;
+
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
