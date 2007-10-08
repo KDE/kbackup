@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KBackUp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-17 19:52+0200\n"
-"PO-Revision-Date: 2007-07-18 20:12+0200\n"
+"POT-Creation-Date: 2007-10-06 20:24+0200\n"
+"PO-Revision-Date: 2007-10-07 20:50+0200\n"
 "Last-Translator: Jozef Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak\n"
 "MIME-Version: 1.0\n"
@@ -16,51 +16,65 @@ msgstr ""
 "X-Poedit-Language: Slovak\n"
 "X-Poedit-Country: SLOVAKIA\n"
 
-#: Archiver.cxx:145
+#: Archiver.cxx:146
 msgid "Nothing selected for backup"
 msgstr "Nevybrali ste nič pre zálohovanie"
 
-#: Archiver.cxx:151
+#: Archiver.cxx:152
 msgid "The target dir is not valid"
 msgstr "Chybné určenie cieľového adresára"
 
-#: Archiver.cxx:205
+#: Archiver.cxx:208
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr "!! Záloha dokončená <b>ale niektoré súbory boli preskočené</b> !!"
+
+#: Archiver.cxx:210
 msgid "-- Backup successfully finished --"
 msgstr "-- Zálohovanie úspešne dokončené --"
 
-#: Archiver.cxx:207
-msgid "The backup has finished successfully."
-msgstr "Záloha bola úspešne dokončená."
+#: Archiver.cxx:214
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr "Záloha bola dokončená, ale niektoré súbory boli preskočené.\n"
+"Čo chcete teraz robiť?"
 
-#: Archiver.cxx:210
+#: Archiver.cxx:216
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr "Záloha bola úspešne dokončená.\n"
+"Čo chcete teraz robiť?"
+
+#: Archiver.cxx:226
 msgid "...Backup aborted!"
 msgstr "...Zálohovanie zrušené!"
 
-#: Archiver.cxx:228
+#: Archiver.cxx:244
 msgid "Backup cancelled"
 msgstr "Zálohovanie zrušené"
 
-#: Archiver.cxx:258
+#: Archiver.cxx:274
 msgid "...finished slice %1"
 msgstr "...dokončená časť %1"
 
-#: Archiver.cxx:273
+#: Archiver.cxx:289
 msgid "...uploading archive %1 to %2"
 msgstr "...uploadujem archív %1 na %2"
 
-#: Archiver.cxx:283
+#: Archiver.cxx:299
 msgid "Do you want to retry the upload?"
 msgstr "Chcete znovu skúsiť upload?"
 
-#: Archiver.cxx:342
+#: Archiver.cxx:358
 msgid "The script '%1' could not be started."
 msgstr "Nemôžem spustiť skript '%1'."
 
-#: Archiver.cxx:380
+#: Archiver.cxx:396
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Médium je plné. Prosím vložte médium č. %1"
 
-#: Archiver.cxx:413
+#: Archiver.cxx:429
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -70,7 +84,7 @@ msgstr ""
 "\n"
 "Chcete sa o to pokúsiť znovu?"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:455
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -78,11 +92,11 @@ msgstr ""
 "Nepodarilo sa získať informácie o adresári: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:449
+#: Archiver.cxx:465
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Adresár '%1' nemožno prečítať. Preskakujem."
 
-#: Archiver.cxx:461
+#: Archiver.cxx:478
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -90,11 +104,18 @@ msgstr ""
 "Nepodarilo sa zapísať adresár '%1' do archívu.\n"
 "Možno je médium plné."
 
-#: Archiver.cxx:499
+#: Archiver.cxx:516
 msgid "File '%1' is not readable. Skipping."
 msgstr "Súbor '%1' nemožno prečítať. Preskakujem."
 
-#: Archiver.cxx:554 Archiver.cxx:630
+#: Archiver.cxx:533
+msgid ""
+"Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
+"version. Skipping."
+msgstr ""
+"Ľutujem, súbor '%1' (%2) je príliš veľký a nedá sa archivovať v tejto verzii KDE. Preskakujem."
+
+#: Archiver.cxx:592 Archiver.cxx:673
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -102,20 +123,20 @@ msgstr ""
 "Nepodarilo sa získať informácie súboru: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:567 Archiver.cxx:583 Archiver.cxx:596 Archiver.cxx:652
-#: Archiver.cxx:670 Archiver.cxx:713
+#: Archiver.cxx:605 Archiver.cxx:621 Archiver.cxx:634 Archiver.cxx:695
+#: Archiver.cxx:713 Archiver.cxx:761
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Nepodaril sa zápis do archívu. Možno je médium plné."
 
-#: Archiver.cxx:641
+#: Archiver.cxx:684
 msgid "Could not open file '%1' for reading."
 msgstr "Súbor '%1' nemožno otvoriť na čítanie."
 
-#: Archiver.cxx:693
+#: Archiver.cxx:736
 msgid "...archiving file %1"
 msgstr "...archivujem súbor %1"
 
-#: Archiver.cxx:727
+#: Archiver.cxx:775
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -123,7 +144,7 @@ msgstr ""
 "Nemožno prečítať súbor: %1\n"
 "Operačný systém hlási: %2"
 
-#: Archiver.cxx:773
+#: Archiver.cxx:827
 msgid "...compressing file %1"
 msgstr "...komprimujem súbor %1"
 
@@ -300,15 +321,15 @@ msgstr ""
 "Súborov: %1 Veľkosť: %2 MB\n"
 "%3"
 
-#: Selector.cxx:102
+#: Selector.cxx:108
 msgid "Name"
 msgstr "Názov"
 
-#: Selector.cxx:103
+#: Selector.cxx:109
 msgid "Size"
 msgstr "Veľkosť"
 
-#: Selector.cxx:104
+#: Selector.cxx:110
 msgid "Last Modified"
 msgstr "Posledná úprava"
 
@@ -336,7 +357,9 @@ msgstr "Cieľ potrebuje vymeniť médium"
 msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
-msgstr "Odškrtnite, ak sa chcete vyhnúť potvrdzovaciemu oknu na výmenu média po dokončení časti"
+msgstr ""
+"Odškrtnite, ak sa chcete vyhnúť potvrdzovaciemu oknu na výmenu média po "
+"dokončení časti"
 
 #. i18n: file ./SettingsDialog.ui line 101
 #: SettingsDialog.cxx:122 rc.cpp:82
@@ -348,7 +371,8 @@ msgstr "Skomprimovať súbory"
 #: SettingsDialog.cxx:123 rc.cpp:85
 #, no-c-format
 msgid "Uncheck if you want to avoid compressing files or archive slices at all"
-msgstr "Odškrtnite, ak sa chcete vyhnúť akejkoľvek kompresie dáť alebo častí archívu"
+msgstr ""
+"Odškrtnite, ak sa chcete vyhnúť akejkoľvek kompresie dáť alebo častí archívu"
 
 #: main.cxx:23
 msgid "An easy to use backup program"
