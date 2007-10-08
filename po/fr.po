@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-17 19:52+0200\n"
-"PO-Revision-Date: 2007-09-06 15:18+0200\n"
+"POT-Creation-Date: 2007-10-06 20:24+0200\n"
+"PO-Revision-Date: 2007-10-08 09:08+0200\n"
 "Last-Translator: Alain PORTAL <aportal@univ-montp2.fr>\n"
 "Language-Team: Français <traduc@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,51 +17,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: Archiver.cxx:145
+#: Archiver.cxx:146
 msgid "Nothing selected for backup"
 msgstr "Rien n'est sélectionné pour la sauvegarde."
 
-#: Archiver.cxx:151
+#: Archiver.cxx:152
 msgid "The target dir is not valid"
 msgstr "Le répertoire de destination n'est pas valide."
 
-#: Archiver.cxx:205
+#: Archiver.cxx:208
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr "!! Sauvegarde terminée <b>mais des fichiers ont été ignorés</b> !!"
+
+#: Archiver.cxx:210
 msgid "-- Backup successfully finished --"
 msgstr "-- La sauvegarde s'est terminée avec succés --"
 
-#: Archiver.cxx:207
-msgid "The backup has finished successfully."
-msgstr "La sauvegarde s'est terminée avec succès."
+#: Archiver.cxx:214
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"La sauvegarde est terminée mais des fichiers ont été ignorés.\n"
+"Que voulez-vous faire à présent ?"
 
-#: Archiver.cxx:210
+#: Archiver.cxx:216
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"La sauvegarde s'est achevée avec succès.\n"
+"Que voulez-vous faire à présent ?"
+
+#: Archiver.cxx:226
 msgid "...Backup aborted!"
 msgstr "... Sauvegarde abandonnée !"
 
-#: Archiver.cxx:228
+#: Archiver.cxx:244
 msgid "Backup cancelled"
 msgstr "Sauvegarde annulée"
 
-#: Archiver.cxx:258
+#: Archiver.cxx:274
 msgid "...finished slice %1"
 msgstr "tranche %1 finie..."
 
-#: Archiver.cxx:273
+#: Archiver.cxx:289
 msgid "...uploading archive %1 to %2"
 msgstr "...téléchargement de l'archive %1 vers %2"
 
-#: Archiver.cxx:283
+#: Archiver.cxx:299
 msgid "Do you want to retry the upload?"
 msgstr "Voulez-vous retenter le téléchargement ?"
 
-#: Archiver.cxx:342
+#: Archiver.cxx:358
 msgid "The script '%1' could not be started."
 msgstr "Le script « %1 » ne peut pas être démarré."
 
-#: Archiver.cxx:380
+#: Archiver.cxx:396
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Le medium est plein. Veuillez insérer le medium N° %1"
 
-#: Archiver.cxx:413
+#: Archiver.cxx:429
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -71,7 +87,7 @@ msgstr ""
 "\n"
 "Voulez-vous recommencer ?"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:455
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -79,11 +95,11 @@ msgstr ""
 "Impossible d'obtenir des informations sur le répertoire : %1\n"
 "Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:449
+#: Archiver.cxx:465
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Le répertoire « %1 » n'est pas lisible. Passe."
 
-#: Archiver.cxx:461
+#: Archiver.cxx:478
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -91,11 +107,17 @@ msgstr ""
 "Impossible d'écrire le répertoire « %1 » dans l'archive.\n"
 "Peut-être le medium est-il plein ?"
 
-#: Archiver.cxx:499
+#: Archiver.cxx:516
 msgid "File '%1' is not readable. Skipping."
 msgstr "Le fichier « %1 » n'est pas lisible. Passe."
 
-#: Archiver.cxx:554 Archiver.cxx:630
+#: Archiver.cxx:533
+msgid ""
+"Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
+"version. Skipping."
+msgstr "Désolé, le fichier « %1 » (%2) est trop important et ne peut pas être archivé avec cette version de KDE. On l'ignore."
+
+#: Archiver.cxx:592 Archiver.cxx:673
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -103,20 +125,20 @@ msgstr ""
 "Impossible d'obtenir des informations sur le fichier : %1\n"
 "Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:567 Archiver.cxx:583 Archiver.cxx:596 Archiver.cxx:652
-#: Archiver.cxx:670 Archiver.cxx:713
+#: Archiver.cxx:605 Archiver.cxx:621 Archiver.cxx:634 Archiver.cxx:695
+#: Archiver.cxx:713 Archiver.cxx:761
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Impossible d'écrire dans l'archive. Peut-être le medium est-il plein ?"
 
-#: Archiver.cxx:641
+#: Archiver.cxx:684
 msgid "Could not open file '%1' for reading."
 msgstr "Impossible d'ouvrir le fichier « %1 » en lecture."
 
-#: Archiver.cxx:693
+#: Archiver.cxx:736
 msgid "...archiving file %1"
 msgstr "...archivage du fichier %1"
 
-#: Archiver.cxx:727
+#: Archiver.cxx:775
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -124,7 +146,7 @@ msgstr ""
 "Impossible de lire le fichier : %1\n"
 "Le système d'exploitation retourne : %2"
 
-#: Archiver.cxx:773
+#: Archiver.cxx:827
 msgid "...compressing file %1"
 msgstr "... compression du fichier %1"
 
@@ -301,15 +323,15 @@ msgstr ""
 "Fichiers : %1 Taille : %2 Mo\n"
 "%3"
 
-#: Selector.cxx:102
+#: Selector.cxx:108
 msgid "Name"
 msgstr "Nom"
 
-#: Selector.cxx:103
+#: Selector.cxx:109
 msgid "Size"
 msgstr "Taille"
 
-#: Selector.cxx:104
+#: Selector.cxx:110
 msgid "Last Modified"
 msgstr "Dernière modification"
 
@@ -337,7 +359,9 @@ msgstr "La cible nécessite un changement de support"
 msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
-msgstr "Décocher si vous ne souhaitez pas voir apparaître une boite de dialogue de confirmation pour changer de support lorsque une tranche d'archive est finie"
+msgstr ""
+"Décocher si vous ne souhaitez pas voir apparaître une boite de dialogue de "
+"confirmation pour changer de support lorsque une tranche d'archive est finie"
 
 #. i18n: file ./SettingsDialog.ui line 101
 #: SettingsDialog.cxx:122 rc.cpp:82
@@ -349,7 +373,9 @@ msgstr "Compresser les fichiers"
 #: SettingsDialog.cxx:123 rc.cpp:85
 #, no-c-format
 msgid "Uncheck if you want to avoid compressing files or archive slices at all"
-msgstr "Décocher si vous ne souhaitez pas compresser les fichiers ou les tranches d'archive"
+msgstr ""
+"Décocher si vous ne souhaitez pas compresser les fichiers ou les tranches "
+"d'archive"
 
 #: main.cxx:23
 msgid "An easy to use backup program"
