@@ -7,10 +7,13 @@ Comment=Backup your data with an easy to use user interface
 Icon=kbackup
 MimeType=text/x-kbp;
 Terminal=false
-Categories=System;KDE;X-SuSE-Backup;
+Categories=System;KDE;X-SuSE-Backup;X-MandrivaLinux-System-Archiving-Backup;
 
 Name[de]=KBackup (Datensicherungs Programm)
 Comment[de]=Datensicherung mit einem einfach zu bedienended User Interface
 
 Name[fr]=KBackup (Programme de sauvegarde)
 Comment[fr]=Sauvegarder vos données avec une interface utilisateur facile à utiliser
+
+Name[es]=KBackup (Programa de Copias de Seguridad)
+Comment[es]=Realiza copias de seguridad de tus datos con un programa fácil de usar
