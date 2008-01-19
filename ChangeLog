@@ -1,3 +1,13 @@
+19.01.2008 (0.5.4)
+- correctly limit slice size:
+  - limited by the target directory (when we store directly into a local dir)
+  - limited by the "tmp" dir when we create a tmp file for later upload via KIO
+  - limited by Qt3 (4GB on 32bit)
+  - limited by user defined maxSliceMBs
+- sort directories first in treeview
+- correctly sort by size and timestamp in treeview
+- check if a file that is archived into the backup is not the backup itself
+
 6.10.2007 (0.5.3)
 - Add russian handbook (thanks to Alexey Kouznetsov)
 - show symbolic links with an overlayed "link" icon
