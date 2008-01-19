@@ -113,7 +113,6 @@ class Archiver : public QObject
     bool mediaNeedsChange;
     bool compressFiles;
 
-    KIO::filesize_t startSize;
     KIO::filesize_t sliceBytes;
     KIO::filesize_t sliceCapacity;
 

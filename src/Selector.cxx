@@ -18,6 +18,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <kde_file.h>
 
 #include <qdir.h>
@@ -93,9 +94,43 @@ class ListItem : public QCheckListItem
       QCheckListItem::paintCell(p, colorGroup, column, width, align);
     }
 
+    virtual QString key(int column, bool ascending) const
+    {
+      switch ( column )
+      {
+        case 0:
+        {
+          // sort directories _always_ first
+          if ( ascending )
+            return (isDir_ ? "0" : "1") + text();
+          else
+            return (isDir_ ? "1" : "0") + text();
+        }
+        case 1: return sizeSortStr;
+        case 2: return timeSortStr;
+      }
+      return text();
+    }
+
+    void setSize(KIO::filesize_t size)
+    {
+      sizeSortStr = KIO::number(size).rightJustify(20);
+      setText(1, KIO::convertSize(size));
+    }
+
+    void setLastModified(const QDateTime &time)
+    {
+      timeSortStr = time.toString(Qt::ISODate); // sortable
+      setText(2, KGlobal::locale()->formatDateTime(time));
+    }
+
   private:
     bool isDir_;
     bool partly;  // is this an item which is not fully (but partly - some of the children) selected
+
+    // store for fast, correct sorting
+    QString sizeSortStr;
+    QString timeSortStr;
 };
 
 //--------------------------------------------------------------------------------
@@ -169,8 +204,8 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
 
     // QFileInfo has no large file support (only files up to 2GB)
     KDE_stat(QFile::encodeName(info->absFilePath()), &status);
-    item->setText(1, KIO::convertSize(status.st_size));
-    item->setText(2, KGlobal::locale()->formatDateTime(info->lastModified()));
+    item->setSize(status.st_size);
+    item->setLastModified(info->lastModified());
 
     if ( item->isDir() )
     {

@@ -74,7 +74,7 @@ void MainWidget::startBackup()
 
 void MainWidget::setSelector(Selector *s)
 {
-  setCapacity(0);  // to hide slice progress bar ...
+  setCapacity(0);
   setFileProgress(100);  // to hide file progress bar
 
   selector = s;
@@ -148,10 +148,6 @@ void MainWidget::setCapacity(KIO::filesize_t bytes)
       txt += " (*)";
     capacity->setText(txt);
   }
-
-  sliceLabel->setShown(bytes);
-  sliceNum->setShown(bytes);
-  progressSlice->setShown(bytes);
 }
 
 //--------------------------------------------------------------------------------

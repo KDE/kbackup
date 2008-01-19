@@ -39,12 +39,14 @@
 QString Archiver::sliceScript;
 Archiver *Archiver::instance;
 
+const KIO::filesize_t MAX_SLICE = UINT_MAX; // due to Qt3 limitation of QIODevice using Q_ULONG
+
 //--------------------------------------------------------------------------------
 
 Archiver::Archiver(QWidget *parent)
   : QObject(parent),
     archive(0), totalBytes(0), totalFiles(0), sliceNum(0), mediaNeedsChange(true),
-    sliceCapacity(0), cancelled(false), runs(false), skippedFiles(false), jobResult(0)
+    sliceCapacity(MAX_SLICE), cancelled(false), runs(false), skippedFiles(false), jobResult(0)
 {
   instance = this;
 
@@ -101,40 +103,35 @@ void Archiver::setFilePrefix(const QString &prefix)
 
 void Archiver::calculateCapacity()
 {
-  if ( targetURL.isLocalFile() || (maxSliceMBs != UNLIMITED) )
-  {
-    KIO::filesize_t freeBytes = 0;
+  // calculate how large a slice can actually be
+  // - limited by the target directory (when we store directly into a local dir)
+  // - limited by the "tmp" dir when we create a tmp file for later upload via KIO
+  // - limited by Qt3 (4GB on 32bit)
+  // - limited by user defined maxSliceMBs
 
-    if ( targetURL.isLocalFile() )
-      getDiskFree(targetURL.path(), sliceCapacity, freeBytes);
+  KIO::filesize_t totalBytes = 0;
 
-    if ( maxSliceMBs != UNLIMITED )
-    {
-      KIO::filesize_t max = static_cast<KIO::filesize_t>(maxSliceMBs) * 1024 * 1024;
-
-      if ( targetURL.isLocalFile() )
-        sliceCapacity = QMIN(freeBytes, max);  // still limit to the size we have available
-      else
-        sliceCapacity = max;  // remote target
-
-      freeBytes = sliceCapacity;
-    }
-
-    startSize = sliceBytes = sliceCapacity - freeBytes;  // how much is already used on that medium
-
-    if ( sliceCapacity == 0 )
-      emit sliceProgress(100);
-    else
-      emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
-
-    emit targetCapacity(sliceCapacity);
-  }
+  if ( targetURL.isLocalFile() )
+    getDiskFree(targetURL.path(), totalBytes, sliceCapacity);
   else
   {
-    sliceCapacity = UNLIMITED;
-    startSize = sliceBytes = 0;
-    emit targetCapacity(0);
+    getDiskFree(::locateLocal("tmp", ""), totalBytes, sliceCapacity);
+    // as "tmp" is also used by others and by us when compressing a file,
+    // don't eat it up completely. Reserve 10%
+    sliceCapacity = sliceCapacity * 9 / 10;
   }
+
+  // limit to what Qt3 can handle
+  sliceCapacity = QMIN(sliceCapacity, MAX_SLICE);
+
+  if ( maxSliceMBs != UNLIMITED )
+  {
+    KIO::filesize_t max = static_cast<KIO::filesize_t>(maxSliceMBs) * 1024 * 1024;
+    sliceCapacity = QMIN(sliceCapacity, max);
+  }
+
+  sliceBytes = 0;
+  emit targetCapacity(sliceCapacity);
 }
 
 //--------------------------------------------------------------------------------
@@ -251,20 +248,6 @@ void Archiver::finishSlice()
 {
   if ( archive )
     archive->close();
-
-  if ( sliceCapacity == UNLIMITED )
-  {
-    if ( filterBase )  // user wants compression
-    {
-      // now let's compress the file
-      if ( ! cancelled )
-        compressFile(archiveName, archiveName + ext);
-
-      QFile(archiveName).remove();  // remove uncompressed file
-
-      archiveName += ext; // this is now the final name
-    }
-  }
 
   if ( ! cancelled )
   {
@@ -420,7 +403,6 @@ bool Archiver::getNextSlice()
   calculateCapacity();
 
   // don't create a bz2 compressed file as we compress each file on its own
-  // Even if we have sliceCapacity == UNLIMITED, as we will compress that later
   archive = new KTar(archiveName, "application/x-tar");
 
   while ( ! archive->open(IO_WriteOnly) )
@@ -509,6 +491,11 @@ void Archiver::addFile(const QFileInfo &info)
   if ( excludeFiles.contains(info.absFilePath()) )
     return;
 
+  // avoid including my own archive file
+  // (QFileInfo to have correct path comparison even in case archiveName contains // etc.)
+  if ( info.absFilePath() == QFileInfo(archiveName).absFilePath() )
+    return;
+
   if ( cancelled ) return;
 
   if ( ! info.isReadable() )
@@ -548,7 +535,7 @@ void Archiver::addFile(const QFileInfo &info)
     return;
   }
 
-  if ( (sliceCapacity == UNLIMITED) || !getCompressFiles() )
+  if ( !getCompressFiles() )
   {
     if ( ! addLocalFile(info) )  // this also increases totalBytes
     {
@@ -578,7 +565,7 @@ void Archiver::addFile(const QFileInfo &info)
     // QFileInfo has no large file support (only files up to 2GB)
     KDE_stat(QFile::encodeName(tmpFile.name()), &compressedStatus);
 
-    if ( sliceCapacity && ((sliceBytes + compressedStatus.st_size) > sliceCapacity) )
+    if ( (sliceBytes + compressedStatus.st_size) > sliceCapacity )
       if ( ! getNextSlice() ) return;
 
     // to be able to create the exact same metadata (permission, date, owner) we need
@@ -643,15 +630,12 @@ void Archiver::addFile(const QFileInfo &info)
     memset(&archiveStat, 0, sizeof(archiveStat));
     KDE_stat(QFile::encodeName(archiveName), &archiveStat);
 
-    sliceBytes = startSize + archiveStat.st_size;  // account for tar overhead
+    sliceBytes = archiveStat.st_size;  // account for tar overhead
     totalBytes += compressedStatus.st_size;
 
     tmpFile.unlink();
 
-    if ( sliceCapacity )
-      emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
-    else
-      emit sliceProgress(100);
+    emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
   }
 
   totalFiles++;
@@ -685,7 +669,7 @@ bool Archiver::addLocalFile(const QFileInfo &info)
     return false;
   }
 
-  if ( sliceCapacity && ((sliceBytes + sourceStat.st_size) > sliceCapacity) )
+  if ( (sliceBytes + sourceStat.st_size) > sliceCapacity )
     if ( ! getNextSlice() ) return false;
 
   if ( ! archive->prepareWriting(QString(".") + info.absFilePath(),
@@ -747,11 +731,8 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   memset(&archiveStat, 0, sizeof(archiveStat));
   KDE_stat(QFile::encodeName(archiveName), &archiveStat);
 
-  sliceBytes = startSize + archiveStat.st_size;  // account for tar overhead
-  if ( sliceCapacity )
-    emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
-  else
-    emit sliceProgress(100);
+  sliceBytes = archiveStat.st_size;  // account for tar overhead
+  emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
 
   if ( msgShown )
     QApplication::restoreOverrideCursor();

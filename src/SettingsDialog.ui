@@ -11,7 +11,7 @@
             <x>0</x>
             <y>0</y>
             <width>340</width>
-            <height>249</height>
+            <height>258</height>
         </rect>
     </property>
     <property name="caption">
@@ -72,7 +72,7 @@
                                 <string>unlimited</string>
                             </property>
                             <property name="maxValue">
-                                <number>999999999</number>
+                                <number>4096</number>
                             </property>
                             <property name="minValue">
                                 <number>0</number>
