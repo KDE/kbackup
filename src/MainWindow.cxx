@@ -37,13 +37,15 @@
 #include <kpopupmenu.h>
 #include <kurl.h>
 
-//#include <iostream>
-//using namespace std;
+#include <iostream>
+using namespace std;
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
   : KMainWindow(0, 0, 0), autorun(false)
 {
+  new Archiver(this);
+
   KStdAction::quit(this, SLOT(maybeQuit()), actionCollection());
 
   new KAction(i18n("New Profile"), "filenew", 0, this,
@@ -54,6 +56,9 @@ MainWindow::MainWindow()
 
   new KAction(i18n("Save Profile"), "filesave", 0, this,
               SLOT(saveProfile()), actionCollection(), "saveProfile");
+
+  new KAction(i18n("Save Profile As..."), "filesaveas", 0, this,
+              SLOT(saveProfileAs()), actionCollection(), "saveProfileAs");
 
   new KAction(i18n("Profile Settings"), "", 0, this,
               SLOT(profileSettings()), actionCollection(), "profileSettings");
@@ -180,83 +185,34 @@ void MainWindow::loadProfile()
 
 void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
 {
-  QFile file(fileName);
-  if ( ! file.open(IO_ReadOnly) )
+  QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
+  QStringList includes, excludes;
+  QString error;
+
+  if ( ! Archiver::instance->loadProfile(fileName, includes, excludes, error) )
   {
+    QApplication::restoreOverrideCursor();
+
     KMessageBox::error(this,
                 i18n("Could not open profile '%1' for reading: %2")
                      .arg(fileName)
-                     .arg(kapp->translate("QFile", file.errorString())),
+                     .arg(kapp->translate("QFile", error)),
                 i18n("Open failed"));
     return;
   }
 
-  QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+  setLoadedProfile(fileName);
 
   KURL url;
   url.setPath(fileName);
   recentFiles->addURL(url);
   recentFiles->saveEntries(KGlobal::instance()->config());
 
-  QStringList includes, excludes;
-  QString target;
-  QChar type, blank;
-  QTextStream stream(&file);
-
-  // back to default (in case old profile read which does not include these)
-  Archiver::instance->setFilePrefix("");
-  Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
-
-  while ( ! stream.atEnd() )
-  {
-    stream.skipWhiteSpace();
-    stream >> type;            // read a QChar without skipping whitespace
-    stream >> blank;           // read a QChar without skipping whitespace
-
-    if ( type == 'M' )
-    {
-      target = stream.readLine();  // include white space
-    }
-    else if ( type == 'P' )
-    {
-      QString prefix = stream.readLine();  // include white space
-      Archiver::instance->setFilePrefix(prefix);
-    }
-    else if ( type == 'S' )
-    {
-      int max;
-      stream >> max;
-      Archiver::instance->setMaxSliceMBs(max);
-    }
-    else if ( type == 'C' )
-    {
-      int change;
-      stream >> change;
-      Archiver::instance->setMediaNeedsChange(change);
-    }
-    else if ( type == 'Z' )
-    {
-      int compress;
-      stream >> compress;
-      Archiver::instance->setCompressFiles(compress);
-    }
-    else if ( type == 'I' )
-    {
-      includes.append(stream.readLine());
-    }
-    else if ( type == 'E' )
-    {
-      excludes.append(stream.readLine());
-    }
-  }
-
-  file.close();
-
   // now fill the Selector tree with those settings
   selector->setBackupList(includes, excludes);
 
-  mainWidget->targetDir->setText(target);
-  Archiver::instance->setTarget(KURL::fromPathOrURL(target));
+  mainWidget->targetDir->setText(Archiver::instance->getTarget().pathOrURL());
 
   if ( adaptTreeWidth )
     selector->adjustColumn(0);
@@ -266,15 +222,34 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
 
 //--------------------------------------------------------------------------------
 
-void MainWindow::saveProfile()
+void MainWindow::saveProfileAs()
 {
-  QString fileName = KFileDialog::getSaveFileName(":profile", "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+  QString fileName = KFileDialog::getSaveFileName(":profile",
+                                                  "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
 
   if ( fileName.isEmpty() ) return;
 
+  saveProfile(fileName);
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::saveProfile(QString fileName)
+{
+  if ( fileName.isEmpty() )
+    fileName = loadedProfile;
+
+  if ( fileName.isEmpty() )
+  {
+    fileName = KFileDialog::getSaveFileName(":profile",
+                                            "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+
+    if ( fileName.isEmpty() ) return;
+  }
+
   QFile file(fileName);
 
-  if ( file.exists() )
+  if ( file.exists() && (fileName != loadedProfile) )
   {
     if ( KMessageBox::warningYesNo(this,
                 i18n("The profile '%1' does already exist.\n"
@@ -312,6 +287,8 @@ void MainWindow::saveProfile()
     stream << "E " << *it << endl;
 
   file.close();
+
+  setLoadedProfile(fileName);
 }
 
 //--------------------------------------------------------------------------------
@@ -348,6 +325,8 @@ void MainWindow::newProfile()
   selector->setBackupList(includes, excludes);
 
   mainWidget->targetDir->setText("");
+
+  setLoadedProfile("");
 }
 
 //--------------------------------------------------------------------------------
@@ -406,6 +385,14 @@ void MainWindow::dockInSysTray()
 void MainWindow::enableAllMessages()
 {
   KMessageBox::enableAllMessages();
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::setLoadedProfile(const QString &name)
+{
+  loadedProfile = name;
+  setCaption(name);
 }
 
 //--------------------------------------------------------------------------------

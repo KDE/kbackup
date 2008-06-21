@@ -100,11 +100,23 @@ class ListItem : public QCheckListItem
       {
         case 0:
         {
-          // sort directories _always_ first
+          bool hidden = text()[0] == QChar('.');
+
+          // sort directories _always_ first, and hidden before shown
           if ( ascending )
-            return (isDir_ ? "0" : "1") + text();
+          {
+            if ( isDir_ )
+              return (hidden ? "0" : "1") + text();
+            else  // file
+              return (hidden ? "2" : "3") + text();
+          }
           else
-            return (isDir_ ? "1" : "0") + text();
+          {
+            if ( isDir_ )
+              return (hidden ? "3" : "2") + text();
+            else
+              return (hidden ? "1" : "0") + text();
+          }
         }
         case 1: return sizeSortStr;
         case 2: return timeSortStr;
@@ -114,7 +126,8 @@ class ListItem : public QCheckListItem
 
     void setSize(KIO::filesize_t size)
     {
-      sizeSortStr = KIO::number(size).rightJustify(20);
+      sizeSortStr = KIO::number(size).rightJustify(15);
+      sizeSortStr.replace(' ', '0');
       setText(1, KIO::convertSize(size));
     }
 
@@ -210,15 +223,22 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
     if ( item->isDir() )
     {
       QDir dir(info->absFilePath(), QString::null, QDir::Name | QDir::IgnoreCase, QDir::All | QDir::Hidden);
-      if ( (dir.count() - 2) > 0)  // skip "." and ".."
+
+      // symlinked dirs can not be expanded as they are stored as single files in the archive
+      if ( ((dir.count() - 2) > 0) && !info->isSymLink() ) // skip "." and ".."
         item->setExpandable(true);
 
       static QPixmap folderIcon;
       static QPixmap folderLinkIcon;
+      static QPixmap folderIconHidden;
+      static QPixmap folderLinkIconHidden;
 
       if ( folderIcon.isNull() )  // only get the icons once
       {
+        KIconEffect effect;
+
         folderIcon = SmallIcon("folder");
+        folderIconHidden = effect.apply(folderIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
         // create a "link" icon and make sure the "folder" icon has
         // the same size as the "link" icon as otherwise the overlay operation
@@ -227,18 +247,27 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
         QImage src(folderIcon.convertToImage().scale(overlay.size()));
         KIconEffect::overlay(src, overlay);
         folderLinkIcon = src;
+
+        folderLinkIconHidden = effect.apply(folderLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
 
-      item->setPixmap(0, info->isSymLink() ? folderLinkIcon : folderIcon);
+      item->setPixmap(0, info->isSymLink() ?
+                           (info->isHidden() ? folderLinkIconHidden : folderLinkIcon)
+                         : (info->isHidden() ? folderIconHidden : folderIcon));
     }
     else
     {
       static QPixmap documentIcon;
       static QPixmap documentLinkIcon;
+      static QPixmap documentIconHidden;
+      static QPixmap documentLinkIconHidden;
 
       if ( documentIcon.isNull() )  // only get the icons once
       {
+        KIconEffect effect;
+
         documentIcon = SmallIcon("document");
+        documentIconHidden = effect.apply(documentIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
         // create a "link" icon and make sure the "document" icon has
         // the same size as the "link" icon as otherwise the overlay operation
@@ -247,9 +276,13 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
         QImage src(documentIcon.convertToImage().scale(overlay.size()));
         KIconEffect::overlay(src, overlay);
         documentLinkIcon = src;
+
+        documentLinkIconHidden = effect.apply(documentLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
 
-      item->setPixmap(0, info->isSymLink() ? documentLinkIcon : documentIcon);
+      item->setPixmap(0, info->isSymLink() ?
+                           (info->isHidden() ? documentLinkIconHidden : documentLinkIcon)
+                         : (info->isHidden() ? documentIconHidden : documentIcon));
     }
   }
 }

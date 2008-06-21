@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at
+//   (c) 2006 - 2008 Martin Koller, m.koller@surfeu.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@
 #include <kio/job.h>
 #include <kprocess.h>
 #include <kde_file.h>
+#include <kdirselectdialog.h>
 
 #include <qapplication.h>
 #include <qdir.h>
@@ -32,8 +33,8 @@
 #include <errno.h>
 #include <sys/statvfs.h>
 
-//#include <iostream>
-//using namespace std;
+#include <iostream>
+using namespace std;
 //--------------------------------------------------------------------------------
 
 QString Archiver::sliceScript;
@@ -46,13 +47,20 @@ const KIO::filesize_t MAX_SLICE = UINT_MAX; // due to Qt3 limitation of QIODevic
 Archiver::Archiver(QWidget *parent)
   : QObject(parent),
     archive(0), totalBytes(0), totalFiles(0), sliceNum(0), mediaNeedsChange(true),
-    sliceCapacity(MAX_SLICE), cancelled(false), runs(false), skippedFiles(false), jobResult(0)
+    sliceCapacity(MAX_SLICE), interactive(parent != 0),
+    cancelled(false), runs(false), skippedFiles(false), jobResult(0)
 {
   instance = this;
 
   maxSliceMBs = Archiver::UNLIMITED;
 
   setCompressFiles(true);
+
+  if ( !interactive )
+  {
+    connect(this, SIGNAL(logging(const QString &)), this, SLOT(loggingSlot(const QString &)));
+    connect(this, SIGNAL(warning(const QString &)), this, SLOT(warningSlot(const QString &)));
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -136,18 +144,87 @@ void Archiver::calculateCapacity()
 
 //--------------------------------------------------------------------------------
 
-void Archiver::createArchive(const QStringList &includes, const QStringList &excludes)
+bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStringList &excludes, QString &error)
+{
+  QFile file(fileName);
+  if ( ! file.open(IO_ReadOnly) )
+  {
+    error = file.errorString();
+    return false;
+  }
+
+  QString target;
+  QChar type, blank;
+  QTextStream stream(&file);
+
+  // back to default (in case old profile read which does not include these)
+  Archiver::instance->setFilePrefix("");
+  Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
+
+  while ( ! stream.atEnd() )
+  {
+    stream.skipWhiteSpace();
+    stream >> type;            // read a QChar without skipping whitespace
+    stream >> blank;           // read a QChar without skipping whitespace
+
+    if ( type == 'M' )
+    {
+      target = stream.readLine();  // include white space
+    }
+    else if ( type == 'P' )
+    {
+      QString prefix = stream.readLine();  // include white space
+      Archiver::instance->setFilePrefix(prefix);
+    }
+    else if ( type == 'S' )
+    {
+      int max;
+      stream >> max;
+      Archiver::instance->setMaxSliceMBs(max);
+    }
+    else if ( type == 'C' )
+    {
+      int change;
+      stream >> change;
+      Archiver::instance->setMediaNeedsChange(change);
+    }
+    else if ( type == 'Z' )
+    {
+      int compress;
+      stream >> compress;
+      Archiver::instance->setCompressFiles(compress);
+    }
+    else if ( type == 'I' )
+    {
+      includes.append(stream.readLine());
+    }
+    else if ( type == 'E' )
+    {
+      excludes.append(stream.readLine());
+    }
+  }
+
+  file.close();
+
+  Archiver::instance->setTarget(KURL_pathOrURL(target));
+
+  return true;
+}
+
+//--------------------------------------------------------------------------------
+
+bool Archiver::createArchive(const QStringList &includes, const QStringList &excludes)
 {
   if ( includes.count() == 0 )
   {
     emit warning(i18n("Nothing selected for backup"));
-    return;
+    return false;
   }
 
   if ( ! targetURL.isValid() )
   {
     emit warning(i18n("The target dir is not valid"));
-    return;
+    return false;
   }
 
   excludeDirs.clear();
@@ -171,10 +248,16 @@ void Archiver::createArchive(const QStringList &includes, const QStringList &exc
   cancelled = false;
   skippedFiles = false;
 
-  if ( ! getNextSlice() ) return;
-
   runs = true;
   emit inProgress(true);
+
+  if ( ! getNextSlice() )
+  {
+    runs = false;
+    emit inProgress(false);
+
+    return false;
+  }
 
   for (QStringList::const_iterator it = includes.begin(); !cancelled && (it != includes.end()); ++it)
   {
@@ -206,21 +289,29 @@ void Archiver::createArchive(const QStringList &includes, const QStringList &exc
     else
       emit logging(i18n("-- Backup successfully finished --"));
 
-    int ret = KMessageBox::questionYesNo(static_cast<QWidget*>(parent()),
-                             skippedFiles ?
-                               i18n("The backup has finished but files were skipped.\n"
-                                    "What do you want to do now?") :
-                               i18n("The backup has finished successfully.\n"
-                                    "What do you want to do now?"),
-                             QString::null,
-                             KStdGuiItem::cont(), KStdGuiItem::quit(),
-                             "showDoneInfo");
+    if ( interactive )
+    {
+      int ret = KMessageBox::questionYesNo(static_cast<QWidget*>(parent()),
+                               skippedFiles ?
+                                 i18n("The backup has finished but files were skipped.\n"
+                                      "What do you want to do now?") :
+                                 i18n("The backup has finished successfully.\n"
+                                      "What do you want to do now?"),
+                               QString::null,
+                               KStdGuiItem::cont(), KStdGuiItem::quit(),
+                               "showDoneInfo");
 
-    if ( ret == KMessageBox::No ) // quit
-      qApp->quit();
+      if ( ret == KMessageBox::No ) // quit
+        qApp->quit();
+    }
+
+    return true;
   }
   else
+  {
     emit logging(i18n("...Backup aborted!"));
+    return false;
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -259,17 +350,18 @@ void Archiver::finishSlice()
 
   if ( !cancelled && !targetURL.isLocalFile() )
   {
-    KURL source;
+    KURL source, target = targetURL;
     source.setPath(archiveName);
 
     while ( true )
     {
-      job = KIO::copy(source, targetURL);  // copy to have the archive for the script later down
+      job = KIO::copy(source, target, interactive);  // copy to have the archive for the script later down
       job->setWindow(static_cast<QWidget*>(parent()));
+      job->setInteractive(interactive);
 
       connect(job, SIGNAL(result(KIO::Job *)), this, SLOT(slotResult(KIO::Job *)));
 
-      emit logging(i18n("...uploading archive %1 to %2").arg(source.fileName()).arg(targetURL.prettyURL()));
+      emit logging(i18n("...uploading archive %1 to %2").arg(source.fileName()).arg(target.prettyURL()));
 
       while ( job )
         qApp->processEvents();
@@ -278,10 +370,39 @@ void Archiver::finishSlice()
         break;
       else
       {
-        if ( KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
-               i18n("Do you want to retry the upload?")) == KMessageBox::No )
+        if ( !interactive )
         {
+          emit warning(i18n("upload FAILED"));
           break;
+        }
+        else
+        {
+          enum { ASK, CANCEL, RETRY } action = ASK;
+          while ( action == ASK )
+          {
+            int ret = KMessageBox::warningYesNoCancel(static_cast<QWidget*>(parent()),
+                        i18n("How shall we proceed with the upload?"), QString::null,
+                        KGuiItem(i18n("Retry")), KGuiItem(i18n("Change Target")));
+
+            if ( ret == KMessageBox::Cancel )
+            {
+              action = CANCEL;
+              break;
+            }
+            else if ( ret == KMessageBox::No )  // change target
+            {
+              target = KDirSelectDialog::selectDirectory();
+              if ( target.isEmpty() )
+                action = ASK;
+              else
+                action = RETRY;
+            }
+            else
+              action = RETRY;
+          }
+
+          if ( action == CANCEL )
+            break;
         }
       }
     }
@@ -304,7 +425,7 @@ void Archiver::finishSlice()
 
 void Archiver::slotResult(KIO::Job *theJob)
 {
-  if ( (jobResult = theJob->error()) )
+  if ( (jobResult = theJob->error()) && interactive )
     theJob->showErrorDialog(static_cast<QWidget*>(parent()));
 
   // NOTE: I really wanted to show the errorText on my own, but I could not get
@@ -337,8 +458,11 @@ void Archiver::runScript(const QString &mode)
 
     if ( ! proc->start(KProcess::NotifyOnExit, KProcess::AllOutput) )
     {
-      KMessageBox::error(static_cast<QWidget*>(parent()),
-                        i18n("The script '%1' could not be started.").arg(sliceScript));
+      QString message = i18n("The script '%1' could not be started.").arg(sliceScript);
+      if ( interactive )
+        KMessageBox::error(static_cast<QWidget*>(parent()), message);
+      else
+        emit warning(message);
     }
     else
     {
@@ -374,10 +498,11 @@ bool Archiver::getNextSlice()
     finishSlice();
     if ( cancelled ) return false;
 
-    if ( mediaNeedsChange &&
-         KMessageBox::warningContinueCancel(static_cast<QWidget*>(parent()),
-                             i18n("The medium is full. Please insert medium Nr. %1").arg(sliceNum)) ==
-          KMessageBox::Cancel )
+    if ( !interactive ||
+         (mediaNeedsChange &&
+           KMessageBox::warningContinueCancel(static_cast<QWidget*>(parent()),
+                               i18n("The medium is full. Please insert medium Nr. %1").arg(sliceNum)) ==
+            KMessageBox::Cancel) )
     {
       cancel();
       return false;
@@ -407,9 +532,13 @@ bool Archiver::getNextSlice()
 
   while ( ! archive->open(IO_WriteOnly) )
   {
-    if ( KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
+    if ( !interactive )
+      emit warning(i18n("The file '%1' can not be opened for writing.").arg(archiveName));
+
+    if ( !interactive ||
+         (KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
            i18n("The file '%1' can not be opened for writing.\n\n"
-                "Do you want to retry?").arg(archiveName)) == KMessageBox::No )
+                "Do you want to retry?").arg(archiveName)) == KMessageBox::No) )
     {
       delete archive;
       archive = 0;
@@ -849,6 +978,20 @@ QString KURL_pathOrURL(const KURL &kurl)
     return kurl.path();
   else
     return kurl.prettyURL();
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::loggingSlot(const QString &message)
+{
+  cerr << message.utf8() << endl;
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::warningSlot(const QString &message)
+{
+  cerr << i18n("WARNING:").utf8() << message.utf8() << endl;
 }
 
 //--------------------------------------------------------------------------------
