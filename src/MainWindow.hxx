@@ -36,7 +36,8 @@ class MainWindow : public KMainWindow
 
   private slots:
     void loadProfile();
-    void saveProfile();
+    void saveProfileAs();
+    void saveProfile(QString fileName = QString());
     void profileSettings();
     void newProfile();
     void loggingSlot(const QString &message);
@@ -45,9 +46,11 @@ class MainWindow : public KMainWindow
     void dockInSysTray();
     void maybeQuit();
     void recentProfileSelected(const KURL &url);
+    void enableAllMessages();
 
   private:
     bool stopAllowed();
+    void setLoadedProfile(const QString &name);
 
   private:
     Selector *selector;
@@ -59,6 +62,7 @@ class MainWindow : public KMainWindow
     KAction *cancelBackupAction;
     KRecentFilesAction *recentFiles;
     bool autorun;
+    QString loadedProfile;
 };
 
 #endif

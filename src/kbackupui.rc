@@ -6,10 +6,12 @@
     <Action name="loadProfile"/>
     <Action name="recentProfiles"/>
     <Action name="saveProfile"/>
+    <Action name="saveProfileAs"/>
     <Action name="profileSettings"/>
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>
     <Action name="dockInSysTray"/>
+    <Action name="enableAllMessages"/>
   </Menu>
 </MenuBar>
 </kpartgui>

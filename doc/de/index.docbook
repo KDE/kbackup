@@ -50,6 +50,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 
 <copyright>
 <year>2006</year>
+<year>2007</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -57,8 +58,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2006-10-01</date>
-<releaseinfo>1.03.00</releaseinfo>
+<date>2007-07-08</date>
+<releaseinfo>1.04.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -247,7 +248,8 @@ verfügbare Größe mit der Markierung (*) im Hauptfenster.
 <sect1 id="archive-compression">
 <title>Archiv Komprimierung</title>
 <para>
-&kbackup; komprimiert immer die gesicherten Dateien. Abhängig von der Verfügbarkeit
+&kbackup; komprimiert immer die gesicherten Dateien (außer dies wird in den Profil Einstellungen
+explizit deaktiviert). Abhängig von der Verfügbarkeit
 auf ihrem System wird entweder bzip2 oder gzip als Komprimierung verwendet.
 </para>
 
@@ -334,7 +336,8 @@ or menu bars. -->
 </menuchoice></term>
 <listitem><para><action>In den Profileinstellungen kann man definieren, ob ein Archiv Datei
 mit dem Namen "backup" beginnen soll, oder ob ein alternativer Name verwendet werden soll.
-Diese Einstellung wird mit in die Profil Datei gespeichert.</action></para></listitem>
+Ebenso kann die Größe eines Archiv Teiles limitiert werden. Siehe Kapitel "Archiv Teile".
+Diese Einstellungen werden mit in die Profil Datei gespeichert.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -490,7 +493,44 @@ haben.
 </para>
 
 <para>
+Ein weiteres Beispiel script zeigt, wie man die Anzahl der Sicherungs Dateien am Zielort
+auf eine bestimmte Anzahl eingrenzen kann:
 </para>
+
+<example><title>rotateScript.sh</title>
+<programlisting>
+#!/bin/sh
+# kbackup script to do a rotating backup (keep only a defined number of backups)
+
+NUM_BACKUPS=20
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+   count=`ls -A1 $target | wc -l`
+   if [ $count -ge $NUM_BACKUPS ]
+   then
+     removeCount=`expr $count - $NUM_BACKUPS`
+     oldest=`ls -A1 ${target}/* | sort | head -n $removeCount`
+     rm -f ${oldest}
+   fi
+ ;;
+esac
+
+</programlisting>
+</example>
+
+
 
 </chapter>
 
@@ -525,11 +565,11 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Programm Copyright &copy; 2006 Martin Koller <email>m.koller@surfeu.at</email>
+Programm Copyright &copy; 2006, 2007 Martin Koller <email>m.koller@surfeu.at</email>
 </para>
 
 <para>
-Dokumentation Copyright &copy; 2006 Martin Koller
+Dokumentation Copyright &copy; 2006, 2007 Martin Koller
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->

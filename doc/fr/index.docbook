@@ -61,7 +61,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2006</year>
+<year>2007</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -69,8 +69,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2006-10-01</date>
-<releaseinfo>1.03.00</releaseinfo>
+<date>2007-07-08</date>
+<releaseinfo>1.04.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -260,8 +260,10 @@ sera marquée par une «&nbsp;*&nbsp;» dans la fenêtre principale.
 <sect1 id="archive-compression">
 <title>Compression de l'archive</title>
 <para>
-&kbackup; compressera toujours les fichiers enregistrés. Il choisira
-la compression bzip2 ou gzip suivant leur disponibilité sur votre système.
+&kbackup; compressera toujours les fichiers enregistrés (Excepté si vous avez
+explicitement désactiver ce comportement dans la configuration du profil.
+Il choisira la compression bzip2 ou gzip suivant leur disponibilité sur votre
+système.
 </para>
 
 <para>
@@ -349,7 +351,8 @@ un nouveau profil.
 <listitem><para><action>
 Dans la configuration, vous pouvez définir si le nom de l'archive est
 préfixé par la valeur par défaut «&nbsp;backup&nbsp;» ou bien fournir
-un autre préfixe.
+un autre préfixe. Vous pouvez également limiter la taille d'une tranche
+d'archive. Voir le chapitre «&nbsp;Tranches d'archive&nbsp;»
 Cette configuration est également enregistrée dans le profil.
 </action></para></listitem>
 </varlistentry>
@@ -510,7 +513,43 @@ sur le répertoire cible</para>
 </para>
 
 <para>
+Un autre exemple pour vous montrer comment limiter le nombre de fichiers
+d'archive sur la cible&nbsp;:
 </para>
+<example><title>rotateScript.sh</title>
+<programlisting>
+#!/bin/sh
+# kbackup script to do a rotating backup (keep only a defined number of backups)
+# script kbackup pour effectuer des sauvegardes circulaires
+# (conserver uniquement un nombre défini de sauvegardes)
+
+NUM_BACKUPS=20
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+   count=`ls -A1 $target | wc -l`
+   if [ $count -ge $NUM_BACKUPS ]
+   then
+     removeCount=`expr $count - $NUM_BACKUPS`
+     oldest=`ls -A1 ${target}/* | sort | head -n $removeCount`
+     rm -f ${oldest}
+   fi
+ ;;
+esac
+
+</programlisting>
+</example>
 
 </chapter>
 
@@ -545,11 +584,11 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Programme protégé par copyright &copy; 2006 par Martin Koller <email>m.koller@surfeu.at</email>
+Programme protégé par copyright &copy; 2006, 2007 par Martin Koller <email>m.koller@surfeu.at</email>
 </para>
 
 <para>
-Documentation protégée par copyright &copy; 2006 Martin Koller
+Documentation protégée par copyright &copy; 2006, 2007 Martin Koller
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->

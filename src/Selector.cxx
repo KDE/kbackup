@@ -1,11 +1,11 @@
-/***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
+//**************************************************************************
+//   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//**************************************************************************
 
 #include <Selector.hxx>
 
@@ -13,6 +13,13 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kiconloader.h>
+#include <kiconeffect.h>
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <kde_file.h>
 
 #include <qdir.h>
 
@@ -68,8 +75,8 @@ class ListItem : public QCheckListItem
     // set all children recursively below this to on
     void recursActivate(bool on)
     {
-      setOn(on);
       partly = false;  // all children will get the same state
+      setOn(on);
 
       for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
         static_cast<ListItem*>(item)->recursActivate(on);
@@ -87,9 +94,56 @@ class ListItem : public QCheckListItem
       QCheckListItem::paintCell(p, colorGroup, column, width, align);
     }
 
+    virtual QString key(int column, bool ascending) const
+    {
+      switch ( column )
+      {
+        case 0:
+        {
+          bool hidden = text()[0] == QChar('.');
+
+          // sort directories _always_ first, and hidden before shown
+          if ( ascending )
+          {
+            if ( isDir_ )
+              return (hidden ? "0" : "1") + text();
+            else  // file
+              return (hidden ? "2" : "3") + text();
+          }
+          else
+          {
+            if ( isDir_ )
+              return (hidden ? "3" : "2") + text();
+            else
+              return (hidden ? "1" : "0") + text();
+          }
+        }
+        case 1: return sizeSortStr;
+        case 2: return timeSortStr;
+      }
+      return text();
+    }
+
+    void setSize(KIO::filesize_t size)
+    {
+      sizeSortStr = KIO::number(size).rightJustify(15);
+      sizeSortStr.replace(' ', '0');
+      setText(1, KIO::convertSize(size));
+    }
+
+    void setLastModified(const QDateTime &time)
+    {
+      timeSortStr = time.toString(Qt::ISODate); // sortable
+      setText(2, KGlobal::locale()->formatDateTime(time));
+    }
+
   private:
     bool isDir_;
     bool partly;  // is this an item which is not fully (but partly - some of the children) selected
+
+    // store for fast, correct sorting
+    QString sizeSortStr;
+    QString timeSortStr;
 };
 
 //--------------------------------------------------------------------------------
@@ -114,6 +168,18 @@ Selector::Selector(QWidget *parent)
   minSize = QSize(columnWidth(0) + columnWidth(1), -1);
 
   connect(this, SIGNAL(expanded(QListViewItem *)), this, SLOT(expandedSlot(QListViewItem*)));
+
+  // for convenience, open the tree at the HOME directory
+  char *home = ::getenv("HOME");
+  if ( home )
+  {
+    QListViewItem *item = findItemByPath(QFile::decodeName(home));
+    if ( item )
+    {
+      item->setOpen(true);
+      ensureItemVisible(item);
+    }
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -146,19 +212,78 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
 
     item->setOn(on);
 
-    item->setText(1, KIO::convertSize(info->size()));
-    item->setText(2, KGlobal::locale()->formatDateTime(info->lastModified()));
+    KDE_struct_stat status;
+    memset(&status, 0, sizeof(status));
+
+    // QFileInfo has no large file support (only files up to 2GB)
+    KDE_stat(QFile::encodeName(info->absFilePath()), &status);
+    item->setSize(status.st_size);
+    item->setLastModified(info->lastModified());
 
     if ( item->isDir() )
     {
       QDir dir(info->absFilePath(), QString::null, QDir::Name | QDir::IgnoreCase, QDir::All | QDir::Hidden);
-      if ( (dir.count() - 2) > 0)  // skip "." and ".."
+
+      // symlinked dirs can not be expanded as they are stored as single files in the archive
+      if ( ((dir.count() - 2) > 0) && !info->isSymLink() ) // skip "." and ".."
         item->setExpandable(true);
 
-      item->setPixmap(0, SmallIcon("folder"));
+      static QPixmap folderIcon;
+      static QPixmap folderLinkIcon;
+      static QPixmap folderIconHidden;
+      static QPixmap folderLinkIconHidden;
+
+      if ( folderIcon.isNull() )  // only get the icons once
+      {
+        KIconEffect effect;
+
+        folderIcon = SmallIcon("folder");
+        folderIconHidden = effect.apply(folderIcon, KIconEffect::DeSaturate, 0, QColor(), true);
+
+        // create a "link" icon and make sure the "folder" icon has
+        // the same size as the "link" icon as otherwise the overlay operation
+        // would not be done
+        QImage overlay(SmallIcon("link").convertToImage());
+        QImage src(folderIcon.convertToImage().scale(overlay.size()));
+        KIconEffect::overlay(src, overlay);
+        folderLinkIcon = src;
+
+        folderLinkIconHidden = effect.apply(folderLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
+      }
+
+      item->setPixmap(0, info->isSymLink() ?
+                           (info->isHidden() ? folderLinkIconHidden : folderLinkIcon)
+                         : (info->isHidden() ? folderIconHidden : folderIcon));
     }
     else
-      item->setPixmap(0, SmallIcon("document"));
+    {
+      static QPixmap documentIcon;
+      static QPixmap documentLinkIcon;
+      static QPixmap documentIconHidden;
+      static QPixmap documentLinkIconHidden;
+
+      if ( documentIcon.isNull() )  // only get the icons once
+      {
+        KIconEffect effect;
+
+        documentIcon = SmallIcon("document");
+        documentIconHidden = effect.apply(documentIcon, KIconEffect::DeSaturate, 0, QColor(), true);
+
+        // create a "link" icon and make sure the "document" icon has
+        // the same size as the "link" icon as otherwise the overlay operation
+        // would not be done (kdeclassic has 18x18 but link has 16x16; crystalsvg is ok)
+        QImage overlay(SmallIcon("link").convertToImage());
+        QImage src(documentIcon.convertToImage().scale(overlay.size()));
+        KIconEffect::overlay(src, overlay);
+        documentLinkIcon = src;
+
+        documentLinkIconHidden = effect.apply(documentLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
+      }
+
+      item->setPixmap(0, info->isSymLink() ?
+                           (info->isHidden() ? documentLinkIconHidden : documentLinkIcon)
+                         : (info->isHidden() ? documentIconHidden : documentIcon));
+    }
   }
 }
 
@@ -235,6 +360,9 @@ void Selector::getBackupLists(QListViewItem *start, QStringList &includes, QStri
 
 void Selector::setBackupList(const QStringList &includes, const QStringList &excludes)
 {
+  int sortCol = sortColumn();
+  setSorting(-1);  // otherwise the performance is very bad as firstChild() always sorts
+
   // clear all current settings
   for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
     static_cast<ListItem*>(item)->recursActivate(false);
@@ -252,6 +380,8 @@ void Selector::setBackupList(const QStringList &includes, const QStringList &exc
     if ( item )
       static_cast<ListItem*>(item)->setOn(false);
   }
+
+  setSorting(sortCol);
 }
 
 //--------------------------------------------------------------------------------

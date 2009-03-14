@@ -11,7 +11,7 @@
             <x>0</x>
             <y>0</y>
             <width>340</width>
-            <height>182</height>
+            <height>258</height>
         </rect>
     </property>
     <property name="caption">
@@ -72,7 +72,7 @@
                                 <string>unlimited</string>
                             </property>
                             <property name="maxValue">
-                                <number>999999999</number>
+                                <number>4096</number>
                             </property>
                             <property name="minValue">
                                 <number>0</number>
@@ -81,6 +81,47 @@
                     </hbox>
                 </widget>
             </vbox>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>mediaNeedsChange</cstring>
+            </property>
+            <property name="text">
+                <string>Target needs media change</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Uncheck if you want to avoid a confirmation dialog to change the medium when a slice was finished</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>compressFiles</cstring>
+            </property>
+            <property name="text">
+                <string>Compress Files</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Uncheck if you want to avoid compressing files or archive slices at all</string>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>frame3</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>HLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
         </widget>
         <widget class="QLayoutWidget">
             <property name="name">

@@ -2,7 +2,6 @@
 #include "kio/global.h"
 
 class Selector;
-class Archiver;
 
 class MainWidget : public MainWidgetBase
 {
@@ -19,7 +18,6 @@ class MainWidget : public MainWidgetBase
 
   private:
     Selector *selector;
-    Archiver *archiver;
     QTime elapsed;
 
   private slots:

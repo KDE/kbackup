@@ -1,11 +1,11 @@
-/***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
+//**************************************************************************
+//   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//**************************************************************************
 
 #include <MainWindow.hxx>
 #include <Selector.hxx>
@@ -18,6 +18,8 @@
 #include <qtooltip.h>
 #include <qmovie.h>
 #include <qtimer.h>
+#include <qcursor.h>
+#include <qcheckbox.h>
 
 #include <kapplication.h>
 #include <kstdaction.h>
@@ -35,13 +37,15 @@
 #include <kpopupmenu.h>
 #include <kurl.h>
 
-//#include <iostream>
-//using namespace std;
+#include <iostream>
+using namespace std;
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
   : KMainWindow(0, 0, 0), autorun(false)
 {
+  new Archiver(this);
+
   KStdAction::quit(this, SLOT(maybeQuit()), actionCollection());
 
   new KAction(i18n("New Profile"), "filenew", 0, this,
@@ -53,8 +57,14 @@ MainWindow::MainWindow()
   new KAction(i18n("Save Profile"), "filesave", 0, this,
               SLOT(saveProfile()), actionCollection(), "saveProfile");
 
+  new KAction(i18n("Save Profile As..."), "filesaveas", 0, this,
+              SLOT(saveProfileAs()), actionCollection(), "saveProfileAs");
+
   new KAction(i18n("Profile Settings"), "", 0, this,
               SLOT(profileSettings()), actionCollection(), "profileSettings");
+
+  new KAction(i18n("Enable All Messages"), "", 0, this,
+              SLOT(enableAllMessages()), actionCollection(), "enableAllMessages");
 
   docked = new KToggleAction(i18n("Dock in System Tray"), KShortcut(), this,
                              SLOT(dockInSysTray()), actionCollection(), "dockInSysTray");
@@ -175,85 +185,71 @@ void MainWindow::loadProfile()
 
 void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
 {
-  QFile file(fileName);
-  if ( ! file.open(IO_ReadOnly) )
+  QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
+  QStringList includes, excludes;
+  QString error;
+
+  if ( ! Archiver::instance->loadProfile(fileName, includes, excludes, error) )
   {
+    QApplication::restoreOverrideCursor();
+
     KMessageBox::error(this,
                 i18n("Could not open profile '%1' for reading: %2")
                      .arg(fileName)
-                     .arg(kapp->translate("QFile", file.errorString())),
+                     .arg(kapp->translate("QFile", error)),
                 i18n("Open failed"));
     return;
   }
+
+  setLoadedProfile(fileName);
 
   KURL url;
   url.setPath(fileName);
   recentFiles->addURL(url);
   recentFiles->saveEntries(KGlobal::instance()->config());
 
-  QStringList includes, excludes;
-  QString target;
-  QChar type, blank;
-  QTextStream stream(&file);
-
-  // back to default (in case old profile read which does not include these)
-  Archiver::instance->setFilePrefix("");
-  Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
-
-  while ( ! stream.atEnd() )
-  {
-    stream.skipWhiteSpace();
-    stream >> type;            // read a QChar without skipping whitespace
-    stream >> blank;           // read a QChar without skipping whitespace
-
-    if ( type == 'M' )
-    {
-      target = stream.readLine();  // include white space
-    }
-    else if ( type == 'P' )
-    {
-      QString prefix = stream.readLine();  // include white space
-      Archiver::instance->setFilePrefix(prefix);
-    }
-    else if ( type == 'S' )
-    {
-      int max;
-      stream >> max;
-      Archiver::instance->setMaxSliceMBs(max);
-    }
-    else if ( type == 'I' )
-    {
-      includes.append(stream.readLine());
-    }
-    else if ( type == 'E' )
-    {
-      excludes.append(stream.readLine());
-    }
-  }
-
-  file.close();
-
   // now fill the Selector tree with those settings
   selector->setBackupList(includes, excludes);
 
-  mainWidget->targetDir->setText(target);
-  Archiver::instance->setTarget(KURL::fromPathOrURL(target));
+  mainWidget->targetDir->setText(Archiver::instance->getTarget().pathOrURL());
 
   if ( adaptTreeWidth )
     selector->adjustColumn(0);
+
+  QApplication::restoreOverrideCursor();
 }
 
 //--------------------------------------------------------------------------------
 
-void MainWindow::saveProfile()
+void MainWindow::saveProfileAs()
 {
-  QString fileName = KFileDialog::getSaveFileName(":profile", "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+  QString fileName = KFileDialog::getSaveFileName(":profile",
+                                                  "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
 
   if ( fileName.isEmpty() ) return;
 
+  saveProfile(fileName);
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::saveProfile(QString fileName)
+{
+  if ( fileName.isEmpty() )
+    fileName = loadedProfile;
+
+  if ( fileName.isEmpty() )
+  {
+    fileName = KFileDialog::getSaveFileName(":profile",
+                                            "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+
+    if ( fileName.isEmpty() ) return;
+  }
+
   QFile file(fileName);
 
-  if ( file.exists() )
+  if ( file.exists() && (fileName != loadedProfile) )
   {
     if ( KMessageBox::warningYesNo(this,
                 i18n("The profile '%1' does already exist.\n"
@@ -281,6 +277,8 @@ void MainWindow::saveProfile()
   stream << "M " << mainWidget->targetDir->text() << endl;
   stream << "P " << Archiver::instance->getFilePrefix() << endl;
   stream << "S " << Archiver::instance->getMaxSliceMBs() << endl;
+  stream << "C " << static_cast<int>(Archiver::instance->getMediaNeedsChange()) << endl;
+  stream << "Z " << static_cast<int>(Archiver::instance->getCompressFiles()) << endl;
 
   for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
     stream << "I " << *it << endl;
@@ -289,6 +287,8 @@ void MainWindow::saveProfile()
     stream << "E " << *it << endl;
 
   file.close();
+
+  setLoadedProfile(fileName);
 }
 
 //--------------------------------------------------------------------------------
@@ -299,11 +299,15 @@ void MainWindow::profileSettings()
 
   dialog.prefix->setText(Archiver::instance->getFilePrefix());
   dialog.setMaxMB(Archiver::instance->getMaxSliceMBs());
+  dialog.mediaNeedsChange->setChecked(Archiver::instance->getMediaNeedsChange());
+  dialog.compressFiles->setChecked(Archiver::instance->getCompressFiles());
 
   if ( dialog.exec() == QDialog::Accepted )
   {
     Archiver::instance->setFilePrefix(dialog.prefix->text().stripWhiteSpace());
     Archiver::instance->setMaxSliceMBs(dialog.maxSliceSize->value());
+    Archiver::instance->setMediaNeedsChange(dialog.mediaNeedsChange->isChecked());
+    Archiver::instance->setCompressFiles(dialog.compressFiles->isChecked());
   }
 }
 
@@ -313,6 +317,7 @@ void MainWindow::newProfile()
 {
   Archiver::instance->setFilePrefix("");  // back to default
   Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
+  Archiver::instance->setMediaNeedsChange(true);
   Archiver::instance->setTarget("");
 
   // clear selection
@@ -320,6 +325,8 @@ void MainWindow::newProfile()
   selector->setBackupList(includes, excludes);
 
   mainWidget->targetDir->setText("");
+
+  setLoadedProfile("");
 }
 
 //--------------------------------------------------------------------------------
@@ -371,6 +378,21 @@ void MainWindow::dockInSysTray()
   KGlobal::instance()->config()->writeEntry("dockInSysTray", docked->isChecked());
 
   sysTray->setShown(docked->isChecked());
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::enableAllMessages()
+{
+  KMessageBox::enableAllMessages();
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::setLoadedProfile(const QString &name)
+{
+  loadedProfile = name;
+  setCaption(name);
 }
 
 //--------------------------------------------------------------------------------

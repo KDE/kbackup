@@ -1,13 +1,44 @@
-21.Dec. 2006 (0.5.2)
+- sort hidden files/dirs before normal ones
+- show dimmed icon for hidden files (like konqueror)
+- don't allow to expand symlinked dirs as the content is not archived but only the link
+- Add "Save As..." menu and store name of loaded profile, so that a save directly writes to that
+- Add --autobg <profile> commandline which starts kbackup without a GUI e.g. for cron, at, ...
+- When the upload fails for a slice, offer a way to select a temporarily different target
+
+19.01.2008 (0.5.4)
+- correctly limit slice size:
+  - limited by the target directory (when we store directly into a local dir)
+  - limited by the "tmp" dir when we create a tmp file for later upload via KIO
+  - limited by Qt3 (4GB on 32bit)
+  - limited by user defined maxSliceMBs
+- sort directories first in treeview
+- correctly sort by size and timestamp in treeview
+- check if a file that is archived into the backup is not the backup itself
+
+6.10.2007 (0.5.3)
+- Add russian handbook (thanks to Alexey Kouznetsov)
+- show symbolic links with an overlayed "link" icon
+- fix handling of files larger than 2GB
+- avoid crash when writing special files (below /proc) which have fileSize == 0
+
+16.8.2007
+- Added spanish translation (thanks to Gerardo Bueno)
+
+17.June 2007 (0.5.2)
+- start with the HOME folder opened
+- add a profile option to avoid media change dialog
+- add a profile option to avoid compressing files at all
+
+21.Dec. 2006
 - Whenever a directory is only partly included, show it with blue color
 - Show a dialog when the backup has finished
 - automatically save/restore window size
 - add "auto" commandline option to automatically start a backup
   and quit kbackup when done.
 - added predefined slice sizes (for CDs, DVDs) in profile settings dialog
-- added portugese translation thanks to Carlos Gonçalves
+- added portuguese translation thanks to Carlos GonÃ§alves
 
-1.Oct 2006
+1.Oct 2006 (0.5.1)
 - added "recent files" action
 - add profile setting to define a maximum slice size
 - store recent directory for file dialog

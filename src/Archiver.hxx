@@ -1,14 +1,14 @@
 #ifndef _ARCHIVER_H_
 #define _ARCHIVER_H_
 
-/***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
+//**************************************************************************
+//   (c) 2006 - 2008 Martin Koller, m.koller@surfeu.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//**************************************************************************
 
 
 // the class which does the archiving
@@ -36,9 +36,10 @@ class Archiver : public QObject
 
     static Archiver *instance;
 
-    // always call after you have already set maxSliceMBs, as the sliceCpacity
+    // always call after you have already set maxSliceMBs, as the sliceCapacity
     // might be limited with it
     void setTarget(const KURL &target);
+    const KURL &getTarget() const { return targetURL; }
 
     enum { UNLIMITED = 0 };
     void setMaxSliceMBs(int mbs);
@@ -47,7 +48,18 @@ class Archiver : public QObject
     void setFilePrefix(const QString &prefix);
     const QString &getFilePrefix() const { return filePrefix; }
 
-    void createArchive(const QStringList &includes, const QStringList &excludes);
+    void setMediaNeedsChange(bool b) { mediaNeedsChange = b; }
+    bool getMediaNeedsChange() const { return mediaNeedsChange; }
+
+    void setCompressFiles(bool b);
+    bool getCompressFiles() const { return filterBase != 0; }
+
+    // loads the profile into the Archiver and returns includes/excludes lists
+    // return true if loaded, false on file open error
+    bool loadProfile(const QString &fileName, QStringList &includes, QStringList &excludes, QString &error);
+
+    // return true if the backup completed successfully, else false
+    bool createArchive(const QStringList &includes, const QStringList &excludes);
 
     KIO::filesize_t getTotalBytes() const { return totalBytes; }
     int getTotalFiles() const { return totalFiles; }
@@ -76,6 +88,8 @@ class Archiver : public QObject
   private slots:
     void slotResult(KIO::Job *);
     void receivedStderr(KProcess *proc, char *buffer, int buflen);
+    void loggingSlot(const QString &message); // for non-interactive output
+    void warningSlot(const QString &message); // for non-interactive output
 
   private:
     void calculateCapacity();  // also emits signals
@@ -104,16 +118,19 @@ class Archiver : public QObject
     QString baseName;
     int sliceNum;
     int maxSliceMBs;
+    bool mediaNeedsChange;
+    bool compressFiles;
 
-    KIO::filesize_t startSize;
     KIO::filesize_t sliceBytes;
     KIO::filesize_t sliceCapacity;
 
     KFilterBase *filterBase;
     QString ext;
 
+    bool interactive;
     bool cancelled;
     bool runs;
+    bool skippedFiles;  // did we skip files during backup ?
 
     QGuardedPtr<KIO::CopyJob> job;
     int jobResult;

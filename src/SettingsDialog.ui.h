@@ -17,10 +17,12 @@ void SettingsDialog::init()
   sizes << i18n("unlimited")
         << i18n("650 MB CD")
         << i18n("700 MB CD")
+        /* as Qt3 can not deal with files > 4GB
         << i18n("4.7 GB DVD")
         << i18n("8.5 GB DVD")
         << i18n("9.4 GB DVD")
         << i18n("17.1 GB DVD")
+        */
         << i18n("custom");
 
   
@@ -53,13 +55,15 @@ void SettingsDialog::sizeSelected( int idx )
     case 2: maxSliceSize->setValue(  700); break;
 
             // DVDs
+            /*
     case 3: maxSliceSize->setValue( 4482); break;
     case 4: maxSliceSize->setValue( 8106); break;
     case 5: maxSliceSize->setValue( 8964); break;
     case 6: maxSliceSize->setValue(16307); break;
+    */
 
             // 700 MB CD
-    case 7: maxSliceSize->setValue(  700); break;
+    case 3 /* 7 */: maxSliceSize->setValue(  700); break;
   }
 }
 
@@ -74,12 +78,14 @@ void SettingsDialog::setMaxMB( int mb )
     case     0: predefSizes->setCurrentItem(0); break;
     case   650: predefSizes->setCurrentItem(1); break;
     case   700: predefSizes->setCurrentItem(2); break;
+    /*
     case  4482: predefSizes->setCurrentItem(3); break;
     case  8106: predefSizes->setCurrentItem(4); break;
     case  8964: predefSizes->setCurrentItem(5); break;
     case 16307: predefSizes->setCurrentItem(6); break;
+    */
 
-    default   : predefSizes->setCurrentItem(7);
+    default   : predefSizes->setCurrentItem(3 /*7*/);
                 maxSliceSize->setEnabled(true);
                 break;
   }
