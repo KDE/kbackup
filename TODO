@@ -1,15 +1,5 @@
 - implement a way for restoring backups
-- directories which are not completely selected shall show
-  the parent checkbox greyed
 - fix the exit-question dialog when exiting due to session stop
-
-Idea from Alain Portal
-For setting the max size of the slice, a choice in a menu between
-- CD 650MB
-- CD  700MB
-- DVD 4,7GB
-- Custom
-- other predefined size if existed
-
-and show spin box only for custom.
-
+- add option to not display "change medium" dialog which does not make sense when
+  one stores onto a network drive but still using slices (to limit huge tmp files)
+  See mail From: "Andrew Bauer" <knnniggett@hotmail.com> Date: 07.May. 2007 01:20
