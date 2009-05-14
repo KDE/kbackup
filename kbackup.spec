@@ -5,6 +5,7 @@ Release: 1
 License: GPL
 Group: Applications/Archiving
 Source: http://members.aon.at/m.koller/kbackup-%{version}.tar.bz2
+BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 KBackup is a program that lets you back up any directories or files,
