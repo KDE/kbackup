@@ -1,14 +1,16 @@
 ** KBackup **
 
 A Backup program with an easy to use User Interface
-based on the KDE4 framework
+based on the KDE4 framework.
 
+It uses the cmake build tool.
 
 Simply install it with
 
-mkdir kbackup-build  (in the same level as the kbackup sources)
+cd kbackup-<version>
+mkdir kbackup-build
 cd kbackup-build
-cmake ../kbackup
+cmake ..
 make
 make install (as root)
 
