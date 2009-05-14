@@ -26,7 +26,7 @@ Included Languages:
 %prep
 %setup
 mkdir kbackup-build
-cd kbackup-build && cmake -DCMAKE_INSTALL_PREFIX=${RPM_BUILD_ROOT}/usr ..
+cd kbackup-build && cmake -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` ..
 
 %build
 cd kbackup-build && make
