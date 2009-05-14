@@ -42,7 +42,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <firstname>Martin</firstname>
 <surname>Koller</surname>
 </personname>
-<email>m.koller@surfeu.at</email>
+<email>kollix@aon.at</email>
 </author>
 </authorgroup>
 
@@ -327,7 +327,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+<keycombo action="simul"><keycap>Ctrl+Q</keycap></keycombo>
 </shortcut>
 <guimenu>Файл</guimenu>
 <guimenuitem>Выход</guimenuitem>
@@ -518,9 +518,10 @@ This is also a great place to provide pointers to other FAQ's if your users
 must do some complicated configuration on other programs in order for your
 application work. -->
 
-
+<para>
 &reporting.bugs;
 &updating.documentation;
+</para>
 
 </chapter>
 
@@ -538,11 +539,11 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Права на программу (2006, 2007) &copy;  Martin Koller <email>m.koller@surfeu.at</email>
+Права на программу (2006 - 2009) &copy;  Martin Koller <email>kollix@aon.at</email>
 </para>
 
 <para>
-Права на документацию (2006, 2007) &copy; 2006, 2007 Martin Koller
+Права на документацию (2006 - 2009) &copy; 2006 - 2009 Martin Koller
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->

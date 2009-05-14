@@ -42,7 +42,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <firstname>Martin</firstname>
 <surname>Koller</surname>
 </personname>
-<email>m.koller@surfeu.at</email>
+<email>kollix@aon.at</email>
 </author>
 
 <othercredit role="translator">
@@ -360,7 +360,7 @@ Cette configuration est également enregistrée dans le profil.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+<keycombo action="simul"><keycap>Ctrl+Q</keycap></keycombo>
 </shortcut>
 <guimenu>Fichier</guimenu>
 <guimenuitem>Quitter</guimenuitem>
@@ -584,11 +584,11 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Programme protégé par copyright &copy; 2006, 2007 par Martin Koller <email>m.koller@surfeu.at</email>
+Programme protégé par copyright &copy; 2006 - 2009 par Martin Koller <email>kollix@aon.at</email>
 </para>
 
 <para>
-Documentation protégée par copyright &copy; 2006, 2007 Martin Koller
+Documentation protégée par copyright &copy; 2006 - 2009 Martin Koller
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->

@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-06 20:24+0200\n"
+"Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
+"POT-Creation-Date: 2009-05-14 13:27+0200\n"
 "PO-Revision-Date: 2007-12-29 09:44+0100\n"
 "Last-Translator: Mikael Martinsson <mikael.martinsson@jamtnet.se>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -18,23 +18,269 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: Archiver.cxx:146
+#. i18n: file: src/kbackupui.rc:4
+#. i18n: ectx: Menu (file)
+#: po/rc.cpp:3
+#, fuzzy
+msgid "&File"
+msgstr "Filer:"
+
+#. i18n: file: src/kbackupui.rc:12
+#. i18n: ectx: Menu (settings)
+#: po/rc.cpp:6
+#, fuzzy
+msgid "&Settings"
+msgstr "Profilinställningar"
+
+#. i18n: file: src/MainWidgetBase.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: po/rc.cpp:9 src/main.cxx:26
+msgid "KBackup"
+msgstr "Kbackup"
+
+#. i18n: file: src/MainWidgetBase.ui:40
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: po/rc.cpp:12 src/MainWindow.cxx:116
+msgid "Start Backup"
+msgstr "Starta backup"
+
+#. i18n: file: src/MainWidgetBase.ui:68
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: po/rc.cpp:15 src/MainWindow.cxx:120
+msgid "Cancel Backup"
+msgstr "Avbryt backup"
+
+#. i18n: file: src/MainWidgetBase.ui:89
+#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
+#: po/rc.cpp:18
+#, fuzzy
+msgid "Target"
+msgstr "Mål"
+
+#. i18n: file: src/MainWidgetBase.ui:95
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: po/rc.cpp:21
+msgid "Folder:"
+msgstr "Katalog:"
+
+#. i18n: file: src/MainWidgetBase.ui:111
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: po/rc.cpp:24
+msgid "Medium:"
+msgstr "Media:"
+
+#. i18n: file: src/MainWidgetBase.ui:133
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#. i18n: file: src/MainWidgetBase.ui:226
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: file: src/MainWidgetBase.ui:255
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: po/rc.cpp:27 po/rc.cpp:42 po/rc.cpp:48
+msgid "0"
+msgstr "0"
+
+#. i18n: file: src/MainWidgetBase.ui:153
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: file: src/MainWidgetBase.ui:245
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: po/rc.cpp:30 po/rc.cpp:45
+msgid "Size:"
+msgstr "Storlek:"
+
+#. i18n: file: src/MainWidgetBase.ui:169
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: po/rc.cpp:33
+msgid "0 MB"
+msgstr "0 MB"
+
+#. i18n: file: src/MainWidgetBase.ui:204
+#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox2)
+#: po/rc.cpp:36
+msgid "Totals"
+msgstr "Totalt"
+
+#. i18n: file: src/MainWidgetBase.ui:216
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: po/rc.cpp:39
+#, fuzzy
+msgid "Files:"
+msgstr "Filer:"
+
+#. i18n: file: src/MainWidgetBase.ui:268
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#. i18n: file: src/SettingsDialog.ui:51
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: po/rc.cpp:51 po/rc.cpp:78
+msgid "MB"
+msgstr "MB"
+
+#. i18n: file: src/MainWidgetBase.ui:303
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: po/rc.cpp:54
+msgid "Duration:"
+msgstr "Varaktighet:"
+
+#. i18n: file: src/MainWidgetBase.ui:313
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: po/rc.cpp:57
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: file: src/MainWidgetBase.ui:355
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: po/rc.cpp:60
+msgid "Warnings:"
+msgstr "Varningar:"
+
+#. i18n: file: src/MainWidgetBase.ui:381
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: po/rc.cpp:63
+msgid "Progress:"
+msgstr "Framsteg:"
+
+#. i18n: file: src/SettingsDialog.ui:15
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: po/rc.cpp:66 src/MainWindow.cxx:74
+#, fuzzy
+msgid "Profile Settings"
+msgstr "Profilen existerar"
+
+#. i18n: file: src/SettingsDialog.ui:21
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: po/rc.cpp:69
+msgid "Archive Prefix (empty for default):"
+msgstr "Arkiv prefix (tomt för standard):"
+
+#. i18n: file: src/SettingsDialog.ui:34
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: po/rc.cpp:72
+msgid "Maximum Archive Size:"
+msgstr "Maximal storlek på arkivdelarna: "
+
+#. i18n: file: src/SettingsDialog.ui:48
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#. i18n: file: src/SettingsDialog.ui:81
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#: po/rc.cpp:75 po/rc.cpp:87 src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
+msgid "unlimited"
+msgstr "obegränsad"
+
+#. i18n: file: src/SettingsDialog.ui:71
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: po/rc.cpp:81
+msgid "Number of backups to keep"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:78
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: po/rc.cpp:84
+msgid ""
+"How many backups shall be kept in the target directory before older ones "
+"will be deleted"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:93
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: po/rc.cpp:90
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Avmarkera om du inte vill ha bekräftelse om att byta media när delar är "
+"färdiga"
+
+#. i18n: file: src/SettingsDialog.ui:96
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: po/rc.cpp:93
+msgid "Target needs media change"
+msgstr "Mediabyte behövs för valt mål"
+
+#. i18n: file: src/SettingsDialog.ui:103
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: po/rc.cpp:96
+msgid "Uncheck if you want to avoid compressing files or archive slices at all"
+msgstr "Avmarkera om du inte vill ha packning av filer eller arkivdelar "
+
+#. i18n: file: src/SettingsDialog.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: po/rc.cpp:99
+msgid "Compress Files"
+msgstr "Komprimera filer"
+
+#. i18n: file: src/SettingsDialog.ui:147
+#. i18n: ectx: property (text), widget (QPushButton, ok)
+#: po/rc.cpp:102
+msgid "OK"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:154
+#. i18n: ectx: property (text), widget (QPushButton, cancel)
+#: po/rc.cpp:105
+#, fuzzy
+msgid "Cancel"
+msgstr "Avbryt backup"
+
+#: po/rc.cpp:106
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: po/rc.cpp:107
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/Archiver.cxx:250
 msgid "Nothing selected for backup"
 msgstr "Inget är valt för backup"
 
-#: Archiver.cxx:152
+#: src/Archiver.cxx:256
 msgid "The target dir is not valid"
 msgstr "Målkatalogen är inte giltig"
 
-#: Archiver.cxx:208
+#: src/Archiver.cxx:268
+msgid ""
+"The target directory '%1' does not exist.\n"
+"\n"
+"Shall I create it?"
+msgstr ""
+
+#: src/Archiver.cxx:273
+#, fuzzy
+msgid ""
+"Could not create the target directory '%1'.\n"
+"The operating system reports: %2"
+msgstr ""
+"Kunde inte hämta information om katalogen: %1\n"
+"Operativsystemet lämnar följande rapport: %2"
+
+#: src/Archiver.cxx:282
+#, fuzzy
+msgid "The target dir does not exist"
+msgstr "Målkatalogen är inte giltig"
+
+#: src/Archiver.cxx:362
+msgid "...reducing number of kept archives to max. %1"
+msgstr ""
+
+#: src/Archiver.cxx:396
+msgid "...deleting %1"
+msgstr ""
+
+#: src/Archiver.cxx:405
+msgid ""
+"fetching directory listing of target failed. Can not reduce kept archives."
+msgstr ""
+
+#: src/Archiver.cxx:417
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr "!! Säkerhetskopieringen klar <b>men filer hoppades över</b> !!"
 
-#: Archiver.cxx:210
+#: src/Archiver.cxx:419
 msgid "-- Backup successfully finished --"
 msgstr "-- Säkerhetskopieringen avslutades korrekt --"
 
-#: Archiver.cxx:214
+#: src/Archiver.cxx:425
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -42,7 +288,7 @@ msgstr ""
 "Säkerhetskopieringen avslutades men det finns filer som hoppades över.\n"
 "Vad vill du göra nu?"
 
-#: Archiver.cxx:216
+#: src/Archiver.cxx:427
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -50,35 +296,63 @@ msgstr ""
 "Säkerhetskopieringen avslutades korrekt.\n"
 "Vad vill du göra nu?"
 
-#: Archiver.cxx:226
+#: src/Archiver.cxx:438
+#, fuzzy
+msgid "Totals: Files: %1, Size: %2, Duration: %3"
+msgstr ""
+"Filer: %1  Storlek: %2 MB\n"
+"%3"
+
+#: src/Archiver.cxx:449
 msgid "...Backup aborted!"
 msgstr "...Säkerhetskopieringen avbröts!"
 
-#: Archiver.cxx:244
+#: src/Archiver.cxx:477
 msgid "Backup cancelled"
 msgstr "Säkerhetskopieringen avbröts"
 
-#: Archiver.cxx:274
+#: src/Archiver.cxx:493
 msgid "...finished slice %1"
 msgstr "... del %1 är klar"
 
-#: Archiver.cxx:289
+#: src/Archiver.cxx:513
 msgid "...uploading archive %1 to %2"
 msgstr "...laddar upp arktivet %1 till %2"
 
-#: Archiver.cxx:299
-msgid "Do you want to retry the upload?"
-msgstr "Vill du försöka ladda upp igen?"
+#: src/Archiver.cxx:524
+msgid "upload FAILED"
+msgstr ""
 
-#: Archiver.cxx:358
+#: src/Archiver.cxx:533
+msgid "How shall we proceed with the upload?"
+msgstr ""
+
+#: src/Archiver.cxx:534
+msgid "Retry"
+msgstr ""
+
+#: src/Archiver.cxx:534
+#, fuzzy
+msgid "Change Target"
+msgstr "Mål"
+
+#: src/Archiver.cxx:633
 msgid "The script '%1' could not be started."
 msgstr "Skriptet '%1' kunde inte startas."
 
-#: Archiver.cxx:396
+#: src/Archiver.cxx:669
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Mediat är fullt. Var god och byt till media nr: %1"
 
-#: Archiver.cxx:429
+#: src/Archiver.cxx:701
+#, fuzzy
+msgid "The file '%1' can not be opened for writing."
+msgstr ""
+"Filen '%1' kan inte öppnas för skrivning.\n"
+"\n"
+"Vill du försöka igen?"
+
+#: src/Archiver.cxx:705
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -88,7 +362,7 @@ msgstr ""
 "\n"
 "Vill du försöka igen?"
 
-#: Archiver.cxx:455
+#: src/Archiver.cxx:731
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -96,11 +370,11 @@ msgstr ""
 "Kunde inte hämta information om katalogen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: Archiver.cxx:465
+#: src/Archiver.cxx:741
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Katalogen '%1' är inte läsbar. Hoppar över."
 
-#: Archiver.cxx:478
+#: src/Archiver.cxx:757
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -108,17 +382,11 @@ msgstr ""
 "Kunde inte skriva katalog '%1' till arkivet.\n"
 "Kanske är mediat fullt."
 
-#: Archiver.cxx:516
+#: src/Archiver.cxx:796
 msgid "File '%1' is not readable. Skipping."
 msgstr "Filen '%1' är inte läsbar. Hoppar över."
 
-#: Archiver.cxx:533
-msgid ""
-"Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
-"version. Skipping."
-msgstr "Tyvärr, filen %1 (%2) är för stor och kan inte arkiveras med den här versionen av KDE. Hoppar över."
-
-#: Archiver.cxx:592 Archiver.cxx:673
+#: src/Archiver.cxx:851 src/Archiver.cxx:920
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -126,20 +394,20 @@ msgstr ""
 "Kan inte hämta information om filen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: Archiver.cxx:605 Archiver.cxx:621 Archiver.cxx:634 Archiver.cxx:695
-#: Archiver.cxx:713 Archiver.cxx:761
+#: src/Archiver.cxx:863 src/Archiver.cxx:877 src/Archiver.cxx:891
+#: src/Archiver.cxx:942 src/Archiver.cxx:961 src/Archiver.cxx:1003
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Kunde inte skriva till arkivet. Kanske är mediat fullt."
 
-#: Archiver.cxx:684
+#: src/Archiver.cxx:931
 msgid "Could not open file '%1' for reading."
 msgstr "Kunde inte öppna filen '%1' för läsning."
 
-#: Archiver.cxx:736
+#: src/Archiver.cxx:984
 msgid "...archiving file %1"
 msgstr "...arkiverar filen %1"
 
-#: Archiver.cxx:775
+#: src/Archiver.cxx:1017
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -147,160 +415,111 @@ msgstr ""
 "Kunde inte läsa filen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: Archiver.cxx:827
+#: src/Archiver.cxx:1032
+#, fuzzy
+msgid ""
+"Could not create temporary file for compressing: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Kunde inte läsa filen: %1\n"
+"Operativsystemet lämnar följande rapport: %2"
+
+#: src/Archiver.cxx:1057
+msgid "Could not write to temporary file"
+msgstr ""
+
+#: src/Archiver.cxx:1079
 msgid "...compressing file %1"
 msgstr "...komprimerar filen %1"
 
-#. i18n: file ./SettingsDialog.ui line 72
-#: MainWidget.cxx:143 SettingsDialog.cxx:119 rc.cpp:73 SettingsDialog.ui.h:17
-#, no-c-format
-msgid "unlimited"
-msgstr "obegränsad"
+#: src/Archiver.cxx:1124
+msgid "WARNING:"
+msgstr ""
 
-#. i18n: file ./MainWidgetBase.ui line 18
-#: MainWidgetBase.cxx:197 main.cxx:22 rc.cpp:3
-#, no-c-format
-msgid "KBackup"
-msgstr "Kbackup"
+#: src/main.cxx:27
+msgid "An easy to use backup program"
+msgstr "Ett program för backup som är enkelt att använda"
 
-#. i18n: file ./MainWidgetBase.ui line 56
-#: MainWidgetBase.cxx:198 MainWindow.cxx:99 rc.cpp:6
-#, no-c-format
-msgid "Start Backup"
-msgstr "Starta backup"
+#: src/main.cxx:28
+msgid "(c) 2006 - 2009 Martin Koller"
+msgstr ""
 
-#. i18n: file ./MainWidgetBase.ui line 84
-#: MainWidgetBase.cxx:199 MainWindow.cxx:103 rc.cpp:9
-#, no-c-format
-msgid "Cancel Backup"
-msgstr "Avbryt backup"
+#: src/main.cxx:33
+msgid "Martin Koller"
+msgstr ""
 
-#. i18n: file ./MainWidgetBase.ui line 97
-#: MainWidgetBase.cxx:200 rc.cpp:12
-#, no-c-format
-msgid "Target"
-msgstr "Mål"
+#: src/main.cxx:33
+msgid "Developer"
+msgstr "Utvecklare"
 
-#. i18n: file ./MainWidgetBase.ui line 108
-#: MainWidgetBase.cxx:201 rc.cpp:15
-#, no-c-format
-msgid "Folder:"
-msgstr "Katalog:"
+#: src/main.cxx:36
+msgid "Start with given profile"
+msgstr "Starta med angiven profil"
 
-#. i18n: file ./MainWidgetBase.ui line 127
-#. i18n: file ./MainWidgetBase.ui line 253
-#: MainWidgetBase.cxx:203 MainWidgetBase.cxx:210 rc.cpp:19 rc.cpp:40
-#, no-c-format
-msgid "Size:"
-msgstr "Storlek:"
+#: src/main.cxx:37
+msgid "Script to run after finishing one archive slice"
+msgstr "Skript att köra efter avslutad del av arkivet"
 
-#. i18n: file ./MainWidgetBase.ui line 143
-#: MainWidgetBase.cxx:204 rc.cpp:22
-#, no-c-format
-msgid "Medium:"
-msgstr "Media:"
+#: src/main.cxx:38
+#, fuzzy
+msgid ""
+"Automatically run the backup with the given profile and terminate when done."
+msgstr ""
+"Kör automatiskt backupen och avsluta när den är färdig. Fungerar bara om en "
+"profil anges."
 
-#. i18n: file ./MainWidgetBase.ui line 165
-#. i18n: file ./MainWidgetBase.ui line 234
-#. i18n: file ./MainWidgetBase.ui line 261
-#: MainWidgetBase.cxx:205 MainWidgetBase.cxx:209 MainWidgetBase.cxx:211
-#: rc.cpp:25 rc.cpp:37 rc.cpp:43
-#, no-c-format
-msgid "0"
-msgstr "0"
+#: src/main.cxx:40
+msgid ""
+"Automatically run the backup with the given profile in the background "
+"(without showing a window) and terminate when done."
+msgstr ""
 
-#. i18n: file ./MainWidgetBase.ui line 197
-#: MainWidgetBase.cxx:206 rc.cpp:28
-#, no-c-format
-msgid "0 MB"
-msgstr "0 MB"
+#: src/main.cxx:43
+msgid "In autobg mode be verbose and print every single filename during backup"
+msgstr ""
 
-#. i18n: file ./MainWidgetBase.ui line 207
-#: MainWidgetBase.cxx:207 rc.cpp:31
-#, no-c-format
-msgid "Totals"
-msgstr "Totalt"
-
-#. i18n: file ./MainWidgetBase.ui line 226
-#: MainWidgetBase.cxx:208 rc.cpp:34
-#, no-c-format
-msgid "Files:"
-msgstr "Filer:"
-
-#. i18n: file ./MainWidgetBase.ui line 272
-#. i18n: file ./SettingsDialog.ui line 69
-#: MainWidgetBase.cxx:212 SettingsDialog.cxx:118 rc.cpp:46 rc.cpp:70
-#, no-c-format
-msgid "MB"
-msgstr "MB"
-
-#. i18n: file ./MainWidgetBase.ui line 308
-#: MainWidgetBase.cxx:213 rc.cpp:49
-#, no-c-format
-msgid "Duration:"
-msgstr "Varaktighet:"
-
-#. i18n: file ./MainWidgetBase.ui line 316
-#: MainWidgetBase.cxx:214 rc.cpp:52
-#, no-c-format
-msgid "00:00:00"
-msgstr "00:00:00"
-
-#. i18n: file ./MainWidgetBase.ui line 373
-#: MainWidgetBase.cxx:215 rc.cpp:55
-#, no-c-format
-msgid "Warnings:"
-msgstr "Varningar:"
-
-#. i18n: file ./MainWidgetBase.ui line 398
-#: MainWidgetBase.cxx:216 rc.cpp:58
-#, no-c-format
-msgid "Progress:"
-msgstr "Framsteg:"
-
-#: MainWindow.cxx:49
-msgid "New Profile"
-msgstr "Ny profil"
-
-#: MainWindow.cxx:52
-msgid "Load Profile"
-msgstr "Ladda profil"
-
-#: MainWindow.cxx:55
-msgid "Save Profile"
-msgstr "Spara profil"
-
-#. i18n: file ./SettingsDialog.ui line 18
-#: MainWindow.cxx:58 SettingsDialog.cxx:115 rc.cpp:61
-#, no-c-format
-msgid "Profile Settings"
-msgstr "Profilinställningar"
-
-#: MainWindow.cxx:61
-msgid "Enable All Messages"
-msgstr "Tillåt alla meddelanden "
-
-#: MainWindow.cxx:64
-msgid "Dock in System Tray"
-msgstr "Minimera till aktivitetsfältet"
-
-#: MainWindow.cxx:126
-msgid "There is a backup in progress. Do you want to abort it?"
-msgstr "En backup pågår. Vill du avbryta den?"
-
-#: MainWindow.cxx:172 MainWindow.cxx:271
-msgid "KBackup Profile (*.kbp)"
-msgstr "KBackup profil (*.kbp)"
-
-#: MainWindow.cxx:187
+#: src/main.cxx:96 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Kunde inte öppna profilen '%1' för läsning: %2"
 
-#: MainWindow.cxx:190 MainWindow.cxx:296
+#: src/MainWindow.cxx:58
+msgid "New Profile"
+msgstr "Ny profil"
+
+#: src/MainWindow.cxx:62
+msgid "Load Profile"
+msgstr "Ladda profil"
+
+#: src/MainWindow.cxx:66
+msgid "Save Profile"
+msgstr "Spara profil"
+
+#: src/MainWindow.cxx:70
+#, fuzzy
+msgid "Save Profile As..."
+msgstr "Spara profil"
+
+#: src/MainWindow.cxx:77
+msgid "Enable All Messages"
+msgstr "Tillåt alla meddelanden "
+
+#: src/MainWindow.cxx:79
+msgid "Dock in System Tray"
+msgstr "Minimera till aktivitetsfältet"
+
+#: src/MainWindow.cxx:143
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr "En backup pågår. Vill du avbryta den?"
+
+#: src/MainWindow.cxx:190 src/MainWindow.cxx:242 src/MainWindow.cxx:259
+msgid "KBackup Profile (*.kbp)"
+msgstr "KBackup profil (*.kbp)"
+
+#: src/MainWindow.cxx:214 src/MainWindow.cxx:285
 msgid "Open failed"
 msgstr "Öppnandet misslyckades"
 
-#: MainWindow.cxx:280
+#: src/MainWindow.cxx:269
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
@@ -308,15 +527,15 @@ msgstr ""
 "Profilen '%1' existerar redan.\n"
 "Vill du skriva över den?"
 
-#: MainWindow.cxx:283
+#: src/MainWindow.cxx:272
 msgid "Profile exists"
 msgstr "Profilen existerar"
 
-#: MainWindow.cxx:293
+#: src/MainWindow.cxx:282
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Kunde inte öppna profilen '%1' för skrivning: %2"
 
-#: MainWindow.cxx:366
+#: src/MainWindow.cxx:363
 msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
@@ -324,119 +543,62 @@ msgstr ""
 "Filer: %1  Storlek: %2 MB\n"
 "%3"
 
-#: Selector.cxx:108
+#: src/Selector.cxx:157 src/XXX/Selector.cxx:118
 msgid "Name"
 msgstr "Namn"
 
-#: Selector.cxx:109
+#: src/Selector.cxx:158 src/XXX/Selector.cxx:119
 msgid "Size"
 msgstr "Storlek"
 
-#: Selector.cxx:110
+#: src/Selector.cxx:159 src/XXX/Selector.cxx:120
 msgid "Last Modified"
 msgstr "Senast ändrad"
 
-#. i18n: file ./SettingsDialog.ui line 29
-#: SettingsDialog.cxx:116 rc.cpp:64
-#, no-c-format
-msgid "Archive Prefix (empty for default):"
-msgstr "Arkiv prefix (tomt för standard):"
-
-#. i18n: file ./SettingsDialog.ui line 42
-#: SettingsDialog.cxx:117 rc.cpp:67
-#, no-c-format
-msgid "Maximum Archive Size:"
-msgstr "Maximal storlek på arkivdelarna: "
-
-#. i18n: file ./SettingsDialog.ui line 90
-#: SettingsDialog.cxx:120 rc.cpp:76
-#, no-c-format
-msgid "Target needs media change"
-msgstr "Mediabyte behövs för valt mål"
-
-#. i18n: file ./SettingsDialog.ui line 93
-#: SettingsDialog.cxx:121 rc.cpp:79
-#, no-c-format
-msgid ""
-"Uncheck if you want to avoid a confirmation dialog to change the medium when "
-"a slice was finished"
-msgstr ""
-"Avmarkera om du inte vill ha bekräftelse om att byta media när delar är "
-"färdiga"
-
-#. i18n: file ./SettingsDialog.ui line 101
-#: SettingsDialog.cxx:122 rc.cpp:82
-#, no-c-format
-msgid "Compress Files"
-msgstr "Komprimera filer"
-
-#. i18n: file ./SettingsDialog.ui line 104
-#: SettingsDialog.cxx:123 rc.cpp:85
-#, no-c-format
-msgid "Uncheck if you want to avoid compressing files or archive slices at all"
-msgstr "Avmarkera om du inte vill ha packning av filer eller arkivdelar "
-
-#: main.cxx:23
-msgid "An easy to use backup program"
-msgstr "Ett program för backup som är enkelt att använda"
-
-#: main.cxx:30
-msgid "Developer"
-msgstr "Utvecklare"
-
-#: main.cxx:34
-msgid "Start with given profile"
-msgstr "Starta med angiven profil"
-
-#: main.cxx:35
-msgid "Script to run after finishing one archive slice"
-msgstr "Skript att köra efter avslutad del av arkivet"
-
-#: main.cxx:36
-msgid ""
-"Automatically run the backup and terminate when done. Works only if also a "
-"profile is given"
-msgstr ""
-"Kör automatiskt backupen och avsluta när den är färdig. Fungerar bara om en "
-"profil anges."
-
-#: _translatorinfo.cpp:1
-msgid ""
-"_: NAME OF TRANSLATORS\n"
-"Your names"
-msgstr "Mikael Martinsson"
-
-#: _translatorinfo.cpp:3
-msgid ""
-"_: EMAIL OF TRANSLATORS\n"
-"Your emails"
-msgstr "mikael.martinsson@jamtnet.se"
-
-#: SettingsDialog.ui.h:18
+#: src/SettingsDialog.cxx:22
 msgid "650 MB CD"
 msgstr "650 MB CD"
 
-#: SettingsDialog.ui.h:19
+#: src/SettingsDialog.cxx:23
 msgid "700 MB CD"
 msgstr "700 MB CD"
 
-#: SettingsDialog.ui.h:20
+#: src/SettingsDialog.cxx:24
 msgid "4.7 GB DVD"
 msgstr "4.7 GB DVD"
 
-#: SettingsDialog.ui.h:21
+#: src/SettingsDialog.cxx:25
 msgid "8.5 GB DVD"
 msgstr "8.5 GB DVD"
 
-#: SettingsDialog.ui.h:22
+#: src/SettingsDialog.cxx:26
 msgid "9.4 GB DVD"
 msgstr "9.4 GB DVD"
 
-#: SettingsDialog.ui.h:23
+#: src/SettingsDialog.cxx:27
 msgid "17.1 GB DVD"
 msgstr "17.1 GB DVD"
 
-#: SettingsDialog.ui.h:24
+#: src/SettingsDialog.cxx:28
 msgid "custom"
 msgstr "annat"
 
+#~ msgid "Do you want to retry the upload?"
+#~ msgstr "Vill du försöka ladda upp igen?"
+
+#~ msgid ""
+#~ "Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
+#~ "version. Skipping."
+#~ msgstr ""
+#~ "Tyvärr, filen %1 (%2) är för stor och kan inte arkiveras med den här "
+#~ "versionen av KDE. Hoppar över."
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Mikael Martinsson"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "mikael.martinsson@jamtnet.se"

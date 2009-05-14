@@ -2,6 +2,3 @@
 - incremental backup
 - backup as "cp -R" without creating a .tar file
 - fix the exit-question dialog when exiting due to session stop
-- add option to not display "change medium" dialog which does not make sense when
-  one stores onto a network drive but still using slices (to limit huge tmp files)
-  See mail From: "Andrew Bauer" <knnniggett@hotmail.com> Date: 07.May. 2007 01:20

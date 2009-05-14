@@ -1,203 +1,216 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>SettingsDialog</class>
-<comment>Profile Settings</comment>
-<author>Martin Koller</author>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>SettingsDialog</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>340</width>
-            <height>258</height>
-        </rect>
-    </property>
-    <property name="caption">
-        <string>Profile Settings</string>
-    </property>
-    <vbox>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel1</cstring>
-            </property>
-            <property name="text">
-                <string>Archive Prefix (empty for default):</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit">
-            <property name="name">
-                <cstring>prefix</cstring>
-            </property>
-        </widget>
-        <widget class="QGroupBox">
-            <property name="name">
-                <cstring>groupBox2</cstring>
-            </property>
-            <property name="title">
-                <string>Maximum Archive Size:</string>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout2</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QComboBox">
-                            <property name="name">
-                                <cstring>predefSizes</cstring>
-                            </property>
-                        </widget>
-                        <widget class="QSpinBox">
-                            <property name="name">
-                                <cstring>maxSliceSize</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>true</bool>
-                            </property>
-                            <property name="suffix">
-                                <string>MB</string>
-                            </property>
-                            <property name="specialValueText">
-                                <string>unlimited</string>
-                            </property>
-                            <property name="maxValue">
-                                <number>4096</number>
-                            </property>
-                            <property name="minValue">
-                                <number>0</number>
-                            </property>
-                        </widget>
-                    </hbox>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QCheckBox">
-            <property name="name">
-                <cstring>mediaNeedsChange</cstring>
-            </property>
-            <property name="text">
-                <string>Target needs media change</string>
-            </property>
-            <property name="toolTip" stdset="0">
-                <string>Uncheck if you want to avoid a confirmation dialog to change the medium when a slice was finished</string>
-            </property>
-        </widget>
-        <widget class="QCheckBox">
-            <property name="name">
-                <cstring>compressFiles</cstring>
-            </property>
-            <property name="text">
-                <string>Compress Files</string>
-            </property>
-            <property name="toolTip" stdset="0">
-                <string>Uncheck if you want to avoid compressing files or archive slices at all</string>
-            </property>
-        </widget>
-        <widget class="QFrame">
-            <property name="name">
-                <cstring>frame3</cstring>
-            </property>
-            <property name="sizePolicy">
-                <sizepolicy>
-                    <hsizetype>5</hsizetype>
-                    <vsizetype>0</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                </sizepolicy>
-            </property>
-            <property name="frameShape">
-                <enum>HLine</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Sunken</enum>
-            </property>
-        </widget>
-        <widget class="QLayoutWidget">
-            <property name="name">
-                <cstring>layout7</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer5</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>240</width>
-                            <height>10</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>ok</cstring>
-                    </property>
-                    <property name="text">
-                        <string>OK</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>cancel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Cancel</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
-    </vbox>
-</widget>
-<connections>
-    <connection>
-        <sender>ok</sender>
-        <signal>clicked()</signal>
-        <receiver>SettingsDialog</receiver>
-        <slot>accept()</slot>
-    </connection>
-    <connection>
-        <sender>cancel</sender>
-        <signal>clicked()</signal>
-        <receiver>SettingsDialog</receiver>
-        <slot>reject()</slot>
-    </connection>
-    <connection>
-        <sender>predefSizes</sender>
-        <signal>activated(int)</signal>
-        <receiver>SettingsDialog</receiver>
-        <slot>sizeSelected(int)</slot>
-    </connection>
-</connections>
-<includes>
-    <include location="local" impldecl="in implementation">SettingsDialog.ui.h</include>
-</includes>
-<slots>
-    <slot access="private" specifier="non virtual">sizeSelected( int idx )</slot>
-</slots>
-<functions>
-    <function access="private" specifier="non virtual">init()</function>
-    <function specifier="non virtual">setMaxMB( int mb )</function>
-</functions>
-<layoutdefaults spacing="6" margin="11"/>
-<layoutfunctions spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
-</UI>
+<ui version="4.0" >
+ <author>Martin Koller</author>
+ <comment>Profile Settings</comment>
+ <class>SettingsDialog</class>
+ <widget class="QDialog" name="SettingsDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>350</width>
+    <height>314</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Profile Settings</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="QLabel" name="textLabel1" >
+     <property name="text" >
+      <string>Archive Prefix (empty for default):</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="prefix" />
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox2" >
+     <property name="title" >
+      <string>Maximum Archive Size:</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <item>
+       <layout class="QHBoxLayout" >
+        <item>
+         <widget class="QComboBox" name="predefSizes" />
+        </item>
+        <item>
+         <widget class="QSpinBox" name="maxSliceSize" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="specialValueText" >
+           <string>unlimited</string>
+          </property>
+          <property name="suffix" >
+           <string>MB</string>
+          </property>
+          <property name="minimum" >
+           <number>0</number>
+          </property>
+          <property name="maximum" >
+           <number>4096</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <widget class="QLabel" name="label" >
+       <property name="text" >
+        <string>Number of backups to keep</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="numBackups" >
+       <property name="toolTip" >
+        <string>How many backups shall be kept in the target directory before older ones will be deleted</string>
+       </property>
+       <property name="specialValueText" >
+        <string>unlimited</string>
+       </property>
+       <property name="maximum" >
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="mediaNeedsChange" >
+     <property name="toolTip" >
+      <string>Uncheck if you want to avoid a confirmation dialog to change the medium when a slice was finished</string>
+     </property>
+     <property name="text" >
+      <string>Target needs media change</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="compressFiles" >
+     <property name="toolTip" >
+      <string>Uncheck if you want to avoid compressing files or archive slices at all</string>
+     </property>
+     <property name="text" >
+      <string>Compress Files</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame3" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::HLine</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Sunken</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <spacer name="spacer5" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>240</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ok" >
+       <property name="text" >
+        <string>OK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancel" >
+       <property name="text" >
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ok</sender>
+   <signal>clicked()</signal>
+   <receiver>SettingsDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancel</sender>
+   <signal>clicked()</signal>
+   <receiver>SettingsDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>predefSizes</sender>
+   <signal>activated(int)</signal>
+   <receiver>SettingsDialog</receiver>
+   <slot>sizeSelected(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

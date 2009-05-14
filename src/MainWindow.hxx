@@ -1,25 +1,26 @@
+//***************************************************************************
+//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//***************************************************************************
+
 #ifndef _MAIN_WINDOW_H_
 #define _MAIN_WINDOW_H_
 
-/***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
+#include <kxmlguiwindow.h>
 
-#include <kmainwindow.h>
 class Selector;
 class MainWidget;
-class KSystemTray;
+class KSystemTrayIcon;
 class KToggleAction;
 class KAction;
 class KRecentFilesAction;
-class KURL;
+class KUrl;
 
-class MainWindow : public KMainWindow
+class MainWindow : public KXmlGuiWindow
 {
   Q_OBJECT
 
@@ -45,7 +46,7 @@ class MainWindow : public KMainWindow
     void inProgress(bool);
     void dockInSysTray();
     void maybeQuit();
-    void recentProfileSelected(const KURL &url);
+    void recentProfileSelected(const KUrl &url);
     void enableAllMessages();
 
   private:
@@ -55,7 +56,7 @@ class MainWindow : public KMainWindow
   private:
     Selector *selector;
     MainWidget *mainWidget;
-    KSystemTray *sysTray;
+    KSystemTrayIcon *sysTray;
     QString lastLog;
     KToggleAction *docked;
     KAction *startBackupAction;

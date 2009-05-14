@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at
+//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
 #include <Selector.hxx>
 #include <Archiver.hxx>
 #include <MainWidget.hxx>
-#include <SettingsDialog.h>
+#include <SettingsDialog.hxx>
 
 #include <qsplitter.h>
 #include <qspinbox.h>
@@ -20,60 +20,70 @@
 #include <qtimer.h>
 #include <qcursor.h>
 #include <qcheckbox.h>
+#include <QTextStream>
+#include <QMenu>
 
 #include <kapplication.h>
-#include <kstdaction.h>
-#include <kactionclasses.h>
+#include <kstandardaction.h>
+#include <kaction.h>
+#include <kactioncollection.h>
+#include <ktoggleaction.h>
+#include <krecentfilesaction.h>
 #include <klocale.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
 #include <klineedit.h>
 #include <kio/global.h>
-#include <ksystemtray.h>
+#include <ksystemtrayicon.h>
 #include <kglobal.h>
 #include <kaboutdata.h>
 #include <kiconloader.h>
 #include <kstringhandler.h>
-#include <kpopupmenu.h>
 #include <kurl.h>
 
-#include <iostream>
-using namespace std;
+//#include <iostream>
+//using namespace std;
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
-  : KMainWindow(0, 0, 0), autorun(false)
+  : autorun(false)
 {
   new Archiver(this);
 
-  KStdAction::quit(this, SLOT(maybeQuit()), actionCollection());
+  KStandardAction::quit(this, SLOT(maybeQuit()), actionCollection());
 
-  new KAction(i18n("New Profile"), "filenew", 0, this,
-              SLOT(newProfile()), actionCollection(), "newProfile");
+  KAction *action;
 
-  new KAction(i18n("Load Profile"), "fileopen", 0, this,
-              SLOT(loadProfile()), actionCollection(), "loadProfile");
+  action = actionCollection()->addAction("newProfile", this, SLOT(newProfile()));
+  action->setText(i18n("New Profile"));
+  action->setIcon(KIcon("document-new"));
 
-  new KAction(i18n("Save Profile"), "filesave", 0, this,
-              SLOT(saveProfile()), actionCollection(), "saveProfile");
+  action = actionCollection()->addAction("loadProfile", this, SLOT(loadProfile()));
+  action->setText(i18n("Load Profile"));
+  action->setIcon(KIcon("document-open"));
 
-  new KAction(i18n("Save Profile As..."), "filesaveas", 0, this,
-              SLOT(saveProfileAs()), actionCollection(), "saveProfileAs");
+  action = actionCollection()->addAction("saveProfile", this, SLOT(saveProfile()));
+  action->setText(i18n("Save Profile"));
+  action->setIcon(KIcon("document-save"));
 
-  new KAction(i18n("Profile Settings"), "", 0, this,
-              SLOT(profileSettings()), actionCollection(), "profileSettings");
+  action = actionCollection()->addAction("saveProfileAs", this, SLOT(saveProfileAs()));
+  action->setText(i18n("Save Profile As..."));
+  action->setIcon(KIcon("document-save-as"));
 
-  new KAction(i18n("Enable All Messages"), "", 0, this,
-              SLOT(enableAllMessages()), actionCollection(), "enableAllMessages");
+  action = actionCollection()->addAction("profileSettings", this, SLOT(profileSettings()));
+  action->setText(i18n("Profile Settings"));
 
-  docked = new KToggleAction(i18n("Dock in System Tray"), KShortcut(), this,
-                             SLOT(dockInSysTray()), actionCollection(), "dockInSysTray");
+  action = actionCollection()->addAction("enableAllMessages", this, SLOT(enableAllMessages()));
+  action->setText(i18n("Enable All Messages"));
 
-  docked->setChecked(KGlobal::instance()->config()->readBoolEntry("dockInSysTray", false));
+  docked = new KToggleAction(i18n("Dock in System Tray"), this);
+  actionCollection()->addAction("dockInSysTray", docked);
+  connect(docked, SIGNAL(triggered()), this, SLOT(dockInSysTray()));
+  docked->setChecked(KGlobal::config()->group("").readEntry<bool>("dockInSysTray", false));
 
-  recentFiles = KStdAction::openRecent(this, SLOT(recentProfileSelected(const KURL &)),
-                                       actionCollection(), "recentProfiles");
-  recentFiles->loadEntries(KGlobal::instance()->config());
+  recentFiles = KStandardAction::openRecent(this, SLOT(recentProfileSelected(const KUrl &)), actionCollection());
+  recentFiles->setObjectName("recentProfiles");
+  recentFiles->loadEntries(KGlobal::config()->group(""));
 
   createGUI();
 
@@ -83,7 +93,7 @@ MainWindow::MainWindow()
 
   mainWidget = new MainWidget(splitter);
   mainWidget->setSelector(selector);
-  splitter->setCollapsible(mainWidget, false);
+  splitter->setCollapsible(splitter->indexOf(mainWidget), false);
 
   setCentralWidget(splitter);
 
@@ -91,9 +101,9 @@ MainWindow::MainWindow()
   setAutoSaveSettings();
 
   // system tray icon
-  sysTray = new KSystemTray(this);
-  sysTray->setPixmap(sysTray->loadIcon("kbackup"));
-  sysTray->setShown(docked->isChecked());
+  sysTray = new KSystemTrayIcon(this);
+  sysTray->setIcon(sysTray->loadIcon("kbackup"));
+  sysTray->setVisible(docked->isChecked());
 
   connect(sysTray, SIGNAL(quitSelected()), this, SLOT(maybeQuit()));
 
@@ -101,14 +111,16 @@ MainWindow::MainWindow()
   connect(Archiver::instance, SIGNAL(logging(const QString &)), this, SLOT(loggingSlot(const QString &)));
   connect(Archiver::instance, SIGNAL(inProgress(bool)), this, SLOT(inProgress(bool)));
 
-  startBackupAction = new KAction(i18n("Start Backup"), "kbackup_start", 0, mainWidget,
-                                  SLOT(startBackup()), actionCollection(), "startBackup");
-  startBackupAction->plug(sysTray->contextMenu(), 1);
+  startBackupAction = actionCollection()->addAction("startBackup", mainWidget, SLOT(startBackup()));
+  startBackupAction->setIcon(KIcon("kbackup_start"));
+  startBackupAction->setText(i18n("Start Backup"));
+  sysTray->contextMenu()->addAction(startBackupAction);
 
-  cancelBackupAction = new KAction(i18n("Cancel Backup"), "kbackup_cancel", 0, Archiver::instance,
-                                   SLOT(cancel()), actionCollection(), "cancelBackup");
-  cancelBackupAction->plug(sysTray->contextMenu(), 2);
+  cancelBackupAction = actionCollection()->addAction("cancelBackup", Archiver::instance, SLOT(cancel()));
+  cancelBackupAction->setText(i18n("Cancel Backup"));
+  cancelBackupAction->setIcon(KIcon("kbackup_cancel"));
   cancelBackupAction->setEnabled(false);
+  sysTray->contextMenu()->addAction(cancelBackupAction);
 
   changeSystrayTip();
 }
@@ -149,7 +161,7 @@ void MainWindow::maybeQuit()
 
 bool MainWindow::queryClose()
 {
-  if ( kapp->sessionSaving() || !sysTray->isShown() )
+  if ( kapp->sessionSaving() || !sysTray->isVisible() )
     return stopAllowed();
 
   hide();
@@ -165,7 +177,7 @@ bool MainWindow::queryExit()
 
 //--------------------------------------------------------------------------------
 
-void MainWindow::recentProfileSelected(const KURL &url)
+void MainWindow::recentProfileSelected(const KUrl &url)
 {
   loadProfile(url.path());
 }
@@ -174,7 +186,8 @@ void MainWindow::recentProfileSelected(const KURL &url)
 
 void MainWindow::loadProfile()
 {
-  QString fileName = KFileDialog::getOpenFileName(":profile", "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+  QString fileName = KFileDialog::getOpenFileName(KUrl("kfiledialog:///profile"),
+                                                  "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
 
   if ( fileName.isEmpty() ) return;
 
@@ -197,22 +210,23 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
     KMessageBox::error(this,
                 i18n("Could not open profile '%1' for reading: %2")
                      .arg(fileName)
-                     .arg(kapp->translate("QFile", error)),
+                     .arg(error),
                 i18n("Open failed"));
     return;
   }
 
   setLoadedProfile(fileName);
 
-  KURL url;
+  KUrl url;
   url.setPath(fileName);
-  recentFiles->addURL(url);
-  recentFiles->saveEntries(KGlobal::instance()->config());
+  recentFiles->addUrl(url);
+  recentFiles->saveEntries(KGlobal::config()->group(""));
+  KGlobal::config()->group("").sync();
 
   // now fill the Selector tree with those settings
   selector->setBackupList(includes, excludes);
 
-  mainWidget->targetDir->setText(Archiver::instance->getTarget().pathOrURL());
+  mainWidget->getTargetLineEdit()->setText(Archiver::instance->getTarget().pathOrUrl());
 
   if ( adaptTreeWidth )
     selector->adjustColumn(0);
@@ -224,7 +238,7 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
 
 void MainWindow::saveProfileAs()
 {
-  QString fileName = KFileDialog::getSaveFileName(":profile",
+  QString fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog:///profile"),
                                                   "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
 
   if ( fileName.isEmpty() ) return;
@@ -241,7 +255,7 @@ void MainWindow::saveProfile(QString fileName)
 
   if ( fileName.isEmpty() )
   {
-    fileName = KFileDialog::getSaveFileName(":profile",
+    fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog:///profile"),
                                             "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
 
     if ( fileName.isEmpty() ) return;
@@ -262,21 +276,22 @@ void MainWindow::saveProfile(QString fileName)
   QStringList includes, excludes;
   selector->getBackupList(includes, excludes);
 
-  if ( ! file.open(IO_WriteOnly) )
+  if ( ! file.open(QIODevice::WriteOnly) )
   {
     KMessageBox::error(this,
                 i18n("Could not open profile '%1' for writing: %2")
                      .arg(fileName)
-                     .arg(kapp->translate("QFile", file.errorString())),
+                     .arg(file.errorString()),
                 i18n("Open failed"));
     return;
   }
 
   QTextStream stream(&file);
 
-  stream << "M " << mainWidget->targetDir->text() << endl;
+  stream << "M " << mainWidget->getTargetLineEdit()->text() << endl;
   stream << "P " << Archiver::instance->getFilePrefix() << endl;
   stream << "S " << Archiver::instance->getMaxSliceMBs() << endl;
+  stream << "R " << Archiver::instance->getKeptBackups() << endl;
   stream << "C " << static_cast<int>(Archiver::instance->getMediaNeedsChange()) << endl;
   stream << "Z " << static_cast<int>(Archiver::instance->getCompressFiles()) << endl;
 
@@ -297,17 +312,19 @@ void MainWindow::profileSettings()
 {
   SettingsDialog dialog(this);
 
-  dialog.prefix->setText(Archiver::instance->getFilePrefix());
+  dialog.ui.prefix->setText(Archiver::instance->getFilePrefix());
   dialog.setMaxMB(Archiver::instance->getMaxSliceMBs());
-  dialog.mediaNeedsChange->setChecked(Archiver::instance->getMediaNeedsChange());
-  dialog.compressFiles->setChecked(Archiver::instance->getCompressFiles());
+  dialog.ui.numBackups->setValue(Archiver::instance->getKeptBackups());
+  dialog.ui.mediaNeedsChange->setChecked(Archiver::instance->getMediaNeedsChange());
+  dialog.ui.compressFiles->setChecked(Archiver::instance->getCompressFiles());
 
   if ( dialog.exec() == QDialog::Accepted )
   {
-    Archiver::instance->setFilePrefix(dialog.prefix->text().stripWhiteSpace());
-    Archiver::instance->setMaxSliceMBs(dialog.maxSliceSize->value());
-    Archiver::instance->setMediaNeedsChange(dialog.mediaNeedsChange->isChecked());
-    Archiver::instance->setCompressFiles(dialog.compressFiles->isChecked());
+    Archiver::instance->setFilePrefix(dialog.ui.prefix->text().trimmed());
+    Archiver::instance->setMaxSliceMBs(dialog.ui.maxSliceSize->value());
+    Archiver::instance->setKeptBackups(dialog.ui.numBackups->value());
+    Archiver::instance->setMediaNeedsChange(dialog.ui.mediaNeedsChange->isChecked());
+    Archiver::instance->setCompressFiles(dialog.ui.compressFiles->isChecked());
   }
 }
 
@@ -318,13 +335,14 @@ void MainWindow::newProfile()
   Archiver::instance->setFilePrefix("");  // back to default
   Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
   Archiver::instance->setMediaNeedsChange(true);
-  Archiver::instance->setTarget("");
+  Archiver::instance->setTarget(KUrl());
+  Archiver::instance->setKeptBackups(Archiver::UNLIMITED);
 
   // clear selection
   QStringList includes, excludes;
   selector->setBackupList(includes, excludes);
 
-  mainWidget->targetDir->setText("");
+  mainWidget->getTargetLineEdit()->setText("");
 
   setLoadedProfile("");
 }
@@ -341,13 +359,13 @@ void MainWindow::loggingSlot(const QString &message)
 
 void MainWindow::changeSystrayTip()
 {
-  QString text = KGlobal::instance()->aboutData()->programName() + " - " +
+  QString text = KGlobal::mainComponent().aboutData()->programName() + " - " +
                  i18n("Files: %1 Size: %2 MB\n%3")
                     .arg(Archiver::instance->getTotalFiles())
                     .arg(QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2))
                     .arg(KStringHandler::csqueeze(lastLog, 60));
 
-  QToolTip::add(sysTray, text);
+  sysTray->setToolTip(text);
 }
 
 //--------------------------------------------------------------------------------
@@ -356,13 +374,16 @@ void MainWindow::inProgress(bool runs)
 {
   if ( runs )
   {
-    sysTray->setMovie(KGlobal::instance()->iconLoader()->loadMovie("kbackup_runs", KIcon::Panel));
+    QMovie *movie = KIconLoader::global()->loadMovie("kbackup_runs", KIconLoader::Panel);
+    if ( movie )
+      sysTray->setMovie(movie);
+
     startBackupAction->setEnabled(false);
     cancelBackupAction->setEnabled(true);
   }
   else
   {
-    sysTray->setPixmap(sysTray->loadIcon("kbackup"));
+    sysTray->setIcon(sysTray->loadIcon("kbackup"));
     startBackupAction->setEnabled(true);
     cancelBackupAction->setEnabled(false);
 
@@ -375,9 +396,10 @@ void MainWindow::inProgress(bool runs)
 
 void MainWindow::dockInSysTray()
 {
-  KGlobal::instance()->config()->writeEntry("dockInSysTray", docked->isChecked());
+  KGlobal::config()->group("").writeEntry("dockInSysTray", docked->isChecked());
+  KGlobal::config()->group("").sync();
 
-  sysTray->setShown(docked->isChecked());
+  sysTray->setVisible(docked->isChecked());
 }
 
 //--------------------------------------------------------------------------------

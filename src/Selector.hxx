@@ -1,20 +1,20 @@
+//**************************************************************************
+//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//**************************************************************************
+
 #ifndef _SELECTOR_H_
 #define _SELECTOR_H_
 
-/***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
-
 // the selection widget lets the user select which files/dirs to back up
 
-#include <qlistview.h>
+#include <q3listview.h>
 
-class Selector : public QListView
+class Selector : public Q3ListView
 {
   Q_OBJECT
 
@@ -27,15 +27,15 @@ class Selector : public QListView
     virtual QSize minimumSizeHint() const;
 
   private:
-    void fillTree(QListViewItem *parent, const QString &path, bool on);
-    QString getPath(QListViewItem *item) const;
-    void getBackupLists(QListViewItem *start, QStringList &includes, QStringList &excludes, bool add = true) const;
+    void fillTree(Q3ListViewItem *parent, const QString &path, bool on);
+    QString getPath(Q3ListViewItem *item) const;
+    void getBackupLists(Q3ListViewItem *start, QStringList &includes, QStringList &excludes, bool add = true) const;
 
-    QListViewItem *findItemByPath(const QString &path);
-    QListViewItem *findItem(QListViewItem *start, const QString &toFind) const;
+    Q3ListViewItem *findItemByPath(const QString &path);
+    Q3ListViewItem *findItem(Q3ListViewItem *start, const QString &toFind) const;
 
   private slots:
-    void expandedSlot(QListViewItem *);
+    void expandedSlot(Q3ListViewItem *);
 
   private:
     QSize minSize;

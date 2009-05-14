@@ -1,6 +1,6 @@
 Summary: kbackup is an application which lets you back up your data in a simple, user friendly way.
 Name: kbackup
-Version: 0.5.4
+Version: 0.6
 Release: 1
 License: GPL
 Group: Applications/Archiving
@@ -24,24 +24,25 @@ Included Languages:
 
 %prep
 %setup
-./configure
+mkdir kbackup-build
+cd kbackup-build && cmake ..
 
 %build
-make
+cd kbackup-build && make
 
 %install
-make install
+cd kbackup-build && make install
 
 %files
 %defattr(-,root,root)
 
-/opt/kde3/bin/kbackup
-/opt/kde3/share/applications/kde/kbackup.desktop
-%doc /opt/kde3/share/doc/HTML/*/kbackup/
-/opt/kde3/share/mimelnk/text/x-kbp.desktop
-/opt/kde3/share/icons/hicolor/16x16/mimetypes/kbackup.png
-/opt/kde3/share/icons/hicolor/32x32/mimetypes/kbackup.png
-/opt/kde3/share/icons/hicolor/16x16/apps/kbackup.png
-/opt/kde3/share/icons/hicolor/32x32/apps/kbackup.png
-/opt/kde3/share/apps/kbackup/
-/opt/kde3/share/locale/*/LC_MESSAGES/kbackup.mo
+/usr/bin/kbackup
+/usr/share/mime/packages/kbackup.xml
+/usr/share/applications/kde4/kbackup.desktop
+/usr/share/icons/hicolor/16x16/mimetypes/text-x-kbp.png
+/usr/share/icons/hicolor/32x32/mimetypes/text-x-kbp.png
+/usr/share/icons/hicolor/16x16/apps/kbackup.png
+/usr/share/icons/hicolor/32x32/apps/kbackup.png
+/usr/share/kde4/apps/kbackup/
+%doc /usr/share/doc/kde/HTML/*/kbackup/
+/usr/share/locale/*/LC_MESSAGES/kbackup.mo

@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006, 2007 Martin Koller, m.koller@surfeu.at
+//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -21,22 +21,24 @@
 #include <stdlib.h>
 #include <kde_file.h>
 
-#include <qdir.h>
+#include <QDir>
+#include <QPixmap>
+#include <QDateTime>
 
 #include <iostream>
 using namespace std;
 //--------------------------------------------------------------------------------
 
-class ListItem : public QCheckListItem
+class ListItem : public Q3CheckListItem
 {
   public:
-    ListItem(QListView *parent, const QString &text, bool dir)
-      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir), partly(false)
+    ListItem(Q3ListView *parent, const QString &text, bool dir)
+      : Q3CheckListItem(parent, text, Q3CheckListItem::CheckBox), isDir_(dir), partly(false)
     {
     }
 
-    ListItem(QListViewItem *parent, const QString &text, bool dir)
-      : QCheckListItem(parent, text, QCheckListItem::CheckBox), isDir_(dir), partly(false)
+    ListItem(Q3ListViewItem *parent, const QString &text, bool dir)
+      : Q3CheckListItem(parent, text, Q3CheckListItem::CheckBox), isDir_(dir), partly(false)
     {
     }
 
@@ -48,7 +50,7 @@ class ListItem : public QCheckListItem
       if ( !parent() ) return;
 
       bool allSame = true, state = static_cast<ListItem*>(parent())->isOn();
-      for (QListViewItem *item = parent()->firstChild(); item; item = item->nextSibling())
+      for (Q3ListViewItem *item = parent()->firstChild(); item; item = item->nextSibling())
         if ( (static_cast<ListItem*>(item)->isOn() != state) || static_cast<ListItem*>(item)->partly )
         {
           allSame = false;
@@ -66,7 +68,7 @@ class ListItem : public QCheckListItem
 
     virtual void stateChange(bool b)
     {
-      QCheckListItem::stateChange(b);
+      Q3CheckListItem::stateChange(b);
 
       recursActivate(isOn());
       recursSiblingsUp();
@@ -78,7 +80,7 @@ class ListItem : public QCheckListItem
       partly = false;  // all children will get the same state
       setOn(on);
 
-      for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
+      for (Q3ListViewItem *item = firstChild(); item; item = item->nextSibling())
         static_cast<ListItem*>(item)->recursActivate(on);
     }
 
@@ -91,7 +93,7 @@ class ListItem : public QCheckListItem
       if ( partly )
         colorGroup.setColor(QColorGroup::Text, Qt::blue);
 
-      QCheckListItem::paintCell(p, colorGroup, column, width, align);
+      Q3CheckListItem::paintCell(p, colorGroup, column, width, align);
     }
 
     virtual QString key(int column, bool ascending) const
@@ -126,8 +128,7 @@ class ListItem : public QCheckListItem
 
     void setSize(KIO::filesize_t size)
     {
-      sizeSortStr = KIO::number(size).rightJustify(15);
-      sizeSortStr.replace(' ', '0');
+      sizeSortStr = KIO::number(size).rightJustified(15, QLatin1Char('0'));
       setText(1, KIO::convertSize(size));
     }
 
@@ -151,7 +152,7 @@ class ListItem : public QCheckListItem
 //--------------------------------------------------------------------------------
 
 Selector::Selector(QWidget *parent)
-  : QListView(parent)
+  : Q3ListView(parent)
 {
   addColumn(i18n("Name"));
   addColumn(i18n("Size"));
@@ -167,13 +168,13 @@ Selector::Selector(QWidget *parent)
   adjustColumn(2);
   minSize = QSize(columnWidth(0) + columnWidth(1), -1);
 
-  connect(this, SIGNAL(expanded(QListViewItem *)), this, SLOT(expandedSlot(QListViewItem*)));
+  connect(this, SIGNAL(expanded(Q3ListViewItem *)), this, SLOT(expandedSlot(Q3ListViewItem*)));
 
   // for convenience, open the tree at the HOME directory
-  char *home = ::getenv("HOME");
+  const char *home = ::getenv("HOME");
   if ( home )
   {
-    QListViewItem *item = findItemByPath(QFile::decodeName(home));
+    Q3ListViewItem *item = findItemByPath(QFile::decodeName(home));
     if ( item )
     {
       item->setOpen(true);
@@ -191,41 +192,32 @@ QSize Selector::minimumSizeHint() const
 
 //--------------------------------------------------------------------------------
 
-void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
+void Selector::fillTree(Q3ListViewItem *parent, const QString &path, bool on)
 {
   QDir dir(path, QString::null, QDir::Name | QDir::IgnoreCase, QDir::All | QDir::Hidden);
-  const QFileInfoList *list = dir.entryInfoList();
-  if ( !list ) return;
+  const QFileInfoList list = dir.entryInfoList();
 
   ListItem *item;
-  QFileInfoListIterator it(*list);
-  QFileInfo *info;
 
-  for (; (info = it.current()) != 0; ++it)
+  for (int i = 0; i < list.count(); i++)
   {
-    if ( (info->fileName() == ".") || (info->fileName() == "..") ) continue;
+    if ( (list[i].fileName() == ".") || (list[i].fileName() == "..") ) continue;
 
     if ( parent )
-      item = new ListItem(parent, info->fileName(), info->isDir());
+      item = new ListItem(parent, list[i].fileName(), list[i].isDir());
     else
-      item = new ListItem(this, info->fileName(), info->isDir());
+      item = new ListItem(this, list[i].fileName(), list[i].isDir());
 
     item->setOn(on);
-
-    KDE_struct_stat status;
-    memset(&status, 0, sizeof(status));
-
-    // QFileInfo has no large file support (only files up to 2GB)
-    KDE_stat(QFile::encodeName(info->absFilePath()), &status);
-    item->setSize(status.st_size);
-    item->setLastModified(info->lastModified());
+    item->setSize(list[i].size());
+    item->setLastModified(list[i].lastModified());
 
     if ( item->isDir() )
     {
-      QDir dir(info->absFilePath(), QString::null, QDir::Name | QDir::IgnoreCase, QDir::All | QDir::Hidden);
+      QDir dir(list[i].absoluteFilePath(), QString::null, QDir::Name | QDir::IgnoreCase, QDir::All | QDir::Hidden);
 
       // symlinked dirs can not be expanded as they are stored as single files in the archive
-      if ( ((dir.count() - 2) > 0) && !info->isSymLink() ) // skip "." and ".."
+      if ( ((dir.count() - 2) > 0) && !list[i].isSymLink() ) // skip "." and ".."
         item->setExpandable(true);
 
       static QPixmap folderIcon;
@@ -240,20 +232,15 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
         folderIcon = SmallIcon("folder");
         folderIconHidden = effect.apply(folderIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
-        // create a "link" icon and make sure the "folder" icon has
-        // the same size as the "link" icon as otherwise the overlay operation
-        // would not be done
-        QImage overlay(SmallIcon("link").convertToImage());
-        QImage src(folderIcon.convertToImage().scale(overlay.size()));
-        KIconEffect::overlay(src, overlay);
-        folderLinkIcon = src;
+        folderLinkIcon = SmallIcon("folder", 0, KIconLoader::DefaultState,
+                                   QStringList("emblem-symbolic-link"));
 
         folderLinkIconHidden = effect.apply(folderLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
 
-      item->setPixmap(0, info->isSymLink() ?
-                           (info->isHidden() ? folderLinkIconHidden : folderLinkIcon)
-                         : (info->isHidden() ? folderIconHidden : folderIcon));
+      item->setPixmap(0, list[i].isSymLink() ?
+                           (list[i].isHidden() ? folderLinkIconHidden : folderLinkIcon)
+                         : (list[i].isHidden() ? folderIconHidden : folderIcon));
     }
     else
     {
@@ -266,30 +253,25 @@ void Selector::fillTree(QListViewItem *parent, const QString &path, bool on)
       {
         KIconEffect effect;
 
-        documentIcon = SmallIcon("document");
+        documentIcon = SmallIcon("text-x-generic");
         documentIconHidden = effect.apply(documentIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
-        // create a "link" icon and make sure the "document" icon has
-        // the same size as the "link" icon as otherwise the overlay operation
-        // would not be done (kdeclassic has 18x18 but link has 16x16; crystalsvg is ok)
-        QImage overlay(SmallIcon("link").convertToImage());
-        QImage src(documentIcon.convertToImage().scale(overlay.size()));
-        KIconEffect::overlay(src, overlay);
-        documentLinkIcon = src;
+        documentLinkIcon = SmallIcon("text-x-generic", 0, KIconLoader::DefaultState,
+                                     QStringList("emblem-symbolic-link"));
 
         documentLinkIconHidden = effect.apply(documentLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
 
-      item->setPixmap(0, info->isSymLink() ?
-                           (info->isHidden() ? documentLinkIconHidden : documentLinkIcon)
-                         : (info->isHidden() ? documentIconHidden : documentIcon));
+      item->setPixmap(0, list[i].isSymLink() ?
+                           (list[i].isHidden() ? documentLinkIconHidden : documentLinkIcon)
+                         : (list[i].isHidden() ? documentIconHidden : documentIcon));
     }
   }
 }
 
 //--------------------------------------------------------------------------------
 
-QString Selector::getPath(QListViewItem *item) const
+QString Selector::getPath(Q3ListViewItem *item) const
 {
   if ( !item )
     return "";
@@ -299,7 +281,7 @@ QString Selector::getPath(QListViewItem *item) const
 
 //--------------------------------------------------------------------------------
 
-void Selector::expandedSlot(QListViewItem *item)
+void Selector::expandedSlot(Q3ListViewItem *item)
 {
   if ( item->childCount() ) return;  // already done
 
@@ -310,7 +292,7 @@ void Selector::expandedSlot(QListViewItem *item)
 
 void Selector::getBackupList(QStringList &includes, QStringList &excludes) const
 {
-  for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
+  for (Q3ListViewItem *item = firstChild(); item; item = item->nextSibling())
     getBackupLists(item, includes, excludes);
 
   /*
@@ -328,7 +310,7 @@ void Selector::getBackupList(QStringList &includes, QStringList &excludes) const
 
 //--------------------------------------------------------------------------------
 
-void Selector::getBackupLists(QListViewItem *start, QStringList &includes, QStringList &excludes, bool add) const
+void Selector::getBackupLists(Q3ListViewItem *start, QStringList &includes, QStringList &excludes, bool add) const
 {
   if ( static_cast<ListItem*>(start)->isOn() )
   {
@@ -338,7 +320,7 @@ void Selector::getBackupLists(QListViewItem *start, QStringList &includes, QStri
     if ( static_cast<ListItem*>(start)->isDir() )
     {
       // get excludes from this dir
-      for (QListViewItem *item = start->firstChild(); item; item = item->nextSibling())
+      for (Q3ListViewItem *item = start->firstChild(); item; item = item->nextSibling())
       {
         if ( !static_cast<ListItem*>(item)->isOn() )
           excludes.append(getPath(item));
@@ -351,7 +333,7 @@ void Selector::getBackupLists(QListViewItem *start, QStringList &includes, QStri
   else
     if ( static_cast<ListItem*>(start)->isDir() )
     {
-      for (QListViewItem *item = start->firstChild(); item; item = item->nextSibling())
+      for (Q3ListViewItem *item = start->firstChild(); item; item = item->nextSibling())
         getBackupLists(item, includes, excludes);
     }
 }
@@ -364,19 +346,19 @@ void Selector::setBackupList(const QStringList &includes, const QStringList &exc
   setSorting(-1);  // otherwise the performance is very bad as firstChild() always sorts
 
   // clear all current settings
-  for (QListViewItem *item = firstChild(); item; item = item->nextSibling())
+  for (Q3ListViewItem *item = firstChild(); item; item = item->nextSibling())
     static_cast<ListItem*>(item)->recursActivate(false);
 
   for (QStringList::const_iterator it = includes.begin(); (it != includes.end()); ++it)
   {
-    QListViewItem *item = findItemByPath(*it);
+    Q3ListViewItem *item = findItemByPath(*it);
     if ( item )
       static_cast<ListItem*>(item)->recursActivate(true);
   }
 
   for (QStringList::const_iterator it = excludes.begin(); (it != excludes.end()); ++it)
   {
-    QListViewItem *item = findItemByPath(*it);
+    Q3ListViewItem *item = findItemByPath(*it);
     if ( item )
       static_cast<ListItem*>(item)->setOn(false);
   }
@@ -386,21 +368,23 @@ void Selector::setBackupList(const QStringList &includes, const QStringList &exc
 
 //--------------------------------------------------------------------------------
 
-QListViewItem *Selector::findItemByPath(const QString &path)
+Q3ListViewItem *Selector::findItemByPath(const QString &path)
 {
-  QStringList items = QStringList::split('/', path);
-  QListViewItem *item = 0;
+  QStringList items = path.split('/', QString::SkipEmptyParts);
+  Q3ListViewItem *item = 0;
 
-  for (QStringList::const_iterator it = items.begin(); it != items.end(); ++it)
+  for (int i = 0; i < items.count(); i++)
   {
-    item = findItem(item, *it);
+    item = findItem(item, items[i]);
 
     if ( !item )
       return 0;
     else
-      if ( (it != items.fromLast()) &&
+    {
+      if ( (i != (items.count() - 1)) &&
            static_cast<ListItem*>(item)->isDir() && (item->childCount() == 0) )
         expandedSlot(item);
+    }
   }
 
   return item;
@@ -408,9 +392,9 @@ QListViewItem *Selector::findItemByPath(const QString &path)
 
 //--------------------------------------------------------------------------------
 
-QListViewItem *Selector::findItem(QListViewItem *start, const QString &toFind) const
+Q3ListViewItem *Selector::findItem(Q3ListViewItem *start, const QString &toFind) const
 {
-  for (QListViewItem *item = start ? start->firstChild() : firstChild(); item; item = item->nextSibling())
+  for (Q3ListViewItem *item = start ? start->firstChild() : firstChild(); item; item = item->nextSibling())
     if ( item->text(0) == toFind )
       return item;
 

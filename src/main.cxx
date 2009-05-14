@@ -1,49 +1,46 @@
-/***************************************************************************
- *   (c) 2006, Martin Koller, m.koller@surfeu.at                           *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, version 2 of the License                *
- *                                                                         *
- ***************************************************************************/
+//**************************************************************************
+//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, version 2 of the License
+//
+//**************************************************************************
 
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 
-#include <qfile.h>
+#include <QFile>
+#include <QString>
 
 #include <MainWindow.hxx>
 #include <Archiver.hxx>
 
 #include <iostream>
-using namespace std;
 
 //--------------------------------------------------------------------------------
 
 int main(int argc, char **argv)
 {
-  KAboutData about("kbackup", I18N_NOOP("KBackup"),
-                   "0.6", I18N_NOOP("An easy to use backup program"), KAboutData::License_GPL_V2,
-                   "(c) 2006, 2007, 2008 Martin Koller",  // copyright
-                   0,  // added text
+  KAboutData about("kbackup", "", ki18n("KBackup"),
+                   "0.6", ki18n("An easy to use backup program"), KAboutData::License_GPL_V2,
+                   ki18n("(c) 2006 - 2009 Martin Koller"),  // copyright
+                   KLocalizedString(),  // added text
                    "http://www.kde-apps.org/content/show.php?content=44998",  // homepage
-                   "m.koller@surfeu.at");  // bugs to
+                   "kollix@aon.at");  // bugs to
 
-  about.addAuthor("Martin Koller",
-                  I18N_NOOP("Developer"), "m.koller@surfeu.at");
+  about.addAuthor(ki18n("Martin Koller"), ki18n("Developer"), "kollix@aon.at");
 
-  static const KCmdLineOptions options[] =
-  {
-     { "+[profile]", I18N_NOOP("Start with given profile"), 0 },
-     { "script <file>", I18N_NOOP("Script to run after finishing one archive slice"), 0 },
-     { "auto <profile>", I18N_NOOP("Automatically run the backup with the given profile"
-                                   " and terminate when done."), 0 },
-     { "autobg <profile>", I18N_NOOP("Automatically run the backup with the given profile"
-                                     " in the background (without showing a window)"
-                                     " and terminate when done."), 0 },
-     KCmdLineLastOption // End of options.
-  };
+  KCmdLineOptions options;
+  options.add("+[profile]", ki18n("Start with given profile"));
+  options.add("script <file>", ki18n("Script to run after finishing one archive slice"));
+  options.add("auto <profile>", ki18n("Automatically run the backup with the given profile"
+                                      " and terminate when done."));
+  options.add("autobg <profile>", ki18n("Automatically run the backup with the given profile"
+                                        " in the background (without showing a window)"
+                                        " and terminate when done."));
+  options.add("verbose", ki18n("In autobg mode be verbose and print every single filename during backup"));
 
   KCmdLineArgs::addCmdLineOptions(options);
   KCmdLineArgs::init(argc, argv, &about);
@@ -52,7 +49,7 @@ int main(int argc, char **argv)
 
   bool interactive = !args->isSet("autobg");
 
-  KApplication app(interactive, interactive);
+  KApplication app(interactive);
 
   MainWindow *mainWin = 0;
 
@@ -64,20 +61,20 @@ int main(int argc, char **argv)
   else
     new Archiver(0);
 
-  QCString file = args->getOption("script");
+  QString file = args->getOption("script");
   if ( file.length() )
-    Archiver::sliceScript = QFile::decodeName(file);
+    Archiver::sliceScript = file;
 
   if ( interactive )
   {
     QString profile;
 
     if ( args->count() > 0 )
-      profile = QFile::decodeName(args->arg(0));
+      profile = args->arg(0);
 
-    QCString file = args->getOption("auto");
+    QString file = args->getOption("auto");
     if ( file.length() )
-      profile = QFile::decodeName(file);
+      profile = file;
 
     if ( profile.length() )
       mainWin->loadProfile(profile, true);
@@ -90,13 +87,15 @@ int main(int argc, char **argv)
   else
   {
     QStringList includes, excludes;
-    QString error, fileName = QFile::decodeName(args->getOption("autobg"));
+    QString error, fileName = args->getOption("autobg");
+
+    Archiver::instance->setVerbose(args->isSet("verbose"));
 
     if ( !Archiver::instance->loadProfile(fileName, includes, excludes, error) )
     {
-      cerr << i18n("Could not open profile '%1' for reading: %2")
-              .arg(fileName)
-              .arg(kapp->translate("QFile", error)) << endl;
+      std::cerr << i18n("Could not open profile '%1' for reading: %2")
+                        .arg(fileName)
+                        .arg(error).toUtf8().constData() << std::endl;
       return -1;
     }
     else
