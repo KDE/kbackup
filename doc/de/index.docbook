@@ -42,7 +42,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <firstname>Martin</firstname>
 <surname>Koller</surname>
 </personname>
-<email>m.koller@surfeu.at</email>
+<email>kollix@aon.at</email>
 </author>
 </authorgroup>
 
@@ -343,7 +343,7 @@ Diese Einstellungen werden mit in die Profil Datei gespeichert.</action></para><
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Strg;<keycap>Q</keycap></keycombo>
+<keycombo action="simul"><keycap>Strg+Q</keycap></keycombo>
 </shortcut>
 <guimenu>Datei</guimenu>
 <guimenuitem>Beenden</guimenuitem>
@@ -565,11 +565,11 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Programm Copyright &copy; 2006, 2007 Martin Koller <email>m.koller@surfeu.at</email>
+Programm Copyright &copy; 2006 - 2009 Martin Koller <email>kollix@aon.at</email>
 </para>
 
 <para>
-Dokumentation Copyright &copy; 2006, 2007 Martin Koller
+Dokumentation Copyright &copy; 2006 - 2009 Martin Koller
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->

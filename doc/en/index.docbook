@@ -42,15 +42,14 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <firstname>Martin</firstname>
 <surname>Koller</surname>
 </personname>
-<email>m.koller@surfeu.at</email>
+<email>kollix@aon.at</email>
 </author>
 </authorgroup>
 
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2006</year>
-<year>2007</year>
+<year>2006 - 2009</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -58,8 +57,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2007-07-08</date>
-<releaseinfo>1.04.00</releaseinfo>
+<date>2009-05-13</date>
+<releaseinfo>1.05.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -81,6 +80,8 @@ Please at least include KDE, the KDE package it is in, the name
 <keyword>storage</keyword>
 <keyword>archive</keyword>
 <keyword>zip</keyword>
+<keyword>gzip</keyword>
+<keyword>bzip2</keyword>
 </keywordset>
 
 </bookinfo>
@@ -106,12 +107,18 @@ like a ZIP drive, USB stick, etc.) but it can also be any remote URL
 </para>
 
 <para>
+The program can also run an automated backup without using a graphical user interface.
+One can simply create a profile and use this settings to tell &kbackup; what to do
+when run in non-interactive mode, e.g. by starting it from a cron job.
+</para>
+
+<para>
 The program was designed to be very simple in its use so that it can be used
 by non-computer experts.
 </para>
 
 <para>
-The storage format is the well known TAR format, whereby the data is still stored
+The storage format is the well known TAR format, whereby the data can still be stored
 in compressed format (bzip2 or gzip).
 </para>
 
@@ -234,42 +241,36 @@ If you explicitely limit the size of an archive slice, the available size
 will be marked with (*) in the mainwindow.
 </para>
 
+<para>
+In the Profile Settings, you can also define a maximum number of backups being kept
+in the target directory, and therefore automatically deleting all older backups there.
+E.g. if you set it to 3, &kbackup; will keep the last 3 backups and delete all older ones.
+</para>
+
 </sect1>
 
 <sect1 id="archive-compression">
 <title>Archive Compression</title>
 <para>
-&kbackup; will always compress the files stored (except you explicitely deactivate this
-in the profile settings). Depending on
+&kbackup; will compress the files stored if you activate this
+in the profile settings. Depending on
 the availability on your system it chooses bzip2 or gzip compression.
+&kbackup; will compress every single file
+and store all files with an added file extension (.bzip2 or .gz) into the
+then not-compressed .tar archive.
 </para>
 
 <para>
 When you have selected to create the backup on some local filesystem
 (e.g. your extra disc, ZIP drive, etc.) - which means you did not
 enter a target URL - &kbackup; might split the whole backup into several archive slices
-due to media capacity limitations. &kbackup; will compress every single file
-and store all files with an added file extension (.bzip2 or .gz) into the
-then not-compressed .tar archive.
+due to media capacity limitations.
 </para>
 <para>
-e.g.: backup_2006.08.26-13.04.44_1.tar
+e.g.:
+backup_2006.08.26-13.04.44_1.tar
+backup_2006.08.26-13.04.44_2.tar
 </para>
-
-<para>
-When you have selected a target URL, which is displayed as
-unlimited medium size, &kbackup; will create only
-one archive, which includes the non-compressed files, but it will
-compress the whole .tar archive as the last step.
-</para>
-<para>
-This always results in an archive file with the file extension
-.tar.bzip2 or .tar.gz
-</para>
-<para>
-e.g.: backup_2006.08.26-13.04.44_1.tar.bzip2
-</para>
-
 
 </sect1>
 
@@ -335,7 +336,7 @@ This setting is also stored into the profile.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+<keycombo action="simul"><keycap>Ctrl+Q</keycap></keycombo>
 </shortcut>
 <guimenu>File</guimenu>
 <guimenuitem>Quit</guimenuitem>
@@ -552,7 +553,7 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Program copyright &copy; 2006, 2007 Martin Koller <email>m.koller@surfeu.at</email>
+Program copyright &copy; 2006, 2007 Martin Koller <email>kollix@aon.at</email>
 </para>
 
 <para>
