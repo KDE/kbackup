@@ -8,6 +8,7 @@
 - When the upload fails for a slice, offer a way to select a temporarily different target
 - if target-dir does not exist, create it (mkdir -p)
 - # of kept backups on target dir (per profile)
+- show list of created archive slices in finish-dialog
 
 19.01.2008 (0.5.4)
 - correctly limit slice size:
