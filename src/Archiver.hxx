@@ -17,6 +17,7 @@
 #include <qpointer.h>
 #include <QTimer>
 #include <QTime>
+#include <QStringList>
 #include <kurl.h>
 #include <kio/copyjob.h>
 
@@ -24,7 +25,6 @@ class KTar;
 class KProcess;
 class QDir;
 class QFileInfo;
-class QStringList;
 class QFile;
 
 
@@ -122,6 +122,7 @@ class Archiver : public QObject
 
     QString archiveName;
     QString filePrefix;  // default = "backup"
+    QStringList sliceList;
 
     KTar *archive;
     KIO::filesize_t totalBytes;

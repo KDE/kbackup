@@ -19,7 +19,6 @@
 #include <kstandarddirs.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
-#include <kio/netaccess.h>
 #include <kprocess.h>
 #include <kde_file.h>
 #include <kdirselectdialog.h>
@@ -305,6 +304,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   totalFiles = 0;
   cancelled = false;
   skippedFiles = false;
+  sliceList.clear();
 
   runs = true;
   emit inProgress(true);
@@ -362,7 +362,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     emit logging(i18n("...reducing number of kept archives to max. %1").arg(numKeptBackups));
 
     while ( listJob )
-      qApp->processEvents();
+      qApp->processEvents(QEventLoop::WaitForMoreEvents);
 
     if ( jobResult == 0 )
     {
@@ -394,8 +394,22 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
             KUrl url = targetURL;
             url.addPath(entryName);
             emit logging(i18n("...deleting %1").arg(entryName));
-            if ( ! KIO::NetAccess::del(url, interactive ? static_cast<QWidget*>(parent()) : 0) )
-              emit warning(KIO::NetAccess::lastErrorString());
+
+            // delete the file using KIO
+            {
+              QPointer<KIO::SimpleJob> delJob;
+              delJob = KIO::file_delete(url, interactive ? KIO::DefaultFlags : KIO::HideProgressInfo);
+
+              if ( !interactive )
+                delJob->setUiDelegate(0);
+              else
+                delJob->ui()->setWindow(static_cast<QWidget*>(parent()));
+
+              connect(delJob, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
+
+              while ( delJob )
+                qApp->processEvents(QEventLoop::WaitForMoreEvents);
+            }
           }
         }
       }
@@ -420,12 +434,13 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
 
     if ( interactive )
     {
-      int ret = KMessageBox::questionYesNo(static_cast<QWidget*>(parent()),
+      int ret = KMessageBox::questionYesNoList(static_cast<QWidget*>(parent()),
                                skippedFiles ?
                                  i18n("The backup has finished but files were skipped.\n"
                                       "What do you want to do now?") :
                                  i18n("The backup has finished successfully.\n"
                                       "What do you want to do now?"),
+                               sliceList,
                                QString::null,
                                KStandardGuiItem::cont(), KStandardGuiItem::quit(),
                                "showDoneInfo");
@@ -435,6 +450,11 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     }
     else
     {
+      std::cerr << "-------" << std::endl;
+      foreach (QString slice, sliceList)
+        std::cerr << slice.toUtf8().constData() << std::endl;
+      std::cerr << "-------" << std::endl;
+
       std::cerr << i18n("Totals: Files: %1, Size: %2, Duration: %3")
                    .arg(totalFiles)
                    .arg(KIO::convertSize(totalBytes))
@@ -490,74 +510,80 @@ void Archiver::finishSlice()
     runScript("slice_closed");
 
     if ( targetURL.isLocalFile() )
-      emit logging(i18n("...finished slice %1").arg(archiveName));
-  }
-
-  if ( !cancelled && !targetURL.isLocalFile() )
-  {
-    KUrl source, target = targetURL;
-    source.setPath(archiveName);
-
-    while ( true )
     {
-      // copy to have the archive for the script later down
-      job = KIO::copy(source, target, interactive ? KIO::DefaultFlags : KIO::HideProgressInfo);
+      emit logging(i18n("...finished slice %1").arg(archiveName));
+      sliceList << archiveName;  // store name for display at the end
+    }
+    else
+    {
+      KUrl source, target = targetURL;
+      source.setPath(archiveName);
 
-      if ( !interactive )
-        job->setUiDelegate(0);
-      else
-        job->ui()->setWindow(static_cast<QWidget*>(parent()));
-
-      connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
-
-      emit logging(i18n("...uploading archive %1 to %2").arg(source.fileName()).arg(target.pathOrUrl()));
-
-      while ( job )
-        qApp->processEvents();
-
-      if ( jobResult == 0 )
-        break;
-      else
+      while ( true )
       {
+        // copy to have the archive for the script later down
+        job = KIO::copy(source, target, interactive ? KIO::DefaultFlags : KIO::HideProgressInfo);
+
         if ( !interactive )
+          job->setUiDelegate(0);
+        else
+          job->ui()->setWindow(static_cast<QWidget*>(parent()));
+
+        connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
+
+        emit logging(i18n("...uploading archive %1 to %2").arg(source.fileName()).arg(target.pathOrUrl()));
+
+        while ( job )
+          qApp->processEvents(QEventLoop::WaitForMoreEvents);
+
+        if ( jobResult == 0 )
         {
-          emit warning(i18n("upload FAILED"));
+          target.addPath(source.fileName());
+          sliceList << target.pathOrUrl();  // store name for display at the end
           break;
         }
         else
         {
-          enum { ASK, CANCEL, RETRY } action = ASK;
-          while ( action == ASK )
+          if ( !interactive )
           {
-            int ret = KMessageBox::warningYesNoCancel(static_cast<QWidget*>(parent()),
-                        i18n("How shall we proceed with the upload?"), QString::null,
-                        KGuiItem(i18n("Retry")), KGuiItem(i18n("Change Target")));
+            emit warning(i18n("upload FAILED"));
+            break;
+          }
+          else
+          {
+            enum { ASK, CANCEL, RETRY } action = ASK;
+            while ( action == ASK )
+            {
+              int ret = KMessageBox::warningYesNoCancel(static_cast<QWidget*>(parent()),
+                          i18n("How shall we proceed with the upload?"), QString::null,
+                          KGuiItem(i18n("Retry")), KGuiItem(i18n("Change Target")));
 
-            if ( ret == KMessageBox::Cancel )
-            {
-              action = CANCEL;
-              break;
-            }
-            else if ( ret == KMessageBox::No )  // change target
-            {
-              target = KFileDialog::getExistingDirectoryUrl(KUrl("/"), static_cast<QWidget*>(parent()));
-              if ( target.isEmpty() )
-                action = ASK;
+              if ( ret == KMessageBox::Cancel )
+              {
+                action = CANCEL;
+                break;
+              }
+              else if ( ret == KMessageBox::No )  // change target
+              {
+                target = KFileDialog::getExistingDirectoryUrl(KUrl("/"), static_cast<QWidget*>(parent()));
+                if ( target.isEmpty() )
+                  action = ASK;
+                else
+                  action = RETRY;
+              }
               else
                 action = RETRY;
             }
-            else
-              action = RETRY;
-          }
 
-          if ( action == CANCEL )
-            break;
+            if ( action == CANCEL )
+              break;
+          }
         }
       }
-    }
 
-    if ( jobResult != 0 )
-      cancel();
+      if ( jobResult != 0 )
+        cancel();
+    }
   }
 
   if ( ! cancelled )
@@ -663,11 +689,10 @@ bool Archiver::getNextSlice()
     finishSlice();
     if ( cancelled ) return false;
 
-    if ( !interactive ||
-         (mediaNeedsChange &&
-           KMessageBox::warningContinueCancel(static_cast<QWidget*>(parent()),
-                               i18n("The medium is full. Please insert medium Nr. %1").arg(sliceNum)) ==
-            KMessageBox::Cancel) )
+    if ( interactive && mediaNeedsChange &&
+         KMessageBox::warningContinueCancel(static_cast<QWidget*>(parent()),
+                             i18n("The medium is full. Please insert medium Nr. %1").arg(sliceNum)) ==
+          KMessageBox::Cancel )
     {
       cancel();
       return false;
@@ -895,7 +920,7 @@ void Archiver::addFile(const QFileInfo &info)
     }
 
     // get filesize
-    sliceBytes = QFileInfo(archiveName).size();  // account for tar overhead
+    sliceBytes = archive->device()->pos();  // account for tar overhead
     totalBytes += tmpFile.size();
 
     emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
@@ -992,7 +1017,8 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   sourceFile.close();
 
   // get filesize
-  sliceBytes = QFileInfo(archiveName).size();  // account for tar overhead
+  sliceBytes = archive->device()->pos();  // account for tar overhead
+
   emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
 
   if ( msgShown && interactive )
