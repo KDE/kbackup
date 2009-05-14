@@ -1,9 +1,13 @@
+- Port to cmake and KDE4/Qt4, which also removes the 4GB limit per file
 - sort hidden files/dirs before normal ones
 - show dimmed icon for hidden files (like konqueror)
 - don't allow to expand symlinked dirs as the content is not archived but only the link
 - Add "Save As..." menu and store name of loaded profile, so that a save directly writes to that
 - Add --autobg <profile> commandline which starts kbackup without a GUI e.g. for cron, at, ...
+- Add --verbose commandline option which allows to see all files when using --autobg
 - When the upload fails for a slice, offer a way to select a temporarily different target
+- if target-dir does not exist, create it (mkdir -p)
+- # of kept backups on target dir (per profile)
 
 19.01.2008 (0.5.4)
 - correctly limit slice size:
