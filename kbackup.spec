@@ -25,13 +25,19 @@ Included Languages:
 %prep
 %setup
 mkdir kbackup-build
-cd kbackup-build && cmake ..
+cd kbackup-build && cmake -DCMAKE_INSTALL_PREFIX=${RPM_BUILD_ROOT}/usr ..
 
 %build
 cd kbackup-build && make
 
 %install
 cd kbackup-build && make install
+
+%clean
+if [ "${RPM_BUILD_ROOT}" != "/" -a ! -z "${RPM_BUILD_ROOT}" ]
+then
+  rm -Rf ${RPM_BUILD_ROOT}
+fi
 
 %files
 %defattr(-,root,root)
