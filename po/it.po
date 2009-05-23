@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
 "POT-Creation-Date: 2009-05-14 13:27+0200\n"
-"PO-Revision-Date: 2007-10-07 19:54+0200\n"
+"PO-Revision-Date: 2009-05-15 20:40+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,16 +20,14 @@ msgstr ""
 #. i18n: file: src/kbackupui.rc:4
 #. i18n: ectx: Menu (file)
 #: po/rc.cpp:3
-#, fuzzy
 msgid "&File"
-msgstr "Files:"
+msgstr "&File"
 
 #. i18n: file: src/kbackupui.rc:12
 #. i18n: ectx: Menu (settings)
 #: po/rc.cpp:6
-#, fuzzy
 msgid "&Settings"
-msgstr "Impostazione Profilo"
+msgstr "&Impostazioni"
 
 #. i18n: file: src/MainWidgetBase.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
@@ -168,7 +166,7 @@ msgstr "illimitato"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: po/rc.cpp:81
 msgid "Number of backups to keep"
-msgstr ""
+msgstr "Numero dei backup da conservare"
 
 #. i18n: file: src/SettingsDialog.ui:78
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
@@ -176,7 +174,7 @@ msgstr ""
 msgid ""
 "How many backups shall be kept in the target directory before older ones "
 "will be deleted"
-msgstr ""
+msgstr "Quanti backup dovranno essere conservati nella directory target prima che i più vecchi verranno cancellati"
 
 #. i18n: file: src/SettingsDialog.ui:93
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
@@ -198,8 +196,7 @@ msgstr "L'azione richiede il cambiamento del disco"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
 #: po/rc.cpp:96
 msgid "Uncheck if you want to avoid compressing files or archive slices at all"
-msgstr ""
-"Deseleziona se vuoi  impedire la compressione di tutti i file e archivi"
+msgstr "Deseleziona se vuoi  impedire la compressione di tutti i file e archivi"
 
 #. i18n: file: src/SettingsDialog.ui:106
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
@@ -212,7 +209,7 @@ msgstr "...compressione file %1"
 #. i18n: ectx: property (text), widget (QPushButton, ok)
 #: po/rc.cpp:102
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. i18n: file: src/SettingsDialog.ui:154
 #. i18n: ectx: property (text), widget (QPushButton, cancel)
@@ -224,12 +221,12 @@ msgstr "Cancella Backup"
 #: po/rc.cpp:106
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "I vostri nomi"
 
 #: po/rc.cpp:107
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Le vostre email"
 
 #: src/Archiver.cxx:250
 msgid "Nothing selected for backup"
@@ -245,6 +242,9 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
+"La directory target '%1' non esiste.\n"
+"\n"
+"Devo crearla?"
 
 #: src/Archiver.cxx:273
 #, fuzzy
@@ -262,16 +262,15 @@ msgstr "La directory di destinazione non è valida"
 
 #: src/Archiver.cxx:362
 msgid "...reducing number of kept archives to max. %1"
-msgstr ""
+msgstr "...riduzione numero degli archivi conservati al massimo. %1"
 
 #: src/Archiver.cxx:396
 msgid "...deleting %1"
-msgstr ""
+msgstr "...cancellazione %1"
 
 #: src/Archiver.cxx:405
-msgid ""
-"fetching directory listing of target failed. Can not reduce kept archives."
-msgstr ""
+msgid "fetching directory listing of target failed. Can not reduce kept archives."
+msgstr "errore nella lettura della lista del target. Impossibile ridurre gli archivi conservati"
 
 #: src/Archiver.cxx:417
 msgid "!! Backup finished <b>but files were skipped</b> !!"
@@ -320,20 +319,19 @@ msgstr ".....uploading archivo da %1 a %2"
 
 #: src/Archiver.cxx:524
 msgid "upload FAILED"
-msgstr ""
+msgstr "upload FALLITO"
 
 #: src/Archiver.cxx:533
 msgid "How shall we proceed with the upload?"
-msgstr ""
+msgstr "Come dobbiamo procedere con l'upload?"
 
 #: src/Archiver.cxx:534
 msgid "Retry"
-msgstr ""
+msgstr "Riprova"
 
 #: src/Archiver.cxx:534
-#, fuzzy
 msgid "Change Target"
-msgstr "Destinazione"
+msgstr "Cambia Destinazione"
 
 #: src/Archiver.cxx:633
 msgid "The script '%1' could not be started."
@@ -425,7 +423,7 @@ msgstr ""
 
 #: src/Archiver.cxx:1057
 msgid "Could not write to temporary file"
-msgstr ""
+msgstr "Impossibile scrivere su di un file temporaneo"
 
 #: src/Archiver.cxx:1079
 msgid "...compressing file %1"
@@ -433,7 +431,7 @@ msgstr "...compressione file %1"
 
 #: src/Archiver.cxx:1124
 msgid "WARNING:"
-msgstr ""
+msgstr "ATTENZIONE:"
 
 #: src/main.cxx:27
 msgid "An easy to use backup program"
@@ -441,11 +439,11 @@ msgstr "Un programma di Backup facile da usare"
 
 #: src/main.cxx:28
 msgid "(c) 2006 - 2009 Martin Koller"
-msgstr ""
+msgstr "(c) 2006 - 2009 Martin Koller"
 
 #: src/main.cxx:33
 msgid "Martin Koller"
-msgstr ""
+msgstr "Martin Koller"
 
 #: src/main.cxx:33
 msgid "Developer"
@@ -461,8 +459,7 @@ msgstr "Script da avviare dopo aver completato una parte dell'archivio"
 
 #: src/main.cxx:38
 #, fuzzy
-msgid ""
-"Automatically run the backup with the given profile and terminate when done."
+msgid "Automatically run the backup with the given profile and terminate when done."
 msgstr ""
 "Avvia automaticamente il backup e chiudi quando è finito.  Funziona "
 "solamente se si è attivato un profilo"
@@ -472,10 +469,12 @@ msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
 msgstr ""
+"Avvia automaticamente il backup in background secondo il profilo selezionato. "
+"(senza mostrare un finestra) e chiudere una volta terminato"
 
 #: src/main.cxx:43
 msgid "In autobg mode be verbose and print every single filename during backup"
-msgstr ""
+msgstr "Nella modalità autobg sarà attivata la modalità verbose e sarà stampato ogni singolo file durante il backup"
 
 #: src/main.cxx:96 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
@@ -582,26 +581,3 @@ msgstr "17.1 GB DVD"
 msgid "custom"
 msgstr "personalizzato"
 
-#~ msgid "Do you want to retry the upload?"
-#~ msgstr "Vuoi veramente rincominciare l'upload?"
-
-#~ msgid ""
-#~ "Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
-#~ "version. Skipping."
-#~ msgstr ""
-#~ "Peccato, il file '%1' (%2) è troppo grande è non può essere archiviato "
-#~ "con questa versione di KDE. Saltato."
-
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr ""
-#~ "_: NOME DEI TRADUTTORI\n"
-#~ "Andrea Sciucca"
-
-#~ msgid ""
-#~ "_: EMAIL OF TRANSLATORS\n"
-#~ "Your emails"
-#~ msgstr ""
-#~ "_: EMAIL DEI TRADUTTORI\n"
-#~ "gohanz@infinito.it"

@@ -1,13 +1,13 @@
 # Translation of KBackUp to Slovak.
 # This file is put in the public domain.
-# Jozef Riha <jose1711@gmail.com>, 2007.
+# Jozef Riha <jose1711@gmail.com>, 2007, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KBackUp\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
 "POT-Creation-Date: 2009-05-14 13:27+0200\n"
-"PO-Revision-Date: 2007-10-07 20:50+0200\n"
+"PO-Revision-Date: 2009-05-15 10:50+0200\n"
 "Last-Translator: Jozef Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak\n"
 "MIME-Version: 1.0\n"
@@ -19,16 +19,14 @@ msgstr ""
 #. i18n: file: src/kbackupui.rc:4
 #. i18n: ectx: Menu (file)
 #: po/rc.cpp:3
-#, fuzzy
 msgid "&File"
-msgstr "Súbory:"
+msgstr "&Súbor:"
 
 #. i18n: file: src/kbackupui.rc:12
 #. i18n: ectx: Menu (settings)
 #: po/rc.cpp:6
-#, fuzzy
 msgid "&Settings"
-msgstr "Nastavenia profilu"
+msgstr "&Nastavenia"
 
 #. i18n: file: src/MainWidgetBase.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
@@ -51,7 +49,6 @@ msgstr "Zrušiť zálohovanie"
 #. i18n: file: src/MainWidgetBase.ui:89
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
 #: po/rc.cpp:18
-#, fuzzy
 msgid "Target"
 msgstr "Cieľ"
 
@@ -100,7 +97,6 @@ msgstr "Celkom"
 #. i18n: file: src/MainWidgetBase.ui:216
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #: po/rc.cpp:39
-#, fuzzy
 msgid "Files:"
 msgstr "Súbory:"
 
@@ -139,9 +135,8 @@ msgstr "Priebeh:"
 #. i18n: file: src/SettingsDialog.ui:15
 #. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
 #: po/rc.cpp:66 src/MainWindow.cxx:74
-#, fuzzy
 msgid "Profile Settings"
-msgstr "Profil existuje"
+msgstr "Nastavenia profilu"
 
 #. i18n: file: src/SettingsDialog.ui:21
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -167,7 +162,7 @@ msgstr "neobmedzené"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: po/rc.cpp:81
 msgid "Number of backups to keep"
-msgstr ""
+msgstr "Počet ponechávaných záloh"
 
 #. i18n: file: src/SettingsDialog.ui:78
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
@@ -175,7 +170,7 @@ msgstr ""
 msgid ""
 "How many backups shall be kept in the target directory before older ones "
 "will be deleted"
-msgstr ""
+msgstr "Koľko záloh bude ponechaných v cieľovom adresári skôr než začnú nové zálohy prepisovať staré"
 
 #. i18n: file: src/SettingsDialog.ui:93
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
@@ -210,24 +205,23 @@ msgstr "Skomprimovať súbory"
 #. i18n: ectx: property (text), widget (QPushButton, ok)
 #: po/rc.cpp:102
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. i18n: file: src/SettingsDialog.ui:154
 #. i18n: ectx: property (text), widget (QPushButton, cancel)
 #: po/rc.cpp:105
-#, fuzzy
 msgid "Cancel"
-msgstr "Zrušiť zálohovanie"
+msgstr "Zrušiť"
 
 #: po/rc.cpp:106
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Jozef Riha"
 
 #: po/rc.cpp:107
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "jose1711@gmail.com"
 
 #: src/Archiver.cxx:250
 msgid "Nothing selected for backup"
@@ -243,33 +237,34 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
+"Cieľový adresár '%1' neexistuje.\n"
+"\n"
+"Mám ho vytvoriť?"
 
 #: src/Archiver.cxx:273
-#, fuzzy
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
-"Nepodarilo sa získať informácie o adresári: %1\n"
+"Nepodarilo sa vytvoriť cieľový adresár '%1'.\n"
 "Operačný systém hlási: %2"
 
 #: src/Archiver.cxx:282
-#, fuzzy
 msgid "The target dir does not exist"
-msgstr "Chybné určenie cieľového adresára"
+msgstr "Cieľový adresár neexistuje"
 
 #: src/Archiver.cxx:362
 msgid "...reducing number of kept archives to max. %1"
-msgstr ""
+msgstr "...znižujem počet uchovávaných archívov na max. %1"
 
 #: src/Archiver.cxx:396
 msgid "...deleting %1"
-msgstr ""
+msgstr "...mažem %1"
 
 #: src/Archiver.cxx:405
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
-msgstr ""
+msgstr "získavanie výpisu cieľového adresára zlyhalo. Nepodarilo sa znížiť počet uchovávaných archívov."
 
 #: src/Archiver.cxx:417
 msgid "!! Backup finished <b>but files were skipped</b> !!"
@@ -296,11 +291,8 @@ msgstr ""
 "Čo chcete teraz robiť?"
 
 #: src/Archiver.cxx:438
-#, fuzzy
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
-msgstr ""
-"Súborov: %1 Veľkosť: %2 MB\n"
-"%3"
+msgstr "Celkom: Súborov: %1, Veľkosť: %2, Trvanie: %3"
 
 #: src/Archiver.cxx:449
 msgid "...Backup aborted!"
@@ -320,20 +312,19 @@ msgstr "...uploadujem archív %1 na %2"
 
 #: src/Archiver.cxx:524
 msgid "upload FAILED"
-msgstr ""
+msgstr "upload ZLYHAL"
 
 #: src/Archiver.cxx:533
 msgid "How shall we proceed with the upload?"
-msgstr ""
+msgstr "Ako budeme pokračovať v uploade?"
 
 #: src/Archiver.cxx:534
 msgid "Retry"
-msgstr ""
+msgstr "Skúsiť znovu"
 
 #: src/Archiver.cxx:534
-#, fuzzy
 msgid "Change Target"
-msgstr "Cieľ"
+msgstr "Zmeniť cieľ"
 
 #: src/Archiver.cxx:633
 msgid "The script '%1' could not be started."
@@ -344,12 +335,8 @@ msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Médium je plné. Prosím vložte médium č. %1"
 
 #: src/Archiver.cxx:701
-#, fuzzy
 msgid "The file '%1' can not be opened for writing."
-msgstr ""
-"Súbor '%1' nemožno otvoriť pre zápis.\n"
-"\n"
-"Chcete sa o to pokúsiť znovu?"
+msgstr "Súbor '%1' nemožno otvoriť pre zápis."
 
 #: src/Archiver.cxx:705
 msgid ""
@@ -415,17 +402,16 @@ msgstr ""
 "Operačný systém hlási: %2"
 
 #: src/Archiver.cxx:1032
-#, fuzzy
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Nemožno prečítať súbor: %1\n"
+"Nemožno vytvoriť dočasný súbor pre kompresiu: %1\n"
 "Operačný systém hlási: %2"
 
 #: src/Archiver.cxx:1057
 msgid "Could not write to temporary file"
-msgstr ""
+msgstr "Nepodaril sa zápis do dočasného súboru"
 
 #: src/Archiver.cxx:1079
 msgid "...compressing file %1"
@@ -433,7 +419,7 @@ msgstr "...komprimujem súbor %1"
 
 #: src/Archiver.cxx:1124
 msgid "WARNING:"
-msgstr ""
+msgstr "VAROVANIE:"
 
 #: src/main.cxx:27
 msgid "An easy to use backup program"
@@ -441,11 +427,11 @@ msgstr "Zálohovací program, jednoduchý na obsluhu"
 
 #: src/main.cxx:28
 msgid "(c) 2006 - 2009 Martin Koller"
-msgstr ""
+msgstr "(c) 2006 - 2009 Martin Koller"
 
 #: src/main.cxx:33
 msgid "Martin Koller"
-msgstr ""
+msgstr "Martin Koller"
 
 #: src/main.cxx:33
 msgid "Developer"
@@ -460,22 +446,20 @@ msgid "Script to run after finishing one archive slice"
 msgstr "Skript, ktorý bude spustený po dokončení jednej časti archívu"
 
 #: src/main.cxx:38
-#, fuzzy
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
 msgstr ""
-"Spustiť zálohu automaticky a skončiť, keď je hotová. Funguje iba vtedy, ak "
-"je zadaný profil"
+"Spustiť zálohu s vybraným profilom automaticky a skončiť, keď je hotová."
 
 #: src/main.cxx:40
 msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
-msgstr ""
+msgstr "Spustiť zálohu s vybraným profilom automaticky na pozadí (bez otvárania okna) a skončiť, keď je hotová."
 
 #: src/main.cxx:43
 msgid "In autobg mode be verbose and print every single filename during backup"
-msgstr ""
+msgstr "V režime autobg buď ukecaný a vypisuj počas zálohy každý názov súboru"
 
 #: src/main.cxx:96 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
@@ -494,9 +478,8 @@ msgid "Save Profile"
 msgstr "Uložiť profil"
 
 #: src/MainWindow.cxx:70
-#, fuzzy
 msgid "Save Profile As..."
-msgstr "Uložiť profil"
+msgstr "Uložiť profil ako..."
 
 #: src/MainWindow.cxx:77
 msgid "Enable All Messages"

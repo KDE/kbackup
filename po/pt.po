@@ -2,34 +2,32 @@
 # translation of pt.po_[u3icsb].po to
 # This file is put in the public domain.
 #
-# Carlos Gonçalves <mail@cgoncalves.info>, 2006, 2007.
+# Carlos Gonçalves <mail@cgoncalves.info>, 2006, 2007, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
 "POT-Creation-Date: 2009-05-14 13:27+0200\n"
-"PO-Revision-Date: 2007-10-06 23:36+0100\n"
+"PO-Revision-Date: 2009-05-18 22:18+0100\n"
 "Last-Translator: Carlos Gonçalves <mail@cgoncalves.info>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n !=1);\n"
 
 #. i18n: file: src/kbackupui.rc:4
 #. i18n: ectx: Menu (file)
 #: po/rc.cpp:3
-#, fuzzy
 msgid "&File"
-msgstr "Ficheiros"
+msgstr "&Ficheiro"
 
 #. i18n: file: src/kbackupui.rc:12
 #. i18n: ectx: Menu (settings)
 #: po/rc.cpp:6
-#, fuzzy
 msgid "&Settings"
-msgstr "Configurações de Perfil"
+msgstr "Configuraçõe&s"
 
 #. i18n: file: src/MainWidgetBase.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
@@ -52,7 +50,6 @@ msgstr "Cancelar Backup"
 #. i18n: file: src/MainWidgetBase.ui:89
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
 #: po/rc.cpp:18
-#, fuzzy
 msgid "Target"
 msgstr "Destino"
 
@@ -101,9 +98,8 @@ msgstr "Totais"
 #. i18n: file: src/MainWidgetBase.ui:216
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #: po/rc.cpp:39
-#, fuzzy
 msgid "Files:"
-msgstr "Ficheiros"
+msgstr "Ficheiros:"
 
 #. i18n: file: src/MainWidgetBase.ui:268
 #. i18n: ectx: property (text), widget (QLabel, totalSize_2)
@@ -140,9 +136,8 @@ msgstr "Progresso:"
 #. i18n: file: src/SettingsDialog.ui:15
 #. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
 #: po/rc.cpp:66 src/MainWindow.cxx:74
-#, fuzzy
 msgid "Profile Settings"
-msgstr "Existe o perfil"
+msgstr "Configurações de Perfil"
 
 #. i18n: file: src/SettingsDialog.ui:21
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -168,7 +163,7 @@ msgstr "ilimitado"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: po/rc.cpp:81
 msgid "Number of backups to keep"
-msgstr ""
+msgstr "Número de cópias de segurança a manter"
 
 #. i18n: file: src/SettingsDialog.ui:78
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
@@ -177,6 +172,8 @@ msgid ""
 "How many backups shall be kept in the target directory before older ones "
 "will be deleted"
 msgstr ""
+"Quantas cópias de segurança devem ser guardadas no directório de destino "
+"antes que outras mais antigas sejam apagadas"
 
 #. i18n: file: src/SettingsDialog.ui:93
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
@@ -212,24 +209,23 @@ msgstr "Comprimir Ficheiros"
 #. i18n: ectx: property (text), widget (QPushButton, ok)
 #: po/rc.cpp:102
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. i18n: file: src/SettingsDialog.ui:154
 #. i18n: ectx: property (text), widget (QPushButton, cancel)
 #: po/rc.cpp:105
-#, fuzzy
 msgid "Cancel"
-msgstr "Cancelar Backup"
+msgstr "Cancelar"
 
 #: po/rc.cpp:106
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Os seus nomes"
 
 #: po/rc.cpp:107
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Os seus emails"
 
 #: src/Archiver.cxx:250
 msgid "Nothing selected for backup"
@@ -245,33 +241,36 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
+"O directório de destino '%1' não existe.\n"
+"\n"
+"Posso criá-lo?"
 
 #: src/Archiver.cxx:273
-#, fuzzy
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
-"Não foi possível obter informações da directoria: %1\n"
+"Não foi possível criar o directório de destino: %1\n"
 "O sistema operativo reporta: %2"
 
 #: src/Archiver.cxx:282
-#, fuzzy
 msgid "The target dir does not exist"
-msgstr "A directoria de destino não é válida"
+msgstr "O directório de destino não existe"
 
 #: src/Archiver.cxx:362
 msgid "...reducing number of kept archives to max. %1"
-msgstr ""
+msgstr "... a reduzir o número de arquivos a guardar para um máximo de %1"
 
 #: src/Archiver.cxx:396
 msgid "...deleting %1"
-msgstr ""
+msgstr "... a apagar %1"
 
 #: src/Archiver.cxx:405
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
+"a obtenção da listagem do directório de destino falhou. Não foi possível "
+"reduzir o número de arquivos a guardar."
 
 #: src/Archiver.cxx:417
 msgid "!! Backup finished <b>but files were skipped</b> !!"
@@ -299,11 +298,8 @@ msgstr ""
 "O que deseja fazer agora?"
 
 #: src/Archiver.cxx:438
-#, fuzzy
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
-msgstr ""
-"Ficheiros: %1 Tamanho: %2 MB\n"
-"%3"
+msgstr "Total: Ficheiros: %1, Tamanho: %2, Duração: %3"
 
 #: src/Archiver.cxx:449
 msgid "...Backup aborted!"
@@ -323,20 +319,19 @@ msgstr "...a enviar arquivo %1 para %2"
 
 #: src/Archiver.cxx:524
 msgid "upload FAILED"
-msgstr ""
+msgstr "o envio FALHOU"
 
 #: src/Archiver.cxx:533
 msgid "How shall we proceed with the upload?"
-msgstr ""
+msgstr "Como devemos proceder com o envio?"
 
 #: src/Archiver.cxx:534
 msgid "Retry"
-msgstr ""
+msgstr "Tentar novamente"
 
 #: src/Archiver.cxx:534
-#, fuzzy
 msgid "Change Target"
-msgstr "Destino"
+msgstr "Alterar Destino"
 
 #: src/Archiver.cxx:633
 msgid "The script '%1' could not be started."
@@ -347,12 +342,8 @@ msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "O disco está cheio. Por favor insira o disco Nr. %1"
 
 #: src/Archiver.cxx:701
-#, fuzzy
 msgid "The file '%1' can not be opened for writing."
-msgstr ""
-"O ficheiro '%1' não pode ser aberto para escrita.\n"
-"\n"
-"Quer voltar a tentar?"
+msgstr "O ficheiro '%1' não pode ser aberto para escrita."
 
 #: src/Archiver.cxx:705
 msgid ""
@@ -418,17 +409,16 @@ msgstr ""
 "O sistema operativo reporta: %2"
 
 #: src/Archiver.cxx:1032
-#, fuzzy
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Não foi possível ler o ficheiro: %1\n"
+"Não foi possível criar um ficheiro temporário para comprimir: %1\n"
 "O sistema operativo reporta: %2"
 
 #: src/Archiver.cxx:1057
 msgid "Could not write to temporary file"
-msgstr ""
+msgstr "Não foi possível "
 
 #: src/Archiver.cxx:1079
 msgid "...compressing file %1"
@@ -436,7 +426,7 @@ msgstr "... a comprimir ficheiro %1"
 
 #: src/Archiver.cxx:1124
 msgid "WARNING:"
-msgstr ""
+msgstr "AVISO:"
 
 #: src/main.cxx:27
 msgid "An easy to use backup program"
@@ -444,11 +434,11 @@ msgstr "Um programa de cópia de segurança fácil de usar"
 
 #: src/main.cxx:28
 msgid "(c) 2006 - 2009 Martin Koller"
-msgstr ""
+msgstr "(c) 2006 - 2009 Martin Koller"
 
 #: src/main.cxx:33
 msgid "Martin Koller"
-msgstr ""
+msgstr "Martin Koller"
 
 #: src/main.cxx:33
 msgid "Developer"
@@ -463,22 +453,26 @@ msgid "Script to run after finishing one archive slice"
 msgstr "'Script' a executar após terminada uma divisão de arquivo"
 
 #: src/main.cxx:38
-#, fuzzy
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
 msgstr ""
-"Correr automaticamente a cópia de segurança e terminar quando terminada. "
-"Apenas funciona se também um perfil for dado"
+"Correr automaticamente a cópia de segurança com o perfil fornecido e "
+"terminar quando efectuado."
 
 #: src/main.cxx:40
 msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
 msgstr ""
+"Correr automaticamente a cópia de segurana com o perfil escolhido em plano "
+"de fundo "
+"(sem mostrar uma janela) e terminar quando efectuado."
 
 #: src/main.cxx:43
 msgid "In autobg mode be verbose and print every single filename during backup"
 msgstr ""
+"Ser detalhado e imprimir cada um dos nomes de ficheiros durante a cópia de "
+"segurança em modo autobg"
 
 #: src/main.cxx:96 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
@@ -497,9 +491,8 @@ msgid "Save Profile"
 msgstr "Guardar Perfil"
 
 #: src/MainWindow.cxx:70
-#, fuzzy
 msgid "Save Profile As..."
-msgstr "Guardar Perfil"
+msgstr "Guardar Perfil Como..."
 
 #: src/MainWindow.cxx:77
 msgid "Enable All Messages"
