@@ -28,7 +28,7 @@
 as Authors, publish date, the abstract, and Keywords -->
 
 <bookinfo>
-<title>The &kbackup; Handbook</title>
+<title>The &kbackup; Handbook (for version 0.6)</title>
 
 <authorgroup>
 <author>
@@ -186,8 +186,8 @@ To reload a selection into &kbackup;, use the File Menu "Load Profile".
 
 <para>
 &kbackup; saves in a profile the selections for all included directories/files,
-excluded directories/files, the target directory/URL, the defined archive prefix
-and the defined maximum slice file size.
+excluded directories/files, the target directory/URL, defined archive prefix,
+the defined maximum slice file size, etc.
 </para>
 
 <para>
@@ -263,13 +263,50 @@ then not-compressed .tar archive.
 <para>
 When you have selected to create the backup on some local filesystem
 (e.g. your extra disc, ZIP drive, etc.) - which means you did not
-enter a target URL - &kbackup; might split the whole backup into several archive slices
+enter a remote target URL - &kbackup; might split the whole backup into several archive slices
 due to media capacity limitations.
 </para>
 <para>
 e.g.:
+</para>
+<para>
 backup_2006.08.26-13.04.44_1.tar
+</para>
+<para>
 backup_2006.08.26-13.04.44_2.tar
+</para>
+
+</sect1>
+
+<sect1 id="automating">
+<title>Automating Backup</title>
+
+<para>
+If you want to automate the process of the backup, &kbackup; offers different
+commandline options to help with this:
+<itemizedlist>
+<listitem><para>--auto</para>
+<para>
+When you run &kbackup; with this option and a given .kbp profile, it will
+start, load the given profile, run the backup and terminate when done.
+All this is done with a visible &kbackup; user interface.
+</para>
+</listitem>
+
+<listitem><para>--autobg</para>
+<para>
+When you run &kbackup; with this option and a given .kbp profile, it will
+run the same process as with --auto  but _without_ showing any graphical user interface.
+Therefore the suffix "bg" which stands for "background" - everything is done in the background
+so this is the right option to be used when you do your backups e.g. started by a cron job.
+</para>
+<para>
+When using --autobg the output from &kbackup; - showing the progress of the backup - is written
+to stderr. By default the output includes just a few important messages and a summary at the end.
+If you pass --verbose in addition, then you will also see each filename currently being backed up.
+</para>
+</listitem>
+</itemizedlist>
 </para>
 
 </sect1>
@@ -299,6 +336,15 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
+<guimenuitem>Open Recent</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Shows a submenu with the recently used profiles for easy selection
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
 <guimenuitem>New Profile</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Clears the selection and the target input field, to be able to define
@@ -318,7 +364,15 @@ a new profile.</action></para></listitem>
 <guimenu>File</guimenu>
 <guimenuitem>Save Profile</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Saves all settings into a profile</action></para></listitem>
+<listitem><para><action>Saves all settings into the currently loaded profile</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Save Profile As...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Saves all settings into a profile with a new name</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -329,7 +383,7 @@ a new profile.</action></para></listitem>
 <listitem><para><action>In the settings, you can define whether the archive-slice files
 start with the default name "backup" or with an alternative name.
 Also you can limit the archive slice size. See chapter "Archive Slices".
-This setting is also stored into the profile.
+These settings are also stored into the profile.
 </action></para></listitem>
 </varlistentry>
 
@@ -368,6 +422,17 @@ Via the context menu of the &kbackup; system tray icon you can start and cancel 
 which is the same as you can do in the mainwindow.
 The tooltip on this icon also gives progress information (Number of saved files, size of the backup and
 the last saved file).
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Enable All Messages</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>
+Activating this entry clears all internally stored "Do not ask again" flags for
+the dialogs shown in &kbackup;
 </action></para></listitem>
 </varlistentry>
 </variablelist>
@@ -481,45 +546,6 @@ target directory</para>
 </itemizedlist>
 </para>
 
-<para>
-Another example shows how you can limit the number of archive files in the target:
-</para>
-
-<example><title>rotateScript.sh</title>
-<programlisting>
-#!/bin/sh
-# kbackup script to do a rotating backup (keep only a defined number of backups)
-
-NUM_BACKUPS=20
-
-mode=$1
-archive=$2
-target=$3
-mountPoint=$4
-
-case "$mode" in
- "slice_init" )
- ;;
-
- "slice_closed" )
- ;;
-
- "slice_finished" )
-   count=`ls -A1 $target | wc -l`
-   if [ $count -ge $NUM_BACKUPS ]
-   then
-     removeCount=`expr $count - $NUM_BACKUPS`
-     oldest=`ls -A1 ${target}/* | sort | head -n $removeCount`
-     rm -f ${oldest}
-   fi
- ;;
-esac
-
-</programlisting>
-</example>
-
-
-
 </chapter>
 
 <chapter id="faq">
@@ -553,11 +579,11 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Program copyright &copy; 2006, 2007 Martin Koller <email>kollix@aon.at</email>
+Program copyright &copy; 2006 - 2009 Martin Koller <email>kollix@aon.at</email>
 </para>
 
 <para>
-Documentation Copyright &copy; 2006, 2007 Martin Koller
+Documentation Copyright &copy; 2006 - 2009 Martin Koller
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->

@@ -28,7 +28,7 @@
 as Authors, publish date, the abstract, and Keywords -->
 
 <bookinfo>
-<title>Das &kbackup; Handbuch</title>
+<title>Das &kbackup; Handbuch (für Version 0.6)</title>
 
 <authorgroup>
 <author>
@@ -49,8 +49,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2006</year>
-<year>2007</year>
+<year>2006 - 2009</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -58,8 +57,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2007-07-08</date>
-<releaseinfo>1.04.00</releaseinfo>
+<date>2009-05-24</date>
+<releaseinfo>1.05.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -82,6 +81,8 @@ Please at least include KDE, the KDE package it is in, the name
 <keyword>Sicherung</keyword>
 <keyword>Archiv</keyword>
 <keyword>ZIP</keyword>
+<keyword>gzip</keyword>
+<keyword>bzip2</keyword>
 </keywordset>
 
 </bookinfo>
@@ -105,6 +106,12 @@ Das Ziel einer Sicherung kann entweder ein lokales Verzeichnis sein (z.B. ein lo
 eingebundenes Gerät wie ein ZIP Laufwerk, USB Stick, etc.) aber es kann auch ein
 anderer Rechner - unter Angabe einer URL (z.B. smb://rechner/ziel) - sein, um die Daten auf
 einen zentralen Server zu sichern.
+</para>
+
+<para>
+Das Programm kann auch eine automatische Sicherung ohne grafische Benutzeroberfläche
+durchführen. Man erstellt einfach ein Profil, welches &kbackup; sagt, was gesichert
+werden soll, wenn es im nicht interaktiven Modus gestartet wird, z.B. aus einem cron-job heraus.
 </para>
 
 <para>
@@ -188,7 +195,7 @@ Um alle Einstellungen und Selektionen wieder zu entfernen verwenden sie das Date
 <para>
 &kbackup; speichert in einem Profil die Selektionen für alle inkludierten Dateien und Verzeichnisse,
 für alle exkludierten Dateien und Verzeichnisse, das Ziel für die Sicherung, das gewählte Archiv-Präfix,
-sowie das gewählte Größenlimit für einen Archiv Teil.
+das gewählte Größenlimit für einen Archiv Teil und anderes.
 </para>
 
 <para>
@@ -243,39 +250,77 @@ eine CD/DVD vorbereiten will.
 Wenn sie die Größe eines Archiv Teiles explizit limitieren, dann erscheint die
 verfügbare Größe mit der Markierung (*) im Hauptfenster.
 </para>
+
+<para>
+In den Profil Einstellungen kann auch festgelegt werden, wieviele Sicherungen maximal
+in dem Zielverzeichnis behalten werden sollen, bevor ältere Sicherungen automatisch gelöscht
+werden. Wird z.B. ein Wert von 3 eingestellt, wird &kbackup; die letzten 3 Sicherungen
+behalten und alle älteren Sicherungen werden gelöscht.
+</para>
+
 </sect1>
 
 <sect1 id="archive-compression">
 <title>Archiv Komprimierung</title>
 <para>
-&kbackup; komprimiert immer die gesicherten Dateien (außer dies wird in den Profil Einstellungen
-explizit deaktiviert). Abhängig von der Verfügbarkeit
+&kbackup; komprimiert die gesicherten Dateien wenn dies in den Profil Einstellungen
+eingestellt wurde. Abhängig von der Verfügbarkeit
 auf ihrem System wird entweder bzip2 oder gzip als Komprimierung verwendet.
+&kbackup; wird jede einzelne Datei komprimieren und mit einer angehängten Dateiendung
+(.bzip2 oder .gz) im nicht komprimierten .tar Archiv speichern.
 </para>
 
 <para>
 Wenn sie als Ziel ein lokales Verzeichnis gewählt haben (z.B. ihre extra Festplatte,
-ZIP Laufwerk, etc.) - d.h. sie haben keine URL angegeben - wird &kbackup; die gesamte
+ZIP Laufwerk, etc.) - d.h. sie haben keine URL angegeben - kann &kbackup; die gesamte
 Sicherung aufgrund der beschränkten Medium Kapazität in einzelne Archiv Teile aufteilen.
-&kbackup; wird jede einzelne Datei komprimieren und mit einer angehängten Dateiendung
-(.bzip2 oder .gz) im nicht komprimierten .tar Archiv speichern.
 </para>
 <para>
-z.B.: backup_2006.08.26-13.04.44_1.tar
+z.B.:
+</para>
+<para>
+backup_2006.08.26-13.04.44_1.tar
+</para>
+<para>
+backup_2006.08.26-13.04.44_2.tar
 </para>
 
+</sect1>
+
+<sect1 id="automating">
+<title>Sicherung automatisieren</title>
+
 <para>
-Wenn sie als Ziel eine URL angegeben haben (z.B.: smb://rechner/ziel), wird als
-Kapazität "unlimitiert" angezeigt. In diesem Fall wird &kbackup; nur eine
-Archiv Datei erzeugen, welche die unkomprimierten original Dateien beinhält,
-und es wird zum Schluß das gesamte .tar Archiv komprimiert.
+Wenn sie den Vorgang der Sicherung automatisieren will, bietet &kbackup; hier verschiedene
+Kommandozeilen Optionen an:
+
+<itemizedlist>
+<listitem><para>--auto</para>
+<para>
+Wird &kbackup; mit dieser Option und einem .kbp Profil gestartet, so wird das Programm
+starten, das angegebene Profil laden, die Sicherung durchführen und sich nach Fertigstellung
+beenden.
+All das wird mit einer sichtbaren &kbackup; Benutzeroberfläche durchgeführt.
+</para>
+</listitem>
+
+<listitem><para>--autobg</para>
+<para>
+Wird &kbackup; mit dieser Option und einem .kbp Profil gestartet, so wird der selbe Ablauf
+durchgeführt wie mit der Option --auto, jedoch wird _keine_ grafische Benutzeroberfläche
+angezeigt. Daher die Endung "bg" was für "Background" (Hintergrund) steht - alle Operationen
+werden also im Hintergrund ausgeführt, was damit die passende Option für eine Sicherung
+darstellt, die z.B. aus einem cron-job gestartet wurde.
 </para>
 <para>
-Das Resultat ist dann immer eine Archiv Datei mit der Endung
-.tar.bzip2 oder .tar.gz
+Wird --autobg verwendet werden die Ausgaben von &kbackup;, welche den Fortschritt anzeigen,
+auf die Standard Fehlerausgabe (stderr) geschrieben. Die Standardeinstellung beinhält ein paar
+wichtige Angaben zum Fortschritt und eine Zusammenfassung am Schluß. Wird die Option --verbose
+noch zusätzlich angegeben, so wird auch der Name jeder einzelnen Datei, die gerade gesichert wird,
+ausgegeben.
 </para>
-<para>
-z.B.: backup_2006.08.26-13.04.44_1.tar.bzip2
+</listitem>
+</itemizedlist>
 </para>
 
 
@@ -377,6 +422,17 @@ oder abgebrochen werden. Im Tooltip des Symbols wird der Sicherungs Status angez
 Dateien, Summe des Sicherungsvolumens und die zuletzt gesicherte Datei).
 </action>
 </para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Einstellungen</guimenu>
+<guimenuitem>Alle Meldungen erlauben</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>
+Die Aktivierung dieser Option löscht alle intern gespeicherten "Nicht mehr nachfragen" Einstellungen
+aller Dialoge, die &kbackup; anzeigt.
+</action></para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -491,46 +547,6 @@ haben.
 
 </itemizedlist>
 </para>
-
-<para>
-Ein weiteres Beispiel script zeigt, wie man die Anzahl der Sicherungs Dateien am Zielort
-auf eine bestimmte Anzahl eingrenzen kann:
-</para>
-
-<example><title>rotateScript.sh</title>
-<programlisting>
-#!/bin/sh
-# kbackup script to do a rotating backup (keep only a defined number of backups)
-
-NUM_BACKUPS=20
-
-mode=$1
-archive=$2
-target=$3
-mountPoint=$4
-
-case "$mode" in
- "slice_init" )
- ;;
-
- "slice_closed" )
- ;;
-
- "slice_finished" )
-   count=`ls -A1 $target | wc -l`
-   if [ $count -ge $NUM_BACKUPS ]
-   then
-     removeCount=`expr $count - $NUM_BACKUPS`
-     oldest=`ls -A1 ${target}/* | sort | head -n $removeCount`
-     rm -f ${oldest}
-   fi
- ;;
-esac
-
-</programlisting>
-</example>
-
-
 
 </chapter>
 
