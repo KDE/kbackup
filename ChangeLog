@@ -1,3 +1,8 @@
+01.07.2009 (0.6.1)
+- Avoid backup of the backup file
+- make it compile with KDE Version < 4.2
+
+24.05.2009 (0.6)
 - Port to cmake and KDE4/Qt4, which also removes the 4GB limit per file
 - sort hidden files/dirs before normal ones
 - show dimmed icon for hidden files (like konqueror)
