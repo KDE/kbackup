@@ -129,6 +129,13 @@ and drag/drop the files back to your file system.
 This is also an advantage of the usage of the well known and well supported TAR file
 format.
 </para>
+<para>
+If the files are compressed, you can uncompress all files
+from the current directory recursively down with the following command:
+</para>
+<para>
+find . -name \*bz2 -print0 | xargs -0 bunzip2
+</para>
 
 </chapter>
 

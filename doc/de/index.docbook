@@ -131,6 +131,13 @@ benutzen, um eine TAR Sicherungs Datei zu öffnen, und dann Teile daraus z.B. vi
 in das System zurückbringen.
 Das ist einer der Vorteile der Verwendung des weitverbreiteten TAR Dateiformates.
 </para>
+<para>
+Wenn die Dateien komprimiert wurden, so kann man alle vom aktuellen Verzeichnis aus
+rekursiv absteigend mit folgendem Kommando wieder entpacken:
+</para>
+<para>
+find . -name \*bz2 -print0 | xargs -0 bunzip2
+</para>
 
 </chapter>
 
