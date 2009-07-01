@@ -811,7 +811,9 @@ void Archiver::addFile(const QFileInfo &info)
 
   // avoid including my own archive file
   // (QFileInfo to have correct path comparison even in case archiveName contains // etc.)
-  if ( info.absoluteFilePath() == QFileInfo(archiveName).absoluteFilePath() )
+  // startsWith() is needed as KDE4 KTar does not create directly the .tar file but until it's closed
+  // the file is named "...tarXXXX.new"
+  if ( info.absoluteFilePath().startsWith(QFileInfo(archiveName).absoluteFilePath()) )
     return;
 
   if ( cancelled ) return;
@@ -1016,10 +1018,13 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   emit fileProgress(100);
   sourceFile.close();
 
-  // get filesize
-  sliceBytes = archive->device()->pos();  // account for tar overhead
+  if ( !cancelled )
+  {
+    // get filesize
+    sliceBytes = archive->device()->pos();  // account for tar overhead
 
-  emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
+    emit sliceProgress(static_cast<int>(sliceBytes * 100 / sliceCapacity));
+  }
 
   if ( msgShown && interactive )
     QApplication::restoreOverrideCursor();
