@@ -374,9 +374,11 @@ void MainWindow::inProgress(bool runs)
 {
   if ( runs )
   {
+#if KDE_IS_VERSION(4,2,0)
     QMovie *movie = KIconLoader::global()->loadMovie("kbackup_runs", KIconLoader::Panel);
     if ( movie )
       sysTray->setMovie(movie);
+#endif
 
     startBackupAction->setEnabled(false);
     cancelBackupAction->setEnabled(true);
