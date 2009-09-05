@@ -162,6 +162,10 @@ void Archiver::calculateCapacity()
   }
 
   sliceBytes = 0;
+
+  // if the disk is full (capacity == 0), don't tell the user "unlimited"
+  // sliceCapacity == 0 has a special meaning as "unlimited"; see MainWidget.cxx
+  if ( sliceCapacity == 0 ) sliceCapacity = 1;
   emit targetCapacity(sliceCapacity);
 }
 
@@ -720,7 +724,7 @@ bool Archiver::getNextSlice()
   // don't create a bz2 compressed file as we compress each file on its own
   archive = new KTar(archiveName, "application/x-tar");
 
-  while ( ! archive->open(QIODevice::WriteOnly) )
+  while ( (sliceCapacity < 1024) || !archive->open(QIODevice::WriteOnly) )  // disk full ?
   {
     if ( !interactive )
       emit warning(i18n("The file '%1' can not be opened for writing.").arg(archiveName));
@@ -736,6 +740,7 @@ bool Archiver::getNextSlice()
       cancel();
       return false;
     }
+    calculateCapacity();  // try again; maybe the user freed up some space
   }
 
   return true;
@@ -1008,7 +1013,9 @@ bool Archiver::addLocalFile(const QFileInfo &info)
     if ( !msgShown && (timer.elapsed() > 3000) && (progress < 50) )
     {
       emit fileProgress(progress);
-      emit logging(i18n("...archiving file %1").arg(info.absoluteFilePath()));
+      if ( interactive || verbose )
+        emit logging(i18n("...archiving file %1").arg(info.absoluteFilePath()));
+
       if ( interactive )
         QApplication::setOverrideCursor(QCursor(Qt::BusyCursor));
       qApp->processEvents(QEventLoop::AllEvents, 5);
