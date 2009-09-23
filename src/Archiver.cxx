@@ -254,7 +254,8 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     return false;
   }
 
-  if ( ! targetURL.isValid() )
+  // non-interactive mode only allows local targets as KIO needs $DISPLAY
+  if ( !targetURL.isValid() || (!interactive && !targetURL.isLocalFile()) )
   {
     emit warning(i18n("The target dir is not valid"));
     return false;
@@ -352,21 +353,33 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   // reduce the number of old backups to the defined number
   if ( !cancelled && (numKeptBackups != UNLIMITED) )
   {
-    QPointer<KIO::ListJob> listJob;
-    listJob = KIO::listDir(targetURL, interactive ? KIO::DefaultFlags : KIO::HideProgressInfo, false);
-
-    if ( !interactive )
-      listJob->setUiDelegate(0);
-    else
-      listJob->ui()->setWindow(static_cast<QWidget*>(parent()));
-
-    connect(listJob, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
-            this, SLOT(slotListResult(KIO::Job *, const KIO::UDSEntryList &)));
-
     emit logging(i18n("...reducing number of kept archives to max. %1").arg(numKeptBackups));
 
-    while ( listJob )
-      qApp->processEvents(QEventLoop::WaitForMoreEvents);
+    if ( !targetURL.isLocalFile() )  // KIO needs $DISPLAY; non-interactive only allowed for local targets
+    {
+      QPointer<KIO::ListJob> listJob;
+      listJob = KIO::listDir(targetURL, KIO::DefaultFlags, false);
+
+      listJob->ui()->setWindow(static_cast<QWidget*>(parent()));
+
+      connect(listJob, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
+              this, SLOT(slotListResult(KIO::Job *, const KIO::UDSEntryList &)));
+
+      while ( listJob )
+        qApp->processEvents(QEventLoop::WaitForMoreEvents);
+    }
+    else  // non-intercative. create UDSEntryList on our own
+    {
+      QDir dir(targetURL.path());
+      targetDirList.clear();
+      foreach (QString fileName, dir.entryList())
+      {
+        KIO::UDSEntry entry;
+        entry.insert(KIO::UDSEntry::UDS_NAME, fileName);
+        targetDirList.append(entry);
+      }
+      jobResult = 0;
+    }
 
     if ( jobResult == 0 )
     {
@@ -400,19 +413,22 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
             emit logging(i18n("...deleting %1").arg(entryName));
 
             // delete the file using KIO
+            if ( !targetURL.isLocalFile() )  // KIO needs $DISPLAY; non-interactive only allowed for local targets
             {
               QPointer<KIO::SimpleJob> delJob;
-              delJob = KIO::file_delete(url, interactive ? KIO::DefaultFlags : KIO::HideProgressInfo);
+              delJob = KIO::file_delete(url, KIO::DefaultFlags);
 
-              if ( !interactive )
-                delJob->setUiDelegate(0);
-              else
-                delJob->ui()->setWindow(static_cast<QWidget*>(parent()));
+              delJob->ui()->setWindow(static_cast<QWidget*>(parent()));
 
               connect(delJob, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
 
               while ( delJob )
                 qApp->processEvents(QEventLoop::WaitForMoreEvents);
+            }
+            else
+            {
+              QDir dir(targetURL.path());
+              dir.remove(entryName);
             }
           }
         }
@@ -526,12 +542,9 @@ void Archiver::finishSlice()
       while ( true )
       {
         // copy to have the archive for the script later down
-        job = KIO::copy(source, target, interactive ? KIO::DefaultFlags : KIO::HideProgressInfo);
+        job = KIO::copy(source, target, KIO::DefaultFlags);
 
-        if ( !interactive )
-          job->setUiDelegate(0);
-        else
-          job->ui()->setWindow(static_cast<QWidget*>(parent()));
+        job->ui()->setWindow(static_cast<QWidget*>(parent()));
 
         connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
 
@@ -548,40 +561,32 @@ void Archiver::finishSlice()
         }
         else
         {
-          if ( !interactive )
+          enum { ASK, CANCEL, RETRY } action = ASK;
+          while ( action == ASK )
           {
-            emit warning(i18n("upload FAILED"));
-            break;
-          }
-          else
-          {
-            enum { ASK, CANCEL, RETRY } action = ASK;
-            while ( action == ASK )
-            {
-              int ret = KMessageBox::warningYesNoCancel(static_cast<QWidget*>(parent()),
-                          i18n("How shall we proceed with the upload?"), QString::null,
-                          KGuiItem(i18n("Retry")), KGuiItem(i18n("Change Target")));
+            int ret = KMessageBox::warningYesNoCancel(static_cast<QWidget*>(parent()),
+                        i18n("How shall we proceed with the upload?"), QString::null,
+                        KGuiItem(i18n("Retry")), KGuiItem(i18n("Change Target")));
 
-              if ( ret == KMessageBox::Cancel )
-              {
-                action = CANCEL;
-                break;
-              }
-              else if ( ret == KMessageBox::No )  // change target
-              {
-                target = KFileDialog::getExistingDirectoryUrl(KUrl("/"), static_cast<QWidget*>(parent()));
-                if ( target.isEmpty() )
-                  action = ASK;
-                else
-                  action = RETRY;
-              }
+            if ( ret == KMessageBox::Cancel )
+            {
+              action = CANCEL;
+              break;
+            }
+            else if ( ret == KMessageBox::No )  // change target
+            {
+              target = KFileDialog::getExistingDirectoryUrl(KUrl("/"), static_cast<QWidget*>(parent()));
+              if ( target.isEmpty() )
+                action = ASK;
               else
                 action = RETRY;
             }
-
-            if ( action == CANCEL )
-              break;
+            else
+              action = RETRY;
           }
+
+          if ( action == CANCEL )
+            break;
         }
       }
 
@@ -606,8 +611,7 @@ void Archiver::slotResult(KJob *theJob)
 {
   if ( (jobResult = theJob->error()) )
   {
-    if ( interactive )
-      theJob->uiDelegate()->showErrorMessage();
+    theJob->uiDelegate()->showErrorMessage();
 
     emit warning(theJob->errorString());
   }
@@ -619,8 +623,7 @@ void Archiver::slotListResult(KIO::Job *theJob, const KIO::UDSEntryList &entries
 {
   if ( (jobResult = theJob->error()) )
   {
-    if ( interactive )
-      theJob->uiDelegate()->showErrorMessage();
+    theJob->uiDelegate()->showErrorMessage();
 
     emit warning(theJob->errorString());
   }
