@@ -1,3 +1,8 @@
+25.09.2009 (0.6.3)
+- When running in non interactive mode (e.g. cron), do not use KIO but only direct file access
+  as KIO needs a KDE session and $DISPLAY
+  This now makes the slice-reduction on the local target dir work.
+
 05.09.2009 (0.6.2)
 - Fix handling of disk-full situation (and a crash with it)
 
