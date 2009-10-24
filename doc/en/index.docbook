@@ -247,6 +247,14 @@ This helps to create archive slices which can then be later burned on a CD/DVD, 
 If you explicitely limit the size of an archive slice, the available size
 will be marked with (*) in the mainwindow.
 </para>
+<para>
+But even if you define a slice to be of "unlimited" size, there are other constraints
+which limit the size of a slice:
+<itemizedlist>
+<listitem><para>limited by the target directory (when stored directly into a local dir)</para></listitem>
+<listitem><para>limited by the "tmp" dir when we create a tmp file for later upload to a remote URL</para></listitem>
+</itemizedlist>
+</para>
 
 <para>
 In the Profile Settings, you can also define a maximum number of backups being kept

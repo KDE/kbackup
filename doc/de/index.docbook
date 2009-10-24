@@ -257,6 +257,17 @@ eine CD/DVD vorbereiten will.
 Wenn sie die Größe eines Archiv Teiles explizit limitieren, dann erscheint die
 verfügbare Größe mit der Markierung (*) im Hauptfenster.
 </para>
+<para>
+Trotzdem eine "unlimitierte" Größe eingestellt wurde, gibt es zusätzliche Einschränkungen
+für die Größe eines Archiv Teils:
+<itemizedlist>
+<listitem><para>limitiert durch die verfügbare Kapazität im Zielverzeichnis
+(wenn direkt in ein lokales Verzeichnis gesichert wird)</para></listitem>
+<listitem><para>limitiert durch das "tmp" Verzeichnis wenn die Sicherung auf einen entfernten
+Rechner kopiert wird (Angabe einer URL), da eine temporäre Datei erzeugt wird,
+die danach zum Zielrechner übertragen wird.</para></listitem>
+</itemizedlist>
+</para>
 
 <para>
 In den Profil Einstellungen kann auch festgelegt werden, wieviele Sicherungen maximal
