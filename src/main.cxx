@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -33,14 +33,29 @@ int main(int argc, char **argv)
   about.addAuthor(ki18n("Martin Koller"), ki18n("Developer"), "kollix@aon.at");
 
   KCmdLineOptions options;
-  options.add("+[profile]", ki18n("Start with given profile"));
-  options.add("script <file>", ki18n("Script to run after finishing one archive slice"));
-  options.add("auto <profile>", ki18n("Automatically run the backup with the given profile"
-                                      " and terminate when done."));
-  options.add("autobg <profile>", ki18n("Automatically run the backup with the given profile"
-                                        " in the background (without showing a window)"
-                                        " and terminate when done."));
-  options.add("verbose", ki18n("In autobg mode be verbose and print every single filename during backup"));
+  options.add("+[profile]", ki18nc("TRANSLATORS: this is the description of a command line option. "
+                                   "If your translation is longer than 50 caracters, you are encouraged "
+                                   "to add breaklines to keep the limit",
+                                   "Start with given profile"));
+  options.add("script <file>", ki18nc("TRANSLATORS: this is the description of a command line option. "
+                                      "If your translation is longer than 50 caracters, you are encouraged "
+                                      "to add breaklines to keep the limit",
+                                      "Script to run after finishing one archive slice"));
+  options.add("auto <profile>", ki18nc("TRANSLATORS: this is the description of a command line option. "
+                                       "If your translation is longer than 50 caracters, you are encouraged "
+                                       "to add breaklines to keep the limit",
+                                       "Automatically run the backup with the given profile\n"
+                                       "and terminate when done."));
+  options.add("autobg <profile>", ki18nc("TRANSLATORS: this is the description of a command line option. "
+                                         "If your translation is longer than 50 caracters, you are encouraged "
+                                         "to add breaklines to keep the limit",
+                                         "Automatically run the backup with the given profile\n"
+                                         "in the background (without showing a window)\n"
+                                         "and terminate when done."));
+  options.add("verbose", ki18nc("TRANSLATORS: this is the description of a command line option. "
+                                "If your translation is longer than 50 caracters, you are encouraged "
+                                "to add breaklines to keep the limit",
+                                "In autobg mode be verbose and print every\nsingle filename during backup"));
 
   KCmdLineArgs::addCmdLineOptions(options);
   KCmdLineArgs::init(argc, argv, &about);
