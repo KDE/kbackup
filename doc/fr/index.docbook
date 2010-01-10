@@ -50,7 +50,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <surname>Portal</surname>
 <affiliation>
 <address>
-<email>aportal@univ-montp2.fr</email>
+<email>alain.portal@univ-montp2.fr</email>
 </address>
 </affiliation>
 <contrib>Traduction française&nbsp;</contrib>
@@ -61,7 +61,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2007</year>
+<year>2006 - 2009</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -69,8 +69,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2007-07-08</date>
-<releaseinfo>1.04.00</releaseinfo>
+<date>2009-05-13</date>
+<releaseinfo>1.05.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -93,6 +93,8 @@ Please at least include KDE, the KDE package it is in, the name
 <keyword>stockage</keyword>
 <keyword>archive</keyword>
 <keyword>zip</keyword>
+<keyword>gzip</keyword>
+<keyword>bzip2</keyword>
 </keywordset>
 
 </bookinfo>
@@ -117,6 +119,13 @@ localement comme un lecteur ZIP ou une clé USB), mais également une URL
 distante (par exemple, smb://hôte_distant/un_chemin) pour sauvegarder vos
 données sur un serveur central, etc.
 </para>
+ 
+<para>
+Le programme peut également exécuter une sauvergarde automatique sans l'utilisation
+de l'interface graphique. On peut simplement créer un profil et utiliser la configuration
+pour demander à &kbackup; que faire lors de l´exécution en mode non interactif,
+par exemple dans le cas d'une exécution d'une tâche cron.
+</para>
 
 <para>
 Le programme a été conçu pour être facile à utiliser et est donc à la portée
@@ -133,6 +142,14 @@ L'implémentation actuelle ne propose que l'étape de sauvegarde. Pour restaurer
 vos données, vous devez utiliser, par exemple, konqueror pour ouvrir le
 fichier de sauvegarde TAR et glisser/déposer les fichiers dans votre système
 de fichier. C'est l'avantage de l'utilisation du format TAR.
+</para>
+
+<para>
+Si les fichiers sont compressés, vous pouvez les décompressez, de manière récursive,
+dans le répertoire courant, en utilisant la commande suivante&nbsp;
+</para>
+<para>
+find . -name \*bz2 -print0 | xargs -0 bunzip2
 </para>
 
 </chapter>
@@ -254,45 +271,83 @@ d'archive qui peuvent être ensuite gravées sur un CD ou un DVD.
 Si vous avez explicitement limité la taille d'une archive, la taille disponible
 sera marquée par une «&nbsp;*&nbsp;» dans la fenêtre principale.
 </para>
+ 
+<para>
+Dans la configuration des profils, vous pouvez définir un nombre maximum
+de sauvegarde à conserver dans le répertoire de destination, et ainsi, supprimer
+automatiquement les sauvegardes plus anciennes.
+Par exemple, si vous le définissez à 3, &kbacup; conservera les 3 sauvegardes
+</para>
 
 </sect1>
 
 <sect1 id="archive-compression">
 <title>Compression de l'archive</title>
 <para>
-&kbackup; compressera toujours les fichiers enregistrés (Excepté si vous avez
-explicitement désactiver ce comportement dans la configuration du profil.
+&kbackup; compressera les fichiers enregistrés si vous activez
+cette fonctionnalité dans la configuration du profil.
 Il choisira la compression bzip2 ou gzip suivant leur disponibilité sur votre
 système.
+&kbackup; compressera chaque fichier individuellement
+et les enregistrera tous avec une extension supplémentaire (.bzip2 or .gz)
+dans l'archive TAR non compressée.
 </para>
 
 <para>
 Lorsque vous avez choisi de créer la sauvegarde sur un système de fichier
 local (par exemple, un disque supplémentaire, un lecteur ZIP, etc.) - ce qui
-signifie que vous n'avez pas entré une URL cible) - &kbackup; peut être
+signifie que vous n'avez pas entré une URL cible distante - &kbackup; peut être
 amené à découper la sauvegarde en plusieurs tranches d'archive à cause de la
-limitation de la capacité du medium. &kbackup; compressera chaque fichier
-et les enregistrera tous avec une extension supplémentaire (.bzip2 or .gz)
-dans l'archive TAR non compressée.
+limitation de la capacité du medium.
 </para>
 <para>
-Par exemple&nbsp;: backup_2006.08.26-13.04.44_1.tar
+Par exemple&nbsp;:
+</para>
+<para>
+backup_2006.08.26-13.04.44_1.tar
+</para>
+<para>
+backup_2006.08.26-13.04.44_2.tar
 </para>
 
-<para>
-Si vous avez choisi une URL cible, qui s'affichera comme un medium de taille
-illimitée, &kbackup; créera une seule archive contenant les fichiers
-non compressés mais en compressant l'archive TAR entière en dernière étape.
-</para>
-<para>
-Vous obtiendrez donc un fichier archive avec l'extension
-.tar.bzip2 ou .tar.gz
-</para>
-<para>
-Par exemple&nbsp;: backup_2006.08.26-13.04.44_1.tar.bzip2
-</para>
+</sect1>
 
+<sect1 id="automating">
+<title>Automatiser les sauvegardes</title>
 
+<para>
+Si vous souhaitez automatiser le processus de sauvegarde, &kbackup; dispose
+de différentes options en ligne de commande pour vous aider à le faire&nbsp;:
+<itemizedlist>
+<listitem><para>--auto</para>
+<para>
+Lorsque vous lancez &kbackup; avec cette option et un fichier profil .kbp,
+le programme démarre, charge le fichier fourni, exécute la sauvegarde et se termine
+lorsque celle-ci est achevée.
+Toutes ces opérations s´effectuent avec l'interface utilisateur visible.
+ </para>
+</listitem>
+ 
+<listitem><para>--autobg</para>
+<para>
+Lorsque vous lancez &kbackup; avec cette option et un fichier profil .kbp,
+le programme exécute le même processus qu'avec l'option --auto mais sans
+afficher l'interface graphique utilisateur.
+Le suffixe «&nbsp;bg&nbsp;» signifie «&nbsp;arrière plan&nbsp;» (Ndt&nbsp;: background)&nbsp;;
+toutes les opérations sont effectuées en arrière plan. C'est donc l'option dont vous avez
+besoin lorsque vos sauvegardes sont exécutées, par exemple, par une tâche cron.
+</para>
+<para>
+Lors de l'utilisation de l'option --autobg, la sortie de &kbackup;
+se fait sur la sortie d'erreur «&nbsp;stderr&nbsp;».
+Par défaut, la sortie comporte seulement quelques messages importants ainsi qu'un résumé
+à la fin de la sauvegarde.
+Si vous ajoutez l'option --verbose, tous les noms des fichiers concernés par la sauvegarde
+seront affichés.
+</para>
+</listitem>
+</itemizedlist>
+</para>
 </sect1>
 
 </chapter>
@@ -320,6 +375,15 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <guimenu>Fichier</guimenu>
+<guimenuitem>Récemment ouvert(s)</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Affiche un sous-menu contenant les profils récemment utilisés
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Fichier</guimenu>
 <guimenuitem>Nouveau profil</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Efface la sélection et la cible pour démarrer
@@ -340,7 +404,15 @@ un nouveau profil.
 <guimenu>Fichier</guimenu>
 <guimenuitem>Enregistrer un profil</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Enregistre la configuration dans un profil</action></para></listitem>
+<listitem><para><action>Enregistre la configuration dans le profil actuellement chargé</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Fichier</guimenu>
+<guimenuitem>Enregistrer un profil sous...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Enregistre la configuration dans un nouveau profil</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -395,6 +467,17 @@ que vous le feriez dans la fenêtre principale.
 L'infobulle de cette icône fournit également lesinformations de progression
 de la sauvegarde (nombre de fichiers sauvegardés, taille de la sauvegarde
 et dernier fichier sauvegardé).
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Configuration</guimenu>
+<guimenuitem>Activer tous les messages</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>
+Activer cette entrée efface tous les indicateurs internes
+«&nbsp;Ne plus afficher&nbsp;» enregistrés
 </action></para></listitem>
 </varlistentry>
 </variablelist>
@@ -512,45 +595,6 @@ sur le répertoire cible</para>
 </itemizedlist>
 </para>
 
-<para>
-Un autre exemple pour vous montrer comment limiter le nombre de fichiers
-d'archive sur la cible&nbsp;:
-</para>
-<example><title>rotateScript.sh</title>
-<programlisting>
-#!/bin/sh
-# kbackup script to do a rotating backup (keep only a defined number of backups)
-# script kbackup pour effectuer des sauvegardes circulaires
-# (conserver uniquement un nombre défini de sauvegardes)
-
-NUM_BACKUPS=20
-
-mode=$1
-archive=$2
-target=$3
-mountPoint=$4
-
-case "$mode" in
- "slice_init" )
- ;;
-
- "slice_closed" )
- ;;
-
- "slice_finished" )
-   count=`ls -A1 $target | wc -l`
-   if [ $count -ge $NUM_BACKUPS ]
-   then
-     removeCount=`expr $count - $NUM_BACKUPS`
-     oldest=`ls -A1 ${target}/* | sort | head -n $removeCount`
-     rm -f ${oldest}
-   fi
- ;;
-esac
-
-</programlisting>
-</example>
-
 </chapter>
 
 <chapter id="faq">
@@ -594,7 +638,7 @@ Documentation protégée par copyright &copy; 2006 - 2009 Martin Koller
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 <para>
-Traduction française par Alain Portal <email>aportal@univ-montp2.fr</email>
+Traduction française par Alain Portal <email>alain.portal@univ-montp2.fr</email>
 </para>
 
 &underFDL;               <!-- FDL: do not remove -->
