@@ -2,18 +2,22 @@
 Type=Application
 Encoding=UTF-8
 Exec=kbackup %f
-Name=KBackup (Backup Program)
-Comment=Backup your data with an easy to use user interface
 Icon=kbackup
+X-DocPath=kbackup/index.html
 MimeType=text/x-kbp;
 Terminal=false
 Categories=System;KDE;X-SuSE-Backup;X-MandrivaLinux-System-Archiving-Backup;
 
-Name[de]=KBackup (Datensicherungs Programm)
+Name=KBackup
+Name[de]=KBackup
+Name[es]=KBackup
+Name[fr]=KBackup
+GenericName=Backup Program
+GenericName[de]=Datensicherungs Programm
+GenericName[es]=Programa de Copias de Seguridad
+GenericName[fr]=Programme de sauvegarde
+Comment=Backup your data with an easy to use user interface
 Comment[de]=Datensicherung mit einem einfach zu bedienended User Interface
-
-Name[fr]=KBackup (Programme de sauvegarde)
+Comment[es]=Realiza copias de seguridad de tus datos con un programa fácil de usar
 Comment[fr]=Sauvegarder vos données avec une interface utilisateur facile à utiliser
 
-Name[es]=KBackup (Programa de Copias de Seguridad)
-Comment[es]=Realiza copias de seguridad de tus datos con un programa fácil de usar
