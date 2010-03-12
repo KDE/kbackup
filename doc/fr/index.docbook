@@ -276,7 +276,7 @@ sera marquée par une «&nbsp;*&nbsp;» dans la fenêtre principale.
 Dans la configuration des profils, vous pouvez définir un nombre maximum
 de sauvegarde à conserver dans le répertoire de destination, et ainsi, supprimer
 automatiquement les sauvegardes plus anciennes.
-Par exemple, si vous le définissez à 3, &kbacup; conservera les 3 sauvegardes
+Par exemple, si vous le définissez à 3, &kbackup; conservera les 3 sauvegardes
 </para>
 
 </sect1>
