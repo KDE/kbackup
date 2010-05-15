@@ -907,6 +907,17 @@ void Archiver::addFile(const QFileInfo &info)
       while ( ! tmpFile.atEnd() )
       {
         len = tmpFile.read(buffer, BUFFER_SIZE);
+
+        if ( len < 0 )  // error in reading
+        {
+          emit warning(i18n("Could not read from file '%1'\n"
+                            "The operating system reports: %2")
+                       .arg(info.absoluteFilePath())
+                       .arg(tmpFile.errorString()));
+          cancel();
+          return;
+        }
+
         if ( ! archive->writeData(buffer, len) )
         {
           emit warning(i18n("Could not write to archive. Maybe the medium is full."));
@@ -991,6 +1002,16 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   while ( fileSize && !sourceFile.atEnd() && !cancelled )
   {
     len = sourceFile.read(buffer, BUFFER_SIZE);
+
+    if ( len < 0 )  // error in reading
+    {
+      emit warning(i18n("Could not read from file '%1'\n"
+                        "The operating system reports: %2")
+                   .arg(info.absoluteFilePath())
+                   .arg(sourceFile.errorString()));
+      return false;
+    }
+
     if ( ! archive->writeData(buffer, len) )
     {
       emit warning(i18n("Could not write to archive. Maybe the medium is full."));
