@@ -1,6 +1,6 @@
 Summary: kbackup is an application which lets you back up your data in a simple, user friendly way.
 Name: kbackup
-Version: 0.6.3
+Version: 0.6.4
 Release: 1
 License: GPL
 Group: Applications/Archiving
