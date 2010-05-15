@@ -377,7 +377,10 @@ void MainWindow::inProgress(bool runs)
 #if KDE_IS_VERSION(4,2,0)
     QMovie *movie = KIconLoader::global()->loadMovie("kbackup_runs", KIconLoader::Panel);
     if ( movie )
+    {
       sysTray->setMovie(movie);
+      movie->start();
+    }
 #endif
 
     startBackupAction->setEnabled(false);
@@ -385,7 +388,12 @@ void MainWindow::inProgress(bool runs)
   }
   else
   {
+#if KDE_IS_VERSION(4,2,0)
+    if ( sysTray->movie() )
+      const_cast<QMovie*>(sysTray->movie())->stop();  // why does it return a const pointer ? :-(
+#endif
     sysTray->setIcon(sysTray->loadIcon("kbackup"));
+
     startBackupAction->setEnabled(true);
     cancelBackupAction->setEnabled(false);
 
