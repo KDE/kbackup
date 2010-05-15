@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2009-05-14 13:27+0200\n"
+"POT-Creation-Date: 2010-05-15 19:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,384 +16,196 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. i18n: file: src/kbackupui.rc:4
-#. i18n: ectx: Menu (file)
-#: po/rc.cpp:3
-msgid "&File"
-msgstr ""
-
-#. i18n: file: src/kbackupui.rc:12
-#. i18n: ectx: Menu (settings)
-#: po/rc.cpp:6
-msgid "&Settings"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:15
-#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: po/rc.cpp:9 src/main.cxx:26
-msgid "KBackup"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:40
-#. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: po/rc.cpp:12 src/MainWindow.cxx:116
-msgid "Start Backup"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:68
-#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: po/rc.cpp:15 src/MainWindow.cxx:120
-msgid "Cancel Backup"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:89
-#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
-#: po/rc.cpp:18
-msgid "Target"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:95
-#. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: po/rc.cpp:21
-msgid "Folder:"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:111
-#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
-#: po/rc.cpp:24
-msgid "Medium:"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:133
-#. i18n: ectx: property (text), widget (QLabel, sliceNum)
-#. i18n: file: src/MainWidgetBase.ui:226
-#. i18n: ectx: property (text), widget (QLabel, totalFiles)
-#. i18n: file: src/MainWidgetBase.ui:255
-#. i18n: ectx: property (text), widget (QLabel, totalSize)
-#: po/rc.cpp:27 po/rc.cpp:42 po/rc.cpp:48
-msgid "0"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:153
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#. i18n: file: src/MainWidgetBase.ui:245
-#. i18n: ectx: property (text), widget (QLabel, textLabel6)
-#: po/rc.cpp:30 po/rc.cpp:45
-msgid "Size:"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:169
-#. i18n: ectx: property (text), widget (QLabel, capacity)
-#: po/rc.cpp:33
-msgid "0 MB"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:204
-#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox2)
-#: po/rc.cpp:36
-msgid "Totals"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:216
-#. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: po/rc.cpp:39
-msgid "Files:"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:268
-#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
-#. i18n: file: src/SettingsDialog.ui:51
-#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
-#: po/rc.cpp:51 po/rc.cpp:78
-msgid "MB"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:303
-#. i18n: ectx: property (text), widget (QLabel, textLabel8)
-#: po/rc.cpp:54
-msgid "Duration:"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:313
-#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
-#: po/rc.cpp:57
-msgid "00:00:00"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:355
-#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
-#: po/rc.cpp:60
-msgid "Warnings:"
-msgstr ""
-
-#. i18n: file: src/MainWidgetBase.ui:381
-#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
-#: po/rc.cpp:63
-msgid "Progress:"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:15
-#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
-#: po/rc.cpp:66 src/MainWindow.cxx:74
-msgid "Profile Settings"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:21
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: po/rc.cpp:69
-msgid "Archive Prefix (empty for default):"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:34
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: po/rc.cpp:72
-msgid "Maximum Archive Size:"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:48
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
-#. i18n: file: src/SettingsDialog.ui:81
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
-#: po/rc.cpp:75 po/rc.cpp:87 src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
-msgid "unlimited"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:71
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: po/rc.cpp:81
-msgid "Number of backups to keep"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:78
-#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
-#: po/rc.cpp:84
-msgid ""
-"How many backups shall be kept in the target directory before older ones "
-"will be deleted"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:93
-#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
-#: po/rc.cpp:90
-msgid ""
-"Uncheck if you want to avoid a confirmation dialog to change the medium when "
-"a slice was finished"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:96
-#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
-#: po/rc.cpp:93
-msgid "Target needs media change"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:103
-#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
-#: po/rc.cpp:96
-msgid "Uncheck if you want to avoid compressing files or archive slices at all"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:106
-#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
-#: po/rc.cpp:99
-msgid "Compress Files"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:147
-#. i18n: ectx: property (text), widget (QPushButton, ok)
-#: po/rc.cpp:102
-msgid "OK"
-msgstr ""
-
-#. i18n: file: src/SettingsDialog.ui:154
-#. i18n: ectx: property (text), widget (QPushButton, cancel)
-#: po/rc.cpp:105
-msgid "Cancel"
-msgstr ""
-
-#: po/rc.cpp:106
+#: po/rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: po/rc.cpp:107
+#: po/rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/Archiver.cxx:250
+#: src/Archiver.cxx:253
 msgid "Nothing selected for backup"
 msgstr ""
 
-#: src/Archiver.cxx:256
+#: src/Archiver.cxx:260
 msgid "The target dir is not valid"
 msgstr ""
 
-#: src/Archiver.cxx:268
+#: src/Archiver.cxx:272
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
 "Shall I create it?"
 msgstr ""
 
-#: src/Archiver.cxx:273
+#: src/Archiver.cxx:277
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: src/Archiver.cxx:282
+#: src/Archiver.cxx:286
 msgid "The target dir does not exist"
 msgstr ""
 
-#: src/Archiver.cxx:362
+#: src/Archiver.cxx:356
 msgid "...reducing number of kept archives to max. %1"
 msgstr ""
 
-#: src/Archiver.cxx:396
+#: src/Archiver.cxx:413
 msgid "...deleting %1"
 msgstr ""
 
-#: src/Archiver.cxx:405
+#: src/Archiver.cxx:439
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
 
-#: src/Archiver.cxx:417
+#: src/Archiver.cxx:451
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 
-#: src/Archiver.cxx:419
+#: src/Archiver.cxx:453
 msgid "-- Backup successfully finished --"
 msgstr ""
 
-#: src/Archiver.cxx:425
+#: src/Archiver.cxx:459
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
 msgstr ""
 
-#: src/Archiver.cxx:427
+#: src/Archiver.cxx:461
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
 msgstr ""
 
-#: src/Archiver.cxx:438
+#: src/Archiver.cxx:478
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr ""
 
-#: src/Archiver.cxx:449
+#: src/Archiver.cxx:489
 msgid "...Backup aborted!"
 msgstr ""
 
-#: src/Archiver.cxx:477
+#: src/Archiver.cxx:517
 msgid "Backup cancelled"
 msgstr ""
 
-#: src/Archiver.cxx:493
+#: src/Archiver.cxx:534
 msgid "...finished slice %1"
 msgstr ""
 
-#: src/Archiver.cxx:513
+#: src/Archiver.cxx:551
 msgid "...uploading archive %1 to %2"
 msgstr ""
 
-#: src/Archiver.cxx:524
-msgid "upload FAILED"
-msgstr ""
-
-#: src/Archiver.cxx:533
+#: src/Archiver.cxx:568
 msgid "How shall we proceed with the upload?"
 msgstr ""
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:569
 msgid "Retry"
 msgstr ""
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:569
 msgid "Change Target"
 msgstr ""
 
-#: src/Archiver.cxx:633
+#: src/Archiver.cxx:666
 msgid "The script '%1' could not be started."
 msgstr ""
 
-#: src/Archiver.cxx:669
+#: src/Archiver.cxx:701
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr ""
 
-#: src/Archiver.cxx:701
+#: src/Archiver.cxx:733
 msgid "The file '%1' can not be opened for writing."
 msgstr ""
 
-#: src/Archiver.cxx:705
+#: src/Archiver.cxx:737
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
 "Do you want to retry?"
 msgstr ""
 
-#: src/Archiver.cxx:731
+#: src/Archiver.cxx:764
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: src/Archiver.cxx:741
+#: src/Archiver.cxx:774
 msgid "Directory '%1' is not readable. Skipping."
 msgstr ""
 
-#: src/Archiver.cxx:757
+#: src/Archiver.cxx:790
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
 msgstr ""
 
-#: src/Archiver.cxx:796
+#: src/Archiver.cxx:831
 msgid "File '%1' is not readable. Skipping."
 msgstr ""
 
-#: src/Archiver.cxx:851 src/Archiver.cxx:920
+#: src/Archiver.cxx:886 src/Archiver.cxx:966
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: src/Archiver.cxx:863 src/Archiver.cxx:877 src/Archiver.cxx:891
-#: src/Archiver.cxx:942 src/Archiver.cxx:961 src/Archiver.cxx:1003
+#: src/Archiver.cxx:898 src/Archiver.cxx:923 src/Archiver.cxx:937
+#: src/Archiver.cxx:988 src/Archiver.cxx:1017 src/Archiver.cxx:1065
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr ""
 
-#: src/Archiver.cxx:931
+#: src/Archiver.cxx:913 src/Archiver.cxx:1008
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+
+#: src/Archiver.cxx:977
 msgid "Could not open file '%1' for reading."
 msgstr ""
 
-#: src/Archiver.cxx:984
+#: src/Archiver.cxx:1041
 msgid "...archiving file %1"
 msgstr ""
 
-#: src/Archiver.cxx:1017
+#: src/Archiver.cxx:1079
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: src/Archiver.cxx:1032
+#: src/Archiver.cxx:1094
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
 
-#: src/Archiver.cxx:1057
+#: src/Archiver.cxx:1119
 msgid "Could not write to temporary file"
 msgstr ""
 
-#: src/Archiver.cxx:1079
+#: src/Archiver.cxx:1141
 msgid "...compressing file %1"
 msgstr ""
 
-#: src/Archiver.cxx:1124
+#: src/Archiver.cxx:1186
 msgid "WARNING:"
+msgstr ""
+
+#: src/main.cxx:26
+msgid "KBackup"
 msgstr ""
 
 #: src/main.cxx:27
@@ -401,7 +213,7 @@ msgid "An easy to use backup program"
 msgstr ""
 
 #: src/main.cxx:28
-msgid "(c) 2006 - 2009 Martin Koller"
+msgid "(c) 2006 - 2010 Martin Koller"
 msgstr ""
 
 #: src/main.cxx:33
@@ -412,31 +224,59 @@ msgstr ""
 msgid "Developer"
 msgstr ""
 
-#: src/main.cxx:36
+#: src/main.cxx:39
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Start with given profile"
 msgstr ""
 
-#: src/main.cxx:37
+#: src/main.cxx:43
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Script to run after finishing one archive slice"
 msgstr ""
 
-#: src/main.cxx:38
+#: src/main.cxx:47
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid ""
-"Automatically run the backup with the given profile and terminate when done."
+"Automatically run the backup with the given profile\n"
+"and terminate when done."
 msgstr ""
 
-#: src/main.cxx:40
+#: src/main.cxx:52
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid ""
-"Automatically run the backup with the given profile in the background "
-"(without showing a window) and terminate when done."
+"Automatically run the backup with the given profile\n"
+"in the background (without showing a window)\n"
+"and terminate when done."
 msgstr ""
 
-#: src/main.cxx:43
-msgid "In autobg mode be verbose and print every single filename during backup"
+#: src/main.cxx:58
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
+msgid ""
+"In autobg mode be verbose and print every\n"
+"single filename during backup"
 msgstr ""
 
-#: src/main.cxx:96 src/MainWindow.cxx:211
+#: src/main.cxx:111 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
+msgstr ""
+
+#: src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
+msgid "unlimited"
 msgstr ""
 
 #: src/MainWindow.cxx:58
@@ -455,12 +295,24 @@ msgstr ""
 msgid "Save Profile As..."
 msgstr ""
 
+#: src/MainWindow.cxx:74
+msgid "Profile Settings"
+msgstr ""
+
 #: src/MainWindow.cxx:77
 msgid "Enable All Messages"
 msgstr ""
 
 #: src/MainWindow.cxx:79
 msgid "Dock in System Tray"
+msgstr ""
+
+#: src/MainWindow.cxx:116
+msgid "Start Backup"
+msgstr ""
+
+#: src/MainWindow.cxx:120
+msgid "Cancel Backup"
 msgstr ""
 
 #: src/MainWindow.cxx:143
@@ -495,15 +347,15 @@ msgid ""
 "%3"
 msgstr ""
 
-#: src/Selector.cxx:157 src/XXX/Selector.cxx:118
+#: src/Selector.cxx:157
 msgid "Name"
 msgstr ""
 
-#: src/Selector.cxx:158 src/XXX/Selector.cxx:119
+#: src/Selector.cxx:158
 msgid "Size"
 msgstr ""
 
-#: src/Selector.cxx:159 src/XXX/Selector.cxx:120
+#: src/Selector.cxx:159
 msgid "Last Modified"
 msgstr ""
 
