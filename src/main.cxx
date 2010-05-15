@@ -24,8 +24,8 @@
 int main(int argc, char **argv)
 {
   KAboutData about("kbackup", "", ki18n("KBackup"),
-                   "0.6.3", ki18n("An easy to use backup program"), KAboutData::License_GPL_V2,
-                   ki18n("(c) 2006 - 2009 Martin Koller"),  // copyright
+                   "0.6.4", ki18n("An easy to use backup program"), KAboutData::License_GPL_V2,
+                   ki18n("(c) 2006 - 2010 Martin Koller"),  // copyright
                    KLocalizedString(),  // added text
                    "http://www.kde-apps.org/content/show.php?content=44998",  // homepage
                    "kollix@aon.at");  // bugs to
