@@ -1,6 +1,6 @@
 Begin3
 Title:          kbackup -- An easy to use backup program
-Version:        0.6
+Version:        0.6.4
 Entered-date:   
 Description:    An easy to use backup program
 Keywords:       KDE Qt
@@ -9,6 +9,6 @@ Maintained-by:  Martin Koller <kollix@aon.at>
 Home-page:      http://www.kde-apps.org/content/show.php?content=44998
 Alternate-site: 
 Primary-site:   http://www.kde-apps.org/content/show.php?content=44998
-Platform:       Linux. Needs KDE
+Platform:       Linux. Needs KDE4
 Copying-policy: GPL
 End
