@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2010-01-06 23:08+0100\n"
+"POT-Creation-Date: 2010-05-30 11:28+0200\n"
 "PO-Revision-Date: 2010-01-06 23:23+0100\n"
 "Last-Translator: Alain Portal <alain.portal@free.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -376,7 +376,7 @@ msgstr ""
 msgid "File '%1' is not readable. Skipping."
 msgstr "Le fichier « %1 » n'est pas lisible. Passe."
 
-#: src/Archiver.cxx:886 src/Archiver.cxx:955
+#: src/Archiver.cxx:886 src/Archiver.cxx:966
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -384,20 +384,29 @@ msgstr ""
 "Impossible d'obtenir des informations sur le fichier : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:898 src/Archiver.cxx:912 src/Archiver.cxx:926
-#: src/Archiver.cxx:977 src/Archiver.cxx:996 src/Archiver.cxx:1044
+#: src/Archiver.cxx:898 src/Archiver.cxx:923 src/Archiver.cxx:937
+#: src/Archiver.cxx:988 src/Archiver.cxx:1017 src/Archiver.cxx:1065
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Impossible d'écrire dans l'archive. Peut-être le medium est-il plein ?"
 
-#: src/Archiver.cxx:966
+#: src/Archiver.cxx:913 src/Archiver.cxx:1008
+#, fuzzy
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"Impossible de lire le fichier : %1\n"
+"Le système d'exploitation indique : %2"
+
+#: src/Archiver.cxx:977
 msgid "Could not open file '%1' for reading."
 msgstr "Impossible d'ouvrir le fichier « %1 » en lecture."
 
-#: src/Archiver.cxx:1020
+#: src/Archiver.cxx:1041
 msgid "...archiving file %1"
 msgstr "...archivage du fichier %1"
 
-#: src/Archiver.cxx:1058
+#: src/Archiver.cxx:1079
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -405,7 +414,7 @@ msgstr ""
 "Impossible de lire le fichier : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1073
+#: src/Archiver.cxx:1094
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -413,15 +422,15 @@ msgstr ""
 "Impossible de créer le fichier temporaire pour la compression : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1098
+#: src/Archiver.cxx:1119
 msgid "Could not write to temporary file"
 msgstr "Impossible d'écrire dans le fichier temporaire"
 
-#: src/Archiver.cxx:1120
+#: src/Archiver.cxx:1141
 msgid "...compressing file %1"
 msgstr "... compression du fichier %1"
 
-#: src/Archiver.cxx:1165
+#: src/Archiver.cxx:1186
 msgid "WARNING:"
 msgstr "AVERTISSEMENT :"
 
@@ -430,7 +439,8 @@ msgid "An easy to use backup program"
 msgstr "Un programme de sauvegarde simple d'emploi"
 
 #: src/main.cxx:28
-msgid "(c) 2006 - 2009 Martin Koller"
+#, fuzzy
+msgid "(c) 2006 - 2010 Martin Koller"
 msgstr "(c) 2006 - 2009 Martin Koller"
 
 #: src/main.cxx:33
@@ -441,37 +451,65 @@ msgstr "Martin Koller"
 msgid "Developer"
 msgstr "Développeur"
 
-#: src/main.cxx:36
+#: src/main.cxx:39
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Start with given profile"
 msgstr "Démarrage avec le profil donné"
 
-#: src/main.cxx:37
+#: src/main.cxx:43
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Script to run after finishing one archive slice"
 msgstr "Script à exécuter après la fin d'une tranche d'archive"
 
-#: src/main.cxx:38
+#: src/main.cxx:47
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid ""
-"Automatically run the backup with the given profile and terminate when done."
+"Automatically run the backup with the given profile\n"
+"and terminate when done."
 msgstr ""
 "Lancer automatiquement la sauvegarde avec le fichier profil fourni et "
 "quitter lorsqu'elle est achevée. "
 
-#: src/main.cxx:40
+#: src/main.cxx:52
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid ""
-"Automatically run the backup with the given profile in the background "
-"(without showing a window) and terminate when done."
+"Automatically run the backup with the given profile\n"
+"in the background (without showing a window)\n"
+"and terminate when done."
 msgstr ""
 "Lancer automatiquement en arrière plan (sans interface graphique) la "
-"sauvegarde avec le fichier profil fourni et quitter lorsqu'elle est "
-"achevée. "
+"sauvegarde avec le fichier profil fourni et quitter lorsqu'elle est achevée. "
 
-#: src/main.cxx:43
-msgid "In autobg mode be verbose and print every single filename during backup"
+#: src/main.cxx:58
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
+msgid ""
+"In autobg mode be verbose and print every\n"
+"single filename during backup"
 msgstr ""
 "En mode arrière plan automatique, être volubile et afficher le nom de chaque "
 "fichier pendant la sauvegarde"
 
-#: src/main.cxx:96 src/MainWindow.cxx:211
+#: src/main.cxx:111 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Impossible d'ouvrir le profil « %1 » en lecture : %2"
 

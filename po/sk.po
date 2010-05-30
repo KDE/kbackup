@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KBackUp\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2009-05-14 13:27+0200\n"
+"POT-Creation-Date: 2010-05-30 11:28+0200\n"
 "PO-Revision-Date: 2009-05-15 10:50+0200\n"
 "Last-Translator: Jozef Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak\n"
@@ -170,7 +170,9 @@ msgstr "Počet ponechávaných záloh"
 msgid ""
 "How many backups shall be kept in the target directory before older ones "
 "will be deleted"
-msgstr "Koľko záloh bude ponechaných v cieľovom adresári skôr než začnú nové zálohy prepisovať staré"
+msgstr ""
+"Koľko záloh bude ponechaných v cieľovom adresári skôr než začnú nové zálohy "
+"prepisovať staré"
 
 #. i18n: file: src/SettingsDialog.ui:93
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
@@ -223,15 +225,15 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "jose1711@gmail.com"
 
-#: src/Archiver.cxx:250
+#: src/Archiver.cxx:253
 msgid "Nothing selected for backup"
 msgstr "Nevybrali ste nič pre zálohovanie"
 
-#: src/Archiver.cxx:256
+#: src/Archiver.cxx:260
 msgid "The target dir is not valid"
 msgstr "Chybné určenie cieľového adresára"
 
-#: src/Archiver.cxx:268
+#: src/Archiver.cxx:272
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
@@ -241,7 +243,7 @@ msgstr ""
 "\n"
 "Mám ho vytvoriť?"
 
-#: src/Archiver.cxx:273
+#: src/Archiver.cxx:277
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
@@ -249,32 +251,34 @@ msgstr ""
 "Nepodarilo sa vytvoriť cieľový adresár '%1'.\n"
 "Operačný systém hlási: %2"
 
-#: src/Archiver.cxx:282
+#: src/Archiver.cxx:286
 msgid "The target dir does not exist"
 msgstr "Cieľový adresár neexistuje"
 
-#: src/Archiver.cxx:362
+#: src/Archiver.cxx:356
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...znižujem počet uchovávaných archívov na max. %1"
 
-#: src/Archiver.cxx:396
+#: src/Archiver.cxx:413
 msgid "...deleting %1"
 msgstr "...mažem %1"
 
-#: src/Archiver.cxx:405
+#: src/Archiver.cxx:439
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
-msgstr "získavanie výpisu cieľového adresára zlyhalo. Nepodarilo sa znížiť počet uchovávaných archívov."
+msgstr ""
+"získavanie výpisu cieľového adresára zlyhalo. Nepodarilo sa znížiť počet "
+"uchovávaných archívov."
 
-#: src/Archiver.cxx:417
+#: src/Archiver.cxx:451
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr "!! Záloha dokončená <b>ale niektoré súbory boli preskočené</b> !!"
 
-#: src/Archiver.cxx:419
+#: src/Archiver.cxx:453
 msgid "-- Backup successfully finished --"
 msgstr "-- Zálohovanie úspešne dokončené --"
 
-#: src/Archiver.cxx:425
+#: src/Archiver.cxx:459
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -282,7 +286,7 @@ msgstr ""
 "Záloha bola dokončená, ale niektoré súbory boli preskočené.\n"
 "Čo chcete teraz robiť?"
 
-#: src/Archiver.cxx:427
+#: src/Archiver.cxx:461
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -290,55 +294,51 @@ msgstr ""
 "Záloha bola úspešne dokončená.\n"
 "Čo chcete teraz robiť?"
 
-#: src/Archiver.cxx:438
+#: src/Archiver.cxx:478
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Celkom: Súborov: %1, Veľkosť: %2, Trvanie: %3"
 
-#: src/Archiver.cxx:449
+#: src/Archiver.cxx:489
 msgid "...Backup aborted!"
 msgstr "...Zálohovanie zrušené!"
 
-#: src/Archiver.cxx:477
+#: src/Archiver.cxx:517
 msgid "Backup cancelled"
 msgstr "Zálohovanie zrušené"
 
-#: src/Archiver.cxx:493
+#: src/Archiver.cxx:534
 msgid "...finished slice %1"
 msgstr "...dokončená časť %1"
 
-#: src/Archiver.cxx:513
+#: src/Archiver.cxx:551
 msgid "...uploading archive %1 to %2"
 msgstr "...uploadujem archív %1 na %2"
 
-#: src/Archiver.cxx:524
-msgid "upload FAILED"
-msgstr "upload ZLYHAL"
-
-#: src/Archiver.cxx:533
+#: src/Archiver.cxx:568
 msgid "How shall we proceed with the upload?"
 msgstr "Ako budeme pokračovať v uploade?"
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:569
 msgid "Retry"
 msgstr "Skúsiť znovu"
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:569
 msgid "Change Target"
 msgstr "Zmeniť cieľ"
 
-#: src/Archiver.cxx:633
+#: src/Archiver.cxx:666
 msgid "The script '%1' could not be started."
 msgstr "Nemôžem spustiť skript '%1'."
 
-#: src/Archiver.cxx:669
+#: src/Archiver.cxx:701
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Médium je plné. Prosím vložte médium č. %1"
 
-#: src/Archiver.cxx:701
+#: src/Archiver.cxx:733
 msgid "The file '%1' can not be opened for writing."
 msgstr "Súbor '%1' nemožno otvoriť pre zápis."
 
-#: src/Archiver.cxx:705
+#: src/Archiver.cxx:737
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -348,7 +348,7 @@ msgstr ""
 "\n"
 "Chcete sa o to pokúsiť znovu?"
 
-#: src/Archiver.cxx:731
+#: src/Archiver.cxx:764
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -356,11 +356,11 @@ msgstr ""
 "Nepodarilo sa získať informácie o adresári: %1\n"
 "Operačný systém hlási: %2"
 
-#: src/Archiver.cxx:741
+#: src/Archiver.cxx:774
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Adresár '%1' nemožno prečítať. Preskakujem."
 
-#: src/Archiver.cxx:757
+#: src/Archiver.cxx:790
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -368,11 +368,11 @@ msgstr ""
 "Nepodarilo sa zapísať adresár '%1' do archívu.\n"
 "Možno je médium plné."
 
-#: src/Archiver.cxx:796
+#: src/Archiver.cxx:831
 msgid "File '%1' is not readable. Skipping."
 msgstr "Súbor '%1' nemožno prečítať. Preskakujem."
 
-#: src/Archiver.cxx:851 src/Archiver.cxx:920
+#: src/Archiver.cxx:886 src/Archiver.cxx:966
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -380,20 +380,29 @@ msgstr ""
 "Nepodarilo sa získať informácie súboru: %1\n"
 "Operačný systém hlási: %2"
 
-#: src/Archiver.cxx:863 src/Archiver.cxx:877 src/Archiver.cxx:891
-#: src/Archiver.cxx:942 src/Archiver.cxx:961 src/Archiver.cxx:1003
+#: src/Archiver.cxx:898 src/Archiver.cxx:923 src/Archiver.cxx:937
+#: src/Archiver.cxx:988 src/Archiver.cxx:1017 src/Archiver.cxx:1065
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Nepodaril sa zápis do archívu. Možno je médium plné."
 
-#: src/Archiver.cxx:931
+#: src/Archiver.cxx:913 src/Archiver.cxx:1008
+#, fuzzy
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"Nemožno prečítať súbor: %1\n"
+"Operačný systém hlási: %2"
+
+#: src/Archiver.cxx:977
 msgid "Could not open file '%1' for reading."
 msgstr "Súbor '%1' nemožno otvoriť na čítanie."
 
-#: src/Archiver.cxx:984
+#: src/Archiver.cxx:1041
 msgid "...archiving file %1"
 msgstr "...archivujem súbor %1"
 
-#: src/Archiver.cxx:1017
+#: src/Archiver.cxx:1079
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -401,7 +410,7 @@ msgstr ""
 "Nemožno prečítať súbor: %1\n"
 "Operačný systém hlási: %2"
 
-#: src/Archiver.cxx:1032
+#: src/Archiver.cxx:1094
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -409,15 +418,15 @@ msgstr ""
 "Nemožno vytvoriť dočasný súbor pre kompresiu: %1\n"
 "Operačný systém hlási: %2"
 
-#: src/Archiver.cxx:1057
+#: src/Archiver.cxx:1119
 msgid "Could not write to temporary file"
 msgstr "Nepodaril sa zápis do dočasného súboru"
 
-#: src/Archiver.cxx:1079
+#: src/Archiver.cxx:1141
 msgid "...compressing file %1"
 msgstr "...komprimujem súbor %1"
 
-#: src/Archiver.cxx:1124
+#: src/Archiver.cxx:1186
 msgid "WARNING:"
 msgstr "VAROVANIE:"
 
@@ -426,7 +435,8 @@ msgid "An easy to use backup program"
 msgstr "Zálohovací program, jednoduchý na obsluhu"
 
 #: src/main.cxx:28
-msgid "(c) 2006 - 2009 Martin Koller"
+#, fuzzy
+msgid "(c) 2006 - 2010 Martin Koller"
 msgstr "(c) 2006 - 2009 Martin Koller"
 
 #: src/main.cxx:33
@@ -437,31 +447,62 @@ msgstr "Martin Koller"
 msgid "Developer"
 msgstr "Vývojár"
 
-#: src/main.cxx:36
+#: src/main.cxx:39
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Start with given profile"
 msgstr "Začať s vybraným profilom"
 
-#: src/main.cxx:37
+#: src/main.cxx:43
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Script to run after finishing one archive slice"
 msgstr "Skript, ktorý bude spustený po dokončení jednej časti archívu"
 
-#: src/main.cxx:38
+#: src/main.cxx:47
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid ""
-"Automatically run the backup with the given profile and terminate when done."
+"Automatically run the backup with the given profile\n"
+"and terminate when done."
 msgstr ""
 "Spustiť zálohu s vybraným profilom automaticky a skončiť, keď je hotová."
 
-#: src/main.cxx:40
+#: src/main.cxx:52
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid ""
-"Automatically run the backup with the given profile in the background "
-"(without showing a window) and terminate when done."
-msgstr "Spustiť zálohu s vybraným profilom automaticky na pozadí (bez otvárania okna) a skončiť, keď je hotová."
+"Automatically run the backup with the given profile\n"
+"in the background (without showing a window)\n"
+"and terminate when done."
+msgstr ""
+"Spustiť zálohu s vybraným profilom automaticky na pozadí (bez otvárania "
+"okna) a skončiť, keď je hotová."
 
-#: src/main.cxx:43
-msgid "In autobg mode be verbose and print every single filename during backup"
+#: src/main.cxx:58
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
+msgid ""
+"In autobg mode be verbose and print every\n"
+"single filename during backup"
 msgstr "V režime autobg buď ukecaný a vypisuj počas zálohy každý názov súboru"
 
-#: src/main.cxx:96 src/MainWindow.cxx:211
+#: src/main.cxx:111 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Nepodarilo sa otvoriť profil  '%1' na čítanie: %2"
 
@@ -525,15 +566,15 @@ msgstr ""
 "Súborov: %1 Veľkosť: %2 MB\n"
 "%3"
 
-#: src/Selector.cxx:157 src/XXX/Selector.cxx:118
+#: src/Selector.cxx:157
 msgid "Name"
 msgstr "Názov"
 
-#: src/Selector.cxx:158 src/XXX/Selector.cxx:119
+#: src/Selector.cxx:158
 msgid "Size"
 msgstr "Veľkosť"
 
-#: src/Selector.cxx:159 src/XXX/Selector.cxx:120
+#: src/Selector.cxx:159
 msgid "Last Modified"
 msgstr "Posledná úprava"
 
@@ -564,6 +605,9 @@ msgstr "17.1 GB DVD"
 #: src/SettingsDialog.cxx:28
 msgid "custom"
 msgstr "vlastné"
+
+#~ msgid "upload FAILED"
+#~ msgstr "upload ZLYHAL"
 
 #~ msgid "Do you want to retry the upload?"
 #~ msgstr "Chcete znovu skúsiť upload?"

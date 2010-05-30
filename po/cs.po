@@ -1,17 +1,14 @@
-# translation of de.po to Deutsch
-# translation of kbackup.po to
+# translation of kbackup.po to czech
 # This file is put in the public domain.
 #
-# Martin Koller <kollix@aon.at>, 2006 - 2009.
-# Martin Koller <m.koller@surfeu.at>, 2009.
 # Pavel Fric, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2010-05-15 19:42+0200\n"
-"PO-Revision-Date: 2010-05-28 11:55+0200\n"
-"Last-Translator: Pavel\n"
+"POT-Creation-Date: 2010-05-30 11:28+0200\n"
+"PO-Revision-Date: 2010-05-30 09:08+0200\n"
+"Last-Translator: Pavel Fric\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,12 +17,211 @@ msgstr ""
 "X-Language: de_AT\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: po/rc.cpp:1
+#. i18n: file: src/kbackupui.rc:4
+#. i18n: ectx: Menu (file)
+#: po/rc.cpp:3
+msgid "&File"
+msgstr "&Soubor"
+
+#. i18n: file: src/kbackupui.rc:12
+#. i18n: ectx: Menu (settings)
+#: po/rc.cpp:6
+msgid "&Settings"
+msgstr "&Nastavení"
+
+#. i18n: file: src/MainWidgetBase.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: po/rc.cpp:9 src/main.cxx:26
+msgid "KBackup"
+msgstr "KBackup"
+
+#. i18n: file: src/MainWidgetBase.ui:40
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: po/rc.cpp:12 src/MainWindow.cxx:116
+msgid "Start Backup"
+msgstr "Spustit zálohování"
+
+#. i18n: file: src/MainWidgetBase.ui:68
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: po/rc.cpp:15 src/MainWindow.cxx:120
+msgid "Cancel Backup"
+msgstr "Zastavit zálohování"
+
+#. i18n: file: src/MainWidgetBase.ui:89
+#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
+#: po/rc.cpp:18
+msgid "Target"
+msgstr "Cíl"
+
+#. i18n: file: src/MainWidgetBase.ui:95
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: po/rc.cpp:21
+msgid "Folder:"
+msgstr "Složka:"
+
+#. i18n: file: src/MainWidgetBase.ui:111
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: po/rc.cpp:24
+msgid "Medium:"
+msgstr "Nosič:"
+
+#. i18n: file: src/MainWidgetBase.ui:133
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#. i18n: file: src/MainWidgetBase.ui:226
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: file: src/MainWidgetBase.ui:255
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: po/rc.cpp:27 po/rc.cpp:42 po/rc.cpp:48
+msgid "0"
+msgstr "0"
+
+#. i18n: file: src/MainWidgetBase.ui:153
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: file: src/MainWidgetBase.ui:245
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: po/rc.cpp:30 po/rc.cpp:45
+msgid "Size:"
+msgstr "Velikost:"
+
+#. i18n: file: src/MainWidgetBase.ui:169
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: po/rc.cpp:33
+msgid "0 MB"
+msgstr "0 MB"
+
+#. i18n: file: src/MainWidgetBase.ui:204
+#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox2)
+#: po/rc.cpp:36
+msgid "Totals"
+msgstr "Součty"
+
+#. i18n: file: src/MainWidgetBase.ui:216
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: po/rc.cpp:39
+msgid "Files:"
+msgstr "Soubory:"
+
+#. i18n: file: src/MainWidgetBase.ui:268
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#. i18n: file: src/SettingsDialog.ui:51
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: po/rc.cpp:51 po/rc.cpp:78
+msgid "MB"
+msgstr "MB"
+
+#. i18n: file: src/MainWidgetBase.ui:303
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: po/rc.cpp:54
+msgid "Duration:"
+msgstr "Doba:"
+
+#. i18n: file: src/MainWidgetBase.ui:313
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: po/rc.cpp:57
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: file: src/MainWidgetBase.ui:355
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: po/rc.cpp:60
+msgid "Warnings:"
+msgstr "Varování:"
+
+#. i18n: file: src/MainWidgetBase.ui:381
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: po/rc.cpp:63
+msgid "Progress:"
+msgstr "Postup:"
+
+#. i18n: file: src/SettingsDialog.ui:15
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: po/rc.cpp:66 src/MainWindow.cxx:74
+msgid "Profile Settings"
+msgstr "Nastavení profilu"
+
+#. i18n: file: src/SettingsDialog.ui:21
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: po/rc.cpp:69
+msgid "Archive Prefix (empty for default):"
+msgstr "Předpona archivu (ve výchozím nastavení prázdná):"
+
+#. i18n: file: src/SettingsDialog.ui:34
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: po/rc.cpp:72
+msgid "Maximum Archive Size:"
+msgstr "Největší dílčí velikost archivu:"
+
+#. i18n: file: src/SettingsDialog.ui:48
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#. i18n: file: src/SettingsDialog.ui:81
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#: po/rc.cpp:75 po/rc.cpp:87 src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
+msgid "unlimited"
+msgstr "neomezeně"
+
+#. i18n: file: src/SettingsDialog.ui:71
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: po/rc.cpp:81
+msgid "Number of backups to keep"
+msgstr "Počet udržovaných záloh"
+
+#. i18n: file: src/SettingsDialog.ui:78
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: po/rc.cpp:84
+msgid ""
+"How many backups shall be kept in the target directory before older ones "
+"will be deleted"
+msgstr ""
+"Kolik záloh má být udržováno v cílovém adresáři, předtím než budou smazány "
+"starší"
+
+#. i18n: file: src/SettingsDialog.ui:93
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: po/rc.cpp:90
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Vypněte, pokud se chcete vyhnout potvrzovacímu dialogu při výměně nosiče, "
+"když byla dokončena jedna část archivu."
+
+#. i18n: file: src/SettingsDialog.ui:96
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: po/rc.cpp:93
+msgid "Target needs media change"
+msgstr "Cíl potřebuje, aby byl nosič vyměněn"
+
+#. i18n: file: src/SettingsDialog.ui:103
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: po/rc.cpp:96
+msgid "Uncheck if you want to avoid compressing files or archive slices at all"
+msgstr ""
+"Vypněte, pokud se úplně chcete vyhnout stlačení souborů nebo archivních částí"
+
+#. i18n: file: src/SettingsDialog.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: po/rc.cpp:99
+msgid "Compress Files"
+msgstr "Stlačit soubory"
+
+#. i18n: file: src/SettingsDialog.ui:147
+#. i18n: ectx: property (text), widget (QPushButton, ok)
+#: po/rc.cpp:102
+msgid "OK"
+msgstr "OK"
+
+#. i18n: file: src/SettingsDialog.ui:154
+#. i18n: ectx: property (text), widget (QPushButton, cancel)
+#: po/rc.cpp:105
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: po/rc.cpp:106
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Pavel Fric"
 
-#: po/rc.cpp:2
+#: po/rc.cpp:107
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "fripohled.blogspot.com"
@@ -72,14 +268,13 @@ msgstr "...maže se %1"
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
-"Vypsání obsahu cílového adresáře se nezdařilo. Počet udržovaných záloh "
-"nelze zmenšit."
+"Vypsání obsahu cílového adresáře se nezdařilo. Počet udržovaných záloh nelze "
+"zmenšit."
 
 #: src/Archiver.cxx:451
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
-"!!! Záloha dat byla dokončena, <b>ale byly přeskočeny některé soubory</b> "
-"!!!"
+"!!! Záloha dat byla dokončena, <b>ale byly přeskočeny některé soubory</b> !!!"
 
 #: src/Archiver.cxx:453
 msgid "-- Backup successfully finished --"
@@ -236,15 +431,12 @@ msgstr "...stlačuje se soubor %1"
 msgid "WARNING:"
 msgstr "VAROVÁNÍ:"
 
-#: src/main.cxx:26
-msgid "KBackup"
-msgstr "KBackup"
-
 #: src/main.cxx:27
 msgid "An easy to use backup program"
 msgstr "Jednoduše obsluhovatelný zálohovací program"
 
 #: src/main.cxx:28
+#, fuzzy
 msgid "(c) 2006 - 2010 Martin Koller"
 msgstr "(c) 2006 - 2010 Martin Koller"
 
@@ -257,6 +449,7 @@ msgid "Developer"
 msgstr "Vývojář"
 
 #: src/main.cxx:39
+#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -265,14 +458,16 @@ msgid "Start with given profile"
 msgstr "Spustit s daným profilem"
 
 #: src/main.cxx:43
+#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
 "breaklines to keep the limit"
 msgid "Script to run after finishing one archive slice"
-msgstr "Skript spustit po dokončení jednoho archivu"
+msgstr "Skript spustit po dokončení jedné části archivu"
 
 #: src/main.cxx:47
+#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -281,10 +476,11 @@ msgid ""
 "Automatically run the backup with the given profile\n"
 "and terminate when done."
 msgstr ""
-"Automaticky spustit zálohu s  daným profilem\n"
-"a ukončit program po dokončení zálohy."
+"Automaticky spustit zálohu s  daným profilem a ukončit program po dokončení "
+"zálohy."
 
 #: src/main.cxx:52
+#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -294,11 +490,11 @@ msgid ""
 "in the background (without showing a window)\n"
 "and terminate when done."
 msgstr ""
-"Automaticky spustit zálohu s  daným profilem\n"
-"na pozadí (bez ukazování okna)\n"
+"Automaticky spustit zálohu s  daným profilem na pozadí (bez ukazování okna) "
 "a ukončit program po dokončení zálohy."
 
 #: src/main.cxx:58
+#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -306,17 +502,11 @@ msgctxt ""
 msgid ""
 "In autobg mode be verbose and print every\n"
 "single filename during backup"
-msgstr ""
-"V režimu autobg ukazovat během zálohy každý\n"
-"jednotlivý název souboru"
+msgstr "V režimu autobg ukazovat během zálohy každý jednotlivý název souboru"
 
 #: src/main.cxx:111 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Profil '%1' se nepodařilo otevřít pro čtení: %2"
-
-#: src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
-msgid "unlimited"
-msgstr "neomezeně"
 
 #: src/MainWindow.cxx:58
 msgid "New Profile"
@@ -334,10 +524,6 @@ msgstr "Uložit profil"
 msgid "Save Profile As..."
 msgstr "Uložit profil jako..."
 
-#: src/MainWindow.cxx:74
-msgid "Profile Settings"
-msgstr "Nastavení profilu"
-
 #: src/MainWindow.cxx:77
 msgid "Enable All Messages"
 msgstr "Povolit všechny zprávy"
@@ -345,14 +531,6 @@ msgstr "Povolit všechny zprávy"
 #: src/MainWindow.cxx:79
 msgid "Dock in System Tray"
 msgstr "Ukotvit v oznamovací oblasti panelu"
-
-#: src/MainWindow.cxx:116
-msgid "Start Backup"
-msgstr "Spustit zálohování"
-
-#: src/MainWindow.cxx:120
-msgid "Cancel Backup"
-msgstr "Zrušit zálohování"
 
 #: src/MainWindow.cxx:143
 msgid "There is a backup in progress. Do you want to abort it?"
@@ -429,112 +607,3 @@ msgstr "17,1 GB DVD"
 #: src/SettingsDialog.cxx:28
 msgid "custom"
 msgstr "vlastní"
-
-#~ msgid "&File"
-#~ msgstr "&Datei"
-
-#~ msgid "&Settings"
-#~ msgstr "&Einstellungen"
-
-#~ msgid "Target"
-#~ msgstr "Ziel"
-
-#~ msgid "Folder:"
-#~ msgstr "Verzeichnis:"
-
-#~ msgid "Medium:"
-#~ msgstr "Medium:"
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "Size:"
-#~ msgstr "Größe:"
-
-#~ msgid "0 MB"
-#~ msgstr "0 MB"
-
-#~ msgid "Totals"
-#~ msgstr "Summen"
-
-#~ msgid "Files:"
-#~ msgstr "Dateien:"
-
-#~ msgid "MB"
-#~ msgstr "MB"
-
-#~ msgid "Duration:"
-#~ msgstr "Dauer:"
-
-#~ msgid "00:00:00"
-#~ msgstr "00:00:00"
-
-#~ msgid "Warnings:"
-#~ msgstr "Warnungen:"
-
-#~ msgid "Progress:"
-#~ msgstr "Fortschritt:"
-
-#~ msgid "Archive Prefix (empty for default):"
-#~ msgstr "Archiv Präfix (leer für Standardvorgabe):"
-
-#~ msgid "Maximum Archive Size:"
-#~ msgstr "Maximale Archiv Teil Größe:"
-
-#~ msgid "Number of backups to keep"
-#~ msgstr "Anzahl der Sicherungen die erhalten bleiben"
-
-#~ msgid ""
-#~ "How many backups shall be kept in the target directory before older ones "
-#~ "will be deleted"
-#~ msgstr ""
-#~ "Wieviele Sicherungen sollen im Zielverzeichnis erhalten bleiben, bevor "
-#~ "ältere gelöscht werden"
-
-#~ msgid ""
-#~ "Uncheck if you want to avoid a confirmation dialog to change the medium "
-#~ "when a slice was finished"
-#~ msgstr ""
-#~ "Deaktivieren, um den Bestätigungs Dialog zum Mediumwechsel zu vermeiden, "
-#~ "wenn ein Archivteil abgeschlossen wurde."
-
-#~ msgid "Target needs media change"
-#~ msgstr "Ziel benötigt Medienwechsel"
-
-#~ msgid ""
-#~ "Uncheck if you want to avoid compressing files or archive slices at all"
-#~ msgstr ""
-#~ "Deaktivieren, wenn das Komprimieren von Dateien oder Archivteilen "
-#~ "komplett unterbunden werden soll"
-
-#~ msgid "Compress Files"
-#~ msgstr "Komprimiere Dateien"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Cancel"
-#~ msgstr "Abbrechen"
-
-#~ msgid "upload FAILED"
-#~ msgstr "Kopieren FEHLGESCHLAGEN"
-
-#~ msgid "Do you want to retry the upload?"
-#~ msgstr "Wollen sie das Kopieren nochmals versuchen?"
-
-#~ msgid ""
-#~ "Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
-#~ "version. Skipping."
-#~ msgstr ""
-#~ "Leider ist die Datei '%1' (%2) zu groß und kann mit dieser KDE Version "
-#~ "nicht archiviert werden. Überspringe sie."
-
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr "Martin Koller"
-
-#~ msgid ""
-#~ "_: EMAIL OF TRANSLATORS\n"
-#~ "Your emails"
-#~ msgstr "kollix@aon.at"

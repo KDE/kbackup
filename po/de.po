@@ -2,15 +2,14 @@
 # translation of kbackup.po to
 # This file is put in the public domain.
 #
-# Martin Koller <kollix@aon.at>, 2006 - 2009.
-# Martin Koller <m.koller@surfeu.at>, 2009.
+# Martin Koller <kollix@aon.at>, 2006 - 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2010-05-15 19:42+0200\n"
+"POT-Creation-Date: 2010-05-30 11:28+0200\n"
 "PO-Revision-Date: 2009-05-13 19:36+0200\n"
-"Last-Translator: Martin Koller <m.koller@surfeu.at>\n"
+"Last-Translator: Martin Koller <kollix@aon.at>\n"
 "Language-Team: Deutsch\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,12 +17,212 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: de_AT\n"
 
-#: po/rc.cpp:1
+#. i18n: file: src/kbackupui.rc:4
+#. i18n: ectx: Menu (file)
+#: po/rc.cpp:3
+msgid "&File"
+msgstr "&Datei"
+
+#. i18n: file: src/kbackupui.rc:12
+#. i18n: ectx: Menu (settings)
+#: po/rc.cpp:6
+msgid "&Settings"
+msgstr "&Einstellungen"
+
+#. i18n: file: src/MainWidgetBase.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: po/rc.cpp:9 src/main.cxx:26
+msgid "KBackup"
+msgstr "KBackup"
+
+#. i18n: file: src/MainWidgetBase.ui:40
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: po/rc.cpp:12 src/MainWindow.cxx:116
+msgid "Start Backup"
+msgstr "Starte Sicherung"
+
+#. i18n: file: src/MainWidgetBase.ui:68
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: po/rc.cpp:15 src/MainWindow.cxx:120
+msgid "Cancel Backup"
+msgstr "Sicherung Abbrechen"
+
+#. i18n: file: src/MainWidgetBase.ui:89
+#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
+#: po/rc.cpp:18
+msgid "Target"
+msgstr "Ziel"
+
+#. i18n: file: src/MainWidgetBase.ui:95
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: po/rc.cpp:21
+msgid "Folder:"
+msgstr "Verzeichnis:"
+
+#. i18n: file: src/MainWidgetBase.ui:111
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: po/rc.cpp:24
+msgid "Medium:"
+msgstr "Medium:"
+
+#. i18n: file: src/MainWidgetBase.ui:133
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#. i18n: file: src/MainWidgetBase.ui:226
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: file: src/MainWidgetBase.ui:255
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: po/rc.cpp:27 po/rc.cpp:42 po/rc.cpp:48
+msgid "0"
+msgstr "0"
+
+#. i18n: file: src/MainWidgetBase.ui:153
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: file: src/MainWidgetBase.ui:245
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: po/rc.cpp:30 po/rc.cpp:45
+msgid "Size:"
+msgstr "Größe:"
+
+#. i18n: file: src/MainWidgetBase.ui:169
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: po/rc.cpp:33
+msgid "0 MB"
+msgstr "0 MB"
+
+#. i18n: file: src/MainWidgetBase.ui:204
+#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox2)
+#: po/rc.cpp:36
+msgid "Totals"
+msgstr "Summen"
+
+#. i18n: file: src/MainWidgetBase.ui:216
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: po/rc.cpp:39
+msgid "Files:"
+msgstr "Dateien:"
+
+#. i18n: file: src/MainWidgetBase.ui:268
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#. i18n: file: src/SettingsDialog.ui:51
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: po/rc.cpp:51 po/rc.cpp:78
+msgid "MB"
+msgstr "MB"
+
+#. i18n: file: src/MainWidgetBase.ui:303
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: po/rc.cpp:54
+msgid "Duration:"
+msgstr "Dauer:"
+
+#. i18n: file: src/MainWidgetBase.ui:313
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: po/rc.cpp:57
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: file: src/MainWidgetBase.ui:355
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: po/rc.cpp:60
+msgid "Warnings:"
+msgstr "Warnungen:"
+
+#. i18n: file: src/MainWidgetBase.ui:381
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: po/rc.cpp:63
+msgid "Progress:"
+msgstr "Fortschritt:"
+
+#. i18n: file: src/SettingsDialog.ui:15
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: po/rc.cpp:66 src/MainWindow.cxx:74
+msgid "Profile Settings"
+msgstr "Profil Einstellungen"
+
+#. i18n: file: src/SettingsDialog.ui:21
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: po/rc.cpp:69
+msgid "Archive Prefix (empty for default):"
+msgstr "Archiv Präfix (leer für Standardvorgabe):"
+
+#. i18n: file: src/SettingsDialog.ui:34
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: po/rc.cpp:72
+msgid "Maximum Archive Size:"
+msgstr "Maximale Archiv Teil Größe:"
+
+#. i18n: file: src/SettingsDialog.ui:48
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#. i18n: file: src/SettingsDialog.ui:81
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#: po/rc.cpp:75 po/rc.cpp:87 src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
+msgid "unlimited"
+msgstr "unlimitiert"
+
+#. i18n: file: src/SettingsDialog.ui:71
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: po/rc.cpp:81
+msgid "Number of backups to keep"
+msgstr "Anzahl der Sicherungen die erhalten bleiben"
+
+#. i18n: file: src/SettingsDialog.ui:78
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: po/rc.cpp:84
+msgid ""
+"How many backups shall be kept in the target directory before older ones "
+"will be deleted"
+msgstr ""
+"Wieviele Sicherungen sollen im Zielverzeichnis erhalten bleiben, bevor "
+"ältere gelöscht werden"
+
+#. i18n: file: src/SettingsDialog.ui:93
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: po/rc.cpp:90
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Deaktivieren, um den Bestätigungs Dialog zum Mediumwechsel zu vermeiden, "
+"wenn ein Archivteil abgeschlossen wurde."
+
+#. i18n: file: src/SettingsDialog.ui:96
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: po/rc.cpp:93
+msgid "Target needs media change"
+msgstr "Ziel benötigt Medienwechsel"
+
+#. i18n: file: src/SettingsDialog.ui:103
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: po/rc.cpp:96
+msgid "Uncheck if you want to avoid compressing files or archive slices at all"
+msgstr ""
+"Deaktivieren, wenn das Komprimieren von Dateien oder Archivteilen komplett "
+"unterbunden werden soll"
+
+#. i18n: file: src/SettingsDialog.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: po/rc.cpp:99
+msgid "Compress Files"
+msgstr "Komprimiere Dateien"
+
+#. i18n: file: src/SettingsDialog.ui:147
+#. i18n: ectx: property (text), widget (QPushButton, ok)
+#: po/rc.cpp:102
+msgid "OK"
+msgstr "OK"
+
+#. i18n: file: src/SettingsDialog.ui:154
+#. i18n: ectx: property (text), widget (QPushButton, cancel)
+#: po/rc.cpp:105
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: po/rc.cpp:106
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Martin Koller"
 
-#: po/rc.cpp:2
+#: po/rc.cpp:107
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kollix@aon.at"
@@ -233,10 +432,6 @@ msgstr "...komprimiere Datei %1"
 msgid "WARNING:"
 msgstr "WARNUNG:"
 
-#: src/main.cxx:26
-msgid "KBackup"
-msgstr "KBackup"
-
 #: src/main.cxx:27
 msgid "An easy to use backup program"
 msgstr "Ein einfach zu bedienendes Sicherungs Programm"
@@ -311,10 +506,6 @@ msgstr ""
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Konnte das Profil '%1' nicht laden: %2"
 
-#: src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
-msgid "unlimited"
-msgstr "unlimitiert"
-
 #: src/MainWindow.cxx:58
 msgid "New Profile"
 msgstr "Neues Profil"
@@ -331,10 +522,6 @@ msgstr "Speichere Profil"
 msgid "Save Profile As..."
 msgstr "Speichere Profil unter..."
 
-#: src/MainWindow.cxx:74
-msgid "Profile Settings"
-msgstr "Profil Einstellungen"
-
 #: src/MainWindow.cxx:77
 msgid "Enable All Messages"
 msgstr "Alle Meldungen erlauben"
@@ -342,14 +529,6 @@ msgstr "Alle Meldungen erlauben"
 #: src/MainWindow.cxx:79
 msgid "Dock in System Tray"
 msgstr "Im Systembereich der Kontrollleiste andocken"
-
-#: src/MainWindow.cxx:116
-msgid "Start Backup"
-msgstr "Starte Sicherung"
-
-#: src/MainWindow.cxx:120
-msgid "Cancel Backup"
-msgstr "Sicherung Abbrechen"
 
 #: src/MainWindow.cxx:143
 msgid "There is a backup in progress. Do you want to abort it?"
@@ -426,112 +605,3 @@ msgstr "17,1 GB DVD"
 #: src/SettingsDialog.cxx:28
 msgid "custom"
 msgstr "benutzerdefiniert"
-
-#~ msgid "&File"
-#~ msgstr "&Datei"
-
-#~ msgid "&Settings"
-#~ msgstr "&Einstellungen"
-
-#~ msgid "Target"
-#~ msgstr "Ziel"
-
-#~ msgid "Folder:"
-#~ msgstr "Verzeichnis:"
-
-#~ msgid "Medium:"
-#~ msgstr "Medium:"
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "Size:"
-#~ msgstr "Größe:"
-
-#~ msgid "0 MB"
-#~ msgstr "0 MB"
-
-#~ msgid "Totals"
-#~ msgstr "Summen"
-
-#~ msgid "Files:"
-#~ msgstr "Dateien:"
-
-#~ msgid "MB"
-#~ msgstr "MB"
-
-#~ msgid "Duration:"
-#~ msgstr "Dauer:"
-
-#~ msgid "00:00:00"
-#~ msgstr "00:00:00"
-
-#~ msgid "Warnings:"
-#~ msgstr "Warnungen:"
-
-#~ msgid "Progress:"
-#~ msgstr "Fortschritt:"
-
-#~ msgid "Archive Prefix (empty for default):"
-#~ msgstr "Archiv Präfix (leer für Standardvorgabe):"
-
-#~ msgid "Maximum Archive Size:"
-#~ msgstr "Maximale Archiv Teil Größe:"
-
-#~ msgid "Number of backups to keep"
-#~ msgstr "Anzahl der Sicherungen die erhalten bleiben"
-
-#~ msgid ""
-#~ "How many backups shall be kept in the target directory before older ones "
-#~ "will be deleted"
-#~ msgstr ""
-#~ "Wieviele Sicherungen sollen im Zielverzeichnis erhalten bleiben, bevor "
-#~ "ältere gelöscht werden"
-
-#~ msgid ""
-#~ "Uncheck if you want to avoid a confirmation dialog to change the medium "
-#~ "when a slice was finished"
-#~ msgstr ""
-#~ "Deaktivieren, um den Bestätigungs Dialog zum Mediumwechsel zu vermeiden, "
-#~ "wenn ein Archivteil abgeschlossen wurde."
-
-#~ msgid "Target needs media change"
-#~ msgstr "Ziel benötigt Medienwechsel"
-
-#~ msgid ""
-#~ "Uncheck if you want to avoid compressing files or archive slices at all"
-#~ msgstr ""
-#~ "Deaktivieren, wenn das Komprimieren von Dateien oder Archivteilen "
-#~ "komplett unterbunden werden soll"
-
-#~ msgid "Compress Files"
-#~ msgstr "Komprimiere Dateien"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Cancel"
-#~ msgstr "Abbrechen"
-
-#~ msgid "upload FAILED"
-#~ msgstr "Kopieren FEHLGESCHLAGEN"
-
-#~ msgid "Do you want to retry the upload?"
-#~ msgstr "Wollen sie das Kopieren nochmals versuchen?"
-
-#~ msgid ""
-#~ "Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
-#~ "version. Skipping."
-#~ msgstr ""
-#~ "Leider ist die Datei '%1' (%2) zu groß und kann mit dieser KDE Version "
-#~ "nicht archiviert werden. Überspringe sie."
-
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr "Martin Koller"
-
-#~ msgid ""
-#~ "_: EMAIL OF TRANSLATORS\n"
-#~ "Your emails"
-#~ msgstr "kollix@aon.at"

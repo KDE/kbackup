@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2009-05-14 13:27+0200\n"
+"POT-Creation-Date: 2010-05-30 11:28+0200\n"
 "PO-Revision-Date: 2009-05-14 16:55+0100\n"
 "Last-Translator: Mikael Martinsson <mikael.martinsson@jamtnet.se>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -32,22 +32,19 @@ msgstr "In&ställningar"
 
 #. i18n: file: src/MainWidgetBase.ui:15
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: po/rc.cpp:9
-#: src/main.cxx:26
+#: po/rc.cpp:9 src/main.cxx:26
 msgid "KBackup"
 msgstr "KBackup"
 
 #. i18n: file: src/MainWidgetBase.ui:40
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: po/rc.cpp:12
-#: src/MainWindow.cxx:116
+#: po/rc.cpp:12 src/MainWindow.cxx:116
 msgid "Start Backup"
 msgstr "Starta backup"
 
 #. i18n: file: src/MainWidgetBase.ui:68
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: po/rc.cpp:15
-#: src/MainWindow.cxx:120
+#: po/rc.cpp:15 src/MainWindow.cxx:120
 msgid "Cancel Backup"
 msgstr "Avbryt backup"
 
@@ -75,9 +72,7 @@ msgstr "Media:"
 #. i18n: ectx: property (text), widget (QLabel, totalFiles)
 #. i18n: file: src/MainWidgetBase.ui:255
 #. i18n: ectx: property (text), widget (QLabel, totalSize)
-#: po/rc.cpp:27
-#: po/rc.cpp:42
-#: po/rc.cpp:48
+#: po/rc.cpp:27 po/rc.cpp:42 po/rc.cpp:48
 msgid "0"
 msgstr "0"
 
@@ -85,8 +80,7 @@ msgstr "0"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: file: src/MainWidgetBase.ui:245
 #. i18n: ectx: property (text), widget (QLabel, textLabel6)
-#: po/rc.cpp:30
-#: po/rc.cpp:45
+#: po/rc.cpp:30 po/rc.cpp:45
 msgid "Size:"
 msgstr "Storlek:"
 
@@ -112,8 +106,7 @@ msgstr "Filer:"
 #. i18n: ectx: property (text), widget (QLabel, totalSize_2)
 #. i18n: file: src/SettingsDialog.ui:51
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
-#: po/rc.cpp:51
-#: po/rc.cpp:78
+#: po/rc.cpp:51 po/rc.cpp:78
 msgid "MB"
 msgstr "MB"
 
@@ -143,8 +136,7 @@ msgstr "Framsteg:"
 
 #. i18n: file: src/SettingsDialog.ui:15
 #. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
-#: po/rc.cpp:66
-#: src/MainWindow.cxx:74
+#: po/rc.cpp:66 src/MainWindow.cxx:74
 msgid "Profile Settings"
 msgstr "Profilinställningar"
 
@@ -164,10 +156,7 @@ msgstr "Maximal storlek på arkivdelarna: "
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
 #. i18n: file: src/SettingsDialog.ui:81
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
-#: po/rc.cpp:75
-#: po/rc.cpp:87
-#: src/MainWidget.cxx:149
-#: src/SettingsDialog.cxx:21
+#: po/rc.cpp:75 po/rc.cpp:87 src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
 msgid "unlimited"
 msgstr "obegränsad"
 
@@ -180,14 +169,21 @@ msgstr "Antal backuper som ska sparas"
 #. i18n: file: src/SettingsDialog.ui:78
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
 #: po/rc.cpp:84
-msgid "How many backups shall be kept in the target directory before older ones will be deleted"
-msgstr "Hur många backuper ska sparas i målmappen innan äldre backuper tas bort"
+msgid ""
+"How many backups shall be kept in the target directory before older ones "
+"will be deleted"
+msgstr ""
+"Hur många backuper ska sparas i målmappen innan äldre backuper tas bort"
 
 #. i18n: file: src/SettingsDialog.ui:93
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
 #: po/rc.cpp:90
-msgid "Uncheck if you want to avoid a confirmation dialog to change the medium when a slice was finished"
-msgstr "Avmarkera om du inte vill ha bekräftelse om att byta media när delar är färdiga"
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Avmarkera om du inte vill ha bekräftelse om att byta media när delar är "
+"färdiga"
 
 #. i18n: file: src/SettingsDialog.ui:96
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
@@ -229,15 +225,15 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mikael.martinsson@jamtnet.se"
 
-#: src/Archiver.cxx:250
+#: src/Archiver.cxx:253
 msgid "Nothing selected for backup"
 msgstr "Inget är valt för backup"
 
-#: src/Archiver.cxx:256
+#: src/Archiver.cxx:260
 msgid "The target dir is not valid"
 msgstr "Målkatalogen är inte giltig"
 
-#: src/Archiver.cxx:268
+#: src/Archiver.cxx:272
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
@@ -247,7 +243,7 @@ msgstr ""
 "\n"
 "Ska jag skapa den?"
 
-#: src/Archiver.cxx:273
+#: src/Archiver.cxx:277
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
@@ -255,31 +251,32 @@ msgstr ""
 "Kunde inte skapa katalogen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:282
+#: src/Archiver.cxx:286
 msgid "The target dir does not exist"
 msgstr "Målkatalogen existerar inte"
 
-#: src/Archiver.cxx:362
+#: src/Archiver.cxx:356
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...reducerar antalt max sparade arkiv till %1"
 
-#: src/Archiver.cxx:396
+#: src/Archiver.cxx:413
 msgid "...deleting %1"
 msgstr "...tar bort %1"
 
-#: src/Archiver.cxx:405
-msgid "fetching directory listing of target failed. Can not reduce kept archives."
+#: src/Archiver.cxx:439
+msgid ""
+"fetching directory listing of target failed. Can not reduce kept archives."
 msgstr "hämtar lista på felande mål. Kan inte reducera antal sparade arkiv."
 
-#: src/Archiver.cxx:417
+#: src/Archiver.cxx:451
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr "!! Säkerhetskopieringen klar <b>men filer hoppades över</b> !!"
 
-#: src/Archiver.cxx:419
+#: src/Archiver.cxx:453
 msgid "-- Backup successfully finished --"
 msgstr "-- Säkerhetskopieringen avslutades korrekt --"
 
-#: src/Archiver.cxx:425
+#: src/Archiver.cxx:459
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -287,7 +284,7 @@ msgstr ""
 "Säkerhetskopieringen avslutades men det finns filer som hoppades över.\n"
 "Vad vill du göra nu?"
 
-#: src/Archiver.cxx:427
+#: src/Archiver.cxx:461
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -295,55 +292,51 @@ msgstr ""
 "Säkerhetskopieringen avslutades korrekt.\n"
 "Vad vill du göra nu?"
 
-#: src/Archiver.cxx:438
+#: src/Archiver.cxx:478
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Totalt:  Filer: %1,  Storlek: %2 MB, Varaktighet: %3"
 
-#: src/Archiver.cxx:449
+#: src/Archiver.cxx:489
 msgid "...Backup aborted!"
 msgstr "...Säkerhetskopieringen avbröts!"
 
-#: src/Archiver.cxx:477
+#: src/Archiver.cxx:517
 msgid "Backup cancelled"
 msgstr "Säkerhetskopieringen avbröts"
 
-#: src/Archiver.cxx:493
+#: src/Archiver.cxx:534
 msgid "...finished slice %1"
 msgstr "... del %1 är klar"
 
-#: src/Archiver.cxx:513
+#: src/Archiver.cxx:551
 msgid "...uploading archive %1 to %2"
 msgstr "...laddar upp arktivet %1 till %2"
 
-#: src/Archiver.cxx:524
-msgid "upload FAILED"
-msgstr "uppladdningen MISSLYCKADES"
-
-#: src/Archiver.cxx:533
+#: src/Archiver.cxx:568
 msgid "How shall we proceed with the upload?"
 msgstr "Hur ska vi fortsätta med uppladdningen?"
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:569
 msgid "Retry"
 msgstr "Prova igen"
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:569
 msgid "Change Target"
 msgstr "Ändra mål"
 
-#: src/Archiver.cxx:633
+#: src/Archiver.cxx:666
 msgid "The script '%1' could not be started."
 msgstr "Skriptet '%1' kunde inte startas."
 
-#: src/Archiver.cxx:669
+#: src/Archiver.cxx:701
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Mediat är fullt. Var god och byt till media nr: %1"
 
-#: src/Archiver.cxx:701
+#: src/Archiver.cxx:733
 msgid "The file '%1' can not be opened for writing."
 msgstr "Filen '%1' kan inte öppnas för skrivning."
 
-#: src/Archiver.cxx:705
+#: src/Archiver.cxx:737
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -353,7 +346,7 @@ msgstr ""
 "\n"
 "Vill du försöka igen?"
 
-#: src/Archiver.cxx:731
+#: src/Archiver.cxx:764
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -361,11 +354,11 @@ msgstr ""
 "Kunde inte hämta information om katalogen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:741
+#: src/Archiver.cxx:774
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Katalogen '%1' är inte läsbar. Hoppar över."
 
-#: src/Archiver.cxx:757
+#: src/Archiver.cxx:790
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -373,12 +366,11 @@ msgstr ""
 "Kunde inte skriva katalog '%1' till arkivet.\n"
 "Kanske är mediat fullt."
 
-#: src/Archiver.cxx:796
+#: src/Archiver.cxx:831
 msgid "File '%1' is not readable. Skipping."
 msgstr "Filen '%1' är inte läsbar. Hoppar över."
 
-#: src/Archiver.cxx:851
-#: src/Archiver.cxx:920
+#: src/Archiver.cxx:886 src/Archiver.cxx:966
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -386,24 +378,29 @@ msgstr ""
 "Kan inte hämta information om filen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:863
-#: src/Archiver.cxx:877
-#: src/Archiver.cxx:891
-#: src/Archiver.cxx:942
-#: src/Archiver.cxx:961
-#: src/Archiver.cxx:1003
+#: src/Archiver.cxx:898 src/Archiver.cxx:923 src/Archiver.cxx:937
+#: src/Archiver.cxx:988 src/Archiver.cxx:1017 src/Archiver.cxx:1065
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Kunde inte skriva till arkivet. Kanske är mediat fullt."
 
-#: src/Archiver.cxx:931
+#: src/Archiver.cxx:913 src/Archiver.cxx:1008
+#, fuzzy
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"Kunde inte läsa filen: %1\n"
+"Operativsystemet lämnar följande rapport: %2"
+
+#: src/Archiver.cxx:977
 msgid "Could not open file '%1' for reading."
 msgstr "Kunde inte öppna filen '%1' för läsning."
 
-#: src/Archiver.cxx:984
+#: src/Archiver.cxx:1041
 msgid "...archiving file %1"
 msgstr "...arkiverar filen %1"
 
-#: src/Archiver.cxx:1017
+#: src/Archiver.cxx:1079
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -411,7 +408,7 @@ msgstr ""
 "Kunde inte läsa filen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:1032
+#: src/Archiver.cxx:1094
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -419,15 +416,15 @@ msgstr ""
 "Kunde inte skapa en temporär fil för komprimering: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:1057
+#: src/Archiver.cxx:1119
 msgid "Could not write to temporary file"
 msgstr "Kunde inte skriva till en temporär fil"
 
-#: src/Archiver.cxx:1079
+#: src/Archiver.cxx:1141
 msgid "...compressing file %1"
 msgstr "...komprimerar filen %1"
 
-#: src/Archiver.cxx:1124
+#: src/Archiver.cxx:1186
 msgid "WARNING:"
 msgstr "VARNING:"
 
@@ -436,7 +433,8 @@ msgid "An easy to use backup program"
 msgstr "Ett program för backup som är enkelt att använda"
 
 #: src/main.cxx:28
-msgid "(c) 2006 - 2009 Martin Koller"
+#, fuzzy
+msgid "(c) 2006 - 2010 Martin Koller"
 msgstr "(c) 2006 - 2009 Martin Koller"
 
 #: src/main.cxx:33
@@ -447,28 +445,63 @@ msgstr "Martin Koller"
 msgid "Developer"
 msgstr "Utvecklare"
 
-#: src/main.cxx:36
+#: src/main.cxx:39
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Start with given profile"
 msgstr "Starta med angiven profil"
 
-#: src/main.cxx:37
+#: src/main.cxx:43
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Script to run after finishing one archive slice"
 msgstr "Skript att köra efter avslutad del av arkivet"
 
-#: src/main.cxx:38
-msgid "Automatically run the backup with the given profile and terminate when done."
-msgstr "Kör automatiskt backupen med den givna profilen och avsluta när den är färdig"
+#: src/main.cxx:47
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
+msgid ""
+"Automatically run the backup with the given profile\n"
+"and terminate when done."
+msgstr ""
+"Kör automatiskt backupen med den givna profilen och avsluta när den är färdig"
 
-#: src/main.cxx:40
-msgid "Automatically run the backup with the given profile in the background (without showing a window) and terminate when done."
-msgstr "Kör backup med den givna profilen i bakgrunden (utan att visa ett fönster) och avsluta när backupen är färdig."
+#: src/main.cxx:52
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
+msgid ""
+"Automatically run the backup with the given profile\n"
+"in the background (without showing a window)\n"
+"and terminate when done."
+msgstr ""
+"Kör backup med den givna profilen i bakgrunden (utan att visa ett fönster) "
+"och avsluta när backupen är färdig."
 
-#: src/main.cxx:43
-msgid "In autobg mode be verbose and print every single filename during backup"
-msgstr "I autobg-läget ge feedback och skriv ut varje enskilt filnamn under backupen"
+#: src/main.cxx:58
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
+msgid ""
+"In autobg mode be verbose and print every\n"
+"single filename during backup"
+msgstr ""
+"I autobg-läget ge feedback och skriv ut varje enskilt filnamn under backupen"
 
-#: src/main.cxx:96
-#: src/MainWindow.cxx:211
+#: src/main.cxx:111 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Kunde inte öppna profilen '%1' för läsning: %2"
 
@@ -500,14 +533,11 @@ msgstr "Minimera till aktivitetsfältet"
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "En backup pågår. Vill du avbryta den?"
 
-#: src/MainWindow.cxx:190
-#: src/MainWindow.cxx:242
-#: src/MainWindow.cxx:259
+#: src/MainWindow.cxx:190 src/MainWindow.cxx:242 src/MainWindow.cxx:259
 msgid "KBackup Profile (*.kbp)"
 msgstr "KBackup profil (*.kbp)"
 
-#: src/MainWindow.cxx:214
-#: src/MainWindow.cxx:285
+#: src/MainWindow.cxx:214 src/MainWindow.cxx:285
 msgid "Open failed"
 msgstr "Öppnandet misslyckades"
 
@@ -536,17 +566,14 @@ msgstr ""
 "%3"
 
 #: src/Selector.cxx:157
-#: src/XXX/Selector.cxx:118
 msgid "Name"
 msgstr "Namn"
 
 #: src/Selector.cxx:158
-#: src/XXX/Selector.cxx:119
 msgid "Size"
 msgstr "Storlek"
 
 #: src/Selector.cxx:159
-#: src/XXX/Selector.cxx:120
 msgid "Last Modified"
 msgstr "Senast ändrad"
 
@@ -578,20 +605,25 @@ msgstr "17.1 GB DVD"
 msgid "custom"
 msgstr "annat"
 
+#~ msgid "upload FAILED"
+#~ msgstr "uppladdningen MISSLYCKADES"
+
 #~ msgid "Do you want to retry the upload?"
 #~ msgstr "Vill du försöka ladda upp igen?"
+
 #~ msgid ""
 #~ "Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
 #~ "version. Skipping."
 #~ msgstr ""
 #~ "Tyvärr, filen %1 (%2) är för stor och kan inte arkiveras med den här "
 #~ "versionen av KDE. Hoppar över."
+
 #~ msgid ""
 #~ "_: NAME OF TRANSLATORS\n"
 #~ "Your names"
 #~ msgstr "Mikael Martinsson"
+
 #~ msgid ""
 #~ "_: EMAIL OF TRANSLATORS\n"
 #~ "Your emails"
 #~ msgstr "mikael.martinsson@jamtnet.se"
-

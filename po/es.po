@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2009-05-14 13:27+0200\n"
+"POT-Creation-Date: 2010-05-30 11:28+0200\n"
 "PO-Revision-Date: 2007-10-06 22:32+0200\n"
 "Last-Translator: gerardo <gejobj@gmail.com>\n"
 "Language-Team: español <es@li.org>\n"
@@ -228,22 +228,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/Archiver.cxx:250
+#: src/Archiver.cxx:253
 msgid "Nothing selected for backup"
 msgstr "Nada seleccionado para copia de seguridad"
 
-#: src/Archiver.cxx:256
+#: src/Archiver.cxx:260
 msgid "The target dir is not valid"
 msgstr "El directorio no es válido"
 
-#: src/Archiver.cxx:268
+#: src/Archiver.cxx:272
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
 "Shall I create it?"
 msgstr ""
 
-#: src/Archiver.cxx:273
+#: src/Archiver.cxx:277
 #, fuzzy
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -252,34 +252,34 @@ msgstr ""
 "No se pudo obtener información del directorio: %1\n"
 "El sistema operativo reportó: %2"
 
-#: src/Archiver.cxx:282
+#: src/Archiver.cxx:286
 #, fuzzy
 msgid "The target dir does not exist"
 msgstr "El directorio no es válido"
 
-#: src/Archiver.cxx:362
+#: src/Archiver.cxx:356
 msgid "...reducing number of kept archives to max. %1"
 msgstr ""
 
-#: src/Archiver.cxx:396
+#: src/Archiver.cxx:413
 msgid "...deleting %1"
 msgstr ""
 
-#: src/Archiver.cxx:405
+#: src/Archiver.cxx:439
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
 
-#: src/Archiver.cxx:417
+#: src/Archiver.cxx:451
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 "¡¡ Copia de seguridad finalizada <b>pero los ficheros fueron ignorados</b> !!"
 
-#: src/Archiver.cxx:419
+#: src/Archiver.cxx:453
 msgid "-- Backup successfully finished --"
 msgstr "-- Copia de seguridad finalizada correctamente --"
 
-#: src/Archiver.cxx:425
+#: src/Archiver.cxx:459
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -287,7 +287,7 @@ msgstr ""
 "La copia de seguridad terminó pero los archivos fueron ignorados.\n"
 "¿Qué quieres hacer ahora?"
 
-#: src/Archiver.cxx:427
+#: src/Archiver.cxx:461
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -295,55 +295,51 @@ msgstr ""
 "La copia de seguridad ha terminado satisfactoriamente.\n"
 "¿Qué quieres hacer ahora?"
 
-#: src/Archiver.cxx:438
+#: src/Archiver.cxx:478
 #, fuzzy
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr ""
 "Archivos: %1 Tamaño: %2 MB\n"
 "%3"
 
-#: src/Archiver.cxx:449
+#: src/Archiver.cxx:489
 msgid "...Backup aborted!"
 msgstr "...Copia de seguridad anulada!"
 
-#: src/Archiver.cxx:477
+#: src/Archiver.cxx:517
 msgid "Backup cancelled"
 msgstr "Copia de seguridad cancelada"
 
-#: src/Archiver.cxx:493
+#: src/Archiver.cxx:534
 msgid "...finished slice %1"
 msgstr "...terminada parte %1"
 
-#: src/Archiver.cxx:513
+#: src/Archiver.cxx:551
 msgid "...uploading archive %1 to %2"
 msgstr "...actualizando archivo %1 a %2"
 
-#: src/Archiver.cxx:524
-msgid "upload FAILED"
-msgstr ""
-
-#: src/Archiver.cxx:533
+#: src/Archiver.cxx:568
 msgid "How shall we proceed with the upload?"
 msgstr ""
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:569
 msgid "Retry"
 msgstr ""
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:569
 #, fuzzy
 msgid "Change Target"
 msgstr "Objetivo"
 
-#: src/Archiver.cxx:633
+#: src/Archiver.cxx:666
 msgid "The script '%1' could not be started."
 msgstr "El script '%1' no puede ser iniciado."
 
-#: src/Archiver.cxx:669
+#: src/Archiver.cxx:701
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "El medio está lleno. Por favor, inserte medio Nr. %1"
 
-#: src/Archiver.cxx:701
+#: src/Archiver.cxx:733
 #, fuzzy
 msgid "The file '%1' can not be opened for writing."
 msgstr ""
@@ -351,7 +347,7 @@ msgstr ""
 "\n"
 "¿Quiere intentarlo de nuevo?"
 
-#: src/Archiver.cxx:705
+#: src/Archiver.cxx:737
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -361,7 +357,7 @@ msgstr ""
 "\n"
 "¿Quiere intentarlo de nuevo?"
 
-#: src/Archiver.cxx:731
+#: src/Archiver.cxx:764
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -369,11 +365,11 @@ msgstr ""
 "No se pudo obtener información del directorio: %1\n"
 "El sistema operativo reportó: %2"
 
-#: src/Archiver.cxx:741
+#: src/Archiver.cxx:774
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "No se puede leer el directorio '%1'. Ignorándolo."
 
-#: src/Archiver.cxx:757
+#: src/Archiver.cxx:790
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -381,11 +377,11 @@ msgstr ""
 "No se puede escribir el directorio '%1' en el archivo.\n"
 "Quizás el medio esté lleno."
 
-#: src/Archiver.cxx:796
+#: src/Archiver.cxx:831
 msgid "File '%1' is not readable. Skipping."
 msgstr "No se puede leer el fichero '%1'. Ignorándolo."
 
-#: src/Archiver.cxx:851 src/Archiver.cxx:920
+#: src/Archiver.cxx:886 src/Archiver.cxx:966
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -393,20 +389,29 @@ msgstr ""
 "No se puede obtener información del archivo: %1\n"
 "El sistema operativo reportó: %2"
 
-#: src/Archiver.cxx:863 src/Archiver.cxx:877 src/Archiver.cxx:891
-#: src/Archiver.cxx:942 src/Archiver.cxx:961 src/Archiver.cxx:1003
+#: src/Archiver.cxx:898 src/Archiver.cxx:923 src/Archiver.cxx:937
+#: src/Archiver.cxx:988 src/Archiver.cxx:1017 src/Archiver.cxx:1065
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "No se puede escribir el archivo. Quizás el medio esté lleno."
 
-#: src/Archiver.cxx:931
+#: src/Archiver.cxx:913 src/Archiver.cxx:1008
+#, fuzzy
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"No se puede leer el fichero: %1\n"
+"El sistema operativo reportó: %2"
+
+#: src/Archiver.cxx:977
 msgid "Could not open file '%1' for reading."
 msgstr "No se puede abrir el archivo '%1' para ser leído."
 
-#: src/Archiver.cxx:984
+#: src/Archiver.cxx:1041
 msgid "...archiving file %1"
 msgstr "...archivando fichero %1"
 
-#: src/Archiver.cxx:1017
+#: src/Archiver.cxx:1079
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -414,7 +419,7 @@ msgstr ""
 "No se puede leer el fichero: %1\n"
 "El sistema operativo reportó: %2"
 
-#: src/Archiver.cxx:1032
+#: src/Archiver.cxx:1094
 #, fuzzy
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -423,15 +428,15 @@ msgstr ""
 "No se puede leer el fichero: %1\n"
 "El sistema operativo reportó: %2"
 
-#: src/Archiver.cxx:1057
+#: src/Archiver.cxx:1119
 msgid "Could not write to temporary file"
 msgstr ""
 
-#: src/Archiver.cxx:1079
+#: src/Archiver.cxx:1141
 msgid "...compressing file %1"
 msgstr "...comprimiendo fichero %1"
 
-#: src/Archiver.cxx:1124
+#: src/Archiver.cxx:1186
 msgid "WARNING:"
 msgstr ""
 
@@ -440,7 +445,7 @@ msgid "An easy to use backup program"
 msgstr "Un programa de copias de seguridad fácil de usar"
 
 #: src/main.cxx:28
-msgid "(c) 2006 - 2009 Martin Koller"
+msgid "(c) 2006 - 2010 Martin Koller"
 msgstr ""
 
 #: src/main.cxx:33
@@ -451,33 +456,62 @@ msgstr ""
 msgid "Developer"
 msgstr "Desarrollador"
 
-#: src/main.cxx:36
+#: src/main.cxx:39
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Start with given profile"
 msgstr "Inicio con un perfil dado"
 
-#: src/main.cxx:37
+#: src/main.cxx:43
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid "Script to run after finishing one archive slice"
 msgstr "Script a ejecutar al terminar cada parte del archivo"
 
-#: src/main.cxx:38
+#: src/main.cxx:47
 #, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid ""
-"Automatically run the backup with the given profile and terminate when done."
+"Automatically run the backup with the given profile\n"
+"and terminate when done."
 msgstr ""
 "Ejecutar automáticamente la copia de seguridad y terminar cuando finalice. "
 "Funciona sólo si se ha especificado un perfil."
 
-#: src/main.cxx:40
+#: src/main.cxx:52
+#, fuzzy
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
 msgid ""
-"Automatically run the backup with the given profile in the background "
-"(without showing a window) and terminate when done."
+"Automatically run the backup with the given profile\n"
+"in the background (without showing a window)\n"
+"and terminate when done."
+msgstr ""
+"Ejecutar automáticamente la copia de seguridad y terminar cuando finalice. "
+"Funciona sólo si se ha especificado un perfil."
+
+#: src/main.cxx:58
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
+msgid ""
+"In autobg mode be verbose and print every\n"
+"single filename during backup"
 msgstr ""
 
-#: src/main.cxx:43
-msgid "In autobg mode be verbose and print every single filename during backup"
-msgstr ""
-
-#: src/main.cxx:96 src/MainWindow.cxx:211
+#: src/main.cxx:111 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "No se pudo abrir el perfil '%1' para leer: %2"
 
@@ -542,15 +576,15 @@ msgstr ""
 "Archivos: %1 Tamaño: %2 MB\n"
 "%3"
 
-#: src/Selector.cxx:157 src/XXX/Selector.cxx:118
+#: src/Selector.cxx:157
 msgid "Name"
 msgstr "Nombre"
 
-#: src/Selector.cxx:158 src/XXX/Selector.cxx:119
+#: src/Selector.cxx:158
 msgid "Size"
 msgstr "Tamaño"
 
-#: src/Selector.cxx:159 src/XXX/Selector.cxx:120
+#: src/Selector.cxx:159
 msgid "Last Modified"
 msgstr "Última modificación"
 
