@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 #include <qpointer.h>
 #include <QTimer>
 #include <QTime>
+#include <QDateTime>
 #include <QStringList>
 #include <kurl.h>
 #include <kio/copyjob.h>
@@ -59,12 +60,22 @@ class Archiver : public QObject
     void setKeptBackups(int num);
     int getKeptBackups() const { return numKeptBackups; }
 
+    // interval for a full backup instead differential backup; when 1 given == full backup
+    void setFullBackupInterval(int days);
+    int getFullBackupInterval() const { return fullBackupInterval; }
+
+    const QDateTime &getLastFullBackup() const { return lastFullBackup; }
+    const QDateTime &getLastBackup() const { return lastBackup; }
+
     // print every single file/dir in non-interactive mode
     void setVerbose(bool b) { verbose = b; }
 
     // loads the profile into the Archiver and returns includes/excludes lists
     // return true if loaded, false on file open error
     bool loadProfile(const QString &fileName, QStringList &includes, QStringList &excludes, QString &error);
+    void setLoadedProfile(const QString &fileName) { loadedProfile = fileName; }
+
+    bool saveProfile(const QString &fileName, const QStringList &includes, const QStringList &excludes, QString &error);
 
     // return true if the backup completed successfully, else false
     bool createArchive(const QStringList &includes, const QStringList &excludes);
@@ -81,6 +92,7 @@ class Archiver : public QObject
 
   public slots:
     void cancel();  // cancel a running creation
+    void setForceFullBackup(bool force = true);
 
   signals:
     void inProgress(bool runs);
@@ -93,6 +105,7 @@ class Archiver : public QObject
     void totalFilesChanged(int);
     void totalBytesChanged(KIO::filesize_t);
     void elapsedChanged(const QTime &);
+    void backupTypeChanged(bool incremental);
 
   private slots:
     void slotResult(KJob *);
@@ -113,6 +126,10 @@ class Archiver : public QObject
     bool getNextSlice();
 
     void runScript(const QString &mode);
+    void setIncrementalBackup(bool inc);
+
+    // returns true if the next backup will be an incremental one, false for a full backup
+    bool isIncrementalBackup() const { return !forceFullBackup && incrementalBackup; }
 
     static bool UDSlessThan(KIO::UDSEntry &left, KIO::UDSEntry &right);
 
@@ -123,6 +140,7 @@ class Archiver : public QObject
     QString archiveName;
     QString filePrefix;  // default = "backup"
     QStringList sliceList;
+    QString loadedProfile;
 
     KTar *archive;
     KIO::filesize_t totalBytes;
@@ -138,6 +156,12 @@ class Archiver : public QObject
 
     int numKeptBackups;
     KIO::UDSEntryList targetDirList;
+
+    QDateTime lastFullBackup;
+    QDateTime lastBackup;
+    int fullBackupInterval;
+    bool incrementalBackup;
+    bool forceFullBackup;
 
     KIO::filesize_t sliceBytes;
     KIO::filesize_t sliceCapacity;

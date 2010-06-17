@@ -1,6 +1,6 @@
 Summary: kbackup is an application which lets you back up your data in a simple, user friendly way.
 Name: kbackup
-Version: 0.6.4
+Version: 0.7
 Release: 1
 License: GPL
 Group: Applications/Archiving
@@ -13,6 +13,8 @@ whereby it uses an easy to use directory tree to select the things to back up.
  
 The program was designed to be very simple in its use
 so that it can be used by non-computer experts.
+
+It can do full- and incremental backups.
  
 The storage format is the well known TAR format, whereby the data
 is still stored in compressed format (bzip2 or gzip).

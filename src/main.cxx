@@ -57,6 +57,12 @@ int main(int argc, char **argv)
                                 "to add breaklines to keep the limit",
                                 "In autobg mode be verbose and print every\nsingle filename during backup"));
 
+  options.add("forceFull", ki18nc("TRANSLATORS: this is the description of a command line option. "
+                                  "If your translation is longer than 50 caracters, you are encouraged "
+                                  "to add breaklines to keep the limit",
+                                  "In auto/autobg mode force the backup to be a full backup\n"
+                                  "instead of acting on the profile settings"));
+
   KCmdLineArgs::addCmdLineOptions(options);
   KCmdLineArgs::init(argc, argv, &about);
 
@@ -94,6 +100,9 @@ int main(int argc, char **argv)
     if ( profile.length() )
       mainWin->loadProfile(profile, true);
 
+    if ( args->isSet("forceFull") )
+      Archiver::instance->setForceFullBackup();
+
     if ( args->isSet("auto") )
       mainWin->runBackup();
 
@@ -115,6 +124,9 @@ int main(int argc, char **argv)
     }
     else
     {
+      if ( args->isSet("forceFull") )
+        Archiver::instance->setForceFullBackup();
+
       if ( Archiver::instance->createArchive(includes, excludes) )
         return 0;
       else

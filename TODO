@@ -1,4 +1,3 @@
 - implement a way for restoring backups
-- incremental backup
 - backup as "cp -R" without creating a .tar file
 - fix the exit-question dialog when exiting due to session stop

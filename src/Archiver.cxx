@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -62,6 +62,7 @@ const KIO::filesize_t MAX_SLICE = INT64_MAX; // 64bit max value
 Archiver::Archiver(QWidget *parent)
   : QObject(parent),
     archive(0), totalBytes(0), totalFiles(0), sliceNum(0), mediaNeedsChange(false),
+    fullBackupInterval(1), incrementalBackup(false), forceFullBackup(false),
     sliceCapacity(MAX_SLICE), interactive(parent != 0),
     cancelled(false), runs(false), skippedFiles(false), verbose(false), jobResult(0)
 {
@@ -116,6 +117,36 @@ void Archiver::setMaxSliceMBs(int mbs)
 void Archiver::setKeptBackups(int num)
 {
   numKeptBackups = num;
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::setFullBackupInterval(int days)
+{
+  fullBackupInterval = days;
+
+  if ( fullBackupInterval == 1 )
+  {
+    setIncrementalBackup(false);
+    lastFullBackup = QDateTime();
+    lastBackup = QDateTime();
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::setForceFullBackup(bool force)
+{
+  forceFullBackup = force;
+  emit backupTypeChanged(isIncrementalBackup());
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::setIncrementalBackup(bool inc)
+{
+  incrementalBackup = inc;
+  emit backupTypeChanged(isIncrementalBackup());
 }
 
 //--------------------------------------------------------------------------------
@@ -180,6 +211,8 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
     return false;
   }
 
+  loadedProfile = fileName;
+
   QString target;
   QChar type, blank;
   QTextStream stream(&file);
@@ -187,6 +220,7 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
   // back to default (in case old profile read which does not include these)
   setFilePrefix("");
   setMaxSliceMBs(Archiver::UNLIMITED);
+  setFullBackupInterval(1);  // default as in previous versions
 
   while ( ! stream.atEnd() )
   {
@@ -208,6 +242,24 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
       int max;
       stream >> max;
       setKeptBackups(max);
+    }
+    else if ( type == 'F' )
+    {
+      int days;
+      stream >> days;
+      setFullBackupInterval(days);
+    }
+    else if ( type == 'B' )  // last dateTime for backup
+    {
+      QString dateTime;
+      stream >> dateTime;
+      lastBackup = QDateTime::fromString(dateTime, Qt::ISODate);
+    }
+    else if ( type == 'L' )  // last dateTime for full backup
+    {
+      QString dateTime;
+      stream >> dateTime;
+      lastFullBackup = QDateTime::fromString(dateTime, Qt::ISODate);
     }
     else if ( type == 'S' )
     {
@@ -241,6 +293,49 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
 
   setTarget(KUrl(target));
 
+  setIncrementalBackup(
+    (fullBackupInterval > 1) && lastFullBackup.isValid() &&
+    (lastFullBackup.daysTo(QDateTime::currentDateTime()) < fullBackupInterval));
+
+  return true;
+}
+
+//--------------------------------------------------------------------------------
+
+bool Archiver::saveProfile(const QString &fileName, const QStringList &includes, const QStringList &excludes, QString &error)
+{
+  QFile file(fileName);
+
+  if ( ! file.open(QIODevice::WriteOnly) )
+  {
+    error = file.errorString();
+    return false;
+  }
+
+  QTextStream stream(&file);
+
+  stream << "M " << targetURL.pathOrUrl() << endl;
+  stream << "P " << getFilePrefix() << endl;
+  stream << "S " << getMaxSliceMBs() << endl;
+  stream << "R " << getKeptBackups() << endl;
+  stream << "F " << getFullBackupInterval() << endl;
+
+  if ( getLastFullBackup().isValid() )
+    stream << "L " << getLastFullBackup().toString(Qt::ISODate) << endl;
+
+  if ( getLastBackup().isValid() )
+    stream << "B " << getLastBackup().toString(Qt::ISODate) << endl;
+
+  stream << "C " << static_cast<int>(getMediaNeedsChange()) << endl;
+  stream << "Z " << static_cast<int>(getCompressFiles()) << endl;
+
+  for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
+    stream << "I " << *it << endl;
+
+  for (QStringList::const_iterator it = excludes.begin(); it != excludes.end(); ++it)
+    stream << "E " << *it << endl;
+
+  file.close();
   return true;
 }
 
@@ -310,6 +405,8 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   cancelled = false;
   skippedFiles = false;
   sliceList.clear();
+
+  QDateTime startTime = QDateTime::currentDateTime();
 
   runs = true;
   emit inProgress(true);
@@ -401,7 +498,8 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
                 !entryName.startsWith(sliceName)) )     // whenever a new backup set (different time) is found
           {
             sliceName = entryName.left(prefix.length() + strlen("yyyy.MM.dd-hh.mm.ss_"));
-            num++;
+            if ( !entryName.endsWith("_inc.tar") )  // do not count partial (differential) backup files
+              num++;
             if ( num == numKeptBackups ) num++;  // from here on delete all others
           }
 
@@ -447,6 +545,21 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
 
   if ( !cancelled )
   {
+    lastBackup = startTime;
+    if ( !isIncrementalBackup() )
+      lastFullBackup = lastBackup;
+
+    if ( (fullBackupInterval > 1) && !loadedProfile.isEmpty() )
+    {
+      QString error;
+      if ( !saveProfile(loadedProfile, includes, excludes, error) )
+      {
+        emit warning(i18n("Could not write backup timestamps into profile %1: %2")
+                          .arg(loadedProfile)
+                          .arg(error));
+      }
+    }
+
     if ( skippedFiles )
       emit logging(i18n("!! Backup finished <b>but files were skipped</b> !!"));
     else
@@ -565,7 +678,7 @@ void Archiver::finishSlice()
           while ( action == ASK )
           {
             int ret = KMessageBox::warningYesNoCancel(static_cast<QWidget*>(parent()),
-                        i18n("How shall we proceed with the upload?"), QString::null,
+                        i18n("How shall we proceed with the upload?"), i18n("Upload Failed"),
                         KGuiItem(i18n("Retry")), KGuiItem(i18n("Change Target")));
 
             if ( ret == KMessageBox::Cancel )
@@ -718,7 +831,11 @@ bool Archiver::getNextSlice()
       baseName = KStandardDirs::locateLocal("tmp", prefix + QDateTime::currentDateTime().toString("_yyyy.MM.dd-hh.mm.ss"));
   }
 
-  archiveName = baseName + QString("_%1.tar").arg(sliceNum);
+  archiveName = baseName + QString("_%1").arg(sliceNum);
+  if ( isIncrementalBackup() )
+    archiveName += "_inc.tar";  // mark the file as being not a full backup
+  else
+    archiveName += ".tar";
 
   runScript("slice_init");
 
@@ -814,6 +931,9 @@ void Archiver::addDirFiles(QDir &dir)
 
 void Archiver::addFile(const QFileInfo &info)
 {
+  if ( isIncrementalBackup() && (info.lastModified() < lastBackup) )
+    return;
+
   if ( excludeFiles.contains(info.absoluteFilePath()) )
     return;
 

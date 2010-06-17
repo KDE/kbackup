@@ -28,7 +28,7 @@
 as Authors, publish date, the abstract, and Keywords -->
 
 <bookinfo>
-<title>Das &kbackup; Handbuch (für Version 0.6)</title>
+<title>Das &kbackup; Handbuch (für Version 0.7)</title>
 
 <authorgroup>
 <author>
@@ -49,7 +49,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2006 - 2009</year>
+<year>2006 - 2010</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -57,8 +57,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-05-24</date>
-<releaseinfo>1.05.00</releaseinfo>
+<date>2010-06-14</date>
+<releaseinfo>1.06.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -121,7 +121,7 @@ auch von nicht Computer Experten bedient werden kann.
 
 <para>
 Das Archivierungsformat ist das wohlbekannte Tar-Format, wobei die Daten komprimiert
-gespeichert werden (bzip2 oder gzip).
+gespeichert werden (bzip2 oder gzip) können.
 </para>
 
 <para>
@@ -276,6 +276,58 @@ werden. Wird z.B. ein Wert von 3 eingestellt, wird &kbackup; die letzten 3 Siche
 behalten und alle älteren Sicherungen werden gelöscht.
 </para>
 
+<para>
+Ebenfalls kann im Profil ein Backup als "Inkrementelle Sicherung" definiert werden, wobei
+hier festgelegt wird, nach wievielen Tagen immer mit einem vollen Backup begonnen wird.
+Details folgen im nächsten Kapitel.
+</para>
+
+</sect1>
+
+<sect1 id="incremental-backup">
+<title>Inkrementelle Sicherung</title>
+<para>
+Unter inkrementeller Sicherung versteht man, daß nicht immer alle Dateien gesichert werden,
+sondern nur jene, die sich seit der letzten Sicherung geändert haben. Dies hat den großen Vorteil,
+daß die inkrementellen Sicherungen üblicherweise wesentlich weniger Dateien beinhalten und
+der Sicherungs Vorgang daher wesentlich schneller beendet ist.
+</para>
+<para>
+Die Vorgehensweise ist also folgende: Im Profil definiert man ein Intervall in Tagen für
+eine Komplett-Sicherung, z.B. 5. Das bedeutet, &kbackup; sichert alle 5 Tage alle definierten
+Dateien. An allen Tagen dazwischen - egal wie oft sie &kbackup; mit diesem Profil starten -
+werden nur jene Dateien gesichert, die sich seit der letzten Sicherung geändert haben.
+&kbackup; schreibt dafür die Sicherungs Zeitstempel in ihr Profil und weiß somit, was
+das nächste mal zu tun ist.
+</para>
+<para>
+Die Sicherungs Dateien die hierbei entstehen beinhalten den Text "_inc", wie z.B.:
+</para>
+<para>
+backup_2010.06.14-18.50.26_1_inc.tar
+</para>
+<para>
+Die Komplett-Sicherungs Dateien haben das Kürzel "_inc" nicht, wie z.B.:
+</para>
+<para>
+backup_2010.06.13-20.58.14_1.tar
+</para>
+<para>
+Wichtig ist, daß bei einer Wiederherstellung einer Sicherung auf den Rechner nun
+alle "_inc" Dateien und zuletzt auch die letzte Komplett-Sicherung durchsucht werden müssen,
+um den Letztstand einer Datei zu finden.
+Genau das ist auch der Nachteil von inkrementellen Sicherungen (kein Vorteil ohne Nachteil ;-) )
+</para>
+<para>
+Will man trotz definiertem inkrementellen Zyklus im Profil vorzeitig eine Komplett-Sicherung
+durchführen, so kann man dies in der Benutzeroberfläche über die Option "Komplett-Sicherung erzwingen"
+definieren.
+Startet man &kbackup; über die Kommandozeile, so kann dies mit der Option --forceFull erledigt werden.
+</para>
+<para>
+Eine erzwungene Komplett-Sicherung startet das Sicherungs Intervall neu, d.h. &kbackup; rechnet
+den Komplett-Sicherungs Zyklus immer von der zuletzt durchgeführten Komplett-Sicherung.
+</para>
 </sect1>
 
 <sect1 id="archive-compression">
@@ -599,11 +651,11 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Programm Copyright &copy; 2006 - 2009 Martin Koller <email>kollix@aon.at</email>
+Programm Copyright &copy; 2006 - 2010 Martin Koller <email>kollix@aon.at</email>
 </para>
 
 <para>
-Dokumentation Copyright &copy; 2006 - 2009 Martin Koller
+Dokumentation Copyright &copy; 2006 - 2010 Martin Koller
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
@@ -633,6 +685,7 @@ application -->
 
 <para>
 Sie können &kbackup; von www.kde-apps.org runterladen.
+Ebenso befindet sich &kbackup; im openSuse build sercvice.
 </para>
 </sect1>
 

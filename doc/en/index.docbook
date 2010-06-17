@@ -28,7 +28,7 @@
 as Authors, publish date, the abstract, and Keywords -->
 
 <bookinfo>
-<title>The &kbackup; Handbook (for version 0.6)</title>
+<title>The &kbackup; Handbook (for version 0.7)</title>
 
 <authorgroup>
 <author>
@@ -49,7 +49,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2006 - 2009</year>
+<year>2006 - 2010</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -57,8 +57,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-05-13</date>
-<releaseinfo>1.05.00</releaseinfo>
+<date>2009-06-14</date>
+<releaseinfo>1.06.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -263,6 +263,53 @@ E.g. if you set it to 3, &kbackup; will keep the last 3 backups and delete all o
 </para>
 
 </sect1>
+
+
+<sect1 id="incremental-backup">
+<title>Incremental Backup</title>
+<para>
+With an incremental backup not all files will be saved every time the backup runs, but only
+the files which have changed since the last backup. This has the great advantage that the
+incremental backup will usually include much less files than a full backup and therefore
+will be finished in a much shorter time.
+</para>
+<para>
+This works as follows: In the profile you define an interval (in days) for the full backup.
+E.g. when you define 5 days, then &kbackup; will do a full backup of all files every 5 days.
+Whenever you start &kbackup; before the interval expires with this profile - regardless
+how often you run a backup - only the files which have changed since the last backup will
+be saved. &kbackup; stores the timestamp of the last backup into the profile and knows
+therefore what to do when run the next time.
+</para>
+<para>
+The archive slice files created during an incremental backup will contain the text "_inc", e.g.:
+</para>
+<para>
+backup_2010.06.14-18.50.26_1_inc.tar
+</para>
+<para>
+Full backup slice files will not include "_inc" in the name, e.g.:
+</para>
+<para>
+backup_2010.06.13-20.58.14_1.tar
+</para>
+<para>
+When one wants to restore files from an incremental backup, it's important to look for
+the most recent version of a file to be restored in all "_inc" files and finally also the last full backup
+slice file.
+This exactly is also the disadvantage of the incremental backup (but no advantage without disadvantage ;-) )
+</para>
+<para>
+If you want to do a full backup earlier than the defined incremental cycle time defined in a profile,
+you can do so by checking the "Force Full Backup" option in the user interface.
+When &kbackup; is started via the command line, this can be achieved by using the option --forceFull
+</para>
+<para>
+A forced full backup will restart the backup cycle, e.g. &kbackup; counts the days to the next full backup
+from the time of the last full backup.
+</para>
+</sect1>
+
 
 <sect1 id="archive-compression">
 <title>Archive Compression</title>

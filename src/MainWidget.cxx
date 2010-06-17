@@ -36,6 +36,8 @@ MainWidget::MainWidget(QWidget *parent)
   connect(ui.startButton,  SIGNAL(clicked()), this, SLOT(startBackup()));
   connect(ui.cancelButton, SIGNAL(clicked()), Archiver::instance, SLOT(cancel()));
 
+  connect(ui.forceFullBackup, SIGNAL(clicked(bool)), Archiver::instance, SLOT(setForceFullBackup(bool)));
+
   connect(Archiver::instance, SIGNAL(logging(const QString &)), ui.log, SLOT(append(const QString &)));
   connect(Archiver::instance, SIGNAL(warning(const QString &)), ui.warnings, SLOT(append(const QString &)));
 
@@ -50,11 +52,25 @@ MainWidget::MainWidget(QWidget *parent)
   connect(Archiver::instance, SIGNAL(fileProgress(int)), this, SLOT(setFileProgress(int)));
   connect(Archiver::instance, SIGNAL(elapsedChanged(const QTime &)), this, SLOT(updateElapsed(const QTime &)));
 
+  connect(Archiver::instance, SIGNAL(backupTypeChanged(bool)), this, SLOT(setIsIncrementalBackup(bool)));
+
   connect(ui.folder, SIGNAL(clicked()), this, SLOT(getMediaSize()));
   connect(ui.targetDir, SIGNAL(returnPressed(const QString &)), this, SLOT(setTargetURL(const QString &)));
 
   KUrlCompletion *kc = new KUrlCompletion(KUrlCompletion::DirCompletion);
   ui.targetDir->setCompletionObject(kc);
+
+  Archiver::instance->setForceFullBackup(ui.forceFullBackup->isChecked());
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWidget::setIsIncrementalBackup(bool incremental)
+{
+  if ( incremental )
+    ui.backupType->setText(i18n("Incremental Backup"));
+  else
+    ui.backupType->setText(i18n("Full Backup"));
 }
 
 //--------------------------------------------------------------------------------
@@ -72,6 +88,9 @@ void MainWidget::startBackup()
   selector->getBackupList(includes, excludes);
 
   Archiver::instance->createArchive(includes, excludes);
+
+  ui.forceFullBackup->setChecked(false);
+  Archiver::instance->setForceFullBackup(false);
 
   ui.cancelButton->setEnabled(false);
   ui.startButton->setEnabled(true);

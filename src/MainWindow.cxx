@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -217,12 +217,6 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
 
   setLoadedProfile(fileName);
 
-  KUrl url;
-  url.setPath(fileName);
-  recentFiles->addUrl(url);
-  recentFiles->saveEntries(KGlobal::config()->group(""));
-  KGlobal::config()->group("").sync();
-
   // now fill the Selector tree with those settings
   selector->setBackupList(includes, excludes);
 
@@ -275,33 +269,19 @@ void MainWindow::saveProfile(QString fileName)
 
   QStringList includes, excludes;
   selector->getBackupList(includes, excludes);
+  QString error;
 
-  if ( ! file.open(QIODevice::WriteOnly) )
+  Archiver::instance->setTarget(KUrl(mainWidget->getTargetLineEdit()->text()));
+
+  if ( ! Archiver::instance->saveProfile(fileName, includes, excludes, error) )
   {
     KMessageBox::error(this,
                 i18n("Could not open profile '%1' for writing: %2")
                      .arg(fileName)
-                     .arg(file.errorString()),
+                     .arg(error),
                 i18n("Open failed"));
     return;
   }
-
-  QTextStream stream(&file);
-
-  stream << "M " << mainWidget->getTargetLineEdit()->text() << endl;
-  stream << "P " << Archiver::instance->getFilePrefix() << endl;
-  stream << "S " << Archiver::instance->getMaxSliceMBs() << endl;
-  stream << "R " << Archiver::instance->getKeptBackups() << endl;
-  stream << "C " << static_cast<int>(Archiver::instance->getMediaNeedsChange()) << endl;
-  stream << "Z " << static_cast<int>(Archiver::instance->getCompressFiles()) << endl;
-
-  for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
-    stream << "I " << *it << endl;
-
-  for (QStringList::const_iterator it = excludes.begin(); it != excludes.end(); ++it)
-    stream << "E " << *it << endl;
-
-  file.close();
 
   setLoadedProfile(fileName);
 }
@@ -317,6 +297,7 @@ void MainWindow::profileSettings()
   dialog.ui.numBackups->setValue(Archiver::instance->getKeptBackups());
   dialog.ui.mediaNeedsChange->setChecked(Archiver::instance->getMediaNeedsChange());
   dialog.ui.compressFiles->setChecked(Archiver::instance->getCompressFiles());
+  dialog.ui.fullBackupInterval->setValue(Archiver::instance->getFullBackupInterval());
 
   if ( dialog.exec() == QDialog::Accepted )
   {
@@ -325,6 +306,7 @@ void MainWindow::profileSettings()
     Archiver::instance->setKeptBackups(dialog.ui.numBackups->value());
     Archiver::instance->setMediaNeedsChange(dialog.ui.mediaNeedsChange->isChecked());
     Archiver::instance->setCompressFiles(dialog.ui.compressFiles->isChecked());
+    Archiver::instance->setFullBackupInterval(dialog.ui.fullBackupInterval->value());
   }
 }
 
@@ -337,6 +319,7 @@ void MainWindow::newProfile()
   Archiver::instance->setMediaNeedsChange(true);
   Archiver::instance->setTarget(KUrl());
   Archiver::instance->setKeptBackups(Archiver::UNLIMITED);
+  Archiver::instance->setFullBackupInterval(1);
 
   // clear selection
   QStringList includes, excludes;
@@ -424,7 +407,17 @@ void MainWindow::enableAllMessages()
 void MainWindow::setLoadedProfile(const QString &name)
 {
   loadedProfile = name;
+  Archiver::instance->setLoadedProfile(name);
   setCaption(name);
+
+  if ( !name.isEmpty() )
+  {
+    KUrl url;
+    url.setPath(name);
+    recentFiles->addUrl(url);
+    recentFiles->saveEntries(KGlobal::config()->group(""));
+    KGlobal::config()->group("").sync();
+  }
 }
 
 //--------------------------------------------------------------------------------

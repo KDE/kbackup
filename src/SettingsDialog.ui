@@ -1,59 +1,60 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <author>Martin Koller</author>
  <comment>Profile Settings</comment>
  <class>SettingsDialog</class>
- <widget class="QDialog" name="SettingsDialog" >
-  <property name="geometry" >
+ <widget class="QDialog" name="SettingsDialog">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>350</width>
-    <height>314</height>
+    <height>286</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Profile Settings</string>
   </property>
-  <layout class="QVBoxLayout" >
-   <item>
-    <widget class="QLabel" name="textLabel1" >
-     <property name="text" >
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QLabel" name="textLabel1">
+     <property name="text">
       <string>Archive Prefix (empty for default):</string>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item>
-    <widget class="QLineEdit" name="prefix" />
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="prefix"/>
    </item>
-   <item>
-    <widget class="QGroupBox" name="groupBox2" >
-     <property name="title" >
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox2">
+     <property name="title">
       <string>Maximum Archive Size:</string>
      </property>
-     <layout class="QVBoxLayout" >
+     <layout class="QVBoxLayout">
       <item>
-       <layout class="QHBoxLayout" >
+       <layout class="QHBoxLayout">
         <item>
-         <widget class="QComboBox" name="predefSizes" />
+         <widget class="QComboBox" name="predefSizes"/>
         </item>
         <item>
-         <widget class="QSpinBox" name="maxSliceSize" >
-          <property name="enabled" >
+         <widget class="QSpinBox" name="maxSliceSize">
+          <property name="enabled">
            <bool>true</bool>
           </property>
-          <property name="specialValueText" >
+          <property name="specialValueText">
            <string>unlimited</string>
           </property>
-          <property name="suffix" >
-           <string>MB</string>
+          <property name="suffix">
+           <string> MB</string>
           </property>
-          <property name="minimum" >
+          <property name="minimum">
            <number>0</number>
           </property>
-          <property name="maximum" >
+          <property name="maximum">
            <number>4096</number>
           </property>
          </widget>
@@ -63,77 +64,103 @@
      </layout>
     </widget>
    </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" >
-     <item>
-      <widget class="QLabel" name="label" >
-       <property name="text" >
+   <item row="3" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
         <string>Number of backups to keep</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QSpinBox" name="numBackups" >
-       <property name="toolTip" >
+     <item row="0" column="2">
+      <widget class="QSpinBox" name="numBackups">
+       <property name="toolTip">
         <string>How many backups shall be kept in the target directory before older ones will be deleted</string>
        </property>
-       <property name="specialValueText" >
+       <property name="specialValueText">
         <string>unlimited</string>
        </property>
-       <property name="maximum" >
+       <property name="maximum">
         <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Full Backup Interval</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QSpinBox" name="fullBackupInterval">
+       <property name="toolTip">
+        <string>How often shall a full backup, instead of a differential one, be done</string>
+       </property>
+       <property name="specialValueText">
+        <string>Every Day</string>
+       </property>
+       <property name="suffix">
+        <string> days</string>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>500</number>
        </property>
       </widget>
      </item>
     </layout>
    </item>
-   <item>
-    <widget class="QCheckBox" name="mediaNeedsChange" >
-     <property name="toolTip" >
+   <item row="4" column="0">
+    <widget class="QCheckBox" name="mediaNeedsChange">
+     <property name="toolTip">
       <string>Uncheck if you want to avoid a confirmation dialog to change the medium when a slice was finished</string>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>Target needs media change</string>
      </property>
     </widget>
    </item>
-   <item>
-    <widget class="QCheckBox" name="compressFiles" >
-     <property name="toolTip" >
+   <item row="5" column="0">
+    <widget class="QCheckBox" name="compressFiles">
+     <property name="toolTip">
       <string>Uncheck if you want to avoid compressing files or archive slices at all</string>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>Compress Files</string>
      </property>
     </widget>
    </item>
-   <item>
-    <widget class="QFrame" name="frame3" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+   <item row="6" column="0">
+    <widget class="QFrame" name="frame3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="frameShape" >
+     <property name="frameShape">
       <enum>QFrame::HLine</enum>
      </property>
-     <property name="frameShadow" >
+     <property name="frameShadow">
       <enum>QFrame::Sunken</enum>
      </property>
     </widget>
    </item>
-   <item>
-    <layout class="QHBoxLayout" >
+   <item row="7" column="0">
+    <layout class="QHBoxLayout">
      <item>
-      <spacer name="spacer5" >
-       <property name="orientation" >
+      <spacer name="spacer5">
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeType" >
+       <property name="sizeType">
         <enum>QSizePolicy::Expanding</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+       <property name="sizeHint" stdset="0">
         <size>
          <width>240</width>
          <height>10</height>
@@ -142,15 +169,15 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="ok" >
-       <property name="text" >
+      <widget class="QPushButton" name="ok">
+       <property name="text">
         <string>OK</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="cancel" >
-       <property name="text" >
+      <widget class="QPushButton" name="cancel">
+       <property name="text">
         <string>Cancel</string>
        </property>
       </widget>
@@ -159,8 +186,8 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
- <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+ <layoutdefault spacing="6" margin="11"/>
+ <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <resources/>
  <connections>
@@ -170,11 +197,11 @@
    <receiver>SettingsDialog</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
@@ -186,11 +213,11 @@
    <receiver>SettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>
@@ -202,11 +229,11 @@
    <receiver>SettingsDialog</receiver>
    <slot>sizeSelected(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>20</x>
      <y>20</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
     </hint>

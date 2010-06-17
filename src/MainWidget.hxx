@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -30,6 +30,7 @@ class MainWidget : public QWidget
   public slots:
     void setTargetURL(const QString &url);
     void startBackup();
+    void setIsIncrementalBackup(bool incremental);
 
   private:
     Selector *selector;
@@ -39,7 +40,6 @@ class MainWidget : public QWidget
     void getMediaSize();
     void updateElapsed(const QTime &);
     void updateTotalBytes();
-    //void getDiskFree();
     void setFileProgress(int percent);
     void setCapacity(KIO::filesize_t bytes);
 };
