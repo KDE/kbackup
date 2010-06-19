@@ -201,25 +201,27 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: po/rc.cpp:99
 msgid "Full Backup Interval"
-msgstr ""
+msgstr "Komplett-Sicherungs Intervall"
 
 #. i18n: file: src/SettingsDialog.ui:99
 #. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:102
 msgid "How often shall a full backup, instead of an incremental one, be done"
 msgstr ""
+"Wie oft soll eine Komplett-Sicherung, anstatt einer inkrementellen "
+"Sicherung, durchgeführt werden"
 
 #. i18n: file: src/SettingsDialog.ui:102
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:105
 msgid "Every Day"
-msgstr ""
+msgstr "Jeden Tag"
 
 #. i18n: file: src/SettingsDialog.ui:105
 #. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:108
 msgid " days"
-msgstr ""
+msgstr " Tage"
 
 #. i18n: file: src/SettingsDialog.ui:120
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
@@ -270,12 +272,14 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
+"Definiert Muster, getrennt durch je ein Leerzeichen, für Dateinamen, die bei "
+"einer Sicherung ignoriert werden. Z.B.: \"*.ogg *.wav\""
 
 #. i18n: file: src/SettingsDialog.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: po/rc.cpp:132
 msgid "Filename Filter:"
-msgstr ""
+msgstr "Dateinamen Filter:"
 
 #: po/rc.cpp:133
 msgctxt "NAME OF TRANSLATORS"
@@ -338,7 +342,7 @@ msgstr "Konnte Sicherungs Zeitstempel nicht ins Profil %1 schreiben: %2"
 
 #: src/Archiver.cxx:598
 msgid "-- Filtered Files: %1"
-msgstr ""
+msgstr "-- Gefilterte Dateien: %1"
 
 #: src/Archiver.cxx:601
 msgid "!! Backup finished <b>but files were skipped</b> !!"
@@ -390,7 +394,7 @@ msgstr "Wie sollen wir nun mit dem Kopieren weitermachen?"
 
 #: src/Archiver.cxx:718
 msgid "Upload Failed"
-msgstr ""
+msgstr "Übertragung fehlgeschlagen"
 
 #: src/Archiver.cxx:719
 msgid "Retry"
@@ -582,6 +586,8 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup\n"
 "instead of acting on the profile settings"
 msgstr ""
+"Im auto/autobg Modus erzwinge eine Komplett-Sicherung\n"
+"anstatt die Profil Einstellung zu berücksichtigen"
 
 #: src/main.cxx:120 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
