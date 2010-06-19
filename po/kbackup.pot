@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2010-06-19 11:13+0200\n"
+"POT-Creation-Date: 2010-06-19 13:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -267,7 +267,7 @@ msgstr ""
 #. i18n: file: src/SettingsDialog.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: po/rc.cpp:132
-msgid "Filename Filter:"
+msgid "Exclude Filename Filter:"
 msgstr ""
 
 #: po/rc.cpp:133

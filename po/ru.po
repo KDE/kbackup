@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru.po_[8daEob]\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2010-06-19 11:13+0200\n"
+"POT-Creation-Date: 2010-06-19 13:04+0200\n"
 "PO-Revision-Date: 2009-05-14 21:24+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -280,7 +280,7 @@ msgstr ""
 #. i18n: file: src/SettingsDialog.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: po/rc.cpp:132
-msgid "Filename Filter:"
+msgid "Exclude Filename Filter:"
 msgstr ""
 
 #: po/rc.cpp:133

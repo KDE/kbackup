@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2010-06-19 11:13+0200\n"
+"POT-Creation-Date: 2010-06-19 13:04+0200\n"
 "PO-Revision-Date: 2009-05-13 19:36+0200\n"
 "Last-Translator: Martin Koller <kollix@aon.at>\n"
 "Language-Team: Deutsch\n"
@@ -278,8 +278,9 @@ msgstr ""
 #. i18n: file: src/SettingsDialog.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: po/rc.cpp:132
-msgid "Filename Filter:"
-msgstr "Dateinamen Filter:"
+#, fuzzy
+msgid "Exclude Filename Filter:"
+msgstr "Exkludieren Dateinamen Filter:"
 
 #: po/rc.cpp:133
 msgctxt "NAME OF TRANSLATORS"
