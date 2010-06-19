@@ -1,3 +1,6 @@
+- in incremental backup, do not create a directory hierarchy when no file at all was modified inside it
+  (e.g. store the dir entries in a stack until we find the first file which has to be stored, 
+   then create all dirs in the stack. If no file found, clean the stack and do not create any dir in the archive)
 - implement a way for restoring backups
 - backup as "cp -R" without creating a .tar file
 - fix the exit-question dialog when exiting due to session stop
