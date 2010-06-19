@@ -61,7 +61,7 @@ const KIO::filesize_t MAX_SLICE = INT64_MAX; // 64bit max value
 
 Archiver::Archiver(QWidget *parent)
   : QObject(parent),
-    archive(0), totalBytes(0), totalFiles(0), sliceNum(0), mediaNeedsChange(false),
+    archive(0), totalBytes(0), totalFiles(0), filteredFiles(0), sliceNum(0), mediaNeedsChange(false),
     fullBackupInterval(1), incrementalBackup(false), forceFullBackup(false),
     sliceCapacity(MAX_SLICE), interactive(parent != 0),
     cancelled(false), runs(false), skippedFiles(false), verbose(false), jobResult(0)
@@ -117,6 +117,29 @@ void Archiver::setMaxSliceMBs(int mbs)
 void Archiver::setKeptBackups(int num)
 {
   numKeptBackups = num;
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::setFilter(const QString &filter)
+{
+  filters.clear();
+  QStringList list = filter.split(' ', QString::SkipEmptyParts);
+  foreach (const QString &str, list)
+    filters.append(QRegExp(str, Qt::CaseSensitive, QRegExp::Wildcard));
+}
+
+//--------------------------------------------------------------------------------
+
+QString Archiver::getFilter() const
+{
+  QString filter;
+  foreach (const QRegExp &reg, filters)
+  {
+    filter += reg.pattern();
+    filter += ' ';
+  }
+  return filter;
 }
 
 //--------------------------------------------------------------------------------
@@ -221,6 +244,7 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
   setFilePrefix("");
   setMaxSliceMBs(Archiver::UNLIMITED);
   setFullBackupInterval(1);  // default as in previous versions
+  filters.clear();
 
   while ( ! stream.atEnd() )
   {
@@ -272,6 +296,10 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
       int change;
       stream >> change;
       setMediaNeedsChange(change);
+    }
+    else if ( type == 'X' )
+    {
+      setFilter(stream.readLine());  // include white space
     }
     else if ( type == 'Z' )
     {
@@ -328,6 +356,9 @@ bool Archiver::saveProfile(const QString &fileName, const QStringList &includes,
 
   stream << "C " << static_cast<int>(getMediaNeedsChange()) << endl;
   stream << "Z " << static_cast<int>(getCompressFiles()) << endl;
+
+  if ( !filters.isEmpty() )
+    stream << "X " << getFilter() << endl;
 
   for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
     stream << "I " << *it << endl;
@@ -402,6 +433,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   sliceNum = 0;
   totalBytes = 0;
   totalFiles = 0;
+  filteredFiles = 0;
   cancelled = false;
   skippedFiles = false;
   sliceList.clear();
@@ -547,7 +579,10 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   {
     lastBackup = startTime;
     if ( !isIncrementalBackup() )
+    {
       lastFullBackup = lastBackup;
+      setIncrementalBackup(fullBackupInterval > 1);  // after a full backup, the next will be incremental
+    }
 
     if ( (fullBackupInterval > 1) && !loadedProfile.isEmpty() )
     {
@@ -559,6 +594,8 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
                           .arg(error));
       }
     }
+
+    emit logging(i18n("-- Filtered Files: %1").arg(filteredFiles));
 
     if ( skippedFiles )
       emit logging(i18n("!! Backup finished <b>but files were skipped</b> !!"));
@@ -929,10 +966,25 @@ void Archiver::addDirFiles(QDir &dir)
 
 //--------------------------------------------------------------------------------
 
+bool Archiver::fileIsFiltered(const QString &fileName) const
+{
+  foreach (const QRegExp &exp, filters)
+    if ( exp.exactMatch(fileName) )
+      return true;
+
+  return false;
+}
+
+//--------------------------------------------------------------------------------
+
 void Archiver::addFile(const QFileInfo &info)
 {
-  if ( isIncrementalBackup() && (info.lastModified() < lastBackup) )
+  if ( (isIncrementalBackup() && (info.lastModified() < lastBackup)) ||
+       fileIsFiltered(info.fileName()) )
+  {
+    filteredFiles++;
     return;
+  }
 
   if ( excludeFiles.contains(info.absoluteFilePath()) )
     return;

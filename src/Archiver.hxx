@@ -19,6 +19,9 @@
 #include <QTime>
 #include <QDateTime>
 #include <QStringList>
+#include <QList>
+#include <QRegExp>
+
 #include <kurl.h>
 #include <kio/copyjob.h>
 
@@ -59,6 +62,11 @@ class Archiver : public QObject
     // number of backups to keep before older ones will be deleted (UNLIMITED or 1..n)
     void setKeptBackups(int num);
     int getKeptBackups() const { return numKeptBackups; }
+
+    // define a filename filter in wildcard format each separated with a space
+    // e.g. "*.png *.ogg"
+    void setFilter(const QString &filter);
+    QString getFilter() const;
 
     // interval for a full backup instead differential backup; when 1 given == full backup
     void setFullBackupInterval(int days);
@@ -131,6 +139,9 @@ class Archiver : public QObject
     // returns true if the next backup will be an incremental one, false for a full backup
     bool isIncrementalBackup() const { return !forceFullBackup && incrementalBackup; }
 
+    // return true if given fileName matches any of the defined filters
+    bool fileIsFiltered(const QString &fileName) const;
+
     static bool UDSlessThan(KIO::UDSEntry &left, KIO::UDSEntry &right);
 
   private:
@@ -145,7 +156,10 @@ class Archiver : public QObject
     KTar *archive;
     KIO::filesize_t totalBytes;
     int totalFiles;
+    int filteredFiles;  // filter or time filter (incremental backup)
     QTime elapsed;
+
+    QList<QRegExp> filters;
 
     KUrl targetURL;
     QString baseName;

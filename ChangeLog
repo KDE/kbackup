@@ -1,5 +1,6 @@
 14.6.2010 (0.7)
 - Add Incremental Backup functionality
+- Add wildcard filter to ignore files for backup matching a filename pattern
 
 15.5.2010 (0.6.4)
 - When an error occurs while reading a file (e.g. corrupted filesystem), cancel backup

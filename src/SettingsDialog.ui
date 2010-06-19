@@ -9,7 +9,7 @@
     <x>0</x>
     <y>0</y>
     <width>350</width>
-    <height>286</height>
+    <height>338</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -96,7 +96,7 @@
      <item row="1" column="2">
       <widget class="QSpinBox" name="fullBackupInterval">
        <property name="toolTip">
-        <string>How often shall a full backup, instead of a differential one, be done</string>
+        <string>How often shall a full backup, instead of an incremental one, be done</string>
        </property>
        <property name="specialValueText">
         <string>Every Day</string>
@@ -114,7 +114,7 @@
      </item>
     </layout>
    </item>
-   <item row="4" column="0">
+   <item row="6" column="0">
     <widget class="QCheckBox" name="mediaNeedsChange">
      <property name="toolTip">
       <string>Uncheck if you want to avoid a confirmation dialog to change the medium when a slice was finished</string>
@@ -124,17 +124,17 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="7" column="0">
     <widget class="QCheckBox" name="compressFiles">
      <property name="toolTip">
-      <string>Uncheck if you want to avoid compressing files or archive slices at all</string>
+      <string>Uncheck if you want to avoid compressing files at all</string>
      </property>
      <property name="text">
       <string>Compress Files</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
+   <item row="8" column="0">
     <widget class="QFrame" name="frame3">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -150,7 +150,7 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
+   <item row="9" column="0">
     <layout class="QHBoxLayout">
      <item>
       <spacer name="spacer5">
@@ -183,6 +183,20 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLineEdit" name="filter">
+     <property name="toolTip">
+      <string>Defines wildcards for filenames which will be ignored for backup, separated by a space. E.g.: &quot;*.ogg *.wav&quot;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Filename Filter:</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

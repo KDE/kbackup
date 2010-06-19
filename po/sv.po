@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2010-05-30 11:28+0200\n"
+"POT-Creation-Date: 2010-06-19 11:13+0200\n"
 "PO-Revision-Date: 2009-05-14 16:55+0100\n"
 "Last-Translator: Mikael Martinsson <mikael.martinsson@jamtnet.se>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -30,154 +30,203 @@ msgstr "&Fil"
 msgid "&Settings"
 msgstr "In&ställningar"
 
-#. i18n: file: src/MainWidgetBase.ui:15
+#. i18n: file: src/MainWidgetBase.ui:16
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
 #: po/rc.cpp:9 src/main.cxx:26
 msgid "KBackup"
 msgstr "KBackup"
 
-#. i18n: file: src/MainWidgetBase.ui:40
+#. i18n: file: src/MainWidgetBase.ui:41
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
 #: po/rc.cpp:12 src/MainWindow.cxx:116
 msgid "Start Backup"
 msgstr "Starta backup"
 
-#. i18n: file: src/MainWidgetBase.ui:68
+#. i18n: file: src/MainWidgetBase.ui:69
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #: po/rc.cpp:15 src/MainWindow.cxx:120
 msgid "Cancel Backup"
 msgstr "Avbryt backup"
 
-#. i18n: file: src/MainWidgetBase.ui:89
-#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
+#. i18n: file: src/MainWidgetBase.ui:92
+#. i18n: ectx: property (text), widget (QLabel, label)
 #: po/rc.cpp:18
+#, fuzzy
+msgid "Next Backup:"
+msgstr "Starta backup"
+
+#. i18n: file: src/MainWidgetBase.ui:99
+#. i18n: ectx: property (text), widget (QLabel, backupType)
+#: po/rc.cpp:21
+msgid "TextLabel"
+msgstr ""
+
+#. i18n: file: src/MainWidgetBase.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
+#: po/rc.cpp:24
+#, fuzzy
+msgid "Force Full Backup"
+msgstr "Avbryt backup"
+
+#. i18n: file: src/MainWidgetBase.ui:121
+#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
+#: po/rc.cpp:27
 msgid "Target"
 msgstr "Mål"
 
-#. i18n: file: src/MainWidgetBase.ui:95
+#. i18n: file: src/MainWidgetBase.ui:127
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: po/rc.cpp:21
+#: po/rc.cpp:30
 msgid "Folder:"
 msgstr "Katalog:"
 
-#. i18n: file: src/MainWidgetBase.ui:111
+#. i18n: file: src/MainWidgetBase.ui:143
 #. i18n: ectx: property (text), widget (QLabel, sliceLabel)
-#: po/rc.cpp:24
+#: po/rc.cpp:33
 msgid "Medium:"
 msgstr "Media:"
 
-#. i18n: file: src/MainWidgetBase.ui:133
+#. i18n: file: src/MainWidgetBase.ui:165
 #. i18n: ectx: property (text), widget (QLabel, sliceNum)
-#. i18n: file: src/MainWidgetBase.ui:226
+#. i18n: file: src/MainWidgetBase.ui:258
 #. i18n: ectx: property (text), widget (QLabel, totalFiles)
-#. i18n: file: src/MainWidgetBase.ui:255
+#. i18n: file: src/MainWidgetBase.ui:287
 #. i18n: ectx: property (text), widget (QLabel, totalSize)
-#: po/rc.cpp:27 po/rc.cpp:42 po/rc.cpp:48
+#: po/rc.cpp:36 po/rc.cpp:51 po/rc.cpp:57
 msgid "0"
 msgstr "0"
 
-#. i18n: file: src/MainWidgetBase.ui:153
+#. i18n: file: src/MainWidgetBase.ui:185
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#. i18n: file: src/MainWidgetBase.ui:245
+#. i18n: file: src/MainWidgetBase.ui:277
 #. i18n: ectx: property (text), widget (QLabel, textLabel6)
-#: po/rc.cpp:30 po/rc.cpp:45
+#: po/rc.cpp:39 po/rc.cpp:54
 msgid "Size:"
 msgstr "Storlek:"
 
-#. i18n: file: src/MainWidgetBase.ui:169
+#. i18n: file: src/MainWidgetBase.ui:201
 #. i18n: ectx: property (text), widget (QLabel, capacity)
-#: po/rc.cpp:33
+#: po/rc.cpp:42
 msgid "0 MB"
 msgstr "0 MB"
 
-#. i18n: file: src/MainWidgetBase.ui:204
+#. i18n: file: src/MainWidgetBase.ui:236
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox2)
-#: po/rc.cpp:36
+#: po/rc.cpp:45
 msgid "Totals"
 msgstr "Totalt"
 
-#. i18n: file: src/MainWidgetBase.ui:216
+#. i18n: file: src/MainWidgetBase.ui:248
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: po/rc.cpp:39
+#: po/rc.cpp:48
 msgid "Files:"
 msgstr "Filer:"
 
-#. i18n: file: src/MainWidgetBase.ui:268
+#. i18n: file: src/MainWidgetBase.ui:300
 #. i18n: ectx: property (text), widget (QLabel, totalSize_2)
-#. i18n: file: src/SettingsDialog.ui:51
-#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
-#: po/rc.cpp:51 po/rc.cpp:78
+#: po/rc.cpp:60
 msgid "MB"
 msgstr "MB"
 
-#. i18n: file: src/MainWidgetBase.ui:303
+#. i18n: file: src/MainWidgetBase.ui:335
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
-#: po/rc.cpp:54
+#: po/rc.cpp:63
 msgid "Duration:"
 msgstr "Varaktighet:"
 
-#. i18n: file: src/MainWidgetBase.ui:313
+#. i18n: file: src/MainWidgetBase.ui:345
 #. i18n: ectx: property (text), widget (QLabel, elapsedTime)
-#: po/rc.cpp:57
+#: po/rc.cpp:66
 msgid "00:00:00"
 msgstr "00:00:00"
 
-#. i18n: file: src/MainWidgetBase.ui:355
+#. i18n: file: src/MainWidgetBase.ui:387
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
-#: po/rc.cpp:60
+#: po/rc.cpp:69
 msgid "Warnings:"
 msgstr "Varningar:"
 
-#. i18n: file: src/MainWidgetBase.ui:381
+#. i18n: file: src/MainWidgetBase.ui:413
 #. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
-#: po/rc.cpp:63
+#: po/rc.cpp:72
 msgid "Progress:"
 msgstr "Framsteg:"
 
-#. i18n: file: src/SettingsDialog.ui:15
+#. i18n: file: src/SettingsDialog.ui:16
 #. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
-#: po/rc.cpp:66 src/MainWindow.cxx:74
+#: po/rc.cpp:75 src/MainWindow.cxx:74
 msgid "Profile Settings"
 msgstr "Profilinställningar"
 
-#. i18n: file: src/SettingsDialog.ui:21
+#. i18n: file: src/SettingsDialog.ui:22
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: po/rc.cpp:69
+#: po/rc.cpp:78
 msgid "Archive Prefix (empty for default):"
 msgstr "Arkiv prefix (tomt för standard):"
 
-#. i18n: file: src/SettingsDialog.ui:34
+#. i18n: file: src/SettingsDialog.ui:35
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: po/rc.cpp:72
+#: po/rc.cpp:81
 msgid "Maximum Archive Size:"
 msgstr "Maximal storlek på arkivdelarna: "
 
-#. i18n: file: src/SettingsDialog.ui:48
+#. i18n: file: src/SettingsDialog.ui:49
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
-#. i18n: file: src/SettingsDialog.ui:81
+#. i18n: file: src/SettingsDialog.ui:82
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
-#: po/rc.cpp:75 po/rc.cpp:87 src/MainWidget.cxx:149 src/SettingsDialog.cxx:21
+#: po/rc.cpp:84 po/rc.cpp:96 src/MainWidget.cxx:168 src/SettingsDialog.cxx:21
 msgid "unlimited"
 msgstr "obegränsad"
 
-#. i18n: file: src/SettingsDialog.ui:71
+#. i18n: file: src/SettingsDialog.ui:52
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: po/rc.cpp:87
+#, fuzzy
+msgid " MB"
+msgstr "0 MB"
+
+#. i18n: file: src/SettingsDialog.ui:72
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: po/rc.cpp:81
+#: po/rc.cpp:90
 msgid "Number of backups to keep"
 msgstr "Antal backuper som ska sparas"
 
-#. i18n: file: src/SettingsDialog.ui:78
+#. i18n: file: src/SettingsDialog.ui:79
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
-#: po/rc.cpp:84
+#: po/rc.cpp:93
 msgid ""
 "How many backups shall be kept in the target directory before older ones "
 "will be deleted"
 msgstr ""
 "Hur många backuper ska sparas i målmappen innan äldre backuper tas bort"
 
-#. i18n: file: src/SettingsDialog.ui:93
+#. i18n: file: src/SettingsDialog.ui:92
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: po/rc.cpp:99
+msgid "Full Backup Interval"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:99
+#. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
+#: po/rc.cpp:102
+msgid "How often shall a full backup, instead of an incremental one, be done"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:102
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
+#: po/rc.cpp:105
+msgid "Every Day"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:105
+#. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
+#: po/rc.cpp:108
+msgid " days"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:120
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
-#: po/rc.cpp:90
+#: po/rc.cpp:111
 msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
@@ -185,55 +234,70 @@ msgstr ""
 "Avmarkera om du inte vill ha bekräftelse om att byta media när delar är "
 "färdiga"
 
-#. i18n: file: src/SettingsDialog.ui:96
+#. i18n: file: src/SettingsDialog.ui:123
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
-#: po/rc.cpp:93
+#: po/rc.cpp:114
 msgid "Target needs media change"
 msgstr "Mediabyte behövs för valt mål"
 
-#. i18n: file: src/SettingsDialog.ui:103
+#. i18n: file: src/SettingsDialog.ui:130
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
-#: po/rc.cpp:96
-msgid "Uncheck if you want to avoid compressing files or archive slices at all"
+#: po/rc.cpp:117
+#, fuzzy
+msgid "Uncheck if you want to avoid compressing files at all"
 msgstr "Avmarkera om du inte vill ha packning av filer eller arkivdelar "
 
-#. i18n: file: src/SettingsDialog.ui:106
+#. i18n: file: src/SettingsDialog.ui:133
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
-#: po/rc.cpp:99
+#: po/rc.cpp:120
 msgid "Compress Files"
 msgstr "Komprimera filer"
 
-#. i18n: file: src/SettingsDialog.ui:147
+#. i18n: file: src/SettingsDialog.ui:174
 #. i18n: ectx: property (text), widget (QPushButton, ok)
-#: po/rc.cpp:102
+#: po/rc.cpp:123
 msgid "OK"
 msgstr "OK"
 
-#. i18n: file: src/SettingsDialog.ui:154
+#. i18n: file: src/SettingsDialog.ui:181
 #. i18n: ectx: property (text), widget (QPushButton, cancel)
-#: po/rc.cpp:105
+#: po/rc.cpp:126
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: po/rc.cpp:106
+#. i18n: file: src/SettingsDialog.ui:190
+#. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
+#: po/rc.cpp:129
+msgid ""
+"Defines wildcards for filenames which will be ignored for backup, separated "
+"by a space. E.g.: \"*.ogg *.wav\""
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:197
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: po/rc.cpp:132
+msgid "Filename Filter:"
+msgstr ""
+
+#: po/rc.cpp:133
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Mikael Martinsson"
 
-#: po/rc.cpp:107
+#: po/rc.cpp:134
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mikael.martinsson@jamtnet.se"
 
-#: src/Archiver.cxx:253
+#: src/Archiver.cxx:379
 msgid "Nothing selected for backup"
 msgstr "Inget är valt för backup"
 
-#: src/Archiver.cxx:260
+#: src/Archiver.cxx:386
 msgid "The target dir is not valid"
 msgstr "Målkatalogen är inte giltig"
 
-#: src/Archiver.cxx:272
+#: src/Archiver.cxx:398
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
@@ -243,7 +307,7 @@ msgstr ""
 "\n"
 "Ska jag skapa den?"
 
-#: src/Archiver.cxx:277
+#: src/Archiver.cxx:403
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
@@ -251,32 +315,41 @@ msgstr ""
 "Kunde inte skapa katalogen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:286
+#: src/Archiver.cxx:412
 msgid "The target dir does not exist"
 msgstr "Målkatalogen existerar inte"
 
-#: src/Archiver.cxx:356
+#: src/Archiver.cxx:485
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...reducerar antalt max sparade arkiv till %1"
 
-#: src/Archiver.cxx:413
+#: src/Archiver.cxx:543
 msgid "...deleting %1"
 msgstr "...tar bort %1"
 
-#: src/Archiver.cxx:439
+#: src/Archiver.cxx:569
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr "hämtar lista på felande mål. Kan inte reducera antal sparade arkiv."
 
-#: src/Archiver.cxx:451
+#: src/Archiver.cxx:592
+#, fuzzy
+msgid "Could not write backup timestamps into profile %1: %2"
+msgstr "Kunde inte skriva till en temporär fil"
+
+#: src/Archiver.cxx:598
+msgid "-- Filtered Files: %1"
+msgstr ""
+
+#: src/Archiver.cxx:601
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr "!! Säkerhetskopieringen klar <b>men filer hoppades över</b> !!"
 
-#: src/Archiver.cxx:453
+#: src/Archiver.cxx:603
 msgid "-- Backup successfully finished --"
 msgstr "-- Säkerhetskopieringen avslutades korrekt --"
 
-#: src/Archiver.cxx:459
+#: src/Archiver.cxx:609
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -284,7 +357,7 @@ msgstr ""
 "Säkerhetskopieringen avslutades men det finns filer som hoppades över.\n"
 "Vad vill du göra nu?"
 
-#: src/Archiver.cxx:461
+#: src/Archiver.cxx:611
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -292,51 +365,55 @@ msgstr ""
 "Säkerhetskopieringen avslutades korrekt.\n"
 "Vad vill du göra nu?"
 
-#: src/Archiver.cxx:478
+#: src/Archiver.cxx:628
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Totalt:  Filer: %1,  Storlek: %2 MB, Varaktighet: %3"
 
-#: src/Archiver.cxx:489
+#: src/Archiver.cxx:639
 msgid "...Backup aborted!"
 msgstr "...Säkerhetskopieringen avbröts!"
 
-#: src/Archiver.cxx:517
+#: src/Archiver.cxx:667
 msgid "Backup cancelled"
 msgstr "Säkerhetskopieringen avbröts"
 
-#: src/Archiver.cxx:534
+#: src/Archiver.cxx:684
 msgid "...finished slice %1"
 msgstr "... del %1 är klar"
 
-#: src/Archiver.cxx:551
+#: src/Archiver.cxx:701
 msgid "...uploading archive %1 to %2"
 msgstr "...laddar upp arktivet %1 till %2"
 
-#: src/Archiver.cxx:568
+#: src/Archiver.cxx:718
 msgid "How shall we proceed with the upload?"
 msgstr "Hur ska vi fortsätta med uppladdningen?"
 
-#: src/Archiver.cxx:569
+#: src/Archiver.cxx:718
+msgid "Upload Failed"
+msgstr ""
+
+#: src/Archiver.cxx:719
 msgid "Retry"
 msgstr "Prova igen"
 
-#: src/Archiver.cxx:569
+#: src/Archiver.cxx:719
 msgid "Change Target"
 msgstr "Ändra mål"
 
-#: src/Archiver.cxx:666
+#: src/Archiver.cxx:816
 msgid "The script '%1' could not be started."
 msgstr "Skriptet '%1' kunde inte startas."
 
-#: src/Archiver.cxx:701
+#: src/Archiver.cxx:851
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Mediat är fullt. Var god och byt till media nr: %1"
 
-#: src/Archiver.cxx:733
+#: src/Archiver.cxx:887
 msgid "The file '%1' can not be opened for writing."
 msgstr "Filen '%1' kan inte öppnas för skrivning."
 
-#: src/Archiver.cxx:737
+#: src/Archiver.cxx:891
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -346,7 +423,7 @@ msgstr ""
 "\n"
 "Vill du försöka igen?"
 
-#: src/Archiver.cxx:764
+#: src/Archiver.cxx:918
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -354,11 +431,11 @@ msgstr ""
 "Kunde inte hämta information om katalogen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:774
+#: src/Archiver.cxx:928
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Katalogen '%1' är inte läsbar. Hoppar över."
 
-#: src/Archiver.cxx:790
+#: src/Archiver.cxx:944
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -366,11 +443,11 @@ msgstr ""
 "Kunde inte skriva katalog '%1' till arkivet.\n"
 "Kanske är mediat fullt."
 
-#: src/Archiver.cxx:831
+#: src/Archiver.cxx:1003
 msgid "File '%1' is not readable. Skipping."
 msgstr "Filen '%1' är inte läsbar. Hoppar över."
 
-#: src/Archiver.cxx:886 src/Archiver.cxx:966
+#: src/Archiver.cxx:1058 src/Archiver.cxx:1138
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -378,12 +455,12 @@ msgstr ""
 "Kan inte hämta information om filen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:898 src/Archiver.cxx:923 src/Archiver.cxx:937
-#: src/Archiver.cxx:988 src/Archiver.cxx:1017 src/Archiver.cxx:1065
+#: src/Archiver.cxx:1070 src/Archiver.cxx:1095 src/Archiver.cxx:1109
+#: src/Archiver.cxx:1160 src/Archiver.cxx:1189 src/Archiver.cxx:1237
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Kunde inte skriva till arkivet. Kanske är mediat fullt."
 
-#: src/Archiver.cxx:913 src/Archiver.cxx:1008
+#: src/Archiver.cxx:1085 src/Archiver.cxx:1180
 #, fuzzy
 msgid ""
 "Could not read from file '%1'\n"
@@ -392,15 +469,15 @@ msgstr ""
 "Kunde inte läsa filen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:977
+#: src/Archiver.cxx:1149
 msgid "Could not open file '%1' for reading."
 msgstr "Kunde inte öppna filen '%1' för läsning."
 
-#: src/Archiver.cxx:1041
+#: src/Archiver.cxx:1213
 msgid "...archiving file %1"
 msgstr "...arkiverar filen %1"
 
-#: src/Archiver.cxx:1079
+#: src/Archiver.cxx:1251
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -408,7 +485,7 @@ msgstr ""
 "Kunde inte läsa filen: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:1094
+#: src/Archiver.cxx:1266
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -416,15 +493,15 @@ msgstr ""
 "Kunde inte skapa en temporär fil för komprimering: %1\n"
 "Operativsystemet lämnar följande rapport: %2"
 
-#: src/Archiver.cxx:1119
+#: src/Archiver.cxx:1291
 msgid "Could not write to temporary file"
 msgstr "Kunde inte skriva till en temporär fil"
 
-#: src/Archiver.cxx:1141
+#: src/Archiver.cxx:1313
 msgid "...compressing file %1"
 msgstr "...komprimerar filen %1"
 
-#: src/Archiver.cxx:1186
+#: src/Archiver.cxx:1358
 msgid "WARNING:"
 msgstr "VARNING:"
 
@@ -501,9 +578,29 @@ msgid ""
 msgstr ""
 "I autobg-läget ge feedback och skriv ut varje enskilt filnamn under backupen"
 
-#: src/main.cxx:111 src/MainWindow.cxx:211
+#: src/main.cxx:63
+msgctxt ""
+"TRANSLATORS: this is the description of a command line option. If your "
+"translation is longer than 50 caracters, you are encouraged to add "
+"breaklines to keep the limit"
+msgid ""
+"In auto/autobg mode force the backup to be a full backup\n"
+"instead of acting on the profile settings"
+msgstr ""
+
+#: src/main.cxx:120 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Kunde inte öppna profilen '%1' för läsning: %2"
+
+#: src/MainWidget.cxx:71
+#, fuzzy
+msgid "Incremental Backup"
+msgstr "Avbryt backup"
+
+#: src/MainWidget.cxx:73
+#, fuzzy
+msgid "Full Backup"
+msgstr "KBackup"
 
 #: src/MainWindow.cxx:58
 msgid "New Profile"
@@ -533,15 +630,15 @@ msgstr "Minimera till aktivitetsfältet"
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "En backup pågår. Vill du avbryta den?"
 
-#: src/MainWindow.cxx:190 src/MainWindow.cxx:242 src/MainWindow.cxx:259
+#: src/MainWindow.cxx:190 src/MainWindow.cxx:236 src/MainWindow.cxx:253
 msgid "KBackup Profile (*.kbp)"
 msgstr "KBackup profil (*.kbp)"
 
-#: src/MainWindow.cxx:214 src/MainWindow.cxx:285
+#: src/MainWindow.cxx:214 src/MainWindow.cxx:282
 msgid "Open failed"
 msgstr "Öppnandet misslyckades"
 
-#: src/MainWindow.cxx:269
+#: src/MainWindow.cxx:263
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
@@ -549,15 +646,15 @@ msgstr ""
 "Profilen '%1' existerar redan.\n"
 "Vill du skriva över den?"
 
-#: src/MainWindow.cxx:272
+#: src/MainWindow.cxx:266
 msgid "Profile exists"
 msgstr "Profilen existerar"
 
-#: src/MainWindow.cxx:282
+#: src/MainWindow.cxx:279
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Kunde inte öppna profilen '%1' för skrivning: %2"
 
-#: src/MainWindow.cxx:363
+#: src/MainWindow.cxx:349
 msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
