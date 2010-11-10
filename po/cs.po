@@ -7,13 +7,13 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
 "POT-Creation-Date: 2010-06-19 13:04+0200\n"
-"PO-Revision-Date: 2010-05-30 09:08+0200\n"
-"Last-Translator: Pavel Fric\n"
+"PO-Revision-Date: 2010-11-09 19:27+0100\n"
+"Last-Translator: \n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.1\n"
 "X-Language: de_AT\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
@@ -50,22 +50,20 @@ msgstr "Zastavit zálohování"
 #. i18n: file: src/MainWidgetBase.ui:92
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: po/rc.cpp:18
-#, fuzzy
 msgid "Next Backup:"
-msgstr "Spustit zálohování"
+msgstr "Další zálohování"
 
 #. i18n: file: src/MainWidgetBase.ui:99
 #. i18n: ectx: property (text), widget (QLabel, backupType)
 #: po/rc.cpp:21
 msgid "TextLabel"
-msgstr ""
+msgstr "Textový popisek"
 
 #. i18n: file: src/MainWidgetBase.ui:106
 #. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
 #: po/rc.cpp:24
-#, fuzzy
 msgid "Force Full Backup"
-msgstr "Zastavit zálohování"
+msgstr "Vynutit úplné zálohování"
 
 #. i18n: file: src/MainWidgetBase.ui:121
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
@@ -180,9 +178,8 @@ msgstr "neomezeně"
 #. i18n: file: src/SettingsDialog.ui:52
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
 #: po/rc.cpp:87
-#, fuzzy
 msgid " MB"
-msgstr "0 MB"
+msgstr " MB"
 
 #. i18n: file: src/SettingsDialog.ui:72
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -204,25 +201,25 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: po/rc.cpp:99
 msgid "Full Backup Interval"
-msgstr ""
+msgstr "Interval úplného zálohování"
 
 #. i18n: file: src/SettingsDialog.ui:99
 #. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:102
 msgid "How often shall a full backup, instead of an incremental one, be done"
-msgstr ""
+msgstr "Jak často se má udělat úplná záloha namísto přírůstkové"
 
 #. i18n: file: src/SettingsDialog.ui:102
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:105
 msgid "Every Day"
-msgstr ""
+msgstr "Každý den"
 
 #. i18n: file: src/SettingsDialog.ui:105
 #. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:108
 msgid " days"
-msgstr ""
+msgstr " dny"
 
 #. i18n: file: src/SettingsDialog.ui:120
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
@@ -243,10 +240,8 @@ msgstr "Cíl potřebuje, aby byl nosič vyměněn"
 #. i18n: file: src/SettingsDialog.ui:130
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
 #: po/rc.cpp:117
-#, fuzzy
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr ""
-"Vypněte, pokud se úplně chcete vyhnout stlačení souborů nebo archivních částí"
+msgstr "Vypněte, pokud se úplně chcete vyhnout stlačení souborů"
 
 #. i18n: file: src/SettingsDialog.ui:133
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
@@ -273,12 +268,15 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
+"Stanovuje zástupné symboly pro souborové názvy, jež budou při záloze "
+"přehlíženy, "
+"oddělené mezerou. Například: \"*.ogg *.wav\""
 
 #. i18n: file: src/SettingsDialog.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: po/rc.cpp:132
 msgid "Exclude Filename Filter:"
-msgstr ""
+msgstr "Vylučovací filtr souborových názvů:"
 
 #: po/rc.cpp:133
 msgctxt "NAME OF TRANSLATORS"
@@ -336,13 +334,12 @@ msgstr ""
 "zmenšit."
 
 #: src/Archiver.cxx:592
-#, fuzzy
 msgid "Could not write backup timestamps into profile %1: %2"
-msgstr "Nepodařilo se zapisovat do dočasného souboru"
+msgstr "Nepodařilo se zapsat časová razítka záloh do profilu %1: %2"
 
 #: src/Archiver.cxx:598
 msgid "-- Filtered Files: %1"
-msgstr ""
+msgstr "-- Filtrované soubory: %1"
 
 #: src/Archiver.cxx:601
 msgid "!! Backup finished <b>but files were skipped</b> !!"
@@ -395,7 +392,7 @@ msgstr "Jak se má nyní s kopírováním pokračovat?"
 
 #: src/Archiver.cxx:718
 msgid "Upload Failed"
-msgstr ""
+msgstr "Nahrání se nezdařilo"
 
 #: src/Archiver.cxx:719
 msgid "Retry"
@@ -513,7 +510,6 @@ msgid "An easy to use backup program"
 msgstr "Jednoduše obsluhovatelný zálohovací program"
 
 #: src/main.cxx:28
-#, fuzzy
 msgid "(c) 2006 - 2010 Martin Koller"
 msgstr "(c) 2006 - 2010 Martin Koller"
 
@@ -526,7 +522,6 @@ msgid "Developer"
 msgstr "Vývojář"
 
 #: src/main.cxx:39
-#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -535,16 +530,14 @@ msgid "Start with given profile"
 msgstr "Spustit s daným profilem"
 
 #: src/main.cxx:43
-#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
 "breaklines to keep the limit"
 msgid "Script to run after finishing one archive slice"
-msgstr "Skript spustit po dokončení jedné části archivu"
+msgstr "Skript ke spuštění po dokončení jedné části archivu"
 
 #: src/main.cxx:47
-#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -553,11 +546,10 @@ msgid ""
 "Automatically run the backup with the given profile\n"
 "and terminate when done."
 msgstr ""
-"Automaticky spustit zálohu s  daným profilem a ukončit program po dokončení "
-"zálohy."
+"Automaticky spustit zálohování s daným profilem\n"
+"a ukončit po dokončení zálohy."
 
 #: src/main.cxx:52
-#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -567,11 +559,11 @@ msgid ""
 "in the background (without showing a window)\n"
 "and terminate when done."
 msgstr ""
-"Automaticky spustit zálohu s  daným profilem na pozadí (bez ukazování okna) "
+"Automaticky spustit zálohování s daným profilem\n"
+"na pozadí (bez ukazování okna)\n"
 "a ukončit program po dokončení zálohy."
 
 #: src/main.cxx:58
-#, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -579,7 +571,9 @@ msgctxt ""
 msgid ""
 "In autobg mode be verbose and print every\n"
 "single filename during backup"
-msgstr "V režimu autobg ukazovat během zálohy každý jednotlivý název souboru"
+msgstr ""
+"V režimu autobg být podrobný a ukazovat během zálohy\n"
+"každý jednotlivý název souboru"
 
 #: src/main.cxx:63
 msgctxt ""
@@ -590,20 +584,20 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup\n"
 "instead of acting on the profile settings"
 msgstr ""
+"V režimu auto/autobg vynutit zálohování, aby bylo úplnou zálohou\n"
+"namísto jednání podle nastavení profilu"
 
 #: src/main.cxx:120 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Profil '%1' se nepodařilo otevřít pro čtení: %2"
 
 #: src/MainWidget.cxx:71
-#, fuzzy
 msgid "Incremental Backup"
-msgstr "Zastavit zálohování"
+msgstr "Přírůstkové zálohování"
 
 #: src/MainWidget.cxx:73
-#, fuzzy
 msgid "Full Backup"
-msgstr "KBackup"
+msgstr "Úplné zálohování"
 
 #: src/MainWindow.cxx:58
 msgid "New Profile"
@@ -704,3 +698,4 @@ msgstr "17,1 GB DVD"
 #: src/SettingsDialog.cxx:28
 msgid "custom"
 msgstr "vlastní"
+
