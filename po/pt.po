@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2010-06-19 13:04+0200\n"
+"POT-Creation-Date: 2011-03-05 12:52+0100\n"
 "PO-Revision-Date: 2009-05-18 22:18+0100\n"
 "Last-Translator: Carlos Gonçalves <mail@cgoncalves.info>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -295,11 +295,16 @@ msgstr "Os seus emails"
 msgid "Nothing selected for backup"
 msgstr "Nada seleccionado para salvaguardar"
 
-#: src/Archiver.cxx:386
-msgid "The target dir is not valid"
+#: src/Archiver.cxx:385
+#, fuzzy
+msgid "The target dir '%1' is not valid"
 msgstr "A directoria de destino não é válida"
 
-#: src/Archiver.cxx:398
+#: src/Archiver.cxx:392
+msgid "The target dir '%1' must be a local file system dir and no remote URL"
+msgstr ""
+
+#: src/Archiver.cxx:405
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
@@ -309,7 +314,7 @@ msgstr ""
 "\n"
 "Posso criá-lo?"
 
-#: src/Archiver.cxx:403
+#: src/Archiver.cxx:410
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
@@ -317,44 +322,44 @@ msgstr ""
 "Não foi possível criar o directório de destino: %1\n"
 "O sistema operativo reporta: %2"
 
-#: src/Archiver.cxx:412
+#: src/Archiver.cxx:419
 msgid "The target dir does not exist"
 msgstr "O directório de destino não existe"
 
-#: src/Archiver.cxx:485
+#: src/Archiver.cxx:492
 msgid "...reducing number of kept archives to max. %1"
 msgstr "... a reduzir o número de arquivos a guardar para um máximo de %1"
 
-#: src/Archiver.cxx:543
+#: src/Archiver.cxx:550
 msgid "...deleting %1"
 msgstr "... a apagar %1"
 
-#: src/Archiver.cxx:569
+#: src/Archiver.cxx:576
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
 "a obtenção da listagem do directório de destino falhou. Não foi possível "
 "reduzir o número de arquivos a guardar."
 
-#: src/Archiver.cxx:592
+#: src/Archiver.cxx:599
 #, fuzzy
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr "Não foi possível "
 
-#: src/Archiver.cxx:598
+#: src/Archiver.cxx:605
 msgid "-- Filtered Files: %1"
 msgstr ""
 
-#: src/Archiver.cxx:601
+#: src/Archiver.cxx:608
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 "!! A cópia de segurança terminou <b>mas os ficheiros foram saltados</b> !!"
 
-#: src/Archiver.cxx:603
+#: src/Archiver.cxx:610
 msgid "-- Backup successfully finished --"
 msgstr "-- Cópia de segurança terminou com sucesso --"
 
-#: src/Archiver.cxx:609
+#: src/Archiver.cxx:616
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -362,7 +367,7 @@ msgstr ""
 "A copia de segurança terminou mas os ficheiros foram saltados.\n"
 "O que deseja fazer agora?"
 
-#: src/Archiver.cxx:611
+#: src/Archiver.cxx:618
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -370,55 +375,55 @@ msgstr ""
 "A cópia de segurança terminou com sucesso.\n"
 "O que deseja fazer agora?"
 
-#: src/Archiver.cxx:628
+#: src/Archiver.cxx:635
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Total: Ficheiros: %1, Tamanho: %2, Duração: %3"
 
-#: src/Archiver.cxx:639
+#: src/Archiver.cxx:646
 msgid "...Backup aborted!"
 msgstr "...Cópia de segurança abortada!"
 
-#: src/Archiver.cxx:667
+#: src/Archiver.cxx:674
 msgid "Backup cancelled"
 msgstr "Cópia de segurança cancelada"
 
-#: src/Archiver.cxx:684
+#: src/Archiver.cxx:691
 msgid "...finished slice %1"
 msgstr "...terminada a divisão %1"
 
-#: src/Archiver.cxx:701
+#: src/Archiver.cxx:708
 msgid "...uploading archive %1 to %2"
 msgstr "...a enviar arquivo %1 para %2"
 
-#: src/Archiver.cxx:718
+#: src/Archiver.cxx:725
 msgid "How shall we proceed with the upload?"
 msgstr "Como devemos proceder com o envio?"
 
-#: src/Archiver.cxx:718
+#: src/Archiver.cxx:725
 msgid "Upload Failed"
 msgstr ""
 
-#: src/Archiver.cxx:719
+#: src/Archiver.cxx:726
 msgid "Retry"
 msgstr "Tentar novamente"
 
-#: src/Archiver.cxx:719
+#: src/Archiver.cxx:726
 msgid "Change Target"
 msgstr "Alterar Destino"
 
-#: src/Archiver.cxx:816
+#: src/Archiver.cxx:820
 msgid "The script '%1' could not be started."
 msgstr "O 'script' '%1' não pôde ser iniciado."
 
-#: src/Archiver.cxx:851
+#: src/Archiver.cxx:859
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "O disco está cheio. Por favor insira o disco Nr. %1"
 
-#: src/Archiver.cxx:887
+#: src/Archiver.cxx:895
 msgid "The file '%1' can not be opened for writing."
 msgstr "O ficheiro '%1' não pode ser aberto para escrita."
 
-#: src/Archiver.cxx:891
+#: src/Archiver.cxx:899
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -428,7 +433,7 @@ msgstr ""
 "\n"
 "Quer voltar a tentar?"
 
-#: src/Archiver.cxx:918
+#: src/Archiver.cxx:926
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -436,11 +441,11 @@ msgstr ""
 "Não foi possível obter informações da directoria: %1\n"
 "O sistema operativo reporta: %2"
 
-#: src/Archiver.cxx:928
+#: src/Archiver.cxx:936
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "A directoria '%1' não está acessível. A ignorar."
 
-#: src/Archiver.cxx:944
+#: src/Archiver.cxx:952
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -448,11 +453,11 @@ msgstr ""
 "Não foi possível escrever a directoria '%1' para arquivar.\n"
 "Talvez o disco esteja cheio."
 
-#: src/Archiver.cxx:1003
+#: src/Archiver.cxx:1011
 msgid "File '%1' is not readable. Skipping."
 msgstr "Ficheiro '%1' não está acessível. A ignorar."
 
-#: src/Archiver.cxx:1058 src/Archiver.cxx:1138
+#: src/Archiver.cxx:1066 src/Archiver.cxx:1146
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -460,12 +465,12 @@ msgstr ""
 "Não foi possível obter informações do ficheiro: %1\n"
 "O sistema operativo reporta: %2"
 
-#: src/Archiver.cxx:1070 src/Archiver.cxx:1095 src/Archiver.cxx:1109
-#: src/Archiver.cxx:1160 src/Archiver.cxx:1189 src/Archiver.cxx:1237
+#: src/Archiver.cxx:1078 src/Archiver.cxx:1103 src/Archiver.cxx:1117
+#: src/Archiver.cxx:1168 src/Archiver.cxx:1197 src/Archiver.cxx:1245
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Não foi possível escrever para o arquivo. Talvez o disco esteja cheio."
 
-#: src/Archiver.cxx:1085 src/Archiver.cxx:1180
+#: src/Archiver.cxx:1093 src/Archiver.cxx:1188
 #, fuzzy
 msgid ""
 "Could not read from file '%1'\n"
@@ -474,15 +479,15 @@ msgstr ""
 "Não foi possível ler o ficheiro: %1\n"
 "O sistema operativo reporta: %2"
 
-#: src/Archiver.cxx:1149
+#: src/Archiver.cxx:1157
 msgid "Could not open file '%1' for reading."
 msgstr "Não foi possível abrir o ficheiro'%1' para leitura."
 
-#: src/Archiver.cxx:1213
+#: src/Archiver.cxx:1221
 msgid "...archiving file %1"
 msgstr "...a arquivar o ficheiro %1"
 
-#: src/Archiver.cxx:1251
+#: src/Archiver.cxx:1259
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -490,7 +495,7 @@ msgstr ""
 "Não foi possível ler o ficheiro: %1\n"
 "O sistema operativo reporta: %2"
 
-#: src/Archiver.cxx:1266
+#: src/Archiver.cxx:1274
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -498,15 +503,15 @@ msgstr ""
 "Não foi possível criar um ficheiro temporário para comprimir: %1\n"
 "O sistema operativo reporta: %2"
 
-#: src/Archiver.cxx:1291
+#: src/Archiver.cxx:1299
 msgid "Could not write to temporary file"
 msgstr "Não foi possível "
 
-#: src/Archiver.cxx:1313
+#: src/Archiver.cxx:1321
 msgid "...compressing file %1"
 msgstr "... a comprimir ficheiro %1"
 
-#: src/Archiver.cxx:1358
+#: src/Archiver.cxx:1366
 msgid "WARNING:"
 msgstr "AVISO:"
 
@@ -516,7 +521,7 @@ msgstr "Um programa de cópia de segurança fácil de usar"
 
 #: src/main.cxx:28
 #, fuzzy
-msgid "(c) 2006 - 2010 Martin Koller"
+msgid "(c) 2006 - 2011 Martin Koller"
 msgstr "(c) 2006 - 2009 Martin Koller"
 
 #: src/main.cxx:33
