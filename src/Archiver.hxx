@@ -26,7 +26,6 @@
 #include <kio/copyjob.h>
 
 class KTar;
-class KProcess;
 class QDir;
 class QFileInfo;
 class QFile;
@@ -118,7 +117,7 @@ class Archiver : public QObject
   private slots:
     void slotResult(KJob *);
     void slotListResult(KIO::Job *, const KIO::UDSEntryList &);
-    void receivedStderr(KProcess *proc, char *buffer, int buflen);
+    void receivedOutput();
     void loggingSlot(const QString &message); // for non-interactive output
     void warningSlot(const QString &message); // for non-interactive output
     void updateElapsed();

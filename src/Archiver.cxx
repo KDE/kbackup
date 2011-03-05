@@ -380,10 +380,17 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     return false;
   }
 
-  // non-interactive mode only allows local targets as KIO needs $DISPLAY
-  if ( !targetURL.isValid() || (!interactive && !targetURL.isLocalFile()) )
+  if ( !targetURL.isValid() )
   {
-    emit warning(i18n("The target dir is not valid"));
+    emit warning(i18n("The target dir '%1' is not valid").arg(targetURL.pathOrUrl()));
+    return false;
+  }
+
+  // non-interactive mode only allows local targets as KIO needs $DISPLAY
+  if ( !interactive && !targetURL.isLocalFile() )
+  {
+    emit warning(i18n("The target dir '%1' must be a local file system dir and no remote URL")
+                     .arg(targetURL.pathOrUrl()));
     return false;
   }
 
@@ -803,11 +810,8 @@ void Archiver::runScript(const QString &mode)
          << QFile::encodeName(targetURL.pathOrUrl())
          << QFile::encodeName(mountPoint);
 
-    connect(&proc, SIGNAL(receivedStdout(KProcess *, char *, int )),
-            this, SLOT(receivedStderr(KProcess *, char *, int )));
-
-    connect(&proc, SIGNAL(receivedStderr(KProcess *, char *, int )),
-            this, SLOT(receivedStderr(KProcess *, char *, int )));
+    connect(&proc, SIGNAL(readyReadStandardOutput()),
+            this, SLOT(receivedOutput()));
 
     proc.setOutputChannelMode(KProcess::MergedChannels);
 
@@ -824,8 +828,12 @@ void Archiver::runScript(const QString &mode)
 
 //--------------------------------------------------------------------------------
 
-void Archiver::receivedStderr(KProcess *, char *buffer, int )
+void Archiver::receivedOutput()
 {
+  KProcess *proc = static_cast<KProcess*>(sender());
+
+  QByteArray buffer = proc->readAllStandardOutput();
+
   QString msg(buffer);
   if ( msg.endsWith("\n") )
     msg.truncate(msg.length() - 1);
