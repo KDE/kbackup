@@ -1,3 +1,7 @@
+05.03.2011 (0.7.1)
+- Fix KDE3 -> KDE4 port by no longer using no longer existing KProcess signal.
+- Show better error message in case of non-local target in non-interactive mode
+
 14.6.2010 (0.7)
 - Add Incremental Backup functionality
 - Add wildcard filter to ignore files for backup matching a filename pattern
