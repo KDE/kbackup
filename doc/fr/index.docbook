@@ -61,7 +61,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2006 - 2009</year>
+<year>2006 - 2010</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -69,8 +69,8 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
      and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-05-13</date>
-<releaseinfo>1.05.00</releaseinfo>
+<date>2009-06-14</date>
+<releaseinfo>1.06.00</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -271,7 +271,24 @@ d'archive qui peuvent être ensuite gravées sur un CD ou un DVD.
 Si vous avez explicitement limité la taille d'une archive, la taille disponible
 sera marquée par une «&nbsp;*&nbsp;» dans la fenêtre principale.
 </para>
- 
+
+<para>
+Mais même si vous définissez la taille d'une archive comme «&nbsp;non limitée&nbsp;»,
+d'autres contraintes limiteront la taille de l'archive&nbsp;:
+<itemizedlist>
+<listitem>
+  <para>limitation par le répertoire cible
+   (lors d'un enregistrement direct dans un répertoire local)&nbsp;;
+  </para>
+</listitem>
+<listitem>
+  <para>limitation par le répertoire «&nbsp;tmp&nbsp;» lors de la création d'un fichier temporaire
+    pour un déchargement ultérieur vers un URL distant.
+  </para>
+</listitem>
+</itemizedlist>
+</para>
+
 <para>
 Dans la configuration des profils, vous pouvez définir un nombre maximum
 de sauvegarde à conserver dans le répertoire de destination, et ainsi, supprimer
@@ -280,6 +297,60 @@ Par exemple, si vous le définissez à 3, &kbackup; conservera les 3 sauvegardes
 </para>
 
 </sect1>
+
+
+<sect1 id="incremental-backup">
+<title>Sauvegarde incrémentielle</title>
+<para>
+Lors d'une sauvegarde incrémentielle, tous les fichiers ne sont pas sauvegardés
+à chaque exécution de la sauvegarde, seuls le sont ceux qui ont été modifiés depuis
+la dernière sauvegarde. Cela a pour avantage qu'une sauvegarde incrémentielle
+comporte beaucoup moins de fichiers qu'une sauvegarde complète et qu'elle s'effectue
+beaucoup plus rapidement.
+</para>
+<para>
+Voici comment cela fonctionne&nbsp;:
+dans le profil, vous définissez un intervalle (en jours) d'exécution de sauvegarde complète.
+Par exemple, 5 jours&nbsp;: alors &kbackup; exécutera une sauvegarde complète tous les 5 jours.
+Même si vous lancez &kbackup; avant l'expiration du délai défini dans le profil - quelle que soit
+la fréquence où vous exécutez la sauvegarde - seuls les fichiers modifiés depuis la dernière
+sauvegarde seront sauvegardés. &kbackup; enregistre l'horodatage de la dernière sauvegarde
+dans le profil et sait donc quoi faire lors de l'exécution suivante.
+</para>
+<para>
+Les tranches d'archive créées lors d'une sauvegarde incrémentielle contient le texte
+«&nbsp;_inc&nbsp;» dans leur nom, par exemple&nbsp;:
+</para>
+<para>
+backup_2010.06.14-18.50.26_1_inc.tar
+</para>
+<para>
+Les tranches d'archive d'une sauvegarde complète ne contiennent pas le texte
+«&nbsp;_inc&nbsp;» dans leur nom, par exemple&nbsp;:
+</para>
+<para>
+backup_2010.06.13-20.58.14_1.tar
+</para>
+<para>
+Lorsqu'on veut restaurer des fichiers d'une sauvegarde incrémentielle, il est important
+de rechercher la version la plus récente d'un fichier à restaurer dans tous les fichiers
+«&nbsp;_inc&nbsp;» et également le fichier tranche d'archive de la dernière sauvegarde complète.
+C'est l'inconvénient d'une sauvegarde incrémentielle (mais pas d'avantage sans inconvénient ;-) ).
+</para>
+<para>
+Si vous voulez réaliser une sauvegarde complète avant la date prévue définie par la configuration
+d'une sauvegarde incrémentielle dans le profil, vous devez cocher l'option
+«&nbsp;Forcer une sauvegarde complète&nbsp;» dans l'interface utilisateur.
+Lorsque &kbackup; est lancé sur la ligne de commande, ce même comportement peut être obtenu
+en utilisant l'option «&nbsp;--forceFull&nbsp;»
+</para>
+<para>
+Une sauvegarde complète forcée réinitialise le cycle de sauvegarde, c'est-à-dire qu'il compte
+le nombre de jours le séparant de la prochaine sauvegarde complète à partir de la date de la dernière
+sauvegarde complète.
+</para>
+</sect1>
+
 
 <sect1 id="archive-compression">
 <title>Compression de l'archive</title>

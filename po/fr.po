@@ -3,13 +3,13 @@
 #
 # regis Floret <r.floret@laposte.net>, 2006.
 # Martin Koller <koller@etm.at>, 2006.
-# Alain Portal <alain.portal@univ-montp2.fr>, 2006, 2007, 2010.
+# Alain Portal <alain.portal@univ-montp2.fr>, 2006, 2007, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
 "POT-Creation-Date: 2011-03-05 12:52+0100\n"
-"PO-Revision-Date: 2010-05-31 19:33+0200\n"
+"PO-Revision-Date: 2011-03-14 20:33+0100\n"
 "Last-Translator: Alain Portal <alain.portal@univ-montp2.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -51,9 +51,8 @@ msgstr "Annuler la sauvegarde"
 #. i18n: file: src/MainWidgetBase.ui:92
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: po/rc.cpp:18
-#, fuzzy
 msgid "Next Backup:"
-msgstr "Commencer la sauvegarde"
+msgstr "Sauvegarde suivante :"
 
 #. i18n: file: src/MainWidgetBase.ui:99
 #. i18n: ectx: property (text), widget (QLabel, backupType)
@@ -64,9 +63,8 @@ msgstr ""
 #. i18n: file: src/MainWidgetBase.ui:106
 #. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
 #: po/rc.cpp:24
-#, fuzzy
 msgid "Force Full Backup"
-msgstr "Annuler la sauvegarde"
+msgstr "Forcer la sauvegarde complète"
 
 #. i18n: file: src/MainWidgetBase.ui:121
 #. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
@@ -181,9 +179,8 @@ msgstr "illimité"
 #. i18n: file: src/SettingsDialog.ui:52
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
 #: po/rc.cpp:87
-#, fuzzy
 msgid " MB"
-msgstr "0 Mo"
+msgstr " Mo"
 
 #. i18n: file: src/SettingsDialog.ui:72
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -205,25 +202,27 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: po/rc.cpp:99
 msgid "Full Backup Interval"
-msgstr ""
+msgstr "Intervalle de sauvegarde complète"
 
 #. i18n: file: src/SettingsDialog.ui:99
 #. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:102
 msgid "How often shall a full backup, instead of an incremental one, be done"
 msgstr ""
+"Définit le rythme de réalisation d'une sauvegarde complète plutôt qu'une "
+"sauvegarde incrémentielle"
 
 #. i18n: file: src/SettingsDialog.ui:102
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:105
 msgid "Every Day"
-msgstr ""
+msgstr "Tous les jours"
 
 #. i18n: file: src/SettingsDialog.ui:105
 #. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
 #: po/rc.cpp:108
 msgid " days"
-msgstr ""
+msgstr " jours"
 
 #. i18n: file: src/SettingsDialog.ui:120
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
@@ -244,11 +243,8 @@ msgstr "La cible nécessite un changement de support"
 #. i18n: file: src/SettingsDialog.ui:130
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
 #: po/rc.cpp:117
-#, fuzzy
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr ""
-"Décochez si vous ne souhaitez pas compresser les fichiers ou les tranches "
-"d'archive"
+msgstr "Décochez si vous ne souhaitez pas compresser les fichiers"
 
 #. i18n: file: src/SettingsDialog.ui:133
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
@@ -275,12 +271,14 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
+"Définit les filtres des fichiers qui seront ignorés par la sauvegarde, "
+"séparés par une espace. Par exemple : « *.ogg *.wav »"
 
 #. i18n: file: src/SettingsDialog.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: po/rc.cpp:132
 msgid "Exclude Filename Filter:"
-msgstr ""
+msgstr "Filtre des fichiers à exclure :"
 
 #: po/rc.cpp:133
 msgctxt "NAME OF TRANSLATORS"
@@ -297,13 +295,14 @@ msgid "Nothing selected for backup"
 msgstr "Rien n'est sélectionné pour la sauvegarde."
 
 #: src/Archiver.cxx:385
-#, fuzzy
 msgid "The target dir '%1' is not valid"
-msgstr "Le répertoire de destination n'est pas valide."
+msgstr "Le répertoire de destination « %1 » n'est pas valide."
 
 #: src/Archiver.cxx:392
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
+"Le répertoire de destination « %1 » doit être un répertoire sur un système "
+"de fichiers local et pas un URL distant"
 
 #: src/Archiver.cxx:405
 msgid ""
@@ -343,13 +342,13 @@ msgstr ""
 "de réduire le nombre d'archives conservées."
 
 #: src/Archiver.cxx:599
-#, fuzzy
 msgid "Could not write backup timestamps into profile %1: %2"
-msgstr "Impossible d'écrire dans le fichier temporaire"
+msgstr ""
+"Impossible d'écrire les horodatages de sauvegarde dans le profil %1 : %2"
 
 #: src/Archiver.cxx:605
 msgid "-- Filtered Files: %1"
-msgstr ""
+msgstr "-- Fichiers filtrés : %1"
 
 #: src/Archiver.cxx:608
 msgid "!! Backup finished <b>but files were skipped</b> !!"
@@ -401,7 +400,7 @@ msgstr "Comment devons-nous procéder avec le téléchargement ?"
 
 #: src/Archiver.cxx:725
 msgid "Upload Failed"
-msgstr ""
+msgstr "Le téléchargement a échoué"
 
 #: src/Archiver.cxx:726
 msgid "Retry"
@@ -519,9 +518,8 @@ msgid "An easy to use backup program"
 msgstr "Un programme de sauvegarde simple d'emploi"
 
 #: src/main.cxx:28
-#, fuzzy
 msgid "(c) 2006 - 2011 Martin Koller"
-msgstr "(c) 2006 - 2010 Martin Koller"
+msgstr "(c) 2006 - 2011 Martin Koller"
 
 #: src/main.cxx:33
 msgid "Martin Koller"
@@ -594,20 +592,20 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup\n"
 "instead of acting on the profile settings"
 msgstr ""
+"En mode automatique (auto/autobg), force la sauvegarde\n"
+"complète plutôt que de considérer la configuration du profil"
 
 #: src/main.cxx:120 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Impossible d'ouvrir le profil « %1 » en lecture : %2"
 
 #: src/MainWidget.cxx:71
-#, fuzzy
 msgid "Incremental Backup"
-msgstr "Annuler la sauvegarde"
+msgstr "Sauvegarde incrémentielle"
 
 #: src/MainWidget.cxx:73
-#, fuzzy
 msgid "Full Backup"
-msgstr "KBackup"
+msgstr "Sauvegarde complète"
 
 #: src/MainWindow.cxx:58
 msgid "New Profile"
