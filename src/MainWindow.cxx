@@ -299,6 +299,7 @@ void MainWindow::profileSettings()
   dialog.ui.compressFiles->setChecked(Archiver::instance->getCompressFiles());
   dialog.ui.fullBackupInterval->setValue(Archiver::instance->getFullBackupInterval());
   dialog.ui.filter->setText(Archiver::instance->getFilter());
+  dialog.ui.dirFilter->setPlainText(Archiver::instance->getDirFilter());
 
   if ( dialog.exec() == QDialog::Accepted )
   {
@@ -309,6 +310,7 @@ void MainWindow::profileSettings()
     Archiver::instance->setCompressFiles(dialog.ui.compressFiles->isChecked());
     Archiver::instance->setFullBackupInterval(dialog.ui.fullBackupInterval->value());
     Archiver::instance->setFilter(dialog.ui.filter->text());
+    Archiver::instance->setDirFilter(dialog.ui.dirFilter->toPlainText());
   }
 }
 
@@ -323,6 +325,7 @@ void MainWindow::newProfile()
   Archiver::instance->setKeptBackups(Archiver::UNLIMITED);
   Archiver::instance->setFullBackupInterval(1);
   Archiver::instance->setFilter("");
+  Archiver::instance->setDirFilter("");
 
   // clear selection
   QStringList includes, excludes;

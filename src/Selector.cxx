@@ -161,6 +161,16 @@ Selector::Selector(QWidget *parent)
   setRootIsDecorated(true);
   setShowSortIndicator(true);
 
+  /* TODO: needs fix in findItemByPath (others?)
+  // start with / as root node
+  ListItem *item = new ListItem(this, "/", true);
+  QFileInfo info("/");
+  item->setSize(info.size());
+  item->setLastModified(info.lastModified());
+  item->setPixmap(0, SmallIcon("folder"));
+  item->setOpen(true);
+  */
+
   fillTree(0, "/", false);
 
   adjustColumn(0);

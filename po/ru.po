@@ -10,16 +10,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru.po_[8daEob]\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2011-03-05 12:52+0100\n"
+"POT-Creation-Date: 2012-07-22 15:03+0200\n"
 "PO-Revision-Date: 2009-05-14 21:24+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. i18n: file: src/kbackupui.rc:4
 #. i18n: ectx: Menu (file)
@@ -35,7 +36,7 @@ msgstr "&Настройки"
 
 #. i18n: file: src/MainWidgetBase.ui:16
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: po/rc.cpp:9 src/main.cxx:26
+#: po/rc.cpp:9 src/main.cxx:37
 msgid "KBackup"
 msgstr "KBackup"
 
@@ -283,30 +284,45 @@ msgstr ""
 msgid "Exclude Filename Filter:"
 msgstr ""
 
-#: po/rc.cpp:133
+#. i18n: file: src/SettingsDialog.ui:204
+#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
+#: po/rc.cpp:135
+msgid ""
+"<html><head/><body><p>Defines a list of absolute path patterns which are "
+"used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
+"body></html>"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:211
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: po/rc.cpp:138
+msgid "Exclude Paths Filter:"
+msgstr ""
+
+#: po/rc.cpp:139
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
-#: po/rc.cpp:134
+#: po/rc.cpp:140
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"
 
-#: src/Archiver.cxx:379
+#: src/Archiver.cxx:416
 msgid "Nothing selected for backup"
 msgstr "Не выбрано ни одного объекта для резервирования"
 
-#: src/Archiver.cxx:385
+#: src/Archiver.cxx:422
 #, fuzzy
 msgid "The target dir '%1' is not valid"
 msgstr "Неверно указан целевой каталог"
 
-#: src/Archiver.cxx:392
+#: src/Archiver.cxx:429
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 
-#: src/Archiver.cxx:405
+#: src/Archiver.cxx:442
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
@@ -316,7 +332,7 @@ msgstr ""
 "\n"
 "Создать его?"
 
-#: src/Archiver.cxx:410
+#: src/Archiver.cxx:447
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
@@ -324,44 +340,44 @@ msgstr ""
 "Не могу создать целевой каталог \"%1\"\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:419
+#: src/Archiver.cxx:456
 msgid "The target dir does not exist"
 msgstr "Целевой каталог не существует"
 
-#: src/Archiver.cxx:492
+#: src/Archiver.cxx:529
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...уменьшение количества хранимых архивов до наиб. числа %1"
 
-#: src/Archiver.cxx:550
+#: src/Archiver.cxx:587
 msgid "...deleting %1"
 msgstr "...удаление %1"
 
-#: src/Archiver.cxx:576
+#: src/Archiver.cxx:613
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
 "не удалось прочесть содержимое целевого каталога. Не могу уменьшить число "
 "хранимых архивов."
 
-#: src/Archiver.cxx:599
+#: src/Archiver.cxx:636
 #, fuzzy
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr "Не могу записать временный файл"
 
-#: src/Archiver.cxx:605
+#: src/Archiver.cxx:642
 msgid "-- Filtered Files: %1"
 msgstr ""
 
-#: src/Archiver.cxx:608
+#: src/Archiver.cxx:645
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 "!! Резервирование завершено,  <b>но некоторые файлы были пропущены</b> !!"
 
-#: src/Archiver.cxx:610
+#: src/Archiver.cxx:647
 msgid "-- Backup successfully finished --"
 msgstr "-- Резервное копирование завершено успешно --"
 
-#: src/Archiver.cxx:616
+#: src/Archiver.cxx:653
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -369,7 +385,7 @@ msgstr ""
 "Резервное копирование завершено, но некоторые файлы были пропущены.\n"
 "Что делать?"
 
-#: src/Archiver.cxx:618
+#: src/Archiver.cxx:655
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -377,55 +393,55 @@ msgstr ""
 "Резервное копирование успешно завершено.\n"
 "Что делать?"
 
-#: src/Archiver.cxx:635
+#: src/Archiver.cxx:672
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Файлов: %1 Размер: %2, длительность: %3"
 
-#: src/Archiver.cxx:646
+#: src/Archiver.cxx:683
 msgid "...Backup aborted!"
 msgstr "...Резервирование прервано!"
 
-#: src/Archiver.cxx:674
+#: src/Archiver.cxx:711
 msgid "Backup cancelled"
 msgstr "Резервирование отменено"
 
-#: src/Archiver.cxx:691
+#: src/Archiver.cxx:728
 msgid "...finished slice %1"
 msgstr "...том %1 создан"
 
-#: src/Archiver.cxx:708
+#: src/Archiver.cxx:745
 msgid "...uploading archive %1 to %2"
 msgstr "...выгрузка архива %1 в %2"
 
-#: src/Archiver.cxx:725
+#: src/Archiver.cxx:762
 msgid "How shall we proceed with the upload?"
 msgstr "Что делать дальше с выгрузкой?"
 
-#: src/Archiver.cxx:725
+#: src/Archiver.cxx:762
 msgid "Upload Failed"
 msgstr ""
 
-#: src/Archiver.cxx:726
+#: src/Archiver.cxx:763
 msgid "Retry"
 msgstr "Попробовать снова"
 
-#: src/Archiver.cxx:726
+#: src/Archiver.cxx:763
 msgid "Change Target"
 msgstr "Изменить назначение"
 
-#: src/Archiver.cxx:820
+#: src/Archiver.cxx:857
 msgid "The script '%1' could not be started."
 msgstr "Не могу запустить сценарий '%1'"
 
-#: src/Archiver.cxx:859
+#: src/Archiver.cxx:896
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Носитель полон. Вставьте носитель № %1"
 
-#: src/Archiver.cxx:895
+#: src/Archiver.cxx:932
 msgid "The file '%1' can not be opened for writing."
 msgstr "Файл '%1' не может быть открыт для записи."
 
-#: src/Archiver.cxx:899
+#: src/Archiver.cxx:936
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -435,7 +451,11 @@ msgstr ""
 "\n"
 "Попытаться ещё раз?"
 
-#: src/Archiver.cxx:926
+#: src/Archiver.cxx:965
+msgid "...skipping filtered directory %1"
+msgstr ""
+
+#: src/Archiver.cxx:976
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -443,11 +463,11 @@ msgstr ""
 "Не могу получить информацию о каталоге %1\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:936
+#: src/Archiver.cxx:986
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Невозможно прочесть каталог '%1'. Пропускаю."
 
-#: src/Archiver.cxx:952
+#: src/Archiver.cxx:1002
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -455,11 +475,11 @@ msgstr ""
 "Не могу записать каталог '%1' архив.\n"
 "Вероятно, носитель полон."
 
-#: src/Archiver.cxx:1011
+#: src/Archiver.cxx:1061
 msgid "File '%1' is not readable. Skipping."
 msgstr "Не могу прочесть файл '%1'. Пропускаю."
 
-#: src/Archiver.cxx:1066 src/Archiver.cxx:1146
+#: src/Archiver.cxx:1116 src/Archiver.cxx:1196
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -467,12 +487,12 @@ msgstr ""
 "Не могу получить информацию о файле: %1\n"
 "Сообщение операционной системы: %1"
 
-#: src/Archiver.cxx:1078 src/Archiver.cxx:1103 src/Archiver.cxx:1117
-#: src/Archiver.cxx:1168 src/Archiver.cxx:1197 src/Archiver.cxx:1245
+#: src/Archiver.cxx:1128 src/Archiver.cxx:1153 src/Archiver.cxx:1167
+#: src/Archiver.cxx:1218 src/Archiver.cxx:1247 src/Archiver.cxx:1295
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Не могу произвести запись в архив. Вероятно, носитель полон."
 
-#: src/Archiver.cxx:1093 src/Archiver.cxx:1188
+#: src/Archiver.cxx:1143 src/Archiver.cxx:1238
 #, fuzzy
 msgid ""
 "Could not read from file '%1'\n"
@@ -481,15 +501,15 @@ msgstr ""
 "Не могу прочесть файл: %1\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:1157
+#: src/Archiver.cxx:1207
 msgid "Could not open file '%1' for reading."
 msgstr "Не могу открыть для чтения файл '%1'"
 
-#: src/Archiver.cxx:1221
+#: src/Archiver.cxx:1271
 msgid "...archiving file %1"
 msgstr "...архивирую файл '%1'"
 
-#: src/Archiver.cxx:1259
+#: src/Archiver.cxx:1309
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -497,7 +517,7 @@ msgstr ""
 "Не могу прочесть файл: %1\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:1274
+#: src/Archiver.cxx:1324
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -505,36 +525,36 @@ msgstr ""
 "Не могу создать файл для сжатия: %1\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:1299
+#: src/Archiver.cxx:1349
 msgid "Could not write to temporary file"
 msgstr "Не могу записать временный файл"
 
-#: src/Archiver.cxx:1321
+#: src/Archiver.cxx:1371
 msgid "...compressing file %1"
 msgstr "...сжимаю файл '%1'"
 
-#: src/Archiver.cxx:1366
+#: src/Archiver.cxx:1416
 msgid "WARNING:"
 msgstr "ПРЕДУПРЖДЕНИЕ"
 
-#: src/main.cxx:27
+#: src/main.cxx:38
 msgid "An easy to use backup program"
 msgstr "Простая в использовании программа для резервного копирования данных"
 
-#: src/main.cxx:28
+#: src/main.cxx:39
 #, fuzzy
-msgid "(c) 2006 - 2011 Martin Koller"
+msgid "(c) 2006 - 2012 Martin Koller"
 msgstr "(c) 2006-2009 Martin Koller"
 
-#: src/main.cxx:33
+#: src/main.cxx:44
 msgid "Martin Koller"
 msgstr "Martin Koller"
 
-#: src/main.cxx:33
+#: src/main.cxx:44
 msgid "Developer"
 msgstr "Разработчик"
 
-#: src/main.cxx:39
+#: src/main.cxx:50
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -543,7 +563,7 @@ msgctxt ""
 msgid "Start with given profile"
 msgstr "Запускать с указанным профилем"
 
-#: src/main.cxx:43
+#: src/main.cxx:54
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -553,7 +573,7 @@ msgid "Script to run after finishing one archive slice"
 msgstr ""
 "Сценарий, который должен запускаться после создания каждого тома архива"
 
-#: src/main.cxx:47
+#: src/main.cxx:58
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -566,7 +586,7 @@ msgstr ""
 "Автоматически запустить архивирование с выбранным профилем и выйти после "
 "завершения."
 
-#: src/main.cxx:52
+#: src/main.cxx:63
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -580,7 +600,7 @@ msgstr ""
 "Автоматически запустить архивирование с выбранным профилем в фоне (окно "
 "программы не будет показано) и выйти после завершения."
 
-#: src/main.cxx:58
+#: src/main.cxx:69
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -593,7 +613,7 @@ msgstr ""
 "Выдавать больше информации, печатать имена всех файлов при архивировании в "
 "автоматическом фоновом режиме"
 
-#: src/main.cxx:63
+#: src/main.cxx:74
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -603,7 +623,7 @@ msgid ""
 "instead of acting on the profile settings"
 msgstr ""
 
-#: src/main.cxx:120 src/MainWindow.cxx:211
+#: src/main.cxx:134 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Не могу открыть для чтения профиль '%1': %2"
 
@@ -669,7 +689,7 @@ msgstr "Профиль уже существует"
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Не могу открыть файл профиля '%1' для записи: %2"
 
-#: src/MainWindow.cxx:349
+#: src/MainWindow.cxx:352
 msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"

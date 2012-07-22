@@ -144,6 +144,33 @@ QString Archiver::getFilter() const
 
 //--------------------------------------------------------------------------------
 
+void Archiver::setDirFilter(const QString &filter)
+{
+  dirFilters.clear();
+  QStringList list = filter.split('\n', QString::SkipEmptyParts);
+  foreach (const QString &str, list)
+  {
+    QString expr = str.trimmed();
+    if ( !expr.isEmpty() )
+      dirFilters.append(QRegExp(expr, Qt::CaseSensitive, QRegExp::Wildcard));
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+QString Archiver::getDirFilter() const
+{
+  QString filter;
+  foreach (const QRegExp &reg, dirFilters)
+  {
+    filter += reg.pattern();
+    filter += '\n';
+  }
+  return filter;
+}
+
+//--------------------------------------------------------------------------------
+
 void Archiver::setFullBackupInterval(int days)
 {
   fullBackupInterval = days;
@@ -245,6 +272,7 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
   setMaxSliceMBs(Archiver::UNLIMITED);
   setFullBackupInterval(1);  // default as in previous versions
   filters.clear();
+  dirFilters.clear();
 
   while ( ! stream.atEnd() )
   {
@@ -301,6 +329,10 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
     {
       setFilter(stream.readLine());  // include white space
     }
+    else if ( type == 'x' )
+    {
+      dirFilters.append(QRegExp(stream.readLine(), Qt::CaseSensitive, QRegExp::Wildcard));
+    }
     else if ( type == 'Z' )
     {
       int compress;
@@ -315,6 +347,8 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
     {
       excludes.append(stream.readLine());
     }
+    else
+      stream.readLine();  // skip unknown key and rest of line
   }
 
   file.close();
@@ -360,11 +394,14 @@ bool Archiver::saveProfile(const QString &fileName, const QStringList &includes,
   if ( !filters.isEmpty() )
     stream << "X " << getFilter() << endl;
 
-  for (QStringList::const_iterator it = includes.begin(); it != includes.end(); ++it)
-    stream << "I " << *it << endl;
+  foreach (const QRegExp &exp, dirFilters)
+    stream << "x " << exp.pattern() << endl;
 
-  for (QStringList::const_iterator it = excludes.begin(); it != excludes.end(); ++it)
-    stream << "E " << *it << endl;
+  foreach (const QString &str, includes)
+    stream << "I " << str << endl;
+
+  foreach (const QString &str, excludes)
+    stream << "E " << str << endl;
 
   file.close();
   return true;
@@ -426,14 +463,14 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   excludeFiles.clear();
 
   // build map for directories and files to be excluded for fast lookup
-  for (QStringList::const_iterator it = excludes.begin(); it != excludes.end(); ++it)
+  foreach (const QString &name, excludes)
   {
-    QFileInfo info(*it);
+    QFileInfo info(name);
 
     if ( !info.isSymLink() && info.isDir() )
-      excludeDirs.insert(*it, 0);
+      excludeDirs.insert(name);
     else
-      excludeFiles.insert(*it, 0);
+      excludeFiles.insert(name);
   }
 
   baseName = "";
@@ -466,7 +503,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     return false;
   }
 
-  for (QStringList::const_iterator it = includes.begin(); !cancelled && (it != includes.end()); ++it)
+  for (QStringList::const_iterator it = includes.constBegin(); !cancelled && (it != includes.constEnd()); ++it)
   {
     QString entry = *it;
 
@@ -915,25 +952,38 @@ bool Archiver::getNextSlice()
 
 void Archiver::addDirFiles(QDir &dir)
 {
-  if ( excludeDirs.contains(dir.absolutePath()) )
+  QString absolutePath = dir.absolutePath();
+
+  if ( excludeDirs.contains(absolutePath) )
     return;
+
+  foreach (const QRegExp &exp, dirFilters)
+  {
+    if ( exp.exactMatch(absolutePath) )
+    {
+      if ( interactive || verbose )
+        emit logging(i18n("...skipping filtered directory %1").arg(absolutePath));
+
+      return;
+    }
+  }
 
   // add the dir itself
   KDE_struct_stat status;
   memset(&status, 0, sizeof(status));
-  if ( KDE_stat(QFile::encodeName(dir.absolutePath()), &status) == -1 )
+  if ( KDE_stat(QFile::encodeName(absolutePath), &status) == -1 )
   {
     emit warning(i18n("Could not get information of directory: %1\n"
                       "The operating system reports: %2")
-                 .arg(dir.absolutePath())
+                 .arg(absolutePath)
                  .arg(strerror(errno)));
     return;
   }
-  QFileInfo dirInfo(dir.absolutePath());
+  QFileInfo dirInfo(absolutePath);
 
   if ( ! dirInfo.isReadable() )
   {
-    emit warning(i18n("Directory '%1' is not readable. Skipping.").arg(dir.absolutePath()));
+    emit warning(i18n("Directory '%1' is not readable. Skipping.").arg(absolutePath));
     skippedFiles = true;
     return;
   }
@@ -941,16 +991,16 @@ void Archiver::addDirFiles(QDir &dir)
   totalFiles++;
   emit totalFilesChanged(totalFiles);
   if ( interactive || verbose )
-    emit logging(dir.absolutePath());
+    emit logging(absolutePath);
 
   qApp->processEvents(QEventLoop::AllEvents, 5);
   if ( cancelled ) return;
 
-  if ( ! archive->writeDir(QString(".") + dir.absolutePath(), dirInfo.owner(), dirInfo.group(),
+  if ( ! archive->writeDir(QString(".") + absolutePath, dirInfo.owner(), dirInfo.group(),
                            status.st_mode, status.st_atime, status.st_mtime, status.st_ctime) )
   {
     emit warning(i18n("Could not write directory '%1' to archive.\n"
-                      "Maybe the medium is full.").arg(dir.absolutePath()));
+                      "Maybe the medium is full.").arg(absolutePath));
     return;
   }
 

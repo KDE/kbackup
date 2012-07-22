@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2011-03-05 12:52+0100\n"
+"POT-Creation-Date: 2012-07-22 15:03+0200\n"
 "PO-Revision-Date: 2011-03-14 20:33+0100\n"
 "Last-Translator: Alain Portal <alain.portal@univ-montp2.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,7 +33,7 @@ msgstr "&Configuration"
 
 #. i18n: file: src/MainWidgetBase.ui:16
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: po/rc.cpp:9 src/main.cxx:26
+#: po/rc.cpp:9 src/main.cxx:37
 msgid "KBackup"
 msgstr "KBackup"
 
@@ -280,31 +281,47 @@ msgstr ""
 msgid "Exclude Filename Filter:"
 msgstr "Filtre des fichiers à exclure :"
 
-#: po/rc.cpp:133
+#. i18n: file: src/SettingsDialog.ui:204
+#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
+#: po/rc.cpp:135
+msgid ""
+"<html><head/><body><p>Defines a list of absolute path patterns which are "
+"used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
+"body></html>"
+msgstr ""
+
+#. i18n: file: src/SettingsDialog.ui:211
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: po/rc.cpp:138
+#, fuzzy
+msgid "Exclude Paths Filter:"
+msgstr "Filtre des fichiers à exclure :"
+
+#: po/rc.cpp:139
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Régis Floret,Alain Portal"
 
-#: po/rc.cpp:134
+#: po/rc.cpp:140
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "r.floret@laposte.net,alain.portal@univ-montp2.fr"
 
-#: src/Archiver.cxx:379
+#: src/Archiver.cxx:416
 msgid "Nothing selected for backup"
 msgstr "Rien n'est sélectionné pour la sauvegarde."
 
-#: src/Archiver.cxx:385
+#: src/Archiver.cxx:422
 msgid "The target dir '%1' is not valid"
 msgstr "Le répertoire de destination « %1 » n'est pas valide."
 
-#: src/Archiver.cxx:392
+#: src/Archiver.cxx:429
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "Le répertoire de destination « %1 » doit être un répertoire sur un système "
 "de fichiers local et pas un URL distant"
 
-#: src/Archiver.cxx:405
+#: src/Archiver.cxx:442
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
@@ -314,7 +331,7 @@ msgstr ""
 "\n"
 "Dois-je le créer ?"
 
-#: src/Archiver.cxx:410
+#: src/Archiver.cxx:447
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
@@ -322,43 +339,43 @@ msgstr ""
 "Impossible de créer le répertoire cible « % 1».\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:419
+#: src/Archiver.cxx:456
 msgid "The target dir does not exist"
 msgstr "Le répertoire de destination n'existe pas."
 
-#: src/Archiver.cxx:492
+#: src/Archiver.cxx:529
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...réduction du nombre d'archives conservées au maximum défini : %1"
 
-#: src/Archiver.cxx:550
+#: src/Archiver.cxx:587
 msgid "...deleting %1"
 msgstr "...suppression %1"
 
-#: src/Archiver.cxx:576
+#: src/Archiver.cxx:613
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
 "l'extraction de la liste du contenu du répertoire cible a échoué. Impossible "
 "de réduire le nombre d'archives conservées."
 
-#: src/Archiver.cxx:599
+#: src/Archiver.cxx:636
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr ""
 "Impossible d'écrire les horodatages de sauvegarde dans le profil %1 : %2"
 
-#: src/Archiver.cxx:605
+#: src/Archiver.cxx:642
 msgid "-- Filtered Files: %1"
 msgstr "-- Fichiers filtrés : %1"
 
-#: src/Archiver.cxx:608
+#: src/Archiver.cxx:645
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr "!! Sauvegarde terminée <b>mais des fichiers ont été ignorés</b> !!"
 
-#: src/Archiver.cxx:610
+#: src/Archiver.cxx:647
 msgid "-- Backup successfully finished --"
 msgstr "-- La sauvegarde s'est terminée avec succés --"
 
-#: src/Archiver.cxx:616
+#: src/Archiver.cxx:653
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -366,7 +383,7 @@ msgstr ""
 "La sauvegarde est terminée mais des fichiers ont été ignorés.\n"
 "Que voulez-vous faire à présent ?"
 
-#: src/Archiver.cxx:618
+#: src/Archiver.cxx:655
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -374,55 +391,55 @@ msgstr ""
 "La sauvegarde s'est achevée avec succès.\n"
 "Que voulez-vous faire à présent ?"
 
-#: src/Archiver.cxx:635
+#: src/Archiver.cxx:672
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Totaux : Fichiers : %1, Taille : %2, Durée : %3"
 
-#: src/Archiver.cxx:646
+#: src/Archiver.cxx:683
 msgid "...Backup aborted!"
 msgstr "... Sauvegarde abandonnée !"
 
-#: src/Archiver.cxx:674
+#: src/Archiver.cxx:711
 msgid "Backup cancelled"
 msgstr "Sauvegarde annulée"
 
-#: src/Archiver.cxx:691
+#: src/Archiver.cxx:728
 msgid "...finished slice %1"
 msgstr "tranche %1 finie..."
 
-#: src/Archiver.cxx:708
+#: src/Archiver.cxx:745
 msgid "...uploading archive %1 to %2"
 msgstr "...téléchargement de l'archive %1 vers %2"
 
-#: src/Archiver.cxx:725
+#: src/Archiver.cxx:762
 msgid "How shall we proceed with the upload?"
 msgstr "Comment devons-nous procéder avec le téléchargement ?"
 
-#: src/Archiver.cxx:725
+#: src/Archiver.cxx:762
 msgid "Upload Failed"
 msgstr "Le téléchargement a échoué"
 
-#: src/Archiver.cxx:726
+#: src/Archiver.cxx:763
 msgid "Retry"
 msgstr "Réessayer"
 
-#: src/Archiver.cxx:726
+#: src/Archiver.cxx:763
 msgid "Change Target"
 msgstr "Modifier la cible"
 
-#: src/Archiver.cxx:820
+#: src/Archiver.cxx:857
 msgid "The script '%1' could not be started."
 msgstr "Le script « %1 » ne peut pas être démarré."
 
-#: src/Archiver.cxx:859
+#: src/Archiver.cxx:896
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Le medium est plein. Veuillez insérer le medium N° %1"
 
-#: src/Archiver.cxx:895
+#: src/Archiver.cxx:932
 msgid "The file '%1' can not be opened for writing."
 msgstr "Le fichier « %1 » ne peux pas être ouvert en écriture."
 
-#: src/Archiver.cxx:899
+#: src/Archiver.cxx:936
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -432,7 +449,11 @@ msgstr ""
 "\n"
 "Voulez-vous recommencer ?"
 
-#: src/Archiver.cxx:926
+#: src/Archiver.cxx:965
+msgid "...skipping filtered directory %1"
+msgstr ""
+
+#: src/Archiver.cxx:976
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -440,11 +461,11 @@ msgstr ""
 "Impossible d'obtenir des informations sur le répertoire : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:936
+#: src/Archiver.cxx:986
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Le répertoire « %1 » n'est pas lisible. Passe."
 
-#: src/Archiver.cxx:952
+#: src/Archiver.cxx:1002
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -452,11 +473,11 @@ msgstr ""
 "Impossible d'écrire le répertoire « %1 » dans l'archive.\n"
 "Peut-être le medium est-il plein ?"
 
-#: src/Archiver.cxx:1011
+#: src/Archiver.cxx:1061
 msgid "File '%1' is not readable. Skipping."
 msgstr "Le fichier « %1 » n'est pas lisible. Passe."
 
-#: src/Archiver.cxx:1066 src/Archiver.cxx:1146
+#: src/Archiver.cxx:1116 src/Archiver.cxx:1196
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -464,12 +485,12 @@ msgstr ""
 "Impossible d'obtenir des informations sur le fichier : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1078 src/Archiver.cxx:1103 src/Archiver.cxx:1117
-#: src/Archiver.cxx:1168 src/Archiver.cxx:1197 src/Archiver.cxx:1245
+#: src/Archiver.cxx:1128 src/Archiver.cxx:1153 src/Archiver.cxx:1167
+#: src/Archiver.cxx:1218 src/Archiver.cxx:1247 src/Archiver.cxx:1295
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Impossible d'écrire dans l'archive. Peut-être le medium est-il plein ?"
 
-#: src/Archiver.cxx:1093 src/Archiver.cxx:1188
+#: src/Archiver.cxx:1143 src/Archiver.cxx:1238
 msgid ""
 "Could not read from file '%1'\n"
 "The operating system reports: %2"
@@ -477,15 +498,15 @@ msgstr ""
 "Impossible de lire le fichier « % »\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1157
+#: src/Archiver.cxx:1207
 msgid "Could not open file '%1' for reading."
 msgstr "Impossible d'ouvrir le fichier « %1 » en lecture."
 
-#: src/Archiver.cxx:1221
+#: src/Archiver.cxx:1271
 msgid "...archiving file %1"
 msgstr "...archivage du fichier %1"
 
-#: src/Archiver.cxx:1259
+#: src/Archiver.cxx:1309
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -493,7 +514,7 @@ msgstr ""
 "Impossible de lire le fichier : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1274
+#: src/Archiver.cxx:1324
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -501,35 +522,36 @@ msgstr ""
 "Impossible de créer le fichier temporaire pour la compression : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1299
+#: src/Archiver.cxx:1349
 msgid "Could not write to temporary file"
 msgstr "Impossible d'écrire dans le fichier temporaire"
 
-#: src/Archiver.cxx:1321
+#: src/Archiver.cxx:1371
 msgid "...compressing file %1"
 msgstr "... compression du fichier %1"
 
-#: src/Archiver.cxx:1366
+#: src/Archiver.cxx:1416
 msgid "WARNING:"
 msgstr "AVERTISSEMENT :"
 
-#: src/main.cxx:27
+#: src/main.cxx:38
 msgid "An easy to use backup program"
 msgstr "Un programme de sauvegarde simple d'emploi"
 
-#: src/main.cxx:28
-msgid "(c) 2006 - 2011 Martin Koller"
+#: src/main.cxx:39
+#, fuzzy
+msgid "(c) 2006 - 2012 Martin Koller"
 msgstr "(c) 2006 - 2011 Martin Koller"
 
-#: src/main.cxx:33
+#: src/main.cxx:44
 msgid "Martin Koller"
 msgstr "Martin Koller"
 
-#: src/main.cxx:33
+#: src/main.cxx:44
 msgid "Developer"
 msgstr "Développeur"
 
-#: src/main.cxx:39
+#: src/main.cxx:50
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -537,7 +559,7 @@ msgctxt ""
 msgid "Start with given profile"
 msgstr "Démarrer avec le profil donné"
 
-#: src/main.cxx:43
+#: src/main.cxx:54
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -545,7 +567,7 @@ msgctxt ""
 msgid "Script to run after finishing one archive slice"
 msgstr "Script à exécuter après la fin d'une tranche d'archive"
 
-#: src/main.cxx:47
+#: src/main.cxx:58
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -557,7 +579,7 @@ msgstr ""
 "Lancer automatiquement la sauvegarde avec le fichier\n"
 "profil fourni et quitter lorsqu'elle est achevée. "
 
-#: src/main.cxx:52
+#: src/main.cxx:63
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -571,7 +593,7 @@ msgstr ""
 "graphique) la sauvegarde avec le fichier profil fourni\n"
 "et quitter lorsqu'elle est achevée. "
 
-#: src/main.cxx:58
+#: src/main.cxx:69
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -583,7 +605,7 @@ msgstr ""
 "En mode arrière plan automatique, être volubile et afficher \n"
 "le nom de chaque fichier pendant la sauvegarde"
 
-#: src/main.cxx:63
+#: src/main.cxx:74
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -595,7 +617,7 @@ msgstr ""
 "En mode automatique (auto/autobg), force la sauvegarde\n"
 "complète plutôt que de considérer la configuration du profil"
 
-#: src/main.cxx:120 src/MainWindow.cxx:211
+#: src/main.cxx:134 src/MainWindow.cxx:211
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Impossible d'ouvrir le profil « %1 » en lecture : %2"
 
@@ -659,7 +681,7 @@ msgstr "Le profil existe"
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Impossible d'ouvrir le profil « %1 » en écriture : %2"
 
-#: src/MainWindow.cxx:349
+#: src/MainWindow.cxx:352
 msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"

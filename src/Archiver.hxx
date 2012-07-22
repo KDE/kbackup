@@ -13,8 +13,8 @@
 // the class which does the archiving
 
 #include <qobject.h>
-#include <qmap.h>
 #include <qpointer.h>
+#include <QSet>
 #include <QTimer>
 #include <QTime>
 #include <QDateTime>
@@ -66,6 +66,10 @@ class Archiver : public QObject
     // e.g. "*.png *.ogg"
     void setFilter(const QString &filter);
     QString getFilter() const;
+
+    // define a list of path wildcards to filter complete dirs, separated by newline
+    void setDirFilter(const QString &filter);
+    QString getDirFilter() const;
 
     // interval for a full backup instead differential backup; when 1 given == full backup
     void setFullBackupInterval(int days);
@@ -144,8 +148,8 @@ class Archiver : public QObject
     static bool UDSlessThan(KIO::UDSEntry &left, KIO::UDSEntry &right);
 
   private:
-    QMap<QString, char> excludeFiles;
-    QMap<QString, char> excludeDirs;
+    QSet<QString> excludeFiles;
+    QSet<QString> excludeDirs;
 
     QString archiveName;
     QString filePrefix;  // default = "backup"
@@ -159,6 +163,7 @@ class Archiver : public QObject
     QTime elapsed;
 
     QList<QRegExp> filters;
+    QList<QRegExp> dirFilters;
 
     KUrl targetURL;
     QString baseName;

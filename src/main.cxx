@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2012 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -10,6 +10,7 @@
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
+#include <signal.h>
 
 #include <QFile>
 #include <QString>
@@ -21,11 +22,21 @@
 
 //--------------------------------------------------------------------------------
 
+void sigHandler(int sig)
+{
+  Q_UNUSED(sig)
+
+  QTimer::singleShot(0, Archiver::instance, SLOT(cancel()));
+  QTimer::singleShot(0, QCoreApplication::instance(), SLOT(quit()));
+}
+
+//--------------------------------------------------------------------------------
+
 int main(int argc, char **argv)
 {
   KAboutData about("kbackup", "", ki18n("KBackup"),
-                   "0.7.1", ki18n("An easy to use backup program"), KAboutData::License_GPL_V2,
-                   ki18n("(c) 2006 - 2011 Martin Koller"),  // copyright
+                   "0.8", ki18n("An easy to use backup program"), KAboutData::License_GPL_V2,
+                   ki18n("(c) 2006 - 2012 Martin Koller"),  // copyright
                    KLocalizedString(),  // added text
                    "http://www.kde-apps.org/content/show.php?content=44998",  // homepage
                    "kollix@aon.at");  // bugs to
@@ -81,6 +92,9 @@ int main(int argc, char **argv)
   }
   else
     new Archiver(0);
+
+  signal(SIGTERM, sigHandler);
+  signal(SIGINT, sigHandler);
 
   QString file = args->getOption("script");
   if ( file.length() )
