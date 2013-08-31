@@ -950,6 +950,26 @@ bool Archiver::getNextSlice()
 
 //--------------------------------------------------------------------------------
 
+void Archiver::emitArchiveError() const
+{
+  QString err;
+ 
+  if ( archive->device() )
+    err = archive->device()->errorString();
+
+  if ( err.isEmpty() )
+  {
+    emit warning(i18n("Could not write to archive. Maybe the medium is full."));
+  }
+  else
+  {
+    emit warning(i18n("Could not write to archive.\n"
+                      "The operating system reports: %1").arg(err));
+  }
+}
+
+//--------------------------------------------------------------------------------
+
 void Archiver::addDirFiles(QDir &dir)
 {
   QString absolutePath = dir.absolutePath();
@@ -1125,7 +1145,7 @@ void Archiver::addFile(const QFileInfo &info)
                                      info.owner(), info.group(), tmpFile.size(),
                                      status.st_mode, status.st_atime, status.st_mtime, status.st_ctime) )
       {
-        emit warning(i18n("Could not write to archive. Maybe the medium is full."));
+        emitArchiveError();
         cancel();
         return;
       }
@@ -1150,7 +1170,7 @@ void Archiver::addFile(const QFileInfo &info)
 
         if ( ! archive->writeData(buffer, len) )
         {
-          emit warning(i18n("Could not write to archive. Maybe the medium is full."));
+          emitArchiveError();
           cancel();
           return;
         }
@@ -1164,7 +1184,7 @@ void Archiver::addFile(const QFileInfo &info)
       }
       if ( ! archive->finishWriting(tmpFile.size()) )
       {
-        emit warning(i18n("Could not write to archive. Maybe the medium is full."));
+        emitArchiveError();
         cancel();
         return;
       }
@@ -1215,7 +1235,7 @@ bool Archiver::addLocalFile(const QFileInfo &info)
                                  info.owner(), info.group(), sourceStat.st_size,
                                  sourceStat.st_mode, sourceStat.st_atime, sourceStat.st_mtime, sourceStat.st_ctime) )
   {
-    emit warning(i18n("Could not write to archive. Maybe the medium is full."));
+    emitArchiveError();
     return false;
   }
 
@@ -1244,7 +1264,7 @@ bool Archiver::addLocalFile(const QFileInfo &info)
 
     if ( ! archive->writeData(buffer, len) )
     {
-      emit warning(i18n("Could not write to archive. Maybe the medium is full."));
+      emitArchiveError();
       return false;
     }
 
@@ -1292,7 +1312,7 @@ bool Archiver::addLocalFile(const QFileInfo &info)
 
   if ( !cancelled && !archive->finishWriting(sourceStat.st_size) )
   {
-    emit warning(i18n("Could not write to archive. Maybe the medium is full."));
+    emitArchiveError();
     return false;
   }
 
