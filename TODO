@@ -8,3 +8,5 @@
 - fix the exit-question dialog when exiting due to session stop
 
 - start tree with "/" to allow backup of everything
+
+- option to compress the complete tar file _after_ finish-slice
