@@ -28,7 +28,7 @@ Included Languages:
 %prep
 %setup
 mkdir kbackup-build
-cd kbackup-build && cmake -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` ..
+cd kbackup-build && cmake -DCMAKE_INSTALL_PREFIX=`kf5-config --prefix` ..
 
 %build
 cd kbackup-build && make

@@ -284,7 +284,7 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   menu = new QMenu(this);
   QAction *action;
 
-  action = KStandardAction::open(this, &Selector::open, actionCollection);
+  action = KStandardAction::open(this, SLOT(open()), actionCollection);
   menu->addAction(action);
 
   connect(this, &Selector::doubleClicked, this, &Selector::doubleClickedSlot);
@@ -294,7 +294,7 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   connect(openWithSubMenu, &QMenu::aboutToShow, this, &Selector::populateOpenMenu);
   connect(openWithSubMenu, &QMenu::triggered, this, &Selector::openWith);
 
-  deleteFileAction = KStandardAction::deleteFile(this, &Selector::deleteFile, actionCollection);
+  deleteFileAction = KStandardAction::deleteFile(this, SLOT(deleteFile()), actionCollection);
   menu->addAction(deleteFileAction);
 
   action = actionCollection->addAction("properties", this, SLOT(properties()));
