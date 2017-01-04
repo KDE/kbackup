@@ -294,7 +294,12 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   connect(openWithSubMenu, &QMenu::aboutToShow, this, &Selector::populateOpenMenu);
   connect(openWithSubMenu, &QMenu::triggered, this, &Selector::openWith);
 
-  deleteFileAction = KStandardAction::deleteFile(this, SLOT(deleteFile()), actionCollection);
+  // just since KF 5.25
+  //deleteFileAction = KStandardAction::deleteFile(this, SLOT(deleteFile()), actionCollection);
+  deleteFileAction = actionCollection->addAction("deleteFile", this, SLOT(deleteFile()));
+  deleteFileAction->setText(i18n("Delete File"));
+  deleteFileAction->setIcon(QIcon::fromTheme("edit-delete"));
+  deleteFileAction->setShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Delete));
   menu->addAction(deleteFileAction);
 
   action = actionCollection->addAction("properties", this, SLOT(properties()));

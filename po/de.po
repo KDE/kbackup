@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2017-01-04 11:37+0100\n"
+"POT-Creation-Date: 2017-01-04 12:31+0100\n"
 "PO-Revision-Date: 2009-05-13 19:36+0200\n"
 "Last-Translator: Martin Koller <kollix@aon.at>\n"
 "Language-Team: Deutsch\n"
@@ -20,18 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Source-Language: C\n"
 
-#: build_kf5/src/ui_MainWidgetBase.h:364 src/CVS/Base/main.cxx:37
-#: src/main.cxx:46
+#: build_kf5/src/ui_MainWidgetBase.h:364 src/main.cxx:46
 msgid "KBackup"
 msgstr "KBackup"
 
-#: build_kf5/src/ui_MainWidgetBase.h:365 src/CVS/Base/MainWindow.cxx:116
-#: src/MainWindow.cxx:115
+#: build_kf5/src/ui_MainWidgetBase.h:365 src/MainWindow.cxx:115
 msgid "Start Backup"
 msgstr "Starte Sicherung"
 
-#: build_kf5/src/ui_MainWidgetBase.h:366 src/CVS/Base/MainWindow.cxx:120
-#: src/MainWindow.cxx:118
+#: build_kf5/src/ui_MainWidgetBase.h:366 src/MainWindow.cxx:118
 msgid "Cancel Backup"
 msgstr "Sicherung Abbrechen"
 
@@ -100,8 +97,7 @@ msgstr "Warnungen:"
 msgid "Progress:"
 msgstr "Fortschritt:"
 
-#: build_kf5/src/ui_SettingsDialog.h:218 src/CVS/Base/MainWindow.cxx:74
-#: src/MainWindow.cxx:74
+#: build_kf5/src/ui_SettingsDialog.h:218 src/MainWindow.cxx:74
 msgid "Profile Settings"
 msgstr "Profil Einstellungen"
 
@@ -118,7 +114,6 @@ msgid "Maximum Archive Size:"
 msgstr "Maximale Archiv Teil Größe:"
 
 #: build_kf5/src/ui_SettingsDialog.h:222 build_kf5/src/ui_SettingsDialog.h:228
-#: src/CVS/Base/MainWidget.cxx:168 src/CVS/Base/SettingsDialog.cxx:21
 #: src/MainWidget.cxx:166 src/SettingsDialog.cxx:21
 msgid "unlimited"
 msgstr "unlimitiert"
@@ -223,23 +218,23 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kollix@aon.at"
 
-#: src/Archiver.cxx:418 src/CVS/Base/Archiver.cxx:416
+#: src/Archiver.cxx:418
 msgid "Nothing selected for backup"
 msgstr "Nichts zum Sichern ausgewählt"
 
-#: src/Archiver.cxx:424 src/CVS/Base/Archiver.cxx:422
+#: src/Archiver.cxx:424
 #, qt-format
 msgid "The target dir '%1' is not valid"
 msgstr "Das Zielverzeichnis '%1' ist ungültig"
 
-#: src/Archiver.cxx:431 src/CVS/Base/Archiver.cxx:429
+#: src/Archiver.cxx:431
 #, qt-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "Das Zielverzeichnis '%1' muß ein Verzeichnis am lokalen Dateisystem sein und "
 "keine entfernte URL"
 
-#: src/Archiver.cxx:444 src/CVS/Base/Archiver.cxx:442
+#: src/Archiver.cxx:444
 #, qt-format
 msgid ""
 "The target directory '%1' does not exist.\n"
@@ -250,7 +245,7 @@ msgstr ""
 "\n"
 "Soll ich es erzeugen?"
 
-#: src/Archiver.cxx:449 src/CVS/Base/Archiver.cxx:447
+#: src/Archiver.cxx:449
 #, qt-format
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -259,46 +254,46 @@ msgstr ""
 "Konnte das Zielverzeichnis '%1' nicht erzeugen.\n"
 "Meldung des Betriebssystems: %2"
 
-#: src/Archiver.cxx:458 src/CVS/Base/Archiver.cxx:456
+#: src/Archiver.cxx:458
 msgid "The target dir does not exist"
 msgstr "Das Zielverzeichnis existiert nicht"
 
-#: src/Archiver.cxx:531 src/CVS/Base/Archiver.cxx:529
+#: src/Archiver.cxx:531
 #, qt-format
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...reduziere die Anzahl der zu erhaltenden Sicherungen auf max. %1"
 
-#: src/Archiver.cxx:588 src/CVS/Base/Archiver.cxx:587
+#: src/Archiver.cxx:588
 #, qt-format
 msgid "...deleting %1"
 msgstr "...lösche %1"
 
-#: src/Archiver.cxx:612 src/CVS/Base/Archiver.cxx:613
+#: src/Archiver.cxx:612
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
 "Auflisten des Zielverzeichnisses schlug fehl. Kann die Anzahl der zu "
 "erhaltenden Sicherungen nicht reduzieren."
 
-#: src/Archiver.cxx:635 src/CVS/Base/Archiver.cxx:636
+#: src/Archiver.cxx:635
 #, qt-format
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr "Konnte Sicherungs Zeitstempel nicht ins Profil %1 schreiben: %2"
 
-#: src/Archiver.cxx:641 src/CVS/Base/Archiver.cxx:642
+#: src/Archiver.cxx:641
 #, qt-format
 msgid "-- Filtered Files: %1"
 msgstr "-- Gefilterte Dateien: %1"
 
-#: src/Archiver.cxx:644 src/CVS/Base/Archiver.cxx:645
+#: src/Archiver.cxx:644
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr "!! Sicherung abgeschlossen <b>aber Dateien wurden übersprungen</b> !!"
 
-#: src/Archiver.cxx:646 src/CVS/Base/Archiver.cxx:647
+#: src/Archiver.cxx:646
 msgid "-- Backup successfully finished --"
 msgstr "-- Sicherung erfolgreich abgeschlossen --"
 
-#: src/Archiver.cxx:652 src/CVS/Base/Archiver.cxx:653
+#: src/Archiver.cxx:652
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -306,7 +301,7 @@ msgstr ""
 "Die Sicherung wurde abgeschlossen aber Dateien wurden übersprungen.\n"
 "Was wollen sie jetzt tun?"
 
-#: src/Archiver.cxx:654 src/CVS/Base/Archiver.cxx:655
+#: src/Archiver.cxx:654
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -314,61 +309,61 @@ msgstr ""
 "Die Sicherung wurde erfolgreich beendet.\n"
 "Was wollen sie jetzt tun?"
 
-#: src/Archiver.cxx:671 src/CVS/Base/Archiver.cxx:672
+#: src/Archiver.cxx:671
 #, qt-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Summen: Dateien: %1, Größe: %2, Dauer: %3"
 
-#: src/Archiver.cxx:682 src/CVS/Base/Archiver.cxx:683
+#: src/Archiver.cxx:682
 msgid "...Backup aborted!"
 msgstr "...Sicherung abgebrochen!"
 
-#: src/Archiver.cxx:710 src/CVS/Base/Archiver.cxx:711
+#: src/Archiver.cxx:710
 msgid "Backup cancelled"
 msgstr "Sicherung abgebrochen"
 
-#: src/Archiver.cxx:727 src/CVS/Base/Archiver.cxx:728
+#: src/Archiver.cxx:727
 #, qt-format
 msgid "...finished slice %1"
 msgstr "...Archiv %1 abgeschlossen"
 
-#: src/Archiver.cxx:742 src/CVS/Base/Archiver.cxx:745
+#: src/Archiver.cxx:742
 #, qt-format
 msgid "...uploading archive %1 to %2"
 msgstr "...kopiere Archiv %1 zu %2"
 
-#: src/Archiver.cxx:760 src/CVS/Base/Archiver.cxx:762
+#: src/Archiver.cxx:760
 msgid "How shall we proceed with the upload?"
 msgstr "Wie sollen wir nun mit dem Kopieren weitermachen?"
 
-#: src/Archiver.cxx:760 src/CVS/Base/Archiver.cxx:762
+#: src/Archiver.cxx:760
 msgid "Upload Failed"
 msgstr "Übertragung fehlgeschlagen"
 
-#: src/Archiver.cxx:761 src/CVS/Base/Archiver.cxx:763
+#: src/Archiver.cxx:761
 msgid "Retry"
 msgstr "Nochmals versuchen"
 
-#: src/Archiver.cxx:761 src/CVS/Base/Archiver.cxx:763
+#: src/Archiver.cxx:761
 msgid "Change Target"
 msgstr "Ziel ändern"
 
-#: src/Archiver.cxx:855 src/CVS/Base/Archiver.cxx:857
+#: src/Archiver.cxx:855
 #, qt-format
 msgid "The script '%1' could not be started."
 msgstr "Das script '%1' konnte nicht gestartet werden."
 
-#: src/Archiver.cxx:894 src/CVS/Base/Archiver.cxx:896
+#: src/Archiver.cxx:894
 #, qt-format
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Das Medium ist voll. Bitte geben sie das Medium Nr. %1 in das Laufwerk"
 
-#: src/Archiver.cxx:930 src/CVS/Base/Archiver.cxx:932
+#: src/Archiver.cxx:930
 #, qt-format
 msgid "The file '%1' can not be opened for writing."
 msgstr "Die Datei '%1' konnte nicht zum Schreiben geöffnet werden."
 
-#: src/Archiver.cxx:934 src/CVS/Base/Archiver.cxx:936
+#: src/Archiver.cxx:934
 #, qt-format
 msgid ""
 "The file '%1' can not be opened for writing.\n"
@@ -379,11 +374,11 @@ msgstr ""
 "\n"
 "Wollen sie es nochmals versuchen?"
 
-#: src/Archiver.cxx:960 src/CVS/Base/Archiver.cxx:962
+#: src/Archiver.cxx:960
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Konnte nicht in das Archiv schreiben. Vielleicht is das Medium voll."
 
-#: src/Archiver.cxx:964 src/CVS/Base/Archiver.cxx:966
+#: src/Archiver.cxx:964
 #, qt-format
 msgid ""
 "Could not write to archive.\n"
@@ -392,12 +387,12 @@ msgstr ""
 "Konnte nicht in das Archiv schreiben.\n"
 "Meldung des Betriebssystems: %1"
 
-#: src/Archiver.cxx:983 src/CVS/Base/Archiver.cxx:985
+#: src/Archiver.cxx:983
 #, qt-format
 msgid "...skipping filtered directory %1"
 msgstr "...überspringe gefiltertes Verzeichnis %1"
 
-#: src/Archiver.cxx:994 src/CVS/Base/Archiver.cxx:996
+#: src/Archiver.cxx:994
 #, qt-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -406,12 +401,12 @@ msgstr ""
 "Konnte keine Information über das Verzeichnis '%1' lesen.\n"
 "Meldung des Betriebssystems: %2"
 
-#: src/Archiver.cxx:1004 src/CVS/Base/Archiver.cxx:1006
+#: src/Archiver.cxx:1004
 #, qt-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Verzeichnis '%1' ist nicht lesbar. Überspringe es."
 
-#: src/Archiver.cxx:1020 src/CVS/Base/Archiver.cxx:1022
+#: src/Archiver.cxx:1020
 #, qt-format
 msgid ""
 "Could not write directory '%1' to archive.\n"
@@ -420,8 +415,7 @@ msgstr ""
 "Konnte das Verzeichnis '%1' nicht in das Archiv schreiben.\n"
 " Vielleicht is das Medium voll."
 
-#: src/Archiver.cxx:1141 src/Archiver.cxx:1222 src/CVS/Base/Archiver.cxx:1136
-#: src/CVS/Base/Archiver.cxx:1216
+#: src/Archiver.cxx:1141 src/Archiver.cxx:1222
 #, qt-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -430,8 +424,7 @@ msgstr ""
 "Konnte keine Information über die Datei '%1' lesen.\n"
 "Meldung des Betriebssystems: %2"
 
-#: src/Archiver.cxx:1169 src/Archiver.cxx:1266 src/CVS/Base/Archiver.cxx:1163
-#: src/CVS/Base/Archiver.cxx:1258
+#: src/Archiver.cxx:1169 src/Archiver.cxx:1266
 #, qt-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -440,17 +433,17 @@ msgstr ""
 "Konnte aus Datei '%1' nicht lesen.\n"
 "Meldung des Betriebssystems: %2"
 
-#: src/Archiver.cxx:1236 src/CVS/Base/Archiver.cxx:1227
+#: src/Archiver.cxx:1236
 #, qt-format
 msgid "Could not open file '%1' for reading."
 msgstr "Konnte die Datei '%1' nicht zum Lesen öffnen."
 
-#: src/Archiver.cxx:1299 src/CVS/Base/Archiver.cxx:1291
+#: src/Archiver.cxx:1299
 #, qt-format
 msgid "...archiving file %1"
 msgstr "...archiviere Datei %1"
 
-#: src/Archiver.cxx:1337 src/CVS/Base/Archiver.cxx:1329
+#: src/Archiver.cxx:1337
 #, qt-format
 msgid ""
 "Could not read file: %1\n"
@@ -459,7 +452,7 @@ msgstr ""
 "Datei '%1' konnte nicht gelesen werden.\n"
 "Meldung des Betriebssystems: %2"
 
-#: src/Archiver.cxx:1354 src/CVS/Base/Archiver.cxx:1344
+#: src/Archiver.cxx:1354
 #, qt-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -468,229 +461,34 @@ msgstr ""
 "Konnte keine temporäre Datei für die Kompression erzeugen: %1.\n"
 "Meldung des Betriebssystems: %2"
 
-#: src/Archiver.cxx:1379 src/CVS/Base/Archiver.cxx:1369
+#: src/Archiver.cxx:1379
 msgid "Could not write to temporary file"
 msgstr "Konnte nicht auf die temporäre Datei schreiben"
 
-#: src/Archiver.cxx:1400 src/CVS/Base/Archiver.cxx:1391
+#: src/Archiver.cxx:1400
 #, qt-format
 msgid "...compressing file %1"
 msgstr "...komprimiere Datei %1"
 
-#: src/Archiver.cxx:1444 src/CVS/Base/Archiver.cxx:1436
+#: src/Archiver.cxx:1444
 msgid "WARNING:"
 msgstr "WARNUNG:"
 
-#: src/CVS/Base/Archiver.cxx:1081
-#, qt-format
-msgid "File '%1' is not readable. Skipping."
-msgstr "Datei '%1' ist nicht lesbar. Überspringe sie."
-
-#: src/CVS/Base/main.cxx:38 src/main.cxx:47
+#: src/main.cxx:47
 msgid "An easy to use backup program"
 msgstr "Ein einfach zu bedienendes Sicherungs Programm"
-
-#: src/CVS/Base/main.cxx:39
-msgid "(c) 2006 - 2012 Martin Koller"
-msgstr "(c) 2006 - 2012 Martin Koller"
-
-#: src/CVS/Base/main.cxx:44 src/main.cxx:53
-msgid "Martin Koller"
-msgstr "Martin Koller"
-
-#: src/CVS/Base/main.cxx:44 src/main.cxx:53
-msgid "Developer"
-msgstr "Entwickler"
-
-#: src/CVS/Base/main.cxx:50
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid "Start with given profile"
-msgstr "Starte mit angegebenem Profil"
-
-#: src/CVS/Base/main.cxx:54
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid "Script to run after finishing one archive slice"
-msgstr "Starte Script nach Fertigstellung eines Archives"
-
-#: src/CVS/Base/main.cxx:58
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid ""
-"Automatically run the backup with the given profile\n"
-"and terminate when done."
-msgstr ""
-"Automatischer Start der Sicherung mit angegebenem\n"
-"Profil und Programmende nach fertiger Sicherung."
-
-#: src/CVS/Base/main.cxx:63
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid ""
-"Automatically run the backup with the given profile\n"
-"in the background (without showing a window)\n"
-"and terminate when done."
-msgstr ""
-"Automatischer Start der Sicherung im Hintergrund\n"
-"(ohne Fenster anzuzeigen) mit angegebenem Profil\n"
-"und Programmende nach fertiger Sicherung."
-
-#: src/CVS/Base/main.cxx:69
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid ""
-"In autobg mode be verbose and print every\n"
-"single filename during backup"
-msgstr ""
-"Zeige jeden einzelnen Dateinamen während dem Backup\n"
-"im autobg Modus"
-
-#: src/CVS/Base/main.cxx:74
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid ""
-"In auto/autobg mode force the backup to be a full backup\n"
-"instead of acting on the profile settings"
-msgstr ""
-"Im auto/autobg Modus erzwinge eine Komplett-Sicherung\n"
-"anstatt die Profil Einstellung zu berücksichtigen"
-
-#: src/CVS/Base/main.cxx:134 src/CVS/Base/MainWindow.cxx:211 src/main.cxx:143
-#: src/MainWindow.cxx:209
-#, qt-format
-msgid "Could not open profile '%1' for reading: %2"
-msgstr "Konnte das Profil '%1' nicht laden: %2"
-
-#: src/CVS/Base/MainWidget.cxx:71 src/MainWidget.cxx:69
-msgid "Incremental Backup"
-msgstr "Inkrementelle Sicherung"
-
-#: src/CVS/Base/MainWidget.cxx:73 src/MainWidget.cxx:71
-msgid "Full Backup"
-msgstr "Komplett-Sicherung"
-
-#: src/CVS/Base/MainWindow.cxx:58 src/MainWindow.cxx:58
-msgid "New Profile"
-msgstr "Neues Profil"
-
-#: src/CVS/Base/MainWindow.cxx:62 src/MainWindow.cxx:62
-msgid "Load Profile"
-msgstr "Lade Profil"
-
-#: src/CVS/Base/MainWindow.cxx:66 src/MainWindow.cxx:66
-msgid "Save Profile"
-msgstr "Speichere Profil"
-
-#: src/CVS/Base/MainWindow.cxx:70 src/MainWindow.cxx:70
-msgid "Save Profile As..."
-msgstr "Speichere Profil unter..."
-
-#: src/CVS/Base/MainWindow.cxx:77 src/MainWindow.cxx:77
-msgid "Enable All Messages"
-msgstr "Alle Meldungen erlauben"
-
-#: src/CVS/Base/MainWindow.cxx:79 src/MainWindow.cxx:79
-msgid "Dock in System Tray"
-msgstr "Im Systembereich der Kontrollleiste andocken"
-
-#: src/CVS/Base/MainWindow.cxx:143 src/MainWindow.cxx:145
-msgid "There is a backup in progress. Do you want to abort it?"
-msgstr "Eine Sicherung läuft gerade. Soll sie abgebrochen werden?"
-
-#: src/CVS/Base/MainWindow.cxx:190 src/CVS/Base/MainWindow.cxx:236
-#: src/CVS/Base/MainWindow.cxx:253 src/MainWindow.cxx:188
-#: src/MainWindow.cxx:234 src/MainWindow.cxx:251
-msgid "KBackup Profile (*.kbp)"
-msgstr "KBackup Profile (*.kbp)"
-
-#: src/CVS/Base/MainWindow.cxx:214 src/CVS/Base/MainWindow.cxx:282
-#: src/MainWindow.cxx:212 src/MainWindow.cxx:280
-msgid "Open failed"
-msgstr "Öffnen fehlgeschlagen"
-
-#: src/CVS/Base/MainWindow.cxx:263 src/MainWindow.cxx:261
-#, qt-format
-msgid ""
-"The profile '%1' does already exist.\n"
-"Do you want to overwrite it?"
-msgstr ""
-"Das Profil '%1' existiert bereits.\n"
-"Soll es überschrieben werden?"
-
-#: src/CVS/Base/MainWindow.cxx:266 src/MainWindow.cxx:264
-msgid "Profile exists"
-msgstr "Profil existiert"
-
-#: src/CVS/Base/MainWindow.cxx:279 src/MainWindow.cxx:277
-#, qt-format
-msgid "Could not open profile '%1' for writing: %2"
-msgstr "Konnte das Profil '%1' nicht schreiben: %2"
-
-#: src/CVS/Base/MainWindow.cxx:352 src/MainWindow.cxx:353
-#, qt-format
-msgid ""
-"Files: %1 Size: %2 MB\n"
-"%3"
-msgstr ""
-"Dateien: %1 Größe: %2 MB\n"
-"%3"
-
-#: src/CVS/Base/Selector.cxx:157 src/Selector.cxx:248
-msgid "Name"
-msgstr "Name"
-
-#: src/CVS/Base/Selector.cxx:158 src/Selector.cxx:248
-msgid "Size"
-msgstr "Größe"
-
-#: src/CVS/Base/Selector.cxx:159 src/Selector.cxx:248
-msgid "Last Modified"
-msgstr "Zuletzt Geändert"
-
-#: src/CVS/Base/SettingsDialog.cxx:22 src/SettingsDialog.cxx:22
-msgid "650 MB CD"
-msgstr "650 MB CD"
-
-#: src/CVS/Base/SettingsDialog.cxx:23 src/SettingsDialog.cxx:23
-msgid "700 MB CD"
-msgstr "700 MB CD"
-
-#: src/CVS/Base/SettingsDialog.cxx:24 src/SettingsDialog.cxx:24
-msgid "4.7 GB DVD"
-msgstr "4,7 GB DVD"
-
-#: src/CVS/Base/SettingsDialog.cxx:25 src/SettingsDialog.cxx:25
-msgid "8.5 GB DVD"
-msgstr "8,5 GB DVD"
-
-#: src/CVS/Base/SettingsDialog.cxx:26 src/SettingsDialog.cxx:26
-msgid "9.4 GB DVD"
-msgstr "9,4 GB DVD"
-
-#: src/CVS/Base/SettingsDialog.cxx:27 src/SettingsDialog.cxx:27
-msgid "17.1 GB DVD"
-msgstr "17,1 GB DVD"
-
-#: src/CVS/Base/SettingsDialog.cxx:28 src/SettingsDialog.cxx:28
-msgid "custom"
-msgstr "benutzerdefiniert"
 
 #: src/main.cxx:48
 msgid "(c) 2006 - 2017 Martin Koller"
 msgstr "(c) 2006 - 2017 Martin Koller"
+
+#: src/main.cxx:53
+msgid "Martin Koller"
+msgstr "Martin Koller"
+
+#: src/main.cxx:53
+msgid "Developer"
+msgstr "Entwickler"
 
 #: src/main.cxx:61
 msgid "Start with given profile."
@@ -728,37 +526,129 @@ msgstr ""
 "Im auto/autobg Modus erzwinge eine Komplett-Sicherung anstatt die Profil "
 "Einstellung zu berücksichtigen."
 
+#: src/main.cxx:143 src/MainWindow.cxx:209
+#, qt-format
+msgid "Could not open profile '%1' for reading: %2"
+msgstr "Konnte das Profil '%1' nicht laden: %2"
+
+#: src/MainWidget.cxx:69
+msgid "Incremental Backup"
+msgstr "Inkrementelle Sicherung"
+
+#: src/MainWidget.cxx:71
+msgid "Full Backup"
+msgstr "Komplett-Sicherung"
+
+#: src/MainWindow.cxx:58
+msgid "New Profile"
+msgstr "Neues Profil"
+
+#: src/MainWindow.cxx:62
+msgid "Load Profile"
+msgstr "Lade Profil"
+
+#: src/MainWindow.cxx:66
+msgid "Save Profile"
+msgstr "Speichere Profil"
+
+#: src/MainWindow.cxx:70
+msgid "Save Profile As..."
+msgstr "Speichere Profil unter..."
+
+#: src/MainWindow.cxx:77
+msgid "Enable All Messages"
+msgstr "Alle Meldungen erlauben"
+
+#: src/MainWindow.cxx:79
+msgid "Dock in System Tray"
+msgstr "Im Systembereich der Kontrollleiste andocken"
+
 #: src/MainWindow.cxx:83
 msgid "Show Hidden Files"
 msgstr "Zeige versteckte Dateien"
+
+#: src/MainWindow.cxx:145
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr "Eine Sicherung läuft gerade. Soll sie abgebrochen werden?"
 
 #: src/MainWindow.cxx:187 src/MainWindow.cxx:233 src/MainWindow.cxx:250
 msgid "Select Profile"
 msgstr "Wähle Profil"
 
+#: src/MainWindow.cxx:188 src/MainWindow.cxx:234 src/MainWindow.cxx:251
+msgid "KBackup Profile (*.kbp)"
+msgstr "KBackup Profile (*.kbp)"
+
+#: src/MainWindow.cxx:212 src/MainWindow.cxx:280
+msgid "Open failed"
+msgstr "Öffnen fehlgeschlagen"
+
+#: src/MainWindow.cxx:261
+#, qt-format
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Das Profil '%1' existiert bereits.\n"
+"Soll es überschrieben werden?"
+
+#: src/MainWindow.cxx:264
+msgid "Profile exists"
+msgstr "Profil existiert"
+
+#: src/MainWindow.cxx:277
+#, qt-format
+msgid "Could not open profile '%1' for writing: %2"
+msgstr "Konnte das Profil '%1' nicht schreiben: %2"
+
+#: src/MainWindow.cxx:353
+#, qt-format
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
+"Dateien: %1 Größe: %2 MB\n"
+"%3"
+
+#: src/Selector.cxx:248
+msgid "Name"
+msgstr "Name"
+
+#: src/Selector.cxx:248
+msgid "Size"
+msgstr "Größe"
+
+#: src/Selector.cxx:248
+msgid "Last Modified"
+msgstr "Zuletzt Geändert"
+
 #: src/Selector.cxx:292
 msgid "Open With"
 msgstr "Öffnen mit"
 
-#: src/Selector.cxx:301
+#: src/Selector.cxx:300
+msgid "Delete File"
+msgstr "Datei Löschen"
+
+#: src/Selector.cxx:306
 msgid "Properties..."
 msgstr "Eigenschaften..."
 
-#: src/Selector.cxx:587
+#: src/Selector.cxx:592
 #, qt-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Möchten sie '%1' wirklich löschen ?"
 
-#: src/Selector.cxx:588
+#: src/Selector.cxx:593
 msgid "Delete"
 msgstr "Löschen"
 
-#: src/Selector.cxx:599
+#: src/Selector.cxx:604
 #, qt-format
 msgid "Could not delete directory '%1'."
 msgstr "Konnte Verzeichnis '%1' nicht löschen."
 
-#: src/Selector.cxx:608
+#: src/Selector.cxx:613
 #, qt-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -767,13 +657,108 @@ msgstr ""
 "Konnte die Datei '%1' nicht löschen.\n"
 "Grund: %2"
 
-#: src/Selector.cxx:667
+#: src/Selector.cxx:672
 msgid "Other Application..."
 msgstr "Andere Anwendung..."
 
-#: src/Selector.cxx:669
+#: src/Selector.cxx:674
 msgid "File Manager"
 msgstr "Datei Manager"
+
+#: src/SettingsDialog.cxx:22
+msgid "650 MB CD"
+msgstr "650 MB CD"
+
+#: src/SettingsDialog.cxx:23
+msgid "700 MB CD"
+msgstr "700 MB CD"
+
+#: src/SettingsDialog.cxx:24
+msgid "4.7 GB DVD"
+msgstr "4,7 GB DVD"
+
+#: src/SettingsDialog.cxx:25
+msgid "8.5 GB DVD"
+msgstr "8,5 GB DVD"
+
+#: src/SettingsDialog.cxx:26
+msgid "9.4 GB DVD"
+msgstr "9,4 GB DVD"
+
+#: src/SettingsDialog.cxx:27
+msgid "17.1 GB DVD"
+msgstr "17,1 GB DVD"
+
+#: src/SettingsDialog.cxx:28
+msgid "custom"
+msgstr "benutzerdefiniert"
+
+#, qt-format
+#~ msgid "File '%1' is not readable. Skipping."
+#~ msgstr "Datei '%1' ist nicht lesbar. Überspringe sie."
+
+#~ msgid "(c) 2006 - 2012 Martin Koller"
+#~ msgstr "(c) 2006 - 2012 Martin Koller"
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid "Start with given profile"
+#~ msgstr "Starte mit angegebenem Profil"
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid "Script to run after finishing one archive slice"
+#~ msgstr "Starte Script nach Fertigstellung eines Archives"
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "Automatically run the backup with the given profile\n"
+#~ "and terminate when done."
+#~ msgstr ""
+#~ "Automatischer Start der Sicherung mit angegebenem\n"
+#~ "Profil und Programmende nach fertiger Sicherung."
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "Automatically run the backup with the given profile\n"
+#~ "in the background (without showing a window)\n"
+#~ "and terminate when done."
+#~ msgstr ""
+#~ "Automatischer Start der Sicherung im Hintergrund\n"
+#~ "(ohne Fenster anzuzeigen) mit angegebenem Profil\n"
+#~ "und Programmende nach fertiger Sicherung."
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "In autobg mode be verbose and print every\n"
+#~ "single filename during backup"
+#~ msgstr ""
+#~ "Zeige jeden einzelnen Dateinamen während dem Backup\n"
+#~ "im autobg Modus"
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "In auto/autobg mode force the backup to be a full backup\n"
+#~ "instead of acting on the profile settings"
+#~ msgstr ""
+#~ "Im auto/autobg Modus erzwinge eine Komplett-Sicherung\n"
+#~ "anstatt die Profil Einstellung zu berücksichtigen"
 
 #~ msgid "&File"
 #~ msgstr "&Datei"

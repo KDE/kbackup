@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2017-01-04 11:37+0100\n"
+"POT-Creation-Date: 2017-01-04 12:31+0100\n"
 "PO-Revision-Date: 2011-03-14 20:33+0100\n"
 "Last-Translator: Alain Portal <alain.portal@univ-montp2.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -19,18 +19,15 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: build_kf5/src/ui_MainWidgetBase.h:364 src/CVS/Base/main.cxx:37
-#: src/main.cxx:46
+#: build_kf5/src/ui_MainWidgetBase.h:364 src/main.cxx:46
 msgid "KBackup"
 msgstr "KBackup"
 
-#: build_kf5/src/ui_MainWidgetBase.h:365 src/CVS/Base/MainWindow.cxx:116
-#: src/MainWindow.cxx:115
+#: build_kf5/src/ui_MainWidgetBase.h:365 src/MainWindow.cxx:115
 msgid "Start Backup"
 msgstr "Commencer la sauvegarde"
 
-#: build_kf5/src/ui_MainWidgetBase.h:366 src/CVS/Base/MainWindow.cxx:120
-#: src/MainWindow.cxx:118
+#: build_kf5/src/ui_MainWidgetBase.h:366 src/MainWindow.cxx:118
 msgid "Cancel Backup"
 msgstr "Annuler la sauvegarde"
 
@@ -99,8 +96,7 @@ msgstr "Avertissements :"
 msgid "Progress:"
 msgstr "Progression :"
 
-#: build_kf5/src/ui_SettingsDialog.h:218 src/CVS/Base/MainWindow.cxx:74
-#: src/MainWindow.cxx:74
+#: build_kf5/src/ui_SettingsDialog.h:218 src/MainWindow.cxx:74
 msgid "Profile Settings"
 msgstr "Configuration du profil"
 
@@ -119,7 +115,6 @@ msgid "Maximum Archive Size:"
 msgstr "Taille maximum de l'archive :"
 
 #: build_kf5/src/ui_SettingsDialog.h:222 build_kf5/src/ui_SettingsDialog.h:228
-#: src/CVS/Base/MainWidget.cxx:168 src/CVS/Base/SettingsDialog.cxx:21
 #: src/MainWidget.cxx:166 src/SettingsDialog.cxx:21
 msgid "unlimited"
 msgstr "illimité"
@@ -220,21 +215,21 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "r.floret@laposte.net,alain.portal@univ-montp2.fr"
 
-#: src/Archiver.cxx:418 src/CVS/Base/Archiver.cxx:416
+#: src/Archiver.cxx:418
 msgid "Nothing selected for backup"
 msgstr "Rien n'est sélectionné pour la sauvegarde."
 
-#: src/Archiver.cxx:424 src/CVS/Base/Archiver.cxx:422
+#: src/Archiver.cxx:424
 msgid "The target dir '%1' is not valid"
 msgstr "Le répertoire de destination « %1 » n'est pas valide."
 
-#: src/Archiver.cxx:431 src/CVS/Base/Archiver.cxx:429
+#: src/Archiver.cxx:431
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "Le répertoire de destination « %1 » doit être un répertoire sur un système "
 "de fichiers local et pas un URL distant"
 
-#: src/Archiver.cxx:444 src/CVS/Base/Archiver.cxx:442
+#: src/Archiver.cxx:444
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
@@ -244,7 +239,7 @@ msgstr ""
 "\n"
 "Dois-je le créer ?"
 
-#: src/Archiver.cxx:449 src/CVS/Base/Archiver.cxx:447
+#: src/Archiver.cxx:449
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
@@ -252,43 +247,43 @@ msgstr ""
 "Impossible de créer le répertoire cible « % 1».\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:458 src/CVS/Base/Archiver.cxx:456
+#: src/Archiver.cxx:458
 msgid "The target dir does not exist"
 msgstr "Le répertoire de destination n'existe pas."
 
-#: src/Archiver.cxx:531 src/CVS/Base/Archiver.cxx:529
+#: src/Archiver.cxx:531
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...réduction du nombre d'archives conservées au maximum défini : %1"
 
-#: src/Archiver.cxx:588 src/CVS/Base/Archiver.cxx:587
+#: src/Archiver.cxx:588
 msgid "...deleting %1"
 msgstr "...suppression %1"
 
-#: src/Archiver.cxx:612 src/CVS/Base/Archiver.cxx:613
+#: src/Archiver.cxx:612
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
 "l'extraction de la liste du contenu du répertoire cible a échoué. Impossible "
 "de réduire le nombre d'archives conservées."
 
-#: src/Archiver.cxx:635 src/CVS/Base/Archiver.cxx:636
+#: src/Archiver.cxx:635
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr ""
 "Impossible d'écrire les horodatages de sauvegarde dans le profil %1 : %2"
 
-#: src/Archiver.cxx:641 src/CVS/Base/Archiver.cxx:642
+#: src/Archiver.cxx:641
 msgid "-- Filtered Files: %1"
 msgstr "-- Fichiers filtrés : %1"
 
-#: src/Archiver.cxx:644 src/CVS/Base/Archiver.cxx:645
+#: src/Archiver.cxx:644
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr "!! Sauvegarde terminée <b>mais des fichiers ont été ignorés</b> !!"
 
-#: src/Archiver.cxx:646 src/CVS/Base/Archiver.cxx:647
+#: src/Archiver.cxx:646
 msgid "-- Backup successfully finished --"
 msgstr "-- La sauvegarde s'est terminée avec succés --"
 
-#: src/Archiver.cxx:652 src/CVS/Base/Archiver.cxx:653
+#: src/Archiver.cxx:652
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -296,7 +291,7 @@ msgstr ""
 "La sauvegarde est terminée mais des fichiers ont été ignorés.\n"
 "Que voulez-vous faire à présent ?"
 
-#: src/Archiver.cxx:654 src/CVS/Base/Archiver.cxx:655
+#: src/Archiver.cxx:654
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -304,55 +299,55 @@ msgstr ""
 "La sauvegarde s'est achevée avec succès.\n"
 "Que voulez-vous faire à présent ?"
 
-#: src/Archiver.cxx:671 src/CVS/Base/Archiver.cxx:672
+#: src/Archiver.cxx:671
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Totaux : Fichiers : %1, Taille : %2, Durée : %3"
 
-#: src/Archiver.cxx:682 src/CVS/Base/Archiver.cxx:683
+#: src/Archiver.cxx:682
 msgid "...Backup aborted!"
 msgstr "... Sauvegarde abandonnée !"
 
-#: src/Archiver.cxx:710 src/CVS/Base/Archiver.cxx:711
+#: src/Archiver.cxx:710
 msgid "Backup cancelled"
 msgstr "Sauvegarde annulée"
 
-#: src/Archiver.cxx:727 src/CVS/Base/Archiver.cxx:728
+#: src/Archiver.cxx:727
 msgid "...finished slice %1"
 msgstr "tranche %1 finie..."
 
-#: src/Archiver.cxx:742 src/CVS/Base/Archiver.cxx:745
+#: src/Archiver.cxx:742
 msgid "...uploading archive %1 to %2"
 msgstr "...téléchargement de l'archive %1 vers %2"
 
-#: src/Archiver.cxx:760 src/CVS/Base/Archiver.cxx:762
+#: src/Archiver.cxx:760
 msgid "How shall we proceed with the upload?"
 msgstr "Comment devons-nous procéder avec le téléchargement ?"
 
-#: src/Archiver.cxx:760 src/CVS/Base/Archiver.cxx:762
+#: src/Archiver.cxx:760
 msgid "Upload Failed"
 msgstr "Le téléchargement a échoué"
 
-#: src/Archiver.cxx:761 src/CVS/Base/Archiver.cxx:763
+#: src/Archiver.cxx:761
 msgid "Retry"
 msgstr "Réessayer"
 
-#: src/Archiver.cxx:761 src/CVS/Base/Archiver.cxx:763
+#: src/Archiver.cxx:761
 msgid "Change Target"
 msgstr "Modifier la cible"
 
-#: src/Archiver.cxx:855 src/CVS/Base/Archiver.cxx:857
+#: src/Archiver.cxx:855
 msgid "The script '%1' could not be started."
 msgstr "Le script « %1 » ne peut pas être démarré."
 
-#: src/Archiver.cxx:894 src/CVS/Base/Archiver.cxx:896
+#: src/Archiver.cxx:894
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Le medium est plein. Veuillez insérer le medium N° %1"
 
-#: src/Archiver.cxx:930 src/CVS/Base/Archiver.cxx:932
+#: src/Archiver.cxx:930
 msgid "The file '%1' can not be opened for writing."
 msgstr "Le fichier « %1 » ne peux pas être ouvert en écriture."
 
-#: src/Archiver.cxx:934 src/CVS/Base/Archiver.cxx:936
+#: src/Archiver.cxx:934
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -362,11 +357,11 @@ msgstr ""
 "\n"
 "Voulez-vous recommencer ?"
 
-#: src/Archiver.cxx:960 src/CVS/Base/Archiver.cxx:962
+#: src/Archiver.cxx:960
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Impossible d'écrire dans l'archive. Peut-être le medium est-il plein ?"
 
-#: src/Archiver.cxx:964 src/CVS/Base/Archiver.cxx:966
+#: src/Archiver.cxx:964
 #, fuzzy
 msgid ""
 "Could not write to archive.\n"
@@ -375,11 +370,11 @@ msgstr ""
 "Impossible de lire le fichier : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:983 src/CVS/Base/Archiver.cxx:985
+#: src/Archiver.cxx:983
 msgid "...skipping filtered directory %1"
 msgstr ""
 
-#: src/Archiver.cxx:994 src/CVS/Base/Archiver.cxx:996
+#: src/Archiver.cxx:994
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -387,11 +382,11 @@ msgstr ""
 "Impossible d'obtenir des informations sur le répertoire : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1004 src/CVS/Base/Archiver.cxx:1006
+#: src/Archiver.cxx:1004
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Le répertoire « %1 » n'est pas lisible. Passe."
 
-#: src/Archiver.cxx:1020 src/CVS/Base/Archiver.cxx:1022
+#: src/Archiver.cxx:1020
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -399,8 +394,7 @@ msgstr ""
 "Impossible d'écrire le répertoire « %1 » dans l'archive.\n"
 "Peut-être le medium est-il plein ?"
 
-#: src/Archiver.cxx:1141 src/Archiver.cxx:1222 src/CVS/Base/Archiver.cxx:1136
-#: src/CVS/Base/Archiver.cxx:1216
+#: src/Archiver.cxx:1141 src/Archiver.cxx:1222
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -408,8 +402,7 @@ msgstr ""
 "Impossible d'obtenir des informations sur le fichier : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1169 src/Archiver.cxx:1266 src/CVS/Base/Archiver.cxx:1163
-#: src/CVS/Base/Archiver.cxx:1258
+#: src/Archiver.cxx:1169 src/Archiver.cxx:1266
 msgid ""
 "Could not read from file '%1'\n"
 "The operating system reports: %2"
@@ -417,15 +410,15 @@ msgstr ""
 "Impossible de lire le fichier « % »\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1236 src/CVS/Base/Archiver.cxx:1227
+#: src/Archiver.cxx:1236
 msgid "Could not open file '%1' for reading."
 msgstr "Impossible d'ouvrir le fichier « %1 » en lecture."
 
-#: src/Archiver.cxx:1299 src/CVS/Base/Archiver.cxx:1291
+#: src/Archiver.cxx:1299
 msgid "...archiving file %1"
 msgstr "...archivage du fichier %1"
 
-#: src/Archiver.cxx:1337 src/CVS/Base/Archiver.cxx:1329
+#: src/Archiver.cxx:1337
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -433,7 +426,7 @@ msgstr ""
 "Impossible de lire le fichier : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1354 src/CVS/Base/Archiver.cxx:1344
+#: src/Archiver.cxx:1354
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -441,225 +434,34 @@ msgstr ""
 "Impossible de créer le fichier temporaire pour la compression : %1\n"
 "Le système d'exploitation indique : %2"
 
-#: src/Archiver.cxx:1379 src/CVS/Base/Archiver.cxx:1369
+#: src/Archiver.cxx:1379
 msgid "Could not write to temporary file"
 msgstr "Impossible d'écrire dans le fichier temporaire"
 
-#: src/Archiver.cxx:1400 src/CVS/Base/Archiver.cxx:1391
+#: src/Archiver.cxx:1400
 msgid "...compressing file %1"
 msgstr "... compression du fichier %1"
 
-#: src/Archiver.cxx:1444 src/CVS/Base/Archiver.cxx:1436
+#: src/Archiver.cxx:1444
 msgid "WARNING:"
 msgstr "AVERTISSEMENT :"
 
-#: src/CVS/Base/Archiver.cxx:1081
-msgid "File '%1' is not readable. Skipping."
-msgstr "Le fichier « %1 » n'est pas lisible. Passe."
-
-#: src/CVS/Base/main.cxx:38 src/main.cxx:47
+#: src/main.cxx:47
 msgid "An easy to use backup program"
 msgstr "Un programme de sauvegarde simple d'emploi"
-
-#: src/CVS/Base/main.cxx:39
-#, fuzzy
-msgid "(c) 2006 - 2012 Martin Koller"
-msgstr "(c) 2006 - 2011 Martin Koller"
-
-#: src/CVS/Base/main.cxx:44 src/main.cxx:53
-msgid "Martin Koller"
-msgstr "Martin Koller"
-
-#: src/CVS/Base/main.cxx:44 src/main.cxx:53
-msgid "Developer"
-msgstr "Développeur"
-
-#: src/CVS/Base/main.cxx:50
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid "Start with given profile"
-msgstr "Démarrer avec le profil donné"
-
-#: src/CVS/Base/main.cxx:54
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid "Script to run after finishing one archive slice"
-msgstr "Script à exécuter après la fin d'une tranche d'archive"
-
-#: src/CVS/Base/main.cxx:58
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid ""
-"Automatically run the backup with the given profile\n"
-"and terminate when done."
-msgstr ""
-"Lancer automatiquement la sauvegarde avec le fichier\n"
-"profil fourni et quitter lorsqu'elle est achevée. "
-
-#: src/CVS/Base/main.cxx:63
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid ""
-"Automatically run the backup with the given profile\n"
-"in the background (without showing a window)\n"
-"and terminate when done."
-msgstr ""
-"Lancer automatiquement en arrière plan (sans interface\n"
-"graphique) la sauvegarde avec le fichier profil fourni\n"
-"et quitter lorsqu'elle est achevée. "
-
-#: src/CVS/Base/main.cxx:69
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid ""
-"In autobg mode be verbose and print every\n"
-"single filename during backup"
-msgstr ""
-"En mode arrière plan automatique, être volubile et afficher \n"
-"le nom de chaque fichier pendant la sauvegarde"
-
-#: src/CVS/Base/main.cxx:74
-msgctxt ""
-"TRANSLATORS: this is the description of a command line option. If your "
-"translation is longer than 50 caracters, you are encouraged to add "
-"breaklines to keep the limit"
-msgid ""
-"In auto/autobg mode force the backup to be a full backup\n"
-"instead of acting on the profile settings"
-msgstr ""
-"En mode automatique (auto/autobg), force la sauvegarde\n"
-"complète plutôt que de considérer la configuration du profil"
-
-#: src/CVS/Base/main.cxx:134 src/CVS/Base/MainWindow.cxx:211 src/main.cxx:143
-#: src/MainWindow.cxx:209
-msgid "Could not open profile '%1' for reading: %2"
-msgstr "Impossible d'ouvrir le profil « %1 » en lecture : %2"
-
-#: src/CVS/Base/MainWidget.cxx:71 src/MainWidget.cxx:69
-msgid "Incremental Backup"
-msgstr "Sauvegarde incrémentielle"
-
-#: src/CVS/Base/MainWidget.cxx:73 src/MainWidget.cxx:71
-msgid "Full Backup"
-msgstr "Sauvegarde complète"
-
-#: src/CVS/Base/MainWindow.cxx:58 src/MainWindow.cxx:58
-msgid "New Profile"
-msgstr "Nouveau profil"
-
-#: src/CVS/Base/MainWindow.cxx:62 src/MainWindow.cxx:62
-msgid "Load Profile"
-msgstr "Charger un profil"
-
-#: src/CVS/Base/MainWindow.cxx:66 src/MainWindow.cxx:66
-msgid "Save Profile"
-msgstr "Enregistrer un profil"
-
-#: src/CVS/Base/MainWindow.cxx:70 src/MainWindow.cxx:70
-msgid "Save Profile As..."
-msgstr "Enregistrer un profil sous..."
-
-#: src/CVS/Base/MainWindow.cxx:77 src/MainWindow.cxx:77
-msgid "Enable All Messages"
-msgstr "Activer tous les messages"
-
-#: src/CVS/Base/MainWindow.cxx:79 src/MainWindow.cxx:79
-msgid "Dock in System Tray"
-msgstr "Ancrer dans la zone de notification"
-
-#: src/CVS/Base/MainWindow.cxx:143 src/MainWindow.cxx:145
-msgid "There is a backup in progress. Do you want to abort it?"
-msgstr "Il y a une sauvegarde en cours. Voulez-vous l'abandonner ?"
-
-#: src/CVS/Base/MainWindow.cxx:190 src/CVS/Base/MainWindow.cxx:236
-#: src/CVS/Base/MainWindow.cxx:253 src/MainWindow.cxx:188
-#: src/MainWindow.cxx:234 src/MainWindow.cxx:251
-msgid "KBackup Profile (*.kbp)"
-msgstr "Profil KBackup (*.kbp)"
-
-#: src/CVS/Base/MainWindow.cxx:214 src/CVS/Base/MainWindow.cxx:282
-#: src/MainWindow.cxx:212 src/MainWindow.cxx:280
-msgid "Open failed"
-msgstr "Échec à l'ouverture"
-
-#: src/CVS/Base/MainWindow.cxx:263 src/MainWindow.cxx:261
-msgid ""
-"The profile '%1' does already exist.\n"
-"Do you want to overwrite it?"
-msgstr ""
-"Le profil « %1 » existe déjà.\n"
-"Voulez-vous l'écraser ?"
-
-#: src/CVS/Base/MainWindow.cxx:266 src/MainWindow.cxx:264
-msgid "Profile exists"
-msgstr "Le profil existe"
-
-#: src/CVS/Base/MainWindow.cxx:279 src/MainWindow.cxx:277
-msgid "Could not open profile '%1' for writing: %2"
-msgstr "Impossible d'ouvrir le profil « %1 » en écriture : %2"
-
-#: src/CVS/Base/MainWindow.cxx:352 src/MainWindow.cxx:353
-msgid ""
-"Files: %1 Size: %2 MB\n"
-"%3"
-msgstr ""
-"Fichiers : %1 Taille : %2 Mo\n"
-"%3"
-
-#: src/CVS/Base/Selector.cxx:157 src/Selector.cxx:248
-msgid "Name"
-msgstr "Nom"
-
-#: src/CVS/Base/Selector.cxx:158 src/Selector.cxx:248
-msgid "Size"
-msgstr "Taille"
-
-#: src/CVS/Base/Selector.cxx:159 src/Selector.cxx:248
-msgid "Last Modified"
-msgstr "Dernière modification"
-
-#: src/CVS/Base/SettingsDialog.cxx:22 src/SettingsDialog.cxx:22
-msgid "650 MB CD"
-msgstr "CD 650 Mo"
-
-#: src/CVS/Base/SettingsDialog.cxx:23 src/SettingsDialog.cxx:23
-msgid "700 MB CD"
-msgstr "CD 700 Mo"
-
-#: src/CVS/Base/SettingsDialog.cxx:24 src/SettingsDialog.cxx:24
-msgid "4.7 GB DVD"
-msgstr "DVD 4,7 Go"
-
-#: src/CVS/Base/SettingsDialog.cxx:25 src/SettingsDialog.cxx:25
-msgid "8.5 GB DVD"
-msgstr "DVD 8,5 Go"
-
-#: src/CVS/Base/SettingsDialog.cxx:26 src/SettingsDialog.cxx:26
-msgid "9.4 GB DVD"
-msgstr "DVD 9,4 Go"
-
-#: src/CVS/Base/SettingsDialog.cxx:27 src/SettingsDialog.cxx:27
-msgid "17.1 GB DVD"
-msgstr "DVD 17,1 Go"
-
-#: src/CVS/Base/SettingsDialog.cxx:28 src/SettingsDialog.cxx:28
-msgid "custom"
-msgstr "personnalisé"
 
 #: src/main.cxx:48
 #, fuzzy
 msgid "(c) 2006 - 2017 Martin Koller"
 msgstr "(c) 2006 - 2011 Martin Koller"
+
+#: src/main.cxx:53
+msgid "Martin Koller"
+msgstr "Martin Koller"
+
+#: src/main.cxx:53
+msgid "Developer"
+msgstr "Développeur"
 
 #: src/main.cxx:61
 #, fuzzy
@@ -706,51 +508,234 @@ msgstr ""
 "En mode automatique (auto/autobg), force la sauvegarde\n"
 "complète plutôt que de considérer la configuration du profil"
 
+#: src/main.cxx:143 src/MainWindow.cxx:209
+msgid "Could not open profile '%1' for reading: %2"
+msgstr "Impossible d'ouvrir le profil « %1 » en lecture : %2"
+
+#: src/MainWidget.cxx:69
+msgid "Incremental Backup"
+msgstr "Sauvegarde incrémentielle"
+
+#: src/MainWidget.cxx:71
+msgid "Full Backup"
+msgstr "Sauvegarde complète"
+
+#: src/MainWindow.cxx:58
+msgid "New Profile"
+msgstr "Nouveau profil"
+
+#: src/MainWindow.cxx:62
+msgid "Load Profile"
+msgstr "Charger un profil"
+
+#: src/MainWindow.cxx:66
+msgid "Save Profile"
+msgstr "Enregistrer un profil"
+
+#: src/MainWindow.cxx:70
+msgid "Save Profile As..."
+msgstr "Enregistrer un profil sous..."
+
+#: src/MainWindow.cxx:77
+msgid "Enable All Messages"
+msgstr "Activer tous les messages"
+
+#: src/MainWindow.cxx:79
+msgid "Dock in System Tray"
+msgstr "Ancrer dans la zone de notification"
+
 #: src/MainWindow.cxx:83
 msgid "Show Hidden Files"
 msgstr ""
+
+#: src/MainWindow.cxx:145
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr "Il y a une sauvegarde en cours. Voulez-vous l'abandonner ?"
 
 #: src/MainWindow.cxx:187 src/MainWindow.cxx:233 src/MainWindow.cxx:250
 #, fuzzy
 msgid "Select Profile"
 msgstr "Enregistrer un profil"
 
+#: src/MainWindow.cxx:188 src/MainWindow.cxx:234 src/MainWindow.cxx:251
+msgid "KBackup Profile (*.kbp)"
+msgstr "Profil KBackup (*.kbp)"
+
+#: src/MainWindow.cxx:212 src/MainWindow.cxx:280
+msgid "Open failed"
+msgstr "Échec à l'ouverture"
+
+#: src/MainWindow.cxx:261
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Le profil « %1 » existe déjà.\n"
+"Voulez-vous l'écraser ?"
+
+#: src/MainWindow.cxx:264
+msgid "Profile exists"
+msgstr "Le profil existe"
+
+#: src/MainWindow.cxx:277
+msgid "Could not open profile '%1' for writing: %2"
+msgstr "Impossible d'ouvrir le profil « %1 » en écriture : %2"
+
+#: src/MainWindow.cxx:353
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
+"Fichiers : %1 Taille : %2 Mo\n"
+"%3"
+
+#: src/Selector.cxx:248
+msgid "Name"
+msgstr "Nom"
+
+#: src/Selector.cxx:248
+msgid "Size"
+msgstr "Taille"
+
+#: src/Selector.cxx:248
+msgid "Last Modified"
+msgstr "Dernière modification"
+
 #: src/Selector.cxx:292
 #, fuzzy
 msgid "Open With"
 msgstr "Échec à l'ouverture"
 
-#: src/Selector.cxx:301
+#: src/Selector.cxx:300
+msgid "Delete File"
+msgstr ""
+
+#: src/Selector.cxx:306
 msgid "Properties..."
 msgstr ""
 
-#: src/Selector.cxx:587
+#: src/Selector.cxx:592
 #, fuzzy
 msgid "Do you really want to delete '%1'?"
 msgstr "Voulez-vous retenter le téléchargement ?"
 
-#: src/Selector.cxx:588
+#: src/Selector.cxx:593
 msgid "Delete"
 msgstr ""
 
-#: src/Selector.cxx:599
+#: src/Selector.cxx:604
 msgid "Could not delete directory '%1'."
 msgstr ""
 
-#: src/Selector.cxx:608
+#: src/Selector.cxx:613
 #, fuzzy
 msgid ""
 "Could not delete file '%1'.\n"
 "Reason: %2"
 msgstr "Impossible d'ouvrir le profil « %1 » en lecture : %2"
 
-#: src/Selector.cxx:667
+#: src/Selector.cxx:672
 msgid "Other Application..."
 msgstr ""
 
-#: src/Selector.cxx:669
+#: src/Selector.cxx:674
 msgid "File Manager"
 msgstr ""
+
+#: src/SettingsDialog.cxx:22
+msgid "650 MB CD"
+msgstr "CD 650 Mo"
+
+#: src/SettingsDialog.cxx:23
+msgid "700 MB CD"
+msgstr "CD 700 Mo"
+
+#: src/SettingsDialog.cxx:24
+msgid "4.7 GB DVD"
+msgstr "DVD 4,7 Go"
+
+#: src/SettingsDialog.cxx:25
+msgid "8.5 GB DVD"
+msgstr "DVD 8,5 Go"
+
+#: src/SettingsDialog.cxx:26
+msgid "9.4 GB DVD"
+msgstr "DVD 9,4 Go"
+
+#: src/SettingsDialog.cxx:27
+msgid "17.1 GB DVD"
+msgstr "DVD 17,1 Go"
+
+#: src/SettingsDialog.cxx:28
+msgid "custom"
+msgstr "personnalisé"
+
+#~ msgid "File '%1' is not readable. Skipping."
+#~ msgstr "Le fichier « %1 » n'est pas lisible. Passe."
+
+#, fuzzy
+#~ msgid "(c) 2006 - 2012 Martin Koller"
+#~ msgstr "(c) 2006 - 2011 Martin Koller"
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid "Start with given profile"
+#~ msgstr "Démarrer avec le profil donné"
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid "Script to run after finishing one archive slice"
+#~ msgstr "Script à exécuter après la fin d'une tranche d'archive"
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "Automatically run the backup with the given profile\n"
+#~ "and terminate when done."
+#~ msgstr ""
+#~ "Lancer automatiquement la sauvegarde avec le fichier\n"
+#~ "profil fourni et quitter lorsqu'elle est achevée. "
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "Automatically run the backup with the given profile\n"
+#~ "in the background (without showing a window)\n"
+#~ "and terminate when done."
+#~ msgstr ""
+#~ "Lancer automatiquement en arrière plan (sans interface\n"
+#~ "graphique) la sauvegarde avec le fichier profil fourni\n"
+#~ "et quitter lorsqu'elle est achevée. "
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "In autobg mode be verbose and print every\n"
+#~ "single filename during backup"
+#~ msgstr ""
+#~ "En mode arrière plan automatique, être volubile et afficher \n"
+#~ "le nom de chaque fichier pendant la sauvegarde"
+
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "In auto/autobg mode force the backup to be a full backup\n"
+#~ "instead of acting on the profile settings"
+#~ msgstr ""
+#~ "En mode automatique (auto/autobg), force la sauvegarde\n"
+#~ "complète plutôt que de considérer la configuration du profil"
 
 #~ msgid "&File"
 #~ msgstr "&Fichier"
