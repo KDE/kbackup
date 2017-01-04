@@ -729,7 +729,10 @@ void Selector::openWith(QAction *action)
   }
 
   KService::Ptr service = serviceForName[name];
-  KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
+  // just since KF 5.6
+  //KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
+
+  KRun::run(*service, QList<QUrl>() << sourceUrl, this);
 }
 
 //--------------------------------------------------------------------------------
