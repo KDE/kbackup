@@ -5,8 +5,5 @@
    then create all dirs in the stack. If no file found, clean the stack and do not create any dir in the archive)
 - implement a way for restoring backups
 - backup as "cp -R" without creating a .tar file
-- fix the exit-question dialog when exiting due to session stop
-
-- start tree with "/" to allow backup of everything
 
 - option to compress the complete tar file _after_ finish-slice

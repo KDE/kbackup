@@ -12,6 +12,7 @@
   <Menu name="settings"><text>&amp;Settings</text>
     <Action name="dockInSysTray"/>
     <Action name="enableAllMessages"/>
+    <Action name="showHiddenFiles"/>
   </Menu>
 </MenuBar>
 </kpartgui>

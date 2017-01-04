@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -16,59 +16,59 @@
 #include <qsplitter.h>
 #include <qspinbox.h>
 #include <qtooltip.h>
-#include <qmovie.h>
 #include <qtimer.h>
 #include <qcursor.h>
 #include <qcheckbox.h>
 #include <QTextStream>
 #include <QMenu>
+#include <QAction>
+#include <QUrl>
+#include <QApplication>
+#include <QFileDialog>
+#include <QDebug>
 
-#include <kapplication.h>
+#include <KXMLGUIFactory>
 #include <kstandardaction.h>
-#include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <krecentfilesaction.h>
-#include <klocale.h>
-#include <kfiledialog.h>
 #include <kmessagebox.h>
-#include <klineedit.h>
 #include <kio/global.h>
-#include <ksystemtrayicon.h>
-#include <kglobal.h>
-#include <kaboutdata.h>
-#include <kiconloader.h>
 #include <kstringhandler.h>
-#include <kurl.h>
+#include <KStatusNotifierItem>
+#include <KSharedConfig>
+#include <KConfigGroup>
+#include <kshortcutsdialog.h>
 
 //#include <iostream>
 //using namespace std;
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
-  : autorun(false)
+  : sysTray(0), autorun(false)
 {
   new Archiver(this);
 
-  KStandardAction::quit(this, SLOT(maybeQuit()), actionCollection());
+  quitAction = KStandardAction::quit(this, SLOT(maybeQuit()), actionCollection());
+  KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
 
-  KAction *action;
+  QAction *action;
 
   action = actionCollection()->addAction("newProfile", this, SLOT(newProfile()));
   action->setText(i18n("New Profile"));
-  action->setIcon(KIcon("document-new"));
+  action->setIcon(QIcon::fromTheme("document-new"));
 
   action = actionCollection()->addAction("loadProfile", this, SLOT(loadProfile()));
   action->setText(i18n("Load Profile"));
-  action->setIcon(KIcon("document-open"));
+  action->setIcon(QIcon::fromTheme("document-open"));
 
   action = actionCollection()->addAction("saveProfile", this, SLOT(saveProfile()));
   action->setText(i18n("Save Profile"));
-  action->setIcon(KIcon("document-save"));
+  action->setIcon(QIcon::fromTheme("document-save"));
 
   action = actionCollection()->addAction("saveProfileAs", this, SLOT(saveProfileAs()));
   action->setText(i18n("Save Profile As..."));
-  action->setIcon(KIcon("document-save-as"));
+  action->setIcon(QIcon::fromTheme("document-save-as"));
 
   action = actionCollection()->addAction("profileSettings", this, SLOT(profileSettings()));
   action->setText(i18n("Profile Settings"));
@@ -76,20 +76,23 @@ MainWindow::MainWindow()
   action = actionCollection()->addAction("enableAllMessages", this, SLOT(enableAllMessages()));
   action->setText(i18n("Enable All Messages"));
 
-  docked = new KToggleAction(i18n("Dock in System Tray"), this);
+  KToggleAction *docked = new KToggleAction(i18n("Dock in System Tray"), this);
   actionCollection()->addAction("dockInSysTray", docked);
-  connect(docked, SIGNAL(triggered()), this, SLOT(dockInSysTray()));
-  docked->setChecked(KGlobal::config()->group("").readEntry<bool>("dockInSysTray", false));
+  connect(docked, &QAction::toggled, this, &MainWindow::dockInSysTray);
 
-  recentFiles = KStandardAction::openRecent(this, SLOT(recentProfileSelected(const KUrl &)), actionCollection());
+  KToggleAction *showHidden = new KToggleAction(i18n("Show Hidden Files"), this);
+  actionCollection()->addAction("showHiddenFiles", showHidden);
+  connect(showHidden, &QAction::toggled, this, &MainWindow::showHiddenFiles);
+
+  recentFiles = KStandardAction::openRecent(this, SLOT(recentProfileSelected(const QUrl &)), actionCollection());
   recentFiles->setObjectName("recentProfiles");
-  recentFiles->loadEntries(KGlobal::config()->group(""));
+  recentFiles->loadEntries(KSharedConfig::openConfig()->group(""));
 
   createGUI();
 
-  QSplitter *splitter = new QSplitter(Qt::Horizontal, this);
+  splitter = new QSplitter(Qt::Horizontal, this);
 
-  selector = new Selector(splitter);
+  selector = new Selector(splitter, actionCollection());
 
   mainWidget = new MainWidget(splitter);
   mainWidget->setSelector(selector);
@@ -97,30 +100,29 @@ MainWindow::MainWindow()
 
   setCentralWidget(splitter);
 
+  splitter->restoreState(KSharedConfig::openConfig()->group("geometry").readEntry<QByteArray>("splitter", QByteArray()));
+  selector->header()->restoreState(KSharedConfig::openConfig()->group("geometry").readEntry<QByteArray>("tree", QByteArray()));
+
   // save/restore window settings and size
   setAutoSaveSettings();
-
-  // system tray icon
-  sysTray = new KSystemTrayIcon(this);
-  sysTray->setIcon(sysTray->loadIcon("kbackup"));
-  sysTray->setVisible(docked->isChecked());
-
-  connect(sysTray, SIGNAL(quitSelected()), this, SLOT(maybeQuit()));
 
   connect(Archiver::instance, SIGNAL(totalFilesChanged(int)), this, SLOT(changeSystrayTip()));
   connect(Archiver::instance, SIGNAL(logging(const QString &)), this, SLOT(loggingSlot(const QString &)));
   connect(Archiver::instance, SIGNAL(inProgress(bool)), this, SLOT(inProgress(bool)));
 
   startBackupAction = actionCollection()->addAction("startBackup", mainWidget, SLOT(startBackup()));
-  startBackupAction->setIcon(KIcon("kbackup_start"));
+  startBackupAction->setIcon(QIcon::fromTheme("kbackup_start"));
   startBackupAction->setText(i18n("Start Backup"));
-  sysTray->contextMenu()->addAction(startBackupAction);
 
   cancelBackupAction = actionCollection()->addAction("cancelBackup", Archiver::instance, SLOT(cancel()));
   cancelBackupAction->setText(i18n("Cancel Backup"));
-  cancelBackupAction->setIcon(KIcon("kbackup_cancel"));
+  cancelBackupAction->setIcon(QIcon::fromTheme("kbackup_cancel"));
   cancelBackupAction->setEnabled(false);
-  sysTray->contextMenu()->addAction(cancelBackupAction);
+
+  showHidden->setChecked(KSharedConfig::openConfig()->group("settings").readEntry<bool>("showHiddenFiles", false));
+  showHiddenFiles(showHidden->isChecked());
+  docked->setChecked(KSharedConfig::openConfig()->group("settings").readEntry<bool>("dockInSysTray", false));
+  dockInSysTray(docked->isChecked());
 
   changeSystrayTip();
 }
@@ -146,6 +148,9 @@ bool MainWindow::stopAllowed()
     Archiver::instance->cancel();
   }
 
+  KSharedConfig::openConfig()->group("geometry").writeEntry("splitter", splitter->saveState());
+  KSharedConfig::openConfig()->group("geometry").writeEntry("tree", selector->header()->saveState());
+
   return true;
 }
 
@@ -154,14 +159,14 @@ bool MainWindow::stopAllowed()
 void MainWindow::maybeQuit()
 {
   if ( stopAllowed() )
-    kapp->quit();
+    qApp->quit();
 }
 
 //--------------------------------------------------------------------------------
 
 bool MainWindow::queryClose()
 {
-  if ( kapp->sessionSaving() || !sysTray->isVisible() )
+  if ( qApp->isSavingSession() || !sysTray )
     return stopAllowed();
 
   hide();
@@ -170,14 +175,7 @@ bool MainWindow::queryClose()
 
 //--------------------------------------------------------------------------------
 
-bool MainWindow::queryExit()
-{
-  return stopAllowed();
-}
-
-//--------------------------------------------------------------------------------
-
-void MainWindow::recentProfileSelected(const KUrl &url)
+void MainWindow::recentProfileSelected(const QUrl &url)
 {
   loadProfile(url.path());
 }
@@ -186,8 +184,8 @@ void MainWindow::recentProfileSelected(const KUrl &url)
 
 void MainWindow::loadProfile()
 {
-  QString fileName = KFileDialog::getOpenFileName(KUrl("kfiledialog:///profile"),
-                                                  "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+  QString fileName = QFileDialog::getOpenFileName(this, i18n("Select Profile"), QString(),
+                                                  i18n("KBackup Profile (*.kbp)"));
 
   if ( fileName.isEmpty() ) return;
 
@@ -220,10 +218,10 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
   // now fill the Selector tree with those settings
   selector->setBackupList(includes, excludes);
 
-  mainWidget->getTargetLineEdit()->setText(Archiver::instance->getTarget().pathOrUrl());
+  mainWidget->getTargetLineEdit()->setText(Archiver::instance->getTarget().toDisplayString(QUrl::PreferLocalFile));
 
   if ( adaptTreeWidth )
-    selector->adjustColumn(0);
+    selector->resizeColumnToContents(0);
 
   QApplication::restoreOverrideCursor();
 }
@@ -232,8 +230,8 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
 
 void MainWindow::saveProfileAs()
 {
-  QString fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog:///profile"),
-                                                  "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+  QString fileName = QFileDialog::getSaveFileName(this, i18n("Select Profile"), QString(),
+                                                  i18n("KBackup Profile (*.kbp)"));
 
   if ( fileName.isEmpty() ) return;
 
@@ -249,8 +247,8 @@ void MainWindow::saveProfile(QString fileName)
 
   if ( fileName.isEmpty() )
   {
-    fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog:///profile"),
-                                            "*.kbp|" + i18n("KBackup Profile (*.kbp)"));
+    fileName = QFileDialog::getSaveFileName(this, i18n("Select Profile"), QString(),
+                                            i18n("KBackup Profile (*.kbp)"));
 
     if ( fileName.isEmpty() ) return;
   }
@@ -271,7 +269,7 @@ void MainWindow::saveProfile(QString fileName)
   selector->getBackupList(includes, excludes);
   QString error;
 
-  Archiver::instance->setTarget(KUrl(mainWidget->getTargetLineEdit()->text()));
+  Archiver::instance->setTarget(QUrl(mainWidget->getTargetLineEdit()->text()));
 
   if ( ! Archiver::instance->saveProfile(fileName, includes, excludes, error) )
   {
@@ -321,7 +319,7 @@ void MainWindow::newProfile()
   Archiver::instance->setFilePrefix("");  // back to default
   Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
   Archiver::instance->setMediaNeedsChange(true);
-  Archiver::instance->setTarget(KUrl());
+  Archiver::instance->setTarget(QUrl());
   Archiver::instance->setKeptBackups(Archiver::UNLIMITED);
   Archiver::instance->setFullBackupInterval(1);
   Archiver::instance->setFilter("");
@@ -348,13 +346,16 @@ void MainWindow::loggingSlot(const QString &message)
 
 void MainWindow::changeSystrayTip()
 {
-  QString text = KGlobal::mainComponent().aboutData()->programName() + " - " +
+  if ( !sysTray )
+    return;
+
+  QString text = qApp->applicationDisplayName() + " - " +
                  i18n("Files: %1 Size: %2 MB\n%3")
                     .arg(Archiver::instance->getTotalFiles())
                     .arg(QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2))
                     .arg(KStringHandler::csqueeze(lastLog, 60));
 
-  sysTray->setToolTip(text);
+  sysTray->setToolTip(QLatin1String("kbackup"), QLatin1String("kbackup"), text);
 }
 
 //--------------------------------------------------------------------------------
@@ -363,42 +364,88 @@ void MainWindow::inProgress(bool runs)
 {
   if ( runs )
   {
-#if KDE_IS_VERSION(4,2,0)
-    QMovie *movie = KIconLoader::global()->loadMovie("kbackup_runs", KIconLoader::Panel);
-    if ( movie )
+    if ( sysTray )
     {
-      sysTray->setMovie(movie);
-      movie->start();
+      /*
+      QMovie *movie = KIconLoader::global()->loadMovie("kbackup_runs", KIconLoader::Panel);
+      if ( movie )
+      {
+        sysTray->setMovie(movie);
+        movie->start();
+      }
+      */
+      sysTray->setIconByName("kbackup_runs");
+      sysTray->setStatus(KStatusNotifierItem::Active);
     }
-#endif
 
     startBackupAction->setEnabled(false);
     cancelBackupAction->setEnabled(true);
   }
   else
   {
-#if KDE_IS_VERSION(4,2,0)
-    if ( sysTray->movie() )
-      const_cast<QMovie*>(sysTray->movie())->stop();  // why does it return a const pointer ? :-(
-#endif
-    sysTray->setIcon(sysTray->loadIcon("kbackup"));
+    if ( sysTray )
+    {
+      /*
+      if ( sysTray->movie() )
+        const_cast<QMovie*>(sysTray->movie())->stop();  // why does it return a const pointer ? :-(
+
+      sysTray->setIcon(sysTray->loadIcon("kbackup"));
+      */
+      sysTray->setIconByName("kbackup");
+      sysTray->setStatus(KStatusNotifierItem::Passive);
+    }
 
     startBackupAction->setEnabled(true);
     cancelBackupAction->setEnabled(false);
 
     if ( autorun )
-      kapp->quit();
+      qApp->quit();
   }
 }
 
 //--------------------------------------------------------------------------------
 
-void MainWindow::dockInSysTray()
+void MainWindow::dockInSysTray(bool checked)
 {
-  KGlobal::config()->group("").writeEntry("dockInSysTray", docked->isChecked());
-  KGlobal::config()->group("").sync();
+  KSharedConfig::openConfig()->group("settings").writeEntry("dockInSysTray", checked);
+  KSharedConfig::openConfig()->group("settings").sync();
 
-  sysTray->setVisible(docked->isChecked());
+  if ( checked )
+  {
+    // system tray icon
+    sysTray = new KStatusNotifierItem(this);
+    sysTray->setStandardActionsEnabled(false);
+
+    sysTray->contextMenu()->addAction(startBackupAction);
+    sysTray->contextMenu()->addAction(cancelBackupAction);
+    sysTray->contextMenu()->addAction(quitAction);
+
+    if ( Archiver::instance->isInProgress() )
+    {
+      sysTray->setStatus(KStatusNotifierItem::Active);
+      sysTray->setIconByName("kbackup_runs");
+    }
+    else
+    {
+      sysTray->setStatus(KStatusNotifierItem::Passive);
+      sysTray->setIconByName("kbackup");
+    }
+  }
+  else
+  {
+    delete sysTray;
+    sysTray = 0;
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void MainWindow::showHiddenFiles(bool checked)
+{
+  KSharedConfig::openConfig()->group("settings").writeEntry("showHiddenFiles", checked);
+  KSharedConfig::openConfig()->group("settings").sync();
+
+  selector->setShowHiddenFiles(checked);
 }
 
 //--------------------------------------------------------------------------------
@@ -418,11 +465,11 @@ void MainWindow::setLoadedProfile(const QString &name)
 
   if ( !name.isEmpty() )
   {
-    KUrl url;
+    QUrl url;
     url.setPath(name);
     recentFiles->addUrl(url);
-    recentFiles->saveEntries(KGlobal::config()->group(""));
-    KGlobal::config()->group("").sync();
+    recentFiles->saveEntries(KSharedConfig::openConfig()->group(""));
+    KSharedConfig::openConfig()->group("").sync();
   }
 }
 

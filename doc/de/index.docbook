@@ -28,7 +28,7 @@
 as Authors, publish date, the abstract, and Keywords -->
 
 <bookinfo>
-<title>Das &kbackup; Handbuch (für Version 0.7)</title>
+<title>Das &kbackup; Handbuch (für Version 0.9)</title>
 
 <authorgroup>
 <author>
@@ -49,7 +49,7 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 <copyright>
-<year>2006 - 2010</year>
+<year>2006 - 2017</year>
 <holder>Martin Koller</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->

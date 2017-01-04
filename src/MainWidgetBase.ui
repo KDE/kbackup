@@ -9,7 +9,7 @@
     <x>0</x>
     <y>0</y>
     <width>501</width>
-    <height>435</height>
+    <height>449</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,7 +110,7 @@
     </layout>
    </item>
    <item row="2" column="0">
-    <widget class="Q3GroupBox" name="groupBox3">
+    <widget class="QGroupBox" name="groupBox3">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
        <horstretch>0</horstretch>
@@ -225,7 +225,7 @@
     </widget>
    </item>
    <item row="3" column="0">
-    <widget class="Q3GroupBox" name="groupBox2">
+    <widget class="QGroupBox" name="groupBox2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
        <horstretch>0</horstretch>
@@ -359,7 +359,7 @@
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
-         <verstretch>4</verstretch>
+         <verstretch>2</verstretch>
         </sizepolicy>
        </property>
        <property name="minimumSize">
@@ -496,15 +496,8 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
  <pixmapfunction>SmallIcon</pixmapfunction>
  <customwidgets>
-  <customwidget>
-   <class>Q3GroupBox</class>
-   <extends>QGroupBox</extends>
-   <header>Qt3Support/Q3GroupBox</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>

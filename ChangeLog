@@ -1,3 +1,9 @@
+02.01.2017 (1.0)
+- Ported to KF5
+- configurable shortcuts
+- context menu in tree allowing direct opening/deletion of files and dirs
+- allow to show/hide hidden files
+
 22.07.2012 (0.8)
 - Add dirpath wildcard filters to skip complete directories
 

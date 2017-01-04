@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -10,36 +10,109 @@
 #include <Selector.hxx>
 
 #include <kio/global.h>
-#include <kglobal.h>
-#include <klocale.h>
 #include <kiconloader.h>
 #include <kiconeffect.h>
-
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <kde_file.h>
+#include <KLocalizedString>
+#include <kpropertiesdialog.h>
+#include <KFileItem>
+#include <KMimeTypeTrader>
+#include <KRun>
+#include <KActionCollection>
+#include <KMessageBox>
 
 #include <QDir>
 #include <QPixmap>
 #include <QDateTime>
+#include <QCollator>
+#include <QHeaderView>
+#include <QMenu>
+#include <QDebug>
 
 #include <iostream>
 using namespace std;
+
+//--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
-class ListItem : public Q3CheckListItem
+class Model : public QStandardItemModel
 {
   public:
-    ListItem(Q3ListView *parent, const QString &text, bool dir)
-      : Q3CheckListItem(parent, text, Q3CheckListItem::CheckBox), isDir_(dir), partly(false)
+    Model(Selector *parent) : QStandardItemModel(parent), tree(parent)
     {
+      const char *lc_collate = ::getenv("LC_COLLATE");
+      if ( lc_collate )
+        collator.setLocale(QLocale(QLatin1String(lc_collate)));
+
+      collator.setNumericMode(true);
     }
 
-    ListItem(Q3ListViewItem *parent, const QString &text, bool dir)
-      : Q3CheckListItem(parent, text, Q3CheckListItem::CheckBox), isDir_(dir), partly(false)
+    virtual bool hasChildren(const QModelIndex &index = QModelIndex()) const
     {
+      QStandardItem *item = itemFromIndex(index);
+
+      if ( !item )
+        return true;  // invisible root
+
+      return !(item->flags() & Qt::ItemNeverHasChildren);
+    }
+
+    Selector *tree;
+    QCollator collator;
+};
+
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+
+class ListItem : public QStandardItem
+{
+  public:
+    ListItem(QStandardItem *parent, const QString &text, bool dir)
+      : isDir_(dir), partly(false)
+    {
+      parent->appendRow(this);
+      parent->setChild(row(), 1, new QStandardItem);
+      parent->setChild(row(), 2, new QStandardItem);
+
+      setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsUserCheckable);
+
+      if ( !isDir_ )
+        setFlags(flags() | Qt::ItemNeverHasChildren);
+
+      setCheckState(Qt::Unchecked);
+      setText(0, text, key(text));
+    }
+
+    virtual int type() const { return QStandardItem::UserType; }
+
+    bool isOn() const { return checkState() == Qt::Checked; }
+    void setOn(bool on) { setCheckState(on ? Qt::Checked : Qt::Unchecked); }
+
+    void setText(int column, const QString &txt, const QVariant &sortKey)
+    {
+      QStandardItem *item;
+
+      if ( parent() )
+        item = parent()->child(row(), column);
+      else
+        item = model()->item(row(), column);
+
+      item->setText(txt);
+      item->setData(sortKey, Qt::UserRole);
+    }
+
+    virtual void setData(const QVariant &value, int role = Qt::UserRole + 1)
+    {
+      if ( role == Qt::CheckStateRole )
+      {
+        if ( value.toInt() != checkState() )
+        {
+          QStandardItem::setData(value, role);
+          stateChanged();
+          return;
+        }
+      }
+
+      QStandardItem::setData(value, role);
     }
 
     // check if all siblings have the same state as the parent or are partly marked
@@ -50,26 +123,37 @@ class ListItem : public Q3CheckListItem
       if ( !parent() ) return;
 
       bool allSame = true, state = static_cast<ListItem*>(parent())->isOn();
-      for (Q3ListViewItem *item = parent()->firstChild(); item; item = item->nextSibling())
+
+      for (int i = 0; i < parent()->rowCount(); i++)
+      {
+        QStandardItem *item = parent()->child(i);
+
         if ( (static_cast<ListItem*>(item)->isOn() != state) || static_cast<ListItem*>(item)->partly )
         {
           allSame = false;
           break;
         }
+      }
 
       // only continue upwards if the parents partly status changes
       if ( static_cast<ListItem*>(parent())->partly != !allSame )
       {
         static_cast<ListItem*>(parent())->partly = !allSame;
-        parent()->repaint();
+
+        if ( !allSame )
+          static_cast<ListItem*>(parent())->setForeground(Qt::blue);
+        else
+        {
+          QWidget *w = static_cast<Model *>(model())->tree;
+          static_cast<ListItem*>(parent())->setForeground(w->palette().color(w->foregroundRole()));
+        }
+
         static_cast<ListItem*>(parent())->recursSiblingsUp();
       }
     }
 
-    virtual void stateChange(bool b)
+    void stateChanged()
     {
-      Q3CheckListItem::stateChange(b);
-
       recursActivate(isOn());
       recursSiblingsUp();
     }
@@ -78,119 +162,144 @@ class ListItem : public Q3CheckListItem
     void recursActivate(bool on)
     {
       partly = false;  // all children will get the same state
+
+      QWidget *w = static_cast<Model *>(model())->tree;
+      setForeground(w->palette().color(w->foregroundRole()));
+
       setOn(on);
 
-      for (Q3ListViewItem *item = firstChild(); item; item = item->nextSibling())
-        static_cast<ListItem*>(item)->recursActivate(on);
+      for (int i = 0; i < rowCount(); i++)
+        static_cast<ListItem*>(child(i))->recursActivate(on);
     }
 
     bool isDir() const { return isDir_; }
 
-    virtual void paintCell(QPainter *p, const QColorGroup & cg, int column, int width, int align)
+    int key(const QString &text) const
     {
-      QColorGroup colorGroup(cg);
+      bool hidden = text[0] == QChar('.');
 
-      if ( partly )
-        colorGroup.setColor(QColorGroup::Text, Qt::blue);
-
-      Q3CheckListItem::paintCell(p, colorGroup, column, width, align);
+      // sort directories _always_ first, and hidden before shown
+      if ( isDir_ )
+        return hidden ? 0 : 1;
+      else  // file
+        return hidden ? 2 : 3;
     }
 
-    virtual QString key(int column, bool ascending) const
+    virtual bool operator<(const QStandardItem &other_) const
     {
-      switch ( column )
-      {
-        case 0:
-        {
-          bool hidden = text()[0] == QChar('.');
+      QTreeView *w = static_cast<Model *>(model())->tree;
+      Qt::SortOrder order = w->header()->sortIndicatorOrder();
 
-          // sort directories _always_ first, and hidden before shown
-          if ( ascending )
-          {
-            if ( isDir_ )
-              return (hidden ? "0" : "1") + text();
-            else  // file
-              return (hidden ? "2" : "3") + text();
-          }
-          else
-          {
-            if ( isDir_ )
-              return (hidden ? "3" : "2") + text();
-            else
-              return (hidden ? "1" : "0") + text();
-          }
-        }
-        case 1: return sizeSortStr;
-        case 2: return timeSortStr;
+      const ListItem &other = static_cast<const ListItem &>(other_);
+
+      int myKey = data(Qt::UserRole).toInt();
+      int otherKey = other.data(Qt::UserRole).toInt();
+
+      if ( myKey != otherKey )
+        return (order == Qt::AscendingOrder) ? (myKey < otherKey) : (myKey > otherKey);
+      else
+      {
+        // don't use localeAwareCompare. QLocale does not use LC_COLLATE QTBUG-29397
+        return static_cast<Model *>(model())->collator.compare(text(), other.text()) < 0;
       }
-      return text();
     }
 
     void setSize(KIO::filesize_t size)
     {
-      sizeSortStr = KIO::number(size).rightJustified(15, QLatin1Char('0'));
-      setText(1, KIO::convertSize(size));
+      setText(1, KIO::convertSize(size), size);
     }
 
     void setLastModified(const QDateTime &time)
     {
-      timeSortStr = time.toString(Qt::ISODate); // sortable
-      setText(2, KGlobal::locale()->formatDateTime(time));
+      setText(2, QLocale().toString(time, QLocale::ShortFormat), time);
+    }
+
+    void setShowHiddenFiles(bool show)
+    {
+      QTreeView *w = static_cast<Model *>(model())->tree;
+
+      QStandardItem *parentItem = parent() ? parent() : model()->invisibleRootItem();
+
+      w->setRowHidden(row(), parentItem->index(), show ? false : text()[0] == QLatin1Char('.'));
+
+      for (int i = 0; i < rowCount(); i++)
+        static_cast<ListItem*>(child(i))->setShowHiddenFiles(show);
     }
 
   private:
     bool isDir_;
     bool partly;  // is this an item which is not fully (but partly - some of the children) selected
 
-    // store for fast, correct sorting
-    QString sizeSortStr;
-    QString timeSortStr;
 };
 
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 
-Selector::Selector(QWidget *parent)
-  : Q3ListView(parent)
+Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
+  : QTreeView(parent), showHiddenFiles(true)
 {
-  addColumn(i18n("Name"));
-  addColumn(i18n("Size"));
-  addColumn(i18n("Last Modified"));
+  itemModel = new Model(this);
+
+  setModel(itemModel);
+
+  itemModel->setSortRole(Qt::UserRole);
+  itemModel->setHorizontalHeaderLabels(QStringList() << i18n("Name") << i18n("Size") << i18n("Last Modified"));
 
   setRootIsDecorated(true);
-  setShowSortIndicator(true);
 
-  /* TODO: needs fix in findItemByPath (others?)
   // start with / as root node
-  ListItem *item = new ListItem(this, "/", true);
+  ListItem *item = new ListItem(itemModel->invisibleRootItem(), "/", true);
   QFileInfo info("/");
   item->setSize(info.size());
   item->setLastModified(info.lastModified());
-  item->setPixmap(0, SmallIcon("folder"));
-  item->setOpen(true);
-  */
+  item->setIcon(SmallIcon("folder"));
+  setExpanded(item->index(), true);
 
-  fillTree(0, "/", false);
+  fillTree(item, "/", false);
 
-  adjustColumn(0);
-  adjustColumn(1);
-  adjustColumn(2);
-  minSize = QSize(columnWidth(0) + columnWidth(1), -1);
-
-  connect(this, SIGNAL(expanded(Q3ListViewItem *)), this, SLOT(expandedSlot(Q3ListViewItem*)));
+  connect(this, &Selector::expanded, this, &Selector::expandedSlot);
 
   // for convenience, open the tree at the HOME directory
   const char *home = ::getenv("HOME");
   if ( home )
   {
-    Q3ListViewItem *item = findItemByPath(QFile::decodeName(home));
+    QStandardItem *item = findItemByPath(QFile::decodeName(home));
     if ( item )
     {
-      item->setOpen(true);
-      ensureItemVisible(item);
+      setExpanded(item->index(), true);
+      scrollTo(item->index());
     }
   }
+
+  minSize = QSize(columnWidth(0) + columnWidth(1), -1);
+  resizeColumnToContents(0);
+  resizeColumnToContents(1);
+  resizeColumnToContents(2);
+
+  sortByColumn(0, Qt::AscendingOrder);
+
+  // context menu
+  menu = new QMenu(this);
+  QAction *action;
+
+  action = KStandardAction::open(this, &Selector::open, actionCollection);
+  menu->addAction(action);
+
+  connect(this, &Selector::doubleClicked, this, &Selector::doubleClickedSlot);
+
+  openWithSubMenu = new QMenu(i18n("Open With"), this);
+  menu->addMenu(openWithSubMenu);
+  connect(openWithSubMenu, &QMenu::aboutToShow, this, &Selector::populateOpenMenu);
+  connect(openWithSubMenu, &QMenu::triggered, this, &Selector::openWith);
+
+  deleteFileAction = KStandardAction::deleteFile(this, &Selector::deleteFile, actionCollection);
+  menu->addAction(deleteFileAction);
+
+  action = actionCollection->addAction("properties", this, SLOT(properties()));
+  action->setText(i18n("Properties..."));
+  menu->addAction(action);
 }
 
 //--------------------------------------------------------------------------------
@@ -202,33 +311,38 @@ QSize Selector::minimumSizeHint() const
 
 //--------------------------------------------------------------------------------
 
-void Selector::fillTree(Q3ListViewItem *parent, const QString &path, bool on)
+void Selector::fillTree(ListItem *parent, const QString &path, bool on)
 {
-  QDir dir(path, QString::null, QDir::Name | QDir::IgnoreCase, QDir::All | QDir::Hidden);
+  setSortingEnabled(false);
+
+  const QDir::Filters filter = QDir::AllEntries | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot;
+
+  QDir dir(path, QString(), QDir::NoSort, filter);
   const QFileInfoList list = dir.entryInfoList();
 
   ListItem *item;
 
   for (int i = 0; i < list.count(); i++)
   {
-    if ( (list[i].fileName() == ".") || (list[i].fileName() == "..") ) continue;
-
     if ( parent )
       item = new ListItem(parent, list[i].fileName(), list[i].isDir());
     else
-      item = new ListItem(this, list[i].fileName(), list[i].isDir());
+      item = new ListItem(itemModel->invisibleRootItem(), list[i].fileName(), list[i].isDir());
 
     item->setOn(on);
     item->setSize(list[i].size());
     item->setLastModified(list[i].lastModified());
+    item->setShowHiddenFiles(showHiddenFiles);
 
     if ( item->isDir() )
     {
-      QDir dir(list[i].absoluteFilePath(), QString::null, QDir::Name | QDir::IgnoreCase, QDir::All | QDir::Hidden);
+      QDir dir(list[i].absoluteFilePath(), QString(), QDir::NoSort, filter);
 
       // symlinked dirs can not be expanded as they are stored as single files in the archive
-      if ( ((dir.count() - 2) > 0) && !list[i].isSymLink() ) // skip "." and ".."
-        item->setExpandable(true);
+      if ( (dir.count() > 0) && !list[i].isSymLink() )
+        ; // can have children
+      else
+        item->setFlags(item->flags() | Qt::ItemNeverHasChildren);
 
       static QPixmap folderIcon;
       static QPixmap folderLinkIcon;
@@ -248,7 +362,7 @@ void Selector::fillTree(Q3ListViewItem *parent, const QString &path, bool on)
         folderLinkIconHidden = effect.apply(folderLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
 
-      item->setPixmap(0, list[i].isSymLink() ?
+      item->setIcon(list[i].isSymLink() ?
                            (list[i].isHidden() ? folderLinkIconHidden : folderLinkIcon)
                          : (list[i].isHidden() ? folderIconHidden : folderIcon));
     }
@@ -272,38 +386,45 @@ void Selector::fillTree(Q3ListViewItem *parent, const QString &path, bool on)
         documentLinkIconHidden = effect.apply(documentLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
 
-      item->setPixmap(0, list[i].isSymLink() ?
+      item->setIcon(list[i].isSymLink() ?
                            (list[i].isHidden() ? documentLinkIconHidden : documentLinkIcon)
                          : (list[i].isHidden() ? documentIconHidden : documentIcon));
     }
   }
+  setSortingEnabled(true);
 }
 
 //--------------------------------------------------------------------------------
 
-QString Selector::getPath(Q3ListViewItem *item) const
+QString Selector::getPath(QStandardItem *item) const
 {
   if ( !item )
-    return "";
+    return QString();
+  else if ( !item->parent() )
+    return item->text();  // root
+  else if ( item->parent() == itemModel->item(0) )
+    return "/" + item->text();
   else
-    return getPath(item->parent()) + "/" + item->text(0);
+    return getPath(item->parent()) + "/" + item->text();
 }
 
 //--------------------------------------------------------------------------------
 
-void Selector::expandedSlot(Q3ListViewItem *item)
+void Selector::expandedSlot(const QModelIndex &index)
 {
-  if ( item->childCount() ) return;  // already done
+  QStandardItem *item = itemModel->itemFromIndex(index);
 
-  fillTree(item, getPath(item), static_cast<ListItem*>(item)->isOn());
+  if ( item->rowCount() ) return;  // already done
+
+  fillTree(static_cast<ListItem *>(item), getPath(item), static_cast<ListItem *>(item)->isOn());
 }
 
 //--------------------------------------------------------------------------------
 
 void Selector::getBackupList(QStringList &includes, QStringList &excludes) const
 {
-  for (Q3ListViewItem *item = firstChild(); item; item = item->nextSibling())
-    getBackupLists(item, includes, excludes);
+  for (int i = 0; i < itemModel->rowCount(); i++)
+    getBackupLists(itemModel->item(i, 0), includes, excludes);
 
   /*
   cerr << "includes:" << includes.count() << endl;
@@ -320,7 +441,7 @@ void Selector::getBackupList(QStringList &includes, QStringList &excludes) const
 
 //--------------------------------------------------------------------------------
 
-void Selector::getBackupLists(Q3ListViewItem *start, QStringList &includes, QStringList &excludes, bool add) const
+void Selector::getBackupLists(QStandardItem *start, QStringList &includes, QStringList &excludes, bool add) const
 {
   if ( static_cast<ListItem*>(start)->isOn() )
   {
@@ -330,8 +451,10 @@ void Selector::getBackupLists(Q3ListViewItem *start, QStringList &includes, QStr
     if ( static_cast<ListItem*>(start)->isDir() )
     {
       // get excludes from this dir
-      for (Q3ListViewItem *item = start->firstChild(); item; item = item->nextSibling())
+      for (int i = 0; i < start->rowCount(); i++)
       {
+        QStandardItem *item = start->child(i);
+
         if ( !static_cast<ListItem*>(item)->isOn() )
           excludes.append(getPath(item));
 
@@ -343,8 +466,8 @@ void Selector::getBackupLists(Q3ListViewItem *start, QStringList &includes, QStr
   else
     if ( static_cast<ListItem*>(start)->isDir() )
     {
-      for (Q3ListViewItem *item = start->firstChild(); item; item = item->nextSibling())
-        getBackupLists(item, includes, excludes);
+      for (int i = 0; i < start->rowCount(); i++)
+        getBackupLists(start->child(i), includes, excludes);
     }
 }
 
@@ -352,36 +475,31 @@ void Selector::getBackupLists(Q3ListViewItem *start, QStringList &includes, QStr
 
 void Selector::setBackupList(const QStringList &includes, const QStringList &excludes)
 {
-  int sortCol = sortColumn();
-  setSorting(-1);  // otherwise the performance is very bad as firstChild() always sorts
-
   // clear all current settings
-  for (Q3ListViewItem *item = firstChild(); item; item = item->nextSibling())
-    static_cast<ListItem*>(item)->recursActivate(false);
+  for (int i = 0; i < itemModel->rowCount(); i++)
+    static_cast<ListItem*>(itemModel->item(i, 0))->recursActivate(false);
 
   for (QStringList::const_iterator it = includes.begin(); (it != includes.end()); ++it)
   {
-    Q3ListViewItem *item = findItemByPath(*it);
+    QStandardItem *item = findItemByPath(*it);
     if ( item )
       static_cast<ListItem*>(item)->recursActivate(true);
   }
 
   for (QStringList::const_iterator it = excludes.begin(); (it != excludes.end()); ++it)
   {
-    Q3ListViewItem *item = findItemByPath(*it);
+    QStandardItem *item = findItemByPath(*it);
     if ( item )
       static_cast<ListItem*>(item)->setOn(false);
   }
-
-  setSorting(sortCol);
 }
 
 //--------------------------------------------------------------------------------
 
-Q3ListViewItem *Selector::findItemByPath(const QString &path)
+QStandardItem *Selector::findItemByPath(const QString &path)
 {
   QStringList items = path.split('/', QString::SkipEmptyParts);
-  Q3ListViewItem *item = 0;
+  QStandardItem *item = itemModel->invisibleRootItem()->child(0);
 
   for (int i = 0; i < items.count(); i++)
   {
@@ -392,8 +510,8 @@ Q3ListViewItem *Selector::findItemByPath(const QString &path)
     else
     {
       if ( (i != (items.count() - 1)) &&
-           static_cast<ListItem*>(item)->isDir() && (item->childCount() == 0) )
-        expandedSlot(item);
+           static_cast<ListItem*>(item)->isDir() && (item->rowCount() == 0) )
+        expandedSlot(item->index());
     }
   }
 
@@ -402,13 +520,221 @@ Q3ListViewItem *Selector::findItemByPath(const QString &path)
 
 //--------------------------------------------------------------------------------
 
-Q3ListViewItem *Selector::findItem(Q3ListViewItem *start, const QString &toFind) const
+QStandardItem *Selector::findItem(QStandardItem *start, const QString &toFind) const
 {
-  for (Q3ListViewItem *item = start ? start->firstChild() : firstChild(); item; item = item->nextSibling())
-    if ( item->text(0) == toFind )
+  for (int i = 0; i < (start ? start->rowCount() : itemModel->rowCount()); i++)
+  {
+    QStandardItem *item = start ? start->child(i) : itemModel->item(i, 0);
+
+    if ( item->text() == toFind )
       return item;
+  }
 
   return 0;
+}
+
+//--------------------------------------------------------------------------------
+
+ListItem *Selector::getSelectedItem() const
+{
+  QModelIndex index = selectionModel()->currentIndex();
+  if ( !index.isValid() )
+    return 0;
+
+  QStandardItem *item = itemModel->itemFromIndex(itemModel->index(index.row(), 0, index.parent()));
+
+  if ( !item || (item->type() != QStandardItem::UserType) )  // just be safe
+    return 0;
+
+  return static_cast<ListItem *>(item);
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::contextMenuEvent(QContextMenuEvent *)
+{
+  ListItem *item = getSelectedItem();
+
+  if ( !item )
+    return;
+
+  bool canDelete = true;
+
+  if ( item->isDir() )
+  {
+    // only if it's empty
+    canDelete = QDir(getPath(item), QString(), QDir::NoSort,
+                     QDir::AllEntries | QDir::System | QDir::NoDotAndDotDot).count() == 0;
+  }
+
+  deleteFileAction->setEnabled(canDelete);
+
+  menu->exec(QCursor::pos());
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::deleteFile()
+{
+  ListItem *item = getSelectedItem();
+
+  if ( !item )
+    return;
+
+  QUrl sourceUrl = QUrl::fromLocalFile(getPath(item));
+
+  if ( KMessageBox::questionYesNo(this,
+          i18n("Do you really want to delete '%1'?", sourceUrl.path()),
+          i18n("Delete"),
+          KStandardGuiItem::yes(), KStandardGuiItem::no(),
+          "dontAskAgainDelete") == KMessageBox::Yes )
+  {
+    QStandardItem *parent = 0;
+
+    if ( item->isDir() )
+    {
+      QDir dir(sourceUrl.path());
+
+      if ( !dir.removeRecursively() )
+        KMessageBox::error(this, i18n("Could not delete directory '%1'.", sourceUrl.path()));
+      else
+        parent = item->parent();
+    }
+    else
+    {
+      QFile theFile(sourceUrl.path());
+
+      if ( !theFile.remove(sourceUrl.path()) )
+        KMessageBox::error(this, i18n("Could not delete file '%1'.\nReason: %2", sourceUrl.path(), theFile.errorString()));
+      else
+        parent = item->parent();
+    }
+
+    if ( parent )
+    {
+      parent->removeRow(item->row());
+
+      if ( parent->type() == QStandardItem::UserType )
+        static_cast<ListItem *>(parent)->stateChanged();  // make sure removed item is taken into account
+    }
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::properties()
+{
+  ListItem *item = getSelectedItem();
+
+  if ( !item )
+    return;
+
+  QUrl sourceUrl = QUrl::fromLocalFile(getPath(item));
+
+  KPropertiesDialog::showDialog(sourceUrl, this);
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::populateOpenMenu()
+{
+  ListItem *item = getSelectedItem();
+
+  if ( !item )
+    return;
+
+  QUrl sourceUrl = QUrl::fromLocalFile(getPath(item));
+
+  qDeleteAll(openWithSubMenu->actions());
+  serviceForName.clear();
+
+  KFileItem fileItem(sourceUrl);
+  QString mimeType(fileItem.determineMimeType().name());
+
+  KService::List services = KMimeTypeTrader::self()->query(mimeType);
+
+  foreach (const KService::Ptr &service, services)
+  {
+    QString text = service->name().replace('&', "&&");
+    QAction* action = openWithSubMenu->addAction(text);
+    action->setIcon(QIcon::fromTheme(service->icon()));
+    action->setData(service->name());
+
+    serviceForName[service->name()] = service;
+  }
+
+  openWithSubMenu->addSeparator();
+  openWithSubMenu->addAction(i18n("Other Application..."));
+
+  QAction* action = openWithSubMenu->addAction(i18n("File Manager"));
+  action->setIcon(QIcon::fromTheme("folder"));
+  action->setData("-");
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::doubleClickedSlot()
+{
+  ListItem *item = getSelectedItem();
+
+  if ( !item || item->isDir() )
+    return;
+
+  open();
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::open()
+{
+  ListItem *item = getSelectedItem();
+
+  if ( !item )
+    return;
+
+  QUrl sourceUrl = QUrl::fromLocalFile(getPath(item));
+
+  KRun *run = new KRun(sourceUrl, window());  // auto-deletes itself
+  run->setRunExecutables(false);
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::openWith(QAction *action)
+{
+  ListItem *item = getSelectedItem();
+
+  if ( !item )
+    return;
+
+  QUrl sourceUrl = QUrl::fromLocalFile(getPath(item));
+
+  QString name = action->data().toString();
+
+  if ( name.isEmpty() ) // Other Application...
+  {
+    KRun::displayOpenWithDialog(QList<QUrl>() << sourceUrl, this);
+    return;
+  }
+
+  if ( name == "-" )  // File Manager
+  {
+    KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), "inode/directory", this);
+    return;
+  }
+
+  KService::Ptr service = serviceForName[name];
+  KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::setShowHiddenFiles(bool show)
+{
+  showHiddenFiles = show;
+
+  for (int i = 0; i < itemModel->invisibleRootItem()->rowCount(); i++)
+    static_cast<ListItem *>(itemModel->item(i, 0))->setShowHiddenFiles(show);
 }
 
 //--------------------------------------------------------------------------------

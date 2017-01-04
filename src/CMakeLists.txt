@@ -1,7 +1,5 @@
 add_subdirectory(pics)
 
-########### next target ###############
-
 set(kbackup_SRCS
     Archiver.cxx
     MainWindow.cxx
@@ -11,11 +9,23 @@ set(kbackup_SRCS
     SettingsDialog.cxx
     )
 
-kde4_add_ui_files(kbackup_SRCS MainWidgetBase.ui SettingsDialog.ui)
+ki18n_wrap_ui(kbackup_SRCS MainWidgetBase.ui SettingsDialog.ui)
 
-kde4_add_executable(kbackup ${kbackup_SRCS})
-
-target_link_libraries(kbackup ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KDEUI_LIBS} ${QT_QT3SUPPORT_LIBRARY})
+add_executable(kbackup ${kbackup_SRCS})
+target_link_libraries(kbackup
+                      Qt5::Core
+                      Qt5::Widgets
+                      KF5::I18n
+                      KF5::KIOCore
+                      KF5::KIOFileWidgets
+                      KF5::KIOWidgets
+                      KF5::WidgetsAddons
+                      KF5::XmlGui
+                      KF5::Notifications
+                      KF5::IconThemes
+                      KF5::Archive
+                      KF5::KDELibs4Support
+)
 
 install(TARGETS kbackup ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -25,6 +35,12 @@ install(FILES kbackup.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
 update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
 
 install(FILES  kbackup.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES  kbackupui.rc DESTINATION ${DATA_INSTALL_DIR}/kbackup)
+install(FILES  kbackupui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kbackup)
 
-kde4_install_icons(${ICON_INSTALL_DIR})
+ecm_install_icons(ICONS
+                  16-apps-kbackup.png
+                  32-apps-kbackup.png
+                  16-mimetypes-text-x-kbp.png
+                  32-mimetypes-text-x-kbp.png
+                  DESTINATION ${ICON_INSTALL_DIR}
+                  THEME hicolor)

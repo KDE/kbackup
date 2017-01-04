@@ -9,7 +9,7 @@
     <x>0</x>
     <y>0</y>
     <width>350</width>
-    <height>452</height>
+    <height>525</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="textLabel1">
      <property name="text">
-      <string>Archive Prefix (empty for default):</string>
+      <string>Archive Prefix:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -27,7 +27,11 @@
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QLineEdit" name="prefix"/>
+    <widget class="QLineEdit" name="prefix">
+     <property name="placeholderText">
+      <string>backup</string>
+     </property>
+    </widget>
    </item>
    <item row="2" column="0">
     <widget class="QGroupBox" name="groupBox2">
@@ -215,7 +219,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <resources/>
  <connections>

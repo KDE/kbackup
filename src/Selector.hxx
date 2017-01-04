@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -12,33 +12,57 @@
 
 // the selection widget lets the user select which files/dirs to back up
 
-#include <q3listview.h>
+#include <QTreeView>
+#include <QStandardItemModel>
 
-class Selector : public Q3ListView
+#include <KService>
+
+class KActionCollection;
+class ListItem;
+class QMenu;
+
+class Selector : public QTreeView
 {
   Q_OBJECT
 
   public:
-    Selector(QWidget *parent = 0);
+    Selector(QWidget *parent, KActionCollection *actionCollection);
 
     void getBackupList(QStringList &includes, QStringList &excludes) const;
     void setBackupList(const QStringList &includes, const QStringList &excludes);
+    void setShowHiddenFiles(bool show);
 
     virtual QSize minimumSizeHint() const;
 
-  private:
-    void fillTree(Q3ListViewItem *parent, const QString &path, bool on);
-    QString getPath(Q3ListViewItem *item) const;
-    void getBackupLists(Q3ListViewItem *start, QStringList &includes, QStringList &excludes, bool add = true) const;
+  protected:
+    virtual void contextMenuEvent(QContextMenuEvent *event);
 
-    Q3ListViewItem *findItemByPath(const QString &path);
-    Q3ListViewItem *findItem(Q3ListViewItem *start, const QString &toFind) const;
+  private:
+    void fillTree(ListItem *parent, const QString &path, bool on);
+    QString getPath(QStandardItem *item) const;
+    void getBackupLists(QStandardItem *start, QStringList &includes, QStringList &excludes, bool add = true) const;
+
+    QStandardItem *findItemByPath(const QString &path);
+    QStandardItem *findItem(QStandardItem *start, const QString &toFind) const;
+
+    ListItem *getSelectedItem() const;
 
   private slots:
-    void expandedSlot(Q3ListViewItem *);
+    void expandedSlot(const QModelIndex &index);
+    void populateOpenMenu();
+    void doubleClickedSlot();
+    void open();
+    void openWith(QAction *action);
+    void deleteFile();
+    void properties();
 
   private:
     QSize minSize;
+    QStandardItemModel *itemModel;
+    QMenu *menu, *openWithSubMenu;
+    QAction *deleteFileAction;
+    QMap<QString, KService::Ptr> serviceForName;
+    bool showHiddenFiles;
 };
 
 #endif

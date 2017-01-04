@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -12,15 +12,13 @@
 #include <Selector.hxx>
 
 #include <kiconloader.h>
-#include <kfiledialog.h>
-#include <klocale.h>
-#include <klineedit.h>
 #include <kurlcompletion.h>
 
 #include <QTextEdit>
 #include <QLabel>
 #include <QPushButton>
 #include <QProgressBar>
+#include <QFileDialog>
 
 //--------------------------------------------------------------------------------
 
@@ -82,7 +80,7 @@ void MainWidget::startBackup()
   ui.cancelButton->setEnabled(true);
   ui.startButton->setEnabled(false);
 
-  Archiver::instance->setTarget(ui.targetDir->text());
+  Archiver::instance->setTarget(QUrl::fromUserInput(ui.targetDir->text()));
 
   QStringList includes, excludes;
   selector->getBackupList(includes, excludes);
@@ -110,11 +108,11 @@ void MainWidget::setSelector(Selector *s)
 
 void MainWidget::getMediaSize()
 {
-  KUrl url = KFileDialog::getExistingDirectoryUrl(KUrl("/"), this);
+  QUrl url = QFileDialog::getExistingDirectoryUrl(this);
 
   if ( url.isEmpty() ) return;  // cancelled
 
-  ui.targetDir->setText(url.pathOrUrl());
+  ui.targetDir->setText(url.toLocalFile());
   Archiver::instance->setTarget(ui.targetDir->text());
 }
 
@@ -122,7 +120,7 @@ void MainWidget::getMediaSize()
 
 void MainWidget::updateElapsed(const QTime &elapsed)
 {
-  ui.elapsedTime->setText(KGlobal::locale()->formatTime(elapsed, true, true));
+  ui.elapsedTime->setText(elapsed.toString("HH:mm:ss"));
 }
 
 //--------------------------------------------------------------------------------

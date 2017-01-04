@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -10,25 +10,24 @@
 #include <Archiver.hxx>
 
 #include <ktar.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <ktemporaryfile.h>
-#include <kfilterbase.h>
 #include <kfilterdev.h>
-#include <kstandarddirs.h>
+#include <KFilterBase>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <kprocess.h>
-#include <kde_file.h>
-#include <kdirselectdialog.h>
 #include <kmountpoint.h>
+#include <kde_file.h>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include <qapplication.h>
 #include <qdir.h>
 #include <qfileinfo.h>
 #include <qcursor.h>
 #include <QTextStream>
+#include <QFileDialog>
+#include <QTemporaryFile>
+#include <QTimer>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -87,8 +86,11 @@ void Archiver::setCompressFiles(bool b)
   if ( b )
   {
     ext = ".bz2";
-    if ( ! KFilterBase::findFilterByMimeType("application/x-bzip2") )
+    KFilterBase *base = KCompressionDevice::filterForCompressionType(KCompressionDevice::BZip2);
+    if ( !base )
       ext = ".gz";
+
+    delete base;
   }
   else
   {
@@ -98,7 +100,7 @@ void Archiver::setCompressFiles(bool b)
 
 //--------------------------------------------------------------------------------
 
-void Archiver::setTarget(const KUrl &target)
+void Archiver::setTarget(const QUrl &target)
 {
   targetURL = target;
   calculateCapacity();
@@ -227,7 +229,7 @@ void Archiver::calculateCapacity()
   }
   else
   {
-    getDiskFree(KStandardDirs::locateLocal("tmp", ""), totalBytes, sliceCapacity);
+    getDiskFree(QDir::tempPath() + QLatin1Char('/'), totalBytes, sliceCapacity);
     // as "tmp" is also used by others and by us when compressing a file,
     // don't eat it up completely. Reserve 10%
     sliceCapacity = sliceCapacity * 9 / 10;
@@ -353,7 +355,7 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
 
   file.close();
 
-  setTarget(KUrl(target));
+  setTarget(QUrl::fromUserInput(target));
 
   setIncrementalBackup(
     (fullBackupInterval > 1) && lastFullBackup.isValid() &&
@@ -376,7 +378,7 @@ bool Archiver::saveProfile(const QString &fileName, const QStringList &includes,
 
   QTextStream stream(&file);
 
-  stream << "M " << targetURL.pathOrUrl() << endl;
+  stream << "M " << targetURL.toString(QUrl::PreferLocalFile) << endl;
   stream << "P " << getFilePrefix() << endl;
   stream << "S " << getMaxSliceMBs() << endl;
   stream << "R " << getKeptBackups() << endl;
@@ -419,7 +421,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
 
   if ( !targetURL.isValid() )
   {
-    emit warning(i18n("The target dir '%1' is not valid").arg(targetURL.pathOrUrl()));
+    emit warning(i18n("The target dir '%1' is not valid").arg(targetURL.toString()));
     return false;
   }
 
@@ -427,7 +429,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   if ( !interactive && !targetURL.isLocalFile() )
   {
     emit warning(i18n("The target dir '%1' must be a local file system dir and no remote URL")
-                     .arg(targetURL.pathOrUrl()));
+                     .arg(targetURL.toString()));
     return false;
   }
 
@@ -507,7 +509,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   {
     QString entry = *it;
 
-    if ( entry.endsWith("/") )
+    if ( (entry.length() > 1) && entry.endsWith(QLatin1Char('/')) )
       entry.truncate(entry.length() - 1);
 
     QFileInfo info(entry);
@@ -532,8 +534,6 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     {
       QPointer<KIO::ListJob> listJob;
       listJob = KIO::listDir(targetURL, KIO::DefaultFlags, false);
-
-      listJob->ui()->setWindow(static_cast<QWidget*>(parent()));
 
       connect(listJob, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
               this, SLOT(slotListResult(KIO::Job *, const KIO::UDSEntryList &)));
@@ -582,8 +582,9 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
           if ( (num > numKeptBackups) &&   // delete all other files
                !entryName.startsWith(sliceName) )     // keep complete last matching archive set
           {
-            KUrl url = targetURL;
-            url.addPath(entryName);
+            QUrl url = targetURL;
+            url = url.adjusted(QUrl::StripTrailingSlash);
+            url.setPath(url.path() + '/' + entryName);
             emit logging(i18n("...deleting %1").arg(entryName));
 
             // delete the file using KIO
@@ -591,8 +592,6 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
             {
               QPointer<KIO::SimpleJob> delJob;
               delJob = KIO::file_delete(url, KIO::DefaultFlags);
-
-              delJob->ui()->setWindow(static_cast<QWidget*>(parent()));
 
               connect(delJob, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
 
@@ -672,7 +671,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       std::cerr << i18n("Totals: Files: %1, Size: %2, Duration: %3")
                    .arg(totalFiles)
                    .arg(KIO::convertSize(totalBytes))
-                   .arg(KGlobal::locale()->formatTime(QTime().addMSecs(elapsed.elapsed()), true, true))
+                   .arg(QTime(0, 0).addMSecs(elapsed.elapsed()).toString("HH:mm:ss"))
                    .toUtf8().constData() << std::endl;
     }
 
@@ -730,27 +729,26 @@ void Archiver::finishSlice()
     }
     else
     {
-      KUrl source, target = targetURL;
-      source.setPath(archiveName);
+      QUrl source = QUrl::fromLocalFile(archiveName);
+      QUrl target = targetURL;
 
       while ( true )
       {
         // copy to have the archive for the script later down
         job = KIO::copy(source, target, KIO::DefaultFlags);
 
-        job->ui()->setWindow(static_cast<QWidget*>(parent()));
-
         connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
 
-        emit logging(i18n("...uploading archive %1 to %2").arg(source.fileName()).arg(target.pathOrUrl()));
+        emit logging(i18n("...uploading archive %1 to %2").arg(source.fileName()).arg(target.toString()));
 
         while ( job )
           qApp->processEvents(QEventLoop::WaitForMoreEvents);
 
         if ( jobResult == 0 )
         {
-          target.addPath(source.fileName());
-          sliceList << target.pathOrUrl();  // store name for display at the end
+          target = target.adjusted(QUrl::StripTrailingSlash);
+          target.setPath(target.path() + '/' + source.fileName());
+          sliceList << target.toLocalFile();  // store name for display at the end
           break;
         }
         else
@@ -769,7 +767,7 @@ void Archiver::finishSlice()
             }
             else if ( ret == KMessageBox::No )  // change target
             {
-              target = KFileDialog::getExistingDirectoryUrl(KUrl("/"), static_cast<QWidget*>(parent()));
+              target = QFileDialog::getExistingDirectoryUrl(static_cast<QWidget*>(parent()));
               if ( target.isEmpty() )
                 action = ASK;
               else
@@ -836,19 +834,19 @@ void Archiver::runScript(const QString &mode)
     if ( targetURL.isLocalFile() )
     {
       KMountPoint::Ptr ptr = KMountPoint::currentMountPoints().findByPath(targetURL.path());
-      if ( ! ptr.isNull() )
+      if ( ptr )
         mountPoint = ptr->mountPoint();
     }
 
     KProcess proc;
     proc << sliceScript
          << mode
-         << QFile::encodeName(archiveName)
-         << QFile::encodeName(targetURL.pathOrUrl())
-         << QFile::encodeName(mountPoint);
+         << archiveName
+         << targetURL.toString(QUrl::PreferLocalFile)
+         << mountPoint;
 
-    connect(&proc, SIGNAL(readyReadStandardOutput()),
-            this, SLOT(receivedOutput()));
+    connect(&proc, &KProcess::readyReadStandardOutput,
+            this, &Archiver::receivedOutput);
 
     proc.setOutputChannelMode(KProcess::MergedChannels);
 
@@ -910,7 +908,7 @@ bool Archiver::getNextSlice()
     if ( targetURL.isLocalFile() )
       baseName = targetURL.path() + "/" + prefix + QDateTime::currentDateTime().toString("_yyyy.MM.dd-hh.mm.ss");
     else
-      baseName = KStandardDirs::locateLocal("tmp", prefix + QDateTime::currentDateTime().toString("_yyyy.MM.dd-hh.mm.ss"));
+      baseName = QDir::tempPath() + QLatin1Char('/') + prefix + QDateTime::currentDateTime().toString("_yyyy.MM.dd-hh.mm.ss");
   }
 
   archiveName = baseName + QString("_%1").arg(sliceNum);
@@ -953,7 +951,7 @@ bool Archiver::getNextSlice()
 void Archiver::emitArchiveError() const
 {
   QString err;
- 
+
   if ( archive->device() )
     err = archive->device()->errorString();
 
@@ -1017,21 +1015,19 @@ void Archiver::addDirFiles(QDir &dir)
   if ( cancelled ) return;
 
   if ( ! archive->writeDir(QString(".") + absolutePath, dirInfo.owner(), dirInfo.group(),
-                           status.st_mode, status.st_atime, status.st_mtime, status.st_ctime) )
+                           status.st_mode, dirInfo.lastRead(), dirInfo.lastModified(), dirInfo.created()) )
   {
     emit warning(i18n("Could not write directory '%1' to archive.\n"
                       "Maybe the medium is full.").arg(absolutePath));
     return;
   }
 
-  dir.setFilter(QDir::All | QDir::Hidden);
+  dir.setFilter(QDir::AllEntries | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot);
 
   const QFileInfoList list = dir.entryInfoList();
 
   for (int i = 0; !cancelled && (i < list.count()); i++)
   {
-    if ( (list[i].fileName() == ".") || (list[i].fileName() == "..") ) continue;
-
     if ( !list[i].isSymLink() && list[i].isDir() )
     {
       QDir dir(list[i].absoluteFilePath());
@@ -1076,12 +1072,14 @@ void Archiver::addFile(const QFileInfo &info)
 
   if ( cancelled ) return;
 
+  /* don't skip. We probably do not need to read it anyway, since it might be empty
   if ( ! info.isReadable() )
   {
     emit warning(i18n("File '%1' is not readable. Skipping.").arg(info.absoluteFilePath()));
     skippedFiles = true;
     return;
   }
+  */
 
   // emit before we do the compression, so that the receiver can already show
   // with which file we work
@@ -1103,9 +1101,16 @@ void Archiver::addFile(const QFileInfo &info)
 
   if ( !getCompressFiles() )
   {
-    if ( ! addLocalFile(info) )  // this also increases totalBytes
+    AddFileStatus ret = addLocalFile(info);   // this also increases totalBytes
+
+    if ( ret == Error )
     {
       cancel();  //  we must cancel as the tar-file is now corrupt (file was only partly written)
+      return;
+    }
+    else if ( ret == Skipped )
+    {
+      skippedFiles = true;
       return;
     }
   }
@@ -1113,7 +1118,7 @@ void Archiver::addFile(const QFileInfo &info)
   {
     // as we can't know which size the file will have after compression,
     // we create a compressed file and put this into the archive
-    KTemporaryFile tmpFile;
+    QTemporaryFile tmpFile;
 
     if ( ! compressFile(info.absoluteFilePath(), tmpFile) || cancelled )
       return;
@@ -1138,12 +1143,13 @@ void Archiver::addFile(const QFileInfo &info)
                      .arg(info.absoluteFilePath())
                      .arg(strerror(errno)));
 
+        skippedFiles = true;
         return;
       }
 
       if ( ! archive->prepareWriting(QString(".") + info.absoluteFilePath() + ext,
                                      info.owner(), info.group(), tmpFile.size(),
-                                     status.st_mode, status.st_atime, status.st_mtime, status.st_ctime) )
+                                     status.st_mode, info.lastRead(), info.lastModified(), info.created()) )
       {
         emitArchiveError();
         cancel();
@@ -1206,7 +1212,7 @@ void Archiver::addFile(const QFileInfo &info)
 
 //--------------------------------------------------------------------------------
 
-bool Archiver::addLocalFile(const QFileInfo &info)
+Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
 {
   KDE_struct_stat sourceStat;
   memset(&sourceStat, 0, sizeof(sourceStat));
@@ -1218,25 +1224,28 @@ bool Archiver::addLocalFile(const QFileInfo &info)
                  .arg(info.absoluteFilePath())
                  .arg(strerror(errno)));
 
-    return false;
+    return Skipped;
   }
 
   QFile sourceFile(info.absoluteFilePath());
-  if ( ! sourceFile.open(QIODevice::ReadOnly) )
+
+  // if the size is 0 (e.g. a pipe), don't open it since we will not read any content
+  // and Qt hangs when opening a pipe
+  if ( (info.size() > 0) && !sourceFile.open(QIODevice::ReadOnly) )
   {
     emit warning(i18n("Could not open file '%1' for reading.").arg(info.absoluteFilePath()));
-    return false;
+    return Skipped;
   }
 
-  if ( (sliceBytes + sourceStat.st_size) > sliceCapacity )
-    if ( ! getNextSlice() ) return false;
+  if ( (sliceBytes + info.size()) > sliceCapacity )
+    if ( ! getNextSlice() ) return Error;
 
   if ( ! archive->prepareWriting(QString(".") + info.absoluteFilePath(),
-                                 info.owner(), info.group(), sourceStat.st_size,
-                                 sourceStat.st_mode, sourceStat.st_atime, sourceStat.st_mtime, sourceStat.st_ctime) )
+                                 info.owner(), info.group(), info.size(),
+                                 sourceStat.st_mode, info.lastRead(), info.lastModified(), info.created()) )
   {
     emitArchiveError();
-    return false;
+    return Error;
   }
 
   const int BUFFER_SIZE = 8*1024;
@@ -1246,10 +1255,9 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   QTime timer;
   timer.start();
   bool msgShown = false;
-  KIO::filesize_t fileSize = sourceStat.st_size;
-  KIO::filesize_t written = 0;
+  qint64 written = 0;
 
-  while ( fileSize && !sourceFile.atEnd() && !cancelled )
+  while ( info.size() && !sourceFile.atEnd() && !cancelled )
   {
     len = sourceFile.read(buffer, BUFFER_SIZE);
 
@@ -1259,19 +1267,19 @@ bool Archiver::addLocalFile(const QFileInfo &info)
                         "The operating system reports: %2")
                    .arg(info.absoluteFilePath())
                    .arg(sourceFile.errorString()));
-      return false;
+      return Error;
     }
 
     if ( ! archive->writeData(buffer, len) )
     {
       emitArchiveError();
-      return false;
+      return Error;
     }
 
     totalBytes += len;
     written += len;
 
-    progress = static_cast<int>(written * 100 / fileSize);
+    progress = static_cast<int>(written * 100 / info.size());
 
     // stay responsive
     count = (count + 1) % 50;
@@ -1310,13 +1318,13 @@ bool Archiver::addLocalFile(const QFileInfo &info)
   if ( msgShown && interactive )
     QApplication::restoreOverrideCursor();
 
-  if ( !cancelled && !archive->finishWriting(sourceStat.st_size) )
+  if ( !cancelled && !archive->finishWriting(info.size()) )
   {
     emitArchiveError();
-    return false;
+    return Error;
   }
 
-  return !cancelled;
+  return cancelled ? Error : Added;
 }
 
 //--------------------------------------------------------------------------------
@@ -1331,20 +1339,22 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
                  .arg(origName)
                  .arg(origFile.errorString()));
 
+    skippedFiles = true;
     return false;
   }
   else
   {
-    QIODevice *filter = KFilterDev::device(&comprFile,
-                          ext == ".bz2" ? "application/x-bzip2" : "application/x-gzip",
-                          false);  // don't delete comprFile
+    KCompressionDevice::CompressionType type =
+        KFilterDev::compressionTypeForMimeType(ext == ".bz2" ? "application/x-bzip2" : "application/x-gzip");
 
-    if ( ! filter->open(QIODevice::WriteOnly) )
+    KCompressionDevice filter(&comprFile, false, type);
+
+    if ( !filter.open(QIODevice::WriteOnly) )
     {
       emit warning(i18n("Could not create temporary file for compressing: %1\n"
                         "The operating system reports: %2")
                    .arg(origName)
-                   .arg(filter->errorString()));
+                   .arg(filter.errorString()));
       return false;
     }
 
@@ -1362,12 +1372,11 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
     while ( fileSize && !origFile.atEnd() && !cancelled )
     {
       len = origFile.read(buffer, BUFFER_SIZE);
-      qint64 wrote = filter->write(buffer, len);
+      qint64 wrote = filter.write(buffer, len);
 
       if ( len != wrote )
       {
         emit warning(i18n("Could not write to temporary file"));
-        delete filter;
         return false;
       }
 
@@ -1397,7 +1406,6 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
     }
     emit fileProgress(100);
     origFile.close();
-    delete filter;
 
     if ( msgShown && interactive )
       QApplication::restoreOverrideCursor();
@@ -1440,7 +1448,7 @@ void Archiver::warningSlot(const QString &message)
 
 void Archiver::updateElapsed()
 {
-  emit elapsedChanged(QTime().addMSecs(elapsed.elapsed()));
+  emit elapsedChanged(QTime(0, 0).addMSecs(elapsed.elapsed()));
 }
 
 //--------------------------------------------------------------------------------

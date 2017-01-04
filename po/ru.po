@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru.po_[8daEob]\n"
 "Report-Msgid-Bugs-To: mailto:kollix@aon.at\n"
-"POT-Creation-Date: 2012-07-22 15:03+0200\n"
+"POT-Creation-Date: 2017-01-04 11:37+0100\n"
 "PO-Revision-Date: 2009-05-14 21:24+0400\n"
 "Last-Translator: Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -22,182 +22,123 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#. i18n: file: src/kbackupui.rc:4
-#. i18n: ectx: Menu (file)
-#: po/rc.cpp:3
-msgid "&File"
-msgstr "&Файл"
-
-#. i18n: file: src/kbackupui.rc:12
-#. i18n: ectx: Menu (settings)
-#: po/rc.cpp:6
-msgid "&Settings"
-msgstr "&Настройки"
-
-#. i18n: file: src/MainWidgetBase.ui:16
-#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: po/rc.cpp:9 src/main.cxx:37
+#: build_kf5/src/ui_MainWidgetBase.h:364 src/CVS/Base/main.cxx:37
+#: src/main.cxx:46
 msgid "KBackup"
 msgstr "KBackup"
 
-#. i18n: file: src/MainWidgetBase.ui:41
-#. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: po/rc.cpp:12 src/MainWindow.cxx:116
+#: build_kf5/src/ui_MainWidgetBase.h:365 src/CVS/Base/MainWindow.cxx:116
+#: src/MainWindow.cxx:115
 msgid "Start Backup"
 msgstr "Начать архивирование"
 
-#. i18n: file: src/MainWidgetBase.ui:69
-#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: po/rc.cpp:15 src/MainWindow.cxx:120
+#: build_kf5/src/ui_MainWidgetBase.h:366 src/CVS/Base/MainWindow.cxx:120
+#: src/MainWindow.cxx:118
 msgid "Cancel Backup"
 msgstr "Прекратить архивирование"
 
-#. i18n: file: src/MainWidgetBase.ui:92
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: po/rc.cpp:18
+#: build_kf5/src/ui_MainWidgetBase.h:367
 #, fuzzy
 msgid "Next Backup:"
 msgstr "Начать архивирование"
 
-#. i18n: file: src/MainWidgetBase.ui:99
-#. i18n: ectx: property (text), widget (QLabel, backupType)
-#: po/rc.cpp:21
+#: build_kf5/src/ui_MainWidgetBase.h:368
 msgid "TextLabel"
 msgstr ""
 
-#. i18n: file: src/MainWidgetBase.ui:106
-#. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
-#: po/rc.cpp:24
+#: build_kf5/src/ui_MainWidgetBase.h:369
 #, fuzzy
 msgid "Force Full Backup"
 msgstr "Прекратить архивирование"
 
-#. i18n: file: src/MainWidgetBase.ui:121
-#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox3)
-#: po/rc.cpp:27
+#: build_kf5/src/ui_MainWidgetBase.h:370
 msgid "Target"
 msgstr "Назначение"
 
-#. i18n: file: src/MainWidgetBase.ui:127
-#. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: po/rc.cpp:30
+#: build_kf5/src/ui_MainWidgetBase.h:371
 msgid "Folder:"
 msgstr "Каталог:"
 
-#. i18n: file: src/MainWidgetBase.ui:143
-#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
-#: po/rc.cpp:33
+#: build_kf5/src/ui_MainWidgetBase.h:372
 msgid "Medium:"
 msgstr "Носитель:"
 
-#. i18n: file: src/MainWidgetBase.ui:165
-#. i18n: ectx: property (text), widget (QLabel, sliceNum)
-#. i18n: file: src/MainWidgetBase.ui:258
-#. i18n: ectx: property (text), widget (QLabel, totalFiles)
-#. i18n: file: src/MainWidgetBase.ui:287
-#. i18n: ectx: property (text), widget (QLabel, totalSize)
-#: po/rc.cpp:36 po/rc.cpp:51 po/rc.cpp:57
+#: build_kf5/src/ui_MainWidgetBase.h:373 build_kf5/src/ui_MainWidgetBase.h:379
+#: build_kf5/src/ui_MainWidgetBase.h:381
 msgid "0"
 msgstr "0"
 
-#. i18n: file: src/MainWidgetBase.ui:185
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#. i18n: file: src/MainWidgetBase.ui:277
-#. i18n: ectx: property (text), widget (QLabel, textLabel6)
-#: po/rc.cpp:39 po/rc.cpp:54
+#: build_kf5/src/ui_MainWidgetBase.h:374 build_kf5/src/ui_MainWidgetBase.h:380
 msgid "Size:"
 msgstr "Размер:"
 
-#. i18n: file: src/MainWidgetBase.ui:201
-#. i18n: ectx: property (text), widget (QLabel, capacity)
-#: po/rc.cpp:42
+#: build_kf5/src/ui_MainWidgetBase.h:375
 msgid "0 MB"
 msgstr "0 Мб"
 
-#. i18n: file: src/MainWidgetBase.ui:236
-#. i18n: ectx: property (title), widget (Q3GroupBox, groupBox2)
-#: po/rc.cpp:45
+#: build_kf5/src/ui_MainWidgetBase.h:377
 msgid "Totals"
 msgstr "Всего"
 
-#. i18n: file: src/MainWidgetBase.ui:248
-#. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: po/rc.cpp:48
+#: build_kf5/src/ui_MainWidgetBase.h:378
 msgid "Files:"
 msgstr "Файлов: "
 
-#. i18n: file: src/MainWidgetBase.ui:300
-#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
-#: po/rc.cpp:60
+#: build_kf5/src/ui_MainWidgetBase.h:382
 msgid "MB"
 msgstr "Мб"
 
-#. i18n: file: src/MainWidgetBase.ui:335
-#. i18n: ectx: property (text), widget (QLabel, textLabel8)
-#: po/rc.cpp:63
+#: build_kf5/src/ui_MainWidgetBase.h:383
 msgid "Duration:"
 msgstr "Длительность:"
 
-#. i18n: file: src/MainWidgetBase.ui:345
-#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
-#: po/rc.cpp:66
+#: build_kf5/src/ui_MainWidgetBase.h:384
 msgid "00:00:00"
 msgstr "нет"
 
-#. i18n: file: src/MainWidgetBase.ui:387
-#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
-#: po/rc.cpp:69
+#: build_kf5/src/ui_MainWidgetBase.h:385
 msgid "Warnings:"
 msgstr "Предупреждения:"
 
-#. i18n: file: src/MainWidgetBase.ui:413
-#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
-#: po/rc.cpp:72
+#: build_kf5/src/ui_MainWidgetBase.h:386
 msgid "Progress:"
 msgstr "Степень выполнения"
 
-#. i18n: file: src/SettingsDialog.ui:16
-#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
-#: po/rc.cpp:75 src/MainWindow.cxx:74
+#: build_kf5/src/ui_SettingsDialog.h:218 src/CVS/Base/MainWindow.cxx:74
+#: src/MainWindow.cxx:74
 msgid "Profile Settings"
 msgstr "Параметры профиля"
 
-#. i18n: file: src/SettingsDialog.ui:22
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: po/rc.cpp:78
-msgid "Archive Prefix (empty for default):"
+#: build_kf5/src/ui_SettingsDialog.h:219
+#, fuzzy
+msgid "Archive Prefix:"
 msgstr "Префикс архива"
 
-#. i18n: file: src/SettingsDialog.ui:35
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: po/rc.cpp:81
+#: build_kf5/src/ui_SettingsDialog.h:220
+#, fuzzy
+msgid "backup"
+msgstr "KBackup"
+
+#: build_kf5/src/ui_SettingsDialog.h:221
 msgid "Maximum Archive Size:"
 msgstr "Наибольший размер архива:"
 
-#. i18n: file: src/SettingsDialog.ui:49
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
-#. i18n: file: src/SettingsDialog.ui:82
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
-#: po/rc.cpp:84 po/rc.cpp:96 src/MainWidget.cxx:168 src/SettingsDialog.cxx:21
+#: build_kf5/src/ui_SettingsDialog.h:222 build_kf5/src/ui_SettingsDialog.h:228
+#: src/CVS/Base/MainWidget.cxx:168 src/CVS/Base/SettingsDialog.cxx:21
+#: src/MainWidget.cxx:166 src/SettingsDialog.cxx:21
 msgid "unlimited"
 msgstr "неограниченно"
 
-#. i18n: file: src/SettingsDialog.ui:52
-#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
-#: po/rc.cpp:87
+#: build_kf5/src/ui_SettingsDialog.h:223
 #, fuzzy
 msgid " MB"
 msgstr "0 Мб"
 
-#. i18n: file: src/SettingsDialog.ui:72
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: po/rc.cpp:90
+#: build_kf5/src/ui_SettingsDialog.h:224
 msgid "Number of backups to keep"
 msgstr "Количество хранимых архивов"
 
-#. i18n: file: src/SettingsDialog.ui:79
-#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
-#: po/rc.cpp:93
+#: build_kf5/src/ui_SettingsDialog.h:226
 msgid ""
 "How many backups shall be kept in the target directory before older ones "
 "will be deleted"
@@ -205,33 +146,23 @@ msgstr ""
 "Сколько архивов может быть создано в каталоге, прежде чем самый старый из "
 "них будет удалён"
 
-#. i18n: file: src/SettingsDialog.ui:92
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: po/rc.cpp:99
+#: build_kf5/src/ui_SettingsDialog.h:229
 msgid "Full Backup Interval"
 msgstr ""
 
-#. i18n: file: src/SettingsDialog.ui:99
-#. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
-#: po/rc.cpp:102
+#: build_kf5/src/ui_SettingsDialog.h:231
 msgid "How often shall a full backup, instead of an incremental one, be done"
 msgstr ""
 
-#. i18n: file: src/SettingsDialog.ui:102
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
-#: po/rc.cpp:105
+#: build_kf5/src/ui_SettingsDialog.h:233
 msgid "Every Day"
 msgstr ""
 
-#. i18n: file: src/SettingsDialog.ui:105
-#. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
-#: po/rc.cpp:108
+#: build_kf5/src/ui_SettingsDialog.h:234
 msgid " days"
 msgstr ""
 
-#. i18n: file: src/SettingsDialog.ui:120
-#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
-#: po/rc.cpp:111
+#: build_kf5/src/ui_SettingsDialog.h:236
 msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
@@ -239,90 +170,72 @@ msgstr ""
 "Снимите отметку, если Вы хотите отключить диалог подтверждения о смене "
 "носителя после завершения тома."
 
-#. i18n: file: src/SettingsDialog.ui:123
-#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
-#: po/rc.cpp:114
+#: build_kf5/src/ui_SettingsDialog.h:238
 msgid "Target needs media change"
 msgstr "Необходимо сменить накопитель"
 
-#. i18n: file: src/SettingsDialog.ui:130
-#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
-#: po/rc.cpp:117
+#: build_kf5/src/ui_SettingsDialog.h:240
 #, fuzzy
 msgid "Uncheck if you want to avoid compressing files at all"
 msgstr "Снимите отметку, если Вы не хотите сжимать архив"
 
-#. i18n: file: src/SettingsDialog.ui:133
-#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
-#: po/rc.cpp:120
+#: build_kf5/src/ui_SettingsDialog.h:242
 msgid "Compress Files"
 msgstr "Сжимать файлы"
 
-#. i18n: file: src/SettingsDialog.ui:174
-#. i18n: ectx: property (text), widget (QPushButton, ok)
-#: po/rc.cpp:123
+#: build_kf5/src/ui_SettingsDialog.h:243
 msgid "OK"
 msgstr "&Подтверждаю"
 
-#. i18n: file: src/SettingsDialog.ui:181
-#. i18n: ectx: property (text), widget (QPushButton, cancel)
-#: po/rc.cpp:126
+#: build_kf5/src/ui_SettingsDialog.h:244
 msgid "Cancel"
 msgstr "Отменить"
 
-#. i18n: file: src/SettingsDialog.ui:190
-#. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
-#: po/rc.cpp:129
+#: build_kf5/src/ui_SettingsDialog.h:246
 msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
 
-#. i18n: file: src/SettingsDialog.ui:197
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: po/rc.cpp:132
+#: build_kf5/src/ui_SettingsDialog.h:248
 msgid "Exclude Filename Filter:"
 msgstr ""
 
-#. i18n: file: src/SettingsDialog.ui:204
-#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
-#: po/rc.cpp:135
+#: build_kf5/src/ui_SettingsDialog.h:250
 msgid ""
 "<html><head/><body><p>Defines a list of absolute path patterns which are "
 "used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
 "body></html>"
 msgstr ""
 
-#. i18n: file: src/SettingsDialog.ui:211
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: po/rc.cpp:138
+#: build_kf5/src/ui_SettingsDialog.h:252
 msgid "Exclude Paths Filter:"
 msgstr ""
 
-#: po/rc.cpp:139
+#: po/rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алексей Кузнецов"
 
-#: po/rc.cpp:140
+#: po/rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com"
 
-#: src/Archiver.cxx:416
+#: src/Archiver.cxx:418 src/CVS/Base/Archiver.cxx:416
 msgid "Nothing selected for backup"
 msgstr "Не выбрано ни одного объекта для резервирования"
 
-#: src/Archiver.cxx:422
+#: src/Archiver.cxx:424 src/CVS/Base/Archiver.cxx:422
 #, fuzzy
 msgid "The target dir '%1' is not valid"
 msgstr "Неверно указан целевой каталог"
 
-#: src/Archiver.cxx:429
+#: src/Archiver.cxx:431 src/CVS/Base/Archiver.cxx:429
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 
-#: src/Archiver.cxx:442
+#: src/Archiver.cxx:444 src/CVS/Base/Archiver.cxx:442
 msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
@@ -332,7 +245,7 @@ msgstr ""
 "\n"
 "Создать его?"
 
-#: src/Archiver.cxx:447
+#: src/Archiver.cxx:449 src/CVS/Base/Archiver.cxx:447
 msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
@@ -340,44 +253,44 @@ msgstr ""
 "Не могу создать целевой каталог \"%1\"\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:456
+#: src/Archiver.cxx:458 src/CVS/Base/Archiver.cxx:456
 msgid "The target dir does not exist"
 msgstr "Целевой каталог не существует"
 
-#: src/Archiver.cxx:529
+#: src/Archiver.cxx:531 src/CVS/Base/Archiver.cxx:529
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...уменьшение количества хранимых архивов до наиб. числа %1"
 
-#: src/Archiver.cxx:587
+#: src/Archiver.cxx:588 src/CVS/Base/Archiver.cxx:587
 msgid "...deleting %1"
 msgstr "...удаление %1"
 
-#: src/Archiver.cxx:613
+#: src/Archiver.cxx:612 src/CVS/Base/Archiver.cxx:613
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
 "не удалось прочесть содержимое целевого каталога. Не могу уменьшить число "
 "хранимых архивов."
 
-#: src/Archiver.cxx:636
+#: src/Archiver.cxx:635 src/CVS/Base/Archiver.cxx:636
 #, fuzzy
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr "Не могу записать временный файл"
 
-#: src/Archiver.cxx:642
+#: src/Archiver.cxx:641 src/CVS/Base/Archiver.cxx:642
 msgid "-- Filtered Files: %1"
 msgstr ""
 
-#: src/Archiver.cxx:645
+#: src/Archiver.cxx:644 src/CVS/Base/Archiver.cxx:645
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 "!! Резервирование завершено,  <b>но некоторые файлы были пропущены</b> !!"
 
-#: src/Archiver.cxx:647
+#: src/Archiver.cxx:646 src/CVS/Base/Archiver.cxx:647
 msgid "-- Backup successfully finished --"
 msgstr "-- Резервное копирование завершено успешно --"
 
-#: src/Archiver.cxx:653
+#: src/Archiver.cxx:652 src/CVS/Base/Archiver.cxx:653
 msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
@@ -385,7 +298,7 @@ msgstr ""
 "Резервное копирование завершено, но некоторые файлы были пропущены.\n"
 "Что делать?"
 
-#: src/Archiver.cxx:655
+#: src/Archiver.cxx:654 src/CVS/Base/Archiver.cxx:655
 msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
@@ -393,55 +306,55 @@ msgstr ""
 "Резервное копирование успешно завершено.\n"
 "Что делать?"
 
-#: src/Archiver.cxx:672
+#: src/Archiver.cxx:671 src/CVS/Base/Archiver.cxx:672
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Файлов: %1 Размер: %2, длительность: %3"
 
-#: src/Archiver.cxx:683
+#: src/Archiver.cxx:682 src/CVS/Base/Archiver.cxx:683
 msgid "...Backup aborted!"
 msgstr "...Резервирование прервано!"
 
-#: src/Archiver.cxx:711
+#: src/Archiver.cxx:710 src/CVS/Base/Archiver.cxx:711
 msgid "Backup cancelled"
 msgstr "Резервирование отменено"
 
-#: src/Archiver.cxx:728
+#: src/Archiver.cxx:727 src/CVS/Base/Archiver.cxx:728
 msgid "...finished slice %1"
 msgstr "...том %1 создан"
 
-#: src/Archiver.cxx:745
+#: src/Archiver.cxx:742 src/CVS/Base/Archiver.cxx:745
 msgid "...uploading archive %1 to %2"
 msgstr "...выгрузка архива %1 в %2"
 
-#: src/Archiver.cxx:762
+#: src/Archiver.cxx:760 src/CVS/Base/Archiver.cxx:762
 msgid "How shall we proceed with the upload?"
 msgstr "Что делать дальше с выгрузкой?"
 
-#: src/Archiver.cxx:762
+#: src/Archiver.cxx:760 src/CVS/Base/Archiver.cxx:762
 msgid "Upload Failed"
 msgstr ""
 
-#: src/Archiver.cxx:763
+#: src/Archiver.cxx:761 src/CVS/Base/Archiver.cxx:763
 msgid "Retry"
 msgstr "Попробовать снова"
 
-#: src/Archiver.cxx:763
+#: src/Archiver.cxx:761 src/CVS/Base/Archiver.cxx:763
 msgid "Change Target"
 msgstr "Изменить назначение"
 
-#: src/Archiver.cxx:857
+#: src/Archiver.cxx:855 src/CVS/Base/Archiver.cxx:857
 msgid "The script '%1' could not be started."
 msgstr "Не могу запустить сценарий '%1'"
 
-#: src/Archiver.cxx:896
+#: src/Archiver.cxx:894 src/CVS/Base/Archiver.cxx:896
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Носитель полон. Вставьте носитель № %1"
 
-#: src/Archiver.cxx:932
+#: src/Archiver.cxx:930 src/CVS/Base/Archiver.cxx:932
 msgid "The file '%1' can not be opened for writing."
 msgstr "Файл '%1' не может быть открыт для записи."
 
-#: src/Archiver.cxx:936
+#: src/Archiver.cxx:934 src/CVS/Base/Archiver.cxx:936
 msgid ""
 "The file '%1' can not be opened for writing.\n"
 "\n"
@@ -451,11 +364,24 @@ msgstr ""
 "\n"
 "Попытаться ещё раз?"
 
-#: src/Archiver.cxx:965
+#: src/Archiver.cxx:960 src/CVS/Base/Archiver.cxx:962
+msgid "Could not write to archive. Maybe the medium is full."
+msgstr "Не могу произвести запись в архив. Вероятно, носитель полон."
+
+#: src/Archiver.cxx:964 src/CVS/Base/Archiver.cxx:966
+#, fuzzy
+msgid ""
+"Could not write to archive.\n"
+"The operating system reports: %1"
+msgstr ""
+"Не могу прочесть файл: %1\n"
+"Сообщение операционной системы: %2"
+
+#: src/Archiver.cxx:983 src/CVS/Base/Archiver.cxx:985
 msgid "...skipping filtered directory %1"
 msgstr ""
 
-#: src/Archiver.cxx:976
+#: src/Archiver.cxx:994 src/CVS/Base/Archiver.cxx:996
 msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
@@ -463,11 +389,11 @@ msgstr ""
 "Не могу получить информацию о каталоге %1\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:986
+#: src/Archiver.cxx:1004 src/CVS/Base/Archiver.cxx:1006
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Невозможно прочесть каталог '%1'. Пропускаю."
 
-#: src/Archiver.cxx:1002
+#: src/Archiver.cxx:1020 src/CVS/Base/Archiver.cxx:1022
 msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
@@ -475,11 +401,8 @@ msgstr ""
 "Не могу записать каталог '%1' архив.\n"
 "Вероятно, носитель полон."
 
-#: src/Archiver.cxx:1061
-msgid "File '%1' is not readable. Skipping."
-msgstr "Не могу прочесть файл '%1'. Пропускаю."
-
-#: src/Archiver.cxx:1116 src/Archiver.cxx:1196
+#: src/Archiver.cxx:1141 src/Archiver.cxx:1222 src/CVS/Base/Archiver.cxx:1136
+#: src/CVS/Base/Archiver.cxx:1216
 msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
@@ -487,12 +410,8 @@ msgstr ""
 "Не могу получить информацию о файле: %1\n"
 "Сообщение операционной системы: %1"
 
-#: src/Archiver.cxx:1128 src/Archiver.cxx:1153 src/Archiver.cxx:1167
-#: src/Archiver.cxx:1218 src/Archiver.cxx:1247 src/Archiver.cxx:1295
-msgid "Could not write to archive. Maybe the medium is full."
-msgstr "Не могу произвести запись в архив. Вероятно, носитель полон."
-
-#: src/Archiver.cxx:1143 src/Archiver.cxx:1238
+#: src/Archiver.cxx:1169 src/Archiver.cxx:1266 src/CVS/Base/Archiver.cxx:1163
+#: src/CVS/Base/Archiver.cxx:1258
 #, fuzzy
 msgid ""
 "Could not read from file '%1'\n"
@@ -501,15 +420,15 @@ msgstr ""
 "Не могу прочесть файл: %1\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:1207
+#: src/Archiver.cxx:1236 src/CVS/Base/Archiver.cxx:1227
 msgid "Could not open file '%1' for reading."
 msgstr "Не могу открыть для чтения файл '%1'"
 
-#: src/Archiver.cxx:1271
+#: src/Archiver.cxx:1299 src/CVS/Base/Archiver.cxx:1291
 msgid "...archiving file %1"
 msgstr "...архивирую файл '%1'"
 
-#: src/Archiver.cxx:1309
+#: src/Archiver.cxx:1337 src/CVS/Base/Archiver.cxx:1329
 msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
@@ -517,7 +436,7 @@ msgstr ""
 "Не могу прочесть файл: %1\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:1324
+#: src/Archiver.cxx:1354 src/CVS/Base/Archiver.cxx:1344
 msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
@@ -525,36 +444,40 @@ msgstr ""
 "Не могу создать файл для сжатия: %1\n"
 "Сообщение операционной системы: %2"
 
-#: src/Archiver.cxx:1349
+#: src/Archiver.cxx:1379 src/CVS/Base/Archiver.cxx:1369
 msgid "Could not write to temporary file"
 msgstr "Не могу записать временный файл"
 
-#: src/Archiver.cxx:1371
+#: src/Archiver.cxx:1400 src/CVS/Base/Archiver.cxx:1391
 msgid "...compressing file %1"
 msgstr "...сжимаю файл '%1'"
 
-#: src/Archiver.cxx:1416
+#: src/Archiver.cxx:1444 src/CVS/Base/Archiver.cxx:1436
 msgid "WARNING:"
 msgstr "ПРЕДУПРЖДЕНИЕ"
 
-#: src/main.cxx:38
+#: src/CVS/Base/Archiver.cxx:1081
+msgid "File '%1' is not readable. Skipping."
+msgstr "Не могу прочесть файл '%1'. Пропускаю."
+
+#: src/CVS/Base/main.cxx:38 src/main.cxx:47
 msgid "An easy to use backup program"
 msgstr "Простая в использовании программа для резервного копирования данных"
 
-#: src/main.cxx:39
+#: src/CVS/Base/main.cxx:39
 #, fuzzy
 msgid "(c) 2006 - 2012 Martin Koller"
 msgstr "(c) 2006-2009 Martin Koller"
 
-#: src/main.cxx:44
+#: src/CVS/Base/main.cxx:44 src/main.cxx:53
 msgid "Martin Koller"
 msgstr "Martin Koller"
 
-#: src/main.cxx:44
+#: src/CVS/Base/main.cxx:44 src/main.cxx:53
 msgid "Developer"
 msgstr "Разработчик"
 
-#: src/main.cxx:50
+#: src/CVS/Base/main.cxx:50
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -563,7 +486,7 @@ msgctxt ""
 msgid "Start with given profile"
 msgstr "Запускать с указанным профилем"
 
-#: src/main.cxx:54
+#: src/CVS/Base/main.cxx:54
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -573,7 +496,7 @@ msgid "Script to run after finishing one archive slice"
 msgstr ""
 "Сценарий, который должен запускаться после создания каждого тома архива"
 
-#: src/main.cxx:58
+#: src/CVS/Base/main.cxx:58
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -586,7 +509,7 @@ msgstr ""
 "Автоматически запустить архивирование с выбранным профилем и выйти после "
 "завершения."
 
-#: src/main.cxx:63
+#: src/CVS/Base/main.cxx:63
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -600,7 +523,7 @@ msgstr ""
 "Автоматически запустить архивирование с выбранным профилем в фоне (окно "
 "программы не будет показано) и выйти после завершения."
 
-#: src/main.cxx:69
+#: src/CVS/Base/main.cxx:69
 #, fuzzy
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
@@ -613,7 +536,7 @@ msgstr ""
 "Выдавать больше информации, печатать имена всех файлов при архивировании в "
 "автоматическом фоновом режиме"
 
-#: src/main.cxx:74
+#: src/CVS/Base/main.cxx:74
 msgctxt ""
 "TRANSLATORS: this is the description of a command line option. If your "
 "translation is longer than 50 caracters, you are encouraged to add "
@@ -623,57 +546,61 @@ msgid ""
 "instead of acting on the profile settings"
 msgstr ""
 
-#: src/main.cxx:134 src/MainWindow.cxx:211
+#: src/CVS/Base/main.cxx:134 src/CVS/Base/MainWindow.cxx:211 src/main.cxx:143
+#: src/MainWindow.cxx:209
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Не могу открыть для чтения профиль '%1': %2"
 
-#: src/MainWidget.cxx:71
+#: src/CVS/Base/MainWidget.cxx:71 src/MainWidget.cxx:69
 #, fuzzy
 msgid "Incremental Backup"
 msgstr "Прекратить архивирование"
 
-#: src/MainWidget.cxx:73
+#: src/CVS/Base/MainWidget.cxx:73 src/MainWidget.cxx:71
 #, fuzzy
 msgid "Full Backup"
 msgstr "KBackup"
 
-#: src/MainWindow.cxx:58
+#: src/CVS/Base/MainWindow.cxx:58 src/MainWindow.cxx:58
 msgid "New Profile"
 msgstr "Новый профиль"
 
-#: src/MainWindow.cxx:62
+#: src/CVS/Base/MainWindow.cxx:62 src/MainWindow.cxx:62
 msgid "Load Profile"
 msgstr "Загрузить профиль"
 
-#: src/MainWindow.cxx:66
+#: src/CVS/Base/MainWindow.cxx:66 src/MainWindow.cxx:66
 msgid "Save Profile"
 msgstr "Сохранить профиль"
 
-#: src/MainWindow.cxx:70
+#: src/CVS/Base/MainWindow.cxx:70 src/MainWindow.cxx:70
 msgid "Save Profile As..."
 msgstr "Сохранить профиль как..."
 
-#: src/MainWindow.cxx:77
+#: src/CVS/Base/MainWindow.cxx:77 src/MainWindow.cxx:77
 msgid "Enable All Messages"
 msgstr "Включить все сообщения"
 
-#: src/MainWindow.cxx:79
+#: src/CVS/Base/MainWindow.cxx:79 src/MainWindow.cxx:79
 msgid "Dock in System Tray"
 msgstr "Убирать в системный лоток"
 
-#: src/MainWindow.cxx:143
+#: src/CVS/Base/MainWindow.cxx:143 src/MainWindow.cxx:145
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Идёт резервирование. Прекратить его?"
 
-#: src/MainWindow.cxx:190 src/MainWindow.cxx:236 src/MainWindow.cxx:253
+#: src/CVS/Base/MainWindow.cxx:190 src/CVS/Base/MainWindow.cxx:236
+#: src/CVS/Base/MainWindow.cxx:253 src/MainWindow.cxx:188
+#: src/MainWindow.cxx:234 src/MainWindow.cxx:251
 msgid "KBackup Profile (*.kbp)"
 msgstr "Профили KBackup (*.kbp)"
 
-#: src/MainWindow.cxx:214 src/MainWindow.cxx:282
+#: src/CVS/Base/MainWindow.cxx:214 src/CVS/Base/MainWindow.cxx:282
+#: src/MainWindow.cxx:212 src/MainWindow.cxx:280
 msgid "Open failed"
 msgstr "Ошибка открытия"
 
-#: src/MainWindow.cxx:263
+#: src/CVS/Base/MainWindow.cxx:263 src/MainWindow.cxx:261
 msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
@@ -681,15 +608,15 @@ msgstr ""
 "Профиль '%1' уже существует.\n"
 "Перезаписать его?"
 
-#: src/MainWindow.cxx:266
+#: src/CVS/Base/MainWindow.cxx:266 src/MainWindow.cxx:264
 msgid "Profile exists"
 msgstr "Профиль уже существует"
 
-#: src/MainWindow.cxx:279
+#: src/CVS/Base/MainWindow.cxx:279 src/MainWindow.cxx:277
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Не могу открыть файл профиля '%1' для записи: %2"
 
-#: src/MainWindow.cxx:352
+#: src/CVS/Base/MainWindow.cxx:352 src/MainWindow.cxx:353
 msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
@@ -697,51 +624,147 @@ msgstr ""
 "Файлов: %1 Размер: %2 Мб\n"
 "%3"
 
-#: src/Selector.cxx:157
+#: src/CVS/Base/Selector.cxx:157 src/Selector.cxx:248
 msgid "Name"
 msgstr "Название"
 
-#: src/Selector.cxx:158
+#: src/CVS/Base/Selector.cxx:158 src/Selector.cxx:248
 msgid "Size"
 msgstr "Размер"
 
-#: src/Selector.cxx:159
+#: src/CVS/Base/Selector.cxx:159 src/Selector.cxx:248
 msgid "Last Modified"
 msgstr "Последнее изменение"
 
-#: src/SettingsDialog.cxx:22
+#: src/CVS/Base/SettingsDialog.cxx:22 src/SettingsDialog.cxx:22
 msgid "650 MB CD"
 msgstr "КД 650 Мб"
 
-#: src/SettingsDialog.cxx:23
+#: src/CVS/Base/SettingsDialog.cxx:23 src/SettingsDialog.cxx:23
 msgid "700 MB CD"
 msgstr "КД 700 Мб"
 
-#: src/SettingsDialog.cxx:24
+#: src/CVS/Base/SettingsDialog.cxx:24 src/SettingsDialog.cxx:24
 msgid "4.7 GB DVD"
 msgstr "DVD 4,7 Гб"
 
-#: src/SettingsDialog.cxx:25
+#: src/CVS/Base/SettingsDialog.cxx:25 src/SettingsDialog.cxx:25
 msgid "8.5 GB DVD"
 msgstr "DVD 8,5 Гб"
 
-#: src/SettingsDialog.cxx:26
+#: src/CVS/Base/SettingsDialog.cxx:26 src/SettingsDialog.cxx:26
 msgid "9.4 GB DVD"
 msgstr "DVD 9,4 Гб"
 
-#: src/SettingsDialog.cxx:27
+#: src/CVS/Base/SettingsDialog.cxx:27 src/SettingsDialog.cxx:27
 msgid "17.1 GB DVD"
 msgstr "DVD 17,1 Гб"
 
-#: src/SettingsDialog.cxx:28
+#: src/CVS/Base/SettingsDialog.cxx:28 src/SettingsDialog.cxx:28
 msgid "custom"
 msgstr "настроить"
 
+#: src/main.cxx:48
+#, fuzzy
+msgid "(c) 2006 - 2017 Martin Koller"
+msgstr "(c) 2006-2009 Martin Koller"
+
+#: src/main.cxx:61
+#, fuzzy
+msgid "Start with given profile."
+msgstr "Запускать с указанным профилем"
+
+#: src/main.cxx:63
+#, fuzzy
+msgid "Script to run after finishing one archive slice."
+msgstr ""
+"Сценарий, который должен запускаться после создания каждого тома архива"
+
+#: src/main.cxx:65
+#, fuzzy
+msgid ""
+"Automatically run the backup with the given profile and terminate when done."
+msgstr ""
+"Автоматически запустить архивирование с выбранным профилем и выйти после "
+"завершения."
+
+#: src/main.cxx:68
+#, fuzzy
+msgid ""
+"Automatically run the backup with the given profile in the background "
+"(without showing a window) and terminate when done."
+msgstr ""
+"Автоматически запустить архивирование с выбранным профилем в фоне (окно "
+"программы не будет показано) и выйти после завершения."
+
+#: src/main.cxx:73
+#, fuzzy
+msgid ""
+"In autobg mode be verbose and print every single filename during backup."
+msgstr ""
+"Выдавать больше информации, печатать имена всех файлов при архивировании в "
+"автоматическом фоновом режиме"
+
+#: src/main.cxx:76
+msgid ""
+"In auto/autobg mode force the backup to be a full backup instead of acting "
+"on the profile settings."
+msgstr ""
+
+#: src/MainWindow.cxx:83
+msgid "Show Hidden Files"
+msgstr ""
+
+#: src/MainWindow.cxx:187 src/MainWindow.cxx:233 src/MainWindow.cxx:250
+#, fuzzy
+msgid "Select Profile"
+msgstr "Сохранить профиль"
+
+#: src/Selector.cxx:292
+#, fuzzy
+msgid "Open With"
+msgstr "Ошибка открытия"
+
+#: src/Selector.cxx:301
+msgid "Properties..."
+msgstr ""
+
+#: src/Selector.cxx:587
+#, fuzzy
+msgid "Do you really want to delete '%1'?"
+msgstr "Попытаться повторить выгрузку?"
+
+#: src/Selector.cxx:588
+msgid "Delete"
+msgstr ""
+
+#: src/Selector.cxx:599
+msgid "Could not delete directory '%1'."
+msgstr ""
+
+#: src/Selector.cxx:608
+#, fuzzy
+msgid ""
+"Could not delete file '%1'.\n"
+"Reason: %2"
+msgstr "Не могу открыть для чтения профиль '%1': %2"
+
+#: src/Selector.cxx:667
+msgid "Other Application..."
+msgstr ""
+
+#: src/Selector.cxx:669
+msgid "File Manager"
+msgstr ""
+
+#~ msgid "&File"
+#~ msgstr "&Файл"
+
+#~ msgid "&Settings"
+#~ msgstr "&Настройки"
+
 #~ msgid "upload FAILED"
 #~ msgstr "выгрузка НЕ УДАЛАСЬ"
-
-#~ msgid "Do you want to retry the upload?"
-#~ msgstr "Попытаться повторить выгрузку?"
 
 #~ msgid ""
 #~ "Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "

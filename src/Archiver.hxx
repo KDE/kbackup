@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2010 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -12,18 +12,19 @@
 
 // the class which does the archiving
 
-#include <qobject.h>
-#include <qpointer.h>
+#include <QObject>
+#include <QPointer>
 #include <QSet>
-#include <QTimer>
+#include <QElapsedTimer>
 #include <QTime>
 #include <QDateTime>
 #include <QStringList>
 #include <QList>
 #include <QRegExp>
 
-#include <kurl.h>
+#include <QUrl>
 #include <kio/copyjob.h>
+#include <kio/udsentry.h>
 
 class KTar;
 class QDir;
@@ -42,8 +43,8 @@ class Archiver : public QObject
 
     // always call after you have already set maxSliceMBs, as the sliceCapacity
     // might be limited with it
-    void setTarget(const KUrl &target);
-    const KUrl &getTarget() const { return targetURL; }
+    void setTarget(const QUrl &target);
+    const QUrl &getTarget() const { return targetURL; }
 
     enum { UNLIMITED = 0 };
     void setMaxSliceMBs(int mbs);
@@ -130,7 +131,10 @@ class Archiver : public QObject
     void calculateCapacity();  // also emits signals
     void addDirFiles(QDir &dir);
     void addFile(const QFileInfo &info);
-    bool addLocalFile(const QFileInfo &info);
+
+    enum AddFileStatus { Error, Added, Skipped };
+    AddFileStatus addLocalFile(const QFileInfo &info);
+
     bool compressFile(const QString &origName, QFile &comprFile);
 
     void finishSlice();
@@ -162,12 +166,12 @@ class Archiver : public QObject
     KIO::filesize_t totalBytes;
     int totalFiles;
     int filteredFiles;  // filter or time filter (incremental backup)
-    QTime elapsed;
+    QElapsedTimer elapsed;
 
     QList<QRegExp> filters;
     QList<QRegExp> dirFilters;
 
-    KUrl targetURL;
+    QUrl targetURL;
     QString baseName;
     int sliceNum;
     int maxSliceMBs;

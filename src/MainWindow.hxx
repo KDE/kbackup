@@ -1,5 +1,5 @@
 //***************************************************************************
-//   (c) 2006 - 2009 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -14,11 +14,12 @@
 
 class Selector;
 class MainWidget;
-class KSystemTrayIcon;
+class KStatusNotifierItem;
 class KToggleAction;
-class KAction;
+class QAction;
 class KRecentFilesAction;
-class KUrl;
+class QUrl;
+class QSplitter;
 
 class MainWindow : public KXmlGuiWindow
 {
@@ -33,7 +34,6 @@ class MainWindow : public KXmlGuiWindow
 
   protected:
     virtual bool queryClose();
-    virtual bool queryExit();
 
   private slots:
     void loadProfile();
@@ -44,9 +44,10 @@ class MainWindow : public KXmlGuiWindow
     void loggingSlot(const QString &message);
     void changeSystrayTip();
     void inProgress(bool);
-    void dockInSysTray();
+    void dockInSysTray(bool checked);
+    void showHiddenFiles(bool checked);
     void maybeQuit();
-    void recentProfileSelected(const KUrl &url);
+    void recentProfileSelected(const QUrl &url);
     void enableAllMessages();
 
   private:
@@ -54,13 +55,14 @@ class MainWindow : public KXmlGuiWindow
     void setLoadedProfile(const QString &name);
 
   private:
+    QSplitter *splitter;
     Selector *selector;
     MainWidget *mainWidget;
-    KSystemTrayIcon *sysTray;
+    KStatusNotifierItem *sysTray;
     QString lastLog;
-    KToggleAction *docked;
-    KAction *startBackupAction;
-    KAction *cancelBackupAction;
+    QAction *startBackupAction;
+    QAction *cancelBackupAction;
+    QAction *quitAction;
     KRecentFilesAction *recentFiles;
     bool autorun;
     QString loadedProfile;
