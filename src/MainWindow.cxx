@@ -413,6 +413,7 @@ void MainWindow::dockInSysTray(bool checked)
   if ( checked )
   {
     // system tray icon
+    delete sysTray;
     sysTray = new KStatusNotifierItem(this);
     sysTray->setStandardActionsEnabled(false);
 
