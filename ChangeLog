@@ -1,3 +1,7 @@
+31.12.2017 (1.0.1)
+- small fixes to compile on older KF5 versions
+- fix double creation of SysTray icon
+
 02.01.2017 (1.0)
 - Ported to KF5
 - configurable shortcuts
