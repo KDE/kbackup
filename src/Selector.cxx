@@ -735,7 +735,7 @@ void Selector::openWith(QAction *action)
   }
 
   KService::Ptr service = serviceForName[name];
-#if (KIO_VERSION >= QT_VERSION_CHECK(5, 6, 0))
+#if (KIO_VERSION >= QT_VERSION_CHECK(5, 24, 0))
   KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
 #else
   KRun::run(*service, QList<QUrl>() << sourceUrl, this);
