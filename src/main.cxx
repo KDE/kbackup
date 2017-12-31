@@ -129,7 +129,10 @@ int main(int argc, char **argv)
     if ( cmdLine.isSet("auto") )
       mainWin->runBackup();
 
-    return app->exec();
+    int ret = app->exec();
+
+    delete mainWin;
+    return ret;
   }
   else
   {
