@@ -24,7 +24,6 @@ target_link_libraries(kbackup
                       KF5::Notifications
                       KF5::IconThemes
                       KF5::Archive
-                      KF5::KDELibs4Support
 )
 
 install(TARGETS kbackup ${INSTALL_TARGETS_DEFAULT_ARGS})

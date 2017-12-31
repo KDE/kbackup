@@ -16,7 +16,6 @@
 #include <kio/jobuidelegate.h>
 #include <kprocess.h>
 #include <kmountpoint.h>
-#include <kde_file.h>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -987,9 +986,9 @@ void Archiver::addDirFiles(QDir &dir)
   }
 
   // add the dir itself
-  KDE_struct_stat status;
+  struct stat status;
   memset(&status, 0, sizeof(status));
-  if ( KDE_stat(QFile::encodeName(absolutePath), &status) == -1 )
+  if ( ::stat(QFile::encodeName(absolutePath), &status) == -1 )
   {
     emit warning(i18n("Could not get information of directory: %1\n"
                       "The operating system reports: %2")
@@ -1133,10 +1132,10 @@ void Archiver::addFile(const QFileInfo &info)
     // to be able to create the exact same metadata (permission, date, owner) we need
     // to fill the file into the archive with the following:
     {
-      KDE_struct_stat status;
+      struct stat status;
       memset(&status, 0, sizeof(status));
 
-      if ( KDE_stat(QFile::encodeName(info.absoluteFilePath()), &status) == -1 )
+      if ( ::stat(QFile::encodeName(info.absoluteFilePath()), &status) == -1 )
       {
         emit warning(i18n("Could not get information of file: %1\n"
                           "The operating system reports: %2")
@@ -1214,10 +1213,10 @@ void Archiver::addFile(const QFileInfo &info)
 
 Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
 {
-  KDE_struct_stat sourceStat;
+  struct stat sourceStat;
   memset(&sourceStat, 0, sizeof(sourceStat));
 
-  if ( KDE_stat(QFile::encodeName(info.absoluteFilePath()), &sourceStat) == -1 )
+  if ( ::stat(QFile::encodeName(info.absoluteFilePath()), &sourceStat) == -1 )
   {
     emit warning(i18n("Could not get information of file: %1\n"
                       "The operating system reports: %2")

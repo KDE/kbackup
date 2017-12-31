@@ -25,7 +25,6 @@ find_package(KF5 REQUIRED COMPONENTS
     IconThemes
     Archive
     WidgetsAddons
-    KDELibs4Support
 )
 
 add_subdirectory(src)

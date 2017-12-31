@@ -9,6 +9,7 @@
 
 #include <Selector.hxx>
 
+#include <kio_version.h>
 #include <kio/global.h>
 #include <kiconloader.h>
 #include <kiconeffect.h>
@@ -724,15 +725,21 @@ void Selector::openWith(QAction *action)
 
   if ( name == "-" )  // File Manager
   {
+#if (KIO_VERSION >= QT_VERSION_CHECK(5, 31, 0))
+    KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), "inode/directory", this, KRun::RunFlags());
+#else
     KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), "inode/directory", this);
+#endif
+
     return;
   }
 
   KService::Ptr service = serviceForName[name];
-  // just since KF 5.6
-  //KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
-
+#if (KIO_VERSION >= QT_VERSION_CHECK(5, 6, 0))
+  KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
+#else
   KRun::run(*service, QList<QUrl>() << sourceUrl, this);
+#endif
 }
 
 //--------------------------------------------------------------------------------
