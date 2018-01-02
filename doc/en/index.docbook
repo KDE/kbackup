@@ -97,19 +97,19 @@ revision history. (see installation appendix comment) -->
 <para>
 &kbackup; is a program that lets you back up any directories or files,
 whereby it uses an easy to use directory tree to select the things to back up.
-It lets you save your settings in so called "profile" files, where a profile is a simple
-textfile containing definitions for directories and files to be included
+It lets you save your settings in so-called "profile" files, where a profile is a simple
+text file containing definitions for directories and files to be included
 or excluded from the backup process.
 Also, it lets you define where the backup shall be saved to.
-The target can be either a local directory (e.g. a local mounted device
+The target can be either a local directory (&eg; a locally mounted device
 like a ZIP drive, USB stick, etc.) but it can also be any remote URL
-(e.g. smb://remote/some_path) to back up your data to some central server, etc.
+(&eg; smb://remote/some_path) to back up your data to some central server, etc.
 </para>
 
 <para>
 The program can also run an automated backup without using a graphical user interface.
-One can simply create a profile and use this settings to tell &kbackup; what to do
-when run in non-interactive mode, e.g. by starting it from a cron job.
+One can simply create a profile and use these settings to tell &kbackup; what to do
+when running in non-interactive mode, &eg; by starting it from a cron job.
 </para>
 
 <para>
@@ -124,7 +124,7 @@ in compressed format (bzip2 or gzip).
 
 <para>
 The current implementation features only the backup step. To restore data back into
-your system, you currently have to use e.g. konqueror to open the TAR backup files
+your system, you currently have to use &eg; &dolphin; to open the TAR backup files
 and drag/drop the files back to your file system.
 This is also an advantage of the usage of the well known and well supported TAR file
 format.
@@ -144,7 +144,7 @@ find . -name \*bz2 -print0 | xargs -0 bunzip2
 
 <para>
 All you need to do is to select which directories you want to store.
-This is done by selecting all the directories in the treeview on the left side
+This is done by selecting all the directories in the tree view on the left side
 of the main window.
 </para>
 
@@ -156,7 +156,7 @@ inside the still selected directory.
 </para>
 
 <para>
-In general this means: A selected directory will store everything in it and below it,
+In general, this means: A selected directory will store everything in it and below it,
 except the deselected parts in it.
 This also means, whenever you reuse a profile (see below) later on and new files
 have been added to a directory already selected for backup, all the new files will
@@ -184,11 +184,11 @@ also be stored.
 
 <para>
 To keep a selection for later use, simply save it into a &kbackup; Profile file.
-Use the File Menu and select "Save profile".
+Use the <guimenu>File</guimenu> menu and select <guimenuitem>Save profile</guimenuitem>.
 </para>
 
 <para>
-To reload a selection into &kbackup;, use the File Menu "Load Profile".
+To reload a selection into &kbackup;, use the <menuchoice><guimenu>File</guimenu> <guimenuitem>Load Profile</guimenuitem></menuchoice> menu item.
 </para>
 
 <para>
@@ -200,7 +200,7 @@ the defined maximum slice file size, etc.
 <para>
 If you want to ease the usage of backing up every day the same set of
 files, simply store your settings into a &kbackup; profile (a .kbp file)
-and pass that file on the commandline.
+and pass that file on the command line.
 </para>
 
 <para>
@@ -221,7 +221,7 @@ as the file type is registered to start &kbackup; on double click
 <sect1 id="archive-slices">
 <title>Archive slices</title>
 <para>
-As a medium has normally limited capacity (e.g. 100MB ZIP disc),
+As a medium has normally limited capacity (&eg; 100MB ZIP disc),
 &kbackup; will create several archive slices.
 </para>
 <para>
@@ -235,17 +235,17 @@ The name contains the creation date and time (which will be the same for all
 slices of one backup) and a trailing slice sequence number (_1 in this example).
 </para>
 <para>
-In the menu File/Profile Settings you can define a different archive prefix than the
+In the menu <menuchoice><guimenu>File</guimenu> <guimenuitem>Profile Settings</guimenuitem></menuchoice>, you can define a different archive prefix than the
 default "backup".
 </para>
 
 <para>
-In the Profile Settings Dialog you can also define a maximum archive slice size,
+In the Profile Settings Dialog, you can also define a maximum archive slice size,
 which limits the slice size even if there would be more space left on the target
 device.
 This helps to create archive slices which can then be later burned on a CD/DVD, etc.
-If you explicitely limit the size of an archive slice, the available size
-will be marked with (*) in the mainwindow.
+If you explicitly limit the size of an archive slice, the available size
+will be marked with (*) in the main window.
 </para>
 <para>
 But even if you define a slice to be of "unlimited" size, there are other constraints
@@ -270,25 +270,25 @@ E.g. if you set it to 3, &kbackup; will keep the last 3 backups and delete all o
 <para>
 With an incremental backup not all files will be saved every time the backup runs, but only
 the files which have changed since the last backup. This has the great advantage that the
-incremental backup will usually include much less files than a full backup and therefore
+incremental backup will usually include much fewer files than a full backup and therefore
 will be finished in a much shorter time.
 </para>
 <para>
-This works as follows: In the profile you define an interval (in days) for the full backup.
+This works as follows: In the profile, you define an interval (in days) for the full backup.
 E.g. when you define 5 days, then &kbackup; will do a full backup of all files every 5 days.
 Whenever you start &kbackup; before the interval expires with this profile - regardless
 how often you run a backup - only the files which have changed since the last backup will
-be saved. &kbackup; stores the timestamp of the last backup into the profile and knows
-therefore what to do when run the next time.
+be saved. &kbackup; stores the time stamp of the last backup into the profile and knows
+therefore what to do when running the next time.
 </para>
 <para>
-The archive slice files created during an incremental backup will contain the text "_inc", e.g.:
+The archive slice files created during an incremental backup will contain the text "_inc", &eg;:
 </para>
 <para>
 backup_2010.06.14-18.50.26_1_inc.tar
 </para>
 <para>
-Full backup slice files will not include "_inc" in the name, e.g.:
+Full backup slice files will not include "_inc" in the name, &eg;:
 </para>
 <para>
 backup_2010.06.13-20.58.14_1.tar
@@ -305,7 +305,7 @@ you can do so by checking the "Force Full Backup" option in the user interface.
 When &kbackup; is started via the command line, this can be achieved by using the option --forceFull
 </para>
 <para>
-A forced full backup will restart the backup cycle, e.g. &kbackup; counts the days to the next full backup
+A forced full backup will restart the backup cycle, &eg; &kbackup; counts the days to the next full backup
 from the time of the last full backup.
 </para>
 </sect1>
@@ -324,12 +324,12 @@ then not-compressed .tar archive.
 
 <para>
 When you have selected to create the backup on some local filesystem
-(e.g. your extra disc, ZIP drive, etc.) - which means you did not
+(&eg; your extra disc, ZIP drive, etc.) - which means you did not
 enter a remote target URL - &kbackup; might split the whole backup into several archive slices
 due to media capacity limitations.
 </para>
 <para>
-e.g.:
+&eg;:
 </para>
 <para>
 backup_2006.08.26-13.04.44_1.tar
@@ -345,7 +345,7 @@ backup_2006.08.26-13.04.44_2.tar
 
 <para>
 If you want to automate the process of the backup, &kbackup; offers different
-commandline options to help with this:
+command line options to help with this:
 <itemizedlist>
 <listitem><para>--auto</para>
 <para>
@@ -360,12 +360,12 @@ All this is done with a visible &kbackup; user interface.
 When you run &kbackup; with this option and a given .kbp profile, it will
 run the same process as with --auto  but _without_ showing any graphical user interface.
 Therefore the suffix "bg" which stands for "background" - everything is done in the background
-so this is the right option to be used when you do your backups e.g. started by a cron job.
+so this is the right option to be used when you do your backups &eg; started by a cron job.
 </para>
 <para>
 When using --autobg the output from &kbackup; - showing the progress of the backup - is written
-to stderr. By default the output includes just a few important messages and a summary at the end.
-If you pass --verbose in addition, then you will also see each filename currently being backed up.
+to stderr. By default, the output includes just a few important messages and a summary at the end.
+If you pass --verbose in addition, then you will also see each file name currently being backed up.
 </para>
 </listitem>
 </itemizedlist>
@@ -444,7 +444,7 @@ a new profile.</action></para></listitem>
 </menuchoice></term>
 <listitem><para><action>In the settings, you can define whether the archive-slice files
 start with the default name "backup" or with an alternative name.
-Also you can limit the archive slice size. See chapter "Archive Slices".
+Also you can limit the archive slice size. See chapter <link linkend="archive-slices">Archive Slices</link>.
 These settings are also stored into the profile.
 </action></para></listitem>
 </varlistentry>
@@ -478,10 +478,10 @@ These settings are also stored into the profile.
 When this option is activated, an icon is shown in the system tray, which reflects the current
 status of a backup operation. An animation is shown when a backup is in progress, else you see
 a static icon.
-If this option is selected, the closing of the mainwindow will not terminate &kbackup;.
-The application must be explicitely terminated by selecting the "Quit" action.
+If this option is selected, the closing of the main window will not terminate &kbackup;.
+The application must be explicitly terminated by selecting the "Quit" action.
 Via the context menu of the &kbackup; system tray icon you can start and cancel a backup operation -
-which is the same as you can do in the mainwindow.
+which is the same as you can do in the main window.
 The tooltip on this icon also gives progress information (Number of saved files, size of the backup and
 the last saved file).
 </action></para></listitem>
@@ -525,14 +525,14 @@ used for apps that use plugins or that provide their own scripting hooks
 and/or development libraries. -->
 
 <para>
-&kbackup; can be extended by using a shellscript (or any other executable)
+&kbackup; can be extended by using a shell script (or any other executable)
 which will be started at three different points during the backup process.
 The idea behind it is to allow to mount, unmount, eject media in a system
 specific way, or do other things with the produced archive files.
 </para>
 
 <para>
-The script to execute must be given with the --script commandline option.
+The script to execute must be given with the --script command line option.
 </para>
 
 <para>Here is a sample script</para>
@@ -570,7 +570,7 @@ esac
 </example>
 
 <para>
-The script is always invoked with four commandline argument:
+The script is always invoked with four command line arguments:
 </para>
 <itemizedlist>
 <listitem><para>invocation mode</para> </listitem>
@@ -594,7 +594,7 @@ There are three possible invocation modes:
 <para>called after an archive slice has been created, but before it has been put into
 the target directory</para>
 <para>
-This can be used if you want to copy the archive slice to some additional place, e.g.
+This can be used if you want to copy the archive slice to some additional place, &eg;
 the archive is sent to the main server (via a target URL), but you want to keep the last
 backup also onto the local disc.
 </para>
