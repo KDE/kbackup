@@ -29,6 +29,8 @@ find_package(KF5 REQUIRED COMPONENTS
 
 add_subdirectory(src)
 add_subdirectory(doc)
-add_subdirectory(po)
+
+ki18n_install(po)
+kdoctools_install(po)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

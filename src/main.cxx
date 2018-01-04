@@ -51,6 +51,7 @@ int main(int argc, char **argv)
                    "kollix@aon.at");  // bugs to
 
   about.addAuthor(i18n("Martin Koller"), i18n("Developer"), "kollix@aon.at");
+  about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
 
   KAboutData::setApplicationData(about);
 
