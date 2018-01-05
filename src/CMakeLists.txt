@@ -33,7 +33,7 @@ find_package(SharedMimeInfo REQUIRED)
 install(FILES kbackup.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
 update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
 
-install(FILES  kbackup.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES  org.kde.kbackup.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES  kbackupui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kbackup)
 
 ecm_install_icons(ICONS
