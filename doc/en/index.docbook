@@ -348,7 +348,7 @@ If you pass <option>--verbose</option> in addition, then you will also see each 
 </para>
 
 <sect2>
-<title>The <guimenu>File</guimenu> Menu</title>
+<title>The File Menu</title>
 <para>
 <variablelist>
 
@@ -422,7 +422,7 @@ These settings are also stored into the profile.
 </sect2>
 
 <sect2>
-<title>The <guimenu>Settings</guimenu> Menu</title>
+<title>The Settings Menu</title>
 <para>
 <variablelist>
 
