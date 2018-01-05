@@ -9,15 +9,6 @@ Terminal=false
 Categories=System;KDE;X-SuSE-Backup;X-MandrivaLinux-System-Archiving-Backup;
 
 Name=KBackup
-Name[de]=KBackup
-Name[es]=KBackup
-Name[fr]=KBackup
 GenericName=Backup Program
-GenericName[de]=Datensicherungs Programm
-GenericName[es]=Programa de Copias de Seguridad
-GenericName[fr]=Programme de sauvegarde
 Comment=Backup your data with an easy to use user interface
-Comment[de]=Datensicherung mit einem einfach zu bedienended User Interface
-Comment[es]=Realiza copias de seguridad de tus datos con un programa fácil de usar
-Comment[fr]=Sauvegarder vos données avec une interface utilisateur facile à utiliser
 
