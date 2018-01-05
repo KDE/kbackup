@@ -1,43 +1,18 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!-- Define an entity for your application if it is not part of KDE
-       CVS -->
-  <!ENTITY kbackup "<application>KBackup</application>">
-  <!ENTITY kappname "&kbackup;"><!-- replace kmyapplication here
-                                            do *not* replace kappname-->
-  <!ENTITY package "kde-module"><!-- kdebase, kdeadmin, etc.  Leave
-                                     this unchanged if your
-                                     application is not maintained in KDE CVS -->
-  <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE"> <!-- ONLY If you are writing non-English
-                                     original documentation, change
-                                     the language here -->
 
-  <!-- Do not define any other entities; instead, use the entities
-       from entities/general.entities and $LANG/user.entities. -->
+  <!ENTITY kbackup "<application>KBackup</application>"><!--FIXME remove entitiy when kbackup depends on kdoctools >= 5.42-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE">
 ]>
 
-<!-- ................................................................ -->
-
-<!-- The language must NOT be changed here. -->
-<!-- If you are writing original documentation in a language other -->
-<!-- than English, change the language above ONLY, not here -->
-<book lang="&language;">
-
-<!-- This header contains all of the meta-information for the document such
-as Authors, publish date, the abstract, and Keywords -->
+<book id="kbackup" lang="&language;">
 
 <bookinfo>
 <title>The &kbackup; Handbook (for version 1.0)</title>
 
 <authorgroup>
 <author>
-<!-- This is just put in as an example.  For real documentation, please
-     define a general entity in entities/contributor.entities, e.g.
-<!ENTITY George.N.Ugnacious "<personname><firstname>George</firstname><othername>N.</othername><surname>Ugnacious</surname></personname>">
-<!ENTITY George.N.Ugnacious.mail "<email>gnu@kde.org</email>">
-and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
- -->
 <personname>
 <firstname>Martin</firstname>
 <surname>Koller</surname>
@@ -52,9 +27,6 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 <year>2006 - 2017</year>
 <holder>Martin Koller</holder>
 </copyright>
-<!-- Translators: put here the copyright notice of the translation -->
-<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
-     and in the FDL itself on how to use it. -->
 <legalnotice>&FDLNotice;</legalnotice>
 
 <date>2009-06-14</date>
@@ -67,10 +39,6 @@ and use `&George.N.Ugnacious; &George.N.Ugnacious.mail;' in the author element.
 &kbackup; is an application which lets you back up your data in a simple, user friendly way.
 </para>
 </abstract>
-
-<!-- This is a set of Keywords for indexing by search engines.
-Please at least include KDE, the KDE package it is in, the name
- of your application, and a few relevant keywords. -->
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -89,20 +57,15 @@ Please at least include KDE, the KDE package it is in, the name
 <chapter id="introduction">
 <title>Introduction</title>
 
-<!-- The introduction chapter contains a brief introduction for the
-application that explains what it does and where to report
-problems. Basically a long version of the abstract.  Don't include a
-revision history. (see installation appendix comment) -->
-
 <para>
-&kbackup; is a program that lets you back up any directories or files,
-whereby it uses an easy to use directory tree to select the things to back up.
-It lets you save your settings in so-called "profile" files, where a profile is a simple
-text file containing definitions for directories and files to be included
+&kbackup; is a program that lets you back up any folders or files,
+whereby it uses an easy to use folder tree to select the things to back up.
+It lets you save your settings in so-called <quote>profile</quote> files, where a profile is a simple
+text file containing definitions for folders and files to be included
 or excluded from the backup process.
 Also, it lets you define where the backup shall be saved to.
-The target can be either a local directory (&eg; a locally mounted device
-like a ZIP drive, USB stick, etc.) but it can also be any remote URL
+The target can be either a local folder (&eg; a locally mounted device
+like a ZIP drive, USB stick, etc.) but it can also be any remote &URL;
 (&eg; smb://remote/some_path) to back up your data to some central server, etc.
 </para>
 
@@ -131,10 +94,10 @@ format.
 </para>
 <para>
 If the files are compressed, you can uncompress all files
-from the current directory recursively down with the following command:
+from the current folder recursively down with the following command:
 </para>
 <para>
-find . -name \*bz2 -print0 | xargs -0 bunzip2
+<programlisting>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
 </para>
 
 </chapter>
@@ -143,23 +106,23 @@ find . -name \*bz2 -print0 | xargs -0 bunzip2
 <title>Using &kbackup;</title>
 
 <para>
-All you need to do is to select which directories you want to store.
-This is done by selecting all the directories in the tree view on the left side
+All you need to do is to select which folders you want to store.
+This is done by selecting all the folders in the tree view on the left side
 of the main window.
 </para>
 
 <para>
-If you select a directory, &kbackup; will automatically store all files and
-subdirectories below it.
-If you want to exclude parts of a selected directory, simply deselect that files/directories
-inside the still selected directory.
+If you select a folder, &kbackup; will automatically store all files and
+subfolders below it.
+If you want to exclude parts of a selected folder, simply deselect that files/folders
+inside the still selected folder.
 </para>
 
 <para>
-In general, this means: A selected directory will store everything in it and below it,
+In general, this means: A selected folder will store everything in it and below it,
 except the deselected parts in it.
 This also means, whenever you reuse a profile (see below) later on and new files
-have been added to a directory already selected for backup, all the new files will
+have been added to a folder already selected for backup, all the new files will
 also be stored.
 </para>
 
@@ -192,27 +155,27 @@ To reload a selection into &kbackup;, use the <menuchoice><guimenu>File</guimenu
 </para>
 
 <para>
-&kbackup; saves in a profile the selections for all included directories/files,
-excluded directories/files, the target directory/URL, defined archive prefix,
+&kbackup; saves in a profile the selections for all included folders/files,
+excluded folders/files, the target folder/&URL;, defined archive prefix,
 the defined maximum slice file size, etc.
 </para>
 
 <para>
 If you want to ease the usage of backing up every day the same set of
-files, simply store your settings into a &kbackup; profile (a .kbp file)
+files, simply store your settings into a &kbackup; profile (a <filename class="extension">.kbp</filename> file)
 and pass that file on the command line.
 </para>
 
 <para>
-E.g.:
+&eg;:
 </para>
 
 <para>
-kbackup myData.kbp
+<programlisting>kbackup myData.kbp</programlisting>
 </para>
 
 <para>
-Hint: you can also create a shortcut on your desktop to a .kbp file
+Hint: you can also create a shortcut on your desktop to a <filename class="extension">.kbp</filename> file
 as the file type is registered to start &kbackup; on double click
 </para>
 
@@ -236,30 +199,30 @@ slices of one backup) and a trailing slice sequence number (_1 in this example).
 </para>
 <para>
 In the menu <menuchoice><guimenu>File</guimenu> <guimenuitem>Profile Settings</guimenuitem></menuchoice>, you can define a different archive prefix than the
-default "backup".
+default <quote>backup</quote>.
 </para>
 
 <para>
 In the Profile Settings Dialog, you can also define a maximum archive slice size,
 which limits the slice size even if there would be more space left on the target
 device.
-This helps to create archive slices which can then be later burned on a CD/DVD, etc.
+This helps to create archive slices which can then be later burned on a &CD;/&DVD;, &etc;
 If you explicitly limit the size of an archive slice, the available size
 will be marked with (*) in the main window.
 </para>
 <para>
-But even if you define a slice to be of "unlimited" size, there are other constraints
+But even if you define a slice to be of <quote>unlimited</quote> size, there are other constraints
 which limit the size of a slice:
 <itemizedlist>
-<listitem><para>limited by the target directory (when stored directly into a local dir)</para></listitem>
-<listitem><para>limited by the "tmp" dir when we create a tmp file for later upload to a remote URL</para></listitem>
+<listitem><para>limited by the target folder (when stored directly into a local folder)</para></listitem>
+<listitem><para>limited by the <filename class="directory">/tmp</filename> folder when we create a tmp file for later upload to a remote &URL;</para></listitem>
 </itemizedlist>
 </para>
 
 <para>
-In the Profile Settings, you can also define a maximum number of backups being kept
-in the target directory, and therefore automatically deleting all older backups there.
-E.g. if you set it to 3, &kbackup; will keep the last 3 backups and delete all older ones.
+In the <guilabel>Profile Settings</guilabel>, you can also define a maximum number of backups being kept
+in the target folder, and therefore automatically deleting all older backups there.
+&eg; if you set it to 3, &kbackup; will keep the last 3 backups and delete all older ones.
 </para>
 
 </sect1>
@@ -275,34 +238,34 @@ will be finished in a much shorter time.
 </para>
 <para>
 This works as follows: In the profile, you define an interval (in days) for the full backup.
-E.g. when you define 5 days, then &kbackup; will do a full backup of all files every 5 days.
+&eg; when you define 5 days, then &kbackup; will do a full backup of all files every 5 days.
 Whenever you start &kbackup; before the interval expires with this profile - regardless
 how often you run a backup - only the files which have changed since the last backup will
 be saved. &kbackup; stores the time stamp of the last backup into the profile and knows
 therefore what to do when running the next time.
 </para>
 <para>
-The archive slice files created during an incremental backup will contain the text "_inc", &eg;:
+The archive slice files created during an incremental backup will contain the text <quote>_inc</quote>, &eg;:
 </para>
 <para>
 backup_2010.06.14-18.50.26_1_inc.tar
 </para>
 <para>
-Full backup slice files will not include "_inc" in the name, &eg;:
+Full backup slice files will not include <quote>_inc</quote> in the name, &eg;:
 </para>
 <para>
 backup_2010.06.13-20.58.14_1.tar
 </para>
 <para>
 When one wants to restore files from an incremental backup, it's important to look for
-the most recent version of a file to be restored in all "_inc" files and finally also the last full backup
+the most recent version of a file to be restored in all <quote>_inc</quote> files and finally also the last full backup
 slice file.
 This exactly is also the disadvantage of the incremental backup (but no advantage without disadvantage ;-) )
 </para>
 <para>
 If you want to do a full backup earlier than the defined incremental cycle time defined in a profile,
-you can do so by checking the "Force Full Backup" option in the user interface.
-When &kbackup; is started via the command line, this can be achieved by using the option --forceFull
+you can do so by checking the <guilabel>Force Full Backup</guilabel> option in the user interface.
+When &kbackup; is started via the command line, this can be achieved by using the option <option>--forceFull</option>
 </para>
 <para>
 A forced full backup will restart the backup cycle, &eg; &kbackup; counts the days to the next full backup
@@ -325,7 +288,7 @@ then not-compressed .tar archive.
 <para>
 When you have selected to create the backup on some local filesystem
 (&eg; your extra disc, ZIP drive, etc.) - which means you did not
-enter a remote target URL - &kbackup; might split the whole backup into several archive slices
+enter a remote target &URL; - &kbackup; might split the whole backup into several archive slices
 due to media capacity limitations.
 </para>
 <para>
@@ -347,25 +310,25 @@ backup_2006.08.26-13.04.44_2.tar
 If you want to automate the process of the backup, &kbackup; offers different
 command line options to help with this:
 <itemizedlist>
-<listitem><para>--auto</para>
+<listitem><para><option>--auto</option></para>
 <para>
-When you run &kbackup; with this option and a given .kbp profile, it will
+When you run &kbackup; with this option and a given <filename class="extension">.kbp</filename> profile, it will
 start, load the given profile, run the backup and terminate when done.
 All this is done with a visible &kbackup; user interface.
 </para>
 </listitem>
 
-<listitem><para>--autobg</para>
+<listitem><para><option>--autobg</option></para>
 <para>
-When you run &kbackup; with this option and a given .kbp profile, it will
-run the same process as with --auto  but _without_ showing any graphical user interface.
-Therefore the suffix "bg" which stands for "background" - everything is done in the background
+When you run &kbackup; with this option and a given <filename class="extension">.kbp</filename> profile, it will
+run the same process as with <option>--auto</option>  but <emphasis>without</emphasis> showing any graphical user interface.
+Therefore the suffix <quote>bg</quote> which stands for <quote>background</quote> - everything is done in the background
 so this is the right option to be used when you do your backups &eg; started by a cron job.
 </para>
 <para>
-When using --autobg the output from &kbackup; - showing the progress of the backup - is written
+When using <option>--autobg</option> the output from &kbackup; - showing the progress of the backup - is written
 to stderr. By default, the output includes just a few important messages and a summary at the end.
-If you pass --verbose in addition, then you will also see each file name currently being backed up.
+If you pass <option>--verbose</option> in addition, then you will also see each file name currently being backed up.
 </para>
 </listitem>
 </itemizedlist>
@@ -377,12 +340,6 @@ If you pass --verbose in addition, then you will also see each file name current
 
 <chapter id="commands">
 <title>Command Reference</title>
-
-<!-- (OPTIONAL, BUT RECOMMENDED) This chapter should list all of the
-application windows and their menubar and toolbar commands for easy reference.
-Also include any keys that have a special function but have no equivalent in the
-menus or toolbars. This may not be necessary for small apps or apps with no tool
-or menu bars. -->
 
 <sect1 id="kapp-mainwindow">
 <title>The main &kbackup; window</title>
@@ -442,17 +399,17 @@ a new profile.</action></para></listitem>
 <guimenu>File</guimenu>
 <guimenuitem>Profile Settings</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>In the settings, you can define whether the archive-slice files
-start with the default name "backup" or with an alternative name.
+<listitem><para>In the settings, you can define whether the archive-slice files
+start with the default name <quote>backup</quote> or with an alternative name.
 Also you can limit the archive slice size. See chapter <link linkend="archive-slices">Archive Slices</link>.
 These settings are also stored into the profile.
-</action></para></listitem>
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+Q</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
 </shortcut>
 <guimenu>File</guimenu>
 <guimenuitem>Quit</guimenuitem>
@@ -479,7 +436,7 @@ When this option is activated, an icon is shown in the system tray, which reflec
 status of a backup operation. An animation is shown when a backup is in progress, else you see
 a static icon.
 If this option is selected, the closing of the main window will not terminate &kbackup;.
-The application must be explicitly terminated by selecting the "Quit" action.
+The application must be explicitly terminated by selecting the <guimenuitem>Quit</guimenuitem> action.
 Via the context menu of the &kbackup; system tray icon you can start and cancel a backup operation -
 which is the same as you can do in the main window.
 The tooltip on this icon also gives progress information (Number of saved files, size of the backup and
@@ -493,7 +450,7 @@ the last saved file).
 <guimenuitem>Enable All Messages</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>
-Activating this entry clears all internally stored "Do not ask again" flags for
+Activating this entry clears all internally stored <guilabel>Do not ask again</guilabel> flags for
 the dialogs shown in &kbackup;
 </action></para></listitem>
 </varlistentry>
@@ -501,17 +458,12 @@ the dialogs shown in &kbackup;
 </para>
 </sect2>
 
-
-<sect2>
-<title>The <guimenu>Help</guimenu> Menu</title>
-
-<!-- Assuming you have a standard help menu (help, what's this, about -->
-<!-- &kbackup;, about KDE) then the documentation is already written. -->
-<!-- The following entity is valid anywhere that a variablelist is -->
-<!-- valid.  -->
-
-&help.menu.documentation;
-
+<sect2 id="help-menu1">
+<title>The Help Menu</title>
+<para>
+&kbackup; has the common &kde; <guimenu>Help</guimenu> menu item, for more information read the section
+about the <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink> of the &kde; Fundamentals.
+</para>
 </sect2>
 
 </sect1>
@@ -519,10 +471,6 @@ the dialogs shown in &kbackup;
 
 <chapter id="developers">
 <title>Developer's Guide to &kbackup;</title>
-
-<!-- (OPTIONAL) A Programming/Scripting reference chapter should be
-used for apps that use plugins or that provide their own scripting hooks
-and/or development libraries. -->
 
 <para>
 &kbackup; can be extended by using a shell script (or any other executable)
@@ -532,7 +480,7 @@ specific way, or do other things with the produced archive files.
 </para>
 
 <para>
-The script to execute must be given with the --script command line option.
+The script to execute must be given with the <option>--script</option> command line option.
 </para>
 
 <para>Here is a sample script</para>
@@ -575,8 +523,8 @@ The script is always invoked with four command line arguments:
 <itemizedlist>
 <listitem><para>invocation mode</para> </listitem>
 <listitem><para>archive (slice) file name</para> </listitem>
-<listitem><para>target directory/URL</para> </listitem>
-<listitem><para>mountpoint of the target directory if it's a local dir, else an empty string</para> </listitem>
+<listitem><para>target directory/&URL;</para> </listitem>
+<listitem><para>mountpoint of the target directory if it's a local directory, else an empty string</para> </listitem>
 </itemizedlist>
 
 <para>
@@ -595,7 +543,7 @@ There are three possible invocation modes:
 the target directory</para>
 <para>
 This can be used if you want to copy the archive slice to some additional place, &eg;
-the archive is sent to the main server (via a target URL), but you want to keep the last
+the archive is sent to the main server (via a target &URL;), but you want to keep the last
 backup also onto the local disc.
 </para>
 </listitem>
@@ -610,30 +558,7 @@ target directory</para>
 
 </chapter>
 
-<chapter id="faq">
-<title>Questions and Answers</title>
-
-<!-- (OPTIONAL but recommended) This chapter should include all of the silly
-(and not-so-silly) newbie questions that fill up your mailbox. This chapter
-should be reserved for BRIEF questions and answers! If one question uses more
-than a page or so then it should probably be part of the
-"Using this Application" chapter instead. You should use links to
-cross-reference questions to the parts of your documentation that answer them.
-This is also a great place to provide pointers to other FAQ's if your users
-must do some complicated configuration on other programs in order for your
-application work. -->
-
-&reporting.bugs;
-&updating.documentation;
-
-</chapter>
-
 <chapter id="credits">
-
-<!-- Include credits for the programmers, documentation writers, and
-contributors here. The license for your software should then be included below
-the credits with a reference to the appropriate license file included in the KDE
-distribution. -->
 
 <title>Credits and License</title>
 
@@ -641,7 +566,7 @@ distribution. -->
 &kbackup;
 </para>
 <para>
-Program copyright &copy; 2006 - 2009 Martin Koller <email>kollix@aon.at</email>
+Program copyright &copy; 2006 - 2009 Martin Koller <email>kollix@aon.at</email><!--FIXME use entities when kbackup depends on kdoctools >= 5.42-->
 </para>
 
 <para>
@@ -652,44 +577,9 @@ Documentation Copyright &copy; 2006 - 2009 Martin Koller
 
 &underFDL;               <!-- FDL: do not remove -->
 
-<!-- Determine which license your application is licensed under,
-     and delete all the remaining licenses below:
-
-     (NOTE:  All documentation are licensed under the FDL,
-     regardless of what license the application uses) -->
-
 &underGPL;        	 <!-- GPL License -->
 
 </chapter>
-
-<appendix id="installation">
-<title>Installation</title>
-
-
-<sect1 id="getting-kapp">
-<title>How to obtain &kbackup;</title>
-
-<!-- This first entity contains boiler plate for applications that are
-part of KDE CVS.  You should remove it if you are releasing your
-application -->
-
-<para>
-You can download &kbackup; from www.kde-apps.org
-</para>
-</sect1>
-
-<sect1 id="compilation">
-<title>Compilation and Installation</title>
-
-<!-- This entity contains the boilerplate text for standard -->
-<!-- compilation instructions.  If your application requires any -->
-<!-- special handling, remove it, and replace with your own text. -->
-
-&install.compile.documentation;
-
-</sect1>
-
-</appendix>
 
 &documentation.index;
 </book>
