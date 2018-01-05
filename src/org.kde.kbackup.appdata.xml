@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>org.kde.kbackup.desktop</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>KBackup</name>
+  <summary>KBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URL</summary>
+  <description>
+    <p>
+      KBackup is an application which lets you back up your data in a simple, user friendly way
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
+      <li>The backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URL</li>
+      <li>Running automated backups without using a graphical user interface</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">org.kde.backup.desktop</launchable>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kbackup</url>
+  <url type="help">http://docs.kde.org/?application=kbackup</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/filelight/kbackup.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>kbackup</binary>
+  </provides>
+</component>

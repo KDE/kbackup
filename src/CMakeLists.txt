@@ -35,6 +35,7 @@ update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
 
 install(FILES  org.kde.kbackup.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES  kbackupui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kbackup)
+install(FILES org.kde.kbackup.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
                   16-apps-kbackup.png
