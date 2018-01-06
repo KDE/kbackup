@@ -2,9 +2,6 @@
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
   <mime-type type="text/x-kbp">
     <comment>KBackup Profile</comment>
-    <comment xml:lang="de">KBackup Profil</comment>
-    <comment xml:lang="fr">Profil KBackup</comment>
-    <comment xml:lang="es">Perfil KBackup</comment>
     <glob pattern="*.kbp"/>
   </mime-type>
 </mime-info>
