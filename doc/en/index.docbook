@@ -203,7 +203,7 @@ default <quote>backup</quote>.
 </para>
 
 <para>
-In the Profile Settings Dialog, you can also define a maximum archive slice size,
+In the <guimenuitem>Profile Settings</guimenuitem> dialog, you can also define a maximum archive slice size,
 which limits the slice size even if there would be more space left on the target
 device.
 This helps to create archive slices which can then be later burned on a &CD;/&DVD;, &etc;
