@@ -53,6 +53,9 @@ int main(int argc, char **argv)
   about.addAuthor(i18n("Martin Koller"), i18n("Developer"), "kollix@aon.at");
   about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
 
+  about.setOrganizationDomain(QByteArray("kde.org"));
+  about.setDesktopFileName(QStringLiteral("org.kde.kbackup"));
+
   KAboutData::setApplicationData(about);
 
   QCommandLineParser cmdLine;
@@ -88,6 +91,10 @@ int main(int argc, char **argv)
     delete app.take();  // must make explicitely. Only reset() leads to error
     // kf5.kcoreaddons.kaboutdata: Could not initialize the equivalent properties of Q*Application: no instance (yet) existing.
     app.reset(new QApplication(argc, argv));
+    QApplication *qapp = qobject_cast<QApplication *>(app.data());
+    qapp->setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    qapp->setWindowIcon(QIcon::fromTheme(QStringLiteral("kbackup")));
+
     KAboutData::setApplicationData(about);
   }
 
