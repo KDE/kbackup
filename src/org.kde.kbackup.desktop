@@ -1,12 +1,11 @@
 [Desktop Entry]
 Type=Application
-Encoding=UTF-8
 Exec=kbackup %f
 Icon=kbackup
 X-DocPath=kbackup/index.html
 MimeType=text/x-kbp;
 Terminal=false
-Categories=System;KDE;X-SuSE-Backup;X-MandrivaLinux-System-Archiving-Backup;
+Categories=Qt;KDE;Utility;Archiving;
 
 Name=KBackup
 Name[ca]=KBackup
