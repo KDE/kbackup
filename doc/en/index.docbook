@@ -9,7 +9,7 @@
 <book id="kbackup" lang="&language;">
 
 <bookinfo>
-<title>The &kbackup; Handbook (for version 1.0)</title>
+<title>The &kbackup; Handbook</title>
 
 <authorgroup>
 <author>
@@ -29,8 +29,8 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-06-14</date>
-<releaseinfo>1.06.00</releaseinfo>
+<date>2018-01-05</date>
+<releaseinfo>KBackup 1.0.1</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
@@ -146,8 +146,8 @@ also be stored.
 <title>Using profiles</title>
 
 <para>
-To keep a selection for later use, simply save it into a &kbackup; Profile file.
-Use the <guimenu>File</guimenu> menu and select <guimenuitem>Save profile</guimenuitem>.
+To keep a selection for later use, simply save it into a &kbackup; profile file.
+Use the <guimenu>File</guimenu> menu and select <guimenuitem>Save Profile</guimenuitem>.
 </para>
 
 <para>
@@ -268,7 +268,7 @@ you can do so by checking the <guilabel>Force Full Backup</guilabel> option in t
 When &kbackup; is started via the command line, this can be achieved by using the option <option>--forceFull</option>
 </para>
 <para>
-A forced full backup will restart the backup cycle, &eg; &kbackup; counts the days to the next full backup
+A forced full backup will restart the backup cycle, &ie; &kbackup; counts the days to the next full backup
 from the time of the last full backup.
 </para>
 </sect1>
@@ -279,15 +279,15 @@ from the time of the last full backup.
 <para>
 &kbackup; will compress the files stored if you activate this
 in the profile settings. Depending on
-the availability on your system it chooses bzip2 or gzip compression.
+the availability on your system it chooses <command>bzip2</command> or <command>gzip</command> compression.
 &kbackup; will compress every single file
-and store all files with an added file extension (.bzip2 or .gz) into the
-then not-compressed .tar archive.
+and store all files with an added file extension (<filename class="extension">.bzip2</filename> or <filename class="extension">.gz</filename>) into the
+then not-compressed <filename class="extension">.tar</filename> archive.
 </para>
 
 <para>
 When you have selected to create the backup on some local filesystem
-(&eg; your extra disc, ZIP drive, etc.) - which means you did not
+(&eg; your extra disc, ZIP drive, &etc;) - which means you did not
 enter a remote target &URL; - &kbackup; might split the whole backup into several archive slices
 due to media capacity limitations.
 </para>
@@ -454,6 +454,19 @@ Activating this entry clears all internally stored <guilabel>Do not ask again</g
 the dialogs shown in &kbackup;
 </action></para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Hidden Files</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Enable or disable</action> the display of hidden files (preceded
+by a dot character) in the tree view. Use this option if you want to exclude some
+ hidden files from the backup. If you want to exclude all hidden files,
+use a filename filter in the profile settings.
+</para></listitem>
+</varlistentry>
+
 </variablelist>
 </para>
 </sect2>
