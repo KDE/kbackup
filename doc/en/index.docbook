@@ -99,7 +99,7 @@ from the current folder recursively down with the following command:
 <para>
 <programlisting>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
 </para>
-
+<para>Alternatively you can use &ark; to extract a full backup or just a few files from a backup</para>
 </chapter>
 
 <chapter id="using-kbackup">
