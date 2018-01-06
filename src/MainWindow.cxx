@@ -59,7 +59,7 @@ MainWindow::MainWindow()
   action->setIcon(QIcon::fromTheme("document-new"));
 
   action = actionCollection()->addAction("loadProfile", this, SLOT(loadProfile()));
-  action->setText(i18n("Load Profile"));
+  action->setText(i18n("Load Profile..."));
   action->setIcon(QIcon::fromTheme("document-open"));
 
   action = actionCollection()->addAction("saveProfile", this, SLOT(saveProfile()));
@@ -71,7 +71,7 @@ MainWindow::MainWindow()
   action->setIcon(QIcon::fromTheme("document-save-as"));
 
   action = actionCollection()->addAction("profileSettings", this, SLOT(profileSettings()));
-  action->setText(i18n("Profile Settings"));
+  action->setText(i18n("Profile Settings..."));
 
   action = actionCollection()->addAction("enableAllMessages", this, SLOT(enableAllMessages()));
   action->setText(i18n("Enable All Messages"));
