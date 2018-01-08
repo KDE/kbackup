@@ -1,7 +1,7 @@
 ** KBackup **
 
 A Backup program with an easy to use User Interface
-based on the KDE4 framework.
+based on the KDE Frameworks version 5.
 
 It uses the cmake build tool.
 
