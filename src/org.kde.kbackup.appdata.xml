@@ -9,6 +9,7 @@
   <name xml:lang="de">KBackup</name>
   <name xml:lang="nl">KBackup</name>
   <name xml:lang="pt">KBackup</name>
+  <name xml:lang="sk">KBackup</name>
   <name xml:lang="sv">Kbackup</name>
   <name xml:lang="uk">KBackup</name>
   <name xml:lang="x-test">xxKBackupxx</name>
@@ -36,11 +37,14 @@
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="de">Funktionen:</p>
+    <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pt">Funcionalidades:</p>
+    <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
+    <p xml:lang="zh-CN">功能：</p>
     <ul>
       <li>Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
       <li xml:lang="ca">Usa fitxers de perfils amb definicions de carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>

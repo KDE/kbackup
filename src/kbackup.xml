@@ -7,6 +7,7 @@
     <comment xml:lang="de">KBackup-Profil</comment>
     <comment xml:lang="nl">KBackup-profiel</comment>
     <comment xml:lang="pt">Perfil do KBackup</comment>
+    <comment xml:lang="sk">Profil KBackup</comment>
     <comment xml:lang="sv">Kbackup-profil</comment>
     <comment xml:lang="uk">профіль KBackup</comment>
     <glob pattern="*.kbp"/>
