@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2018 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -45,10 +45,9 @@ int main(int argc, char **argv)
 
   KAboutData about("kbackup", i18n("KBackup"),
                    "1.0.1", i18n("An easy to use backup program"), KAboutLicense::GPL_V2,
-                   i18n("(c) 2006 - 2017 Martin Koller"),  // copyright
+                   i18n("(c) 2006 - 2018 Martin Koller"),  // copyright
                    QString(),  // added text
-                   "https://www.linux-apps.com/content/show.php?content=44998",  // homepage
-                   "kollix@aon.at");  // bugs to
+                   "https://www.linux-apps.com/content/show.php?content=44998");  // homepage
 
   about.addAuthor(i18n("Martin Koller"), i18n("Developer"), "kollix@aon.at");
 
