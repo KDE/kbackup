@@ -420,15 +420,15 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
 
   if ( !targetURL.isValid() )
   {
-    emit warning(i18n("The target dir '%1' is not valid").arg(targetURL.toString()));
+    emit warning(i18n("The target dir '%1' is not valid", targetURL.toString()));
     return false;
   }
 
   // non-interactive mode only allows local targets as KIO needs $DISPLAY
   if ( !interactive && !targetURL.isLocalFile() )
   {
-    emit warning(i18n("The target dir '%1' must be a local file system dir and no remote URL")
-                     .arg(targetURL.toString()));
+    emit warning(i18n("The target dir '%1' must be a local file system dir and no remote URL",
+                     targetURL.toString()));
     return false;
   }
 
@@ -441,14 +441,12 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       if ( !interactive ||
            (KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
               i18n("The target directory '%1' does not exist.\n\n"
-                   "Shall I create it?").arg(dir.absolutePath())) == KMessageBox::Yes) )
+                   "Shall I create it?", dir.absolutePath())) == KMessageBox::Yes) )
       {
         if ( !dir.mkpath(".") )
         {
           emit warning(i18n("Could not create the target directory '%1'.\n"
-                            "The operating system reports: %2")
-                            .arg(dir.absolutePath())
-                            .arg(strerror(errno)));
+                            "The operating system reports: %2", dir.absolutePath(), strerror(errno)));
           return false;
         }
       }
@@ -527,7 +525,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   // reduce the number of old backups to the defined number
   if ( !cancelled && (numKeptBackups != UNLIMITED) )
   {
-    emit logging(i18n("...reducing number of kept archives to max. %1").arg(numKeptBackups));
+    emit logging(i18n("...reducing number of kept archives to max. %1", numKeptBackups));
 
     if ( !targetURL.isLocalFile() )  // KIO needs $DISPLAY; non-interactive only allowed for local targets
     {
@@ -584,7 +582,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
             QUrl url = targetURL;
             url = url.adjusted(QUrl::StripTrailingSlash);
             url.setPath(url.path() + '/' + entryName);
-            emit logging(i18n("...deleting %1").arg(entryName));
+            emit logging(i18n("...deleting %1", entryName));
 
             // delete the file using KIO
             if ( !targetURL.isLocalFile() )  // KIO needs $DISPLAY; non-interactive only allowed for local targets
@@ -631,13 +629,11 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       QString error;
       if ( !saveProfile(loadedProfile, includes, excludes, error) )
       {
-        emit warning(i18n("Could not write backup timestamps into profile %1: %2")
-                          .arg(loadedProfile)
-                          .arg(error));
+        emit warning(i18n("Could not write backup timestamps into profile %1: %2", loadedProfile, error));
       }
     }
 
-    emit logging(i18n("-- Filtered Files: %1").arg(filteredFiles));
+    emit logging(i18n("-- Filtered Files: %1", filteredFiles));
 
     if ( skippedFiles )
       emit logging(i18n("!! Backup finished <b>but files were skipped</b> !!"));
@@ -667,10 +663,10 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
         std::cerr << slice.toUtf8().constData() << std::endl;
       std::cerr << "-------" << std::endl;
 
-      std::cerr << i18n("Totals: Files: %1, Size: %2, Duration: %3")
-                   .arg(totalFiles)
-                   .arg(KIO::convertSize(totalBytes))
-                   .arg(QTime(0, 0).addMSecs(elapsed.elapsed()).toString("HH:mm:ss"))
+      std::cerr << i18n("Totals: Files: %1, Size: %2, Duration: %3",
+                   totalFiles,
+                   KIO::convertSize(totalBytes),
+                   QTime(0, 0).addMSecs(elapsed.elapsed()).toString("HH:mm:ss"))
                    .toUtf8().constData() << std::endl;
     }
 
@@ -723,7 +719,7 @@ void Archiver::finishSlice()
 
     if ( targetURL.isLocalFile() )
     {
-      emit logging(i18n("...finished slice %1").arg(archiveName));
+      emit logging(i18n("...finished slice %1", archiveName));
       sliceList << archiveName;  // store name for display at the end
     }
     else
@@ -738,7 +734,7 @@ void Archiver::finishSlice()
 
         connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
 
-        emit logging(i18n("...uploading archive %1 to %2").arg(source.fileName()).arg(target.toString()));
+        emit logging(i18n("...uploading archive %1 to %2", source.fileName(), target.toString()));
 
         while ( job )
           qApp->processEvents(QEventLoop::WaitForMoreEvents);
@@ -851,7 +847,7 @@ void Archiver::runScript(const QString &mode)
 
     if ( proc.execute() == -2 )
     {
-      QString message = i18n("The script '%1' could not be started.").arg(sliceScript);
+      QString message = i18n("The script '%1' could not be started.", sliceScript);
       if ( interactive )
         KMessageBox::error(static_cast<QWidget*>(parent()), message);
       else
@@ -890,7 +886,7 @@ bool Archiver::getNextSlice()
 
     if ( interactive && mediaNeedsChange &&
          KMessageBox::warningContinueCancel(static_cast<QWidget*>(parent()),
-                             i18n("The medium is full. Please insert medium Nr. %1").arg(sliceNum)) ==
+                             i18n("The medium is full. Please insert medium Nr. %1", sliceNum)) ==
           KMessageBox::Cancel )
     {
       cancel();
@@ -931,7 +927,7 @@ bool Archiver::getNextSlice()
     if ( !interactive ||
          (KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
            i18n("The file '%1' can not be opened for writing.\n\n"
-                "Do you want to retry?").arg(archiveName)) == KMessageBox::No) )
+                "Do you want to retry?", archiveName)) == KMessageBox::No) )
     {
       delete archive;
       archive = 0;
@@ -961,7 +957,7 @@ void Archiver::emitArchiveError() const
   else
   {
     emit warning(i18n("Could not write to archive.\n"
-                      "The operating system reports: %1").arg(err));
+                      "The operating system reports: %1", err));
   }
 }
 
@@ -979,7 +975,7 @@ void Archiver::addDirFiles(QDir &dir)
     if ( exp.exactMatch(absolutePath) )
     {
       if ( interactive || verbose )
-        emit logging(i18n("...skipping filtered directory %1").arg(absolutePath));
+        emit logging(i18n("...skipping filtered directory %1", absolutePath));
 
       return;
     }
@@ -991,16 +987,16 @@ void Archiver::addDirFiles(QDir &dir)
   if ( ::stat(QFile::encodeName(absolutePath), &status) == -1 )
   {
     emit warning(i18n("Could not get information of directory: %1\n"
-                      "The operating system reports: %2")
-                 .arg(absolutePath)
-                 .arg(strerror(errno)));
+                      "The operating system reports: %2",
+                 absolutePath,
+                 strerror(errno)));
     return;
   }
   QFileInfo dirInfo(absolutePath);
 
   if ( ! dirInfo.isReadable() )
   {
-    emit warning(i18n("Directory '%1' is not readable. Skipping.").arg(absolutePath));
+    emit warning(i18n("Directory '%1' is not readable. Skipping.", absolutePath));
     skippedFiles = true;
     return;
   }
@@ -1017,7 +1013,7 @@ void Archiver::addDirFiles(QDir &dir)
                            status.st_mode, dirInfo.lastRead(), dirInfo.lastModified(), dirInfo.created()) )
   {
     emit warning(i18n("Could not write directory '%1' to archive.\n"
-                      "Maybe the medium is full.").arg(absolutePath));
+                      "Maybe the medium is full.", absolutePath));
     return;
   }
 
@@ -1138,9 +1134,9 @@ void Archiver::addFile(const QFileInfo &info)
       if ( ::stat(QFile::encodeName(info.absoluteFilePath()), &status) == -1 )
       {
         emit warning(i18n("Could not get information of file: %1\n"
-                          "The operating system reports: %2")
-                     .arg(info.absoluteFilePath())
-                     .arg(strerror(errno)));
+                          "The operating system reports: %2",
+                     info.absoluteFilePath(),
+                     strerror(errno)));
 
         skippedFiles = true;
         return;
@@ -1166,9 +1162,9 @@ void Archiver::addFile(const QFileInfo &info)
         if ( len < 0 )  // error in reading
         {
           emit warning(i18n("Could not read from file '%1'\n"
-                            "The operating system reports: %2")
-                       .arg(info.absoluteFilePath())
-                       .arg(tmpFile.errorString()));
+                            "The operating system reports: %2",
+                       info.absoluteFilePath(),
+                       tmpFile.errorString()));
           cancel();
           return;
         }
@@ -1219,9 +1215,9 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
   if ( ::stat(QFile::encodeName(info.absoluteFilePath()), &sourceStat) == -1 )
   {
     emit warning(i18n("Could not get information of file: %1\n"
-                      "The operating system reports: %2")
-                 .arg(info.absoluteFilePath())
-                 .arg(strerror(errno)));
+                      "The operating system reports: %2",
+                 info.absoluteFilePath(),
+                 strerror(errno)));
 
     return Skipped;
   }
@@ -1232,7 +1228,7 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
   // and Qt hangs when opening a pipe
   if ( (info.size() > 0) && !sourceFile.open(QIODevice::ReadOnly) )
   {
-    emit warning(i18n("Could not open file '%1' for reading.").arg(info.absoluteFilePath()));
+    emit warning(i18n("Could not open file '%1' for reading.", info.absoluteFilePath()));
     return Skipped;
   }
 
@@ -1263,9 +1259,9 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
     if ( len < 0 )  // error in reading
     {
       emit warning(i18n("Could not read from file '%1'\n"
-                        "The operating system reports: %2")
-                   .arg(info.absoluteFilePath())
-                   .arg(sourceFile.errorString()));
+                        "The operating system reports: %2",
+                   info.absoluteFilePath(),
+                   sourceFile.errorString()));
       return Error;
     }
 
@@ -1295,7 +1291,7 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
     {
       emit fileProgress(progress);
       if ( interactive || verbose )
-        emit logging(i18n("...archiving file %1").arg(info.absoluteFilePath()));
+        emit logging(i18n("...archiving file %1", info.absoluteFilePath()));
 
       if ( interactive )
         QApplication::setOverrideCursor(QCursor(Qt::BusyCursor));
@@ -1334,9 +1330,9 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
   if ( ! origFile.open(QIODevice::ReadOnly) )
   {
     emit warning(i18n("Could not read file: %1\n"
-                      "The operating system reports: %2")
-                 .arg(origName)
-                 .arg(origFile.errorString()));
+                      "The operating system reports: %2",
+                 origName,
+                 origFile.errorString()));
 
     skippedFiles = true;
     return false;
@@ -1351,9 +1347,9 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
     if ( !filter.open(QIODevice::WriteOnly) )
     {
       emit warning(i18n("Could not create temporary file for compressing: %1\n"
-                        "The operating system reports: %2")
-                   .arg(origName)
-                   .arg(filter.errorString()));
+                        "The operating system reports: %2",
+                   origName,
+                   filter.errorString()));
       return false;
     }
 
@@ -1396,7 +1392,7 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
       if ( !msgShown && (timer.elapsed() > 3000) && (progress < 50) )
       {
         emit fileProgress(progress);
-        emit logging(i18n("...compressing file %1").arg(origName));
+        emit logging(i18n("...compressing file %1", origName));
         if ( interactive )
           QApplication::setOverrideCursor(QCursor(Qt::BusyCursor));
         qApp->processEvents(QEventLoop::AllEvents, 5);

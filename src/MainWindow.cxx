@@ -206,9 +206,9 @@ void MainWindow::loadProfile(const QString &fileName, bool adaptTreeWidth)
     QApplication::restoreOverrideCursor();
 
     KMessageBox::error(this,
-                i18n("Could not open profile '%1' for reading: %2")
-                     .arg(fileName)
-                     .arg(error),
+                i18n("Could not open profile '%1' for reading: %2",
+                     fileName,
+                     error),
                 i18n("Open failed"));
     return;
   }
@@ -259,8 +259,8 @@ void MainWindow::saveProfile(QString fileName)
   {
     if ( KMessageBox::warningYesNo(this,
                 i18n("The profile '%1' does already exist.\n"
-                     "Do you want to overwrite it?")
-                     .arg(fileName),
+                     "Do you want to overwrite it?",
+                     fileName),
                 i18n("Profile exists")) == KMessageBox::No )
       return;
   }
@@ -274,9 +274,9 @@ void MainWindow::saveProfile(QString fileName)
   if ( ! Archiver::instance->saveProfile(fileName, includes, excludes, error) )
   {
     KMessageBox::error(this,
-                i18n("Could not open profile '%1' for writing: %2")
-                     .arg(fileName)
-                     .arg(error),
+                i18n("Could not open profile '%1' for writing: %2",
+                     fileName,
+                     error),
                 i18n("Open failed"));
     return;
   }
@@ -350,10 +350,10 @@ void MainWindow::changeSystrayTip()
     return;
 
   QString text = qApp->applicationDisplayName() + " - " +
-                 i18n("Files: %1 Size: %2 MB\n%3")
-                    .arg(Archiver::instance->getTotalFiles())
-                    .arg(QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2))
-                    .arg(KStringHandler::csqueeze(lastLog, 60));
+                 i18n("Files: %1 Size: %2 MB\n%3",
+                    Archiver::instance->getTotalFiles(),
+                    QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2),
+                    KStringHandler::csqueeze(lastLog, 60));
 
   sysTray->setToolTip(QLatin1String("kbackup"), QLatin1String("kbackup"), text);
 }
