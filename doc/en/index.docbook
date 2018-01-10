@@ -65,8 +65,8 @@ text file containing definitions for folders and files to be included
 or excluded from the backup process.
 Also, it lets you define where the backup shall be saved to.
 The target can be either a local folder (&eg; a locally mounted device
-like a ZIP drive, USB stick, etc.) but it can also be any remote &URL;
-(&eg; smb://remote/some_path) to back up your data to some central server, etc.
+like a ZIP drive, USB stick, &etc;) but it can also be any remote &URL;
+(&eg; smb://remote/some_path) to back up your data to some central server, &etc;
 </para>
 
 <para>
@@ -87,7 +87,7 @@ in compressed format (bzip2 or gzip).
 
 <para>
 The current implementation features only the backup step. To restore data back into
-your system, you currently have to use &eg; &dolphin; to open the TAR backup files
+your system, you currently have to use, &eg;, &dolphin; to open the TAR backup files
 and drag/drop the files back to your file system.
 This is also an advantage of the usage of the well known and well supported TAR file
 format.
@@ -99,7 +99,7 @@ from the current folder recursively down with the following command:
 <para>
 <programlisting>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
 </para>
-<para>Alternatively you can use &ark; to extract a full backup or just a few files from a backup</para>
+<para>Alternatively you can use &ark; to extract a full backup or just a few files from a backup.</para>
 </chapter>
 
 <chapter id="using-kbackup">
@@ -135,7 +135,7 @@ also be stored.
 	    <imagedata fileref="mainwindow.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Screenshot of Main Window</phrase>
+	    <phrase>Screenshot of the Main Window</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -151,13 +151,13 @@ Use the <guimenu>File</guimenu> menu and select <guimenuitem>Save Profile</guime
 </para>
 
 <para>
-To reload a selection into &kbackup;, use the <menuchoice><guimenu>File</guimenu> <guimenuitem>Load Profile</guimenuitem></menuchoice> menu item.
+To reload a selection into &kbackup;, use the <menuchoice><guimenu>File</guimenu> <guimenuitem>Load Profile...</guimenuitem></menuchoice> menu item.
 </para>
 
 <para>
 &kbackup; saves in a profile the selections for all included folders/files,
 excluded folders/files, the target folder/&URL;, defined archive prefix,
-the defined maximum slice file size, etc.
+the defined maximum slice file size, &etc;
 </para>
 
 <para>
@@ -176,7 +176,7 @@ and pass that file on the command line.
 
 <para>
 Hint: you can also create a shortcut on your desktop to a <filename class="extension">.kbp</filename> file
-as the file type is registered to start &kbackup; on double click
+as the file type is registered to start &kbackup; on double click.
 </para>
 
 </sect1>
@@ -198,7 +198,7 @@ The name contains the creation date and time (which will be the same for all
 slices of one backup) and a trailing slice sequence number (_1 in this example).
 </para>
 <para>
-In the menu <menuchoice><guimenu>File</guimenu> <guimenuitem>Profile Settings</guimenuitem></menuchoice>, you can define a different archive prefix than the
+In the menu <menuchoice><guimenu>File</guimenu> <guimenuitem>Profile Settings...</guimenuitem></menuchoice>, you can define a different archive prefix than the
 default <quote>backup</quote>.
 </para>
 
@@ -323,7 +323,7 @@ All this is done with a visible &kbackup; user interface.
 When you run &kbackup; with this option and a given <filename class="extension">.kbp</filename> profile, it will
 run the same process as with <option>--auto</option>  but <emphasis>without</emphasis> showing any graphical user interface.
 Therefore the suffix <quote>bg</quote> which stands for <quote>background</quote> - everything is done in the background
-so this is the right option to be used when you do your backups &eg; started by a cron job.
+so this is the right option to be used when you do your backups, &eg;, started by a cron job.
 </para>
 <para>
 When using <option>--autobg</option> the output from &kbackup; - showing the progress of the backup - is written
@@ -357,7 +357,7 @@ If you pass <option>--verbose</option> in addition, then you will also see each 
 <guimenu>File</guimenu>
 <guimenuitem>Open Recent</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Shows a submenu with the recently used profiles for easy selection
+<listitem><para><action>Shows a submenu with the recently used profiles for easy selection.
 </action></para></listitem>
 </varlistentry>
 
@@ -373,9 +373,9 @@ a new profile.</action></para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
-<guimenuitem>Load Profile</guimenuitem>
+<guimenuitem>Load Profile...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Loads a profile</action></para></listitem>
+<listitem><para><action>Loads a profile.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -383,7 +383,7 @@ a new profile.</action></para></listitem>
 <guimenu>File</guimenu>
 <guimenuitem>Save Profile</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Saves all settings into the currently loaded profile</action></para></listitem>
+<listitem><para><action>Saves all settings into the currently loaded profile.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -391,13 +391,13 @@ a new profile.</action></para></listitem>
 <guimenu>File</guimenu>
 <guimenuitem>Save Profile As...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Saves all settings into a profile with a new name</action></para></listitem>
+<listitem><para><action>Saves all settings into a profile with a new name.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
-<guimenuitem>Profile Settings</guimenuitem>
+<guimenuitem>Profile Settings...</guimenuitem>
 </menuchoice></term>
 <listitem><para>In the settings, you can define whether the archive-slice files
 start with the default name <quote>backup</quote> or with an alternative name.
@@ -414,7 +414,7 @@ These settings are also stored into the profile.
 <guimenu>File</guimenu>
 <guimenuitem>Quit</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Quits</action> &kbackup;</para></listitem>
+<listitem><para><action>Quits</action> &kbackup;.</para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -451,7 +451,7 @@ the last saved file).
 </menuchoice></term>
 <listitem><para><action>
 Activating this entry clears all internally stored <guilabel>Do not ask again</guilabel> flags for
-the dialogs shown in &kbackup;
+the dialogs shown in &kbackup;.
 </action></para></listitem>
 </varlistentry>
 
@@ -496,7 +496,7 @@ specific way, or do other things with the produced archive files.
 The script to execute must be given with the <option>--script</option> command line option.
 </para>
 
-<para>Here is a sample script</para>
+<para>Here is a sample script:</para>
 
 <example><title>sliceScript.sh</title>
 <programlisting>
