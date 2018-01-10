@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 
   if ( interactive )
   {
-    delete app.take();  // must make explicitely. Only reset() leads to error
+    delete app.take();  // must make explicitly. Only reset() leads to error
     // kf5.kcoreaddons.kaboutdata: Could not initialize the equivalent properties of Q*Application: no instance (yet) existing.
     app.reset(new QApplication(argc, argv));
     QApplication *qapp = qobject_cast<QApplication *>(app.data());
