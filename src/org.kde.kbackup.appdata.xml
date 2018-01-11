@@ -15,7 +15,7 @@
   <name xml:lang="x-test">xxKBackupxx</name>
   <summary>KBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URL</summary>
   <summary xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR en una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
-  <summary xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR d'una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
+  <summary xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR en una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
   <summary xml:lang="nl">KBackup is een toepassing die u een reservekopie laat maken van elke map of elk bestand in een tar-archief naar een lokale map, bijv. een lokaal aangekoppeld apparaat zoals een ZIP-apparaat, USB-stick, etc. of een URL op afstand</summary>
   <summary xml:lang="pt">O KBackup é uma aplicação que lhe permite salvaguardar quaisquer pastas ou ficheiros num pacote TAR para uma pasta local, p.ex. um dispositivo montado localmente como um disco ZIP, disco USB, etc. ou um URL remoto</summary>
   <summary xml:lang="sv">Kbackup är ett program som låter dig säkerhetskopiera vilka kataloger eller filer till ett tar-arkiv i en lokal katalog, t.ex. en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller till en fjärrwebbadress.</summary>
@@ -47,8 +47,8 @@
     <p xml:lang="zh-CN">功能：</p>
     <ul>
       <li>Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
-      <li xml:lang="ca">Usa fitxers de perfils amb definicions de carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
-      <li xml:lang="ca-valencia">Usa fitxers de perfils amb definicions de carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
+      <li xml:lang="ca">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
+      <li xml:lang="ca-valencia">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
       <li xml:lang="nl">Met profielbestanden met definities voor mee te nemen mappen en bestanden of uitgesloten van de reservekopie</li>
       <li xml:lang="pt">Uso de ficheiros de perfis com definições das pastas e ficheiros a incluir ou excluir na cópia de segurança</li>
       <li xml:lang="sv">Använder profilfiler med definitioner av kataloger och filer som ska  inkluderas i eller exkluderas från säkerhetskopieringen</li>
@@ -56,7 +56,7 @@
       <li xml:lang="x-test">xxUsing profile files with definitions for Folders and files to be included or excluded from the backupxx</li>
       <li>The backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URL</li>
       <li xml:lang="ca">La destinació de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
-      <li xml:lang="ca-valencia">El destí de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
+      <li xml:lang="ca-valencia">La destinació de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
       <li xml:lang="nl">De doel van de reservekopie kan naar een lokaal aangekoppeld apparaat, zoals een ZIP-apparaat, USB-stick, etc. of een URL op afstand</li>
       <li xml:lang="pt">O destino da cópia de segurança poderá ser um dispositivo montado localmente, como um disco ZIP, disco USB, etc. ou qualquer URL remoto</li>
       <li xml:lang="sv">Målet för säkerhetskopieringen kan antingen vara en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller en fjärrwebbadress</li>
