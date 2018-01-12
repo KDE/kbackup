@@ -922,7 +922,7 @@ bool Archiver::getNextSlice()
   while ( (sliceCapacity < 1024) || !archive->open(QIODevice::WriteOnly) )  // disk full ?
   {
     if ( !interactive )
-      emit warning(i18n("The file '%1' can not be opened for writing.").arg(archiveName));
+      emit warning(i18n("The file '%1' can not be opened for writing.", archiveName));
 
     if ( !interactive ||
          (KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
