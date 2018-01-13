@@ -16,6 +16,7 @@
 #include <QFile>
 #include <QString>
 #include <QTimer>
+#include <QPointer>
 
 #include <KAboutData>
 #include <KLocalizedString>
@@ -89,7 +90,7 @@ int main(int argc, char **argv)
     KAboutData::setApplicationData(about);
   }
 
-  MainWindow *mainWin = 0;
+  QPointer<MainWindow> mainWin;
 
   if ( interactive )
   {
