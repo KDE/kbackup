@@ -16,56 +16,37 @@
    <string>Profile Settings</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
-    <widget class="QLabel" name="textLabel1">
+   <item row="10" column="0">
+    <widget class="QFrame" name="frame3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::HLine</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QCheckBox" name="mediaNeedsChange">
+     <property name="toolTip">
+      <string>Uncheck if you want to avoid a confirmation dialog to change the medium when a slice was finished</string>
+     </property>
      <property name="text">
-      <string>Archive Prefix:</string>
-     </property>
-     <property name="wordWrap">
-      <bool>false</bool>
+      <string>Target needs media change</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QLineEdit" name="prefix">
-     <property name="placeholderText">
-      <string>backup</string>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Exclude Paths Filter:</string>
      </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QGroupBox" name="groupBox2">
-     <property name="title">
-      <string>Maximum Archive Size:</string>
-     </property>
-     <layout class="QVBoxLayout">
-      <item>
-       <layout class="QHBoxLayout">
-        <item>
-         <widget class="QComboBox" name="predefSizes"/>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="maxSliceSize">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="specialValueText">
-           <string>unlimited</string>
-          </property>
-          <property name="suffix">
-           <string> MB</string>
-          </property>
-          <property name="minimum">
-           <number>0</number>
-          </property>
-          <property name="maximum">
-           <number>4096</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
     </widget>
    </item>
    <item row="3" column="0">
@@ -118,81 +99,56 @@
      </item>
     </layout>
    </item>
-   <item row="8" column="0">
-    <widget class="QCheckBox" name="mediaNeedsChange">
-     <property name="toolTip">
-      <string>Uncheck if you want to avoid a confirmation dialog to change the medium when a slice was finished</string>
-     </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="textLabel1">
      <property name="text">
-      <string>Target needs media change</string>
+      <string>Archive Prefix:</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
      </property>
     </widget>
-   </item>
-   <item row="9" column="0">
-    <widget class="QCheckBox" name="compressFiles">
-     <property name="toolTip">
-      <string>Uncheck if you want to avoid compressing files at all</string>
-     </property>
-     <property name="text">
-      <string>Compress Files</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="0">
-    <widget class="QFrame" name="frame3">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::HLine</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="0">
-    <layout class="QHBoxLayout">
-     <item>
-      <spacer name="spacer5">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>240</width>
-         <height>10</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="ok">
-       <property name="text">
-        <string>OK</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="cancel">
-       <property name="text">
-        <string>Cancel</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </item>
    <item row="5" column="0">
     <widget class="QLineEdit" name="filter">
      <property name="toolTip">
       <string>Defines wildcards for filenames which will be ignored for backup, separated by a space. E.g.: &quot;*.ogg *.wav&quot;</string>
      </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox2">
+     <property name="title">
+      <string>Maximum Archive Size:</string>
+     </property>
+     <layout class="QVBoxLayout">
+      <item>
+       <layout class="QHBoxLayout">
+        <item>
+         <widget class="QComboBox" name="predefSizes"/>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="maxSliceSize">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="specialValueText">
+           <string>unlimited</string>
+          </property>
+          <property name="suffix">
+           <string> MB</string>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>4096</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </item>
    <item row="4" column="0">
@@ -209,10 +165,27 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_4">
+   <item row="9" column="0">
+    <widget class="QCheckBox" name="compressFiles">
+     <property name="toolTip">
+      <string>Uncheck if you want to avoid compressing files at all</string>
+     </property>
      <property name="text">
-      <string>Exclude Paths Filter:</string>
+      <string>Compress Files</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="prefix">
+     <property name="placeholderText">
+      <string>backup</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
@@ -223,50 +196,50 @@
  <resources/>
  <connections>
   <connection>
-   <sender>ok</sender>
-   <signal>clicked()</signal>
-   <receiver>SettingsDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cancel</sender>
-   <signal>clicked()</signal>
-   <receiver>SettingsDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>predefSizes</sender>
    <signal>activated(int)</signal>
    <receiver>SettingsDialog</receiver>
    <slot>sizeSelected(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
+     <x>41</x>
+     <y>114</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
      <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SettingsDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>512</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>21</x>
+     <y>467</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SettingsDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>501</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>468</y>
     </hint>
    </hints>
   </connection>
