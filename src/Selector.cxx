@@ -1,5 +1,5 @@
 //**************************************************************************
-//   (c) 2006 - 2017 Martin Koller, kollix@aon.at
+//   (c) 2006 - 2018 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 #include <QCollator>
 #include <QHeaderView>
 #include <QMenu>
+#include <QPointer>
 #include <QDebug>
 
 #include <iostream>
@@ -637,7 +638,16 @@ void Selector::properties()
 
   QUrl sourceUrl = QUrl::fromLocalFile(getPath(item));
 
-  KPropertiesDialog::showDialog(sourceUrl, this);
+  QPointer<KPropertiesDialog> dialog = new KPropertiesDialog(sourceUrl, this);
+  connect(dialog.data(), &KPropertiesDialog::applied, this,
+          [item, dialog]()
+          {
+            // make sure a renamed file is shown with the new name in the tree
+            item->setText(0, dialog->item().name(), item->key(dialog->item().name()));
+          });
+
+  dialog->exec();
+  delete dialog;
 }
 
 //--------------------------------------------------------------------------------
