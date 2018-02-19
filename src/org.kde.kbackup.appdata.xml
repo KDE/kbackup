@@ -8,9 +8,11 @@
   <name xml:lang="ca">KBackup</name>
   <name xml:lang="ca-valencia">KBackup</name>
   <name xml:lang="de">KBackup</name>
+  <name xml:lang="en-GB">KBackup</name>
   <name xml:lang="es">KBackup</name>
   <name xml:lang="fr">KBackup</name>
   <name xml:lang="gl">KBackup</name>
+  <name xml:lang="ia">KBackup</name>
   <name xml:lang="it">KBackup</name>
   <name xml:lang="nl">KBackup</name>
   <name xml:lang="pt">KBackup</name>
@@ -21,6 +23,7 @@
   <summary>KBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URL</summary>
   <summary xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR en una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
   <summary xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR en una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
+  <summary xml:lang="en-GB">KBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URL</summary>
   <summary xml:lang="es">KBackup es una aplicación que le permite hacer copias de seguridad de cualquier carpeta o archivo en un archivo comprimido tar en una carpeta local, por ejemplo, en cualquier dispositivo montado localmente como una memoria USB, una unidad ZIP, etc; o un URL remoto</summary>
   <summary xml:lang="fr">KBackup est une application qui vous permet de sauvegarder des dossiers ou des fichiers au sein d'une archive tar dans un dossier local, par exemple un périphérique comme une clé USB, un lecteur ZIP ou une URL distante</summary>
   <summary xml:lang="gl">KBackup é un aplicativo que lle permite facer unha copia de seguranza de calquera cartafol ou ficheiro nun arquivo tar e gardala nun cartafol local, como por exemplo un dispositivo ZIP ou unha memoria USB, ou nun URL remoto.</summary>
@@ -37,6 +40,7 @@
     <p xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i amigable</p>
     <p xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i amigable</p>
     <p xml:lang="de">KBackup ist ein Programm welches Datensicherung in einer benutzerfreundlichen Weise ermöglicht</p>
+    <p xml:lang="en-GB">KBackup is an application which lets you back up your data in a simple, user friendly way</p>
     <p xml:lang="es">KBackup es una aplicación que le permite hacer copias de seguridad de sus datos de una manera sencilla y fácil de usar</p>
     <p xml:lang="fr">KBackup est une application qui vous permet de sauvegarder vos données de manière simple et intuitive</p>
     <p xml:lang="gl">KBackup é un aplicativo que lle permite facer unha copia de seguranza dos seus datos dunha maneira sinxela e fácil.</p>
@@ -50,9 +54,11 @@
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="de">Funktionen:</p>
+    <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Características:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
+    <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="it">Caratteristiche:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pt">Funcionalidades:</p>
@@ -65,6 +71,7 @@
       <li>Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
       <li xml:lang="ca">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
       <li xml:lang="ca-valencia">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
+      <li xml:lang="en-GB">Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
       <li xml:lang="es">Use perfiles con definiciones para las carpetas y archivos a ser incluidos o excluidos de la copia de seguridad</li>
       <li xml:lang="fr">Utilisation de fichiers de profils contenant les définitions des fichiers et dossiers à inclure ou à exclure de la sauvegarde</li>
       <li xml:lang="gl">Uso de ficheiros de perfil que definen cartafoles e ficheiros que incluír ou excluír da copia de seguranza.</li>
@@ -77,6 +84,7 @@
       <li>The backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URL</li>
       <li xml:lang="ca">La destinació de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
       <li xml:lang="ca-valencia">La destinació de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
+      <li xml:lang="en-GB">The backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URL</li>
       <li xml:lang="es">El objetivo de la copia de seguridad puede ser un dispositivo montado localmente como una memoria USB, una unidad ZIP, etc; o cualquier URL remota</li>
       <li xml:lang="fr">La destination de l'archive peut être n'importe quel dossier monté en local : lecteur ZIP, clé USB ou URL distante</li>
       <li xml:lang="gl">O destino da copia de seguranza pode ser ou un dispositivo montado de maneira local, como un dispositivo ZIP ou unha memoria USB, ou un URL remoto.</li>
@@ -89,6 +97,7 @@
       <li>Running automated backups without using a graphical user interface</li>
       <li xml:lang="ca">Executa còpies de seguretat automatitzades sense usar cap interfície gràfica d'usuari</li>
       <li xml:lang="ca-valencia">Executa còpies de seguretat automatitzades sense usar cap interfície gràfica d'usuari</li>
+      <li xml:lang="en-GB">Running automated backups without using a graphical user interface</li>
       <li xml:lang="es">Ejecución automática de copias de seguridad sin usar una interfaz gráfica de usuario</li>
       <li xml:lang="fr">Lancement de sauvegardes automatisées sans passer par l'interface graphique utilisateur</li>
       <li xml:lang="gl">Execución de copias de seguranza automatizadas sen usar unha interface gráfica de usuario.</li>
