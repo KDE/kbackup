@@ -37,7 +37,7 @@ class Archiver : public QObject
   Q_OBJECT
 
   public:
-    Archiver(QWidget *parent);
+    explicit Archiver(QWidget *parent);
 
     static Archiver *instance;
 

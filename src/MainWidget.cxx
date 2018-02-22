@@ -20,6 +20,7 @@
 #include <QProgressBar>
 #include <QFileDialog>
 
+//krazy:excludeall=normalize
 //--------------------------------------------------------------------------------
 
 MainWidget::MainWidget(QWidget *parent)

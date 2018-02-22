@@ -22,7 +22,7 @@ class MainWidget : public QWidget
   Q_OBJECT
 
   public:
-    MainWidget(QWidget *parent);
+    explicit MainWidget(QWidget *parent);
 
     void setSelector(Selector * s);
     KLineEdit *getTargetLineEdit() { return ui.targetDir; }
