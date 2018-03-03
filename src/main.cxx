@@ -45,7 +45,7 @@ int main(int argc, char **argv)
   KLocalizedString::setApplicationDomain("kbackup");
 
   KAboutData about("kbackup", i18n("KBackup"),
-                   "1.0.1", i18n("An easy to use backup program"), KAboutLicense::GPL_V2,
+                   KBACKUP_VERSION, i18n("An easy to use backup program"), KAboutLicense::GPL_V2,
                    i18n("(c) 2006 - 2018 Martin Koller"),  // copyright
                    QString(),  // added text
                    "https://www.linux-apps.com/content/show.php?content=44998");  // homepage
