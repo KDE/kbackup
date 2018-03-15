@@ -20,6 +20,7 @@
   <name xml:lang="sv">Kbackup</name>
   <name xml:lang="uk">KBackup</name>
   <name xml:lang="x-test">xxKBackupxx</name>
+  <name xml:lang="zh-CN">KBackup</name>
   <summary>KBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URL</summary>
   <summary xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR en una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
   <summary xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR en una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
