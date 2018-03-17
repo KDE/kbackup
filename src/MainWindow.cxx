@@ -26,6 +26,7 @@
 #include <QApplication>
 #include <QFileDialog>
 #include <QDebug>
+#include <QHeaderView>
 
 #include <KXMLGUIFactory>
 #include <kstandardaction.h>
