@@ -28,7 +28,6 @@
 #include <QHeaderView>
 #include <QMenu>
 #include <QPointer>
-#include <QDebug>
 
 #include <iostream>
 using namespace std;
@@ -513,7 +512,7 @@ QStandardItem *Selector::findItemByPath(const QString &path)
     item = findItem(item, items[i]);
 
     if ( !item )
-      return 0;
+      return nullptr;
     else
     {
       if ( (i != (items.count() - 1)) &&
@@ -537,7 +536,7 @@ QStandardItem *Selector::findItem(QStandardItem *start, const QString &toFind) c
       return item;
   }
 
-  return 0;
+  return nullptr;
 }
 
 //--------------------------------------------------------------------------------
@@ -546,12 +545,12 @@ ListItem *Selector::getSelectedItem() const
 {
   QModelIndex index = selectionModel()->currentIndex();
   if ( !index.isValid() )
-    return 0;
+    return nullptr;
 
   QStandardItem *item = itemModel->itemFromIndex(itemModel->index(index.row(), 0, index.parent()));
 
   if ( !item || (item->type() != QStandardItem::UserType) )  // just be safe
-    return 0;
+    return nullptr;
 
   return static_cast<ListItem *>(item);
 }
@@ -596,7 +595,7 @@ void Selector::deleteFile()
           KStandardGuiItem::yes(), KStandardGuiItem::no(),
           "dontAskAgainDelete") == KMessageBox::Yes )
   {
-    QStandardItem *parent = 0;
+    QStandardItem *parent = nullptr;
 
     if ( item->isDir() )
     {

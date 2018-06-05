@@ -24,7 +24,7 @@
 //--------------------------------------------------------------------------------
 
 MainWidget::MainWidget(QWidget *parent)
-  : QWidget(parent), selector(0)
+  : QWidget(parent), selector(nullptr)
 {
   ui.setupUi(this);
 

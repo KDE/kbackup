@@ -59,9 +59,9 @@ const KIO::filesize_t MAX_SLICE = INT64_MAX; // 64bit max value
 
 Archiver::Archiver(QWidget *parent)
   : QObject(parent),
-    archive(0), totalBytes(0), totalFiles(0), filteredFiles(0), sliceNum(0), mediaNeedsChange(false),
+    archive(nullptr), totalBytes(0), totalFiles(0), filteredFiles(0), sliceNum(0), mediaNeedsChange(false),
     fullBackupInterval(1), incrementalBackup(false), forceFullBackup(false),
-    sliceCapacity(MAX_SLICE), interactive(parent != 0),
+    sliceCapacity(MAX_SLICE), interactive(parent != nullptr),
     cancelled(false), runs(false), skippedFiles(false), verbose(false), jobResult(0)
 {
   instance = this;
@@ -688,7 +688,7 @@ void Archiver::cancel()
   if ( job )
   {
     job->kill();
-    job = 0;
+    job = nullptr;
   }
   if ( !cancelled )
   {
@@ -698,7 +698,7 @@ void Archiver::cancel()
     {
       archive->close();  // else I can not remove the file - don't know why
       delete archive;
-      archive = 0;
+      archive = nullptr;
     }
 
     QFile(archiveName).remove(); // remove the unfinished tar file (which is now corrupted)
@@ -789,7 +789,7 @@ void Archiver::finishSlice()
     QFile(archiveName).remove(); // remove the tmp file
 
   delete archive;
-  archive = 0;
+  archive = nullptr;
 }
 
 //--------------------------------------------------------------------------------
@@ -930,7 +930,7 @@ bool Archiver::getNextSlice()
                 "Do you want to retry?", archiveName)) == KMessageBox::No) )
     {
       delete archive;
-      archive = 0;
+      archive = nullptr;
 
       cancel();
       return false;

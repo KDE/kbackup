@@ -25,7 +25,7 @@ class MainWidget : public QWidget
     explicit MainWidget(QWidget *parent);
 
     void setSelector(Selector * s);
-    KLineEdit *getTargetLineEdit() { return ui.targetDir; }
+    KLineEdit *getTargetLineEdit() const { return ui.targetDir; }
 
   public slots:
     void setTargetURL(const QString &url);

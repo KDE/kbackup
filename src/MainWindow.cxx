@@ -25,7 +25,6 @@
 #include <QUrl>
 #include <QApplication>
 #include <QFileDialog>
-#include <QDebug>
 #include <QHeaderView>
 
 #include <KXMLGUIFactory>
@@ -46,7 +45,7 @@
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
-  : sysTray(0), autorun(false)
+  : sysTray(nullptr), autorun(false)
 {
   new Archiver(this);
 

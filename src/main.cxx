@@ -105,7 +105,7 @@ int main(int argc, char **argv)
     mainWin->show();
   }
   else
-    new Archiver(0);
+    new Archiver(nullptr);
 
   signal(SIGTERM, sigHandler);
   signal(SIGINT, sigHandler);
