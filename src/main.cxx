@@ -13,7 +13,6 @@
 #include <QScopedPointer>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
-#include <QFile>
 #include <QString>
 #include <QTimer>
 #include <QPointer>

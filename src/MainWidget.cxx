@@ -14,10 +14,7 @@
 #include <kiconloader.h>
 #include <kurlcompletion.h>
 
-#include <QTextEdit>
-#include <QLabel>
 #include <QPushButton>
-#include <QProgressBar>
 #include <QFileDialog>
 
 //krazy:excludeall=normalize
