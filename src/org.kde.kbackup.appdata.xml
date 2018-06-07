@@ -16,6 +16,7 @@
   <name xml:lang="ia">KBackup</name>
   <name xml:lang="it">KBackup</name>
   <name xml:lang="nl">KBackup</name>
+  <name xml:lang="nn">KBackup</name>
   <name xml:lang="pl">KBackup</name>
   <name xml:lang="pt">KBackup</name>
   <name xml:lang="sk">KBackup</name>
@@ -68,6 +69,7 @@
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="it">Caratteristiche:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
+    <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="sk">Funkcie:</p>
@@ -116,6 +118,7 @@
       <li xml:lang="gl">Execución de copias de seguranza automatizadas sen usar unha interface gráfica de usuario.</li>
       <li xml:lang="it">Esecuzione automatica del backup senza l'utilizzo dell'interfaccia grafica</li>
       <li xml:lang="nl">Geautomatiseerde reservekopieën zonder een grafisch gebruikersinterface</li>
+      <li xml:lang="nn">Køyra automatiserte reservekopiar utan bruk av grafisk brukargrensesnitt</li>
       <li xml:lang="pl">Wykonywanie zautomatyzowanych kopii zapasowych bez używania graficznego interfejsu użytkownika</li>
       <li xml:lang="pt">Execução de cópias de segurança automatizadas sem usar uma interface gráfica</li>
       <li xml:lang="sv">Kör automatiserade säkerhetskopieringar utan att använda ett grafiskt användargränssnitt</li>
