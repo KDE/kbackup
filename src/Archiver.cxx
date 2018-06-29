@@ -553,7 +553,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
 
     if ( jobResult == 0 )
     {
-      qSort(targetDirList.begin(), targetDirList.end(), Archiver::UDSlessThan);
+      std::sort(targetDirList.begin(), targetDirList.end(), Archiver::UDSlessThan);
       QString prefix = filePrefix.isEmpty() ? QString::fromLatin1("backup_") : (filePrefix + QLatin1String("_"));
 
       QString sliceName;
@@ -649,7 +649,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
                                  i18n("The backup has finished successfully.\n"
                                       "What do you want to do now?"),
                                sliceList,
-                               QString::null,
+                               QString(),
                                KStandardGuiItem::cont(), KStandardGuiItem::quit(),
                                QLatin1String("showDoneInfo"));
 
