@@ -84,16 +84,16 @@ void Archiver::setCompressFiles(bool b)
 {
   if ( b )
   {
-    ext = ".bz2";
+    ext = QStringLiteral(".bz2");
     KFilterBase *base = KCompressionDevice::filterForCompressionType(KCompressionDevice::BZip2);
     if ( !base )
-      ext = ".gz";
+      ext = QStringLiteral(".gz");
 
     delete base;
   }
   else
   {
-    ext = "";
+    ext = QString();
   }
 }
 
@@ -125,7 +125,7 @@ void Archiver::setKeptBackups(int num)
 void Archiver::setFilter(const QString &filter)
 {
   filters.clear();
-  QStringList list = filter.split(' ', QString::SkipEmptyParts);
+  QStringList list = filter.split(QLatin1Char(' '), QString::SkipEmptyParts);
   foreach (const QString &str, list)
     filters.append(QRegExp(str, Qt::CaseSensitive, QRegExp::Wildcard));
 }
@@ -138,7 +138,7 @@ QString Archiver::getFilter() const
   foreach (const QRegExp &reg, filters)
   {
     filter += reg.pattern();
-    filter += ' ';
+    filter += QLatin1Char(' ');
   }
   return filter;
 }
@@ -148,7 +148,7 @@ QString Archiver::getFilter() const
 void Archiver::setDirFilter(const QString &filter)
 {
   dirFilters.clear();
-  QStringList list = filter.split('\n', QString::SkipEmptyParts);
+  QStringList list = filter.split(QLatin1Char('\n'), QString::SkipEmptyParts);
   foreach (const QString &str, list)
   {
     QString expr = str.trimmed();
@@ -165,7 +165,7 @@ QString Archiver::getDirFilter() const
   foreach (const QRegExp &reg, dirFilters)
   {
     filter += reg.pattern();
-    filter += '\n';
+    filter += QLatin1Char('\n');
   }
   return filter;
 }
@@ -269,7 +269,7 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
   QTextStream stream(&file);
 
   // back to default (in case old profile read which does not include these)
-  setFilePrefix("");
+  setFilePrefix(QString());
   setMaxSliceMBs(Archiver::UNLIMITED);
   setFullBackupInterval(1);  // default as in previous versions
   filters.clear();
@@ -281,70 +281,70 @@ bool Archiver::loadProfile(const QString &fileName, QStringList &includes, QStri
     stream >> type;            // read a QChar without skipping whitespace
     stream >> blank;           // read a QChar without skipping whitespace
 
-    if ( type == 'M' )
+    if ( type == QLatin1Char('M') )
     {
       target = stream.readLine();  // include white space
     }
-    else if ( type == 'P' )
+    else if ( type == QLatin1Char('P') )
     {
       QString prefix = stream.readLine();  // include white space
       setFilePrefix(prefix);
     }
-    else if ( type == 'R' )
+    else if ( type == QLatin1Char('R') )
     {
       int max;
       stream >> max;
       setKeptBackups(max);
     }
-    else if ( type == 'F' )
+    else if ( type == QLatin1Char('F') )
     {
       int days;
       stream >> days;
       setFullBackupInterval(days);
     }
-    else if ( type == 'B' )  // last dateTime for backup
+    else if ( type == QLatin1Char('B') )  // last dateTime for backup
     {
       QString dateTime;
       stream >> dateTime;
       lastBackup = QDateTime::fromString(dateTime, Qt::ISODate);
     }
-    else if ( type == 'L' )  // last dateTime for full backup
+    else if ( type == QLatin1Char('L') )  // last dateTime for full backup
     {
       QString dateTime;
       stream >> dateTime;
       lastFullBackup = QDateTime::fromString(dateTime, Qt::ISODate);
     }
-    else if ( type == 'S' )
+    else if ( type == QLatin1Char('S') )
     {
       int max;
       stream >> max;
       setMaxSliceMBs(max);
     }
-    else if ( type == 'C' )
+    else if ( type == QLatin1Char('C') )
     {
       int change;
       stream >> change;
       setMediaNeedsChange(change);
     }
-    else if ( type == 'X' )
+    else if ( type == QLatin1Char('X') )
     {
       setFilter(stream.readLine());  // include white space
     }
-    else if ( type == 'x' )
+    else if ( type == QLatin1Char('x') )
     {
       dirFilters.append(QRegExp(stream.readLine(), Qt::CaseSensitive, QRegExp::Wildcard));
     }
-    else if ( type == 'Z' )
+    else if ( type == QLatin1Char('Z') )
     {
       int compress;
       stream >> compress;
       setCompressFiles(compress);
     }
-    else if ( type == 'I' )
+    else if ( type == QLatin1Char('I') )
     {
       includes.append(stream.readLine());
     }
-    else if ( type == 'E' )
+    else if ( type == QLatin1Char('E') )
     {
       excludes.append(stream.readLine());
     }
@@ -412,7 +412,7 @@ bool Archiver::saveProfile(const QString &fileName, const QStringList &includes,
 
 bool Archiver::createArchive(const QStringList &includes, const QStringList &excludes)
 {
-  if ( includes.count() == 0 )
+  if ( includes.isEmpty() )
   {
     emit warning(i18n("Nothing selected for backup"));
     return false;
@@ -443,10 +443,10 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
               i18n("The target directory '%1' does not exist.\n\n"
                    "Shall I create it?", dir.absolutePath())) == KMessageBox::Yes) )
       {
-        if ( !dir.mkpath(".") )
+        if ( !dir.mkpath(QStringLiteral(".")) )
         {
           emit warning(i18n("Could not create the target directory '%1'.\n"
-                            "The operating system reports: %2", dir.absolutePath(), strerror(errno)));
+                            "The operating system reports: %2", dir.absolutePath(), QString::fromLatin1(strerror(errno))));
           return false;
         }
       }
@@ -472,7 +472,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       excludeFiles.insert(name);
   }
 
-  baseName = "";
+  baseName = QString();
   sliceNum = 0;
   totalBytes = 0;
   totalFiles = 0;
@@ -554,7 +554,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     if ( jobResult == 0 )
     {
       qSort(targetDirList.begin(), targetDirList.end(), Archiver::UDSlessThan);
-      QString prefix = filePrefix.isEmpty() ? QString::fromLatin1("backup_") : (filePrefix + "_");
+      QString prefix = filePrefix.isEmpty() ? QString::fromLatin1("backup_") : (filePrefix + QLatin1String("_"));
 
       QString sliceName;
       int num = 0;
@@ -564,14 +564,14 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
         QString entryName = entry.stringValue(KIO::UDSEntry::UDS_NAME);
 
         if ( entryName.startsWith(prefix) &&  // only matching current profile
-             entryName.endsWith(".tar") )     // just to be sure
+             entryName.endsWith(QLatin1String(".tar")) )     // just to be sure
         {
           if ( (num < numKeptBackups) &&
                (sliceName.isEmpty() ||
                 !entryName.startsWith(sliceName)) )     // whenever a new backup set (different time) is found
           {
             sliceName = entryName.left(prefix.length() + strlen("yyyy.MM.dd-hh.mm.ss_"));
-            if ( !entryName.endsWith("_inc.tar") )  // do not count partial (differential) backup files
+            if ( !entryName.endsWith(QLatin1String("_inc.tar")) )  // do not count partial (differential) backup files
               num++;
             if ( num == numKeptBackups ) num++;  // from here on delete all others
           }
@@ -581,7 +581,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
           {
             QUrl url = targetURL;
             url = url.adjusted(QUrl::StripTrailingSlash);
-            url.setPath(url.path() + '/' + entryName);
+            url.setPath(url.path() + QLatin1Char('/') + entryName);
             emit logging(i18n("...deleting %1", entryName));
 
             // delete the file using KIO
@@ -651,7 +651,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
                                sliceList,
                                QString::null,
                                KStandardGuiItem::cont(), KStandardGuiItem::quit(),
-                               "showDoneInfo");
+                               QLatin1String("showDoneInfo"));
 
       if ( ret == KMessageBox::No ) // quit
         qApp->quit();
@@ -666,7 +666,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       std::cerr << i18n("Totals: Files: %1, Size: %2, Duration: %3",
                    totalFiles,
                    KIO::convertSize(totalBytes),
-                   QTime(0, 0).addMSecs(elapsed.elapsed()).toString("HH:mm:ss"))
+                   QTime(0, 0).addMSecs(elapsed.elapsed()).toString(QStringLiteral("HH:mm:ss")))
                    .toUtf8().constData() << std::endl;
     }
 
@@ -715,7 +715,7 @@ void Archiver::finishSlice()
 
   if ( ! cancelled )
   {
-    runScript("slice_closed");
+    runScript(QStringLiteral("slice_closed"));
 
     if ( targetURL.isLocalFile() )
     {
@@ -742,7 +742,7 @@ void Archiver::finishSlice()
         if ( jobResult == 0 )
         {
           target = target.adjusted(QUrl::StripTrailingSlash);
-          target.setPath(target.path() + '/' + source.fileName());
+          target.setPath(target.path() + QLatin1Char('/') + source.fileName());
           sliceList << target.toLocalFile();  // store name for display at the end
           break;
         }
@@ -783,7 +783,7 @@ void Archiver::finishSlice()
   }
 
   if ( ! cancelled )
-    runScript("slice_finished");
+    runScript(QStringLiteral("slice_finished"));
 
   if ( !targetURL.isLocalFile() )
     QFile(archiveName).remove(); // remove the tmp file
@@ -864,8 +864,8 @@ void Archiver::receivedOutput()
 
   QByteArray buffer = proc->readAllStandardOutput();
 
-  QString msg(buffer);
-  if ( msg.endsWith("\n") )
+  QString msg = QString::fromUtf8(buffer);
+  if ( msg.endsWith(QLatin1String("\n")) )
     msg.truncate(msg.length() - 1);
 
   emit warning(msg);
@@ -901,23 +901,23 @@ bool Archiver::getNextSlice()
     QString prefix = filePrefix.isEmpty() ? QString::fromLatin1("backup") : filePrefix;
 
     if ( targetURL.isLocalFile() )
-      baseName = targetURL.path() + "/" + prefix + QDateTime::currentDateTime().toString("_yyyy.MM.dd-hh.mm.ss");
+      baseName = targetURL.path() + QStringLiteral("/") + prefix + QDateTime::currentDateTime().toString(QStringLiteral("_yyyy.MM.dd-hh.mm.ss"));
     else
-      baseName = QDir::tempPath() + QLatin1Char('/') + prefix + QDateTime::currentDateTime().toString("_yyyy.MM.dd-hh.mm.ss");
+      baseName = QDir::tempPath() + QLatin1Char('/') + prefix + QDateTime::currentDateTime().toString(QStringLiteral("_yyyy.MM.dd-hh.mm.ss"));
   }
 
-  archiveName = baseName + QString("_%1").arg(sliceNum);
+  archiveName = baseName + QStringLiteral("_%1").arg(sliceNum);
   if ( isIncrementalBackup() )
-    archiveName += "_inc.tar";  // mark the file as being not a full backup
+    archiveName += QStringLiteral("_inc.tar");  // mark the file as being not a full backup
   else
-    archiveName += ".tar";
+    archiveName += QStringLiteral(".tar");
 
-  runScript("slice_init");
+  runScript(QStringLiteral("slice_init"));
 
   calculateCapacity();
 
   // don't create a bz2 compressed file as we compress each file on its own
-  archive = new KTar(archiveName, "application/x-tar");
+  archive = new KTar(archiveName, QStringLiteral("application/x-tar"));
 
   while ( (sliceCapacity < 1024) || !archive->open(QIODevice::WriteOnly) )  // disk full ?
   {
@@ -989,7 +989,7 @@ void Archiver::addDirFiles(QDir &dir)
     emit warning(i18n("Could not get information of directory: %1\n"
                       "The operating system reports: %2",
                  absolutePath,
-                 strerror(errno)));
+                 QString::fromLatin1(strerror(errno))));
     return;
   }
   QFileInfo dirInfo(absolutePath);
@@ -1009,7 +1009,7 @@ void Archiver::addDirFiles(QDir &dir)
   qApp->processEvents(QEventLoop::AllEvents, 5);
   if ( cancelled ) return;
 
-  if ( ! archive->writeDir(QString(".") + absolutePath, dirInfo.owner(), dirInfo.group(),
+  if ( ! archive->writeDir(QStringLiteral(".") + absolutePath, dirInfo.owner(), dirInfo.group(),
                            status.st_mode, dirInfo.lastRead(), dirInfo.lastModified(), dirInfo.created()) )
   {
     emit warning(i18n("Could not write directory '%1' to archive.\n"
@@ -1081,14 +1081,14 @@ void Archiver::addFile(const QFileInfo &info)
 
   // show filename + size
   if ( interactive || verbose )
-    emit logging(info.absoluteFilePath() + QString(" (%1)").arg(KIO::convertSize(info.size())));
+    emit logging(info.absoluteFilePath() + QStringLiteral(" (%1)").arg(KIO::convertSize(info.size())));
 
   qApp->processEvents(QEventLoop::AllEvents, 5);
   if ( cancelled ) return;
 
   if ( info.isSymLink() )
   {
-    archive->addLocalFile(info.absoluteFilePath(), QString(".") + info.absoluteFilePath());
+    archive->addLocalFile(info.absoluteFilePath(), QStringLiteral(".") + info.absoluteFilePath());
     totalFiles++;
     emit totalFilesChanged(totalFiles);
     return;
@@ -1136,13 +1136,13 @@ void Archiver::addFile(const QFileInfo &info)
         emit warning(i18n("Could not get information of file: %1\n"
                           "The operating system reports: %2",
                      info.absoluteFilePath(),
-                     strerror(errno)));
+                     QString::fromLatin1(strerror(errno))));
 
         skippedFiles = true;
         return;
       }
 
-      if ( ! archive->prepareWriting(QString(".") + info.absoluteFilePath() + ext,
+      if ( ! archive->prepareWriting(QStringLiteral(".") + info.absoluteFilePath() + ext,
                                      info.owner(), info.group(), tmpFile.size(),
                                      status.st_mode, info.lastRead(), info.lastModified(), info.created()) )
       {
@@ -1217,7 +1217,7 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
     emit warning(i18n("Could not get information of file: %1\n"
                       "The operating system reports: %2",
                  info.absoluteFilePath(),
-                 strerror(errno)));
+                 QString::fromLatin1(strerror(errno))));
 
     return Skipped;
   }
@@ -1235,7 +1235,7 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
   if ( (sliceBytes + info.size()) > sliceCapacity )
     if ( ! getNextSlice() ) return Error;
 
-  if ( ! archive->prepareWriting(QString(".") + info.absoluteFilePath(),
+  if ( ! archive->prepareWriting(QStringLiteral(".") + info.absoluteFilePath(),
                                  info.owner(), info.group(), info.size(),
                                  sourceStat.st_mode, info.lastRead(), info.lastModified(), info.created()) )
   {
@@ -1340,7 +1340,7 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
   else
   {
     KCompressionDevice::CompressionType type =
-        KFilterDev::compressionTypeForMimeType(ext == ".bz2" ? "application/x-bzip2" : "application/x-gzip");
+        KFilterDev::compressionTypeForMimeType(ext == QStringLiteral(".bz2") ? QStringLiteral("application/x-bzip2") : QStringLiteral("application/x-gzip"));
 
     KCompressionDevice filter(&comprFile, false, type);
 

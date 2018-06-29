@@ -177,7 +177,7 @@ class ListItem : public QStandardItem
 
     int key(const QString &text) const
     {
-      bool hidden = text[0] == QChar('.');
+      bool hidden = text[0] == QLatin1Char('.');
 
       // sort directories _always_ first, and hidden before shown
       if ( isDir_ )
@@ -251,14 +251,14 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   setRootIsDecorated(true);
 
   // start with / as root node
-  ListItem *item = new ListItem(itemModel->invisibleRootItem(), "/", true);
-  QFileInfo info("/");
+  ListItem *item = new ListItem(itemModel->invisibleRootItem(), QStringLiteral("/"), true);
+  QFileInfo info(QStringLiteral("/"));
   item->setSize(info.size());
   item->setLastModified(info.lastModified());
-  item->setIcon(SmallIcon("folder"));
+  item->setIcon(SmallIcon(QStringLiteral("folder")));
   setExpanded(item->index(), true);
 
-  fillTree(item, "/", false);
+  fillTree(item, QStringLiteral("/"), false);
 
   connect(this, &Selector::expanded, this, &Selector::expandedSlot);
 
@@ -297,13 +297,13 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
 
   // just since KF 5.25
   //deleteFileAction = KStandardAction::deleteFile(this, SLOT(deleteFile()), actionCollection);
-  deleteFileAction = actionCollection->addAction("deleteFile", this, SLOT(deleteFile()));
+  deleteFileAction = actionCollection->addAction(QStringLiteral("deleteFile"), this, SLOT(deleteFile()));
   deleteFileAction->setText(i18n("Delete File"));
-  deleteFileAction->setIcon(QIcon::fromTheme("edit-delete"));
+  deleteFileAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
   deleteFileAction->setShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Delete));
   menu->addAction(deleteFileAction);
 
-  action = actionCollection->addAction("properties", this, SLOT(properties()));
+  action = actionCollection->addAction(QStringLiteral("properties"), this, SLOT(properties()));
   action->setText(i18n("Properties..."));
   menu->addAction(action);
 }
@@ -359,11 +359,11 @@ void Selector::fillTree(ListItem *parent, const QString &path, bool on)
       {
         KIconEffect effect;
 
-        folderIcon = SmallIcon("folder");
+        folderIcon = SmallIcon(QStringLiteral("folder"));
         folderIconHidden = effect.apply(folderIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
-        folderLinkIcon = SmallIcon("folder", 0, KIconLoader::DefaultState,
-                                   QStringList("emblem-symbolic-link"));
+        folderLinkIcon = SmallIcon(QStringLiteral("folder"), 0, KIconLoader::DefaultState,
+                                   QStringList(QStringLiteral("emblem-symbolic-link")));
 
         folderLinkIconHidden = effect.apply(folderLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
@@ -383,11 +383,11 @@ void Selector::fillTree(ListItem *parent, const QString &path, bool on)
       {
         KIconEffect effect;
 
-        documentIcon = SmallIcon("text-x-generic");
+        documentIcon = SmallIcon(QStringLiteral("text-x-generic"));
         documentIconHidden = effect.apply(documentIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
-        documentLinkIcon = SmallIcon("text-x-generic", 0, KIconLoader::DefaultState,
-                                     QStringList("emblem-symbolic-link"));
+        documentLinkIcon = SmallIcon(QStringLiteral("text-x-generic"), 0, KIconLoader::DefaultState,
+                                     QStringList(QStringLiteral("emblem-symbolic-link")));
 
         documentLinkIconHidden = effect.apply(documentLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
@@ -409,9 +409,9 @@ QString Selector::getPath(QStandardItem *item) const
   else if ( !item->parent() )
     return item->text();  // root
   else if ( item->parent() == itemModel->item(0) )
-    return "/" + item->text();
+    return QStringLiteral("/") + item->text();
   else
-    return getPath(item->parent()) + "/" + item->text();
+    return getPath(item->parent()) + QStringLiteral("/") + item->text();
 }
 
 //--------------------------------------------------------------------------------
@@ -504,7 +504,7 @@ void Selector::setBackupList(const QStringList &includes, const QStringList &exc
 
 QStandardItem *Selector::findItemByPath(const QString &path)
 {
-  QStringList items = path.split('/', QString::SkipEmptyParts);
+  QStringList items = path.split(QLatin1Char('/'), QString::SkipEmptyParts);
   QStandardItem *item = itemModel->invisibleRootItem()->child(0);
 
   for (int i = 0; i < items.count(); i++)
@@ -593,7 +593,7 @@ void Selector::deleteFile()
           i18n("Do you really want to delete '%1'?", sourceUrl.path()),
           i18n("Delete"),
           KStandardGuiItem::yes(), KStandardGuiItem::no(),
-          "dontAskAgainDelete") == KMessageBox::Yes )
+          QStringLiteral("dontAskAgainDelete")) == KMessageBox::Yes )
   {
     QStandardItem *parent = nullptr;
 
@@ -670,7 +670,7 @@ void Selector::populateOpenMenu()
 
   foreach (const KService::Ptr &service, services)
   {
-    QString text = service->name().replace('&', "&&");
+    QString text = service->name().replace(QLatin1Char('&'), QStringLiteral("&&"));
     QAction* action = openWithSubMenu->addAction(text);
     action->setIcon(QIcon::fromTheme(service->icon()));
     action->setData(service->name());
@@ -682,8 +682,8 @@ void Selector::populateOpenMenu()
   openWithSubMenu->addAction(i18n("Other Application..."));
 
   QAction* action = openWithSubMenu->addAction(i18n("File Manager"));
-  action->setIcon(QIcon::fromTheme("folder"));
-  action->setData("-");
+  action->setIcon(QIcon::fromTheme(QStringLiteral("folder")));
+  action->setData(QStringLiteral("-"));
 }
 
 //--------------------------------------------------------------------------------
@@ -732,12 +732,12 @@ void Selector::openWith(QAction *action)
     return;
   }
 
-  if ( name == "-" )  // File Manager
+  if ( name == QLatin1String("-") )  // File Manager
   {
 #if (KIO_VERSION >= QT_VERSION_CHECK(5, 31, 0))
-    KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), "inode/directory", this, KRun::RunFlags());
+    KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"), this, KRun::RunFlags());
 #else
-    KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), "inode/directory", this);
+    KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"), this);
 #endif
 
     return;

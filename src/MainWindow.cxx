@@ -54,38 +54,38 @@ MainWindow::MainWindow()
 
   QAction *action;
 
-  action = actionCollection()->addAction("newProfile", this, SLOT(newProfile()));
+  action = actionCollection()->addAction(QStringLiteral("newProfile"), this, SLOT(newProfile()));
   action->setText(i18n("New Profile"));
-  action->setIcon(QIcon::fromTheme("document-new"));
+  action->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
 
-  action = actionCollection()->addAction("loadProfile", this, SLOT(loadProfile()));
+  action = actionCollection()->addAction(QStringLiteral("loadProfile"), this, SLOT(loadProfile()));
   action->setText(i18n("Load Profile..."));
-  action->setIcon(QIcon::fromTheme("document-open"));
+  action->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
 
-  action = actionCollection()->addAction("saveProfile", this, SLOT(saveProfile()));
+  action = actionCollection()->addAction(QStringLiteral("saveProfile"), this, SLOT(saveProfile()));
   action->setText(i18n("Save Profile"));
-  action->setIcon(QIcon::fromTheme("document-save"));
+  action->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
 
-  action = actionCollection()->addAction("saveProfileAs", this, SLOT(saveProfileAs()));
+  action = actionCollection()->addAction(QStringLiteral("saveProfileAs"), this, SLOT(saveProfileAs()));
   action->setText(i18n("Save Profile As..."));
-  action->setIcon(QIcon::fromTheme("document-save-as"));
+  action->setIcon(QIcon::fromTheme(QStringLiteral("document-save-as")));
 
-  action = actionCollection()->addAction("profileSettings", this, SLOT(profileSettings()));
+  action = actionCollection()->addAction(QStringLiteral("profileSettings"), this, SLOT(profileSettings()));
   action->setText(i18n("Profile Settings..."));
 
-  action = actionCollection()->addAction("enableAllMessages", this, SLOT(enableAllMessages()));
+  action = actionCollection()->addAction(QStringLiteral("enableAllMessages"), this, SLOT(enableAllMessages()));
   action->setText(i18n("Enable All Messages"));
 
   KToggleAction *docked = new KToggleAction(i18n("Dock in System Tray"), this);
-  actionCollection()->addAction("dockInSysTray", docked);
+  actionCollection()->addAction(QStringLiteral("dockInSysTray"), docked);
   connect(docked, &QAction::toggled, this, &MainWindow::dockInSysTray);
 
   KToggleAction *showHidden = new KToggleAction(i18n("Show Hidden Files"), this);
-  actionCollection()->addAction("showHiddenFiles", showHidden);
+  actionCollection()->addAction(QStringLiteral("showHiddenFiles"), showHidden);
   connect(showHidden, &QAction::toggled, this, &MainWindow::showHiddenFiles);
 
   recentFiles = KStandardAction::openRecent(this, SLOT(recentProfileSelected(const QUrl &)), actionCollection());
-  recentFiles->setObjectName("recentProfiles");
+  recentFiles->setObjectName(QStringLiteral("recentProfiles"));
   recentFiles->loadEntries(KSharedConfig::openConfig()->group(""));
 
   createGUI();
@@ -110,13 +110,13 @@ MainWindow::MainWindow()
   connect(Archiver::instance, SIGNAL(logging(const QString &)), this, SLOT(loggingSlot(const QString &)));
   connect(Archiver::instance, SIGNAL(inProgress(bool)), this, SLOT(inProgress(bool)));
 
-  startBackupAction = actionCollection()->addAction("startBackup", mainWidget, SLOT(startBackup()));
-  startBackupAction->setIcon(QIcon::fromTheme("kbackup_start"));
+  startBackupAction = actionCollection()->addAction(QStringLiteral("startBackup"), mainWidget, SLOT(startBackup()));
+  startBackupAction->setIcon(QIcon::fromTheme(QStringLiteral("kbackup_start")));
   startBackupAction->setText(i18n("Start Backup"));
 
-  cancelBackupAction = actionCollection()->addAction("cancelBackup", Archiver::instance, SLOT(cancel()));
+  cancelBackupAction = actionCollection()->addAction(QStringLiteral("cancelBackup"), Archiver::instance, SLOT(cancel()));
   cancelBackupAction->setText(i18n("Cancel Backup"));
-  cancelBackupAction->setIcon(QIcon::fromTheme("kbackup_cancel"));
+  cancelBackupAction->setIcon(QIcon::fromTheme(QStringLiteral("kbackup_cancel")));
   cancelBackupAction->setEnabled(false);
 
   showHidden->setChecked(KSharedConfig::openConfig()->group("settings").readEntry<bool>("showHiddenFiles", false));
@@ -316,22 +316,22 @@ void MainWindow::profileSettings()
 
 void MainWindow::newProfile()
 {
-  Archiver::instance->setFilePrefix("");  // back to default
+  Archiver::instance->setFilePrefix(QString());  // back to default
   Archiver::instance->setMaxSliceMBs(Archiver::UNLIMITED);
   Archiver::instance->setMediaNeedsChange(true);
   Archiver::instance->setTarget(QUrl());
   Archiver::instance->setKeptBackups(Archiver::UNLIMITED);
   Archiver::instance->setFullBackupInterval(1);
-  Archiver::instance->setFilter("");
-  Archiver::instance->setDirFilter("");
+  Archiver::instance->setFilter(QString());
+  Archiver::instance->setDirFilter(QString());
 
   // clear selection
   QStringList includes, excludes;
   selector->setBackupList(includes, excludes);
 
-  mainWidget->getTargetLineEdit()->setText("");
+  mainWidget->getTargetLineEdit()->setText(QString());
 
-  setLoadedProfile("");
+  setLoadedProfile(QString());
 }
 
 //--------------------------------------------------------------------------------
@@ -349,7 +349,7 @@ void MainWindow::changeSystrayTip()
   if ( !sysTray )
     return;
 
-  QString text = qApp->applicationDisplayName() + " - " +
+  QString text = qApp->applicationDisplayName() + QStringLiteral(" - ") +
                  i18n("Files: %1 Size: %2 MB\n%3",
                     Archiver::instance->getTotalFiles(),
                     QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2),
@@ -374,7 +374,7 @@ void MainWindow::inProgress(bool runs)
         movie->start();
       }
       */
-      sysTray->setIconByName("kbackup_runs");
+      sysTray->setIconByName(QStringLiteral("kbackup_runs"));
       sysTray->setStatus(KStatusNotifierItem::Active);
     }
 
@@ -391,7 +391,7 @@ void MainWindow::inProgress(bool runs)
 
       sysTray->setIcon(sysTray->loadIcon("kbackup"));
       */
-      sysTray->setIconByName("kbackup");
+      sysTray->setIconByName(QStringLiteral("kbackup"));
       sysTray->setStatus(KStatusNotifierItem::Passive);
     }
 
@@ -424,18 +424,18 @@ void MainWindow::dockInSysTray(bool checked)
     if ( Archiver::instance->isInProgress() )
     {
       sysTray->setStatus(KStatusNotifierItem::Active);
-      sysTray->setIconByName("kbackup_runs");
+      sysTray->setIconByName(QStringLiteral("kbackup_runs"));
     }
     else
     {
       sysTray->setStatus(KStatusNotifierItem::Passive);
-      sysTray->setIconByName("kbackup");
+      sysTray->setIconByName(QStringLiteral("kbackup"));
     }
   }
   else
   {
     delete sysTray;
-    sysTray = 0;
+    sysTray = nullptr;
   }
 }
 

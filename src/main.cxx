@@ -43,13 +43,13 @@ int main(int argc, char **argv)
 
   KLocalizedString::setApplicationDomain("kbackup");
 
-  KAboutData about("kbackup", i18n("KBackup"),
-                   KBACKUP_VERSION, i18n("An easy to use backup program"), KAboutLicense::GPL_V2,
+  KAboutData about(QStringLiteral("kbackup"), i18n("KBackup"),
+                   QStringLiteral(KBACKUP_VERSION), i18n("An easy to use backup program"), KAboutLicense::GPL_V2,
                    i18n("(c) 2006 - 2018 Martin Koller"),  // copyright
                    QString(),  // added text
-                   "https://www.linux-apps.com/content/show.php?content=44998");  // homepage
+                   QStringLiteral("https://www.linux-apps.com/content/show.php?content=44998"));  // homepage
 
-  about.addAuthor(i18n("Martin Koller"), i18n("Developer"), "kollix@aon.at");
+  about.addAuthor(i18n("Martin Koller"), i18n("Developer"), QStringLiteral("kollix@aon.at"));
 
   about.setOrganizationDomain(QByteArray("kde.org"));
   about.setDesktopFileName(QStringLiteral("org.kde.kbackup"));
@@ -60,29 +60,29 @@ int main(int argc, char **argv)
   cmdLine.addVersionOption();
   cmdLine.addHelpOption();
 
-  cmdLine.addPositionalArgument("profile", i18n("Start with given profile."), "[profile]");
+  cmdLine.addPositionalArgument(QStringLiteral("profile"), i18n("Start with given profile."), QStringLiteral("[profile]"));
 
-  cmdLine.addOption(QCommandLineOption("script", i18n("Script to run after finishing one archive slice."), "file"));
+  cmdLine.addOption(QCommandLineOption(QStringLiteral("script"), i18n("Script to run after finishing one archive slice."), QStringLiteral("file")));
 
-  cmdLine.addOption(QCommandLineOption("auto", i18n("Automatically run the backup with the given profile "
-                                                    "and terminate when done."), "profile"));
+  cmdLine.addOption(QCommandLineOption(QStringLiteral("auto"), i18n("Automatically run the backup with the given profile "
+                                                    "and terminate when done."), QStringLiteral("profile")));
 
-  cmdLine.addOption(QCommandLineOption("autobg", i18n("Automatically run the backup with the given profile "
+  cmdLine.addOption(QCommandLineOption(QStringLiteral("autobg"), i18n("Automatically run the backup with the given profile "
                                                       "in the background (without showing a window) "
-                                                      "and terminate when done."), "profile"));
+                                                      "and terminate when done."), QStringLiteral("profile")));
 
 
-  cmdLine.addOption(QCommandLineOption("verbose", i18n("In autobg mode be verbose and print every "
+  cmdLine.addOption(QCommandLineOption(QStringLiteral("verbose"), i18n("In autobg mode be verbose and print every "
                                                        "single filename during backup.")));
 
-  cmdLine.addOption(QCommandLineOption("forceFull", i18n("In auto/autobg mode force the backup to be a full backup "
+  cmdLine.addOption(QCommandLineOption(QStringLiteral("forceFull"), i18n("In auto/autobg mode force the backup to be a full backup "
                                                          "instead of acting on the profile settings.")));
 
   about.setupCommandLine(&cmdLine);
   cmdLine.process(*app);
   about.processCommandLine(&cmdLine);
 
-  bool interactive = !cmdLine.isSet("autobg");
+  bool interactive = !cmdLine.isSet(QStringLiteral("autobg"));
 
   if ( interactive )
   {
@@ -109,7 +109,7 @@ int main(int argc, char **argv)
   signal(SIGTERM, sigHandler);
   signal(SIGINT, sigHandler);
 
-  QString file = cmdLine.value("script");
+  QString file = cmdLine.value(QStringLiteral("script"));
   if ( file.length() )
     Archiver::sliceScript = file;
 
@@ -119,20 +119,20 @@ int main(int argc, char **argv)
 
     QStringList args = cmdLine.positionalArguments();
 
-    if ( args.count() > 0 )
+    if ( !args.isEmpty() )
       profile = args[0];
 
-    QString file = cmdLine.value("auto");
+    QString file = cmdLine.value(QStringLiteral("auto"));
     if ( file.length() )
       profile = file;
 
     if ( profile.length() )
       mainWin->loadProfile(profile, true);
 
-    if ( cmdLine.isSet("forceFull") )
+    if ( cmdLine.isSet(QStringLiteral("forceFull")) )
       Archiver::instance->setForceFullBackup();
 
-    if ( cmdLine.isSet("auto") )
+    if ( cmdLine.isSet(QStringLiteral("auto")) )
       mainWin->runBackup();
 
     int ret = app->exec();
@@ -143,9 +143,9 @@ int main(int argc, char **argv)
   else
   {
     QStringList includes, excludes;
-    QString error, fileName = cmdLine.value("autobg");
+    QString error, fileName = cmdLine.value(QStringLiteral("autobg"));
 
-    Archiver::instance->setVerbose(cmdLine.isSet("verbose"));
+    Archiver::instance->setVerbose(cmdLine.isSet(QStringLiteral("verbose")));
 
     if ( !Archiver::instance->loadProfile(fileName, includes, excludes, error) )
     {
@@ -154,7 +154,7 @@ int main(int argc, char **argv)
     }
     else
     {
-      if ( cmdLine.isSet("forceFull") )
+      if ( cmdLine.isSet(QStringLiteral("forceFull")) )
         Archiver::instance->setForceFullBackup();
 
       if ( Archiver::instance->createArchive(includes, excludes) )

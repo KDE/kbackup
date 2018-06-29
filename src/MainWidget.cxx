@@ -25,9 +25,9 @@ MainWidget::MainWidget(QWidget *parent)
 {
   ui.setupUi(this);
 
-  ui.startButton->setIcon(SmallIcon("kbackup_start", 22));
-  ui.cancelButton->setIcon(SmallIcon("kbackup_cancel", 22));
-  ui.folder->setIcon(SmallIcon("folder"));
+  ui.startButton->setIcon(SmallIcon(QStringLiteral("kbackup_start"), 22));
+  ui.cancelButton->setIcon(SmallIcon(QStringLiteral("kbackup_cancel"), 22));
+  ui.folder->setIcon(SmallIcon(QStringLiteral("folder")));
 
   connect(ui.startButton,  SIGNAL(clicked()), this, SLOT(startBackup()));
   connect(ui.cancelButton, SIGNAL(clicked()), Archiver::instance, SLOT(cancel()));
@@ -111,14 +111,14 @@ void MainWidget::getMediaSize()
   if ( url.isEmpty() ) return;  // cancelled
 
   ui.targetDir->setText(url.toLocalFile());
-  Archiver::instance->setTarget(ui.targetDir->text());
+  Archiver::instance->setTarget(QUrl::fromUserInput(ui.targetDir->text()));
 }
 
 //--------------------------------------------------------------------------------
 
 void MainWidget::updateElapsed(const QTime &elapsed)
 {
-  ui.elapsedTime->setText(elapsed.toString("HH:mm:ss"));
+  ui.elapsedTime->setText(elapsed.toString(QStringLiteral("HH:mm:ss")));
 }
 
 //--------------------------------------------------------------------------------
@@ -126,7 +126,7 @@ void MainWidget::updateElapsed(const QTime &elapsed)
 void MainWidget::setTargetURL(const QString &url)
 {
   ui.targetDir->setText(url);
-  Archiver::instance->setTarget(ui.targetDir->text());
+  Archiver::instance->setTarget(QUrl::fromUserInput(ui.targetDir->text()));
 }
 
 //--------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ void MainWidget::setCapacity(KIO::filesize_t bytes)
   {
     QString txt = KIO::convertSize(bytes);
     if ( Archiver::instance->getMaxSliceMBs() != Archiver::UNLIMITED )
-      txt += " (*)";
+      txt += QStringLiteral(" (*)");
     ui.capacity->setText(txt);
   }
 }
