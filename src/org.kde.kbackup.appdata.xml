@@ -20,6 +20,7 @@
   <name xml:lang="nn">KBackup</name>
   <name xml:lang="pl">KBackup</name>
   <name xml:lang="pt">KBackup</name>
+  <name xml:lang="pt-BR">KBackup</name>
   <name xml:lang="sk">KBackup</name>
   <name xml:lang="sv">Kbackup</name>
   <name xml:lang="uk">KBackup</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="gl">KBackup é un aplicativo que lle permite facer unha copia de seguranza de calquera cartafol ou ficheiro nun arquivo tar e gardala nun cartafol local, como por exemplo un dispositivo ZIP ou unha memoria USB, ou nun URL remoto</summary>
   <summary xml:lang="it">KBackup è un'applicazione per creare copie di sicurezza di cartelle e file in un archivio tar salvato in una cartella locale, ad es. un dispositivo montato localmente come un disco ZIP, una memoria USB, ecc, o in un URL remoto</summary>
   <summary xml:lang="nl">KBackup is een toepassing die u een reservekopie laat maken van elke map of elk bestand in een tar-archief naar een lokale map, bijv. een lokaal aangekoppeld apparaat zoals een ZIP-apparaat, USB-stick, etc. of een URL op afstand</summary>
+  <summary xml:lang="nn">KBackup lèt deg ta reservekopiar av filer eller mapper og lagra dei i TAR-arkiv, for eksempel til ei montert eining som ein diskett, USB-eining eller ekstern tenar.</summary>
   <summary xml:lang="pl">KBackup jest aplikacją, która umożliwia łatwe utworzenie kopii zapasowych dowolnego katalogu lub plików a archiwum tar do lokalnego katalogu, np. lokalnie podpiętego urządzenia, takiego jak napęd ZIP, pendrive, itp. lub zdalnego adresu URL</summary>
   <summary xml:lang="pt">O KBackup é uma aplicação que lhe permite salvaguardar quaisquer pastas ou ficheiros num pacote TAR para uma pasta local, p.ex. um dispositivo montado localmente como um disco ZIP, disco USB, etc. ou um URL remoto</summary>
   <summary xml:lang="sv">Kbackup är ett program som låter dig säkerhetskopiera vilka kataloger eller filer till ett tar-arkiv i en lokal katalog, t.ex. en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller till en fjärrwebbadress.</summary>
@@ -56,6 +58,7 @@
     <p xml:lang="gl">KBackup é un aplicativo que lle permite facer unha copia de seguranza dos seus datos dunha maneira sinxela e fácil.</p>
     <p xml:lang="it">KBackup è un'applicazione che permette di salvare i tuoi dai in modo semplice e intuitivo</p>
     <p xml:lang="nl">KBackup is een toepassing die u een reservekopie laat maken van uw gegevens op een eenvoudige, gebruikersvriendelijke manier</p>
+    <p xml:lang="nn">KBackup lèt deg ta reservekopiar av dataa dine på ein enkel og brukarvenleg måte.</p>
     <p xml:lang="pl">KBackup jest aplikacją, która umożliwia łatwe utworzenie kopii zapasowych w prosty i przyjazny sposób</p>
     <p xml:lang="pt">O KBackup é uma aplicação que lhe permite salvaguardar os seus dados de forma simples e amigável</p>
     <p xml:lang="sv">Kbackup är ett program som låter dig säkerhetskopiera data på ett enkelt, användarvänligt sätt</p>
@@ -78,6 +81,7 @@
     <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
+    <p xml:lang="pt-BR">Recursos:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
@@ -95,6 +99,7 @@
       <li xml:lang="gl">Uso de ficheiros de perfil que definen cartafoles e ficheiros que incluír ou excluír da copia de seguranza.</li>
       <li xml:lang="it">Utilizzo di file di profilo con le definizioni di cartelle e file da includere o escludere nella copia di sicurezza</li>
       <li xml:lang="nl">Met profielbestanden met definities voor mee te nemen mappen en bestanden of uitgesloten van de reservekopie</li>
+      <li xml:lang="nn">Profilfiler definerer kva mapper og filer som skal takast med eller utelatast frå reservekopieringa.</li>
       <li xml:lang="pl">Używanie plików profili z podanymi katalogami i plikami do wykonania lub wykluczenia z kopii zapasowej</li>
       <li xml:lang="pt">Uso de ficheiros de perfis com definições das pastas e ficheiros a incluir ou excluir na cópia de segurança</li>
       <li xml:lang="sv">Använder profilfiler med definitioner av kataloger och filer som ska  inkluderas i eller exkluderas från säkerhetskopieringen</li>
@@ -112,6 +117,7 @@
       <li xml:lang="gl">O destino da copia de seguranza pode ser ou un dispositivo montado de maneira local, como un dispositivo ZIP ou unha memoria USB, ou un URL remoto.</li>
       <li xml:lang="it">La posizione di destinazione della copia può essere un dispositivo montato localmente come un disco ZIP, una memoria USB, ecc, o un qualsiasi URL remoto</li>
       <li xml:lang="nl">De doel van de reservekopie kan naar een lokaal aangekoppeld apparaat, zoals een ZIP-apparaat, USB-stick, etc. of een URL op afstand</li>
+      <li xml:lang="nn">Reservekopiar kan lagrast til ei montert eining som ein diskett, USB-eining eller ekstern tenar.</li>
       <li xml:lang="pl">Miejscem docelowym kopii zapasowej może być np. lokalnie podpięte urządzenie, takie jak napęd ZIP, pendrive, itp. lub zdalny adres URL</li>
       <li xml:lang="pt">O destino da cópia de segurança poderá ser um dispositivo montado localmente, como um disco ZIP, disco USB, etc. ou qualquer URL remoto</li>
       <li xml:lang="sv">Målet för säkerhetskopieringen kan antingen vara en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller en fjärrwebbadress</li>
