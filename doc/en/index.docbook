@@ -50,6 +50,7 @@
 <keyword>zip</keyword>
 <keyword>gzip</keyword>
 <keyword>bzip2</keyword>
+<keyword>xz</keyword>
 </keywordset>
 
 </bookinfo>
@@ -82,7 +83,7 @@ by non-computer experts.
 
 <para>
 The storage format is the well known TAR format, whereby the data can still be stored
-in compressed format (bzip2 or gzip).
+in compressed format (xz, bzip2 or gzip).
 </para>
 
 <para>
@@ -279,9 +280,9 @@ from the time of the last full backup.
 <para>
 &kbackup; will compress the files stored if you activate this
 in the profile settings. Depending on
-the availability on your system it chooses <command>bzip2</command> or <command>gzip</command> compression.
+the availability on your system it chooses <command>xz</command>, <command>bzip2</command> or <command>gzip</command> compression.
 &kbackup; will compress every single file
-and store all files with an added file extension (<filename class="extension">.bzip2</filename> or <filename class="extension">.gz</filename>) into the
+and store all files with an added file extension (<filename class="extension">.xz</filename>, <filename class="extension">.bzip2</filename> or <filename class="extension">.gz</filename>) into the
 then not-compressed <filename class="extension">.tar</filename> archive.
 </para>
 
