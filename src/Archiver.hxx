@@ -25,6 +25,7 @@
 #include <QUrl>
 #include <kio/copyjob.h>
 #include <kio/udsentry.h>
+#include <KCompressionDevice>
 
 class KTar;
 class QDir;
@@ -151,7 +152,7 @@ class Archiver : public QObject
 
     void emitArchiveError() const;
 
-    static bool UDSlessThan(KIO::UDSEntry &left, KIO::UDSEntry &right);
+    static bool UDSlessThan(const KIO::UDSEntry &left, const KIO::UDSEntry &right);
 
   private:
     QSet<QString> excludeFiles;
@@ -191,6 +192,7 @@ class Archiver : public QObject
     KIO::filesize_t sliceCapacity;
 
     QString ext;
+    KCompressionDevice::CompressionType compressionType;
 
     bool interactive;
     bool cancelled;

@@ -1,5 +1,5 @@
 //**************************************************************************
-//   Copyright 2006 - 2017 Martin Koller, kollix@aon.at
+//   Copyright 2006 - 2018 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -9,8 +9,8 @@
 
 #include <Archiver.hxx>
 
+#include <kio_version.h>
 #include <ktar.h>
-#include <kfilterdev.h>
 #include <KFilterBase>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
@@ -61,7 +61,7 @@ Archiver::Archiver(QWidget *parent)
   : QObject(parent),
     archive(nullptr), totalBytes(0), totalFiles(0), filteredFiles(0), sliceNum(0), mediaNeedsChange(false),
     fullBackupInterval(1), incrementalBackup(false), forceFullBackup(false),
-    sliceCapacity(MAX_SLICE), interactive(parent != nullptr),
+    sliceCapacity(MAX_SLICE), compressionType(KCompressionDevice::None), interactive(parent != nullptr),
     cancelled(false), runs(false), skippedFiles(false), verbose(false), jobResult(0)
 {
   instance = this;
@@ -84,10 +84,20 @@ void Archiver::setCompressFiles(bool b)
 {
   if ( b )
   {
-    ext = QStringLiteral(".bz2");
-    KFilterBase *base = KCompressionDevice::filterForCompressionType(KCompressionDevice::BZip2);
+    ext = QStringLiteral(".xz");
+    compressionType = KCompressionDevice::Xz;
+    KFilterBase *base = KCompressionDevice::filterForCompressionType(compressionType);
     if ( !base )
-      ext = QStringLiteral(".gz");
+    {
+      ext = QStringLiteral(".bz2");
+      compressionType = KCompressionDevice::BZip2;
+      base = KCompressionDevice::filterForCompressionType(compressionType);
+      if ( !base )
+      {
+        ext = QStringLiteral(".gz");
+        compressionType = KCompressionDevice::GZip;
+      }
+    }
 
     delete base;
   }
@@ -542,10 +552,14 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     {
       QDir dir(targetURL.path());
       targetDirList.clear();
-      foreach (QString fileName, dir.entryList())
+      foreach (const QString &fileName, dir.entryList())
       {
         KIO::UDSEntry entry;
+#if (KIO_VERSION >= QT_VERSION_CHECK(5, 48, 0))
+        entry.fastInsert(KIO::UDSEntry::UDS_NAME, fileName);
+#else
         entry.insert(KIO::UDSEntry::UDS_NAME, fileName);
+#endif
         targetDirList.append(entry);
       }
       jobResult = 0;
@@ -559,7 +573,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       QString sliceName;
       int num = 0;
 
-      foreach(KIO::UDSEntry entry, targetDirList)
+      foreach (const KIO::UDSEntry &entry, targetDirList)
       {
         QString entryName = entry.stringValue(KIO::UDSEntry::UDS_NAME);
 
@@ -1339,10 +1353,7 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
   }
   else
   {
-    KCompressionDevice::CompressionType type =
-        KFilterDev::compressionTypeForMimeType(ext == QStringLiteral(".bz2") ? QStringLiteral("application/x-bzip2") : QStringLiteral("application/x-gzip"));
-
-    KCompressionDevice filter(&comprFile, false, type);
+    KCompressionDevice filter(&comprFile, false, compressionType);
 
     if ( !filter.open(QIODevice::WriteOnly) )
     {
@@ -1449,7 +1460,7 @@ void Archiver::updateElapsed()
 //--------------------------------------------------------------------------------
 // sort by name of entries in descending order (younger names are first)
 
-bool Archiver::UDSlessThan(KIO::UDSEntry &left, KIO::UDSEntry &right)
+bool Archiver::UDSlessThan(const KIO::UDSEntry &left, const KIO::UDSEntry &right)
 {
   return left.stringValue(KIO::UDSEntry::UDS_NAME) > right.stringValue(KIO::UDSEntry::UDS_NAME);
 }
