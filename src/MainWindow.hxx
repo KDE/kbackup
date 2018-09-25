@@ -33,9 +33,9 @@ class MainWindow : public KXmlGuiWindow
     void runBackup();
 
   protected:
-    virtual bool queryClose();
+    bool queryClose() override;
 
-  private slots:
+  private Q_SLOTS:
     void loadProfile();
     void saveProfileAs();
     void saveProfile(QString fileName = QString());

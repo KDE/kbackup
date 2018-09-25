@@ -47,7 +47,7 @@ class Model : public QStandardItemModel
       collator.setNumericMode(true);
     }
 
-    virtual bool hasChildren(const QModelIndex &index = QModelIndex()) const
+    bool hasChildren(const QModelIndex &index = QModelIndex()) const override
     {
       QStandardItem *item = itemFromIndex(index);
 
@@ -83,7 +83,7 @@ class ListItem : public QStandardItem
       setText(0, text, key(text));
     }
 
-    virtual int type() const { return QStandardItem::UserType; }
+    int type() const override { return QStandardItem::UserType; }
 
     bool isOn() const { return checkState() == Qt::Checked; }
     void setOn(bool on) { setCheckState(on ? Qt::Checked : Qt::Unchecked); }
@@ -101,7 +101,7 @@ class ListItem : public QStandardItem
       item->setData(sortKey, Qt::UserRole);
     }
 
-    virtual void setData(const QVariant &value, int role = Qt::UserRole + 1)
+    void setData(const QVariant &value, int role = Qt::UserRole + 1) override
     {
       if ( role == Qt::CheckStateRole )
       {
@@ -186,7 +186,7 @@ class ListItem : public QStandardItem
         return hidden ? 2 : 3;
     }
 
-    virtual bool operator<(const QStandardItem &other_) const
+    bool operator<(const QStandardItem &other_) const  override
     {
       QTreeView *w = static_cast<Model *>(model())->tree;
       Qt::SortOrder order = w->header()->sortIndicatorOrder();

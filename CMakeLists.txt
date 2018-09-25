@@ -8,23 +8,26 @@ set(KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIO
 
 project(kbackup)
 
-find_package(ECM 1.3.0 REQUIRED NO_MODULE)
+set(QT_MIN_VERSION "5.9.0")
+set(KF5_VERSION "5.46.0")
+
+find_package(ECM ${KF5_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 add_definitions(-DTRANSLATION_DOMAIN="kbackup" -DKBACKUP_VERSION="${KDE_APPLICATIONS_VERSION}")
 
 include(KDEInstallDirs)
-include(KDECompilerSettings NO_POLICY_SCOPE)
+include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(ECMInstallIcons)
 include(FeatureSummary)
 
-find_package(Qt5 CONFIG REQUIRED COMPONENTS
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     Widgets
 )
 
-find_package(KF5 REQUIRED COMPONENTS
+find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS
     Notifications
     I18n
     KIO
@@ -35,11 +38,7 @@ find_package(KF5 REQUIRED COMPONENTS
     WidgetsAddons
 )
 
-add_definitions(-DQT_NO_CAST_FROM_ASCII)
-add_definitions(-DQT_NO_CAST_TO_ASCII)
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
-add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
-add_definitions(-DQT_USE_QSTRINGBUILDER)
 #add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 
 

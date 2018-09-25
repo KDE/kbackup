@@ -103,11 +103,11 @@ class Archiver : public QObject
     // TODO: put probably in some global settings object
     static QString sliceScript;
 
-  public slots:
+  public Q_SLOTS:
     void cancel();  // cancel a running creation
     void setForceFullBackup(bool force = true);
 
-  signals:
+  Q_SIGNALS:
     void inProgress(bool runs) const;
     void logging(const QString &) const;
     void warning(const QString &) const;
@@ -120,7 +120,7 @@ class Archiver : public QObject
     void elapsedChanged(const QTime &) const;
     void backupTypeChanged(bool incremental) const;
 
-  private slots:
+  private Q_SLOTS:
     void slotResult(KJob *);
     void slotListResult(KIO::Job *, const KIO::UDSEntryList &);
     void receivedOutput();

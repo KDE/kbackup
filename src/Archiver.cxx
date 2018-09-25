@@ -998,7 +998,7 @@ void Archiver::addDirFiles(QDir &dir)
   // add the dir itself
   struct stat status;
   memset(&status, 0, sizeof(status));
-  if ( ::stat(QFile::encodeName(absolutePath), &status) == -1 )
+  if ( ::stat(QFile::encodeName(absolutePath).constData(), &status) == -1 )
   {
     emit warning(i18n("Could not get information of directory: %1\n"
                       "The operating system reports: %2",
@@ -1145,7 +1145,7 @@ void Archiver::addFile(const QFileInfo &info)
       struct stat status;
       memset(&status, 0, sizeof(status));
 
-      if ( ::stat(QFile::encodeName(info.absoluteFilePath()), &status) == -1 )
+      if ( ::stat(QFile::encodeName(info.absoluteFilePath()).constData(), &status) == -1 )
       {
         emit warning(i18n("Could not get information of file: %1\n"
                           "The operating system reports: %2",
@@ -1226,7 +1226,7 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
   struct stat sourceStat;
   memset(&sourceStat, 0, sizeof(sourceStat));
 
-  if ( ::stat(QFile::encodeName(info.absoluteFilePath()), &sourceStat) == -1 )
+  if ( ::stat(QFile::encodeName(info.absoluteFilePath()).constData(), &sourceStat) == -1 )
   {
     emit warning(i18n("Could not get information of file: %1\n"
                       "The operating system reports: %2",
@@ -1427,7 +1427,7 @@ bool Archiver::getDiskFree(const QString &path, KIO::filesize_t &capacityB, KIO:
   struct statvfs vfs;
   memset(&vfs, 0, sizeof(vfs));
 
-  if ( ::statvfs(QFile::encodeName(path), &vfs) == -1 )
+  if ( ::statvfs(QFile::encodeName(path).constData(), &vfs) == -1 )
     return false;
 
   capacityB = static_cast<KIO::filesize_t>(vfs.f_blocks) * static_cast<KIO::filesize_t>(vfs.f_frsize);

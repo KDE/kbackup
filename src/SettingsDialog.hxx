@@ -24,7 +24,7 @@ class SettingsDialog : public QDialog
 
     Ui::SettingsDialog ui;
 
-  private slots:
+  private Q_SLOTS:
     void sizeSelected(int idx);
 };
 

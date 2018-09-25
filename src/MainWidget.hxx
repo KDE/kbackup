@@ -27,7 +27,7 @@ class MainWidget : public QWidget
     void setSelector(Selector * s);
     KLineEdit *getTargetLineEdit() const { return ui.targetDir; }
 
-  public slots:
+  public Q_SLOTS:
     void setTargetURL(const QString &url);
     void startBackup();
     void setIsIncrementalBackup(bool incremental);
@@ -36,7 +36,7 @@ class MainWidget : public QWidget
     Selector *selector;
     Ui::MainWidgetBase ui;
 
-  private slots:
+  private Q_SLOTS:
     void getMediaSize();
     void updateElapsed(const QTime &);
     void updateTotalBytes();

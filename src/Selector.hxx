@@ -26,16 +26,16 @@ class Selector : public QTreeView
   Q_OBJECT
 
   public:
-    Selector(QWidget *parent, KActionCollection *actionCollection);
+    explicit Selector(QWidget *parent, KActionCollection *actionCollection);
 
     void getBackupList(QStringList &includes, QStringList &excludes) const;
     void setBackupList(const QStringList &includes, const QStringList &excludes);
     void setShowHiddenFiles(bool show);
 
-    virtual QSize minimumSizeHint() const;
+    QSize minimumSizeHint() const override;
 
   protected:
-    virtual void contextMenuEvent(QContextMenuEvent *event);
+    void contextMenuEvent(QContextMenuEvent *event) override;
 
   private:
     void fillTree(ListItem *parent, const QString &path, bool on);
@@ -47,7 +47,7 @@ class Selector : public QTreeView
 
     ListItem *getSelectedItem() const;
 
-  private slots:
+  private Q_SLOTS:
     void expandedSlot(const QModelIndex &index);
     void populateOpenMenu();
     void doubleClickedSlot();
