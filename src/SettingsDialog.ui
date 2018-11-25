@@ -54,14 +54,14 @@
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Number of backups to keep</string>
+        <string>Number of full backups to keep</string>
        </property>
       </widget>
      </item>
      <item row="0" column="2">
       <widget class="QSpinBox" name="numBackups">
        <property name="toolTip">
-        <string>How many backups shall be kept in the target directory before older ones will be deleted</string>
+        <string>How many full backups shall be kept in the target directory before older ones will be deleted</string>
        </property>
        <property name="specialValueText">
         <string>unlimited</string>
