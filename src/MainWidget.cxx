@@ -55,6 +55,7 @@ MainWidget::MainWidget(QWidget *parent)
 
   KUrlCompletion *kc = new KUrlCompletion(KUrlCompletion::DirCompletion);
   ui.targetDir->setCompletionObject(kc);
+  ui.targetDir->setAutoDeleteCompletionObject(true);
 
   Archiver::instance->setForceFullBackup(ui.forceFullBackup->isChecked());
 }
