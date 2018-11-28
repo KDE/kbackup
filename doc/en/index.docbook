@@ -221,7 +221,7 @@ which limit the size of a slice:
 </para>
 
 <para>
-In the <guilabel>Profile Settings</guilabel>, you can also define a maximum number of backups being kept
+In the <guilabel>Profile Settings</guilabel>, you can also define a maximum number of full backups being kept
 in the target folder, and therefore automatically deleting all older backups there.
 &eg; if you set it to 3, &kbackup; will keep the last 3 backups and delete all older ones.
 </para>
