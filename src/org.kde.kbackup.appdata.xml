@@ -8,6 +8,7 @@
   <name xml:lang="ca-valencia">KBackup</name>
   <name xml:lang="cs">KBackup</name>
   <name xml:lang="de">KBackup</name>
+  <name xml:lang="el">KBackup</name>
   <name xml:lang="en-GB">KBackup</name>
   <name xml:lang="es">KBackup</name>
   <name xml:lang="eu">KBackup</name>
@@ -32,6 +33,7 @@
   <summary xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR en una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
   <summary xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de carpetes o fitxers a un arxiu TAR en una carpeta local, p. ex. un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o un URL remot</summary>
   <summary xml:lang="de">KBackup ist ein Programm, um beliebige Ordner oder Dateien in ein Tar-Archiv in einen lokalen Ordner wie zum Beispiel ein ZIP-Laufwerk, ein USB-Stick oder auf einem Fremdrechner zu sichern.</summary>
+  <summary xml:lang="el">Το KBackup είναι μια εφαρμογή που σας επιτρέπει να δημιουργήσετε εφεδρικά αντίγραφα οποιουδήποτε φακέλου ή αρχείου σε πακέτο αρχειοθέτησης σε έναν τοπικό φάκελο, π.χ. μια τοπικά προσαρτημένη συσκευή όπως μια ZIP ή USB συσκευή, κλπ ή ένα απομακρυσμένο URL</summary>
   <summary xml:lang="en-GB">KBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URL</summary>
   <summary xml:lang="es">KBackup es una aplicación que le permite hacer copias de seguridad de cualquier carpeta o archivo en un archivo comprimido tar en una carpeta local, por ejemplo, en cualquier dispositivo montado localmente como una memoria USB, una unidad ZIP, etc; o un URL remoto</summary>
   <summary xml:lang="eu">KBackupek edozein karpetaren edo fitxategiren babes-kopia tar artxibo batean egiten uzten dizu, bertako karpeta batera, adib. bertan muntatutako gailu  batera, esaterako ZIP unitate bat, USB makil bat, etab. edo urruneko URL batera.</summary>
@@ -56,6 +58,7 @@
     <p xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i amigable</p>
     <p xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i amigable</p>
     <p xml:lang="de">KBackup ist ein Programm welches Datensicherung in einer benutzerfreundlichen Weise ermöglicht</p>
+    <p xml:lang="el">Το KBackup είναι μια εφαρμογή που σας επιτρέπει να δημιουργήσετε εφεδρικά αντίγραφα με έναν απλό και φιλικό στη χρήση τρόπο</p>
     <p xml:lang="en-GB">KBackup is an application which lets you back up your data in a simple, user friendly way</p>
     <p xml:lang="es">KBackup es una aplicación que le permite hacer copias de seguridad de sus datos de una manera sencilla y fácil de usar</p>
     <p xml:lang="eu">KBackup zure datuen babes-kopia era erraz eta atsegin batean egiten  uzten dizun aplikazio bat da.</p>
@@ -78,6 +81,7 @@
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="de">Funktionen:</p>
+    <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Características:</p>
     <p xml:lang="eu">Eginbideak:</p>
@@ -102,6 +106,7 @@
       <li xml:lang="ca">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
       <li xml:lang="ca-valencia">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
       <li xml:lang="de">Verwendet Profildateien mit Definition der Dateien und Ordner, die in der Sicherung ein- oder ausgeschlossen werden</li>
+      <li xml:lang="el">Χρήση αρχείων προφίλ με ορισμούς για φακέλους και αρχεία που θα αποκλείονται από το εφεδρικό αντίγραφο</li>
       <li xml:lang="en-GB">Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
       <li xml:lang="es">Use perfiles con definiciones para las carpetas y archivos a ser incluidos o excluidos de la copia de seguridad</li>
       <li xml:lang="eu">Profil fitxategiak erabiltzen ditu karpetak eta fitxategiak barneratu edo kanporatzeko definizioekin</li>
@@ -123,6 +128,7 @@
       <li xml:lang="ca">La destinació de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
       <li xml:lang="ca-valencia">La destinació de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
       <li xml:lang="de">Die Sicherung kann auf ein lokal eingehängtes Gerät wie ein ZIP-Laufwerk, einen USB-Stick oder auf eine Adresse (URL) auf einem Fremdrechner gespeichert werden.</li>
+      <li xml:lang="el">Ο προορισμός του εφεδρικού αντιγράφου μπορεί να είναι μια τοπικά προσαρτημένη συσκευή όπως μια ZIP ή USB συσκευή, κλπ. ή ένα απομακρυσμένο URL</li>
       <li xml:lang="en-GB">The backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URL</li>
       <li xml:lang="es">El objetivo de la copia de seguridad puede ser un dispositivo montado localmente como una memoria USB, una unidad ZIP, etc; o cualquier URL remota</li>
       <li xml:lang="eu">Babes-kopiaren jomuga bertan muntatutako gailu bat izan daiteke, ZIP unitate bat, USB makil bat, etab. edo urruneko edozein URL</li>
@@ -144,6 +150,7 @@
       <li xml:lang="ca">Executa còpies de seguretat automatitzades sense usar cap interfície gràfica d'usuari</li>
       <li xml:lang="ca-valencia">Executa còpies de seguretat automatitzades sense usar cap interfície gràfica d'usuari</li>
       <li xml:lang="de">Ausführung automatischer ohne eine grafische Benutzeroberfläche</li>
+      <li xml:lang="el">Εκτέλεση αυτοματοποιημένων εργασιών δημιουργίας εφεδρικών αντιγράφων χωρίς τη χρήση γραφικού περιβάλλοντος</li>
       <li xml:lang="en-GB">Running automated backups without using a graphical user interface</li>
       <li xml:lang="es">Ejecución automática de copias de seguridad sin usar una interfaz gráfica de usuario</li>
       <li xml:lang="eu">Babes-kopia automatikoak exekutatzea erabiltzaile-interfaze grafiko bat erabili gabe</li>
