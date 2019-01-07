@@ -106,9 +106,9 @@ MainWindow::MainWindow()
   // save/restore window settings and size
   setAutoSaveSettings();
 
-  connect(Archiver::instance, SIGNAL(totalFilesChanged(int)), this, SLOT(changeSystrayTip()));
-  connect(Archiver::instance, SIGNAL(logging(const QString &)), this, SLOT(loggingSlot(const QString &)));
-  connect(Archiver::instance, SIGNAL(inProgress(bool)), this, SLOT(inProgress(bool)));
+  connect(Archiver::instance, &Archiver::totalFilesChanged, this, &MainWindow::changeSystrayTip);
+  connect(Archiver::instance, &Archiver::logging, this, &MainWindow::loggingSlot);
+  connect(Archiver::instance, &Archiver::inProgress, this, &MainWindow::inProgress);
 
   startBackupAction = actionCollection()->addAction(QStringLiteral("startBackup"), mainWidget, SLOT(startBackup()));
   startBackupAction->setIcon(QIcon::fromTheme(QStringLiteral("kbackup_start")));
@@ -132,7 +132,7 @@ MainWindow::MainWindow()
 void MainWindow::runBackup()
 {
   autorun = true;
-  QTimer::singleShot(0, mainWidget, SLOT(startBackup()));
+  QTimer::singleShot(0, mainWidget, &MainWidget::startBackup);
 }
 
 //--------------------------------------------------------------------------------
@@ -355,7 +355,7 @@ void MainWindow::changeSystrayTip()
                     QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2),
                     KStringHandler::csqueeze(lastLog, 60));
 
-  sysTray->setToolTip(QLatin1String("kbackup"), QLatin1String("kbackup"), text);
+  sysTray->setToolTip(QStringLiteral("kbackup"), QStringLiteral("kbackup"), text);
 }
 
 //--------------------------------------------------------------------------------

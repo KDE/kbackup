@@ -31,7 +31,7 @@ void sigHandler(int sig)
 {
   Q_UNUSED(sig)
 
-  QTimer::singleShot(0, Archiver::instance, SLOT(cancel()));
+  QTimer::singleShot(0, Archiver::instance, &Archiver::cancel);
   QTimer::singleShot(0, QCoreApplication::instance(), SLOT(quit()));
 }
 

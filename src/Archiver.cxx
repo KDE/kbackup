@@ -73,8 +73,8 @@ Archiver::Archiver(QWidget *parent)
 
   if ( !interactive )
   {
-    connect(this, SIGNAL(logging(const QString &)), this, SLOT(loggingSlot(const QString &)));
-    connect(this, SIGNAL(warning(const QString &)), this, SLOT(warningSlot(const QString &)));
+    connect(this, &Archiver::logging, this, &Archiver::loggingSlot);
+    connect(this, &Archiver::warning, this, &Archiver::warningSlot);
   }
 }
 
@@ -499,7 +499,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
   QTimer runTimer;
   if ( interactive )  // else we do not need to be interrupted during the backup
   {
-    connect(&runTimer, SIGNAL(timeout()), this, SLOT(updateElapsed()));
+    connect(&runTimer, &QTimer::timeout, this, &Archiver::updateElapsed);
     runTimer.start(1000);
   }
   elapsed.start();
@@ -542,8 +542,8 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       QPointer<KIO::ListJob> listJob;
       listJob = KIO::listDir(targetURL, KIO::DefaultFlags, false);
 
-      connect(listJob, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
-              this, SLOT(slotListResult(KIO::Job *, const KIO::UDSEntryList &)));
+      connect(listJob.data(), &KIO::ListJob::entries,
+              this, &Archiver::slotListResult);
 
       while ( listJob )
         qApp->processEvents(QEventLoop::WaitForMoreEvents);
@@ -568,7 +568,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     if ( jobResult == 0 )
     {
       std::sort(targetDirList.begin(), targetDirList.end(), Archiver::UDSlessThan);
-      QString prefix = filePrefix.isEmpty() ? QString::fromLatin1("backup_") : (filePrefix + QLatin1String("_"));
+      QString prefix = filePrefix.isEmpty() ? QStringLiteral("backup_") : (filePrefix + QLatin1String("_"));
 
       QString sliceName;
       int num = 0;
@@ -604,7 +604,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
               QPointer<KIO::SimpleJob> delJob;
               delJob = KIO::file_delete(url, KIO::DefaultFlags);
 
-              connect(delJob, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
+              connect(delJob.data(), &KJob::result, this, &Archiver::slotResult);
 
               while ( delJob )
                 qApp->processEvents(QEventLoop::WaitForMoreEvents);
@@ -665,7 +665,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
                                sliceList,
                                QString(),
                                KStandardGuiItem::cont(), KStandardGuiItem::quit(),
-                               QLatin1String("showDoneInfo"));
+                               QStringLiteral("showDoneInfo"));
 
       if ( ret == KMessageBox::No ) // quit
         qApp->quit();
@@ -746,7 +746,7 @@ void Archiver::finishSlice()
         // copy to have the archive for the script later down
         job = KIO::copy(source, target, KIO::DefaultFlags);
 
-        connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
+        connect(job.data(), &KJob::result, this, &Archiver::slotResult);
 
         emit logging(i18n("...uploading archive %1 to %2", source.fileName(), target.toString()));
 
@@ -912,7 +912,7 @@ bool Archiver::getNextSlice()
 
   if ( baseName.isEmpty() )
   {
-    QString prefix = filePrefix.isEmpty() ? QString::fromLatin1("backup") : filePrefix;
+    QString prefix = filePrefix.isEmpty() ? QStringLiteral("backup") : filePrefix;
 
     if ( targetURL.isLocalFile() )
       baseName = targetURL.path() + QStringLiteral("/") + prefix + QDateTime::currentDateTime().toString(QStringLiteral("_yyyy.MM.dd-hh.mm.ss"));

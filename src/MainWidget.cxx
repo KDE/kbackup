@@ -29,28 +29,28 @@ MainWidget::MainWidget(QWidget *parent)
   ui.cancelButton->setIcon(SmallIcon(QStringLiteral("kbackup_cancel"), 22));
   ui.folder->setIcon(SmallIcon(QStringLiteral("folder")));
 
-  connect(ui.startButton,  SIGNAL(clicked()), this, SLOT(startBackup()));
-  connect(ui.cancelButton, SIGNAL(clicked()), Archiver::instance, SLOT(cancel()));
+  connect(ui.startButton,  &QAbstractButton::clicked, this, &MainWidget::startBackup);
+  connect(ui.cancelButton, &QAbstractButton::clicked, Archiver::instance, &Archiver::cancel);
 
-  connect(ui.forceFullBackup, SIGNAL(clicked(bool)), Archiver::instance, SLOT(setForceFullBackup(bool)));
+  connect(ui.forceFullBackup, &QAbstractButton::clicked, Archiver::instance, &Archiver::setForceFullBackup);
 
-  connect(Archiver::instance, SIGNAL(logging(const QString &)), ui.log, SLOT(append(const QString &)));
-  connect(Archiver::instance, SIGNAL(warning(const QString &)), ui.warnings, SLOT(append(const QString &)));
+  connect(Archiver::instance, &Archiver::logging, ui.log, &QTextEdit::append);
+  connect(Archiver::instance, &Archiver::warning, ui.warnings, &QTextEdit::append);
 
-  connect(Archiver::instance, SIGNAL(targetCapacity(KIO::filesize_t)), this, SLOT(setCapacity(KIO::filesize_t)));
+  connect(Archiver::instance, &Archiver::targetCapacity, this, &MainWidget::setCapacity);
 
   connect(Archiver::instance, SIGNAL(totalFilesChanged(int)), ui.totalFiles, SLOT(setNum(int)));
-  connect(Archiver::instance, SIGNAL(totalBytesChanged(KIO::filesize_t)), this, SLOT(updateTotalBytes()));
+  connect(Archiver::instance, &Archiver::totalBytesChanged, this, &MainWidget::updateTotalBytes);
 
-  connect(Archiver::instance, SIGNAL(sliceProgress(int)), ui.progressSlice, SLOT(setValue(int)));
+  connect(Archiver::instance, &Archiver::sliceProgress, ui.progressSlice, &QProgressBar::setValue);
   connect(Archiver::instance, SIGNAL(newSlice(int)), ui.sliceNum, SLOT(setNum(int)));
 
-  connect(Archiver::instance, SIGNAL(fileProgress(int)), this, SLOT(setFileProgress(int)));
-  connect(Archiver::instance, SIGNAL(elapsedChanged(const QTime &)), this, SLOT(updateElapsed(const QTime &)));
+  connect(Archiver::instance, &Archiver::fileProgress, this, &MainWidget::setFileProgress);
+  connect(Archiver::instance, &Archiver::elapsedChanged, this, &MainWidget::updateElapsed);
 
-  connect(Archiver::instance, SIGNAL(backupTypeChanged(bool)), this, SLOT(setIsIncrementalBackup(bool)));
+  connect(Archiver::instance, &Archiver::backupTypeChanged, this, &MainWidget::setIsIncrementalBackup);
 
-  connect(ui.folder, SIGNAL(clicked()), this, SLOT(getMediaSize()));
+  connect(ui.folder, &QAbstractButton::clicked, this, &MainWidget::getMediaSize);
   connect(ui.targetDir, SIGNAL(returnPressed(const QString &)), this, SLOT(setTargetURL(const QString &)));
 
   KUrlCompletion *kc = new KUrlCompletion(KUrlCompletion::DirCompletion);
