@@ -50,6 +50,7 @@
   <summary xml:lang="pl">KBackup jest aplikacją, która umożliwia łatwe utworzenie kopii zapasowych dowolnego katalogu lub plików a archiwum tar do lokalnego katalogu, np. lokalnie podpiętego urządzenia, takiego jak napęd ZIP, pendrive, itp. lub zdalnego adresu URL</summary>
   <summary xml:lang="pt">O KBackup é uma aplicação que lhe permite salvaguardar quaisquer pastas ou ficheiros num pacote TAR para uma pasta local, p.ex. um dispositivo montado localmente como um disco ZIP, disco USB, etc. ou um URL remoto</summary>
   <summary xml:lang="pt-BR">KBackup é um aplicativo que permite fazer cópias de segurança de quaisquer pastas ou arquivos em um arquivo TAR em uma pasta local, por exemplo, um dispositivo montado localmente como um disco ZIP, dispositivo USB, etc. ou uma URL remota</summary>
+  <summary xml:lang="sk">KBackup je aplikácia, ktorá vám umožnuje zálohovať akékoľvek priečinky a súbory do tar archívu do lokálneho priečinku, e. g. na pripojené zariadenie ako USB alebo na vzdialenú URL adresu</summary>
   <summary xml:lang="sv">Kbackup är ett program som låter dig säkerhetskopiera vilka kataloger eller filer till ett tar-arkiv i en lokal katalog, t.ex. en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller till en fjärrwebbadress.</summary>
   <summary xml:lang="uk">KBackup — програма, за допомогою якої ви можете створювати резервні копії будь-яких тек або файлів у форматі архіву tar до локальної теки, тобто локально змонтованого пристрою, наприклад диска ZIP, флеш-накопичувача USB тощо, або за віддаленою адресою</summary>
   <summary xml:lang="x-test">xxKBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URLxx</summary>
@@ -77,6 +78,7 @@
     <p xml:lang="pl">KBackup jest aplikacją, która umożliwia łatwe utworzenie kopii zapasowych w prosty i przyjazny sposób</p>
     <p xml:lang="pt">O KBackup é uma aplicação que lhe permite salvaguardar os seus dados de forma simples e amigável</p>
     <p xml:lang="pt-BR">O KBackup é um aplicativo que lhe permite fazer cópias de segurança dos seus dados de forma simples e amigável</p>
+    <p xml:lang="sk">KBackup je aplikácia, ktorá vám umožnuje zálohovať údaje jednoduchým, používateľsky priateľským spôsobom</p>
     <p xml:lang="sv">Kbackup är ett program som låter dig säkerhetskopiera data på ett enkelt, användarvänligt sätt</p>
     <p xml:lang="uk">KBackup — програма, за допомогою якої ви зможете створювати резервні копії своїх даних у простий і зручний спосіб</p>
     <p xml:lang="x-test">xxKBackup is an application which lets you back up your data in a simple, user friendly wayxx</p>
@@ -153,6 +155,7 @@
       <li xml:lang="pl">Miejscem docelowym kopii zapasowej może być np. lokalnie podpięte urządzenie, takie jak napęd ZIP, pendrive, itp. lub zdalny adres URL</li>
       <li xml:lang="pt">O destino da cópia de segurança poderá ser um dispositivo montado localmente, como um disco ZIP, disco USB, etc. ou qualquer URL remoto</li>
       <li xml:lang="pt-BR">O destino da cópia de segurança poderá ser um dispositivo montado localmente, como um disco ZIP, dispositivo USB, etc. ou qualquer URL remota</li>
+      <li xml:lang="sk">Zálohovací cieľ môže byť buď lokálne pripojené zariadenie ako napr. USB kľúč alebo vzdialená adresa URL</li>
       <li xml:lang="sv">Målet för säkerhetskopieringen kan antingen vara en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller en fjärrwebbadress</li>
       <li xml:lang="uk">Резервні копії можуть зберігатися на локально змонтованому пристрої, зокрема диску ZIP, флеш-накопичувачі USB тощо, або за будь-якою віддаленою адресою</li>
       <li xml:lang="x-test">xxThe backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URLxx</li>
