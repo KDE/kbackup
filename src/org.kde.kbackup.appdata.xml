@@ -132,6 +132,7 @@
       <li xml:lang="pl">Używanie plików profili z podanymi katalogami i plikami do wykonania lub wykluczenia z kopii zapasowej</li>
       <li xml:lang="pt">Uso de ficheiros de perfis com definições das pastas e ficheiros a incluir ou excluir na cópia de segurança</li>
       <li xml:lang="pt-BR">Uso de arquivos de perfis com definições das pastas e arquivos a serem incluídos ou excluídos na cópia de segurança</li>
+      <li xml:lang="sk">Používanie súborov s definíciami pre priečinky a súbory, ktoré sa majú zahrnúť alebo vynechať do zálohy</li>
       <li xml:lang="sv">Använder profilfiler med definitioner av kataloger och filer som ska  inkluderas i eller exkluderas från säkerhetskopieringen</li>
       <li xml:lang="uk">Використання файлів профілів із визначеннями тек і файлів, які буде включено і виключено із переліку резервного копіювання</li>
       <li xml:lang="x-test">xxUsing profile files with definitions for Folders and files to be included or excluded from the backupxx</li>
@@ -181,6 +182,7 @@
       <li xml:lang="pl">Wykonywanie zautomatyzowanych kopii zapasowych bez używania graficznego interfejsu użytkownika</li>
       <li xml:lang="pt">Execução de cópias de segurança automatizadas sem usar uma interface gráfica</li>
       <li xml:lang="pt-BR">Execução de cópias de segurança automatizadas sem usar uma interface gráfica</li>
+      <li xml:lang="sk">Spúšťanie automatizovaných záloh bez použitia grafického používateľského prostredia</li>
       <li xml:lang="sv">Kör automatiserade säkerhetskopieringar utan att använda ett grafiskt användargränssnitt</li>
       <li xml:lang="uk">Виконання автоматизованого створення резервних копій без використання графічного інтерфейсу користувача</li>
       <li xml:lang="x-test">xxRunning automated backups without using a graphical user interfacexx</li>
