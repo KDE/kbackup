@@ -17,6 +17,7 @@ Keywords[pt]=cópia de segurança;arquivo;
 Keywords[pt_BR]=backup;arquivamento;cópia de segurança;
 Keywords[uk]=backup;archiving;резерв;копіювання;резервне;архівування;
 Keywords[x-test]=xxbackupxx;xxarchivingxx;
+Keywords[zh_TW]=backup;archiving;備份;封存;
 
 Name=KBackup
 Name[ca]=KBackup
