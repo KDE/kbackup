@@ -19,7 +19,6 @@
 #include <qtimer.h>
 #include <qcursor.h>
 #include <qcheckbox.h>
-#include <QTextStream>
 #include <QMenu>
 #include <QAction>
 #include <QUrl>
