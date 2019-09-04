@@ -348,7 +348,7 @@ void MainWindow::changeSystrayTip()
   if ( !sysTray )
     return;
 
-  QString text = qApp->applicationDisplayName() + QStringLiteral(" - ") +
+  QString text = qApp->applicationDisplayName() + QLatin1String(" - ") +
                  i18n("Files: %1 Size: %2 MB\n%3",
                     Archiver::instance->getTotalFiles(),
                     QString::number(Archiver::instance->getTotalBytes() / 1024.0 / 1024.0, 'f', 2),

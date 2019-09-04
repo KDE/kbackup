@@ -517,7 +517,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     QString entry = *it;
 
     if ( (entry.length() > 1) && entry.endsWith(QLatin1Char('/')) )
-      entry.truncate(entry.length() - 1);
+      entry.chop(1);
 
     QFileInfo info(entry);
 
@@ -880,7 +880,7 @@ void Archiver::receivedOutput()
 
   QString msg = QString::fromUtf8(buffer);
   if ( msg.endsWith(QLatin1String("\n")) )
-    msg.truncate(msg.length() - 1);
+    msg.chop(1);
 
   emit warning(msg);
 }
@@ -915,7 +915,7 @@ bool Archiver::getNextSlice()
     QString prefix = filePrefix.isEmpty() ? QStringLiteral("backup") : filePrefix;
 
     if ( targetURL.isLocalFile() )
-      baseName = targetURL.path() + QStringLiteral("/") + prefix + QDateTime::currentDateTime().toString(QStringLiteral("_yyyy.MM.dd-hh.mm.ss"));
+      baseName = targetURL.path() + QLatin1String("/") + prefix + QDateTime::currentDateTime().toString(QLatin1String("_yyyy.MM.dd-hh.mm.ss"));
     else
       baseName = QDir::tempPath() + QLatin1Char('/') + prefix + QDateTime::currentDateTime().toString(QStringLiteral("_yyyy.MM.dd-hh.mm.ss"));
   }
