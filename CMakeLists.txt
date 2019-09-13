@@ -8,7 +8,7 @@ set(KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIO
 
 project(kbackup)
 
-set(QT_MIN_VERSION "5.9.0")
+set(QT_MIN_VERSION "5.11.0")
 set(KF5_MIN_VERSION "5.45.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
@@ -37,9 +37,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Archive
     WidgetsAddons
 )
-
+if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
+   add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+endif()
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
-#add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 
 
 add_subdirectory(src)

@@ -1024,7 +1024,7 @@ void Archiver::addDirFiles(QDir &dir)
   if ( cancelled ) return;
 
   if ( ! archive->writeDir(QStringLiteral(".") + absolutePath, dirInfo.owner(), dirInfo.group(),
-                           status.st_mode, dirInfo.lastRead(), dirInfo.lastModified(), dirInfo.created()) )
+                           status.st_mode, dirInfo.lastRead(), dirInfo.lastModified(), dirInfo.birthTime()) )
   {
     emit warning(i18n("Could not write directory '%1' to archive.\n"
                       "Maybe the medium is full.", absolutePath));
@@ -1158,7 +1158,7 @@ void Archiver::addFile(const QFileInfo &info)
 
       if ( ! archive->prepareWriting(QStringLiteral(".") + info.absoluteFilePath() + ext,
                                      info.owner(), info.group(), tmpFile.size(),
-                                     status.st_mode, info.lastRead(), info.lastModified(), info.created()) )
+                                     status.st_mode, info.lastRead(), info.lastModified(), info.birthTime()) )
       {
         emitArchiveError();
         cancel();
@@ -1251,7 +1251,7 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
 
   if ( ! archive->prepareWriting(QStringLiteral(".") + info.absoluteFilePath(),
                                  info.owner(), info.group(), info.size(),
-                                 sourceStat.st_mode, info.lastRead(), info.lastModified(), info.created()) )
+                                 sourceStat.st_mode, info.lastRead(), info.lastModified(), info.birthTime()) )
   {
     emitArchiveError();
     return Error;
