@@ -879,7 +879,7 @@ void Archiver::receivedOutput()
   QByteArray buffer = proc->readAllStandardOutput();
 
   QString msg = QString::fromUtf8(buffer);
-  if ( msg.endsWith(QLatin1String("\n")) )
+  if ( msg.endsWith(QLatin1Char('\n')) )
     msg.chop(1);
 
   emit warning(msg);
@@ -915,7 +915,7 @@ bool Archiver::getNextSlice()
     QString prefix = filePrefix.isEmpty() ? QStringLiteral("backup") : filePrefix;
 
     if ( targetURL.isLocalFile() )
-      baseName = targetURL.path() + QLatin1String("/") + prefix + QDateTime::currentDateTime().toString(QLatin1String("_yyyy.MM.dd-hh.mm.ss"));
+      baseName = targetURL.path() + QLatin1Char('/') + prefix + QDateTime::currentDateTime().toString(QLatin1String("_yyyy.MM.dd-hh.mm.ss"));
     else
       baseName = QDir::tempPath() + QLatin1Char('/') + prefix + QDateTime::currentDateTime().toString(QStringLiteral("_yyyy.MM.dd-hh.mm.ss"));
   }
