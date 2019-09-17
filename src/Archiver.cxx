@@ -27,6 +27,7 @@
 #include <QFileDialog>
 #include <QTemporaryFile>
 #include <QTimer>
+#include <QElapsedTimer>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -1261,7 +1262,7 @@ Archiver::AddFileStatus Archiver::addLocalFile(const QFileInfo &info)
   static char buffer[BUFFER_SIZE];
   qint64 len;
   int count = 0, progress;
-  QTime timer;
+  QElapsedTimer timer;
   timer.start();
   bool msgShown = false;
   qint64 written = 0;
@@ -1368,7 +1369,7 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
     static char buffer[BUFFER_SIZE];
     qint64 len;
     int count = 0, progress;
-    QTime timer;
+    QElapsedTimer timer;
     timer.start();
     bool msgShown = false;
 
