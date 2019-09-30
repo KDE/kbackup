@@ -41,7 +41,7 @@
   <summary xml:lang="eu">KBackupek edozein karpetaren edo fitxategiren babes-kopia tar artxibo batean egiten uzten dizu, bertako karpeta batera, adib. bertan muntatutako gailu  batera, esaterako ZIP unitate bat, USB makil bat, etab. edo urruneko URL batera.</summary>
   <summary xml:lang="fi">KBackup on sovellus, jolla voit varmuuskopioida kansiot tai tiedostot Tar-arkistoon, paikalliseen kansioon – esim. paikallisesti liitetylle tietovälineelle kuten USB-muistitikulle – tai etäosoitteeseen</summary>
   <summary xml:lang="fr">KBackup est une application qui vous permet de sauvegarder des dossiers ou des fichiers au sein d'une archive tar dans un dossier local, par exemple un périphérique comme une clé USB, un lecteur ZIP ou une URL distante</summary>
-  <summary xml:lang="gl">KBackup é un aplicativo que lle permite facer unha copia de seguranza de calquera cartafol ou ficheiro nun arquivo tar e gardala nun cartafol local, como por exemplo un dispositivo ZIP ou unha memoria USB, ou nun URL remoto</summary>
+  <summary xml:lang="gl">KBackup é unha aplicación que lle permite facer unha copia de seguranza de calquera cartafol ou ficheiro nun arquivo tar e gardala nun cartafol local, como por exemplo un dispositivo ZIP ou unha memoria USB, ou nun URL remoto</summary>
   <summary xml:lang="id">KBackup adalah aplikasi yang memungkinkan kamu mencadangkan folder atau file apa pun di arsip tar ke folder lokal, misal perangkat yang dikaitkan secara lokal seperti drive ZIP, stik USB, dll. atau URL jarak jauh</summary>
   <summary xml:lang="it">KBackup è un'applicazione per creare copie di sicurezza di cartelle e file in un archivio tar salvato in una cartella locale, ad es. un dispositivo montato localmente come un disco ZIP, una memoria USB, ecc, o in un URL remoto</summary>
   <summary xml:lang="ko">KBackup은 파일이나 폴더를 로컬에 연결된 USB 메모리나 원격 URL에 있는 TAR 묶음 파일로 백업할 수 있도록 해 줍니다.</summary>
@@ -69,7 +69,7 @@
     <p xml:lang="eu">KBackup zure datuen babes-kopia era erraz eta atsegin batean egiten  uzten dizun aplikazio bat da.</p>
     <p xml:lang="fi">KBackup on sovellus, jolla voit varmuuskopioida tietosi yksinkertaisesti ja helposti</p>
     <p xml:lang="fr">KBackup est une application qui vous permet de sauvegarder vos données de manière simple et intuitive</p>
-    <p xml:lang="gl">KBackup é un aplicativo que lle permite facer unha copia de seguranza dos seus datos dunha maneira sinxela e fácil.</p>
+    <p xml:lang="gl">KBackup é unha aplicación que lle permite facer unha copia de seguranza dos seus datos dunha maneira sinxela e fácil.</p>
     <p xml:lang="id">KBackup adalah aplikasi yang memungkinkan kamu mencadangkan data dengan cara yang sederhana dan ramah pengguna</p>
     <p xml:lang="it">KBackup è un'applicazione che permette di salvare i tuoi dai in modo semplice e intuitivo</p>
     <p xml:lang="ko">KBackup은 쉽고 간편하게 데이터를 백업할 수 있는 프로그램입니다</p>
