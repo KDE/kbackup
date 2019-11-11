@@ -11,6 +11,7 @@
   <name xml:lang="el">KBackup</name>
   <name xml:lang="en-GB">KBackup</name>
   <name xml:lang="es">KBackup</name>
+  <name xml:lang="et">KBackup</name>
   <name xml:lang="eu">KBackup</name>
   <name xml:lang="fi">KBackup</name>
   <name xml:lang="fr">KBackup</name>
@@ -38,6 +39,7 @@
   <summary xml:lang="el">Το KBackup είναι μια εφαρμογή που σας επιτρέπει να δημιουργήσετε εφεδρικά αντίγραφα οποιουδήποτε φακέλου ή αρχείου σε πακέτο αρχειοθέτησης σε έναν τοπικό φάκελο, π.χ. μια τοπικά προσαρτημένη συσκευή όπως μια ZIP ή USB συσκευή, κλπ ή ένα απομακρυσμένο URL</summary>
   <summary xml:lang="en-GB">KBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URL</summary>
   <summary xml:lang="es">KBackup es una aplicación que le permite hacer copias de seguridad de cualquier carpeta o archivo en un archivo comprimido tar en una carpeta local, por ejemplo, en cualquier dispositivo montado localmente como una memoria USB, una unidad ZIP, etc; o un URL remoto</summary>
+  <summary xml:lang="et">KBackup võimaldab varundada mis tahes katalooge või faile tar-arhiivifailina kohalikku kataloogi, nt arvutiga ühendatud ZIP-kettale, USB-pulgale või ka mujal asuvale URL-ile</summary>
   <summary xml:lang="eu">KBackupek edozein karpetaren edo fitxategiren babes-kopia tar artxibo batean egiten uzten dizu, bertako karpeta batera, adib. bertan muntatutako gailu  batera, esaterako ZIP unitate bat, USB makil bat, etab. edo urruneko URL batera.</summary>
   <summary xml:lang="fi">KBackup on sovellus, jolla voit varmuuskopioida kansiot tai tiedostot Tar-arkistoon, paikalliseen kansioon – esim. paikallisesti liitetylle tietovälineelle kuten USB-muistitikulle – tai etäosoitteeseen</summary>
   <summary xml:lang="fr">KBackup est une application qui vous permet de sauvegarder des dossiers ou des fichiers au sein d'une archive tar dans un dossier local, par exemple un périphérique comme une clé USB, un lecteur ZIP ou une URL distante</summary>
@@ -66,6 +68,7 @@
     <p xml:lang="el">Το KBackup είναι μια εφαρμογή που σας επιτρέπει να δημιουργήσετε εφεδρικά αντίγραφα με έναν απλό και φιλικό στη χρήση τρόπο</p>
     <p xml:lang="en-GB">KBackup is an application which lets you back up your data in a simple, user friendly way</p>
     <p xml:lang="es">KBackup es una aplicación que le permite hacer copias de seguridad de sus datos de una manera sencilla y fácil de usar</p>
+    <p xml:lang="et">KBackup on rakendus, mis lubab hõlpsalt ja kasutajasõbralikult teha oma andmetest varukoopia</p>
     <p xml:lang="eu">KBackup zure datuen babes-kopia era erraz eta atsegin batean egiten  uzten dizun aplikazio bat da.</p>
     <p xml:lang="fi">KBackup on sovellus, jolla voit varmuuskopioida tietosi yksinkertaisesti ja helposti</p>
     <p xml:lang="fr">KBackup est une application qui vous permet de sauvegarder vos données de manière simple et intuitive</p>
@@ -92,6 +95,7 @@
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Características:</p>
+    <p xml:lang="et">Omadused:</p>
     <p xml:lang="eu">Eginbideak:</p>
     <p xml:lang="fi">Ominaisuuksia:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
@@ -120,6 +124,7 @@
       <li xml:lang="el">Χρήση αρχείων προφίλ με ορισμούς για φακέλους και αρχεία που θα αποκλείονται από το εφεδρικό αντίγραφο</li>
       <li xml:lang="en-GB">Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
       <li xml:lang="es">Use perfiles con definiciones para las carpetas y archivos a ser incluidos o excluidos de la copia de seguridad</li>
+      <li xml:lang="et">Profiilifailide kasutamine, milles sisalduvad kataloogide ja failide definitsioonid määravad, mida varundamisel kaasata või välistada</li>
       <li xml:lang="eu">Profil fitxategiak erabiltzen ditu karpetak eta fitxategiak barneratu edo kanporatzeko definizioekin</li>
       <li xml:lang="fi">Profiilein voi määrittää varmuuskopioon otettavat tai siitä pois jätettävät kansiot ja tiedostot</li>
       <li xml:lang="fr">Utilisation de fichiers de profils contenant les définitions des fichiers et dossiers à inclure ou à exclure de la sauvegarde</li>
@@ -145,6 +150,7 @@
       <li xml:lang="el">Ο προορισμός του εφεδρικού αντιγράφου μπορεί να είναι μια τοπικά προσαρτημένη συσκευή όπως μια ZIP ή USB συσκευή, κλπ. ή ένα απομακρυσμένο URL</li>
       <li xml:lang="en-GB">The backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URL</li>
       <li xml:lang="es">El objetivo de la copia de seguridad puede ser un dispositivo montado localmente como una memoria USB, una unidad ZIP, etc; o cualquier URL remota</li>
+      <li xml:lang="et">Varundamise sihtkoht võib olla kas kohapeal ühendatud seade, näiteks ZIP-ketas, USB-pulk või midagi muud, või ka mujal asuv URL</li>
       <li xml:lang="eu">Babes-kopiaren jomuga bertan muntatutako gailu bat izan daiteke, ZIP unitate bat, USB makil bat, etab. edo urruneko edozein URL</li>
       <li xml:lang="fi">Varmuuskopiokansio voi olla paikallisesti liitetty tietoväline (kuten USB-muistitikku) tai mikä tahansa etäosoite</li>
       <li xml:lang="fr">La destination de l'archive peut être n'importe quel dossier monté en local : lecteur ZIP, clé USB ou URL distante</li>
@@ -170,6 +176,7 @@
       <li xml:lang="el">Εκτέλεση αυτοματοποιημένων εργασιών δημιουργίας εφεδρικών αντιγράφων χωρίς τη χρήση γραφικού περιβάλλοντος</li>
       <li xml:lang="en-GB">Running automated backups without using a graphical user interface</li>
       <li xml:lang="es">Ejecución automática de copias de seguridad sin usar una interfaz gráfica de usuario</li>
+      <li xml:lang="et">Automaatne varundamine ilma graafilise kasutajaliideseta</li>
       <li xml:lang="eu">Babes-kopia automatikoak exekutatzea erabiltzaile-interfaze grafiko bat erabili gabe</li>
       <li xml:lang="fi">Automaattiset varmuuskopiot ajetaan ilman graafista käyttöliittymää</li>
       <li xml:lang="fr">Lancement de sauvegardes automatisées sans passer par l'interface graphique utilisateur</li>
