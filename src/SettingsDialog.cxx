@@ -44,7 +44,7 @@ void SettingsDialog::sizeSelected(int idx)
   else
     ui.maxSliceSize->setDisabled(true);
   
-  // http://en.wikipedia.org/wiki/Binary_prefix#Binary_prefixes_using_SI_symbols
+  // https://en.wikipedia.org/wiki/Binary_prefix#Binary_prefixes_using_SI_symbols
   // CD capacities are always given in binary units
   // But DVD capacities are given in decimal units
 
