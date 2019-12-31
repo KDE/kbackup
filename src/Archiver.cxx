@@ -388,32 +388,32 @@ bool Archiver::saveProfile(const QString &fileName, const QStringList &includes,
 
   QTextStream stream(&file);
 
-  stream << "M " << targetURL.toString(QUrl::PreferLocalFile) << endl;
-  stream << "P " << getFilePrefix() << endl;
-  stream << "S " << getMaxSliceMBs() << endl;
-  stream << "R " << getKeptBackups() << endl;
-  stream << "F " << getFullBackupInterval() << endl;
+  stream << "M " << targetURL.toString(QUrl::PreferLocalFile) << QLatin1Char('\n');
+  stream << "P " << getFilePrefix() << QLatin1Char('\n');
+  stream << "S " << getMaxSliceMBs() << QLatin1Char('\n');
+  stream << "R " << getKeptBackups() << QLatin1Char('\n');
+  stream << "F " << getFullBackupInterval() << QLatin1Char('\n');
 
   if ( getLastFullBackup().isValid() )
-    stream << "L " << getLastFullBackup().toString(Qt::ISODate) << endl;
+    stream << "L " << getLastFullBackup().toString(Qt::ISODate) << QLatin1Char('\n');
 
   if ( getLastBackup().isValid() )
-    stream << "B " << getLastBackup().toString(Qt::ISODate) << endl;
+    stream << "B " << getLastBackup().toString(Qt::ISODate) << QLatin1Char('\n');
 
-  stream << "C " << static_cast<int>(getMediaNeedsChange()) << endl;
-  stream << "Z " << static_cast<int>(getCompressFiles()) << endl;
+  stream << "C " << static_cast<int>(getMediaNeedsChange()) << QLatin1Char('\n');
+  stream << "Z " << static_cast<int>(getCompressFiles()) << QLatin1Char('\n');
 
   if ( !filters.isEmpty() )
-    stream << "X " << getFilter() << endl;
+    stream << "X " << getFilter() << QLatin1Char('\n');
 
   foreach (const QRegExp &exp, dirFilters)
-    stream << "x " << exp.pattern() << endl;
+    stream << "x " << exp.pattern() << QLatin1Char('\n');
 
   foreach (const QString &str, includes)
-    stream << "I " << str << endl;
+    stream << "I " << str << QLatin1Char('\n');
 
   foreach (const QString &str, excludes)
-    stream << "E " << str << endl;
+    stream << "E " << str << QLatin1Char('\n');
 
   file.close();
   return true;
