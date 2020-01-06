@@ -197,9 +197,9 @@
       <li xml:lang="zh-TW">執行自動備份而不使用圖形使用者介面</li>
     </ul>
   </description>
-  <launchable type="desktop-id">org.kde.backup.desktop</launchable>
+  <launchable type="desktop-id">org.kde.kbackup.desktop</launchable>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kbackup</url>
-  <url type="help">http://docs.kde.org/?application=kbackup</url>
+  <url type="help">https://docs.kde.org/?application=kbackup</url>
   <screenshots>
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/kbackup/mainwindow.png</image>
