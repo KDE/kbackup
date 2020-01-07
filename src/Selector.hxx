@@ -58,11 +58,11 @@ class Selector : public QTreeView
 
   private:
     QSize minSize;
-    QStandardItemModel *itemModel;
-    QMenu *menu, *openWithSubMenu;
-    QAction *deleteFileAction;
+    QStandardItemModel *itemModel = nullptr;
+    QMenu *menu = nullptr, *openWithSubMenu = nullptr;
+    QAction *deleteFileAction = nullptr;
     QMap<QString, KService::Ptr> serviceForName;
-    bool showHiddenFiles;
+    bool showHiddenFiles = true;
 };
 
 #endif

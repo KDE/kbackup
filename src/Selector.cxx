@@ -38,7 +38,7 @@ using namespace std;
 class Model : public QStandardItemModel
 {
   public:
-    Model(Selector *parent) : QStandardItemModel(parent), tree(parent)
+    explicit Model(Selector *parent) : QStandardItemModel(parent), tree(parent)
     {
       const char *lc_collate = ::getenv("LC_COLLATE");
       if ( lc_collate )
@@ -239,7 +239,7 @@ class ListItem : public QStandardItem
 //--------------------------------------------------------------------------------
 
 Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
-  : QTreeView(parent), showHiddenFiles(true)
+  : QTreeView(parent)
 {
   itemModel = new Model(this);
 
@@ -266,11 +266,11 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   const char *home = ::getenv("HOME");
   if ( home )
   {
-    QStandardItem *item = findItemByPath(QFile::decodeName(home));
-    if ( item )
+    QStandardItem *homeItem = findItemByPath(QFile::decodeName(home));
+    if ( homeItem )
     {
-      setExpanded(item->index(), true);
-      scrollTo(item->index());
+      setExpanded(homeItem->index(), true);
+      scrollTo(homeItem->index());
     }
   }
 

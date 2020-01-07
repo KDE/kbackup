@@ -55,16 +55,16 @@ class MainWindow : public KXmlGuiWindow
     void setLoadedProfile(const QString &name);
 
   private:
-    QSplitter *splitter;
-    Selector *selector;
-    MainWidget *mainWidget;
-    KStatusNotifierItem *sysTray;
+    QSplitter *splitter = nullptr;
+    Selector *selector = nullptr;
+    MainWidget *mainWidget = nullptr;
+    KStatusNotifierItem *sysTray = nullptr;
     QString lastLog;
-    QAction *startBackupAction;
-    QAction *cancelBackupAction;
-    QAction *quitAction;
-    KRecentFilesAction *recentFiles;
-    bool autorun;
+    QAction *startBackupAction = nullptr;
+    QAction *cancelBackupAction = nullptr;
+    QAction *quitAction = nullptr;
+    KRecentFilesAction *recentFiles = nullptr;
+    bool autorun = false;
     QString loadedProfile;
 };
 

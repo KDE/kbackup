@@ -149,7 +149,7 @@ int main(int argc, char **argv)
 
     if ( !Archiver::instance->loadProfile(fileName, includes, excludes, error) )
     {
-      std::cerr << i18n("Could not open profile '%1' for reading: %2", fileName, error).toUtf8().constData() << std::endl;
+      std::cerr << qPrintable(i18n("Could not open profile '%1' for reading: %2", fileName, error)) << std::endl;
       return -1;
     }
     else

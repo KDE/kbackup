@@ -44,7 +44,6 @@
 //--------------------------------------------------------------------------------
 
 MainWindow::MainWindow()
-  : sysTray(nullptr), autorun(false)
 {
   new Archiver(this);
 
