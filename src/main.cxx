@@ -57,8 +57,6 @@ int main(int argc, char **argv)
   KAboutData::setApplicationData(about);
 
   QCommandLineParser cmdLine;
-  cmdLine.addVersionOption();
-  cmdLine.addHelpOption();
 
   cmdLine.addPositionalArgument(QStringLiteral("profile"), i18n("Start with given profile."), QStringLiteral("[profile]"));
 
