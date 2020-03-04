@@ -136,7 +136,11 @@ void Archiver::setKeptBackups(int num)
 void Archiver::setFilter(const QString &filter)
 {
   filters.clear();
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
   QStringList list = filter.split(QLatin1Char(' '), QString::SkipEmptyParts);
+#else
+  QStringList list = filter.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+#endif
   foreach (const QString &str, list)
     filters.append(QRegExp(str, Qt::CaseSensitive, QRegExp::Wildcard));
 }
@@ -159,7 +163,11 @@ QString Archiver::getFilter() const
 void Archiver::setDirFilter(const QString &filter)
 {
   dirFilters.clear();
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
   QStringList list = filter.split(QLatin1Char('\n'), QString::SkipEmptyParts);
+#else
+  QStringList list = filter.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+#endif
   foreach (const QString &str, list)
   {
     QString expr = str.trimmed();
