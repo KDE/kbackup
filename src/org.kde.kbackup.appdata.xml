@@ -27,6 +27,7 @@
   <name xml:lang="pt-BR">KBackup</name>
   <name xml:lang="ru">KBackup</name>
   <name xml:lang="sk">KBackup</name>
+  <name xml:lang="sl">KBackup</name>
   <name xml:lang="sv">Kbackup</name>
   <name xml:lang="uk">KBackup</name>
   <name xml:lang="x-test">xxKBackupxx</name>
@@ -53,6 +54,7 @@
   <summary xml:lang="pt">O KBackup é uma aplicação que lhe permite salvaguardar quaisquer pastas ou ficheiros num pacote TAR para uma pasta local, p.ex. um dispositivo montado localmente como um disco ZIP, disco USB, etc. ou um URL remoto</summary>
   <summary xml:lang="pt-BR">KBackup é um aplicativo que permite fazer cópias de segurança de quaisquer pastas ou arquivos em um arquivo TAR em uma pasta local, por exemplo, um dispositivo montado localmente como um disco ZIP, dispositivo USB, etc. ou uma URL remota</summary>
   <summary xml:lang="sk">KBackup je aplikácia, ktorá vám umožnuje zálohovať akékoľvek priečinky a súbory do tar archívu do lokálneho priečinku, e. g. na pripojené zariadenie ako USB alebo na vzdialenú URL adresu</summary>
+  <summary xml:lang="sl">KBackup je aplikacija, ki omogoča varnostno kopiranje vseh map ali datotek v arhivu tar v lokalno mapo, npr. lokalno priklopljeno napravo, kot je ZIP pogon, USB ključ itd. ali oddaljeni spletni naslov</summary>
   <summary xml:lang="sv">Kbackup är ett program som låter dig säkerhetskopiera vilka kataloger eller filer till ett tar-arkiv i en lokal katalog, t.ex. en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller till en fjärrwebbadress.</summary>
   <summary xml:lang="uk">KBackup — програма, за допомогою якої ви можете створювати резервні копії будь-яких тек або файлів у форматі архіву tar до локальної теки, тобто локально змонтованого пристрою, наприклад диска ZIP, флеш-накопичувача USB тощо, або за віддаленою адресою</summary>
   <summary xml:lang="x-test">xxKBackup is an application that lets you back up any folders or files in a tar archive to a local folder, e.g. a locally mounted device like a ZIP drive, USB stick, etc. or a remote URLxx</summary>
@@ -82,6 +84,7 @@
     <p xml:lang="pt">O KBackup é uma aplicação que lhe permite salvaguardar os seus dados de forma simples e amigável</p>
     <p xml:lang="pt-BR">O KBackup é um aplicativo que lhe permite fazer cópias de segurança dos seus dados de forma simples e amigável</p>
     <p xml:lang="sk">KBackup je aplikácia, ktorá vám umožnuje zálohovať údaje jednoduchým, používateľsky priateľským spôsobom</p>
+    <p xml:lang="sl">KBackup je aplikacija, ki vam omogoča preprosto varnostno kopiranje podatkov na preprost in uporabniku prijazen način</p>
     <p xml:lang="sv">Kbackup är ett program som låter dig säkerhetskopiera data på ett enkelt, användarvänligt sätt</p>
     <p xml:lang="uk">KBackup — програма, за допомогою якої ви зможете створювати резервні копії своїх даних у простий і зручний спосіб</p>
     <p xml:lang="x-test">xxKBackup is an application which lets you back up your data in a simple, user friendly wayxx</p>
@@ -111,6 +114,7 @@
     <p xml:lang="pt-BR">Funcionalidades:</p>
     <p xml:lang="ru">Возможности:</p>
     <p xml:lang="sk">Funkcie:</p>
+    <p xml:lang="sl">Možnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
@@ -138,6 +142,7 @@
       <li xml:lang="pt">Uso de ficheiros de perfis com definições das pastas e ficheiros a incluir ou excluir na cópia de segurança</li>
       <li xml:lang="pt-BR">Uso de arquivos de perfis com definições das pastas e arquivos a serem incluídos ou excluídos na cópia de segurança</li>
       <li xml:lang="sk">Používanie súborov s definíciami pre priečinky a súbory, ktoré sa majú zahrnúť alebo vynechať do zálohy</li>
+      <li xml:lang="sl">Uporaba datotek profila z definicijami za mape in datoteke, ki jih je treba bodisi vključiti ali izključiti iz varnostnega kopiranja</li>
       <li xml:lang="sv">Använder profilfiler med definitioner av kataloger och filer som ska  inkluderas i eller exkluderas från säkerhetskopieringen</li>
       <li xml:lang="uk">Використання файлів профілів із визначеннями тек і файлів, які буде включено і виключено із переліку резервного копіювання</li>
       <li xml:lang="x-test">xxUsing profile files with definitions for Folders and files to be included or excluded from the backupxx</li>
@@ -164,6 +169,7 @@
       <li xml:lang="pt">O destino da cópia de segurança poderá ser um dispositivo montado localmente, como um disco ZIP, disco USB, etc. ou qualquer URL remoto</li>
       <li xml:lang="pt-BR">O destino da cópia de segurança poderá ser um dispositivo montado localmente, como um disco ZIP, dispositivo USB, etc. ou qualquer URL remota</li>
       <li xml:lang="sk">Zálohovací cieľ môže byť buď lokálne pripojené zariadenie ako napr. USB kľúč alebo vzdialená adresa URL</li>
+      <li xml:lang="sl">Cilj varnostnega kopiranja je lahko lokalno nameščena naprava, kot je ZIP pogon, USB ključ itd. ali kateri koli oddaljeni spletni naslov</li>
       <li xml:lang="sv">Målet för säkerhetskopieringen kan antingen vara en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller en fjärrwebbadress</li>
       <li xml:lang="uk">Резервні копії можуть зберігатися на локально змонтованому пристрої, зокрема диску ZIP, флеш-накопичувачі USB тощо, або за будь-якою віддаленою адресою</li>
       <li xml:lang="x-test">xxThe backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URLxx</li>
@@ -190,6 +196,7 @@
       <li xml:lang="pt">Execução de cópias de segurança automatizadas sem usar uma interface gráfica</li>
       <li xml:lang="pt-BR">Execução de cópias de segurança automatizadas sem usar uma interface gráfica</li>
       <li xml:lang="sk">Spúšťanie automatizovaných záloh bez použitia grafického používateľského prostredia</li>
+      <li xml:lang="sl">Izdelovanje samodejnih varnostnih kopij brez uporabe grafičnega uporabniškega vmesnika</li>
       <li xml:lang="sv">Kör automatiserade säkerhetskopieringar utan att använda ett grafiskt användargränssnitt</li>
       <li xml:lang="uk">Виконання автоматизованого створення резервних копій без використання графічного інтерфейсу користувача</li>
       <li xml:lang="x-test">xxRunning automated backups without using a graphical user interfacexx</li>
