@@ -11,8 +11,8 @@
 #include <Archiver.hxx>
 #include <Selector.hxx>
 
-#include <kiconloader.h>
-#include <kurlcompletion.h>
+#include <KIconLoader>
+#include <KUrlCompletion>
 
 #include <QPushButton>
 #include <QFileDialog>

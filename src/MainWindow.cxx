@@ -13,12 +13,12 @@
 #include <MainWidget.hxx>
 #include <SettingsDialog.hxx>
 
-#include <qsplitter.h>
-#include <qspinbox.h>
-#include <qtooltip.h>
-#include <qtimer.h>
-#include <qcursor.h>
-#include <qcheckbox.h>
+#include <QSplitter>
+#include <QSpinBox>
+#include <QToolTip>
+#include <QTimer>
+#include <QCursor>
+#include <QCheckBox>
 #include <QMenu>
 #include <QAction>
 #include <QUrl>
@@ -27,17 +27,17 @@
 #include <QHeaderView>
 
 #include <KXMLGUIFactory>
-#include <kstandardaction.h>
-#include <kactioncollection.h>
-#include <ktoggleaction.h>
-#include <krecentfilesaction.h>
-#include <kmessagebox.h>
+#include <KStandardAction>
+#include <KActionCollection>
+#include <KToggleAction>
+#include <KRecentFilesAction>
+#include <KMessageBox>
 #include <kio/global.h>
-#include <kstringhandler.h>
+#include <KStringHandler>
 #include <KStatusNotifierItem>
 #include <KSharedConfig>
 #include <KConfigGroup>
-#include <kshortcutsdialog.h>
+#include <KShortcutsDialog>
 
 //#include <iostream>
 //using namespace std;

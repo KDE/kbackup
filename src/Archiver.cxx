@@ -10,19 +10,19 @@
 #include <Archiver.hxx>
 
 #include <kio_version.h>
-#include <ktar.h>
+#include <KTar>
 #include <KFilterBase>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
-#include <kprocess.h>
-#include <kmountpoint.h>
+#include <KProcess>
+#include <KMountPoint>
 #include <KLocalizedString>
 #include <KMessageBox>
 
-#include <qapplication.h>
-#include <qdir.h>
-#include <qfileinfo.h>
-#include <qcursor.h>
+#include <QApplication>
+#include <QDir>
+#include <QFileInfo>
+#include <QCursor>
 #include <QTextStream>
 #include <QFileDialog>
 #include <QTemporaryFile>

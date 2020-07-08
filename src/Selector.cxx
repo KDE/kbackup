@@ -11,10 +11,10 @@
 
 #include <kio_version.h>
 #include <kio/global.h>
-#include <kiconloader.h>
-#include <kiconeffect.h>
+#include <KIconLoader>
+#include <KIconEffect>
 #include <KLocalizedString>
-#include <kpropertiesdialog.h>
+#include <KPropertiesDialog>
 #include <KFileItem>
 #include <KMimeTypeTrader>
 #include <KRun>
