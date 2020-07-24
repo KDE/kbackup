@@ -21,6 +21,12 @@
 #include <KActionCollection>
 #include <KMessageBox>
 
+#if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegate>
+#endif
+
 #include <QDir>
 #include <QPixmap>
 #include <QDateTime>
@@ -255,7 +261,7 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   QFileInfo info(QStringLiteral("/"));
   item->setSize(info.size());
   item->setLastModified(info.lastModified());
-  item->setIcon(SmallIcon(QStringLiteral("folder")));
+  item->setIcon(QIcon::fromTheme(QLatin1String("folder")));
   setExpanded(item->index(), true);
 
   fillTree(item, QStringLiteral("/"), false);
@@ -363,11 +369,12 @@ void Selector::fillTree(ListItem *parent, const QString &path, bool on)
       {
         KIconEffect effect;
 
-        folderIcon = SmallIcon(QStringLiteral("folder"));
+        folderIcon = QIcon::fromTheme(QStringLiteral("folder")).pixmap(KIconLoader::SizeSmall);
         folderIconHidden = effect.apply(folderIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
-        folderLinkIcon = SmallIcon(QStringLiteral("folder"), 0, KIconLoader::DefaultState,
-                                   QStringList(QStringLiteral("emblem-symbolic-link")));
+        folderLinkIcon = KIconLoader::global()->loadIcon(QStringLiteral("folder"), KIconLoader::Small,
+                                                         0, KIconLoader::DefaultState,
+                                                         QStringList(QStringLiteral("emblem-symbolic-link")));
 
         folderLinkIconHidden = effect.apply(folderLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
@@ -387,11 +394,12 @@ void Selector::fillTree(ListItem *parent, const QString &path, bool on)
       {
         KIconEffect effect;
 
-        documentIcon = SmallIcon(QStringLiteral("text-x-generic"));
+        documentIcon = QIcon::fromTheme(QStringLiteral("text-x-generic")).pixmap(KIconLoader::SizeSmall);
         documentIconHidden = effect.apply(documentIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
-        documentLinkIcon = SmallIcon(QStringLiteral("text-x-generic"), 0, KIconLoader::DefaultState,
-                                     QStringList(QStringLiteral("emblem-symbolic-link")));
+        documentLinkIcon = KIconLoader::global()->loadIcon(QStringLiteral("text-x-generic"), KIconLoader::Small,
+                                                           0, KIconLoader::DefaultState,
+                                                           QStringList(QStringLiteral("emblem-symbolic-link")));
 
         documentLinkIconHidden = effect.apply(documentLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
@@ -736,14 +744,27 @@ void Selector::openWith(QAction *action)
 
   if ( name.isEmpty() ) // Other Application...
   {
+#if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
+    KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob();
+    job->setUrls(QList<QUrl>() << sourceUrl);
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+    job->start();
+#else
     KRun::displayOpenWithDialog(QList<QUrl>() << sourceUrl, this);
+#endif
     return;
   }
 
   if ( name == QLatin1String("-") )  // File Manager
   {
 #if (KIO_VERSION >= QT_VERSION_CHECK(5, 31, 0))
+#if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
+    KIO::OpenUrlJob *job = new KIO::OpenUrlJob(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"));
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+    job->start();
+#else
     KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"), this, KRun::RunFlags());
+#endif
 #else
     KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"), this);
 #endif
@@ -753,7 +774,14 @@ void Selector::openWith(QAction *action)
 
   KService::Ptr service = serviceForName[name];
 #if (KIO_VERSION >= QT_VERSION_CHECK(5, 24, 0))
+#if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
+  KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
+  job->setUrls(QList<QUrl>() << sourceUrl);
+  job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+  job->start();
+#else
   KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
+#endif
 #else
   KRun::run(*service, QList<QUrl>() << sourceUrl, this);
 #endif

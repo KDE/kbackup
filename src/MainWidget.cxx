@@ -25,9 +25,9 @@ MainWidget::MainWidget(QWidget *parent)
 {
   ui.setupUi(this);
 
-  ui.startButton->setIcon(SmallIcon(QStringLiteral("kbackup_start"), 22));
-  ui.cancelButton->setIcon(SmallIcon(QStringLiteral("kbackup_cancel"), 22));
-  ui.folder->setIcon(SmallIcon(QStringLiteral("folder")));
+  ui.startButton->setIcon(QIcon::fromTheme(QStringLiteral("kbackup_start")));
+  ui.cancelButton->setIcon(QIcon::fromTheme(QStringLiteral("kbackup_cancel")));
+  ui.folder->setIcon(QIcon::fromTheme(QStringLiteral("folder")));
 
   connect(ui.startButton,  &QAbstractButton::clicked, this, &MainWidget::startBackup);
   connect(ui.cancelButton, &QAbstractButton::clicked, Archiver::instance, &Archiver::cancel);
