@@ -31,6 +31,7 @@ class Selector : public QTreeView
     void getBackupList(QStringList &includes, QStringList &excludes) const;
     void setBackupList(const QStringList &includes, const QStringList &excludes);
     void setShowHiddenFiles(bool show);
+    void openHomeDir();
 
     QSize minimumSizeHint() const override;
 

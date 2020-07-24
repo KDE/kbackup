@@ -262,18 +262,6 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
 
   connect(this, &Selector::expanded, this, &Selector::expandedSlot);
 
-  // for convenience, open the tree at the HOME directory
-  const char *home = ::getenv("HOME");
-  if ( home )
-  {
-    QStandardItem *homeItem = findItemByPath(QFile::decodeName(home));
-    if ( homeItem )
-    {
-      setExpanded(homeItem->index(), true);
-      scrollTo(homeItem->index());
-    }
-  }
-
   minSize = QSize(columnWidth(0) + columnWidth(1), -1);
   resizeColumnToContents(0);
   resizeColumnToContents(1);
@@ -306,6 +294,22 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   action = actionCollection->addAction(QStringLiteral("properties"), this, SLOT(properties()));
   action->setText(i18n("Properties..."));
   menu->addAction(action);
+}
+
+//--------------------------------------------------------------------------------
+
+void Selector::openHomeDir()
+{
+  const char *home = ::getenv("HOME");
+  if ( home )
+  {
+    QStandardItem *homeItem = findItemByPath(QFile::decodeName(home));
+    if ( homeItem )
+    {
+      setExpanded(homeItem->index(), true);
+      scrollTo(homeItem->index());
+    }
+  }
 }
 
 //--------------------------------------------------------------------------------

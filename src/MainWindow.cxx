@@ -122,6 +122,9 @@ MainWindow::MainWindow()
   docked->setChecked(KSharedConfig::openConfig()->group("settings").readEntry<bool>("dockInSysTray", false));
   dockInSysTray(docked->isChecked());
 
+  // for convenience, open the tree at the HOME directory
+  selector->openHomeDir();
+
   changeSystrayTip();
 }
 
