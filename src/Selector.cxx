@@ -757,7 +757,6 @@ void Selector::openWith(QAction *action)
 
   if ( name == QLatin1String("-") )  // File Manager
   {
-#if (KIO_VERSION >= QT_VERSION_CHECK(5, 31, 0))
 #if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
     KIO::OpenUrlJob *job = new KIO::OpenUrlJob(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"));
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
@@ -765,15 +764,11 @@ void Selector::openWith(QAction *action)
 #else
     KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"), this, KRun::RunFlags());
 #endif
-#else
-    KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"), this);
-#endif
 
     return;
   }
 
   KService::Ptr service = serviceForName[name];
-#if (KIO_VERSION >= QT_VERSION_CHECK(5, 24, 0))
 #if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
   KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
   job->setUrls(QList<QUrl>() << sourceUrl);
@@ -781,9 +776,6 @@ void Selector::openWith(QAction *action)
   job->start();
 #else
   KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
-#endif
-#else
-  KRun::run(*service, QList<QUrl>() << sourceUrl, this);
 #endif
 }
 
