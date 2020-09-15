@@ -682,9 +682,9 @@ void Selector::populateOpenMenu()
   KFileItem fileItem(sourceUrl);
   QString mimeType(fileItem.determineMimeType().name());
 
-  KService::List services = KMimeTypeTrader::self()->query(mimeType);
+  const KService::List services = KMimeTypeTrader::self()->query(mimeType);
 
-  foreach (const KService::Ptr &service, services)
+  for (const KService::Ptr &service : services)
   {
     QString text = service->name().replace(QLatin1Char('&'), QStringLiteral("&&"));
     QAction* action = openWithSubMenu->addAction(text);
