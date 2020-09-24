@@ -261,7 +261,7 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   QFileInfo info(QStringLiteral("/"));
   item->setSize(info.size());
   item->setLastModified(info.lastModified());
-  item->setIcon(QIcon::fromTheme(QLatin1String("folder")));
+  item->setIcon(QIcon::fromTheme(QStringLiteral("folder")));
   setExpanded(item->index(), true);
 
   fillTree(item, QStringLiteral("/"), false);

@@ -108,17 +108,17 @@ class Archiver : public QObject
     void setForceFullBackup(bool force = true);
 
   Q_SIGNALS:
-    void inProgress(bool runs) const;
-    void logging(const QString &) const;
-    void warning(const QString &) const;
-    void targetCapacity(KIO::filesize_t bytes) const;
-    void sliceProgress(int percent) const;
-    void fileProgress(int percent) const;
-    void newSlice(int) const;
-    void totalFilesChanged(int) const;
-    void totalBytesChanged(KIO::filesize_t) const;
-    void elapsedChanged(const QTime &) const;
-    void backupTypeChanged(bool incremental) const;
+    void inProgress(bool runs);
+    void logging(const QString &);
+    void warning(const QString &);
+    void targetCapacity(KIO::filesize_t bytes);
+    void sliceProgress(int percent);
+    void fileProgress(int percent);
+    void newSlice(int);
+    void totalFilesChanged(int);
+    void totalBytesChanged(KIO::filesize_t);
+    void elapsedChanged(const QTime &);
+    void backupTypeChanged(bool incremental);
 
   private Q_SLOTS:
     void slotResult(KJob *);
@@ -150,7 +150,7 @@ class Archiver : public QObject
     // return true if given fileName matches any of the defined filters
     bool fileIsFiltered(const QString &fileName) const;
 
-    void emitArchiveError() const;
+    void emitArchiveError();
 
     static bool UDSlessThan(const KIO::UDSEntry &left, const KIO::UDSEntry &right);
 
