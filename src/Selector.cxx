@@ -17,15 +17,12 @@
 #include <KPropertiesDialog>
 #include <KFileItem>
 #include <KMimeTypeTrader>
-#include <KRun>
 #include <KActionCollection>
 #include <KMessageBox>
 
-#if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/OpenUrlJob>
 #include <KIO/JobUiDelegate>
-#endif
 
 #include <QDir>
 #include <QPixmap>
@@ -725,8 +722,10 @@ void Selector::open()
 
   QUrl sourceUrl = QUrl::fromLocalFile(getPath(item));
 
-  KRun *run = new KRun(sourceUrl, window());  // auto-deletes itself
-  run->setRunExecutables(false);
+  auto *job = new KIO::OpenUrlJob(sourceUrl, window());
+  job->setRunExecutables(false);
+  job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+  job->start();
 }
 
 //--------------------------------------------------------------------------------
@@ -744,39 +743,27 @@ void Selector::openWith(QAction *action)
 
   if ( name.isEmpty() ) // Other Application...
   {
-#if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
     KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob();
     job->setUrls(QList<QUrl>() << sourceUrl);
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
     job->start();
-#else
-    KRun::displayOpenWithDialog(QList<QUrl>() << sourceUrl, this);
-#endif
     return;
   }
 
   if ( name == QLatin1String("-") )  // File Manager
   {
-#if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
     KIO::OpenUrlJob *job = new KIO::OpenUrlJob(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"));
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
     job->start();
-#else
-    KRun::runUrl(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"), this, KRun::RunFlags());
-#endif
 
     return;
   }
 
   KService::Ptr service = serviceForName[name];
-#if (KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0))
   KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
   job->setUrls(QList<QUrl>() << sourceUrl);
   job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
   job->start();
-#else
-  KRun::runApplication(*service, QList<QUrl>() << sourceUrl, this);
-#endif
 }
 
 //--------------------------------------------------------------------------------
