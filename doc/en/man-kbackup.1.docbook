@@ -39,7 +39,7 @@ $applicationname xx.yy for applications with independent release schedule (extra
 </refentryinfo>
 
 <refmeta>
-<refentrytitle><command>kbackup></command></refentrytitle>
+<refentrytitle><command>kbackup</command></refentrytitle>
 <manvolnum>1</manvolnum>
 </refmeta>
 
@@ -214,7 +214,7 @@ url="help:/ --commandname-- ">help:/kbackup</ulink>
 <refsect1>
 <title>Authors</title>
 <para>Kbackup was written by Martin Koller <email> kollix@aon.at</email>
-        This man-page was created by Scott Kitterman <email>scott@kitterman.com</email> and  and updated by Scarlett Moore <email>sgmoore@kde.org</email>, it is
+        This man-page was created by Scott Kitterman <email>scott@kitterman.com</email> and updated by Scarlett Moore <email>sgmoore@kde.org</email>, it is
 licensed under the same terms as kbackup.</para>
 </refsect1>
 
