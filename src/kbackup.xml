@@ -3,11 +3,13 @@
   <mime-type type="text/x-kbp">
     <comment>KBackup Profile</comment>
     <comment xml:lang="ca">Perfil del KBackup</comment>
+    <comment xml:lang="el">KBackup προφίλ</comment>
     <comment xml:lang="es">Perfil de KBackup</comment>
     <comment xml:lang="it">Profilo di KBackup</comment>
     <comment xml:lang="lt">KBackup profilis</comment>
     <comment xml:lang="nl">KBackup-profiel</comment>
     <comment xml:lang="pt">Perfil do KBackup</comment>
+    <comment xml:lang="sl">Profil Kbackupa</comment>
     <comment xml:lang="sv">Kbackup-profil</comment>
     <comment xml:lang="uk">профіль KBackup</comment>
     <glob pattern="*.kbp"/>
