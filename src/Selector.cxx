@@ -16,7 +16,7 @@
 #include <KLocalizedString>
 #include <KPropertiesDialog>
 #include <KFileItem>
-#include <KMimeTypeTrader>
+#include <KApplicationTrader>
 #include <KActionCollection>
 #include <KMessageBox>
 
@@ -679,7 +679,7 @@ void Selector::populateOpenMenu()
   KFileItem fileItem(sourceUrl);
   QString mimeType(fileItem.determineMimeType().name());
 
-  const KService::List services = KMimeTypeTrader::self()->query(mimeType);
+  const KService::List services = KApplicationTrader::queryByMimeType(mimeType);
 
   for (const KService::Ptr &service : services)
   {
