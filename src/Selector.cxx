@@ -291,7 +291,7 @@ Selector::Selector(QWidget *parent, KActionCollection *actionCollection)
   deleteFileAction = actionCollection->addAction(QStringLiteral("deleteFile"), this, SLOT(deleteFile()));
   deleteFileAction->setText(i18n("Delete File"));
   deleteFileAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-  deleteFileAction->setShortcut(QKeySequence(Qt::SHIFT + Qt::Key_Delete));
+  deleteFileAction->setShortcut(QKeySequence(Qt::SHIFT | Qt::Key_Delete));
   menu->addAction(deleteFileAction);
 
   action = actionCollection->addAction(QStringLiteral("properties"), this, SLOT(properties()));
