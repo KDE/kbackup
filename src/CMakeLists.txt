@@ -30,8 +30,8 @@ install(TARGETS kbackup ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 find_package(SharedMimeInfo REQUIRED)
 
-install(FILES kbackup.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
-update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
+install(FILES kbackup.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
+update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 
 install(FILES  org.kde.kbackup.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES  kbackupui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kbackup)
