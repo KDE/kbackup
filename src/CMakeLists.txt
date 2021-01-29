@@ -26,7 +26,7 @@ target_link_libraries(kbackup
                       KF5::Archive
 )
 
-install(TARGETS kbackup ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kbackup ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 find_package(SharedMimeInfo REQUIRED)
 
