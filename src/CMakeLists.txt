@@ -33,8 +33,8 @@ find_package(SharedMimeInfo REQUIRED)
 install(FILES kbackup.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 
-install(FILES  org.kde.kbackup.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES  kbackupui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/kbackup)
+install(FILES  org.kde.kbackup.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES  kbackupui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/kbackup)
 install(FILES org.kde.kbackup.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
@@ -42,5 +42,5 @@ ecm_install_icons(ICONS
                   32-apps-kbackup.png
                   16-mimetypes-text-x-kbp.png
                   32-mimetypes-text-x-kbp.png
-                  DESTINATION ${ICON_INSTALL_DIR}
+                  DESTINATION ${KDE_INSTALL_ICONDIR}
                   THEME hicolor)
