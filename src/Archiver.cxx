@@ -33,7 +33,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <string.h>
-#include <errno.h>
+#include <cerrno>
 #include <sys/statvfs.h>
 
 // For INT64_MAX:
