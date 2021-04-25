@@ -11,7 +11,6 @@
 #include <Archiver.hxx>
 #include <Selector.hxx>
 
-#include <KIconLoader>
 #include <KUrlCompletion>
 
 #include <QPushButton>

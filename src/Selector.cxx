@@ -13,6 +13,7 @@
 #include <kio/global.h>
 #include <KIconLoader>
 #include <KIconEffect>
+#include <KIconUtils>
 #include <KLocalizedString>
 #include <KPropertiesDialog>
 #include <KFileItem>
@@ -369,9 +370,9 @@ void Selector::fillTree(ListItem *parent, const QString &path, bool on)
         folderIcon = QIcon::fromTheme(QStringLiteral("folder")).pixmap(KIconLoader::SizeSmall);
         folderIconHidden = effect.apply(folderIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
-        folderLinkIcon = KIconLoader::global()->loadIcon(QStringLiteral("folder"), KIconLoader::Small,
-                                                         0, KIconLoader::DefaultState,
-                                                         QStringList(QStringLiteral("emblem-symbolic-link")));
+        folderLinkIcon = KIconUtils::addOverlay(folderIcon,
+                                                QIcon::fromTheme(QStringLiteral("emblem-symbolic-link")),
+                                                Qt::BottomRightCorner).pixmap(KIconLoader::SizeSmall);
 
         folderLinkIconHidden = effect.apply(folderLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
@@ -394,9 +395,9 @@ void Selector::fillTree(ListItem *parent, const QString &path, bool on)
         documentIcon = QIcon::fromTheme(QStringLiteral("text-x-generic")).pixmap(KIconLoader::SizeSmall);
         documentIconHidden = effect.apply(documentIcon, KIconEffect::DeSaturate, 0, QColor(), true);
 
-        documentLinkIcon = KIconLoader::global()->loadIcon(QStringLiteral("text-x-generic"), KIconLoader::Small,
-                                                           0, KIconLoader::DefaultState,
-                                                           QStringList(QStringLiteral("emblem-symbolic-link")));
+        documentLinkIcon = KIconUtils::addOverlay(documentIcon,
+                                                QIcon::fromTheme(QStringLiteral("emblem-symbolic-link")),
+                                                Qt::BottomRightCorner).pixmap(KIconLoader::SizeSmall);
 
         documentLinkIconHidden = effect.apply(documentLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
       }
