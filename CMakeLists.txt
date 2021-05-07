@@ -38,9 +38,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Archive
     WidgetsAddons
 )
-if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
-   add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
-endif()
+
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050c00)
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
 
 
