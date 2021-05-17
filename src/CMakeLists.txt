@@ -13,8 +13,8 @@ ki18n_wrap_ui(kbackup_SRCS MainWidgetBase.ui SettingsDialog.ui)
 
 add_executable(kbackup ${kbackup_SRCS})
 target_link_libraries(kbackup
-                      Qt5::Core
-                      Qt5::Widgets
+                      Qt::Core
+                      Qt::Widgets
                       KF5::I18n
                       KF5::KIOCore
                       KF5::KIOFileWidgets
