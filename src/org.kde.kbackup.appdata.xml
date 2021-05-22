@@ -35,6 +35,13 @@
   <name xml:lang="zh-CN">KBackup</name>
   <name xml:lang="zh-TW">KBackup</name>
   <summary>Create backups as .tar files to a local folder or remote URL</summary>
+  <summary xml:lang="ca">Crea còpies de seguretat com a fitxers .tar en una carpeta local o URL remot</summary>
+  <summary xml:lang="de">Erstellt Sicherungen als „.tar“-Dateien in einem lokalen Ordner oder einer entfernten URL</summary>
+  <summary xml:lang="es">Crear copias de seguridad como archivos .tar en una carpeta local o URL remota</summary>
+  <summary xml:lang="nl">Reservekopieën maken als .tar bestanden naar een lokale map of URL op afstand</summary>
+  <summary xml:lang="sv">Skapa säkerhetskopior som .tar-filer i en lokal katalog eller fjärrwebbadress</summary>
+  <summary xml:lang="uk">Створює резервні копії у форматі .tar у локальній теці або на віддаленому сервері</summary>
+  <summary xml:lang="x-test">xxCreate backups as .tar files to a local folder or remote URLxx</summary>
   <description>
     <p>
       KBackup is an application which lets you back up your data in a simple, user friendly way
