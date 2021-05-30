@@ -1,6 +1,7 @@
 add_subdirectory(pics)
+add_executable(kbackup)
 
-set(kbackup_SRCS
+target_sources(kbackup PRIVATE
     Archiver.cxx
     MainWindow.cxx
     Selector.cxx
@@ -9,9 +10,8 @@ set(kbackup_SRCS
     SettingsDialog.cxx
     )
 
-ki18n_wrap_ui(kbackup_SRCS MainWidgetBase.ui SettingsDialog.ui)
+ki18n_wrap_ui(kbackup MainWidgetBase.ui SettingsDialog.ui)
 
-add_executable(kbackup ${kbackup_SRCS})
 target_link_libraries(kbackup
                       Qt::Core
                       Qt::Widgets
