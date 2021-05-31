@@ -43,6 +43,7 @@
   <summary xml:lang="nl">Reservekopieën maken als .tar bestanden naar een lokale map of URL op afstand</summary>
   <summary xml:lang="pl">Twórz kopie zapasowe jako pliki .tar do katalogów lokalnych lub zdalnych adresów URL</summary>
   <summary xml:lang="pt">Criar as cópias de segurança como ficheiros .tar numa pasta local ou URL remoto</summary>
+  <summary xml:lang="ru">Создание резервных копий в формате .tar в локальных или сетевых папках</summary>
   <summary xml:lang="sv">Skapa säkerhetskopior som .tar-filer i en lokal katalog eller fjärrwebbadress</summary>
   <summary xml:lang="uk">Створює резервні копії у форматі .tar у локальній теці або на віддаленому сервері</summary>
   <summary xml:lang="x-test">xxCreate backups as .tar files to a local folder or remote URLxx</summary>
