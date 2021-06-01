@@ -514,11 +514,7 @@ void Selector::setBackupList(const QStringList &includes, const QStringList &exc
 
 QStandardItem *Selector::findItemByPath(const QString &path)
 {
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-  QStringList items = path.split(QLatin1Char('/'), QString::SkipEmptyParts);
-#else
   QStringList items = path.split(QLatin1Char('/'), Qt::SkipEmptyParts);
-#endif
   QStandardItem *item = itemModel->invisibleRootItem()->child(0);
 
   for (int i = 0; i < items.count(); i++)
