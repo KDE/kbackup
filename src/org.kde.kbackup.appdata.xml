@@ -40,6 +40,8 @@
   <summary xml:lang="el">Δημιουργία εφεδρικών αντιγράφων ως αρχεία .tar σε τοπικό φάκελο ή σε απομακρυσμένο URL</summary>
   <summary xml:lang="en-GB">Create backups as .tar files to a local folder or remote URL</summary>
   <summary xml:lang="es">Crear copias de seguridad como archivos .tar en una carpeta local o URL remota</summary>
+  <summary xml:lang="eu">Sortu babes-kopiak  «.tar»  fitxategi gisa karpeta lokal edo urruneko URL batean</summary>
+  <summary xml:lang="fi">Luo varmuuskopioita .tar-tiedostoina paikalliseen kansioon tai etäverkko-osoitteeseen</summary>
   <summary xml:lang="fr">Créer des archives comme des fichiers « .tar » vers un dossier local ou une URL distante.</summary>
   <summary xml:lang="it">Crea copie di sicurezza come file .tar in cartelle locali o URL remoti</summary>
   <summary xml:lang="ko">백업을 로컬 폴더에 .tar 파일로 저장하거나 원격 URL로 생성</summary>
