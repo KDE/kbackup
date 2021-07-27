@@ -26,6 +26,7 @@
   <name xml:lang="pl">KBackup</name>
   <name xml:lang="pt">KBackup</name>
   <name xml:lang="pt-BR">KBackup</name>
+  <name xml:lang="ro">KBackup</name>
   <name xml:lang="ru">KBackup</name>
   <name xml:lang="sk">KBackup</name>
   <name xml:lang="sl">KBackup</name>
@@ -110,6 +111,7 @@
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
+    <p xml:lang="ro">Caracteristici:</p>
     <p xml:lang="ru">Возможности:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Možnosti:</p>
