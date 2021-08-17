@@ -6,7 +6,6 @@
 //   the Free Software Foundation, version 2 of the License
 //
 //**************************************************************************
-#include <kxmlgui_version.h>
 #include <MainWindow.hxx>
 #include <Selector.hxx>
 #include <Archiver.hxx>
@@ -48,11 +47,7 @@ MainWindow::MainWindow()
   new Archiver(this);
 
   quitAction = KStandardAction::quit(this, SLOT(maybeQuit()), actionCollection());
-#if KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 84, 0)
   KStandardAction::keyBindings(guiFactory(), &KXMLGUIFactory::showConfigureShortcutsDialog, actionCollection());
-#else
-  KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
-#endif
 
 
   QAction *action;
