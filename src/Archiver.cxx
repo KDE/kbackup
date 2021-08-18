@@ -147,7 +147,7 @@ void Archiver::setFilter(const QString &filter)
 QString Archiver::getFilter() const
 {
   QString filter;
-  for (const QRegExp &reg : qAsConst(filters))
+  for (const QRegExp &reg : std::as_const(filters))
   {
     filter += reg.pattern();
     filter += QLatin1Char(' ');
@@ -174,7 +174,7 @@ void Archiver::setDirFilter(const QString &filter)
 QString Archiver::getDirFilter() const
 {
   QString filter;
-  for (const QRegExp &reg : qAsConst(dirFilters))
+  for (const QRegExp &reg : std::as_const(dirFilters))
   {
     filter += reg.pattern();
     filter += QLatin1Char('\n');
@@ -407,7 +407,7 @@ bool Archiver::saveProfile(const QString &fileName, const QStringList &includes,
   if ( !filters.isEmpty() )
     stream << "X " << getFilter() << QLatin1Char('\n');
 
-  for (const QRegExp &exp : qAsConst(dirFilters))
+  for (const QRegExp &exp : std::as_const(dirFilters))
     stream << "x " << exp.pattern() << QLatin1Char('\n');
 
   for (const QString &str : includes)
@@ -572,7 +572,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       QString sliceName;
       int num = 0;
 
-      for (const KIO::UDSEntry &entry : qAsConst(targetDirList))
+      for (const KIO::UDSEntry &entry : std::as_const(targetDirList))
       {
         QString entryName = entry.stringValue(KIO::UDSEntry::UDS_NAME);
 
@@ -672,7 +672,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     else
     {
       std::cerr << "-------" << std::endl;
-      for (const QString &slice : qAsConst(sliceList)) {
+      for (const QString &slice : std::as_const(sliceList)) {
         std::cerr << slice.toUtf8().constData() << std::endl;
       }
       std::cerr << "-------" << std::endl;
@@ -984,7 +984,7 @@ void Archiver::addDirFiles(QDir &dir)
   if ( excludeDirs.contains(absolutePath) )
     return;
 
-  for (const QRegExp &exp : qAsConst(dirFilters))
+  for (const QRegExp &exp : std::as_const(dirFilters))
   {
     if ( exp.exactMatch(absolutePath) )
     {
@@ -1051,7 +1051,7 @@ void Archiver::addDirFiles(QDir &dir)
 
 bool Archiver::fileIsFiltered(const QString &fileName) const
 {
-  for (const QRegExp &exp : qAsConst(filters))
+  for (const QRegExp &exp : std::as_const(filters))
     if ( exp.exactMatch(fileName) )
       return true;
 
