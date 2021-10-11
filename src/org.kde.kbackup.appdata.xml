@@ -55,6 +55,7 @@
   <summary xml:lang="sv">Skapa säkerhetskopior som .tar-filer i en lokal katalog eller fjärrwebbadress</summary>
   <summary xml:lang="uk">Створює резервні копії у форматі .tar у локальній теці або на віддаленому сервері</summary>
   <summary xml:lang="x-test">xxCreate backups as .tar files to a local folder or remote URLxx</summary>
+  <summary xml:lang="zh-CN">创建备份为 .tar 文件到本机文件夹或远程 URL</summary>
   <description>
     <p>
       KBackup is an application which lets you back up your data in a simple, user friendly way
