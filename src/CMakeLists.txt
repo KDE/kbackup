@@ -8,6 +8,12 @@ target_sources(kbackup PRIVATE
     main.cxx
     MainWidget.cxx
     SettingsDialog.cxx
+
+    Archiver.hxx
+    Selector.hxx
+    MainWidget.hxx
+    MainWindow.hxx
+    SettingsDialog.hxx
     )
 
 ki18n_wrap_ui(kbackup MainWidgetBase.ui SettingsDialog.ui)
