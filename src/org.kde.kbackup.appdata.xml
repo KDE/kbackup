@@ -37,6 +37,7 @@
   <name xml:lang="zh-TW">KBackup</name>
   <summary>Create backups as .tar files to a local folder or remote URL</summary>
   <summary xml:lang="ca">Crea còpies de seguretat com a fitxers .tar en una carpeta local o URL remot</summary>
+  <summary xml:lang="ca-valencia">Crea còpies de seguretat com a fitxers .tar en una carpeta local o URL remot</summary>
   <summary xml:lang="de">Erstellt Sicherungen als „.tar“-Dateien in einem lokalen Ordner oder einer entfernten URL</summary>
   <summary xml:lang="el">Δημιουργία εφεδρικών αντιγράφων ως αρχεία .tar σε τοπικό φάκελο ή σε απομακρυσμένο URL</summary>
   <summary xml:lang="en-GB">Create backups as .tar files to a local folder or remote URL</summary>
@@ -63,7 +64,7 @@
       KBackup is an application which lets you back up your data in a simple, user friendly way
     </p>
     <p xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i fàcil d'emprar</p>
-    <p xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i amigable</p>
+    <p xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i fàcil d'emprar</p>
     <p xml:lang="de">KBackup ist ein Programm welches Datensicherung in einer benutzerfreundlichen Weise ermöglicht</p>
     <p xml:lang="el">Το KBackup είναι μια εφαρμογή που σας επιτρέπει να δημιουργήσετε εφεδρικά αντίγραφα με έναν απλό και φιλικό στη χρήση τρόπο</p>
     <p xml:lang="en-GB">KBackup is an application which lets you back up your data in a simple, user friendly way</p>
