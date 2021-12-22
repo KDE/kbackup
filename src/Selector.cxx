@@ -9,7 +9,6 @@
 
 #include <Selector.hxx>
 
-#include <kio_version.h>
 #include <kio/global.h>
 #include <KIconLoader>
 #include <KIconEffect>

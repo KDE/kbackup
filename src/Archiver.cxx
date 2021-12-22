@@ -9,7 +9,6 @@
 
 #include <Archiver.hxx>
 
-#include <kio_version.h>
 #include <KTar>
 #include <KFilterBase>
 #include <kio/job.h>
