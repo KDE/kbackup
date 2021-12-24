@@ -194,22 +194,6 @@
  <layoutdefault spacing="6" margin="11"/>
  <connections>
   <connection>
-   <sender>predefSizes</sender>
-   <signal>activated(int)</signal>
-   <receiver>SettingsDialog</receiver>
-   <slot>sizeSelected(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>41</x>
-     <y>114</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
    <receiver>SettingsDialog</receiver>

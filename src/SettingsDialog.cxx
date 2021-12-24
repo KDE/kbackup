@@ -33,11 +33,12 @@ SettingsDialog::SettingsDialog(QWidget *parent)
   ui.predefSizes->setCurrentIndex(0);
   ui.maxSliceSize->setValue(0);
   ui.maxSliceSize->setDisabled(true);
+  connect(ui.predefSizes, &QComboBox::activated, this, &SettingsDialog::slotSizeSelected);
 }
 
 //--------------------------------------------------------------------------------
 
-void SettingsDialog::sizeSelected(int idx)
+void SettingsDialog::slotSizeSelected(int idx)
 {
   if ( idx == (ui.predefSizes->count() - 1) )
     ui.maxSliceSize->setEnabled(true);
