@@ -528,7 +528,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
       addDirFiles(dir);
     }
     else
-      addFile(info.absoluteFilePath());
+      addFile(QFileInfo(info.absoluteFilePath()));
   }
 
   finishSlice();
@@ -1042,7 +1042,7 @@ void Archiver::addDirFiles(QDir &dir)
       addDirFiles(dir);
     }
     else
-      addFile(list[i].absoluteFilePath());
+      addFile(QFileInfo(list[i].absoluteFilePath()));
   }
 }
 
