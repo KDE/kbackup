@@ -19,8 +19,8 @@ target_sources(kbackup PRIVATE
 ki18n_wrap_ui(kbackup MainWidgetBase.ui SettingsDialog.ui)
 
 target_link_libraries(kbackup
-                      Qt::Core
-                      Qt::Widgets
+                      Qt${QT_MAJOR_VERSION}::Core
+                      Qt${QT_MAJOR_VERSION}::Widgets
                       KF5::GuiAddons
                       KF5::I18n
                       KF5::KIOCore
@@ -41,7 +41,7 @@ install(FILES kbackup.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 
 install(FILES  org.kde.kbackup.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES  kbackupui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/kbackup)
+install(FILES  kbackupui.rc DESTINATION ${KDE_INSTALL_KXMLGUIDIR}/kbackup)
 install(FILES org.kde.kbackup.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
