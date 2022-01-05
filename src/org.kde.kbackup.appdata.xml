@@ -4,6 +4,7 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBackup</name>
+  <name xml:lang="ar">النسخ الاحتياطي</name>
   <name xml:lang="ca">KBackup</name>
   <name xml:lang="ca-valencia">KBackup</name>
   <name xml:lang="cs">KBackup</name>
@@ -36,6 +37,7 @@
   <name xml:lang="zh-CN">KBackup</name>
   <name xml:lang="zh-TW">KBackup</name>
   <summary>Create backups as .tar files to a local folder or remote URL</summary>
+  <summary xml:lang="ar">أنشئ نسخ احتياطية كملفات .tar إلى مجلد محلي أو عنوان بعيد</summary>
   <summary xml:lang="ca">Crea còpies de seguretat com a fitxers .tar en una carpeta local o URL remot</summary>
   <summary xml:lang="ca-valencia">Crea còpies de seguretat com a fitxers .tar en una carpeta local o URL remot</summary>
   <summary xml:lang="de">Erstellt Sicherungen als „.tar“-Dateien in einem lokalen Ordner oder einer entfernten URL</summary>
@@ -63,6 +65,7 @@
     <p>
       KBackup is an application which lets you back up your data in a simple, user friendly way
     </p>
+    <p xml:lang="ar">النسخ الاحتياطي هو تطبيق يتيح لك إجراء نسخ احتياطي لبياناتك بطريقة بسيطة وسهلة الاستخدام</p>
     <p xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i fàcil d'emprar</p>
     <p xml:lang="ca-valencia">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i fàcil d'emprar</p>
     <p xml:lang="de">KBackup ist ein Programm welches Datensicherung in einer benutzerfreundlichen Weise ermöglicht</p>
@@ -125,6 +128,7 @@
     <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
+      <li xml:lang="ar">استخدام ملفات التوصيف مع تعريفات للمجلدات والملفات التي ستضمن أو تستبعد من النسخة الاحتياطية</li>
       <li xml:lang="ca">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
       <li xml:lang="ca-valencia">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
       <li xml:lang="de">Verwendet Profildateien mit Definition der Dateien und Ordner, die in der Sicherung ein- oder ausgeschlossen werden</li>
@@ -154,6 +158,7 @@
       <li xml:lang="zh-CN">使用配置文件来定义需要被包含在或者排除在备份之外的文件夹及文件</li>
       <li xml:lang="zh-TW">使用包含定義的設定檔，設定哪些檔案和資料夾要從備份中包含或排除</li>
       <li>The backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URL</li>
+      <li xml:lang="ar">يمكن أن يكون هدف النسخ الاحتياطي إما جهازًا مثبتًا محليًا مثل محرك ZIP أو USB أو أي عنوان  بعيد</li>
       <li xml:lang="ca">La destinació de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
       <li xml:lang="ca-valencia">La destinació de la còpia de seguretat pot ser un dispositiu muntat localment, com una unitat ZIP, una memòria USB, etc. o qualsevol URL remot</li>
       <li xml:lang="de">Die Sicherung kann auf ein lokal eingehängtes Gerät wie ein ZIP-Laufwerk, einen USB-Stick oder auf eine Adresse (URL) auf einem Fremdrechner gespeichert werden.</li>
@@ -183,6 +188,7 @@
       <li xml:lang="zh-CN">备份目标可以是挂载在本地的设备，例如 ZIP 驱动器或者 USB 存储器等，也可以是任何远程 URL</li>
       <li xml:lang="zh-TW">備份目標位置可以是任一掛載於本機的位置，例如 ZIP 硬碟、USB 隨身碟或任意遠端 URL 等等</li>
       <li>Running automated backups without using a graphical user interface</li>
+      <li xml:lang="ar">تشغيل النسخ الاحتياطية الآلية دون استخدام واجهة مستخدم رسومية</li>
       <li xml:lang="ca">Executa còpies de seguretat automatitzades sense usar cap interfície gràfica d'usuari</li>
       <li xml:lang="ca-valencia">Executa còpies de seguretat automatitzades sense usar cap interfície gràfica d'usuari</li>
       <li xml:lang="de">Ausführung automatischer ohne eine grafische Benutzeroberfläche</li>
