@@ -25,6 +25,7 @@
     <comment xml:lang="sk">Profil KBackup</comment>
     <comment xml:lang="sl">Profil Kbackupa</comment>
     <comment xml:lang="sv">Kbackup-profil</comment>
+    <comment xml:lang="tr">KBackup Profili</comment>
     <comment xml:lang="uk">профіль KBackup</comment>
     <comment xml:lang="zh_CN">KBackup 配置文件</comment>
     <glob pattern="*.kbp"/>
