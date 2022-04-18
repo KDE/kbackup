@@ -1,5 +1,5 @@
 //**************************************************************************
-//   Copyright 2006 - 2017 Martin Koller, kollix@aon.at
+//   Copyright 2006 - 2022 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -271,6 +271,10 @@ void MainWindow::saveProfile(QString fileName)
   QString error;
 
   Archiver::instance->setTarget(QUrl(mainWidget->getTargetLineEdit()->text()));
+
+  // when manually saving a profile, we need to restart the backup (incremental) cycle
+  // since e.g. adding a new dir would otherwise not save its content on the next run
+  Archiver::instance->resetBackupCycle();
 
   if ( ! Archiver::instance->saveProfile(fileName, includes, excludes, error) )
   {

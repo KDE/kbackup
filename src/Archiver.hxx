@@ -1,5 +1,5 @@
 //**************************************************************************
-//   Copyright 2006 - 2017 Martin Koller, kollix@aon.at
+//   Copyright 2006 - 2022 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -79,6 +79,9 @@ class Archiver : public QObject
 
     const QDateTime &getLastFullBackup() const { return lastFullBackup; }
     const QDateTime &getLastBackup() const { return lastBackup; }
+
+    // when manually saving a profile, we need to restart the backup (incremental) cycle
+    void resetBackupCycle();
 
     // print every single file/dir in non-interactive mode
     void setVerbose(bool b) { verbose = b; }

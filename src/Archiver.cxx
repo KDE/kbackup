@@ -1,5 +1,5 @@
 //**************************************************************************
-//   Copyright 2006 - 2018 Martin Koller, kollix@aon.at
+//   Copyright 2006 - 2022 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -209,6 +209,15 @@ void Archiver::setIncrementalBackup(bool inc)
 {
   incrementalBackup = inc;
   Q_EMIT backupTypeChanged(isIncrementalBackup());
+}
+
+//--------------------------------------------------------------------------------
+
+void Archiver::resetBackupCycle()
+{
+  lastFullBackup = QDateTime();
+  lastBackup = QDateTime();
+  setIncrementalBackup(false);
 }
 
 //--------------------------------------------------------------------------------
