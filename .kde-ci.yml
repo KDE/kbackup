@@ -16,3 +16,5 @@ Dependencies:
     'frameworks/kiconthemes': '@stable'
     'frameworks/karchive': '@stable'
     'frameworks/kwidgetsaddons': '@stable'
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']
