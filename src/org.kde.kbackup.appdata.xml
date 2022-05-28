@@ -136,7 +136,7 @@
       <li>Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
       <li xml:lang="ar">استخدام ملفات التوصيف مع تعريفات للمجلدات والملفات التي ستضمن أو تستبعد من النسخة الاحتياطية</li>
       <li xml:lang="ca">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
-      <li xml:lang="ca-valencia">Utilitza fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
+      <li xml:lang="ca-valencia">Utilisa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
       <li xml:lang="de">Verwendet Profildateien mit Definition der Dateien und Ordner, die in der Sicherung ein- oder ausgeschlossen werden</li>
       <li xml:lang="el">Χρήση αρχείων προφίλ με ορισμούς για φακέλους και αρχεία που θα αποκλείονται από το εφεδρικό αντίγραφο</li>
       <li xml:lang="en-GB">Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
@@ -198,7 +198,7 @@
       <li>Running automated backups without using a graphical user interface</li>
       <li xml:lang="ar">تشغيل النسخ الاحتياطية الآلية دون استخدام واجهة مستخدم رسومية</li>
       <li xml:lang="ca">Executa còpies de seguretat automatitzades sense usar cap interfície gràfica d'usuari</li>
-      <li xml:lang="ca-valencia">Executa còpies de seguretat automatitzades sense utilitzar cap interfície gràfica d'usuari</li>
+      <li xml:lang="ca-valencia">Executa còpies de seguretat automatitzades sense utilisar cap interfície gràfica d'usuari</li>
       <li xml:lang="de">Ausführung automatischer ohne eine grafische Benutzeroberfläche</li>
       <li xml:lang="el">Εκτέλεση αυτοματοποιημένων εργασιών δημιουργίας εφεδρικών αντιγράφων χωρίς τη χρήση γραφικού περιβάλλοντος</li>
       <li xml:lang="en-GB">Running automated backups without using a graphical user interface</li>
