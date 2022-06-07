@@ -39,7 +39,7 @@
   <summary>Create backups as .tar files to a local folder or remote URL</summary>
   <summary xml:lang="ar">أنشئ نسخ احتياطية كملفات .tar إلى مجلد محلي أو عنوان بعيد</summary>
   <summary xml:lang="ca">Crea còpies de seguretat com a fitxers .tar en una carpeta local o URL remot</summary>
-  <summary xml:lang="ca-valencia">Crea còpies de seguretat com a fitxers .tar en una carpeta local o URL remot</summary>
+  <summary xml:lang="ca-valencia">Crea còpies de seguretat com a fichers .tar en una carpeta local o URL remot</summary>
   <summary xml:lang="de">Erstellt Sicherungen als „.tar“-Dateien in einem lokalen Ordner oder einer entfernten URL</summary>
   <summary xml:lang="el">Δημιουργία εφεδρικών αντιγράφων ως αρχεία .tar σε τοπικό φάκελο ή σε απομακρυσμένο URL</summary>
   <summary xml:lang="en-GB">Create backups as .tar files to a local folder or remote URL</summary>
@@ -132,7 +132,7 @@
       <li>Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
       <li xml:lang="ar">استخدام ملفات التوصيف مع تعريفات للمجلدات والملفات التي ستضمن أو تستبعد من النسخة الاحتياطية</li>
       <li xml:lang="ca">Usa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
-      <li xml:lang="ca-valencia">Utilisa fitxers de perfils amb definicions per a les carpetes i fitxers a incloure o excloure de la còpia de seguretat</li>
+      <li xml:lang="ca-valencia">Utilisa fichers de perfils amb definicions per a les carpetes i fichers a incloure o excloure de la còpia de seguretat</li>
       <li xml:lang="de">Verwendet Profildateien mit Definition der Dateien und Ordner, die in der Sicherung ein- oder ausgeschlossen werden</li>
       <li xml:lang="el">Χρήση αρχείων προφίλ με ορισμούς για φακέλους και αρχεία που θα αποκλείονται από το εφεδρικό αντίγραφο</li>
       <li xml:lang="en-GB">Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
