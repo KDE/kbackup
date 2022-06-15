@@ -12,6 +12,7 @@
 #include <Selector.hxx>
 
 #include <KUrlCompletion>
+#include <KLineEdit>
 
 #include <QPushButton>
 #include <QFileDialog>
@@ -50,7 +51,7 @@ MainWidget::MainWidget(QWidget *parent)
   connect(Archiver::instance, &Archiver::backupTypeChanged, this, &MainWidget::setIsIncrementalBackup);
 
   connect(ui.folder, &QAbstractButton::clicked, this, &MainWidget::getMediaSize);
-  connect(ui.targetDir, SIGNAL(returnPressed(const QString &)), this, SLOT(setTargetURL(const QString &)));
+  connect(ui.targetDir, &KLineEdit::returnKeyPressed, this, &MainWidget::setTargetURL);
 
   KUrlCompletion *kc = new KUrlCompletion(KUrlCompletion::DirCompletion);
   ui.targetDir->setCompletionObject(kc);
