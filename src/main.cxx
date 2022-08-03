@@ -122,11 +122,11 @@ int main(int argc, char **argv)
     if ( !args.isEmpty() )
       profile = args[0];
 
-    QString file = cmdLine.value(QStringLiteral("auto"));
-    if ( file.length() )
+    const QString file = cmdLine.value(QStringLiteral("auto"));
+    if ( !file.isEmpty() )
       profile = file;
 
-    if ( profile.length() )
+    if ( !profile.isEmpty() )
       mainWin->loadProfile(profile, true);
 
     if ( cmdLine.isSet(QStringLiteral("forceFull")) )
