@@ -4,7 +4,6 @@ Exec=kbackup %f
 Icon=kbackup
 X-DocPath=kbackup/index.html
 MimeType=text/x-kbp;
-Terminal=false
 Categories=Qt;KDE;Utility;Archiving;
 Keywords=backup;archiving;
 Keywords[ar]=نسخ احتياطي;أرشيف;
