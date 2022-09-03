@@ -51,7 +51,6 @@ int main(int argc, char **argv)
 
   about.addAuthor(i18n("Martin Koller"), i18n("Developer"), QStringLiteral("kollix@aon.at"));
 
-  about.setOrganizationDomain(QByteArray("kde.org"));
   about.setDesktopFileName(QStringLiteral("org.kde.kbackup"));
 
   KAboutData::setApplicationData(about);
