@@ -1,0 +1,709 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+  <!ENTITY kbackup "<application
+>KBackup</application
+>"
+><!--FIXME remove entitiy when kbackup depends on kdoctools
+>= 5.42-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE">
+]>
+
+<book id="kbackup" lang="&language;">
+
+<bookinfo>
+<title
+>Het handboek van &kbackup;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Martin</firstname
+> <surname
+>Koller</surname
+> </personname
+> <email
+>kollix@aon.at</email
+> </author>
+</authorgroup>
+
+&Freek.de.Kruijf; 
+
+<copyright>
+<year
+>2006 - 2017</year>
+<holder
+>Martin Koller</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2018-01-05</date>
+<releaseinfo
+>Applications 18.04</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&kbackup; is een toepassing die u reservekopieën laat maken van uw gegevens op een eenvoudige, gebruikersvriendelijke manier. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>systeem</keyword>
+<keyword
+>KBackup</keyword>
+<keyword
+>reservekopie</keyword>
+<keyword
+>opslag</keyword>
+<keyword
+>archief</keyword>
+<keyword
+>zip</keyword>
+<keyword
+>gzip</keyword>
+<keyword
+>bzip2</keyword>
+<keyword
+>xz</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+
+<para
+>&kbackup; is een programma dat u van alle mappen of bestanden reservekopieën laat maken, waarbij het een gemakkelijk te maken boomstructuur gebruikt om om de dingen te selecteren waar een reservekopie van gemaakt moet worden. Het laat u uw instellingen opslaan in zogenaamde <quote
+>profiel</quote
+>bestanden, waar een profiel een eenvoudig tekstbestand is die definities bevat voor mappen en bestanden om ingevoegd of uitgesloten worden van het backupproces. Het laat u ook definiëren waar de backup wordt opgeslagen. Het doel kan ofwel een lokale map zijn (&eg; een lokaal aangekoppeld apparaat zoals een ZIP-station, USB-stick, &etc;), maar het kan ook elke &URL; op afstand zijn (&eg; smb://remote/een_pad) om de reservekopie van uw gegevens op een centrale server, &etc;, op te slaan </para>
+
+<para
+>Het programma kan ook als een automatische backup zonder gebruik van een grafische gebruikersinterface actief worden. U kunt eenvoudig een profiel aanmaken en deze instellingen gebruiken om aan &kbackup; te vertellen wat te doen wanneer het actief wordt in niet-interactieve modus, &eg; door het starten van een cron-job. </para>
+
+<para
+>Het programma is ontworpen om eenvoudig in gebruik te zijn zodat het gebruikt kan worden door de eenvoudige computergebruiker. </para>
+
+<para
+>Het opslagformaat is het welbekende TAR-formaat, waarbij de gegevens nog steeds opgeslagen kunnen zijn in een gecomprimeerd formaat (xz,bzip2 of gzip). </para>
+
+<para
+>De huidige implementatie biedt alleen de backup-stap. Om gegevens te herstellen in uw systeem, moet u nu &eg;, &dolphin; gebruiken om de TAR backupbestanden te openen en slepen/loslaten gebruiken om de bestanden terug op uw bestandssysteem te krijgen. Dit is ook een voordeel van het gebruik van het welbekende en goed ondersteunde TAR-bestandsformaat. </para>
+<para
+>Als de bestanden gecomprimeerd zijn kunt u alle bestanden recursief uitpakken uit de huidige map met het volgende commando: </para>
+<para>
+<programlisting
+>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
+</para>
+<para
+>U kunt als alternatief ook &ark; gebruiken om een volledige backup uit te pakken of gewoon een paar bestanden uit een backup.</para>
+</chapter>
+
+<chapter id="using-kbackup">
+<title
+>&kbackup; gebruiken</title>
+
+<para
+>Alles wat er nodig is te doen is het selecteren welke mappen u wilt opslaan. Dit wordt gedaan door alle mappen in de boomstructuurweergave aan de linkerkant van het hoofdvenster. </para>
+
+<para
+>Als u een map selecteert zal &kbackup; automatisch alle bestanden en onderliggende submappen opslaan. Als u delen van een submap wilt uitsluiten van een geselecteerde map, maak eenvoudig de selectie van deze bestanden/mappen binnen de nog steeds geselecteerde map ongedaan. </para>
+
+<para
+>Dit betekent in het algemeen: een geselecteerde map zal alles erin en eronder herstellen, behalve de niet geselecteerde delen erin. Dit betekent ook dat, wanneer u een profiel later opnieuw gebruikt (zie onderstaand) en nieuwe bestanden zijn toegevoegd aan een map die al is geselecteerd voor de backup, alle nieuwe bestanden ook opgeslagen zullen worden. </para>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Hier is een schermafdruk van &kbackup;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="mainwindow.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>Schermafbeelding van het hoofdvenster</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="kbackup-profiles">
+<title
+>Profielen gebruiken</title>
+
+<para
+>Om een selectie voor later gebruik te bewaren, sla deze eenvoudig op in een &kbackup;-profielbestand. Gebruik het menu <guimenu
+>Bestand</guimenu
+> en selecteer <guimenuitem
+>Profiel opslaan</guimenuitem
+>. </para>
+
+<para
+>Om een selectie in &kbackup; te herladen, gebruik het menu-item <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Profiel laden...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>&kbackup; slaat in een profiel de selecties op voor alle meegenomen mappen/bestanden, uitgesloten mappen/bestanden, de doelmap/&URL;, gedefinieerde archiefvoorvoegsel, de gedefinieerde maximum grootte van het bestandsgedeelte, &etc; </para>
+
+<para
+>Als u het gebruik van elke dag een reservekopie maken van dezelfde set bestanden eenvoudiger wilt maken, sla uw instellingen op in een &kbackup;-profiel (een <filename class="extension"
+>.kbp</filename
+> bestand) en geeft dat bestand op op de opdrachtregel. </para>
+
+<para
+>&eg;: </para>
+
+<para>
+<programlisting
+>kbackup mijnGegevens.kbp</programlisting>
+</para>
+
+<para
+>Tip: u kunt ook een sneltoets op uw bureaublad aanmaken naar een bestand <filename class="extension"
+>.kbp</filename
+> als het bestandstype geregistreerd is om &kbackup; te starten op een dubbelklik. </para>
+
+</sect1>
+
+<sect1 id="archive-slices">
+<title
+>Archiefgedeelte</title>
+<para
+>Omdat eem medium normaal een beperkte capaciteit heeft (&eg; 100MB ZIP-schijf), zal &kbackup; verschillende archiefgedeelten aanmaken. </para>
+<para
+>Elk archiefgedeelte zal zijn eigen naam krijgen, die er als volgt er uit ziet: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>De naam bevat de aanmaakdatum en tijd (die hetzelfde zal zijn voor alle gedeelten van één backup) en een gedeelte-volgnummer (_1 in dit voorbeeld). </para>
+<para
+>In het menu <menuchoice
+><guimenu
+>bestand</guimenu
+> <guimenuitem
+>Profielinstellingen...</guimenuitem
+></menuchoice
+> kunt u een ander archiefvoorvoegsel definiëren dan de standaard <quote
+>backup</quote
+>. </para>
+
+<para
+>In de dialoog <guilabel
+>Profielinstellingen</guilabel
+> kunt u ook a maximale grootte van het archiefgedeelte definiëren, die de grootte van het gedeelte beperkt zelfs als er meer ruimte op het doelapparaat over is. Dit helpt om archiefgedeelten te maken die later op een &CD;/&DVD;, &etc; gebrand kunnen worden. Als u expliciet de grootte van een archiefgedeelte beperkt, zal de beschikbare grootte gemarkeerd worden met (*) in het hoofdvenster. </para>
+<para
+>Maar zelfs als u een gedeelte definieert van <quote
+>onbegrensde</quote
+> grootte, zijn er andere beperkingen die de grootte van een gedeelte beperken: <itemizedlist>
+<listitem
+><para
+>Beperkt door de doelmap (bij direct opslaan in een lokale map)</para
+></listitem>
+<listitem
+><para
+>beperkt door de map <filename class="directory"
+>/tmp</filename
+> toen we een tmp-bestand voor latere upload naar een externe &URL;</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>In de <guilabel
+>Profielinstellingen</guilabel
+> kunt u ook een maximum aantal volledige backups definiëren die in de doelmap behouden blijven en daarom automatisch alle oudere backups daar verwijderen. &eg; als u het instelt op 3, zal &kbackup; de laatste 3 backups behouden en alle oudere verwijderen. </para>
+
+</sect1>
+
+
+<sect1 id="incremental-backup">
+<title
+>Incrementele reservekopie</title>
+<para
+>Met een incrementele backup zullen niet alle bestanden elke keer dat de backup wordt uitgevoerd worden opgeslagen, maar alleen de bestanden die gewijzigd zijn sinds de laatste backup. Dit heeft het grote voordeel dat de incrementele backup heel wat minder bestanden zal meenemen dan een volledige backup en daardoor in een veel kortere tijd zal eindigen. </para>
+<para
+>Dit werkt als volgt: in het profiel definieert u een interval (in dagen) voor de volledige backup. &eg; wanneer u 5 dagen definieert zal &kbackup; een volledige backup van alle bestanden elke 5 dagen doen. Wanneer u &kbackup; start voordat het interval verloopt met dit profiel - onafhankelijk van hoe vaak u een backup uitvoert - alleen de bestanden die zijn gewijzigd sinds de laatste backup worden opgeslagen. &kbackup; slaat het tijdstip van de laatste backup op in het profiel en weet daarom wat te doen wanneer het de volgende keer actief wordt. </para>
+<para
+>Besatnden van het archiefgedeelte gemaakt tijdens een incrementele backup zal de tekst <quote
+>_inc</quote
+> bevatten, &eg;: </para>
+<para
+>backup_2010.06.14-18.50.26_1_inc.tar </para>
+<para
+>Bestandsgedeelten van een volledige backup zullen geen <quote
+>_inc</quote
+> in de naam invoegen, &eg;: </para>
+<para
+>backup_2010.06.13-20.58.14_1.tar </para>
+<para
+>Wanneer u bestanden wilt herstellen uit een incrementele backup, is het belangrijk te kijken naar de meest recente versie van een bestand om te herstellen in alle <quote
+>_inc</quote
+> bestanden en tenslotte ook in het bestandsgedeelte van de laatste volledige backup. Dit is exact ook het nadeel van de incrementele backup (maar er is geen voordeel zonder nadeel ;-) ) </para>
+<para
+>Als u een volledige backup eerder wilt doen dan de gedefinieerde incrementele cyclustijd gedefinieerd in een profiel, dan kunt u dat doen door activeren van de optie <guilabel
+>Volledige backup afdwingen</guilabel
+> in het gebruikersinterface. Wanneer &kbackup; wordt gestart via de opdrachtregel kan dit worden bereikt door de optie <option
+>--forceFull</option
+> te gebruiken </para>
+<para
+>Een afgedwongen volledige reservekopie zal de backupcyclus herstarten, &ie; &kbackup; telt de dagen naar de volgende volledige reservekopie vanaf de tijd van de laatste volledige reservekopie. </para>
+</sect1>
+
+
+<sect1 id="archive-compression">
+<title
+>Compressie van het archief</title>
+<para
+>&kbackup; zal de opgeslagen bestanden comprimeren als u dit activeert in de profielinstellingen. Afhankelijk van de beschikbaarheid op uw systeem kiest het de compressie <command
+>xz</command
+>,<command
+>bzip2</command
+> of <command
+>gzip</command
+>. &kbackup; zal elk enkel bestand comprimeren en alle bestanden met een toegevoegde bestandsextensie (<filename class="extension"
+>.xz</filename
+>, <filename class="extension"
+>.bzip2</filename
+>) of <filename class="extension"
+>.gz</filename
+>) in de het dan niet-gecomprimeerde <filename class="extension"
+>.tar</filename
+>-archief opslaan. </para>
+
+<para
+>Wanneer u het maken van de backup hebt geselecteerd op enige lokale bestandssystemen (&eg; uw extra schijf, ZIP-station, &etc;) - wat betekent dat u geen doel op afstand &URL; hebt ingevoerd - kan &kbackup; de gehele backup opsplitseb in verschillende archiefgedeelten veroorzaakt door beperkingen in de capaciteit van media. </para>
+<para
+>&eg;: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>backup_2006.08.26-13.04.44_2.tar </para>
+
+</sect1>
+
+<sect1 id="automating">
+<title
+>Reservekopie maken automatiseren</title>
+
+<para
+>Als u het backupproces wilt automatiseren biedt &kbackup; verschillende opties op de opdrachtregel om hiermee te helpen: <itemizedlist>
+<listitem
+><para
+><option
+>--auto</option
+></para>
+<para
+>Wanneer u &kbackup; uitvoert met deze optie en een gegeven <filename class="extension"
+>.kbp</filename
+>-profiel, zal het starten, het gegeven profiel laden, de backup uitvoeren en eindigen indien gereed. Dit alles wordt gedaan met een zichtbaar gebruikersinterface van &kbackup;. </para>
+</listitem>
+
+<listitem
+><para
+><option
+>--autobg</option
+></para>
+<para
+>Wanneer u &kbackup; uitvoert met deze optie en een gegeven <filename class="extension"
+>.kbp</filename
+> profiel, zal het hetzelfde proces als met <option
+>--auto</option
+> uitvoeren, maar <emphasis
+>zonder</emphasis
+> het tonen van een grafisch gebruikersinterface. Vandaar het achtervoegsel <quote
+>bg</quote
+> wat staat voor <quote
+>background</quote
+> - alles wordt in de achtergrond gedaan, dus dit is de juiste optie om te gebruiken wanneer u uw backups uitvoert, &eg;, gestart door een cron-job. </para>
+<para
+>Wanneer <option
+>--autobg</option
+> wordt gebruikt zal de uitvoer van &kbackup; - met het tonen van de voortgang van de backup - geschreven worden naar stderr. Standaard bevat de uitvoer maar een paar belangrijke berichten en een samenvatting aan het eind. Als u <option
+>--verbose</option
+> toevoegt, dan zult u ook elke bestandsnaam zien die nu een backup krijgt. </para>
+</listitem>
+</itemizedlist>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title
+>Overzicht van de opdrachten</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Het hoofdvenster van &kbackup;</title>
+
+ 
+
+<sect2>
+<title
+>Het menu Bestand</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Recent openen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Toont een submenu met de recente gebruikte profielen voor gemakkelijkere selectie. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Nieuw profiel</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Wist de selectie en het invoerveld met doel, om in staat te zijn een nieuw profiel te definiëren.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Profiel laden...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Laadt een profiel.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Profiel opslaan</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Slaat alle instellingen op in het nu geladen profiel.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Profiel opslaan als...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Slaat alle instellingen op in een profiel met een neiuwe naam.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Profielinstellingen...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>In de instellingen kunt u definiëren of de bestanden met archiefgedeelten beginnen met de standaard naam <quote
+>backup</quote
+> of met een alternatieve naam. U kunt ook de grootte van het archiefgedeelte beperken. Zie hoofdstuk <link linkend="archive-slices"
+>Archiefgedeelten</link
+>. Deze instellingen worden ook opgeslagen in het profiel. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sluit</action
+> &kbackup; af.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Het menu Instellingen</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>In systeemvak vastzetten</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Wanneer deze optie is geactiveerd wordt een pictogram getoond in het systeemvak, die de huidige status weergeeft van een backup-bewerking. Een animatie wordt getoond wanneer een backup bezig is, anders ziet u een statisch pictogram. Als deze optie is geselecteerd zal het sluiten van het hoofdvenster &kbackup; niet beëindigen. De toepassing moet expliciet afgesloten worden door de actie <guimenuitem
+>Afsluiten</guimenuitem
+> te selecteren. Via het contextmenu van het pictogram van &kbackup; in het systeemvak kunt u een backup-bewerking starten en annuleren - wat hetzelfde is als u kan doen in het hoofdvenster. De tekstballon op dit pictogram geeft ook voortgangsinformatie (Aantal opgeslagen bestanden, grootte van de backup en het laatst opgeslagen bestand). </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Alle meldingen inschakelen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Dit item activeren wist alle intern opgeslagen <guilabel
+>Niet opnieuw vragen</guilabel
+> vlaggen voor de dialogen getoond in &kbackup;. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Verborgen bestanden tonen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>In- of uitschakelen</action
+> het tonen van verborgen bestanden (voorafgegaan door een punt) in de boomstructuurweergave. Gebruik deze optie als u enige verborgen bestanden wilt uitsluiten van de backup. Als u alle verborgen bestanden, wilt uitsluiten, gebruik dan een bestandsnaamfilter in de profielinstellingen. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2 id="help-menu1">
+<title
+>Het menu Help</title>
+<para
+>&kbackup; heeft een aantal van de algemene &kde; items in het menu <guimenu
+>Help</guimenu
+>, voor meer informatie lees de sectie hierover in het <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Help</ulink
+> van &kde; Fundamentals. </para>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Gids voor ontwikkelaars van &kbackup;</title>
+
+<para
+>&kbackup; kan uitgebreid worden met gebruik van een shellscript (of elke ander uitvoerbaar programma) dat gestart zal worden op drie verschillende punten gedurende de backup-proces. Het idee erachter is dat het toestaat om media aan te koppelen, af te koppelen, een uit te werpen op een voor het systeem specifieke manier of andere dingen te doen met de geproduceerde archiefbestanden. </para>
+
+<para
+>Het uit te voeren script moet gegeven zijn met de optie op de opdrachtregel <option
+>--script</option
+>. </para>
+
+<para
+>Hier is een voorbeeldscript:</para>
+
+<example
+><title
+>sliceScript.sh</title>
+<programlisting
+>#!/bin/sh
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+    if [ "$mountPoint" != "" ]
+    then
+      mount /media/zip
+      rm -f /media/zip/backup_2*.tar*
+    fi
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+    if [ "$mountPoint" != "" ]
+    then
+      umount /media/zip
+      eject /media/zip
+    fi
+ ;;
+esac
+</programlisting>
+</example>
+
+<para
+>Het script wordt altijd geactiveerd met vier argumenten op de opdrachtregel: </para>
+<itemizedlist>
+<listitem
+><para
+>activeringsmodus</para
+> </listitem>
+<listitem
+><para
+>archief (gedeelte) bestandsnaam</para
+> </listitem>
+<listitem
+><para
+>doelmap/&URL;</para
+> </listitem>
+<listitem
+><para
+>aankoppelpunt van de doelmap als het een lokale map is, anders een lege tekenreeks</para
+> </listitem>
+</itemizedlist>
+
+<para
+>Er zijn drie mogelijke modi van uitvoeren: </para>
+
+<para>
+<itemizedlist>
+
+<listitem
+><para
+>slice_init</para>
+<para
+>aangeroepen voordat een nieuw archiefgedeelte wordt aangemaakt op schijf</para>
+ </listitem>
+
+<listitem
+><para
+>slice_closed</para>
+<para
+>aangeroepen nadat een archiefgedeelte met is aangemaakt, maar voordat het in de doelmap is geplaatst</para>
+<para
+>Dit kan gebruikt worden als u het archiefgedeelte wilt kopiëren naar een extra plaats, &eg; het archief wordt verzonden naar de hoofdserver (via een doel-&URL;), maar u wilt de laatste backup ook op de lokale schijf houden. </para>
+</listitem>
+
+<listitem
+><para
+>slice_finished</para>
+<para
+>aangeroepen nadat een archiefgedeelte met succes is overgebracht in de doelmap</para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Dankbetuigingen en licentie</title>
+
+<para
+>&kbackup; </para>
+<para
+>Programma copyright &copy; 2006 - 2009 Martin Koller <email
+>kollix@aon.at</email
+> </para>
+
+<para
+>Documentatie copyright &copy; 2006 - 2009 Martin Koller </para>
+
+&meld.fouten;&vertaling.freek; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

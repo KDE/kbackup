@@ -1,0 +1,870 @@
+# Translation of kbackup to Norwegian Nynorsk
+#
+# Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2018, 2019.
+# Karl Ove Hufthammer <karl@huftis.org>, 2018, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"PO-Revision-Date: 2019-12-19 10:49+0100\n"
+"Last-Translator: Øystein Steffensen-Alværvik <kjake@posteo.no>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 19.08.3\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Øystein Steffensen-Alværvik,Karl Ove Hufthammer"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kjake@posteo.no,karl@huftis.org"
+
+#: Archiver.cxx:437
+#, kde-format
+msgid "Nothing selected for backup"
+msgstr "Ingenting er merkt for kopiering"
+
+#: Archiver.cxx:443
+#, kde-format
+msgid "The target dir '%1' is not valid"
+msgstr "Målmappa «%1» er ugyldig"
+
+#: Archiver.cxx:450
+#, kde-format
+msgid "The target dir '%1' must be a local file system dir and no remote URL"
+msgstr "Målmappa «%1» må vera på eit lokalt filsystem, ikkje på eit nettverk"
+
+#: Archiver.cxx:463
+#, kde-format
+msgid ""
+"The target directory '%1' does not exist.\n"
+"\n"
+"Shall I create it?"
+msgstr ""
+"Målmappa «%1» finst ikkje.\n"
+"\n"
+"Ønskjer du å oppretta ho?"
+
+#: Archiver.cxx:468
+#, kde-format
+msgid ""
+"Could not create the target directory '%1'.\n"
+"The operating system reports: %2"
+msgstr ""
+"Klarte ikkje oppretta målmappa «%1».\n"
+"Systemet melde: %2"
+
+#: Archiver.cxx:475
+#, kde-format
+msgid "The target dir does not exist"
+msgstr "Målmappa finst ikkje"
+
+# Bruken av teikn som «...», «--» og «!!» i starten av ei setning er tydelegvis for å markera viktigare meldingar i kopieringsloggen.
+# Men med «...» verkar det som programmet vil gjera to ting: markera teksten i loggen *og* markera ein prosess (og ikkje berre eit resultat).
+#: Archiver.cxx:548
+#, kde-format
+msgid "...reducing number of kept archives to max. %1"
+msgstr "… reduserer talet på arkiv til %1 (maksgrensa)"
+
+#: Archiver.cxx:606
+#, kde-format
+msgid "...deleting %1"
+msgstr "… slettar %1"
+
+#: Archiver.cxx:630
+#, kde-format
+msgid ""
+"fetching directory listing of target failed. Can not reduce kept archives."
+msgstr ""
+"Feil ved henting av oversikt over filer/mapper i målmappa. Klarar ikkje "
+"avgrensa talet på lagra arkiv."
+
+#: Archiver.cxx:653
+#, kde-format
+msgid "Could not write backup timestamps into profile %1: %2"
+msgstr ""
+"Klarte ikkje skriva dato og klokkeslett for reservekopiering til profilen "
+"%1: %2"
+
+# Filtrerte?
+#: Archiver.cxx:657
+#, kde-format
+msgid "-- Filtered Files: %1"
+msgstr "– Utelatne filer: %1"
+
+#: Archiver.cxx:660
+#, kde-format
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr ""
+"!! Reservekopieringa er fullført, <b>men nokre filer vart hoppa over</b>."
+
+#: Archiver.cxx:662
+#, kde-format
+msgid "-- Backup successfully finished --"
+msgstr "– Reservekopieringa er fullført –"
+
+#: Archiver.cxx:668
+#, kde-format
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"Reservekopiering er fullført, men nokre filer vart hoppa over.\n"
+"Kva vil du gjera?"
+
+#: Archiver.cxx:670
+#, kde-format
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"Reservekopiering er fullført.\n"
+"Kva vil du gjera?"
+
+#: Archiver.cxx:688
+#, kde-format
+msgid "Totals: Files: %1, Size: %2, Duration: %3"
+msgstr "Resultat: Filer: %1. Storleik: %2. Tid: %3"
+
+#: Archiver.cxx:699
+#, kde-format
+msgid "...Backup aborted!"
+msgstr "… reservekopieringa vart avbroten."
+
+#: Archiver.cxx:727
+#, kde-format
+msgid "Backup cancelled"
+msgstr "Reservekopieringa vart avbroten"
+
+#: Archiver.cxx:744
+#, kde-format
+msgid "...finished slice %1"
+msgstr "… ferdig med arkivdelen %1"
+
+#: Archiver.cxx:759
+#, kde-format
+msgid "...uploading archive %1 to %2"
+msgstr "… lastar opp arkiv %1 til %2"
+
+#: Archiver.cxx:777
+#, kde-format
+msgid "How shall we proceed with the upload?"
+msgstr "Korleis vil du halda fram med opplastinga?"
+
+#: Archiver.cxx:777
+#, kde-format
+msgid "Upload Failed"
+msgstr "Feil ved opplasting"
+
+#: Archiver.cxx:778
+#, kde-format
+msgid "Retry"
+msgstr "Prøv på nytt"
+
+#: Archiver.cxx:778
+#, kde-format
+msgid "Change Target"
+msgstr "Endra målmappe"
+
+#: Archiver.cxx:872
+#, kde-format
+msgid "The script '%1' could not be started."
+msgstr "Klarte ikkje køyra skriptet «%1»."
+
+#: Archiver.cxx:911
+#, kde-format
+msgid "The medium is full. Please insert medium Nr. %1"
+msgstr "Mediet er fullt. Set inn medium %1."
+
+#: Archiver.cxx:947
+#, kde-format
+msgid "The file '%1' can not be opened for writing."
+msgstr "Klarte ikkje opna fila «%1» for skriving."
+
+#: Archiver.cxx:951
+#, kde-format
+msgid ""
+"The file '%1' can not be opened for writing.\n"
+"\n"
+"Do you want to retry?"
+msgstr ""
+"Klarte ikkje opna fila «%1» for skriving.\n"
+"\n"
+"Vil du prøva på nytt?"
+
+#: Archiver.cxx:977
+#, kde-format
+msgid "Could not write to archive. Maybe the medium is full."
+msgstr "Klarte ikkje skriva til arkiv. Det kan vera at mediet er fullt."
+
+#: Archiver.cxx:981
+#, kde-format
+msgid ""
+"Could not write to archive.\n"
+"The operating system reports: %1"
+msgstr ""
+"Klarte ikkje skriva til arkiv.\n"
+"Systemet melde: %1"
+
+#: Archiver.cxx:1000
+#, kde-format
+msgid "...skipping filtered directory %1"
+msgstr "… hoppar over utelaten mappe %1"
+
+#: Archiver.cxx:1011
+#, kde-format
+msgid ""
+"Could not get information of directory: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Klarte ikkje henta informasjon om mappe: %1\n"
+"Systemet melde: %2"
+
+#: Archiver.cxx:1021
+#, kde-format
+msgid "Directory '%1' is not readable. Skipping."
+msgstr "Mappa «%1» kan ikkje lesast. Ho vert hoppa over."
+
+#: Archiver.cxx:1037
+#, kde-format
+msgid ""
+"Could not write directory '%1' to archive.\n"
+"Maybe the medium is full."
+msgstr ""
+"Klarte ikkje lagra mappa «%1» til arkivet.\n"
+"Det kan vera at mediet er fullt."
+
+# «%1» er ei heil filbane.
+#: Archiver.cxx:1158 Archiver.cxx:1239
+#, kde-format
+msgid ""
+"Could not get information of file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Klarte ikkje henta informasjon om fila: %1\n"
+"Systemet melde: %2"
+
+#: Archiver.cxx:1186 Archiver.cxx:1283
+#, kde-format
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"Klarte ikkje lesa fila «%1».\n"
+"Systemet melde: %2"
+
+#: Archiver.cxx:1253
+#, kde-format
+msgid "Could not open file '%1' for reading."
+msgstr "Klarte ikkje opna fila «%1» for lesing."
+
+# «%1» er ei heil filbane.
+#: Archiver.cxx:1316
+#, kde-format
+msgid "...archiving file %1"
+msgstr "… arkiverer fila %1"
+
+# Usikker på om «%1» viser til filnamn eller filbane. Kjeldekoden seier «origName, origFile.errorString()));»
+#: Archiver.cxx:1354
+#, kde-format
+msgid ""
+"Could not read file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Klarte ikkje lesa fila %1\n"
+"Systemet melde: %2"
+
+#: Archiver.cxx:1368
+#, kde-format
+msgid ""
+"Could not create temporary file for compressing: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Klarte ikkje laga mellombels fil for komprimering: %1\n"
+"Systemet melde: %2"
+
+#: Archiver.cxx:1393
+#, kde-format
+msgid "Could not write to temporary file"
+msgstr "Klarte ikkje skriva til mellombels fil"
+
+#: Archiver.cxx:1414
+#, kde-format
+msgid "...compressing file %1"
+msgstr "… komprimerer fila %1"
+
+#: Archiver.cxx:1458
+#, kde-format
+msgid "WARNING:"
+msgstr "ÅTVARING:"
+
+#. i18n: ectx: Menu (file)
+#: kbackupui.rc:4
+#, kde-format
+msgid "&File"
+msgstr "&Fil"
+
+#. i18n: ectx: Menu (settings)
+#: kbackupui.rc:12
+#, kde-format
+msgid "&Settings"
+msgstr "&Innstillingar"
+
+# skip-rule: backup
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: main.cxx:46 MainWidgetBase.ui:16
+#, kde-format
+msgid "KBackup"
+msgstr "KBackup"
+
+#: main.cxx:47
+#, kde-format
+msgid "An easy to use backup program"
+msgstr "Eit brukarvennleg program for reservekopiering"
+
+#: main.cxx:48
+#, kde-format
+msgid "(c) 2006 - 2018 Martin Koller"
+msgstr "© 2006–2018 Martin Koller"
+
+#: main.cxx:52
+#, kde-format
+msgid "Martin Koller"
+msgstr "Martin Koller"
+
+#: main.cxx:52
+#, kde-format
+msgid "Developer"
+msgstr "Utviklar"
+
+#: main.cxx:60
+#, kde-format
+msgid "Start with given profile."
+msgstr "Start med vald profil."
+
+# Eller «arkivdel»?
+#: main.cxx:62
+#, kde-format
+msgid "Script to run after finishing one archive slice."
+msgstr "Skript som skal køyrast ved fullføring av ein arkivdel."
+
+#: main.cxx:64
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile and terminate when done."
+msgstr ""
+"Køyr reservekopieringa automatisk med vald profil, og avslutt ved fullføring."
+
+#: main.cxx:67
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile in the background "
+"(without showing a window) and terminate when done."
+msgstr ""
+"Køyr reservekopieringa automatisk i bakgrunnen (utan å visa vindauge) med "
+"vald profil, og avslutt ved fullføring."
+
+#: main.cxx:72
+#, kde-format
+msgid ""
+"In autobg mode be verbose and print every single filename during backup."
+msgstr "Vis alle filnamn som vert tekne reservekopi av i «autobg»-modus."
+
+#: main.cxx:75
+#, kde-format
+msgid ""
+"In auto/autobg mode force the backup to be a full backup instead of acting "
+"on the profile settings."
+msgstr ""
+"Køyr fullstendig reservekopiering ved «auto»-/«autobg»-reservekopiering, "
+"uavhengig av profilinnstillingane."
+
+#: main.cxx:151 MainWindow.cxx:210
+#, kde-format
+msgid "Could not open profile '%1' for reading: %2"
+msgstr "Klarte ikkje opna profilen «%1» for lesing: %2"
+
+# Kjem etter teksten «Next Backup:». Tenker det ser rart ut med «reservekopiering» både før og etter kolon.
+#: MainWidget.cxx:68
+#, kde-format
+msgid "Incremental Backup"
+msgstr "berre endra data"
+
+#: MainWidget.cxx:70
+#, kde-format
+msgid "Full Backup"
+msgstr "alle dataa"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#: MainWidget.cxx:165 SettingsDialog.cxx:21 SettingsDialog.ui:67
+#: SettingsDialog.ui:136
+#, kde-format
+msgid "unlimited"
+msgstr "Uavgrensa"
+
+# Breiare knapp.
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: MainWidgetBase.ui:41 MainWindow.cxx:113
+#, kde-format
+msgid "Start Backup"
+msgstr "Start reservekopiering"
+
+# Knapp med liten plass.
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: MainWidgetBase.ui:69 MainWindow.cxx:116
+#, kde-format
+msgid "Cancel Backup"
+msgstr "Avbryt kopiering"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: MainWidgetBase.ui:92
+#, kde-format
+msgid "Next Backup:"
+msgstr "Neste reservekopiering:"
+
+#. i18n: ectx: property (text), widget (QLabel, backupType)
+#: MainWidgetBase.ui:99
+#, kde-format
+msgid "TextLabel"
+msgstr "Tekstmerkelapp"
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
+#: MainWidgetBase.ui:106
+#, kde-format
+msgid "Force Full Backup"
+msgstr "Tving fullstendig reservekopi"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: MainWidgetBase.ui:121
+#, kde-format
+msgid "Target"
+msgstr "Mål"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: MainWidgetBase.ui:127
+#, kde-format
+msgid "Folder:"
+msgstr "Mappe:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: MainWidgetBase.ui:143
+#, kde-format
+msgid "Medium:"
+msgstr "Medium:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#: MainWidgetBase.ui:165
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: MainWidgetBase.ui:185 MainWidgetBase.ui:277
+#, kde-format
+msgid "Size:"
+msgstr "Storleik:"
+
+# Kjeldekoden viser til det binære talsystemet.
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: MainWidgetBase.ui:201
+#, kde-format
+msgid "0 MB"
+msgstr "0 MiB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: MainWidgetBase.ui:236
+#, kde-format
+msgid "Totals"
+msgstr "Resultat"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: MainWidgetBase.ui:248
+#, kde-format
+msgid "Files:"
+msgstr "Filer:"
+
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: MainWidgetBase.ui:258 MainWidgetBase.ui:287
+#, kde-format
+msgid "0"
+msgstr "0"
+
+# skip-rule: einingmb
+# Kjeldekoden viser til det binære talsystemet.
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#: MainWidgetBase.ui:300
+#, kde-format
+msgid "MB"
+msgstr "MiB"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: MainWidgetBase.ui:335
+#, kde-format
+msgid "Duration:"
+msgstr "Tid:"
+
+# TT:MM:SS
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: MainWidgetBase.ui:345
+#, kde-format
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: MainWidgetBase.ui:387
+#, kde-format
+msgid "Warnings:"
+msgstr "Åtvaringar:"
+
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: MainWidgetBase.ui:413
+#, kde-format
+msgid "Progress:"
+msgstr "Framdrift:"
+
+#: MainWindow.cxx:56
+#, kde-format
+msgid "New Profile"
+msgstr "Ny profil"
+
+#: MainWindow.cxx:60
+#, kde-format
+msgid "Load Profile..."
+msgstr "Opna profil …"
+
+#: MainWindow.cxx:64
+#, kde-format
+msgid "Save Profile"
+msgstr "Lagra profil"
+
+#: MainWindow.cxx:68
+#, kde-format
+msgid "Save Profile As..."
+msgstr "Lagra profil som …"
+
+#: MainWindow.cxx:72
+#, kde-format
+msgid "Profile Settings..."
+msgstr "Profilinnstillingar …"
+
+#: MainWindow.cxx:75
+#, kde-format
+msgid "Enable All Messages"
+msgstr "Vis alle meldingar"
+
+#: MainWindow.cxx:77
+#, kde-format
+msgid "Dock in System Tray"
+msgstr "Legg i systemtrauet"
+
+#: MainWindow.cxx:81
+#, kde-format
+msgid "Show Hidden Files"
+msgstr "Vis gøymde filer"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr "Ei reservekopiering pågår. Vil du avbryta ho?"
+
+#: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
+#, kde-format
+msgid "Select Profile"
+msgstr "Vel profil"
+
+# skip-rule: backup
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#, kde-format
+msgid "KBackup Profile (*.kbp)"
+msgstr "KBackup-profil (*.kbp)"
+
+#: MainWindow.cxx:213 MainWindow.cxx:285
+#, kde-format
+msgid "Open failed"
+msgstr "Feil ved opning"
+
+#: MainWindow.cxx:262
+#, kde-format
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Profilen «%1» finst frå før.\n"
+"Vil du overskriva han?"
+
+#: MainWindow.cxx:265
+#, kde-format
+msgid "Profile exists"
+msgstr "Profil finst frå før"
+
+#: MainWindow.cxx:282
+#, kde-format
+msgid "Could not open profile '%1' for writing: %2"
+msgstr "Klarte ikkje opna profilen «%1» for skriving: %2"
+
+#: MainWindow.cxx:358
+#, kde-format
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
+"Filer: %1. Storleik: %2 MiB\n"
+"%3"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Name"
+msgstr "Namn"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Size"
+msgstr "Storleik"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Last Modified"
+msgstr "Sist endra"
+
+#: Selector.cxx:289
+#, kde-format
+msgid "Open With"
+msgstr "Opna med"
+
+#: Selector.cxx:297
+#, kde-format
+msgid "Delete File"
+msgstr "Slett fil"
+
+#: Selector.cxx:303
+#, kde-format
+msgid "Properties..."
+msgstr "Eigenskapar …"
+
+#: Selector.cxx:607
+#, kde-format
+msgid "Do you really want to delete '%1'?"
+msgstr "Er du sikker på at du vil sletta «%1»?"
+
+#: Selector.cxx:608
+#, kde-format
+msgid "Delete"
+msgstr "Slett"
+
+#: Selector.cxx:619
+#, kde-format
+msgid "Could not delete directory '%1'."
+msgstr "Klarte ikkje sletta mappa «%1»."
+
+#: Selector.cxx:628
+#, kde-format
+msgid ""
+"Could not delete file '%1'.\n"
+"Reason: %2"
+msgstr ""
+"Klarte ikkje sletta fila «%1».\n"
+"Årsak: %2"
+
+#: Selector.cxx:696
+#, kde-format
+msgid "Other Application..."
+msgstr "Anna program …"
+
+#: Selector.cxx:698
+#, kde-format
+msgid "File Manager"
+msgstr "Filhandsamar"
+
+# Kjeldekoden seier at programmet brukar «MiB» for CD-ar og «GB» for DVD-ar.
+#: SettingsDialog.cxx:22
+#, kde-format
+msgid "650 MB CD"
+msgstr "CD (650 MiB)"
+
+# Kjeldekoden seier at programmet brukar «MiB» for CD-ar og «GB» for DVD-ar.
+#: SettingsDialog.cxx:23
+#, kde-format
+msgid "700 MB CD"
+msgstr "CD (700 MiB)"
+
+# Kjeldekoden seier at programmet brukar «MiB» for CD-ar og «GB» for DVD-ar.
+#: SettingsDialog.cxx:24
+#, kde-format
+msgid "4.7 GB DVD"
+msgstr "DVD (4,7 GB)"
+
+# Kjeldekoden seier at programmet brukar «MiB» for CD-ar og «GB» for DVD-ar.
+#: SettingsDialog.cxx:25
+#, kde-format
+msgid "8.5 GB DVD"
+msgstr "DVD (8,5 GB)"
+
+# Kjeldekoden seier at programmet brukar «MiB» for CD-ar og «GB» for DVD-ar.
+#: SettingsDialog.cxx:26
+#, kde-format
+msgid "9.4 GB DVD"
+msgstr "DVD (9.4 GB)"
+
+# Kjeldekoden seier at programmet brukar «MiB» for CD-ar og «GB» for DVD-ar.
+#: SettingsDialog.cxx:27
+#, kde-format
+msgid "17.1 GB DVD"
+msgstr "DVD (17,1 GB)"
+
+#: SettingsDialog.cxx:28
+#, kde-format
+msgid "custom"
+msgstr "Tilpassa"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: SettingsDialog.ui:16
+#, kde-format
+msgid "Profile Settings"
+msgstr "Profilinnstillingar"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:38
+#, kde-format
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Viss det ikkje er kryssa av her, vert du ikkje spurd om å byta medium når "
+"ein arkivdel er fullført."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:41
+#, kde-format
+msgid "Target needs media change"
+msgstr "Målet krev mediebyte"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: SettingsDialog.ui:48
+#, kde-format
+msgid "Exclude Paths Filter:"
+msgstr "Utelat mapper med mønsteret:"
+
+# – Kolon er oftast brukt i slike samanhengar.
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: SettingsDialog.ui:57
+#, kde-format
+msgid "Number of full backups to keep"
+msgstr "Kor mange fullstendige reservekopiar å ta vare på:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: SettingsDialog.ui:64
+#, kde-format
+msgid ""
+"How many full backups shall be kept in the target directory before older "
+"ones will be deleted"
+msgstr ""
+"Talet på fullstendige reservekopiar som skal takast vare på i målmappa før "
+"eldre kopiar vert sletta."
+
+# – Eller berre «kopiering»; Utvidar vindauget seg for å få plass til teksten?
+#
+# – Kolon er oftast brukt i slike samanhengar.
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: SettingsDialog.ui:77
+#, kde-format
+msgid "Full Backup Interval"
+msgstr "Tid mellom fullstendig reservekopiering:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:84
+#, kde-format
+msgid "How often shall a full backup, instead of an incremental one, be done"
+msgstr ""
+"Kor ofte ein fullstendig reservekopi (ikkje berre av endra data) skal takast"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:87
+#, kde-format
+msgid "Every Day"
+msgstr "Kvar dag"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:90
+#, kde-format
+msgid " days"
+msgstr " dagar"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: SettingsDialog.ui:105
+#, kde-format
+msgid "Archive Prefix:"
+msgstr "Arkivprefiks:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
+#: SettingsDialog.ui:115
+#, kde-format
+msgid ""
+"Defines wildcards for filenames which will be ignored for backup, separated "
+"by a space. E.g.: \"*.ogg *.wav\""
+msgstr ""
+"Filnamnmønster (med jokerteikn) for kva filer som skal hoppast over, skilde "
+"med mellomrom. Eksempel: «*.ogg *.wav»."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: SettingsDialog.ui:122
+#, kde-format
+msgid "Maximum Archive Size:"
+msgstr "Største arkivstorleik:"
+
+# skip-rule: einingmb
+# Kjeldekoden viser til det binære talsystemet.
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: SettingsDialog.ui:139
+#, kde-format
+msgid " MB"
+msgstr " MiB"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: SettingsDialog.ui:157
+#, kde-format
+msgid "Exclude Filename Filter:"
+msgstr "Utelat filer med mønsteret:"
+
+# skip-rule: klammeform
+#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
+#: SettingsDialog.ui:164
+#, kde-format
+msgid ""
+"<html><head/><body><p>Defines a list of absolute path patterns which are "
+"used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
+"body></html>"
+msgstr ""
+"<html><head/><body><p>Ei liste over mappeadresser som skal utelatast ved "
+"reservekopiering.<br/>Eksempel: /home/*/.mozilla/*/Cache</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:171
+#, kde-format
+msgid "Uncheck if you want to avoid compressing files at all"
+msgstr "Viss det ikkje er kryssa av her, vert ikkje arkivfilene komprimerte."
+
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:174
+#, kde-format
+msgid "Compress Files"
+msgstr "Komprimer filer"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
+#: SettingsDialog.ui:181
+#, kde-format
+msgid "backup"
+msgstr "Reservekopi"

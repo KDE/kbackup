@@ -1,0 +1,709 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+  <!ENTITY kbackup "<application
+>KBackup</application
+>"
+><!--FIXME remove entitiy when kbackup depends on kdoctools
+>= 5.42-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Spanish "INCLUDE">
+]>
+
+<book id="kbackup" lang="&language;">
+
+<bookinfo>
+<title
+>El manual de &kbackup;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Martin</firstname
+> <surname
+>Koller</surname
+> </personname
+> <email
+>kollix@aon.at</email
+> </author>
+</authorgroup>
+
+<othercredit role="translator"
+><firstname
+>Eloy</firstname
+><surname
+>Cuadra</surname
+><affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> 
+
+<copyright>
+<year
+>2006 - 2017</year>
+<holder
+>Martin Koller</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2018-01-05</date>
+<releaseinfo
+>Aplicaciones 18.04</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&kbackup; es una aplicación que le permite hacer copias de seguridad de sus datos de un modo sencillo y amigable. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>sistema</keyword>
+<keyword
+>KBackup</keyword>
+<keyword
+>copia de seguridad</keyword>
+<keyword
+>almacenamiento</keyword>
+<keyword
+>archivo comprimido</keyword>
+<keyword
+>zip</keyword>
+<keyword
+>gzip</keyword>
+<keyword
+>bzip2</keyword>
+<keyword
+>xz</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introducción</title>
+
+<para
+>&kbackup; es un programa que le permite realizar copias de seguridad de carpetas y archivos mediante el uso de un árbol de carpetas donde se puede seleccionar lo que se debe salvaguardar. Permite guardar las preferencias en lo que se denominan archivos de «perfil», que son archivos de texto sencillos que contienen definiciones para las carpetas y archivos a incluir o excluir durante el proceso de copia de seguridad. También le permite definir dónde se debe guardar la copia de seguridad. El destino puede ser una carpeta local (por ejemplo, una unidad ZIP montada localmente, una llave USB, etc.), o cualquier &URL; remota (por ejemplo, smb://remote/ruta) donde se realizará la copia de seguridad de los datos en un servido central, etc. </para>
+
+<para
+>El programa también puede ejecutar una copia de seguridad automatizada sin necesidad de usar la interfaz de usuario. Solo hay que crear un perfil y usar estas preferencias para indicarle a &kbackup; lo que debe hacer cuando se ejecute en modo no interactivo, por ejemplo, cuando se lance desde un trabajo de «cron». </para>
+
+<para
+>El programa se ha diseñado para que sea fácil de usar por personas no expertas en computadoras. </para>
+
+<para
+>El formato de almacenamiento es el muy conocido TAR, en el que los datos se pueden guardar en formato comprimido (xz, bzip2 o gzip). </para>
+
+<para
+>La implementación actual contiene solo el paso de copia de seguridad. Para restaurar los datos de nuevo en el sistema deberá usar, por ejemplo, &dolphin; para abrir los archivos TAR de copia de seguridad y arrastrarlos y soltarlos de nuevo a su sistema de archivos. Esto también es una ventaja del uso de un formato de archivos TAR muy conocido y usado. </para>
+<para
+>Si los archivos están comprimidos, puede descomprimirlos de forma recursiva en la carpeta actual con la siguiente orden: </para>
+<para>
+<programlisting
+>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
+</para>
+<para
+>De forma alternativa, puede usar &ark; para extraer una copia de seguridad completa o solo algunos de los archivos que contiene.</para>
+</chapter>
+
+<chapter id="using-kbackup">
+<title
+>Uso de &kbackup;</title>
+
+<para
+>Todo cuanto necesita hacer es seleccionar las carpetas que desee almacenar. Puede hacerlo seleccionando todas las carpetas en la vista de árbol del lado izquierdo de la ventana principal. </para>
+
+<para
+>Si selecciona una carpeta, &kbackup; guardará automáticamente todos los archivos y carpetas que contenga. Si desea excluir partes de una carpeta seleccionada, quite la marca de selección de dichos archivos y carpetas dentro de la carpeta seleccionada. </para>
+
+<para
+>En general, esto significa: Una carpeta seleccionada almacenará todo lo que hay en ella y por debajo de ella, excepto las partes que no seleccione. Esto también significa que cada vez que reuse un perfil (ver más adelante) con posterioridad y se hayan añadido nuevos archivos a una carpeta ya seleccionada para la copia de seguridad, también se almacenarán todos los archivos nuevos. </para>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Captura de pantalla de &kbackup;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="mainwindow.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>Captura de pantalla de la ventana principal</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="kbackup-profiles">
+<title
+>Uso de perfiles</title>
+
+<para
+>Para guardar la selección para un futuro uso, guárdela en un archivo de perfil de &kbackup;. Use el menú <guimenu
+>Archivo</guimenu
+> y seleccione <guimenuitem
+>Guardar perfil</guimenuitem
+>. </para>
+
+<para
+>Para volver a cargar una selección en &kbackup;, use la opción del menú <menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Cargar perfil...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>&kbackup; guarda en un perfil las selecciones de todas las carpetas/archivos incluidos, carpetas/archivos excluidos, la carpeta/&URL; de destino, el prefijo de archivo definido, el tamaño de segmento de archivo máximo definido, etc. </para>
+
+<para
+>Si desea facilitar el uso de realizar copias de seguridad diarias del mismo conjunto de archivos, simplemente guarde su configuración en un perfil de &kbackup; (un archivo <filename class="extension"
+>. kbp</filename
+>) y pase dicho archivo en la línea de órdenes. </para>
+
+<para
+>Por ejemplo: </para>
+
+<para>
+<programlisting
+>kbackup myData.kbp</programlisting>
+</para>
+
+<para
+>Sugerencia: También puede crear un acceso directo en su escritorio a un archivo <filename class="extension"
+>. kbp</filename
+>, ya que el tipo de archivo está preparado para iniciar &kbackup; al hacer doble clic sobre él. </para>
+
+</sect1>
+
+<sect1 id="archive-slices">
+<title
+>Segmentos de archivos comprimidos</title>
+<para
+>Como los medios tienen una capacidad normalmente limitada (por ejemplo, un disco ZIP de 100 MB), &kbackup; creará varios segmentos de archivo comprimido. </para>
+<para
+>Cada segmento de archivo obtendrá su propio nombre, que se ve así: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>El nombre contiene la fecha y hora de creación (que será la misma para todos los segmentos de una copia de seguridad) y un número de secuencia del segmento final («_1» en este ejemplo). </para>
+<para
+>En el menú <menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Preferencias del perfil...</guimenuitem
+></menuchoice
+> puede definir un prefijo distinto del predeterminado «backup». </para>
+
+<para
+>El el diálogo <guilabel
+>Preferencias del perfil</guilabel
+> también puede definir un tamaño máximo de segmento de archivo comprimido, que limita el tamaño de segmento incluso si quedara más espacio en el dispositivo de destino. Esto ayuda a crear segmentos de archivo comprimido que luego se pueden grabar en un &CD;, &DVD;, etc. Si limita explícitamente el tamaño de un segmento de archivo comprimido, el tamaño disponible se marcará con (*) en la ventana principal. </para>
+<para
+>Pero incluso si define un segmento para que tenga un tamaño «ilimitado», existen otras restricciones que limitan el tamaño de un segmento: <itemizedlist>
+<listitem
+><para
+>Limitado por la carpeta de destino (cuando se almacena directamente en una carpeta local).</para
+></listitem>
+<listitem
+><para
+>Limitado por la carpeta <filename class="directory"
+>/tmp</filename
+> cuando se crea un archivo temporal para enviarlo posteriormente a un &URL; remoto.</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>En las <guilabel
+>Preferencias del perfil</guilabel
+> también puede definir un número máximo de copias de seguridad completas que se mantendrán en la carpeta de destino y, por lo tanto, eliminará automáticamente todas las copias de seguridad anteriores allí existentes. Por ejemplo, si lo fija en 3, &kbackup; mantendrá las últimas 3 copias de seguridad y eliminará todas las anteriores. </para>
+
+</sect1>
+
+
+<sect1 id="incremental-backup">
+<title
+>Copia de seguridad incremental</title>
+<para
+>Con una copia de seguridad incremental, no se guardarán todos los archivos cada vez que se realice una copia de seguridad, sino solo los archivos que han cambiado desde la última copia de seguridad. Esto tiene la gran ventaja de que la copia de seguridad incremental generalmente incluirá muchos menos archivos que una copia de seguridad completa y, por lo tanto, se terminará en un tiempo mucho más corto. </para>
+<para
+>Funciona de la siguiente forma: En el perfil, se define un intervalo (en días) para realizar una copia de seguridad completa. Por ejemplo, si lo fija en 5 días, &kbackup; hará una copia de seguridad completa de todos los archivos cada 5 días. Siempre que inicie &kbackup; antes de que expire el intervalo de ese perfil (independientemente de la frecuencia con la que realice una copia de seguridad), solo se guardarán los archivos que hayan cambiado desde la última copia de seguridad. &kbackup; almacena la marca de tiempo de la última copia de seguridad en el perfil y, por lo tanto, sabe qué hacer cuando se ejecuta la próxima vez. </para>
+<para
+>Los archivos de segmentos del archivo comprimido que se crea durante una copia de seguridad incremental contendrán el texto «_inc». Por ejemplo: </para>
+<para
+>backup_2010.06.14-18.50.26_1_inc.tar </para>
+<para
+>Los archivos de segmentos de una copia de seguridad completa no incluirán «_inc» en su nombre. Por ejemplo: </para>
+<para
+>backup_2010.06.13-20.58.14_1.tar </para>
+<para
+>Cuando desee restaurar archivos de una copia de seguridad incremental, es importante que busque la versión más reciente de un archivo para restaurarlo en todos los archivos «_inc» y finalmente también el último archivo de segmento de copia de seguridad completa. Esta es exactamente también la desventaja de la copia de seguridad incremental (no hay ninguna ventaja sin desventaja ;-)). </para>
+<para
+>Si desea realizar una copia de seguridad completa antes del tiempo de ciclo incremental definido en un perfil, puede hacerlo marcando la opción <guilabel
+>Forzar copia de seguridad completa</guilabel
+> en la interfaz de usuario. Cuando &kbackup; se inicia a través de la línea de órdenes, se puede lograr lo mismo usando la opción <option
+>--forceFull</option
+>. </para>
+<para
+>Una copia de seguridad completa forzada volverá a reiniciar el ciclo de copias de seguridad; es decir, &kbackup; cuenta los días que faltan hasta la siguiente copia de seguridad completa a partir del tiempo de la última copia de seguridad completa. </para>
+</sect1>
+
+
+<sect1 id="archive-compression">
+<title
+>Compresión de archivos</title>
+<para
+>&kbackup; comprimirá los archivos guardados si activa esto en las preferencias del perfil. Según la disponibilidad de su sistema, se escogerá la compresión <command
+>xz</command
+>, <command
+>bzip2</command
+> o <command
+>gzip</command
+>. &kbackup; comprimirá cada archivo de forma individual y los guardará añadiéndoles una de las extensiones (<filename class="extension"
+>.xz</filename
+>, <filename class="extension"
+>.bzip2</filename
+> o <filename class="extension"
+>.gz</filename
+>) en el todavía no comprimido archivo <filename class="extension"
+>.tar</filename
+>. </para>
+
+<para
+>Si ha seleccionado crear la copia de seguridad en algún sistema de archivos local (como un disco adicional, una unidad ZIP, &etc;, lo que significa que no ha introducido una &URL; remota como destino), &kbackup; puede dividir la copia de seguridad en varias porciones de archivo comprimido según las limitaciones de capacidad del medio seleccionado. </para>
+<para
+>Por ejemplo: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>backup_2006.08.26-13.04.44_2.tar </para>
+
+</sect1>
+
+<sect1 id="automating">
+<title
+>Copia de seguridad automatizada</title>
+
+<para
+>Si desea automatizar el proceso de la copia de seguridad, &kbackup; ofrece distintas opciones de la línea de órdenes para ayudarle a hacerlo: <itemizedlist>
+<listitem
+><para
+><option
+>--auto</option
+></para>
+<para
+>Cuando ejecuta &kbackup; con esta opción y un determinado perfil <filename class="extension"
+>.kbp</filename
+>, se iniciará, cargará el perfil indicado, ejecutará la copia de seguridad y terminará cuando acabe de hacerla. Todo esto se realiza con una interfaz de usuario de &kbackup; visible. </para>
+</listitem>
+
+<listitem
+><para
+><option
+>--autobg</option
+></para>
+<para
+>Cuando ejecuta &kbackup; con esta opción y un determinado perfil <filename class="extension"
+>. kbp</filename
+>, se realizará el mismo proceso que con la opción <option
+>--auto</option
+>, pero <emphasis
+>sin</emphasis
+> mostrar la interfaz gráfica de usuario. De ahí el sufijo «bg», que significa «segundo plano», para indicar que todo se hace en segundo plano, por lo que esta es la opción correcta a usar cuando haga sus copias de seguridad, por ejemplo, iniciándolas desde un trabajo «cron». </para>
+<para
+>Cuando se utiliza <option
+>--autobg</option
+>, la salida de &kbackup; (que muestra el avance de la copia de seguridad) se escribe en «stderr». De forma predeterminada, la salida incluye solo algunos mensajes importantes y un resumen al final. Si además usa la opción <option
+>--verbose</option
+>, se mostrará también el nombre de cada archivo que se está respaldando en un momento dado. </para>
+</listitem>
+</itemizedlist>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title
+>Referencia de órdenes</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>La ventana principal de &kbackup;</title>
+
+ 
+
+<sect2>
+<title
+>El menú Archivo</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Abrir reciente</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Muestra un submenú con los perfiles usados recientemente para poder seleccionarlos con facilidad. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Nuevo perfil</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Borra la selección y el campo de entrada del destino para poder definir un nuevo perfil.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Cargar perfil...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Carga un perfil.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Guardar perfil</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Guarda todas las preferencias en el perfil actualmente cargado.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Guardar perfil como...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Guarda todas las preferencias en un perfil con un nuevo nombre.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Preferencias del perfil...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>En la configuración puede definir si los archivos de segmento del archivo comprimido empiezan con el nombre predeterminado «backup» o con un nombre alternativo. También puede limitar el tamaño de los segmentos del archivo comprimido. Consulte el capítulo <link linkend="archive-slices"
+>Segmentos de archivo comprimido</link
+>. Estos ajustes también se almacenan en el perfil. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Salir</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sale</action
+> de &kbackup;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>El menú Preferencias</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Anclar en la bandeja del sistema</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Cuando esta opción está activada, se muestra un icono en la bandeja del sistema que refleja el estado actual de una operación de copia de seguridad. Se muestra una animación cuando se está realizando una copia de seguridad; de lo contrario, verá un icono estático. Si se selecciona esta opción, el cierre de la ventana principal no terminará &kbackup;. La aplicación debe cerrarse explícitamente seleccionando la acción <guimenuitem
+>Salir</guimenuitem
+>. A través del menú de contexto del icono de  &kbackup; en la bandeja del sistema, puede iniciar y cancelar una operación de copia de seguridad (que es lo mismo que puede hacer en la ventana principal). La ayuda emergente de este icono también proporciona información sobre el avance (número de archivos guardados, tamaño de la copia de seguridad y el último archivo guardado). </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Activar todos los mensajes</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Al activar esta entrada se borran todos los indicadores <guilabel
+>No volver a preguntar</guilabel
+> guardados internamente para los diálogos que se muestran en &kbackup;. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Mostrar los archivos ocultos</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Activar o desactivar</action
+> la visualización de archivos ocultos (precedidos por un carácter de punto) en la vista de árbol. Use esta opción si desea excluir algunos archivos ocultos de la copia de seguridad. Si desea excluir todos los archivos ocultos, use un filtro de nombre de archivo en la configuración del perfil. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2 id="help-menu1">
+<title
+>El menú Ayuda</title>
+<para
+>&kbackup; posee el elemento de menú común de &kde; <guimenu
+>Ayuda</guimenu
+>. Para más información, consulte la sección sobre el <ulink url="help:/fundamentals/menus.html#menus-help"
+>menú Ayuda</ulink
+> de los principios fundamentales de &kde;. </para>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Guía del desarrollador de &kbackup;</title>
+
+<para
+>&kbackup; se puede ampliar usando un guion de la consola (o cualquier otro ejecutable) que se iniciará en tres puntos diferentes durante el proceso de la copia de seguridad. La idea que hay detrás de esto es la de permitir montar, desmontar y expulsar medios de una manera específica del sistema o hacer otras cosas con los archivos comprimidos que se generan </para>
+
+<para
+>El script a ejecutar se debe proporcionar con la opción de la línea de órdenes <option
+>--script</option
+>. </para>
+
+<para
+>Este es un script de ejemplo:</para>
+
+<example
+><title
+>sliceScript.sh</title>
+<programlisting
+>#!/bin/sh
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+    if [ "$mountPoint" != "" ]
+    then
+      mount /media/zip
+      rm -f /media/zip/backup_2*.tar*
+    fi
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+    if [ "$mountPoint" != "" ]
+    then
+      umount /media/zip
+      eject /media/zip
+    fi
+ ;;
+esac
+</programlisting>
+</example>
+
+<para
+>El guion siempre se llama con cuatro argumentos en la línea de órdenes: </para>
+<itemizedlist>
+<listitem
+><para
+>el modo de invocación</para
+> </listitem>
+<listitem
+><para
+>nombre de archivo (porción)</para
+> </listitem>
+<listitem
+><para
+>el directorio o &URL; de destino</para
+> </listitem>
+<listitem
+><para
+>el punto de montaje del directorio de destino si se trata de un directorio local, o una cadena vacía en caso contrario</para
+> </listitem>
+</itemizedlist>
+
+<para
+>Existen tres modos posibles de invocación: </para>
+
+<para>
+<itemizedlist>
+
+<listitem
+><para
+>slice_init</para>
+<para
+>llamado antes de que se cree un nuevo trozo de archivo en el disco</para>
+ </listitem>
+
+<listitem
+><para
+>slice_closed</para>
+<para
+>llamado tras crear un trozo de archivo, aunque antes de que se haya puesto en el directorio de destino</para>
+<para
+>Se puede usar si desea copiar una porción del archivo comprimido en algún lugar adicional. Por ejemplo, si el archivo comprimido se envía al servidor principal (usando una &URL; de destino), pero también quiere mantener la última copia de seguridad en el disco local. </para>
+</listitem>
+
+<listitem
+><para
+>slice_finished</para>
+<para
+>llamado tras haber transferido con éxito un trozo de archivo al directorio de destino</para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Créditos y licencia</title>
+
+<para
+>&kbackup; </para>
+<para
+>Copyright del programa &copy; 2006-2009 Martin Koller <email
+>kollix@aon.at</email
+> </para>
+
+<para
+>Copyright de la documentación &copy; 2006-2009 Martin Koller </para>
+
+<para
+>Traducido por Eloy Cuadra<email
+>ecuadra@eloihr.net</email
+>.</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

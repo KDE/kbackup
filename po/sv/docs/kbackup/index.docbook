@@ -1,0 +1,727 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+  <!ENTITY kbackup "<application
+>KBackup</application
+>"
+><!--FIXME remove entitiy when kbackup depends on kdoctools
+>= 5.42-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE">
+]>
+
+<book id="kbackup" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok &kbackup;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Martin</firstname
+> <surname
+>Koller</surname
+> </personname
+> <email
+>kollix@aon.at</email
+> </author>
+</authorgroup>
+
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+
+<copyright>
+<year
+>2006 - 2017</year>
+<holder
+>Martin Koller</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2018-01-05</date>
+<releaseinfo
+>Program 18.04</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&kbackup; är ett program som låter dig säkerhetskopiera data på ett enkelt, användarvänligt sätt </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>system</keyword>
+<keyword
+>Kbackup</keyword>
+<keyword
+>säkerhetskopia</keyword>
+<keyword
+>lagring</keyword>
+<keyword
+>arkiv</keyword>
+<keyword
+>zip</keyword>
+<keyword
+>gzip</keyword>
+<keyword
+>bzip2</keyword>
+<keyword
+>xz</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+
+<para
+>&kbackup; är ett program som låter dig säkerhetskopiera vilka kataloger eller filer som helst, då det använder ett lättanvänt katalogträd för att välja vad som ska säkerhetskopieras. Det låter dig spara inställningar i så kallade <quote
+>profilfiler</quote
+>, där en profil är en enkel textfil som innehåller definitioner av kataloger och filer som ska inkluderas eller exkluderas från säkerhetskopieringsprocessen. Dessutom låter det dig definiera var säkerhetskopian ska sparas. Målet kan antingen vara en lokal katalog (t.ex. en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc.), men det kan också vara vilken fjärrwebbadress som helst (t.ex. smb://fjärrdator/någon_sökväg) för att säkerhetskopiera data till en central server, etc. </para>
+
+<para
+>Programmet kan också köra en automatiserad säkerhetskopiering utan att använda ett grafiskt användargränssnitt. Man kan helt enkelt skapa en profil och använda inställningarna för att tala om för &kbackup; vad som ska göras vid körning i icke-interaktivt läge, t.ex. genom att starta det från ett cron-jobb. </para>
+
+<para
+>Programmet är konstruerat för att vara mycket lättanvänt, så att det kan användas av andra än datorexperter. </para>
+
+<para
+>Lagringsformatet är det välkända TAR-formatet, så att data ändå kan lagras i komprimerad form (xz, bzip2 eller gzip). </para>
+
+<para
+>Den nuvarande implementeringen erbjuder bara säkerhetskopieringssteget. För att återställa data tillbaka i systemet, måste man för närvarande använda exempelvis &dolphin; för att öppna TAR-säkerhetskopieringsfilerna och dra och släppa filerna tillbaka i filsystemet. Det är också en fördel med att använda det välkända TAR-filformatet med bra stöd. </para>
+<para
+>Om filerna komprimeras, kan alla filer packas upp från aktuell katalog rekursivt neråt med följande kommando: </para>
+<para>
+<programlisting
+>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
+</para>
+<para
+>Som alternativ kan du använda &ark; för att extrahera en fullständig säkerhetskopiering eller bara några få filer från en säkerhetskopia.</para>
+</chapter>
+
+<chapter id="using-kbackup">
+<title
+>Använda &kbackup;</title>
+
+<para
+>Allt du behöver göra är att välja vilka filer du vill lagra. Det görs genom att markera alla katalogerna i trädvyn på vänster sida i huvudfönstret. </para>
+
+<para
+>Om du markerar en katalog, lagrar &kbackup; automatiskt alla filer och underkataloger nedanför den. Om du vill undanta delar av en markerad katalog, avmarkera helt enkelt filerna eller katalogerna inne i katalogen som fortfarande är markerad. </para>
+
+<para
+>I allmänhet betyder det att allting i en markerad katalog och nedanför den lagras, utom de avmarkerade delarna i den. Det betyder också att så snart en profil återanvänds (se nedan) och nya filer har lagts till i en katalog som redan är vald för säkerhetskopiering, så lagras också alla de nya filerna. </para>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Här är en skärmbild av &kbackup;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="mainwindow.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>Skärmbild av huvudfönster</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="kbackup-profiles">
+<title
+>Använda profiler</title>
+
+<para
+>För att behålla ett urval för senare användning, spara det helt enkelt i en &kbackup; profilfil. Använd menyn <guimenu
+>Arkiv</guimenu
+> och välj <guimenuitem
+>Spara profil</guimenuitem
+>. </para>
+
+<para
+>För att läsa in ett urval i &kbackup;, använd menyalternativet <menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Läs in profil...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>&kbackup; sparar urvalet av alla inkluderade kataloger och filer, exkluderade kataloger och filer, målkatalogen eller webbadressen, definierat arkivprefix, definierad maximal delfilstorlek, etc. i en profil. </para>
+
+<para
+>Om du vill förenkla användning för att säkerhetskopiera samma uppsättning filer varje dag, lagra helt enkelt inställningarna i en &kbackup; profil (en <filename class="extension"
+>.kbp</filename
+>-fil) och ange filen på kommandoraden. </para>
+
+<para
+>t.ex. </para>
+
+<para>
+<programlisting
+>kbackup min-data.kbp</programlisting>
+</para>
+
+<para
+>Tips: Det går också att skapa en genväg på skrivbordet till en <filename class="extension"
+>.kbp</filename
+>-fil eftersom filtypen är registrerad att starta &kbackup; vid dubbelklick. </para>
+
+</sect1>
+
+<sect1 id="archive-slices">
+<title
+>Delarkiv</title>
+<para
+>Eftersom medium normalt har begränsad kapacitet (t.ex. 100 MB Zip-disk), skapar &kbackup; flera delarkiv. </para>
+<para
+>Varje delarkiv får sitt eget namn, som ser ut så här: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>Namnet innehåller datum och tid då filen skapades (vilket är samma för alla delar av säkerhetskopian) och ett avslutande delsekvensnummer (_1 i exemplet). </para>
+<para
+>Ett annat arkivprefix än standardvärdet <quote
+>backup</quote
+> kan definieras i menyn <menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Profilinställningar...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>I dialogrutan <guilabel
+>Profilinställningar</guilabel
+> kan också en maximal storlek på delarkiv definieras, vilket begränsar delstorleken även om det skulle finnas mer plats kvar på målenheten. Det hjälper till att skapa delarkiv som senare kan brännas på en cd, dvd, etc. Om du explicit begränsar storleken på ett delarkiv, markeras den tillgängliga storleken med (*) i huvudfönstret. </para>
+<para
+>Men även om en del definieras att ha <quote
+>obegränsad</quote
+> storlek, finns det andra restriktioner som begränsar en delstorlek: <itemizedlist>
+<listitem
+><para
+>Begränsat av målkatalogen (när den lagras direkt i en lokal katalog)</para
+></listitem>
+<listitem
+><para
+>Begränsad av katalogen <filename class="directory"
+>/tmp</filename
+> när en temporär fil skapas för senare uppladdning till en fjärrwebbadress.</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>I <guilabel
+>Profilinställningar</guilabel
+> kan också det maximala antalet fullständiga säkerhetskopior som behålls i målkatalogen, och därför automatiskt ta bort alla äldre säkerhetskopior som finns där. Om du exempelvis ställer in det till tre, behåller &kbackup; de tre senaste säkerhetskopiorna och tar bort alla äldre. </para>
+
+</sect1>
+
+
+<sect1 id="incremental-backup">
+<title
+>Inkrementell säkerhetskopiering</title>
+<para
+>Alla filer sparas inte varje gång säkerhetskopieringen görs vid en inkrementell säkerhetskopiering, utan bara filerna som har ändrats sedan den senaste säkerhetskopieringen. Det har den stora fördelen att den inkrementella säkerhetskopian oftast innehåller mycket färre filer än en fullständig säkerhetskopia och därför blir färdig på mycket kortare tid. </para>
+<para
+>Det fungerar på följande sätt: Du definierar ett intervall (i dagar) för den fullständiga säkerhetskopieringen i profilen. Om du exempelvis definierar fem dagar, gör &kbackup; en fullständig säkerhetskopiering var femte dag. Så fort du startar &kbackup; med profilen innan intervallet gått ut, oberoende av hur ofta du gör en säkerhetskopia, sparas bara filerna som har ändrats sedan den senaste säkerhetskopieringen. &kbackup; lagrar tidsstämpeln för den senaste säkerhetskopieringen i profilen, och vet därför vad som ska göras nästa gång det körs. </para>
+<para
+>Delarkivens filer som skapas under en inkrementell säkerhetskopiering innehåller texten <quote
+>_inc</quote
+>, t.ex.: </para>
+<para
+>backup_2010.06.14-18.50.26_1_inc.tar </para>
+<para
+>Delfiler för fullständiga säkerhetskopieringar innehåller inte <quote
+>_inc</quote
+> i namnet, t.ex.: </para>
+<para
+>backup_2010.06.13-20.58.14_1.tar </para>
+<para
+>När man vill återställa filer från en inkrementell säkerhetskopia är det viktigt att leta rätt på den senaste versionen av en fil att återställa i alla <quote
+>_inc</quote
+> filer, och till sist också den senaste fullständiga säkerhetskopieringens delfil. Just detta är också nackdelen med den inkrementella säkerhetskopieringen (men ingen fördel utan någon nackdel). </para>
+<para
+>Om du vill göra en fullständig säkerhetskopiering tidigare än den definierade inkrementella cykeltiden i en profil, kan du göra det genom att markera alternativet <guilabel
+>Tvinga fullständig säkerhetskopiering</guilabel
+> i användargränssnittet. När &kbackup; startas via kommandoraden, kan det åstadkommas genom att använda väljaren <option
+>--forceFull</option
+>. </para>
+<para
+>En framtvingad fullständig säkerhetskopiering återstartar säkerhetskopieringscykeln, dvs. &kbackup; räkar dagarna till nästa fullständiga säkerhetskopiering från tiden för den senaste fullständiga säkerhetskopieringen. </para>
+</sect1>
+
+
+<sect1 id="archive-compression">
+<title
+>Arkivkomprimering</title>
+<para
+>&kbackup; komprimerar filerna som lagras om du aktiverar det i profilinställningarna. Beroende tillgänglighet på systemet väljer det komprimering med <command
+>xz</command
+>, <command
+>bzip2</command
+> eller <command
+>gzip</command
+>. &kbackup; komprimerar varje enskild fil och lagrar alla filer med en tillagd filändelse (<filename class="extension"
+>.xz</filename
+>, <filename class="extension"
+>.bzip2</filename
+> eller <filename class="extension"
+>.gzip</filename
+>) i det okomprimerade <filename class="extension"
+>.tar</filename
+>-arkivet. </para>
+
+<para
+>När du har valt att skapa säkerhetskopian på något lokalt filsystem (t.ex. en extra disk, ZIP-enhet, etc.), vilket betyder att du inte matat in en fjärrwebbadress, kan &kbackup; dela upp hela säkerhetskopieringen i flera delarkiv beroende på begränsningar i mediakapacitet. </para>
+<para
+>t.ex. </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>backup_2006.08.26-13.04.44_2.tar </para>
+
+</sect1>
+
+<sect1 id="automating">
+<title
+>Automatisk säkerhetskopiering</title>
+
+<para
+>Om du vill automatisera säkerhetskopieringsprocessen, erbjuder &kbackup; olika kommandoradsväljare för att hjälpa till med det: <itemizedlist>
+<listitem
+><para
+><option
+>--auto</option
+></para>
+<para
+>När &kbackup; körs med väljaren och en angiven <filename class="extension"
+>.kbp</filename
+>-profil, startar det, läser in angiven profil, utför säkerhetskopieringen och avslutar när den är klar. Allt detta görs med ett synligt &kbackup; användargränssnitt. </para>
+</listitem>
+
+<listitem
+><para
+><option
+>--autobg</option
+></para>
+<para
+>När &kbackup; körs med väljaren och en angiven <filename class="extension"
+>.kbp</filename
+>-profil, utförs samma process som med <option
+>--auto</option
+>, men <emphasis
+>utan</emphasis
+> att visa något användargränssnitt. Det är orsaken till suffixet <quote
+>bg</quote
+> som står för <quote
+>bakgrund</quote
+>: allt görs i bakgrunden. Alltså är det rätt väljare att använda när du exempelvis utför säkerhetskopieringar startade av ett cron-jobb. </para>
+<para
+>När <option
+>--autobg</option
+> används skrivs utmatningen från &kbackup; som visar säkerhetskopieringens förlopp till standardfelutmatningen. Normalt innehåller utmatningen bara några få viktiga meddelanden och en sammanfattning på slutet. Om du dessutom skickar med <option
+>--verbose</option
+>, visas också varje filnamn som för närvarande säkerhetskopieras. </para>
+</listitem>
+</itemizedlist>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title
+>Kommandoreferens</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Huvudfönstret i &kbackup;</title>
+
+ 
+
+<sect2>
+<title
+>Menyn Arkiv</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Öppna senaste</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Visar en undermeny med senast använda profiler för att enkelt kunna välja. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Ny profil</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Rensar markeringen och inmatningsfältet för målet, för att kunna definiera en ny profil.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Läs in profil...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Läser in en profil.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Spara profil</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sparar alla inställningar i profilen som för närvarande är inläst.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Spara profil som...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sparar alla inställningar i en profil med ett nytt namn.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Profilinställningar...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Du kan definiera om delarkivfiler börjar med standardnamnet <quote
+>backup</quote
+> eller med ett alternativt namn. Dessutom kan du begränsa delarkivens storlek. Se kapitlet <link linkend="archive-slices"
+>Delarkiv</link
+>. Inställningarna lagras också i profilen. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Avslutar</action
+> &kbackup;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menyn Inställningar</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Minimera i systembrickan</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>När alternativet aktiveras visas en ikon i systembrickan, som anger aktuell status för en säkerhetskopieringsoperation. En animering visas när en säkerhetskopiering pågår, annars visas en statisk ikon. Om alternativet är markerat, avslutas inte &kbackup; när huvudfönstret stängs. Programmet måste explicit avslutas genom att välja alternativet <guimenuitem
+>Avsluta</guimenuitem
+>. En säkerhetskopieringsoperation kan startas eller avbrytas via den sammanhangsberoende menyn i &kbackup;s ikon i systembrickan, vilket är samma sak som går att göra i huvudfönstret. Verktygstipset på ikonen ger också förloppsinformation (antal sparade filer, säkerhetskopians storlek och den senast sparade filen). </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Aktivera alla meddelanden</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Aktiveras alternativet rensas alla internt lagrade flaggor för <guilabel
+>Fråga inte igen</guilabel
+> för dialogrutor som visas i &kbackup;. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Visa dolda filer</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Aktivera eller inaktivera</action
+> visning av dolda filer (som inleds med tecknet punkt) i trädvyn. Använd alternativet om du vill undanta vissa dolda filer från säkerhetskopieringen. Använd ett filnamnsfilter i profilinställningarna om du vill undanta alla dolda filer, </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2 id="help-menu1">
+<title
+>Menyn Hjälp</title>
+<para
+>&kbackup; har &kde;:s vanliga menyalternativ i menyn <guimenu
+>Hjälp</guimenu
+>. För mer information läs avsnittet om <ulink url="help:/fundamentals/menus.html#menus-help"
+>hjälpmenyn</ulink
+> i &kde;:s grunder. </para>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Utvecklingsguide för &kbackup;</title>
+
+<para
+>&kbackup; kan utökas genom att använda ett skalskript (eller vilket annat körbart program som helst), som startas vid tre olika tidpunkter under säkerhetskopieringsprocessen. Idén bakom det är att tillåta att media monteras, avmonteras, och matas ut på ett systemspecifikt sätt, eller göra andra saker med de skapade arkivfilerna. </para>
+
+<para
+>Skriptet att köra måste ges med kommandoradsväljaren <option
+>--script</option
+>. </para>
+
+<para
+>Här är ett exempelskript:</para>
+
+<example
+><title
+>sliceScript.sh</title>
+<programlisting
+>#!/bin/sh
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+    if [ "$mountPoint" != "" ]
+    then
+      mount /media/zip
+      rm -f /media/zip/backup_2*.tar*
+    fi
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+    if [ "$mountPoint" != "" ]
+    then
+      umount /media/zip
+      eject /media/zip
+    fi
+ ;;
+esac
+</programlisting>
+</example>
+
+<para
+>Scriptet anropas alltid med fyra kommandoradsväljaren: </para>
+<itemizedlist>
+<listitem
+><para
+>anropsmetod</para
+> </listitem>
+<listitem
+><para
+>(del)arkivfilnamn</para
+> </listitem>
+<listitem
+><para
+>målkatalog eller webbadress</para
+> </listitem>
+<listitem
+><para
+>monteringsplats för målkatalog om den är en lokal katalog, annars en tom sträng</para
+> </listitem>
+</itemizedlist>
+
+<para
+>Det finns tre möjliga anropsmetoder: </para>
+
+<para>
+<itemizedlist>
+
+<listitem
+><para
+>slice_init</para>
+<para
+>anropas innan ett nytt delarkiv skapas på disk</para>
+ </listitem>
+
+<listitem
+><para
+>slice_closed</para>
+<para
+>anropas efter ett delarkiv har skapats, men innan det har placerats i målkatalogen</para>
+<para
+>Det kan användas om du vill kopiera delarkivet till någon ytterligare plats, t.ex. om arkivet skickas till huvudservern (via en målwebbadress), men du vill också behålla den senaste säkerhetskopian på den lokala disken. </para>
+</listitem>
+
+<listitem
+><para
+>slice_finished</para>
+<para
+>anropas efter ett delarkiv har överförts till målkatalogen med lyckat resultat</para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Tack till och licens</title>
+
+<para
+>&kbackup; </para>
+<para
+>Program copyright &copy; 2006 - 2009 Martin Koller <email
+>kollix@aon.at</email
+> </para>
+
+<para
+>Dokumentation Copyright &copy; 2006 - 2009 Martin Koller </para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

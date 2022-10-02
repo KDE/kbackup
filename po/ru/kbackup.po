@@ -1,0 +1,940 @@
+# translation of ru.po_[8daEob].po to Русский
+# translation of ru.po_[al0GFa].po to
+# Russian translation of the KBackup
+# This file is put in the public domain.
+#
+# Alexey Kouznetsov <Alexey.Kouznetsov@GMail.com>, 2006, 2007.
+# Alexey Kouznetsov <Alexejj.Kuznecov@gmail.com>, 2007.
+# Алексей Кузнецов <Alexey.Kouznetsov@GMail.com>, 2009.
+# Alexander Potashev <aspotashev@gmail.com>, 2018.
+# Дронова Ю <juliette.tux@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: ru.po_[8daEob]\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"PO-Revision-Date: 2020-11-30 16:56+0300\n"
+"Last-Translator: Дронова Ю <juliette.tux@gmail.com>\n"
+"Language-Team: Russian <kde-i18n-doc@kde.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Алексей Кузнецов,Юлия Дронова"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Alexey.Kouznetsov@gmail.com,juliette.tux@gmail.com"
+
+#: Archiver.cxx:437
+#, kde-format
+msgid "Nothing selected for backup"
+msgstr "Не выбрано ни одного объекта для резервного копирования"
+
+#: Archiver.cxx:443
+#, kde-format
+msgid "The target dir '%1' is not valid"
+msgstr "Недопустимый целевой каталог '%1'"
+
+#: Archiver.cxx:450
+#, kde-format
+msgid "The target dir '%1' must be a local file system dir and no remote URL"
+msgstr ""
+"Целевой каталог '%1' должен располагаться в локальной файловой системе, это "
+"не может быть удалённый URL."
+
+#: Archiver.cxx:463
+#, kde-format
+msgid ""
+"The target directory '%1' does not exist.\n"
+"\n"
+"Shall I create it?"
+msgstr ""
+"Целевой каталог '%1' не существует.\n"
+"\n"
+"Создать его?"
+
+#: Archiver.cxx:468
+#, kde-format
+msgid ""
+"Could not create the target directory '%1'.\n"
+"The operating system reports: %2"
+msgstr ""
+"Не могу создать целевой каталог \"%1\"\n"
+"Сообщение операционной системы: %2"
+
+#: Archiver.cxx:475
+#, kde-format
+msgid "The target dir does not exist"
+msgstr "Целевой каталог не существует"
+
+#: Archiver.cxx:548
+#, kde-format
+msgid "...reducing number of kept archives to max. %1"
+msgstr "…уменьшение количества хранимых архивов до наиб. числа %1"
+
+#: Archiver.cxx:606
+#, kde-format
+msgid "...deleting %1"
+msgstr "…удаление %1"
+
+#: Archiver.cxx:630
+#, kde-format
+msgid ""
+"fetching directory listing of target failed. Can not reduce kept archives."
+msgstr ""
+"не удалось прочесть содержимое целевого каталога. Не могу уменьшить число "
+"хранимых архивов."
+
+#: Archiver.cxx:653
+#, kde-format
+msgid "Could not write backup timestamps into profile %1: %2"
+msgstr ""
+"Не удалось записать метки времени создания резервной копии в профиль %1: %2"
+
+#: Archiver.cxx:657
+#, kde-format
+msgid "-- Filtered Files: %1"
+msgstr "-- Отфильтровано файлов: %1"
+
+#: Archiver.cxx:660
+#, kde-format
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr ""
+"!! Создание резервной копии завершено,  <b>но некоторые файлы были "
+"пропущены</b> !!"
+
+#: Archiver.cxx:662
+#, kde-format
+msgid "-- Backup successfully finished --"
+msgstr "-- Резервное копирование завершено успешно --"
+
+#: Archiver.cxx:668
+#, kde-format
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"Резервное копирование завершено, но некоторые файлы были пропущены.\n"
+"Что делать?"
+
+#: Archiver.cxx:670
+#, kde-format
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"Резервное копирование успешно завершено.\n"
+"Что делать?"
+
+#: Archiver.cxx:688
+#, kde-format
+msgid "Totals: Files: %1, Size: %2, Duration: %3"
+msgstr "Файлов: %1 Размер: %2, длительность: %3"
+
+#: Archiver.cxx:699
+#, kde-format
+msgid "...Backup aborted!"
+msgstr "...Резервирование прервано"
+
+#: Archiver.cxx:727
+#, kde-format
+msgid "Backup cancelled"
+msgstr "Резервирование было отменено"
+
+#: Archiver.cxx:744
+#, kde-format
+msgid "...finished slice %1"
+msgstr "…срез %1 создан"
+
+#: Archiver.cxx:759
+#, kde-format
+msgid "...uploading archive %1 to %2"
+msgstr "...выгрузка архива %1 в %2"
+
+#: Archiver.cxx:777
+#, kde-format
+msgid "How shall we proceed with the upload?"
+msgstr "Что делать дальше с выгрузкой?"
+
+#: Archiver.cxx:777
+#, kde-format
+msgid "Upload Failed"
+msgstr "Сбой выгрузки"
+
+#: Archiver.cxx:778
+#, kde-format
+msgid "Retry"
+msgstr "Попробовать снова"
+
+#: Archiver.cxx:778
+#, kde-format
+msgid "Change Target"
+msgstr "Изменить назначение"
+
+#: Archiver.cxx:872
+#, kde-format
+msgid "The script '%1' could not be started."
+msgstr "Не удалось запустить сценарий '%1'"
+
+#: Archiver.cxx:911
+#, kde-format
+msgid "The medium is full. Please insert medium Nr. %1"
+msgstr "Носитель полон. Вставьте носитель № %1"
+
+#: Archiver.cxx:947
+#, kde-format
+msgid "The file '%1' can not be opened for writing."
+msgstr "Файл '%1' не может быть открыт для записи."
+
+#: Archiver.cxx:951
+#, kde-format
+msgid ""
+"The file '%1' can not be opened for writing.\n"
+"\n"
+"Do you want to retry?"
+msgstr ""
+"Файл '%1' не может быть открыт для записи.\n"
+"\n"
+"Попытаться ещё раз?"
+
+#: Archiver.cxx:977
+#, kde-format
+msgid "Could not write to archive. Maybe the medium is full."
+msgstr "Не удалось произвести запись в архив. Вероятно, носитель полон."
+
+#: Archiver.cxx:981
+#, kde-format
+msgid ""
+"Could not write to archive.\n"
+"The operating system reports: %1"
+msgstr ""
+"Запись в архив не удалась.\n"
+"Сообщение операционной системы: %1"
+
+#: Archiver.cxx:1000
+#, kde-format
+msgid "...skipping filtered directory %1"
+msgstr "…пропускается отфильтрованный каталог %1"
+
+#: Archiver.cxx:1011
+#, kde-format
+msgid ""
+"Could not get information of directory: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Не могу получить информацию о каталоге %1\n"
+"Сообщение операционной системы: %2"
+
+#: Archiver.cxx:1021
+#, kde-format
+msgid "Directory '%1' is not readable. Skipping."
+msgstr "Невозможно прочесть каталог '%1'. Пропускаю."
+
+#: Archiver.cxx:1037
+#, kde-format
+msgid ""
+"Could not write directory '%1' to archive.\n"
+"Maybe the medium is full."
+msgstr ""
+"Не могу записать каталог '%1' в архив.\n"
+"Вероятно, носитель полон."
+
+#: Archiver.cxx:1158 Archiver.cxx:1239
+#, kde-format
+msgid ""
+"Could not get information of file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Не удалось получить информацию о файле: %1\n"
+"Сообщение операционной системы: %2"
+
+#: Archiver.cxx:1186 Archiver.cxx:1283
+#, kde-format
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"Не удалось прочитать файл '%1'\n"
+"Сообщение операционной системы: %2"
+
+#: Archiver.cxx:1253
+#, kde-format
+msgid "Could not open file '%1' for reading."
+msgstr "Не удалось открыть файл '%1' для чтения"
+
+#: Archiver.cxx:1316
+#, kde-format
+msgid "...archiving file %1"
+msgstr "...архивирую файл '%1'"
+
+#: Archiver.cxx:1354
+#, kde-format
+msgid ""
+"Could not read file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Не удалось прочесть файл: %1\n"
+"Сообщение операционной системы: %2"
+
+#: Archiver.cxx:1368
+#, kde-format
+msgid ""
+"Could not create temporary file for compressing: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Не удалось создать временный файл для сжатия: %1\n"
+"Сообщение операционной системы: %2"
+
+#: Archiver.cxx:1393
+#, kde-format
+msgid "Could not write to temporary file"
+msgstr "Не могу записать временный файл"
+
+#: Archiver.cxx:1414
+#, kde-format
+msgid "...compressing file %1"
+msgstr "…сжимаю файл '%1'"
+
+#: Archiver.cxx:1458
+#, kde-format
+msgid "WARNING:"
+msgstr "ПРЕДУПРЕЖДЕНИЕ"
+
+#. i18n: ectx: Menu (file)
+#: kbackupui.rc:4
+#, kde-format
+msgid "&File"
+msgstr "&Файл"
+
+#. i18n: ectx: Menu (settings)
+#: kbackupui.rc:12
+#, kde-format
+msgid "&Settings"
+msgstr "&Параметры"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: main.cxx:46 MainWidgetBase.ui:16
+#, kde-format
+msgid "KBackup"
+msgstr "KBackup"
+
+#: main.cxx:47
+#, kde-format
+msgid "An easy to use backup program"
+msgstr "Простая в использовании программа для резервного копирования данных"
+
+#: main.cxx:48
+#, kde-format
+msgid "(c) 2006 - 2018 Martin Koller"
+msgstr "© Martin Koller, 2006-2018"
+
+#: main.cxx:52
+#, kde-format
+msgid "Martin Koller"
+msgstr "Martin Koller"
+
+#: main.cxx:52
+#, kde-format
+msgid "Developer"
+msgstr "Разработчик"
+
+#: main.cxx:60
+#, kde-format
+msgid "Start with given profile."
+msgstr "Запускать с указанным профилем"
+
+#: main.cxx:62
+#, kde-format
+msgid "Script to run after finishing one archive slice."
+msgstr ""
+"Сценарий, который должен выполняться после создания одного среза архива"
+
+#: main.cxx:64
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile and terminate when done."
+msgstr ""
+"Автоматически запустить создание резервной копии с выбранным профилем и "
+"выйти после завершения."
+
+#: main.cxx:67
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile in the background "
+"(without showing a window) and terminate when done."
+msgstr ""
+"Автоматически запустить архивирование с выбранным профилем в фоне (окно "
+"программы не будет показано) и выйти после завершения."
+
+#: main.cxx:72
+#, kde-format
+msgid ""
+"In autobg mode be verbose and print every single filename during backup."
+msgstr ""
+"Выдавать подробную информацию и показывать имя каждого файла при "
+"архивировании в автоматическом фоновом режиме."
+
+#: main.cxx:75
+#, kde-format
+msgid ""
+"In auto/autobg mode force the backup to be a full backup instead of acting "
+"on the profile settings."
+msgstr ""
+"В режимах «авто/автоматический фоновый» принудительно создавать полную "
+"резервную копию вместо действий согласно параметрам профиля"
+
+#: main.cxx:151 MainWindow.cxx:210
+#, kde-format
+msgid "Could not open profile '%1' for reading: %2"
+msgstr "Не могу открыть для чтения профиль '%1': %2"
+
+#: MainWidget.cxx:68
+#, kde-format
+msgid "Incremental Backup"
+msgstr "Инкрементное резервное копирование"
+
+#: MainWidget.cxx:70
+#, kde-format
+msgid "Full Backup"
+msgstr "Полное резервное копирование"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#: MainWidget.cxx:165 SettingsDialog.cxx:21 SettingsDialog.ui:67
+#: SettingsDialog.ui:136
+#, kde-format
+msgid "unlimited"
+msgstr "неограниченно"
+
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: MainWidgetBase.ui:41 MainWindow.cxx:113
+#, kde-format
+msgid "Start Backup"
+msgstr "Начать резервное копирование"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: MainWidgetBase.ui:69 MainWindow.cxx:116
+#, kde-format
+msgid "Cancel Backup"
+msgstr "Прекратить резервное копирование"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: MainWidgetBase.ui:92
+#, kde-format
+msgid "Next Backup:"
+msgstr "Следующее резервное копирование:"
+
+#. i18n: ectx: property (text), widget (QLabel, backupType)
+#: MainWidgetBase.ui:99
+#, kde-format
+msgid "TextLabel"
+msgstr "TextLabel"
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
+#: MainWidgetBase.ui:106
+#, kde-format
+msgid "Force Full Backup"
+msgstr "Принудительное полное резервное копирование"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: MainWidgetBase.ui:121
+#, kde-format
+msgid "Target"
+msgstr "Назначение"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: MainWidgetBase.ui:127
+#, kde-format
+msgid "Folder:"
+msgstr "Каталог:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: MainWidgetBase.ui:143
+#, kde-format
+msgid "Medium:"
+msgstr "Носитель:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#: MainWidgetBase.ui:165
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: MainWidgetBase.ui:185 MainWidgetBase.ui:277
+#, kde-format
+msgid "Size:"
+msgstr "Размер:"
+
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: MainWidgetBase.ui:201
+#, kde-format
+msgid "0 MB"
+msgstr "0 Мбайт"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: MainWidgetBase.ui:236
+#, kde-format
+msgid "Totals"
+msgstr "Всего"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: MainWidgetBase.ui:248
+#, kde-format
+msgid "Files:"
+msgstr "Файлов:"
+
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: MainWidgetBase.ui:258 MainWidgetBase.ui:287
+#, kde-format
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#: MainWidgetBase.ui:300
+#, kde-format
+msgid "MB"
+msgstr "Мбайт"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: MainWidgetBase.ui:335
+#, kde-format
+msgid "Duration:"
+msgstr "Длительность:"
+
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: MainWidgetBase.ui:345
+#, kde-format
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: MainWidgetBase.ui:387
+#, kde-format
+msgid "Warnings:"
+msgstr "Предупреждения:"
+
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: MainWidgetBase.ui:413
+#, kde-format
+msgid "Progress:"
+msgstr "Степень выполнения:"
+
+#: MainWindow.cxx:56
+#, kde-format
+msgid "New Profile"
+msgstr "Новый профиль"
+
+#: MainWindow.cxx:60
+#, kde-format
+msgid "Load Profile..."
+msgstr "Загрузить профиль…"
+
+#: MainWindow.cxx:64
+#, kde-format
+msgid "Save Profile"
+msgstr "Сохранить профиль"
+
+#: MainWindow.cxx:68
+#, kde-format
+msgid "Save Profile As..."
+msgstr "Сохранить профиль как..."
+
+#: MainWindow.cxx:72
+#, kde-format
+msgid "Profile Settings..."
+msgstr "Параметры профиля…"
+
+#: MainWindow.cxx:75
+#, kde-format
+msgid "Enable All Messages"
+msgstr "Включить все сообщения"
+
+#: MainWindow.cxx:77
+#, kde-format
+msgid "Dock in System Tray"
+msgstr "Убирать в системный лоток"
+
+#: MainWindow.cxx:81
+#, kde-format
+msgid "Show Hidden Files"
+msgstr "Показывать скрытые файлы"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr "Идёт создание резервной копии. Прервать?"
+
+#: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
+#, kde-format
+msgid "Select Profile"
+msgstr "Выбрать профиль"
+
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#, kde-format
+msgid "KBackup Profile (*.kbp)"
+msgstr "Профили KBackup (*.kbp)"
+
+#: MainWindow.cxx:213 MainWindow.cxx:285
+#, kde-format
+msgid "Open failed"
+msgstr "Ошибка открытия"
+
+#: MainWindow.cxx:262
+#, kde-format
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Профиль '%1' уже существует.\n"
+"Перезаписать его?"
+
+#: MainWindow.cxx:265
+#, kde-format
+msgid "Profile exists"
+msgstr "Профиль уже существует"
+
+#: MainWindow.cxx:282
+#, kde-format
+msgid "Could not open profile '%1' for writing: %2"
+msgstr "Не могу открыть профиль '%1' для записи: %2"
+
+#: MainWindow.cxx:358
+#, kde-format
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
+"Файлов: %1 Размер: %2 Мбайт\n"
+"%3"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Name"
+msgstr "Название"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Size"
+msgstr "Размер"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Last Modified"
+msgstr "Последнее изменение"
+
+#: Selector.cxx:289
+#, kde-format
+msgid "Open With"
+msgstr "Открыть с помощью"
+
+#: Selector.cxx:297
+#, kde-format
+msgid "Delete File"
+msgstr "Удалить файл"
+
+#: Selector.cxx:303
+#, kde-format
+msgid "Properties..."
+msgstr "Свойства…"
+
+#: Selector.cxx:607
+#, kde-format
+msgid "Do you really want to delete '%1'?"
+msgstr "Точно удалить '%1'?"
+
+#: Selector.cxx:608
+#, kde-format
+msgid "Delete"
+msgstr "Удалить"
+
+#: Selector.cxx:619
+#, kde-format
+msgid "Could not delete directory '%1'."
+msgstr "Не удалось удалить каталог '%1'."
+
+#: Selector.cxx:628
+#, kde-format
+msgid ""
+"Could not delete file '%1'.\n"
+"Reason: %2"
+msgstr ""
+"Не удалось удалить файл '%1'.\n"
+"Причина: %2"
+
+#: Selector.cxx:696
+#, kde-format
+msgid "Other Application..."
+msgstr "Другое приложение…"
+
+#: Selector.cxx:698
+#, kde-format
+msgid "File Manager"
+msgstr "Диспетчер файлов"
+
+#: SettingsDialog.cxx:22
+#, kde-format
+msgid "650 MB CD"
+msgstr "CD 650 Мбайт"
+
+#: SettingsDialog.cxx:23
+#, kde-format
+msgid "700 MB CD"
+msgstr "CD 700 Мбайт"
+
+#: SettingsDialog.cxx:24
+#, kde-format
+msgid "4.7 GB DVD"
+msgstr "DVD 4,7 Гбайт"
+
+#: SettingsDialog.cxx:25
+#, kde-format
+msgid "8.5 GB DVD"
+msgstr "DVD 8,5 Гбайт"
+
+#: SettingsDialog.cxx:26
+#, kde-format
+msgid "9.4 GB DVD"
+msgstr "DVD 9,4 Гбайт"
+
+#: SettingsDialog.cxx:27
+#, kde-format
+msgid "17.1 GB DVD"
+msgstr "DVD 17,1 Гбайт"
+
+#: SettingsDialog.cxx:28
+#, kde-format
+msgid "custom"
+msgstr "настроить"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: SettingsDialog.ui:16
+#, kde-format
+msgid "Profile Settings"
+msgstr "Параметры профиля"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:38
+#, kde-format
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Снимите отметку, если после завершения создания одного среза архива не нужно "
+"показывать диалог подтверждения смены носителя."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:41
+#, kde-format
+msgid "Target needs media change"
+msgstr "Необходимо сменить целевой носитель"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: SettingsDialog.ui:48
+#, kde-format
+msgid "Exclude Paths Filter:"
+msgstr "Фильтр для исключений путей:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: SettingsDialog.ui:57
+#, kde-format
+msgid "Number of full backups to keep"
+msgstr "Количество хранимых полных резервных копий"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: SettingsDialog.ui:64
+#, kde-format
+msgid ""
+"How many full backups shall be kept in the target directory before older "
+"ones will be deleted"
+msgstr ""
+"Сколько полных резервных копий может храниться в целевом каталоге, прежде "
+"чем начнётся удаление самых старых копий."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: SettingsDialog.ui:77
+#, kde-format
+msgid "Full Backup Interval"
+msgstr "Промежуток между созданием полных резервных копий"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:84
+#, kde-format
+msgid "How often shall a full backup, instead of an incremental one, be done"
+msgstr ""
+"Как часто должна создаваться полная резервная копия вместо инкрементной."
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:87
+#, kde-format
+msgid "Every Day"
+msgstr "Каждый день"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:90
+#, kde-format
+msgid " days"
+msgstr " дней"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: SettingsDialog.ui:105
+#, kde-format
+msgid "Archive Prefix:"
+msgstr "Префикс архива:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
+#: SettingsDialog.ui:115
+#, kde-format
+msgid ""
+"Defines wildcards for filenames which will be ignored for backup, separated "
+"by a space. E.g.: \"*.ogg *.wav\""
+msgstr ""
+"Настройка подстановочных знаков для имён файлов, которые должны "
+"игнорироваться во время резервного копирования. Разделять пробелами. "
+"Пример:  «*.ogg *.wav»"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: SettingsDialog.ui:122
+#, kde-format
+msgid "Maximum Archive Size:"
+msgstr "Максимальный размер архива:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: SettingsDialog.ui:139
+#, kde-format
+msgid " MB"
+msgstr " МБайт"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: SettingsDialog.ui:157
+#, kde-format
+msgid "Exclude Filename Filter:"
+msgstr "Фильтр для исключений имён файлов:"
+
+#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
+#: SettingsDialog.ui:164
+#, kde-format
+msgid ""
+"<html><head/><body><p>Defines a list of absolute path patterns which are "
+"used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
+"body></html>"
+msgstr ""
+"<html><head/><body><p>Настраивает список шаблонов абсолютных путей, "
+"используемых для фильтрации полных путей каталогов, <br/>например: /home/*/."
+"mozilla/*/Cache</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:171
+#, kde-format
+msgid "Uncheck if you want to avoid compressing files at all"
+msgstr "Снимите отметку, если вообще нет необходимости выполнять сжатие файлов"
+
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:174
+#, kde-format
+msgid "Compress Files"
+msgstr "Сжимать файлы"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
+#: SettingsDialog.ui:181
+#, kde-format
+msgid "backup"
+msgstr "резервная копия"
+
+#~ msgid "OK"
+#~ msgstr "&Подтверждаю"
+
+#~ msgid "Cancel"
+#~ msgstr "Отменить"
+
+#~ msgid "File '%1' is not readable. Skipping."
+#~ msgstr "Не могу прочесть файл '%1'. Пропускаю."
+
+#, fuzzy
+#~ msgid "(c) 2006 - 2012 Martin Koller"
+#~ msgstr "(c) 2006-2009 Martin Koller"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid "Start with given profile"
+#~ msgstr "Запускать с указанным профилем"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid "Script to run after finishing one archive slice"
+#~ msgstr ""
+#~ "Сценарий, который должен запускаться после создания каждого тома архива"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "Automatically run the backup with the given profile\n"
+#~ "and terminate when done."
+#~ msgstr ""
+#~ "Автоматически запустить архивирование с выбранным профилем и выйти после "
+#~ "завершения."
+
+#, fuzzy
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "Automatically run the backup with the given profile\n"
+#~ "in the background (without showing a window)\n"
+#~ "and terminate when done."
+#~ msgstr ""
+#~ "Автоматически запустить архивирование с выбранным профилем в фоне (окно "
+#~ "программы не будет показано) и выйти после завершения."
+
+#, fuzzy
+#~ msgctxt ""
+#~ "TRANSLATORS: this is the description of a command line option. If your "
+#~ "translation is longer than 50 caracters, you are encouraged to add "
+#~ "breaklines to keep the limit"
+#~ msgid ""
+#~ "In autobg mode be verbose and print every\n"
+#~ "single filename during backup"
+#~ msgstr ""
+#~ "Выдавать больше информации, печатать имена всех файлов при архивировании "
+#~ "в автоматическом фоновом режиме"
+
+#~ msgid "upload FAILED"
+#~ msgstr "выгрузка НЕ УДАЛАСЬ"
+
+#~ msgid ""
+#~ "Sorry, file '%1' (%2) is too large and cannot be archived with this KDE "
+#~ "version. Skipping."
+#~ msgstr ""
+#~ "Файл '%1' (%2) слишком велик и не может быть архивирован в текущей версии "
+#~ "KDE. Пропускаю."
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Алексей Кузнецов"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "Alexey.Kouznetsov@GMail.com"

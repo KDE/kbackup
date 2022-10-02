@@ -1,0 +1,306 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "/usr/share/kf5/kdoctools/customization/dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<!--Rename this template to man-$applicationname.x.docbook,
+where x is the manual section, see https://en.wikipedia.org/wiki/Man_page#Manual_sections
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<!-- replace Foo with the application name-->
+<title
+>Gebruikershandboek van KBackup</title>
+<author
+><personname
+> <firstname
+>Scarlett</firstname
+> <surname
+>Moore</surname
+> </personname
+> <email
+>sgmoore@kde.org</email
+></author>
+<!--Date when this manpage was written, in the ISO 8601 format 'yyyy-mm-dd'-->
+<date
+>2020-07-23</date>
+<!--version information of application this manpage is valid for.
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   docbook is proofreaded and verified to be valid for the current app version
+-->
+<releaseinfo
+>Applications 20.04</releaseinfo>
+<!-- replace $applicationname with the application name; &kde; as prefix/namespace could
+be not needed, ask the promo team in case of doubt
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+
+<productname
+>KDE Applications</productname>
+<!-- no productname in man pages for extragear applications -->
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbackup</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbackup</command
+></refname>
+<refpurpose
+>Programma voor het maken van een reservekopie met een gemakkelijk te gebruiken interface</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="_synopsis">
+<cmdsynopsis
+><command
+>kbackup</command
+> <arg rep="repeat"
+><replaceable
+>OPTIES</replaceable
+></arg
+> <arg rep="repeat"
+><replaceable
+>Modulenaam | Modulesetnaam</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1>
+<title
+>BESCHRIJVING</title>
+<para
+>Kbackup is een programma dat u een reservekopie laat maken van elke map of elk bestand. Het gebruikt een gemakkelijk te gebruiken boomstructuur van mappen om de zaken te selecteren voor het maken van de reservekopie en laat u uw instellingen opslaan in "profiel"-bestanden. Dit zijn eenvoudige tekstbestanden met definities voor mappen en bestanden om mee te nemen of uit te sluiten van het proces van reservekopieën maken.</para
+> 
+
+</refsect1>
+
+<refsect1>
+<title
+>OPTIES</title>
+<!--App options, in a variablelist-->
+<variablelist>
+<varlistentry>
+<term>
+    <option
+>-v, --version</option>
+</term>
+<listitem>
+    <para
+>Toont versie-informatie.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>-h, --help</option>
+</term>
+<listitem>
+    <para
+>Help tonen over de opties voor de opdrachtregel.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--help-all</option>
+</term>
+<listitem>
+    <para
+>Help tonen inclusief Qt specifieke opties.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--help-all --qmljsdebugger <replaceable
+>waarde</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Activeert de QML/JS debugger met een gespecificeerde poort. De waarde moet het formaat port:1234[,block] hebben. "block" maakt dat de toepassing wacht op een verbinding.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--script <replaceable
+>bestand</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Na het maken van een reservekopie van een deel wordt dit script gestart.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--auto <replaceable
+>profiel</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Start het maken van de reservekopie automatisch met het gegeven profiel en beëindig het wanneer gereed.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--autobg <replaceable
+>profiel</replaceable
+> </option>
+</term>
+<listitem>
+    <para
+>Start, zonder het tonen van een venster, op de achtergrond het maken van de reservekopie automatisch met het gegeven profiel en beëindig het wanneer gereed.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--verbose <replaceable
+>profiel</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Toon alle informatie in autobg mode gedurende het maken van de reservekopie.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--forceFull </option>
+</term>
+<listitem>
+    <para
+>Forceer een complete reservekopie in auto/autobg mode in plaats van de profielinstellingen te volgen.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--author</option>
+</term>
+<listitem>
+    <para
+>Auteurinformatie tonen.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--license</option>
+</term>
+<listitem>
+    <para
+>Licentie-informatie tonen.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--desktopfile <replaceable
+>bestand</replaceable
+> </option>
+</term>
+<listitem>
+    <para
+>De basis bestandsnaam van het desktop-item voor deze toepassing.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<!--The Following sections are optional, but recommended if they are
+applicable.-->
+
+<refsect1>
+<title
+>OMGEVING</title>
+<para
+><!--Environment variables that affect this command, how to set
+them, who sets them, how they affect it, probably in a variablelist.  Only for
+man sections 1, 6, 7 and 8--></para>
+</refsect1>
+
+<refsect1>
+<title
+>BESTANDEN</title>
+<para
+>.kbp profielbestanden. Gegenereerd door gebruiker bij opslaan van profiel.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Zie ook</title>
+<simplelist>
+<member
+>Meer gedetailleerde gebruikersdocumentatie is beschikbaar van <ulink url="help:/ --commandonaam"
+>help:/kbackup</ulink
+> (voer deze &URL; in in &konqueror; of voer <userinput
+><command
+>khelpcenter</command
+> <parameter
+>man:/kbackup</parameter
+></userinput
+> uit).</member>
+<!--for man pages replace "help:/" with "man:/" in this member-->
+<member
+>kf5options(7)</member
+> <!-- only for application with a GUI-->
+<member
+>qt5options(7)</member
+> <!-- only for application with a GUI-->
+<!--<member
+>foo(1)</member
+> more man page references if applicable-->
+<member
+>Er is ook verdere informatie beschikbaar op <ulink url="https://kde.org/applications/en/utilities/org.kde.kbackup"
+>https://kde.org/applications/en/utilities/org.kde.kbackup</ulink
+> </member>
+</simplelist>
+</refsect1>
+
+<refsect1>
+<title
+>Voorbeelden</title>
+<para
+>kbackup myData.kbp Gebruikt om bestaand profiel te laden. </para>
+</refsect1>
+
+
+<refsect1>
+<title
+>Auteurs</title>
+<para
+>Kbackup is geschreven door Martin Koller <email
+> kollix@aon.at</email
+> Deze man-pagiana is gemaakt door Scott Kitterman <email
+>scott@kitterman.com</email
+> en bijgewerkt door Scarlett Moore <email
+>sgmoore@kde.org</email
+>, de licentie bevat dezelfde artikelen als die van kbackup.</para>
+</refsect1>
+
+</refentry
+> 

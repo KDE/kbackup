@@ -1,0 +1,711 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+  <!ENTITY kbackup "<application
+>KBackup</application
+>"
+><!--FIXME remove entitiy when kbackup depends on kdoctools
+>= 5.42-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE">
+]>
+
+<book id="kbackup" lang="&language;">
+
+<bookinfo>
+<title
+>El manual del &kbackup;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Martin</firstname
+> <surname
+>Koller</surname
+> </personname
+> <email
+>kollix@aon.at</email
+> </author>
+</authorgroup>
+
+&traductor.Antoni.Bella; 
+
+<copyright>
+<year
+>2006 - 2017</year>
+<holder
+>Martin Koller</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>5 de gener de 2018</date>
+<releaseinfo
+>Aplicacions 18.04</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>El &kbackup; és una aplicació que permet fer una còpia de seguretat de les vostres dades d'una manera senzilla i fàcil d'emprar. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>sistema</keyword>
+<keyword
+>KBackup</keyword>
+<keyword
+>còpia de seguretat</keyword>
+<keyword
+>emmagatzematge</keyword>
+<keyword
+>arxiu</keyword>
+<keyword
+>ZIP</keyword>
+<keyword
+>gzip</keyword>
+<keyword
+>bzip2</keyword>
+<keyword
+>xz</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+
+<para
+>El &kbackup; és un programa que permet fer una còpia de seguretat de qualsevol carpeta o fitxer, per la qual cosa utilitza un arbre de carpetes fàcil d'emprar per a seleccionar els elements per a fer la còpia de seguretat. Permet desar la configuració en els anomenats fitxers de <quote
+>perfil</quote
+>, on un perfil és un senzill fitxer de text que conté les definicions per a les carpetes i fitxers que s'inclouran o s'exclouran del procés de còpia de seguretat. A més, permet definir on es desarà la còpia de seguretat. La destinació pot ser una carpeta local (&pex;, un dispositiu muntat localment com un dispositiu ZIP, memòria USB, &etc;), però també pot ser qualsevol &URL; remot (&pex;, smb://remot/algun_camí) per a fer la còpia de seguretat de les vostres dades a algun servidor central, &etc; </para>
+
+<para
+>El programa també pot executar una còpia de seguretat automàtica sense utilitzar una interfície gràfica d'usuari. Senzillament cal crear un perfil i utilitzar aquesta configuració per a dir-li al &kbackup; què s'ha de fer quan s'executa en el mode no interactiu, &pex;, iniciant-lo des d'un treball del «cron». </para>
+
+<para
+>El programa ha estat dissenyat per a ser molt senzill en el seu ús, de manera que el puguin utilitzar experts no informàtics. </para>
+
+<para
+>El format de l'emmagatzematge és el conegut format TAR, on les dades encara es poden emmagatzemar en un format comprimit (xz, bzip2 o gzip). </para>
+
+<para
+>La implementació actual només inclou el pas de la còpia de seguretat. Per a restaurar les dades de nou al vostre sistema, actualment haureu d'utilitzar, &pex;, el &dolphin; per a obrir els fitxers de còpia de seguretat TAR i arrossegar/deixar anar els fitxers al vostre sistema de fitxers. Això també és un avantatge de l'ús del format de fitxer TAR tan conegut i ben admès. </para>
+<para
+>Si els fitxers estan comprimits, podeu descomprimir recursivament tots els fitxers des de la carpeta actual cap avall amb la següent ordre: </para>
+<para>
+<programlisting
+>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
+</para>
+<para
+>De manera alternativa, podeu utilitzar l'&ark; per a extreure una còpia de seguretat completa o només uns quants fitxers des d'una còpia de seguretat.</para>
+</chapter>
+
+<chapter id="using-kbackup">
+<title
+>Ús del &kbackup;</title>
+
+<para
+>Tot el que heu de fer, és seleccionar quines carpetes voleu emmagatzemar. Això es fa seleccionant totes les carpetes a la vista en arbre del costat esquerre de la finestra principal. </para>
+
+<para
+>Si seleccioneu una carpeta, el &kbackup; emmagatzemarà automàticament tots els fitxers i subcarpetes que hi ha a sota seu. Si voleu excloure parts d'una carpeta seleccionada, simplement desmarqueu els fitxers/carpetes dins de la carpeta seleccionada. </para>
+
+<para
+>En general, això significa: Una carpeta seleccionada ho emmagatzemarà tot i per sota seu, excepte les parts desseleccionades. Això també significa que, cada vegada que torneu a utilitzar un perfil (vegeu més endavant) i s'afegeixin fitxers nous a una carpeta ja seleccionada per a la còpia de seguretat, també s'emmagatzemaran tots els fitxers nous. </para>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Aquesta és una captura de pantalla del &kbackup;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="mainwindow.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>Captura de pantalla de la finestra principal</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="kbackup-profiles">
+<title
+>Usar els perfils</title>
+
+<para
+>Per a mantenir una selecció per al seu ús posterior, simplement deseu-la en un perfil del &kbackup;. Utilitzeu el menú <guimenu
+>Fitxer</guimenu
+> i seleccioneu <guimenuitem
+>Desa un perfil</guimenuitem
+>. </para>
+
+<para
+>Per a tornar a carregar una selecció al &kbackup;, utilitzeu l'element de menú <menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Carrega un perfil...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>El &kbackup; desa en un perfil les seleccions per a totes les carpetes/fitxers inclosos, carpetes/fitxers exclosos, la carpeta de destinació/&URL;, el prefix definit de l'arxiu, la mida màxima definida per a la porció del fitxer, &etc; </para>
+
+<para
+>Si voleu facilitar l'ús de la còpia de seguretat per a cada dia amb el mateix conjunt de fitxers, simplement emmagatzemeu la vostra configuració en un perfil del &kbackup; (un fitxer <filename class="extension"
+>.kbp</filename
+>) i passeu aquest fitxer a la línia d'ordres. </para>
+
+<para
+>&pex;: </para>
+
+<para>
+<programlisting
+>kbackup mevesDades.kbp</programlisting>
+</para>
+
+<para
+>Consell: també podeu crear una drecera a l'escriptori per a un fitxer <filename class="extension"
+>.kbp</filename
+>, atès que el tipus de fitxer està registrat per a iniciar el &kbackup; fent doble clic, no caldrà fer res més. </para>
+
+</sect1>
+
+<sect1 id="archive-slices">
+<title
+>Porcions de l'arxiu</title>
+<para
+>Com un suport normalment té una capacitat limitada (&pex;, 100 MB al disc ZIP), el &kbackup; crearà diverses porcions de l'arxiu. </para>
+<para
+>Cada porció de l'arxiu obtindrà el seu propi nom, el qual es veurà així: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>El nom conté la data i l'hora de creació (la qual serà la mateixa per a totes les porcions d'una còpia de seguretat) i un número seqüencial per a la porció final (_1 en aquest exemple). </para>
+<para
+>Al menú <menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Configuració del perfil...</guimenuitem
+></menuchoice
+>, podreu definir un prefix d'arxiu diferent del valor predeterminat <quote
+>backup</quote
+>. </para>
+
+<para
+>Al diàleg <guilabel
+>Configuració del perfil</guilabel
+>, també podreu definir una mida màxima per a la porció de l'arxiu, la qual limita la mida de la porció, fins i tot si hi ha més espai al dispositiu de destinació. Això ajuda a crear porcions de l'arxiu que després es poden gravar en un &CD;/&DVD;, &etc; Si limiteu explícitament la mida d'una porció de l'arxiu, la mida disponible estarà marcada amb (*) a la finestra principal. </para>
+<para
+>Però, fins i tot si definiu que una porció sigui <quote
+>Sense límit</quote
+>, hi ha altres restriccions que limiten la mida d'una porció: <itemizedlist>
+<listitem
+><para
+>limitada per la carpeta de destinació (quan s'emmagatzema directament en una carpeta local)</para
+></listitem>
+<listitem
+><para
+>limitada per la carpeta <filename class="directory"
+>/tmp</filename
+> quan creem un fitxer tmp per a pujar-lo més endavant a un &URL; remot;</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>A la <guilabel
+>Configuració del perfil</guilabel
+>, també podeu definir un nombre màxim de còpies de seguretat completes a mantenir a la carpeta de destinació i, per tant, suprimir automàticament totes les còpies de seguretat anteriors. &pex;, si l'heu establert a 3, el &kbackup; mantindrà les últimes 3 còpies de seguretat i suprimirà totes les anteriors. </para>
+
+</sect1>
+
+
+<sect1 id="incremental-backup">
+<title
+>Còpia de seguretat incremental</title>
+<para
+>Amb una còpia de seguretat incremental, no es desaran tots els fitxers cada vegada que s'executi la còpia de seguretat, només es desaran els fitxers que hagin canviat des de l'última còpia de seguretat. Això té el gran avantatge que la còpia de seguretat incremental generalment inclourà molts menys fitxers que una còpia de seguretat completa i, per tant, es finalitzarà en un temps molt més breu. </para>
+<para
+>Això funciona de la següent manera: al perfil, definiu un interval (en dies) per a la còpia de seguretat completa. &pex;, quan definiu 5 dies, llavors el &kbackup; farà una còpia de seguretat completa de tots els fitxers cada 5 dies. Sempre que inicieu el &kbackup; abans que caduqui l'interval amb aquest perfil -independentment de la freqüència amb què feu una còpia de seguretat- només es desaran els fitxers que hagin canviat des de l'última còpia de seguretat. El &kbackup; emmagatzema el segell de temps de l'última còpia de seguretat al perfil i, per tant, sap què haurà de fer quan s'executi la pròxima vegada. </para>
+<para
+>Els fitxers de porció de l'arxiu creats durant una còpia de seguretat incremental contenen el text <quote
+>_inc</quote
+>, &pex;: </para>
+<para
+>backup_2010.06.14-18.50.26_1_inc.tar </para>
+<para
+>Els fitxers de porció d'una còpia de seguretat completa no inclouran <quote
+>_inc</quote
+> al nom, &pex;: </para>
+<para
+>backup_2010.06.13-20.58.14_1.tar </para>
+<para
+>Quan es volen recuperar els fitxers des d'una còpia de seguretat incremental, és important cercar la versió més recent del fitxer que es restaurarà entre tots els fitxers <quote
+>_inc</quote
+> i, finalment, també l'últim full del fitxer de porció de la còpia de seguretat completa. Això també és exactament el desavantatge de la còpia de seguretat incremental (però sense avantatge no hi ha desavantatge ;-) ). </para>
+<para
+>Si voleu fer una còpia de seguretat completa abans del temps de cicle incremental definit en un perfil, podeu fer-ho marcant l'opció <guilabel
+>Força una còpia de seguretat completa</guilabel
+> a la interfície d'usuari. Quan el &kbackup; és iniciat a través de la línia d'ordres, això es pot aconseguir utilitzant l'opció <option
+>--forceFull</option
+>. </para>
+<para
+>Una còpia de seguretat completa forçada reiniciarà el cicle de la còpia de seguretat, &ead;, el &kbackup; comptarà els dies fins a la propera còpia de seguretat completa des del moment de la darrera còpia de seguretat completa. </para>
+</sect1>
+
+
+<sect1 id="archive-compression">
+<title
+>Comprimir l'arxiu</title>
+<para
+>El &kbackup; comprimirà els fitxers emmagatzemats si ho activeu a la configuració del perfil. Depenent de la disponibilitat al vostre sistema quan trieu compressió amb <command
+>xz</command
+>, <command
+>bzip2</command
+> o <command
+>gzip</command
+>. El &kbackup; comprimirà cada fitxer i emmagatzemarà tots els fitxers afegint-hi una extensió de fitxer (<filename class="extension"
+>.xz</filename
+>, <filename class="extension"
+>.bzip2</filename
+> o <filename class="extension"
+>.gz</filename
+>) en l'arxiu <filename class="extension"
+>.tar</filename
+> que no està comprimit. </para>
+
+<para
+>Quan hàgiu seleccionat crear la còpia de seguretat en algun sistema de fitxers local (&pex;, el vostre disc extra, unitat ZIP, &etc;) -el qual significa que no heu introduït cap &URL; remot de destinació- el &kbackup; podrà dividir tota la còpia de seguretat en diverses porcions de l'arxiu a causa de les limitacions en la capacitat del suport. </para>
+<para
+>&pex;: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>backup_2006.08.26-13.04.44_2.tar </para>
+
+</sect1>
+
+<sect1 id="automating">
+<title
+>Automatitzar la còpia de seguretat</title>
+
+<para
+>Si voleu automatitzar el procés de la còpia de seguretat, el &kbackup; ofereix diferents opcions de línia d'ordres per a ajudar-vos: <itemizedlist>
+<listitem
+><para
+><option
+>--auto</option
+></para>
+<para
+>Quan executeu el &kbackup; amb aquesta opció i indiqueu un perfil <filename class="extension"
+>.kbp</filename
+>, aquest s'iniciarà carregant el perfil indicat, executarà la còpia de seguretat i finalitzarà en acabar. Tot això es fa amb una interfície d'usuari visible del &kbackup;. </para>
+</listitem>
+
+<listitem
+><para
+><option
+>--autobg</option
+></para>
+<para
+>Quan executeu el &kbackup; amb aquesta opció i indiqueu un perfil <filename class="extension"
+>.kbp</filename
+>, aquest executarà el mateix procés que amb l'opció <option
+>--auto</option
+>, però <emphasis
+>sense</emphasis
+> mostrar cap interfície gràfica d'usuari. Per tant, el sufix <quote
+>bg</quote
+> significa <quote
+>en segon pla</quote
+>; tot es fa en segon pla, de manera que aquesta és l'opció adequada per a fer-ho quan realitzeu les vostres còpies de seguretat, &pex;, les iniciades per un treball del «cron». </para>
+<para
+>Quan s'utilitza l'opció <option
+>--autobg</option
+> la sortida del &kbackup; -mostrarà el progrés de la còpia de seguretat- s'escriurà a la sortida d'error estàndard. De manera predeterminada, la sortida inclou només uns quants missatges importants i un resum al final. Si passeu l'opció <option
+>--verbose</option
+>, també veureu cada nom de fitxer del qual s'està realitzant la còpia de seguretat. </para>
+</listitem>
+</itemizedlist>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title
+>Referència d'ordres</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>La finestra principal del &kbackup;</title>
+
+ 
+
+<sect2>
+<title
+>El menú Fitxer</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guisubmenu
+>Obre recent</guisubmenu
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mostra un submenú amb els perfils utilitzats recentment per a una fàcil selecció. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Perfil nou</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Esborra la selecció i el camp d'entrada de la destinació, per a poder definir un perfil nou.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Carrega un perfil...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Carrega un perfil.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Desa el perfil</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Desa tota la configuració en el perfil carregat actualment.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Desa el perfil com a...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Desa tota la configuració dins d'un perfil amb un nom nou.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Configuració del perfil...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>A la configuració, podeu definir si els fitxers de porció de l'arxiu començaran amb el nom predeterminat <quote
+>backup</quote
+> o amb un nom alternatiu. També podeu limitar la mida de la porció de l'arxiu. Vegeu el capítol <link linkend="archive-slices"
+>Porcions de l'arxiu</link
+>. Aquestes opcions de configuració també s'emmagatzemaran dins del perfil. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Surt</action
+> del &kbackup;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>El menú Arranjament</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Acobla a la safata del sistema</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Quan s'activa aquesta opció, es mostrarà una icona a la safata del sistema, la qual reflectirà l'estat actual d'una operació de còpia de seguretat. Mostrarà una animació quan s'estigui realitzant una còpia de seguretat, en cas contrari veureu una icona estàtica. Si seleccioneu aquesta opció, el tancament de la finestra principal no finalitzarà el &kbackup;. L'aplicació s'haurà de tancar explícitament seleccionant l'acció <guimenuitem
+>Surt</guimenuitem
+>. A través del menú contextual de la icona del &kbackup; a la safata del sistema podreu iniciar i cancel·lar una operació de còpia de seguretat, el qual és el mateix que podeu fer des de la finestra principal. El consell en aquesta icona també proporciona informació sobre el progrés (el nombre de fitxers desats, la mida de la còpia de seguretat i l'últim fitxer desat). </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Habilita tots els missatges</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Activant aquesta entrada, esborrareu totes les etiquetes <guilabel
+>No ho tornis a preguntar</guilabel
+> emmagatzemades internament pels diàlegs mostrats al &kbackup;. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Mostra els fitxers ocults</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Habilita o inhabilita</action
+> la visualització dels fitxers ocults (precedits per un caràcter de punt) a la vista en arbre. Utilitzeu aquesta opció si voleu excloure alguns fitxers ocults de la còpia de seguretat. Si els voleu excloure tots, utilitzeu un filtre de nom de fitxer a la configuració del perfil. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2 id="help-menu1">
+<title
+>El menú Ajuda</title>
+<para
+>El &kbackup; té la configuració comuna al &kde; i els elements del menú <guimenu
+>Ajuda</guimenu
+>. Per a obtenir més informació, llegiu la secció sobre <ulink url="help:/fundamentals/menus.html#menus-help"
+>El menú Ajuda</ulink
+> en els Fonaments del &kde;. </para>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Guia del &kbackup; per a desenvolupadors</title>
+
+<para
+>El &kbackup; es pot estendre utilitzant un script de l'intèrpret d'ordres (o qualsevol altre executable) que s'iniciarà en tres punts diferents durant el procés de còpia de seguretat. La idea que hi ha al darrere és permetre muntar, desmuntar, expulsar els suports a la manera específica del sistema o realitzar altres coses amb els fitxers d'arxiu produïts. </para>
+
+<para
+>L'script a executar s'haurà d'indicar amb l'opció <option
+>--script</option
+> de la línia d'ordres. </para>
+
+<para
+>Aquest és un script d'exemple:</para>
+
+<example
+><title
+>sliceScript.sh</title>
+<programlisting
+>#!/bin/sh
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+    if [ "$mountPoint" != "" ]
+    then
+      mount /media/zip
+      rm -f /media/zip/backup_2*.tar*
+    fi
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+    if [ "$mountPoint" != "" ]
+    then
+      umount /media/zip
+      eject /media/zip
+    fi
+ ;;
+esac
+</programlisting>
+</example>
+
+<para
+>L'script sempre s'invocarà amb quatre arguments de la línia d'ordres: </para>
+<itemizedlist>
+<listitem
+><para
+>mode d'invocació</para
+> </listitem>
+<listitem
+><para
+>nom del fitxer d'arxiu (porció)</para
+> </listitem>
+<listitem
+><para
+>directori de destinació/&URL;</para
+> </listitem>
+<listitem
+><para
+>punt de muntatge del directori de destinació si aquest és un directori local, d'altra manera una cadena buida</para
+> </listitem>
+</itemizedlist>
+
+<para
+>Hi ha tres possibles modes d'invocació: </para>
+
+<para>
+<itemizedlist>
+
+<listitem
+><para
+>slice_init</para>
+<para
+>cridat abans que es creï una nova porció de l'arxiu al disc</para>
+ </listitem>
+
+<listitem
+><para
+>slice_closed</para>
+<para
+>cridat després de crear una porció de l'arxiu, però abans que es posi al directori de destinació</para>
+<para
+>Això es pot utilitzar si voleu copiar la porció de l'arxiu a algun lloc addicional, &pex;, l'arxiu s'enviarà al servidor principal (a través d'un &URL;), però també voleu mantenir l'última còpia de seguretat al disc local. </para>
+</listitem>
+
+<listitem
+><para
+>slice_finished</para>
+<para
+>cridat després que una porció de l'arxiu s'hagi transferit correctament al directori de destinació</para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Crèdits i llicència</title>
+
+<para
+>&kbackup; </para>
+<para
+>Copyright del programa &copy; 2006 - 2009 Martin Koller <email
+>kollix@aon.at</email
+> </para>
+
+<para
+>Copyright de la documentació &copy; 2006 - 2009 Martin Koller </para>
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
