@@ -544,7 +544,7 @@ msgstr "Guarda el perfil"
 #: MainWindow.cxx:68
 #, kde-format
 msgid "Save Profile As..."
-msgstr "Guarda el perfil com a..."
+msgstr "Anomena i guarda el perfil..."
 
 #: MainWindow.cxx:72
 #, kde-format
