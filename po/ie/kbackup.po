@@ -1,46 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kbackup package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Emir SARI <emir_sari@icloud.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-04 00:49+0000\n"
-"PO-Revision-Date: 2022-03-25 14:20+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: 2022-11-02 08:15+0700\n"
+"Last-Translator: OIS <mistresssilvara@hotmail.com>\n"
+"Language-Team: Interlingue <kde-i18n-doc@kde.org>\n"
+"Language: ie\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.12\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Emir SARI"
+msgstr "OIS"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "emir_sari@icloud.com"
+msgstr "mistresssilvara@hotmail.com"
 
 #: Archiver.cxx:437
-#, kde-format
+#, fuzzy, kde-format
 msgid "Nothing selected for backup"
-msgstr "Yedek için bir şey seçilmedi"
+msgstr "Necós es selectet."
 
 #: Archiver.cxx:443
-#, kde-format
+#, fuzzy, kde-format
 msgid "The target dir '%1' is not valid"
-msgstr "Hedef dizin '%1' geçerli değil"
+msgstr "Destination: %1"
 
 #: Archiver.cxx:450
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
-msgstr "Hedef dizin '%1' yerel bir dizin olmalıdır; uzak konum URL'si değil"
+msgstr ""
 
 #: Archiver.cxx:463
 #, kde-format
@@ -49,9 +50,6 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
-"Hedef dizin '%1' mevcut değil.\n"
-"\n"
-"Oluşturulsun mu?s"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -59,50 +57,47 @@ msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
-"Hedef dizin '%1\"'oluşturulamadı.\n"
-"İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:475
-#, kde-format
+#, fuzzy, kde-format
 msgid "The target dir does not exist"
-msgstr "Hedef dizin mevcut değil"
+msgstr "Li fólder de destination «%s» ne existe"
 
 #: Archiver.cxx:548
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
-msgstr "...tutulan en fazla arşiv sayısı %1 olarak azaltılıyor"
+msgstr ""
 
 #: Archiver.cxx:606
-#, kde-format
+#, fuzzy, kde-format
 msgid "...deleting %1"
-msgstr "...%1 siliniyor"
+msgstr "Remotion"
 
 #: Archiver.cxx:630
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
-"hedef dizin listelemesi getirilemedi; tutulan arşiv sayısı azaltılamıyor."
 
 #: Archiver.cxx:653
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
-msgstr "Yedek zaman damgaları %1 profiline yazılamadı: %2"
+msgstr ""
 
 #: Archiver.cxx:657
-#, kde-format
+#, fuzzy, kde-format
 msgid "-- Filtered Files: %1"
-msgstr "-- Süzülen Dosyalar: %1"
+msgstr "Filtrar per tags"
 
 #: Archiver.cxx:660
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
-msgstr "!! Yedek tamamlandı; <b>ancak atlanan dosyalar var</b> !!"
+msgstr ""
 
 #: Archiver.cxx:662
-#, kde-format
+#, fuzzy, kde-format
 msgid "-- Backup successfully finished --"
-msgstr "-- Yedek başarıyla tamamlandı --"
+msgstr "Compilation completat successosimen."
 
 #: Archiver.cxx:668
 #, kde-format
@@ -110,8 +105,6 @@ msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
 msgstr ""
-"Yedek tamamlandı; ancak atlanan dosyalar var.\n"
-"Şimdi ne yapmak istersiniz?"
 
 #: Archiver.cxx:670
 #, kde-format
@@ -119,68 +112,68 @@ msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
 msgstr ""
-"Yedek başarıyla tamamlandı.\n"
-"Şimdi ne yapmak istersiniz?"
 
 #: Archiver.cxx:688
-#, kde-format
+#, fuzzy, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
-msgstr "Toplamlar: Dosyalar: %1, Boyut: %2, Süre: %3"
+msgstr ""
+"Files: %1 Grandore: %2 Mo\n"
+"%3"
 
 #: Archiver.cxx:699
-#, kde-format
+#, fuzzy, kde-format
 msgid "...Backup aborted!"
-msgstr "...Yedek iptal edildi!"
+msgstr "Archivation"
 
 #: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
-msgstr "Yedek iptal edildi"
+msgstr "Archivation sta anullat"
 
 #: Archiver.cxx:744
-#, kde-format
+#, fuzzy, kde-format
 msgid "...finished slice %1"
-msgstr "...%1 dilimi tamamlandı"
+msgstr "Completat"
 
 #: Archiver.cxx:759
-#, kde-format
+#, fuzzy, kde-format
 msgid "...uploading archive %1 to %2"
-msgstr "...%1 arşivi %2 konumuna yükleniyor"
+msgstr "%1 %2"
 
 #: Archiver.cxx:777
 #, kde-format
 msgid "How shall we proceed with the upload?"
-msgstr "Yükleme ile ne yapalım?"
+msgstr ""
 
 #: Archiver.cxx:777
-#, kde-format
+#, fuzzy, kde-format
 msgid "Upload Failed"
-msgstr "Yükleme Başarısız"
+msgstr "Ne successat cargar un image"
 
 #: Archiver.cxx:778
 #, kde-format
 msgid "Retry"
-msgstr "Yeniden Dene"
+msgstr "Repenar"
 
 #: Archiver.cxx:778
 #, kde-format
 msgid "Change Target"
-msgstr "Hedef Değiştir"
+msgstr "Cambiar li destination"
 
 #: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
-msgstr "'%1' betiği başlatılamadı."
+msgstr "Ne successat lansar li scripte «%1»."
 
 #: Archiver.cxx:911
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
-msgstr "Ortam dolu; lütfen %1 numaralı ortamı takın"
+msgstr "Li medie es plen. Ples inserter un medie nró %1"
 
 #: Archiver.cxx:947
-#, kde-format
+#, fuzzy, kde-format
 msgid "The file '%1' can not be opened for writing."
-msgstr "'%1' dosyası yazma için açılamadı."
+msgstr "Li file «%1» ne posset esser apertet por scrition"
 
 #: Archiver.cxx:951
 #, kde-format
@@ -189,14 +182,11 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
-"'%1 dosyası yazma için açılamadı.\n"
-"\n"
-"Yeniden denemek ister misiniz?"
 
 #: Archiver.cxx:977
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
-msgstr "Arşive yazılamadı. Ortam dolu olabilir."
+msgstr ""
 
 #: Archiver.cxx:981
 #, kde-format
@@ -204,13 +194,11 @@ msgid ""
 "Could not write to archive.\n"
 "The operating system reports: %1"
 msgstr ""
-"Arşive yazılamadı.\n"
-"İşletim sistemi yanıtı: %1"
 
 #: Archiver.cxx:1000
-#, kde-format
+#, fuzzy, kde-format
 msgid "...skipping filtered directory %1"
-msgstr "...süzülen %1 dizini atlanıyor"
+msgstr "- %1: resultate ja existe, omisse"
 
 #: Archiver.cxx:1011
 #, kde-format
@@ -218,13 +206,11 @@ msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Dizin bilgisi alınamadı: %1\n"
-"İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:1021
-#, kde-format
+#, fuzzy, kde-format
 msgid "Directory '%1' is not readable. Skipping."
-msgstr "'%1' dizini okunabilir değil. Atlanıyor."
+msgstr "- %1: resultate ja existe, omisse"
 
 #: Archiver.cxx:1037
 #, kde-format
@@ -232,8 +218,6 @@ msgid ""
 "Could not write directory '%1' to archive.\n"
 "Maybe the medium is full."
 msgstr ""
-"'%1' dizini arşive yazılamadı.\n"
-"Ortam dolu olabilir."
 
 #: Archiver.cxx:1158 Archiver.cxx:1239
 #, kde-format
@@ -241,8 +225,6 @@ msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Dosya bilgisi alınamadı: %1\n"
-"İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:1186 Archiver.cxx:1283
 #, kde-format
@@ -250,18 +232,16 @@ msgid ""
 "Could not read from file '%1'\n"
 "The operating system reports: %2"
 msgstr ""
-"'%1' dosyasından okunamadı.\n"
-"İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:1253
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not open file '%1' for reading."
-msgstr "'%1' dosyası okuma için açılamadı."
+msgstr "Ne successat aperter li file"
 
 #: Archiver.cxx:1316
-#, kde-format
+#, fuzzy, kde-format
 msgid "...archiving file %1"
-msgstr "...%1 dosyası arşivleniyor"
+msgstr "Archives"
 
 #: Archiver.cxx:1354
 #, kde-format
@@ -269,8 +249,6 @@ msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Dosya okunamadı: %1\n"
-"İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:1368
 #, kde-format
@@ -278,35 +256,33 @@ msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Sıkıştırma için geçici dosya oluşturulamadı: %1\n"
-"İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:1393
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not write to temporary file"
-msgstr "Geçici dosyaya yazılamadı"
+msgstr "Ne successat remover li temporari file"
 
 #: Archiver.cxx:1414
-#, kde-format
+#, fuzzy, kde-format
 msgid "...compressing file %1"
-msgstr "...%1 dosyası sıkıştırılıyor"
+msgstr "Compressente files..."
 
 #: Archiver.cxx:1458
 #, kde-format
 msgid "WARNING:"
-msgstr "UYARI:"
+msgstr "AVISE: "
 
 #. i18n: ectx: Menu (file)
 #: kbackupui.rc:4
 #, kde-format
 msgid "&File"
-msgstr "&Dosya"
+msgstr "&File"
 
 #. i18n: ectx: Menu (settings)
 #: kbackupui.rc:12
 #, kde-format
 msgid "&Settings"
-msgstr "&Ayarlar"
+msgstr "&Parametres"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
 #: main.cxx:46 MainWidgetBase.ui:16
@@ -317,7 +293,7 @@ msgstr "KBackup"
 #: main.cxx:47
 #, kde-format
 msgid "An easy to use backup program"
-msgstr "Kullanımı kolay bir yedek programı"
+msgstr "Un facil programma de archivation"
 
 #: main.cxx:48
 #, kde-format
@@ -332,23 +308,23 @@ msgstr "Martin Koller"
 #: main.cxx:52
 #, kde-format
 msgid "Developer"
-msgstr "Geliştirici"
+msgstr "Developator"
 
 #: main.cxx:60
-#, kde-format
+#, fuzzy, kde-format
 msgid "Start with given profile."
-msgstr "Verilen profille başlat."
+msgstr "Comen&sar"
 
 #: main.cxx:62
 #, kde-format
 msgid "Script to run after finishing one archive slice."
-msgstr "Bir arşiv dilimi tamamlandıktan sonra çalıştırılacak betik."
+msgstr ""
 
 #: main.cxx:64
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
-msgstr "Yedeği verilen profille kendiliğinden başlat ve bitince sonlandır."
+msgstr ""
 
 #: main.cxx:67
 #, kde-format
@@ -356,16 +332,12 @@ msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
 msgstr ""
-"Yedeği arka planda verilen profille kendiliğinden çalıştır (bir pencere "
-"göstermeden) ve bitince sonlandır."
 
 #: main.cxx:72
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
 msgstr ""
-"autobg kipinde yedekleme sırasında her bir dosya adını ayrıntılı olarak "
-"yazdır."
 
 #: main.cxx:75
 #, kde-format
@@ -373,23 +345,21 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
 msgstr ""
-"auto/autobg kipinde, profil ayarlarına göre davranmak yerine yedeğin tam bir "
-"yedekleme olmasını zorla."
 
 #: main.cxx:151 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
-msgstr "'%1' profili okuma için açılamadı: %2"
+msgstr ""
 
 #: MainWidget.cxx:68
 #, kde-format
 msgid "Incremental Backup"
-msgstr "Artımlı Yedek"
+msgstr "Incremental archivation"
 
 #: MainWidget.cxx:70
 #, kde-format
 msgid "Full Backup"
-msgstr "Tam Yedek"
+msgstr "Complet archivation"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
@@ -397,55 +367,55 @@ msgstr "Tam Yedek"
 #: SettingsDialog.ui:136
 #, kde-format
 msgid "unlimited"
-msgstr "sınırsız"
+msgstr "ínlimitat"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
 #: MainWidgetBase.ui:41 MainWindow.cxx:113
 #, kde-format
 msgid "Start Backup"
-msgstr "Yedeklemeyi Başlat"
+msgstr "Comensar li archivation"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #: MainWidgetBase.ui:69 MainWindow.cxx:116
 #, kde-format
 msgid "Cancel Backup"
-msgstr "Yedeklemeyi İptal Et"
+msgstr "Anullar li archivation"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: MainWidgetBase.ui:92
 #, kde-format
 msgid "Next Backup:"
-msgstr "Sonraki Yedekleme:"
+msgstr "Sequent archivation:"
 
 #. i18n: ectx: property (text), widget (QLabel, backupType)
 #: MainWidgetBase.ui:99
 #, kde-format
 msgid "TextLabel"
-msgstr "TextLabel"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
 #: MainWidgetBase.ui:106
-#, kde-format
+#, fuzzy, kde-format
 msgid "Force Full Backup"
-msgstr "Tam Yedeklemeyi Zorla"
+msgstr "Complet archivation"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: MainWidgetBase.ui:121
 #, kde-format
 msgid "Target"
-msgstr "Hedef"
+msgstr "Destination"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: MainWidgetBase.ui:127
 #, kde-format
 msgid "Folder:"
-msgstr "Klasör:"
+msgstr "Fólder:"
 
 #. i18n: ectx: property (text), widget (QLabel, sliceLabel)
 #: MainWidgetBase.ui:143
 #, kde-format
 msgid "Medium:"
-msgstr "Ortam:"
+msgstr "Medie:"
 
 #. i18n: ectx: property (text), widget (QLabel, sliceNum)
 #: MainWidgetBase.ui:165
@@ -458,25 +428,25 @@ msgstr "1"
 #: MainWidgetBase.ui:185 MainWidgetBase.ui:277
 #, kde-format
 msgid "Size:"
-msgstr "Boyut:"
+msgstr "Grandore:"
 
 #. i18n: ectx: property (text), widget (QLabel, capacity)
 #: MainWidgetBase.ui:201
 #, kde-format
 msgid "0 MB"
-msgstr "0 MB"
+msgstr "0 Mo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: MainWidgetBase.ui:236
 #, kde-format
 msgid "Totals"
-msgstr "Toplamlar"
+msgstr "Totales"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #: MainWidgetBase.ui:248
 #, kde-format
 msgid "Files:"
-msgstr "Dosyalar:"
+msgstr "Files:"
 
 #. i18n: ectx: property (text), widget (QLabel, totalFiles)
 #. i18n: ectx: property (text), widget (QLabel, totalSize)
@@ -489,13 +459,13 @@ msgstr "0"
 #: MainWidgetBase.ui:300
 #, kde-format
 msgid "MB"
-msgstr "MB"
+msgstr "Mo"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #: MainWidgetBase.ui:335
 #, kde-format
 msgid "Duration:"
-msgstr "Süre:"
+msgstr "Duration:"
 
 #. i18n: ectx: property (text), widget (QLabel, elapsedTime)
 #: MainWidgetBase.ui:345
@@ -507,73 +477,73 @@ msgstr "00:00:00"
 #: MainWidgetBase.ui:387
 #, kde-format
 msgid "Warnings:"
-msgstr "Uyarılar:"
+msgstr "Avises:"
 
 #. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
 #: MainWidgetBase.ui:413
 #, kde-format
 msgid "Progress:"
-msgstr "İlerleme:"
+msgstr "Progresse:"
 
 #: MainWindow.cxx:56
 #, kde-format
 msgid "New Profile"
-msgstr "Yeni Profil"
+msgstr "Crear un profil"
 
 #: MainWindow.cxx:60
-#, kde-format
+#, fuzzy, kde-format
 msgid "Load Profile..."
-msgstr "Profili Yükle..."
+msgstr "Profil"
 
 #: MainWindow.cxx:64
 #, kde-format
 msgid "Save Profile"
-msgstr "Profili Kaydet"
+msgstr "Gardar li profil"
 
 #: MainWindow.cxx:68
 #, kde-format
 msgid "Save Profile As..."
-msgstr "Profili Farklı Kaydet..."
+msgstr "Gardar li profil quam..."
 
 #: MainWindow.cxx:72
 #, kde-format
 msgid "Profile Settings..."
-msgstr "Profil Ayarları..."
+msgstr "Parametres del profil..."
 
 #: MainWindow.cxx:75
-#, kde-format
+#, fuzzy, kde-format
 msgid "Enable All Messages"
-msgstr "Tüm İletileri Etkinleştir"
+msgstr "Permisser omni"
 
 #: MainWindow.cxx:77
-#, kde-format
+#, fuzzy, kde-format
 msgid "Dock in System Tray"
-msgstr "Sistem Tepsisine Rıhtımla"
+msgstr "Usar li area de notificationes"
 
 #: MainWindow.cxx:81
 #, kde-format
 msgid "Show Hidden Files"
-msgstr "Gizli Dosyaları Göster"
+msgstr "Revelar celat files"
 
 #: MainWindow.cxx:146
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
-msgstr "Sürmekte olan bir yedekleme var. İptal etmek istiyor musunuz?"
+msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
 msgid "Select Profile"
-msgstr "Profil Seç"
+msgstr "Selecter un profile"
 
 #: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
-msgstr "KBackup Profili (*.kbp)"
+msgstr "Profil de KBackup (*.kbp)"
 
 #: MainWindow.cxx:213 MainWindow.cxx:285
-#, kde-format
+#, fuzzy, kde-format
 msgid "Open failed"
-msgstr "Açma başarısız"
+msgstr "ao_open_live ne successat con code %d"
 
 #: MainWindow.cxx:262
 #, kde-format
@@ -581,18 +551,16 @@ msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"'%1' profili halihazırda mevcut.\n"
-"Üzerine yazmak istiyor musunuz?"
 
 #: MainWindow.cxx:265
 #, kde-format
 msgid "Profile exists"
-msgstr "Profil mevcut"
+msgstr "Profil ja existe"
 
 #: MainWindow.cxx:282
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
-msgstr "'%1' profili yazma için açılamadı: %2"
+msgstr ""
 
 #: MainWindow.cxx:358
 #, kde-format
@@ -600,113 +568,111 @@ msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
 msgstr ""
-"Dosyalar: %1 Boyut: %2 MB\n"
+"Files: %1 Grandore: %2 Mo\n"
 "%3"
 
 #: Selector.cxx:257
 #, kde-format
 msgid "Name"
-msgstr "Ad"
+msgstr "Nómine"
 
 #: Selector.cxx:257
 #, kde-format
 msgid "Size"
-msgstr "Boyut"
+msgstr "Grandore"
 
 #: Selector.cxx:257
 #, kde-format
 msgid "Last Modified"
-msgstr "Son Değiştirme"
+msgstr "Modificat"
 
 #: Selector.cxx:289
 #, kde-format
 msgid "Open With"
-msgstr "Birlikte Aç"
+msgstr "Aperter per"
 
 #: Selector.cxx:297
 #, kde-format
 msgid "Delete File"
-msgstr "Dosyayı Sil"
+msgstr "Remover li file"
 
 #: Selector.cxx:303
 #, kde-format
 msgid "Properties..."
-msgstr "Özellikler..."
+msgstr "Proprietás..."
 
 #: Selector.cxx:607
 #, kde-format
 msgid "Do you really want to delete '%1'?"
-msgstr "'%1' ögesini gerçekten silmek istiyor musunuz?"
+msgstr "Esque vu vole remover «%1»?"
 
 #: Selector.cxx:608
 #, kde-format
 msgid "Delete"
-msgstr "Sil"
+msgstr "Remover"
 
 #: Selector.cxx:619
 #, kde-format
 msgid "Could not delete directory '%1'."
-msgstr "'%1' dizini silinemedi."
+msgstr "Ne successat remover li fólder «%1»."
 
 #: Selector.cxx:628
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
 "Reason: %2"
-msgstr ""
-"'%1' dosyası silinemedi.\n"
-"Neden: %2"
+msgstr "Ne successat remover li file %1."
 
 #: Selector.cxx:696
 #, kde-format
 msgid "Other Application..."
-msgstr "Diğer Uygulama..."
+msgstr "Altri application..."
 
 #: Selector.cxx:698
 #, kde-format
 msgid "File Manager"
-msgstr "Dosya Yöneticisi"
+msgstr "Gerente de files"
 
 #: SettingsDialog.cxx:22
 #, kde-format
 msgid "650 MB CD"
-msgstr "650 MB CD"
+msgstr "650 Mo (CD)"
 
 #: SettingsDialog.cxx:23
 #, kde-format
 msgid "700 MB CD"
-msgstr "700 MB CD"
+msgstr "700 Mo (CD)"
 
 #: SettingsDialog.cxx:24
 #, kde-format
 msgid "4.7 GB DVD"
-msgstr "4,7 GB DVD"
+msgstr "4,7 Go (DVD)"
 
 #: SettingsDialog.cxx:25
 #, kde-format
 msgid "8.5 GB DVD"
-msgstr "8,5 GB DVD"
+msgstr "8,5 Go (DVD)"
 
 #: SettingsDialog.cxx:26
 #, kde-format
 msgid "9.4 GB DVD"
-msgstr "9,4 GB DVD"
+msgstr "9,4 Go (DVD)"
 
 #: SettingsDialog.cxx:27
 #, kde-format
 msgid "17.1 GB DVD"
-msgstr "17,1 GB DVD"
+msgstr "17,1 Go (DVD)"
 
 #: SettingsDialog.cxx:28
 #, kde-format
 msgid "custom"
-msgstr "özel"
+msgstr "personalisat"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
 #: SettingsDialog.ui:16
 #, kde-format
 msgid "Profile Settings"
-msgstr "Profil Ayarları"
+msgstr "Parametres del profil"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:38
@@ -715,26 +681,24 @@ msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
 msgstr ""
-"Bir dilim tamamlandığında ortam değişikliği için bir onay kutusunu önlemek "
-"istiyorsanız imi kaldırın"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:41
 #, kde-format
 msgid "Target needs media change"
-msgstr "Hedef için ortam değişikliği gerekiyor"
+msgstr "Li destination besona un cambie de medie"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: SettingsDialog.ui:48
-#, kde-format
+#, fuzzy, kde-format
 msgid "Exclude Paths Filter:"
-msgstr "Hariç Tutulacak Yollar Süzgeci:"
+msgstr "Rutes:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: SettingsDialog.ui:57
 #, kde-format
 msgid "Number of full backups to keep"
-msgstr "Tutulacak tam yedeklerin sayısı"
+msgstr "Complet archives a retener"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
 #: SettingsDialog.ui:64
@@ -743,37 +707,36 @@ msgid ""
 "How many full backups shall be kept in the target directory before older "
 "ones will be deleted"
 msgstr ""
-"Eski yedekler silinmeden önce hedef dizinde kaç tane tam yedeğin tutulacağı"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: SettingsDialog.ui:77
 #, kde-format
 msgid "Full Backup Interval"
-msgstr "Tam Yedek Aralığı"
+msgstr "Frequentie del complet archivation"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:84
 #, kde-format
 msgid "How often shall a full backup, instead of an incremental one, be done"
-msgstr "Ne kadar sıklıkla artımlı yedekleme yerine tam yedekleme yapılacağı"
+msgstr ""
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:87
 #, kde-format
 msgid "Every Day"
-msgstr "Her Gün"
+msgstr "Chascun die"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:90
 #, kde-format
 msgid " days"
-msgstr " gün"
+msgstr " dies"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: SettingsDialog.ui:105
 #, kde-format
 msgid "Archive Prefix:"
-msgstr "Arşiv Profili:"
+msgstr "Prefix del archive:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
 #: SettingsDialog.ui:115
@@ -782,26 +745,24 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
-"Yedekleme için yok sayılacak dosyalar için virgülle ayrılmış jokerler "
-"tanımlayın; örn. \"*.ogg, *.wav\""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: SettingsDialog.ui:122
 #, kde-format
 msgid "Maximum Archive Size:"
-msgstr "En Büyük Arşiv Boyutu:"
+msgstr "Max grandore de archive:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
 #: SettingsDialog.ui:139
 #, kde-format
 msgid " MB"
-msgstr " MB"
+msgstr " Mo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: SettingsDialog.ui:157
-#, kde-format
+#, fuzzy, kde-format
 msgid "Exclude Filename Filter:"
-msgstr "Dışarıda Tutulacak Dosya Adları Süzgeci:"
+msgstr "Excluder:"
 
 #. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
 #: SettingsDialog.ui:164
@@ -811,23 +772,21 @@ msgid ""
 "used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>Tam dizinleri süzmek için kullanılan bir mutlak yollar "
-"listesi tanımlar;<br/>örn. /home/*/.mozilla/*/Cache</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:171
 #, kde-format
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr "Dosya sıkıştırmak istemiyorsanız imi kaldırın"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:174
 #, kde-format
 msgid "Compress Files"
-msgstr "Dosyaları Sıkıştır"
+msgstr "Compresser files"
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
 #: SettingsDialog.ui:181
-#, kde-format
+#, fuzzy, kde-format
 msgid "backup"
-msgstr "yedek"
+msgstr "Archivation"
