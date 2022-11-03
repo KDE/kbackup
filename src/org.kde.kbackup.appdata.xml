@@ -20,6 +20,7 @@
   <name xml:lang="gl">KBackup</name>
   <name xml:lang="ia">KBackup</name>
   <name xml:lang="id">KBackup</name>
+  <name xml:lang="ie">KBackup</name>
   <name xml:lang="it">KBackup</name>
   <name xml:lang="ka">KBackup</name>
   <name xml:lang="ko">KBackup</name>
@@ -51,6 +52,7 @@
   <summary xml:lang="fr">Créer des archives comme des fichiers « .tar » vers un dossier local ou une URL distante.</summary>
   <summary xml:lang="ia">Crea retrocopias como file .tar al dossier local e URL remote</summary>
   <summary xml:lang="id">Buat cadangan sebagai file .tar ke sebuah folder lokal atau URL jarak jauh</summary>
+  <summary xml:lang="ie">Crear archives quam files .tar in local fólderes o lontan URLs</summary>
   <summary xml:lang="it">Crea copie di sicurezza come file .tar in cartelle locali o URL remoti</summary>
   <summary xml:lang="ko">백업을 로컬 폴더에 .tar 파일로 저장하거나 원격 URL로 생성</summary>
   <summary xml:lang="nl">Reservekopieën maken als .tar bestanden naar een lokale map of URL op afstand</summary>
@@ -84,6 +86,7 @@
     <p xml:lang="gl">KBackup é unha aplicación que lle permite facer unha copia de seguranza dos seus datos dunha maneira sinxela e fácil.</p>
     <p xml:lang="ia">KBackup es un application que te permitte retro copiar tu datos in un modo simplice e amical</p>
     <p xml:lang="id">KBackup adalah aplikasi yang memungkinkan kamu mencadangkan data dengan cara yang sederhana dan ramah pengguna</p>
+    <p xml:lang="ie">KBackup es un application quel permisse vos archivar vor data in un simplic comprensibil maniere</p>
     <p xml:lang="it">KBackup è un'applicazione che permette di salvare i tuoi dai in modo semplice e intuitivo</p>
     <p xml:lang="ko">KBackup은 쉽고 간편하게 데이터를 백업할 수 있는 프로그램입니다</p>
     <p xml:lang="nl">KBackup is een toepassing die u een reservekopie laat maken van uw gegevens op een eenvoudige, gebruikersvriendelijke manier</p>
@@ -116,6 +119,7 @@
     <p xml:lang="gl">Funcionalidades:</p>
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
+    <p xml:lang="ie">Caracteristicas:</p>
     <p xml:lang="it">Caratteristiche:</p>
     <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
@@ -212,6 +216,7 @@
       <li xml:lang="gl">Execución de copias de seguranza automatizadas sen usar unha interface gráfica de usuario.</li>
       <li xml:lang="ia">Executante retrocopias automatic sin usar un interfacie de usator graphic</li>
       <li xml:lang="id">Cadangan yang diotomatiskan berjalan tanpa menggunakan antarmuka pengguna grafis</li>
+      <li xml:lang="ie">Automatic archivation sin usage de un interfacie grafical</li>
       <li xml:lang="it">Esecuzione automatica del backup senza l'utilizzo dell'interfaccia grafica</li>
       <li xml:lang="ko">그래픽 사용자 인터페이스 없이 자동으로 백업 실행</li>
       <li xml:lang="nl">Geautomatiseerde reservekopieën zonder een grafisch gebruikersinterface</li>
