@@ -846,9 +846,3 @@ msgstr "Comprimeix els fitxers"
 #, kde-format
 msgid "backup"
 msgstr "Còpia de seguretat"
-
-#~ msgid "OK"
-#~ msgstr "D'acord"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
