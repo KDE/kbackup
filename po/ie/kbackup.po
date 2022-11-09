@@ -1,0 +1,792 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kbackup package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kbackup\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"PO-Revision-Date: 2022-11-02 08:15+0700\n"
+"Last-Translator: OIS <mistresssilvara@hotmail.com>\n"
+"Language-Team: Interlingue <kde-i18n-doc@kde.org>\n"
+"Language: ie\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.12\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "OIS"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "mistresssilvara@hotmail.com"
+
+#: Archiver.cxx:437
+#, fuzzy, kde-format
+msgid "Nothing selected for backup"
+msgstr "Necós es selectet."
+
+#: Archiver.cxx:443
+#, fuzzy, kde-format
+msgid "The target dir '%1' is not valid"
+msgstr "Destination: %1"
+
+#: Archiver.cxx:450
+#, kde-format
+msgid "The target dir '%1' must be a local file system dir and no remote URL"
+msgstr ""
+
+#: Archiver.cxx:463
+#, kde-format
+msgid ""
+"The target directory '%1' does not exist.\n"
+"\n"
+"Shall I create it?"
+msgstr ""
+
+#: Archiver.cxx:468
+#, kde-format
+msgid ""
+"Could not create the target directory '%1'.\n"
+"The operating system reports: %2"
+msgstr ""
+
+#: Archiver.cxx:475
+#, fuzzy, kde-format
+msgid "The target dir does not exist"
+msgstr "Li fólder de destination «%s» ne existe"
+
+#: Archiver.cxx:548
+#, kde-format
+msgid "...reducing number of kept archives to max. %1"
+msgstr ""
+
+#: Archiver.cxx:606
+#, fuzzy, kde-format
+msgid "...deleting %1"
+msgstr "Remotion"
+
+#: Archiver.cxx:630
+#, kde-format
+msgid ""
+"fetching directory listing of target failed. Can not reduce kept archives."
+msgstr ""
+
+#: Archiver.cxx:653
+#, kde-format
+msgid "Could not write backup timestamps into profile %1: %2"
+msgstr ""
+
+#: Archiver.cxx:657
+#, fuzzy, kde-format
+msgid "-- Filtered Files: %1"
+msgstr "Filtrar per tags"
+
+#: Archiver.cxx:660
+#, kde-format
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr ""
+
+#: Archiver.cxx:662
+#, fuzzy, kde-format
+msgid "-- Backup successfully finished --"
+msgstr "Compilation completat successosimen."
+
+#: Archiver.cxx:668
+#, kde-format
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+
+#: Archiver.cxx:670
+#, kde-format
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+
+#: Archiver.cxx:688
+#, fuzzy, kde-format
+msgid "Totals: Files: %1, Size: %2, Duration: %3"
+msgstr ""
+"Files: %1 Grandore: %2 Mo\n"
+"%3"
+
+#: Archiver.cxx:699
+#, fuzzy, kde-format
+msgid "...Backup aborted!"
+msgstr "Archivation"
+
+#: Archiver.cxx:727
+#, kde-format
+msgid "Backup cancelled"
+msgstr "Archivation sta anullat"
+
+#: Archiver.cxx:744
+#, fuzzy, kde-format
+msgid "...finished slice %1"
+msgstr "Completat"
+
+#: Archiver.cxx:759
+#, fuzzy, kde-format
+msgid "...uploading archive %1 to %2"
+msgstr "%1 %2"
+
+#: Archiver.cxx:777
+#, kde-format
+msgid "How shall we proceed with the upload?"
+msgstr ""
+
+#: Archiver.cxx:777
+#, fuzzy, kde-format
+msgid "Upload Failed"
+msgstr "Ne successat cargar un image"
+
+#: Archiver.cxx:778
+#, kde-format
+msgid "Retry"
+msgstr "Repenar"
+
+#: Archiver.cxx:778
+#, kde-format
+msgid "Change Target"
+msgstr "Cambiar li destination"
+
+#: Archiver.cxx:872
+#, kde-format
+msgid "The script '%1' could not be started."
+msgstr "Ne successat lansar li scripte «%1»."
+
+#: Archiver.cxx:911
+#, kde-format
+msgid "The medium is full. Please insert medium Nr. %1"
+msgstr "Li medie es plen. Ples inserter un medie nró %1"
+
+#: Archiver.cxx:947
+#, fuzzy, kde-format
+msgid "The file '%1' can not be opened for writing."
+msgstr "Li file «%1» ne posset esser apertet por scrition"
+
+#: Archiver.cxx:951
+#, kde-format
+msgid ""
+"The file '%1' can not be opened for writing.\n"
+"\n"
+"Do you want to retry?"
+msgstr ""
+
+#: Archiver.cxx:977
+#, kde-format
+msgid "Could not write to archive. Maybe the medium is full."
+msgstr ""
+
+#: Archiver.cxx:981
+#, kde-format
+msgid ""
+"Could not write to archive.\n"
+"The operating system reports: %1"
+msgstr ""
+
+#: Archiver.cxx:1000
+#, fuzzy, kde-format
+msgid "...skipping filtered directory %1"
+msgstr "- %1: resultate ja existe, omisse"
+
+#: Archiver.cxx:1011
+#, kde-format
+msgid ""
+"Could not get information of directory: %1\n"
+"The operating system reports: %2"
+msgstr ""
+
+#: Archiver.cxx:1021
+#, fuzzy, kde-format
+msgid "Directory '%1' is not readable. Skipping."
+msgstr "- %1: resultate ja existe, omisse"
+
+#: Archiver.cxx:1037
+#, kde-format
+msgid ""
+"Could not write directory '%1' to archive.\n"
+"Maybe the medium is full."
+msgstr ""
+
+#: Archiver.cxx:1158 Archiver.cxx:1239
+#, kde-format
+msgid ""
+"Could not get information of file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+
+#: Archiver.cxx:1186 Archiver.cxx:1283
+#, kde-format
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+
+#: Archiver.cxx:1253
+#, fuzzy, kde-format
+msgid "Could not open file '%1' for reading."
+msgstr "Ne successat aperter li file"
+
+#: Archiver.cxx:1316
+#, fuzzy, kde-format
+msgid "...archiving file %1"
+msgstr "Archives"
+
+#: Archiver.cxx:1354
+#, kde-format
+msgid ""
+"Could not read file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+
+#: Archiver.cxx:1368
+#, kde-format
+msgid ""
+"Could not create temporary file for compressing: %1\n"
+"The operating system reports: %2"
+msgstr ""
+
+#: Archiver.cxx:1393
+#, fuzzy, kde-format
+msgid "Could not write to temporary file"
+msgstr "Ne successat remover li temporari file"
+
+#: Archiver.cxx:1414
+#, fuzzy, kde-format
+msgid "...compressing file %1"
+msgstr "Compressente files..."
+
+#: Archiver.cxx:1458
+#, kde-format
+msgid "WARNING:"
+msgstr "AVISE: "
+
+#. i18n: ectx: Menu (file)
+#: kbackupui.rc:4
+#, kde-format
+msgid "&File"
+msgstr "&File"
+
+#. i18n: ectx: Menu (settings)
+#: kbackupui.rc:12
+#, kde-format
+msgid "&Settings"
+msgstr "&Parametres"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: main.cxx:46 MainWidgetBase.ui:16
+#, kde-format
+msgid "KBackup"
+msgstr "KBackup"
+
+#: main.cxx:47
+#, kde-format
+msgid "An easy to use backup program"
+msgstr "Un facil programma de archivation"
+
+#: main.cxx:48
+#, kde-format
+msgid "(c) 2006 - 2018 Martin Koller"
+msgstr "(c) 2006 - 2018 Martin Koller"
+
+#: main.cxx:52
+#, kde-format
+msgid "Martin Koller"
+msgstr "Martin Koller"
+
+#: main.cxx:52
+#, kde-format
+msgid "Developer"
+msgstr "Developator"
+
+#: main.cxx:60
+#, fuzzy, kde-format
+msgid "Start with given profile."
+msgstr "Comen&sar"
+
+#: main.cxx:62
+#, kde-format
+msgid "Script to run after finishing one archive slice."
+msgstr ""
+
+#: main.cxx:64
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile and terminate when done."
+msgstr ""
+
+#: main.cxx:67
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile in the background "
+"(without showing a window) and terminate when done."
+msgstr ""
+
+#: main.cxx:72
+#, kde-format
+msgid ""
+"In autobg mode be verbose and print every single filename during backup."
+msgstr ""
+
+#: main.cxx:75
+#, kde-format
+msgid ""
+"In auto/autobg mode force the backup to be a full backup instead of acting "
+"on the profile settings."
+msgstr ""
+
+#: main.cxx:151 MainWindow.cxx:210
+#, kde-format
+msgid "Could not open profile '%1' for reading: %2"
+msgstr ""
+
+#: MainWidget.cxx:68
+#, kde-format
+msgid "Incremental Backup"
+msgstr "Incremental archivation"
+
+#: MainWidget.cxx:70
+#, kde-format
+msgid "Full Backup"
+msgstr "Complet archivation"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#: MainWidget.cxx:165 SettingsDialog.cxx:21 SettingsDialog.ui:67
+#: SettingsDialog.ui:136
+#, kde-format
+msgid "unlimited"
+msgstr "ínlimitat"
+
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: MainWidgetBase.ui:41 MainWindow.cxx:113
+#, kde-format
+msgid "Start Backup"
+msgstr "Comensar li archivation"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: MainWidgetBase.ui:69 MainWindow.cxx:116
+#, kde-format
+msgid "Cancel Backup"
+msgstr "Anullar li archivation"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: MainWidgetBase.ui:92
+#, kde-format
+msgid "Next Backup:"
+msgstr "Sequent archivation:"
+
+#. i18n: ectx: property (text), widget (QLabel, backupType)
+#: MainWidgetBase.ui:99
+#, kde-format
+msgid "TextLabel"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
+#: MainWidgetBase.ui:106
+#, fuzzy, kde-format
+msgid "Force Full Backup"
+msgstr "Complet archivation"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: MainWidgetBase.ui:121
+#, kde-format
+msgid "Target"
+msgstr "Destination"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: MainWidgetBase.ui:127
+#, kde-format
+msgid "Folder:"
+msgstr "Fólder:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: MainWidgetBase.ui:143
+#, kde-format
+msgid "Medium:"
+msgstr "Medie:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#: MainWidgetBase.ui:165
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: MainWidgetBase.ui:185 MainWidgetBase.ui:277
+#, kde-format
+msgid "Size:"
+msgstr "Grandore:"
+
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: MainWidgetBase.ui:201
+#, kde-format
+msgid "0 MB"
+msgstr "0 Mo"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: MainWidgetBase.ui:236
+#, kde-format
+msgid "Totals"
+msgstr "Totales"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: MainWidgetBase.ui:248
+#, kde-format
+msgid "Files:"
+msgstr "Files:"
+
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: MainWidgetBase.ui:258 MainWidgetBase.ui:287
+#, kde-format
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#: MainWidgetBase.ui:300
+#, kde-format
+msgid "MB"
+msgstr "Mo"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: MainWidgetBase.ui:335
+#, kde-format
+msgid "Duration:"
+msgstr "Duration:"
+
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: MainWidgetBase.ui:345
+#, kde-format
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: MainWidgetBase.ui:387
+#, kde-format
+msgid "Warnings:"
+msgstr "Avises:"
+
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: MainWidgetBase.ui:413
+#, kde-format
+msgid "Progress:"
+msgstr "Progresse:"
+
+#: MainWindow.cxx:56
+#, kde-format
+msgid "New Profile"
+msgstr "Crear un profil"
+
+#: MainWindow.cxx:60
+#, fuzzy, kde-format
+msgid "Load Profile..."
+msgstr "Profil"
+
+#: MainWindow.cxx:64
+#, kde-format
+msgid "Save Profile"
+msgstr "Gardar li profil"
+
+#: MainWindow.cxx:68
+#, kde-format
+msgid "Save Profile As..."
+msgstr "Gardar li profil quam..."
+
+#: MainWindow.cxx:72
+#, kde-format
+msgid "Profile Settings..."
+msgstr "Parametres del profil..."
+
+#: MainWindow.cxx:75
+#, fuzzy, kde-format
+msgid "Enable All Messages"
+msgstr "Permisser omni"
+
+#: MainWindow.cxx:77
+#, fuzzy, kde-format
+msgid "Dock in System Tray"
+msgstr "Usar li area de notificationes"
+
+#: MainWindow.cxx:81
+#, kde-format
+msgid "Show Hidden Files"
+msgstr "Revelar celat files"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr ""
+
+#: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
+#, kde-format
+msgid "Select Profile"
+msgstr "Selecter un profile"
+
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#, kde-format
+msgid "KBackup Profile (*.kbp)"
+msgstr "Profil de KBackup (*.kbp)"
+
+#: MainWindow.cxx:213 MainWindow.cxx:285
+#, fuzzy, kde-format
+msgid "Open failed"
+msgstr "ao_open_live ne successat con code %d"
+
+#: MainWindow.cxx:262
+#, kde-format
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+
+#: MainWindow.cxx:265
+#, kde-format
+msgid "Profile exists"
+msgstr "Profil ja existe"
+
+#: MainWindow.cxx:282
+#, kde-format
+msgid "Could not open profile '%1' for writing: %2"
+msgstr ""
+
+#: MainWindow.cxx:358
+#, kde-format
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
+"Files: %1 Grandore: %2 Mo\n"
+"%3"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Name"
+msgstr "Nómine"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Size"
+msgstr "Grandore"
+
+#: Selector.cxx:257
+#, kde-format
+msgid "Last Modified"
+msgstr "Modificat"
+
+#: Selector.cxx:289
+#, kde-format
+msgid "Open With"
+msgstr "Aperter per"
+
+#: Selector.cxx:297
+#, kde-format
+msgid "Delete File"
+msgstr "Remover li file"
+
+#: Selector.cxx:303
+#, kde-format
+msgid "Properties..."
+msgstr "Proprietás..."
+
+#: Selector.cxx:607
+#, kde-format
+msgid "Do you really want to delete '%1'?"
+msgstr "Esque vu vole remover «%1»?"
+
+#: Selector.cxx:608
+#, kde-format
+msgid "Delete"
+msgstr "Remover"
+
+#: Selector.cxx:619
+#, kde-format
+msgid "Could not delete directory '%1'."
+msgstr "Ne successat remover li fólder «%1»."
+
+#: Selector.cxx:628
+#, fuzzy, kde-format
+msgid ""
+"Could not delete file '%1'.\n"
+"Reason: %2"
+msgstr "Ne successat remover li file %1."
+
+#: Selector.cxx:696
+#, kde-format
+msgid "Other Application..."
+msgstr "Altri application..."
+
+#: Selector.cxx:698
+#, kde-format
+msgid "File Manager"
+msgstr "Gerente de files"
+
+#: SettingsDialog.cxx:22
+#, kde-format
+msgid "650 MB CD"
+msgstr "650 Mo (CD)"
+
+#: SettingsDialog.cxx:23
+#, kde-format
+msgid "700 MB CD"
+msgstr "700 Mo (CD)"
+
+#: SettingsDialog.cxx:24
+#, kde-format
+msgid "4.7 GB DVD"
+msgstr "4,7 Go (DVD)"
+
+#: SettingsDialog.cxx:25
+#, kde-format
+msgid "8.5 GB DVD"
+msgstr "8,5 Go (DVD)"
+
+#: SettingsDialog.cxx:26
+#, kde-format
+msgid "9.4 GB DVD"
+msgstr "9,4 Go (DVD)"
+
+#: SettingsDialog.cxx:27
+#, kde-format
+msgid "17.1 GB DVD"
+msgstr "17,1 Go (DVD)"
+
+#: SettingsDialog.cxx:28
+#, kde-format
+msgid "custom"
+msgstr "personalisat"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: SettingsDialog.ui:16
+#, kde-format
+msgid "Profile Settings"
+msgstr "Parametres del profil"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:38
+#, kde-format
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:41
+#, kde-format
+msgid "Target needs media change"
+msgstr "Li destination besona un cambie de medie"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: SettingsDialog.ui:48
+#, fuzzy, kde-format
+msgid "Exclude Paths Filter:"
+msgstr "Rutes:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: SettingsDialog.ui:57
+#, kde-format
+msgid "Number of full backups to keep"
+msgstr "Complet archives a retener"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: SettingsDialog.ui:64
+#, kde-format
+msgid ""
+"How many full backups shall be kept in the target directory before older "
+"ones will be deleted"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: SettingsDialog.ui:77
+#, kde-format
+msgid "Full Backup Interval"
+msgstr "Frequentie del complet archivation"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:84
+#, kde-format
+msgid "How often shall a full backup, instead of an incremental one, be done"
+msgstr ""
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:87
+#, kde-format
+msgid "Every Day"
+msgstr "Chascun die"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:90
+#, kde-format
+msgid " days"
+msgstr " dies"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: SettingsDialog.ui:105
+#, kde-format
+msgid "Archive Prefix:"
+msgstr "Prefix del archive:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
+#: SettingsDialog.ui:115
+#, kde-format
+msgid ""
+"Defines wildcards for filenames which will be ignored for backup, separated "
+"by a space. E.g.: \"*.ogg *.wav\""
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: SettingsDialog.ui:122
+#, kde-format
+msgid "Maximum Archive Size:"
+msgstr "Max grandore de archive:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: SettingsDialog.ui:139
+#, kde-format
+msgid " MB"
+msgstr " Mo"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: SettingsDialog.ui:157
+#, fuzzy, kde-format
+msgid "Exclude Filename Filter:"
+msgstr "Excluder:"
+
+#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
+#: SettingsDialog.ui:164
+#, kde-format
+msgid ""
+"<html><head/><body><p>Defines a list of absolute path patterns which are "
+"used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
+"body></html>"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:171
+#, kde-format
+msgid "Uncheck if you want to avoid compressing files at all"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:174
+#, kde-format
+msgid "Compress Files"
+msgstr "Compresser files"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
+#: SettingsDialog.ui:181
+#, fuzzy, kde-format
+msgid "backup"
+msgstr "Archivation"
