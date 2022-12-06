@@ -603,11 +603,11 @@ void Selector::deleteFile()
 
   QUrl sourceUrl = QUrl::fromLocalFile(getPath(item));
 
-  if ( KMessageBox::questionYesNo(this,
+  if ( KMessageBox::warningTwoActions(this,
           i18n("Do you really want to delete '%1'?", sourceUrl.path()),
           i18n("Delete"),
-          KStandardGuiItem::yes(), KStandardGuiItem::no(),
-          QStringLiteral("dontAskAgainDelete")) == KMessageBox::Yes )
+          KStandardGuiItem::del(), KStandardGuiItem::cancel(),
+          QStringLiteral("dontAskAgainDelete")) == KMessageBox::PrimaryAction )
   {
     QStandardItem *parent = nullptr;
 

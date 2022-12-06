@@ -142,8 +142,8 @@ bool MainWindow::stopAllowed()
 {
   if ( Archiver::instance->isInProgress() )
   {
-    if ( KMessageBox::warningYesNo(this,
-            i18n("There is a backup in progress. Do you want to abort it?")) == KMessageBox::No )
+    if ( KMessageBox::warningTwoActions(this,
+            i18n("There is a backup in progress. Do you want to abort it?"), i18n("Backup in Progress"), KGuiItem(i18n("Abort")), KStandardGuiItem::cancel()) == KMessageBox::SecondaryAction )
       return false;
 
     Archiver::instance->cancel();
@@ -258,11 +258,11 @@ void MainWindow::saveProfile(QString fileName)
 
   if ( file.exists() && (fileName != loadedProfile) )
   {
-    if ( KMessageBox::warningYesNo(this,
+    if ( KMessageBox::warningTwoActions(this,
                 i18n("The profile '%1' does already exist.\n"
                      "Do you want to overwrite it?",
                      fileName),
-                i18n("Profile exists")) == KMessageBox::No )
+                i18n("Profile exists"), KStandardGuiItem::save(), KStandardGuiItem::discard()) == KMessageBox::SecondaryAction )
       return;
   }
 

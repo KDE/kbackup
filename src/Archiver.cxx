@@ -459,9 +459,9 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     if ( !dir.exists() )
     {
       if ( !interactive ||
-           (KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
+           (KMessageBox::warningTwoActions(static_cast<QWidget*>(parent()),
               i18n("The target directory '%1' does not exist.\n\n"
-                   "Shall I create it?", dir.absolutePath())) == KMessageBox::Yes) )
+                   "Shall I create it?", dir.absolutePath()), i18nc("@title", "Create Directory"), KGuiItem(i18nc("@action:button", "Create")), KStandardGuiItem::cancel()) == KMessageBox::PrimaryAction) )
       {
         if ( !dir.mkpath(QStringLiteral(".")) )
         {
@@ -663,7 +663,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
 
     if ( interactive )
     {
-      int ret = KMessageBox::questionYesNoList(static_cast<QWidget*>(parent()),
+      int ret = KMessageBox::questionTwoActionsList(static_cast<QWidget*>(parent()),
                                skippedFiles ?
                                  i18n("The backup has finished but files were skipped.\n"
                                       "What do you want to do now?") :
@@ -674,7 +674,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
                                KStandardGuiItem::cont(), KStandardGuiItem::quit(),
                                QStringLiteral("showDoneInfo"));
 
-      if ( ret == KMessageBox::No ) // quit
+      if ( ret == KMessageBox::SecondaryAction ) // quit
         qApp->quit();
     }
     else
@@ -773,7 +773,7 @@ void Archiver::finishSlice()
           enum { ASK, CANCEL, RETRY } action = ASK;
           while ( action == ASK )
           {
-            int ret = KMessageBox::warningYesNoCancel(static_cast<QWidget*>(parent()),
+            int ret = KMessageBox::warningTwoActionsCancel(static_cast<QWidget*>(parent()),
                         i18n("How shall we proceed with the upload?"), i18n("Upload Failed"),
                         KGuiItem(i18n("Retry")), KGuiItem(i18n("Change Target")));
 
@@ -782,7 +782,7 @@ void Archiver::finishSlice()
               action = CANCEL;
               break;
             }
-            else if ( ret == KMessageBox::No )  // change target
+            else if ( ret == KMessageBox::SecondaryAction )  // change target
             {
               target = QFileDialog::getExistingDirectoryUrl(static_cast<QWidget*>(parent()));
               if ( target.isEmpty() )
@@ -947,9 +947,9 @@ bool Archiver::getNextSlice()
       Q_EMIT warning(i18n("The file '%1' can not be opened for writing.", archiveName));
 
     if ( !interactive ||
-         (KMessageBox::warningYesNo(static_cast<QWidget*>(parent()),
+         (KMessageBox::warningTwoActions(static_cast<QWidget*>(parent()),
            i18n("The file '%1' can not be opened for writing.\n\n"
-                "Do you want to retry?", archiveName)) == KMessageBox::No) )
+                "Do you want to retry?", archiveName), i18nc("@title", "Open File"), KGuiItem(i18nc("@action:button", "Retry")), KStandardGuiItem::cancel()) == KMessageBox::SecondaryAction) )
     {
       delete archive;
       archive = nullptr;
