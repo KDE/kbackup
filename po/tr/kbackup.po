@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2022-11-21 22:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -52,6 +52,18 @@ msgstr ""
 "Hedef dizin '%1' mevcut değil.\n"
 "\n"
 "Oluşturulsun mu?s"
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
 
 #: Archiver.cxx:468
 #, kde-format
@@ -192,6 +204,20 @@ msgstr ""
 "'%1 dosyası yazma için açılamadı.\n"
 "\n"
 "Yeniden denemek ister misiniz?"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Open failed"
+msgctxt "@title"
+msgid "Open File"
+msgstr "Açma başarısız"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Retry"
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Yeniden Dene"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -559,6 +585,16 @@ msgstr "Gizli Dosyaları Göster"
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Sürmekte olan bir yedekleme var. İptal etmek istiyor musunuz?"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
+msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format

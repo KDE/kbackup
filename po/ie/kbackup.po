@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2022-11-02 08:15+0700\n"
 "Last-Translator: OIS <mistresssilvara@hotmail.com>\n"
 "Language-Team: Interlingue <kde-i18n-doc@kde.org>\n"
@@ -49,6 +49,18 @@ msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
 "Shall I create it?"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
 msgstr ""
 
 #: Archiver.cxx:468
@@ -182,6 +194,19 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+msgctxt "@title"
+msgid "Open File"
+msgstr "ao_open_live ne successat con code %d"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Retry"
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Repenar"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -528,6 +553,16 @@ msgstr "Revelar celat files"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
 msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251

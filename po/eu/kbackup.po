@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2019-05-18 08:54+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -58,6 +58,18 @@ msgstr ""
 "Jomuga direktorioa '%1' ez dago.\n"
 "\n"
 "Sortu behar nuke?"
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
 
 #: Archiver.cxx:468
 #, kde-format
@@ -200,6 +212,20 @@ msgstr ""
 "'%1' fitxategia ezin da idazteko ireki.\n"
 "\n"
 "Berriz saiatu nahi duzu?"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Open failed"
+msgctxt "@title"
+msgid "Open File"
+msgstr "Irekitzea huts egin du"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Retry"
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Berriz saiatu"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -569,6 +595,16 @@ msgstr "Erakutsi ezkutuko fitxategiak"
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "babes-kopia bat egiten ari da. Hura galarazi nahi duzu?"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
+msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format

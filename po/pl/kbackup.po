@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2022-01-24 20:27+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -55,6 +55,18 @@ msgstr ""
 "Katalog docelowy '%1'  nie istnieje.\n"
 "\n"
 "Czy chcesz go utworzyć?"
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
 
 #: Archiver.cxx:468
 #, kde-format
@@ -196,6 +208,20 @@ msgstr ""
 "Pliku '%1' nie można otworzyc do odczytu.\n"
 "\n"
 "Czy chcesz ponowić próbę?"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Open failed"
+msgctxt "@title"
+msgid "Open File"
+msgstr "Nie udało się otworzyć"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Retry"
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Ponów"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -565,6 +591,16 @@ msgstr "Pokaż ukryte pliki"
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Obecnie tworzona jest kopia zapsowa. Czy chcesz ją przerwać?"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
+msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2020-03-14 09:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -56,6 +56,18 @@ msgstr ""
 "Ciljna mapa '%1' ne obstaja.\n"
 "\n"
 "Naj jo ustvarim?"
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
 
 #: Archiver.cxx:468
 #, kde-format
@@ -200,6 +212,20 @@ msgstr ""
 "Datoteke %1 ni mogoče odpreti za pisanje.\n"
 "\n"
 "Ali želite ponovno poskusiti?"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Open failed"
+msgctxt "@title"
+msgid "Open File"
+msgstr "Odpiranje ni uspelo"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Retry"
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Ponovno poskusi"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -569,6 +595,16 @@ msgstr "Prikaži skrite datoteke"
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Izdelava varnostnih kopij je v delu. Ali jo želite prekiniti?"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
+msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format

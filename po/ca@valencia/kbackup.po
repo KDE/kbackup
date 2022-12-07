@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2021-09-13 16:43+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -57,6 +57,18 @@ msgstr ""
 "El directori de destinació «%1» no existix.\n"
 "\n"
 "Voleu crear-lo?"
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
 
 #: Archiver.cxx:468
 #, kde-format
@@ -201,6 +213,20 @@ msgstr ""
 "El fitxer «%1» no s'ha pogut obrir per a escriptura.\n"
 "\n"
 "Voleu tornar a intentar-ho?"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Open failed"
+msgctxt "@title"
+msgid "Open File"
+msgstr "L'obertura ha fallat"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Retry"
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Torna-ho a intentar"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -570,6 +596,16 @@ msgstr "Mostra els fitxers ocults"
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Hi ha una còpia de seguretat en progrés. La voleu interrompre?"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
+msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format

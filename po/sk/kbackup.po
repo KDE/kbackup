@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KBackUp\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2020-02-02 09:40+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -59,6 +59,18 @@ msgstr ""
 "Cieľový adresár '%1' neexistuje.\n"
 "\n"
 "Mám ho vytvoriť?"
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
 
 #: Archiver.cxx:468
 #, kde-format
@@ -200,6 +212,20 @@ msgstr ""
 "Súbor '%1' nemožno otvoriť pre zápis.\n"
 "\n"
 "Chcete sa o to pokúsiť znovu?"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Open failed"
+msgctxt "@title"
+msgid "Open File"
+msgstr "Otváranie zlyhalo"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Retry"
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Skúsiť znovu"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -566,6 +592,16 @@ msgstr "Zobraziť skryté súbory"
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Záloha už prebieha. Chcete ju zrušiť?"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
+msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format

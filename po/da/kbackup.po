@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2018-07-18 22:27+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -48,6 +48,18 @@ msgid ""
 "The target directory '%1' does not exist.\n"
 "\n"
 "Shall I create it?"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
 msgstr ""
 
 #: Archiver.cxx:468
@@ -179,6 +191,20 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Open failed"
+msgctxt "@title"
+msgid "Open File"
+msgstr "Åbning mislykkedes"
+
+#: Archiver.cxx:952
+#, fuzzy, kde-format
+#| msgid "Retry"
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Prøv igen"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -525,6 +551,16 @@ msgstr "Vis skjulte filer"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
 msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
