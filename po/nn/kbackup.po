@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-04 00:49+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2019-12-19 10:49+0100\n"
 "Last-Translator: Øystein Steffensen-Alværvik <kjake@posteo.no>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -55,6 +55,18 @@ msgstr ""
 "Målmappa «%1» finst ikkje.\n"
 "\n"
 "Ønskjer du å oppretta ho?"
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr ""
+
+#: Archiver.cxx:464
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr ""
 
 #: Archiver.cxx:468
 #, kde-format
@@ -202,6 +214,18 @@ msgstr ""
 "Klarte ikkje opna fila «%1» for skriving.\n"
 "\n"
 "Vil du prøva på nytt?"
+
+#: Archiver.cxx:952
+#, kde-format
+msgctxt "@title"
+msgid "Open File"
+msgstr ""
+
+#: Archiver.cxx:952
+#, kde-format
+msgctxt "@action:button"
+msgid "Retry"
+msgstr ""
 
 #: Archiver.cxx:977
 #, kde-format
@@ -580,6 +604,16 @@ msgstr "Vis gøymde filer"
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Ei reservekopiering pågår. Vil du avbryta ho?"
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Backup in Progress"
+msgstr ""
+
+#: MainWindow.cxx:146
+#, kde-format
+msgid "Abort"
+msgstr ""
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format

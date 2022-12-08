@@ -1,27 +1,27 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2018.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2018, 2022.
 # Jan Mussche <jan.mussche@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2018-11-26 09:43+0100\n"
+"PO-Revision-Date: 2022-12-07 11:13+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf"
+msgstr "Freek de Kruijf - t/m 2022"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -60,13 +60,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "Map aanmaken"
 
 #: Archiver.cxx:464
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Aanmaken"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -212,15 +212,13 @@ msgstr ""
 "Wilt u het opnieuw proberen?"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Open failed"
+#, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr "Openen is mislukt"
+msgstr "Bestand openen"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Retry"
+#, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Opnieuw proberen"
@@ -598,12 +596,12 @@ msgstr "Er wordt een reservekopie gemaakt. Wilt u dit afbreken?"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Backup in Progress"
-msgstr ""
+msgstr "Reservekopie maken is bezig"
 
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Afbreken"
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format

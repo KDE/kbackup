@@ -1,16 +1,16 @@
 # Translation of kbackup.po to Catalan
-# Copyright (C) 2018-2021 This_file_is_part_of_KDE
+# Copyright (C) 2018-2022 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2018.
-# Josep M. Ferrer <txemaq@gmail.com>, 2020, 2021.
+# Josep M. Ferrer <txemaq@gmail.com>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2021-09-13 16:43+0200\n"
+"PO-Revision-Date: 2022-12-07 11:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -62,13 +62,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "Crea un directori"
 
 #: Archiver.cxx:464
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Crea"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -215,15 +215,13 @@ msgstr ""
 "Voleu tornar a intentar-ho?"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Open failed"
+#, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr "L'obertura ha fallat"
+msgstr "Obre un fitxer"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Retry"
+#, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Torna a intentar-ho"
@@ -600,12 +598,12 @@ msgstr "Hi ha una còpia de seguretat en progrés. La voleu interrompre?"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Backup in Progress"
-msgstr ""
+msgstr "Hi ha una còpia de seguretat en curs"
 
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Interromp"
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
@@ -882,9 +880,3 @@ msgstr "Comprimeix els fitxers"
 #, kde-format
 msgid "backup"
 msgstr "Còpia de seguretat"
-
-#~ msgid "OK"
-#~ msgstr "D'acord"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
