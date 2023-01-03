@@ -4,20 +4,21 @@
 #
 # Martin Koller <kollix@aon.at>, 2006 - 2010.
 # Burkhard Lück <lueck@hube-lueck.de>, 2018.
-# Frederik Schwarzer <schwarzer@kde.org>, 2018.
+# Frederik Schwarzer <schwarzer@kde.org>, 2018, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2018-11-26 12:05+0100\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"PO-Revision-Date: 2022-12-19 10:27+0100\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -61,13 +62,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "Ordner erstellen"
 
 #: Archiver.cxx:464
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Erstellen"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -212,18 +213,16 @@ msgstr ""
 "Möchten Sie es nochmals versuchen?"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Open failed"
+#, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr "Öffnen fehlgeschlagen"
+msgstr "Datei öffnen"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Retry"
+#, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr "Nochmals versuchen"
+msgstr "Erneut versuchen"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -598,12 +597,12 @@ msgstr "Eine Sicherung läuft gerade. Möchten Sie sie abbrechen?"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Backup in Progress"
-msgstr ""
+msgstr "Sicherung läuft"
 
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Abbrechen"
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
