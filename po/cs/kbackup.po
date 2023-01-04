@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2022-09-21 15:48+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +68,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -213,18 +213,16 @@ msgstr ""
 "Chcete to zkusit ještě jednou?"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Open failed"
+#, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr "Otevření se nezdařilo"
+msgstr ""
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Retry"
+#, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr "Zkusit ještě jednou"
+msgstr "Zkusit znovu"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -595,7 +593,7 @@ msgstr ""
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Přerušit"
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
