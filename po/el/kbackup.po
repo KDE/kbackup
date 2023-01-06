@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kbackup package.
 #
-# Stelios <sstavra@gmail.com>, 2018.
+# Stelios <sstavra@gmail.com>, 2018, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2018-12-20 14:30+0200\n"
+"PO-Revision-Date: 2023-01-05 10:59+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
-"Language-Team: English <kde-i18n-el@kde.org>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -59,13 +59,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "Δημιουργία καταλόγου"
 
 #: Archiver.cxx:464
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Δημιουργία"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -115,8 +115,8 @@ msgstr "-- Φιλτραρισμένα αρχεία: %1"
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
-"!! Η δημιουργία εφεδρικού αντιγράφου ολοκληρώθηκε <b>αλλά με "
-"παράλειψηαρχείων</b> !!"
+"!! Η δημιουργία εφεδρικού αντιγράφου ολοκληρώθηκε <b>αλλά με παράλειψη "
+"αρχείων</b> !!"
 
 #: Archiver.cxx:662
 #, kde-format
@@ -180,7 +180,7 @@ msgstr "Αποτυχία αποστολής"
 #: Archiver.cxx:778
 #, kde-format
 msgid "Retry"
-msgstr "Επαναπροσπάθεια"
+msgstr "Επανάληψη"
 
 #: Archiver.cxx:778
 #, kde-format
@@ -214,18 +214,16 @@ msgstr ""
 "Θέλετε να ξαναπροσπαθήσετε;"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Open failed"
+#, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr "Αποτυχία ανοίγματος"
+msgstr "Άνοιγμα αρχείου"
 
 #: Archiver.cxx:952
-#, fuzzy, kde-format
-#| msgid "Retry"
+#, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr "Επαναπροσπάθεια"
+msgstr "Επανάληψη"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -476,7 +474,7 @@ msgstr "Προορισμός"
 #: MainWidgetBase.ui:127
 #, kde-format
 msgid "Folder:"
-msgstr "Φακελος:"
+msgstr "Φάκελος:"
 
 #. i18n: ectx: property (text), widget (QLabel, sliceLabel)
 #: MainWidgetBase.ui:143
@@ -601,12 +599,12 @@ msgstr ""
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Backup in Progress"
-msgstr ""
+msgstr "Δημιουργία εφεδρικού αντιγράφου σε εξέλιξη"
 
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Εγκατάλειψη"
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
