@@ -1,142 +1,151 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
 
-  <!ENTITY kbackup "<application>KBackup</application>"><!--FIXME remove entitiy when kbackup depends on kdoctools >= 5.42-->
+  <!ENTITY kbackup "<application
+>KBackup</application
+>"
+><!--FIXME remove entitiy when kbackup depends on kdoctools
+>= 5.42-->
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE">
+  <!ENTITY % German "INCLUDE">
 ]>
 
 <book id="kbackup" lang="&language;">
 
 <bookinfo>
-<title>The &kbackup; Handbook</title>
+<title
+>Das Handbuch zu &kbackup;</title>
 
 <authorgroup>
-<author>
-<personname>
-<firstname>Martin</firstname>
-<surname>Koller</surname>
-</personname>
-<email>kollix@aon.at</email>
-</author>
+<author
+><personname
+> <firstname
+>Martin</firstname
+> <surname
+>Koller</surname
+> </personname
+> <email
+>kollix@aon.at</email
+> </author>
 </authorgroup>
 
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<othercredit role="translator"
+><firstname
+>Martin</firstname
+><surname
+>Koller</surname
+><affiliation
+><address
+><email
+>kollix@aon.at</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
 
 <copyright>
-<year>2006 - 2017</year>
-<holder>Martin Koller</holder>
+<year
+>2006 - 2017</year>
+<holder
+>Martin Koller</holder>
 </copyright>
-<legalnotice>&FDLNotice;</legalnotice>
+<legalnotice
+>&FDLNotice;</legalnotice>
 
-<date>2018-01-05</date>
-<releaseinfo>Applications 18.04</releaseinfo>
+<date
+>2018-01-05</date>
+<releaseinfo
+>Anwendungen 18.04</releaseinfo>
 
 <!-- Abstract about this handbook -->
 
 <abstract>
-<para>
-&kbackup; is an application which lets you back up your data in a simple, user friendly way.
-</para>
+<para
+>&kbackup; ist ein Programm welches Datensicherung in einer benutzerfreundlichen Weise ermöglicht. </para>
 </abstract>
 
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>system</keyword>
-<keyword>KBackup</keyword>
-<keyword>backup</keyword>
-<keyword>storage</keyword>
-<keyword>archive</keyword>
-<keyword>zip</keyword>
-<keyword>gzip</keyword>
-<keyword>bzip2</keyword>
-<keyword>xz</keyword>
+<keyword
+>KDE</keyword>
+<keyword
+>system</keyword>
+<keyword
+>KBackup</keyword>
+<keyword
+>Sicherung</keyword>
+<keyword
+>Archivierung</keyword>
+<keyword
+>Archiv</keyword>
+<keyword
+>ZIP</keyword>
+<keyword
+>gzip</keyword>
+<keyword
+>bzip2</keyword>
+<keyword
+>xz</keyword>
 </keywordset>
 
 </bookinfo>
 
 <chapter id="introduction">
-<title>Introduction</title>
+<title
+>Einführung</title>
 
-<para>
-&kbackup; is a program that lets you back up any folders or files,
-whereby it uses an easy to use folder tree to select the things to back up.
-It lets you save your settings in so-called <quote>profile</quote> files, where a profile is a simple
-text file containing definitions for folders and files to be included
-or excluded from the backup process.
-Also, it lets you define where the backup shall be saved to.
-The target can be either a local folder (&eg; a locally mounted device
-like a ZIP drive, USB stick, &etc;) but it can also be any remote &URL;
-(&eg; smb://remote/some_path) to back up your data to some central server, &etc;
-</para>
+<para
+>&kbackup; ist ein Programm zur Datensicherung von beliebigen Dateien und Ordnern, wobei es einen einfach zu bedienenden Ordnerbaum zur Auswahl zur Verfügung stellt. Gewählte Einstellungen können in sogenannten <quote
+>Profil</quote
+>-Dateien gespeichert werden, wobei ein Profil eine einfache Textdatei ist, welche die Auswahl für Ordner und Dateien enthält, welche für die Sicherung ein- oder auszuschließen sind. Ebenso enthält es die Definition, wohin die Sicherung geschrieben werden soll. Das Ziel einer Sicherung kann entweder ein lokaler Ordner sein (&eg; ein lokal eingebundenes Gerät wie ein ZIP-Laufwerk, USB-Stick, &etc;) aber es kann auch ein anderer Rechner - unter Angabe einer &URL; (&eg; smb://rechner/ziel) - sein, um die Daten auf einen zentralen Server zu sichern. </para>
 
-<para>
-The program can also run an automated backup without using a graphical user interface.
-One can simply create a profile and use these settings to tell &kbackup; what to do
-when running in non-interactive mode, &eg; by starting it from a cron job.
-</para>
+<para
+>Das Programm kann auch eine automatische Sicherung ohne grafische Benutzeroberfläche durchführen. Man erstellt einfach ein Profil, welches &kbackup; sagt, was gesichert werden soll, wenn es im nicht interaktiven Modus gestartet wird, &eg; aus einem cron-job heraus. </para>
 
-<para>
-The program was designed to be very simple in its use so that it can be used
-by non-computer experts.
-</para>
+<para
+>Das Programm wurde so entworfen, dass es möglichst einfach in der Bedienung ist und auch Benutzern mit wenig Erfahrung mit Rechnern bedient werden kann. </para>
 
-<para>
-The storage format is the well known TAR format, whereby the data can still be stored
-in compressed format (xz, bzip2 or gzip).
-</para>
+<para
+>Das Archivierungsformat ist das wohl bekannte Tar-Format, wobei die Daten komprimiert gespeichert werden (xz, bzip2 oder gzip) können. </para>
 
+<para
+>Die aktuelle Implementierung enthält nur den Sicherungsschritt. Um die Daten wieder in das System zurück zuspielen muss man derzeit &eg; &dolphin; benutzen, um eine TAR-Sicherungsdatei zu öffnen, und dann Teile daraus &eg; via Ziehen und Ablegen in das System zurückbringen. Das ist einer der Vorteile der Verwendung des weit verbreiteten TAR-Dateiformates. </para>
+<para
+>Wenn die Dateien komprimiert wurden, so kann man alle vom aktuellen Ordner aus rekursiv absteigend mit folgendem Befehl wieder entpacken: </para>
 <para>
-The current implementation features only the backup step. To restore data back into
-your system, you currently have to use, &eg;, &dolphin; to open the TAR backup files
-and drag/drop the files back to your file system.
-This is also an advantage of the usage of the well known and well supported TAR file
-format.
+<programlisting
+>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
 </para>
-<para>
-If the files are compressed, you can uncompress all files
-from the current folder recursively down with the following command:
-</para>
-<para>
-<programlisting>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
-</para>
-<para>Alternatively you can use &ark; to extract a full backup or just a few files from a backup.</para>
+<para
+>Alternativ können Sie mit &ark; die Sicherungsdatei öffnen und die komplette Sicherung oder nur einzelne Datei entpacken.</para>
 </chapter>
 
 <chapter id="using-kbackup">
-<title>Using &kbackup;</title>
+<title
+>Verwendung von &kbackup;</title>
 
-<para>
-All you need to do is to select which folders you want to store.
-This is done by selecting all the folders in the tree view on the left side
-of the main window.
-</para>
+<para
+>Alles was Sie tun müssen, ist die Auswahl der Ordner, die gesichert werden sollen. Dies wird erreicht, indem man in der Baumansicht auf der linken Seite des Hauptfensters die Ordner anwählt. </para>
 
-<para>
-If you select a folder, &kbackup; will automatically store all files and
-subfolders below it.
-If you want to exclude parts of a selected folder, simply deselect that files/folders
-inside the still selected folder.
-</para>
+<para
+>Wenn Sie einen Ordner wählen, wird &kbackup; automatisch alle Dateien und Unterordner darin sichern. Wenn Sie Teile in einem ausgewählten Ordner von der Sicherung ausnehmen wollen, müssen Sie einfach die entsprechenden Ordner oder Dateien darin abwählen. </para>
 
-<para>
-In general, this means: A selected folder will store everything in it and below it,
-except the deselected parts in it.
-This also means, whenever you reuse a profile (see below) later on and new files
-have been added to a folder already selected for backup, all the new files will
-also be stored.
-</para>
+<para
+>Generell bedeutet das: Ein ausgewählter Ordner wird alle Dateien und Unterordner darin sichern, außer den abgewählten Einträgen. Das bedeutet auch, wann immer Sie ein Profil (siehe weiter unten) wiederverwenden, werden auch alle neuen Ordner und Dateien, die in der Zwischenzeit dazugekommen sind, ebenfalls gesichert. </para>
 
 <para>
 
 <screenshot>
-<screeninfo>Here's a screenshot of &kbackup;</screeninfo>
+<screeninfo
+>Hier ist ein Bildschirmfoto von &kbackup;</screeninfo>
 	<mediaobject>
 	  <imageobject>
 	    <imagedata fileref="mainwindow.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Screenshot of the Main Window</phrase>
+	    <phrase
+>Bildschirmfoto des Hauptfensters</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -144,193 +153,206 @@ also be stored.
 
 
 <sect1 id="kbackup-profiles">
-<title>Using profiles</title>
+<title
+>Verwendung von Profilen</title>
+
+<para
+>Um eine Auswahl für spätere Verwendung zu behalten, wird diese einfach in ein &kbackup;-Profil gespeichert. Verwenden Sie dafür das Menü <guimenu
+>Datei</guimenu
+> und wählen Sie <guimenuitem
+>Profil speichern</guimenuitem
+>. </para>
+
+<para
+>Um eine Auswahl wieder zu laden, verwenden Sie den Menüeintrag <menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Profil laden</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>&kbackup; speichert in einem Profil die Auswahl für alle ein- und ausgeschlossenen Dateien und Ordner, das Ziel für die Sicherung, das gewählte Archiv-Präfix, das gewählte Größenlimit für einen Archivteil und anderes. </para>
+
+<para
+>Wenn Sie sich die Aufgabe der täglichen Datensicherung einfach machen wollen, speichern Sie ihre Auswahl in einem Profil (eine Datei mit der Endung <filename class="extension"
+>.kbp</filename
+>) und geben dieses Profil beim Start von &kbackup; als Argument mit an. </para>
+
+<para
+>&eg;: </para>
 
 <para>
-To keep a selection for later use, simply save it into a &kbackup; profile file.
-Use the <guimenu>File</guimenu> menu and select <guimenuitem>Save Profile</guimenuitem>.
+<programlisting
+>kbackup meineDaten.kbp</programlisting>
 </para>
 
-<para>
-To reload a selection into &kbackup;, use the <menuchoice><guimenu>File</guimenu> <guimenuitem>Load Profile...</guimenuitem></menuchoice> menu item.
-</para>
-
-<para>
-&kbackup; saves in a profile the selections for all included folders/files,
-excluded folders/files, the target folder/&URL;, defined archive prefix,
-the defined maximum slice file size, &etc;
-</para>
-
-<para>
-If you want to ease the usage of backing up every day the same set of
-files, simply store your settings into a &kbackup; profile (a <filename class="extension">.kbp</filename> file)
-and pass that file on the command line.
-</para>
-
-<para>
-&eg;:
-</para>
-
-<para>
-<programlisting>kbackup myData.kbp</programlisting>
-</para>
-
-<para>
-Hint: you can also create a shortcut on your desktop to a <filename class="extension">.kbp</filename> file
-as the file type is registered to start &kbackup; on double click.
-</para>
+<para
+>Hinweis: Sie können auch eine Verknüpfung zu einer <filename class="extension"
+>.kbp</filename
+>-Datei auf dem Arbeitsfläche machen, um gleich direkt &kbackup; mit dessen Einstellungen zu starten, da <filename class="extension"
+>.kbp</filename
+> als bekannter Dateityp registriert ist. </para>
 
 </sect1>
 
 <sect1 id="archive-slices">
-<title>Archive slices</title>
-<para>
-As a medium has normally limited capacity (&eg; 100MB ZIP disc),
-&kbackup; will create several archive slices.
-</para>
-<para>
-Each archive slice will get its own name, which looks like this:
-</para>
-<para>
-backup_2006.08.26-13.04.44_1.tar
-</para>
-<para>
-The name contains the creation date and time (which will be the same for all
-slices of one backup) and a trailing slice sequence number (_1 in this example).
-</para>
-<para>
-In the menu <menuchoice><guimenu>File</guimenu> <guimenuitem>Profile Settings...</guimenuitem></menuchoice>, you can define a different archive prefix than the
-default <quote>backup</quote>.
-</para>
+<title
+>Archiv aufteilen</title>
+<para
+>Da ein Medium normalerweise nur eine begrenzte Kapazität hat wie &eg; eine 100MB ZIP-Diskette, teilt &kbackup; die Sicherung in einzelne Teile auf. </para>
+<para
+>Jeder Archivteil hat seinen eigenen Dateinamen, welcher wie folgt aussieht: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>Der Name enthält das Datum und die Uhrzeit der Sicherung (welche für jeden Teil der Sicherung gleich bleibt), und eine angehängte Teil-Nummer (_1 in diesem Beispiel). </para>
+<para
+>Über das Menü <menuchoice
+><guimenu
+>Datei</guimenu
+><guimenuitem
+>Profil-Einstellungen</guimenuitem
+></menuchoice
+> kann ein anderes Präfix als <quote
+>Sicherung</quote
+> für die Archive eingestellt werden. </para>
 
-<para>
-In the <guilabel>Profile Settings</guilabel> dialog, you can also define a maximum archive slice size,
-which limits the slice size even if there would be more space left on the target
-device.
-This helps to create archive slices which can then be later burned on a &CD;/&DVD;, &etc;
-If you explicitly limit the size of an archive slice, the available size
-will be marked with (*) in the main window.
-</para>
-<para>
-But even if you define a slice to be of <quote>unlimited</quote> size, there are other constraints
-which limit the size of a slice:
-<itemizedlist>
-<listitem><para>limited by the target folder (when stored directly into a local folder)</para></listitem>
-<listitem><para>limited by the <filename class="directory">/tmp</filename> folder when we create a tmp file for later upload to a remote &URL;</para></listitem>
+<para
+>Um unabhängig von der verfügbaren Kapazität des Zielmediums eine Sicherung in mehrere Archivteile einer maximalen Größe trennen zu können, kann man im Dialog <guilabel
+>Profil-Einstellungen</guilabel
+> eine Maximalgröße pro Archivteil festlegen. Dies ergibt &eg; dann Sinn, wenn man eine Sicherung für das nachträgliche Brennen auf eine &CD;/&DVD; vorbereiten will. Wenn Sie die Größe eines Archivteils explizit begrenzen, dann erscheint die verfügbare Größe mit der Markierung (*) im Hauptfenster. </para>
+<para
+>Auch wenn eine <quote
+>unbegrenzte</quote
+> Größe eingestellt wurde, gibt es zusätzliche Einschränkungen für die Größe eines Archivteils: <itemizedlist>
+<listitem
+><para
+>begrenzt durch die verfügbare Kapazität im Zielordner, wenn direkt in einen lokalen Ordner gesichert wird</para
+></listitem>
+<listitem
+><para
+>begrenzt durch den Ordner <filename class="directory"
+>/tmp</filename
+>, wenn die Sicherung durch Angabe einer &URL; auf einen entfernten Rechner kopiert wird, da eine temporäre Datei erzeugt wird, die danach zum Zielrechner übertragen wird.</para
+></listitem>
 </itemizedlist>
 </para>
 
-<para>
-In the <guilabel>Profile Settings</guilabel>, you can also define a maximum number of full backups being kept
-in the target folder, and therefore automatically deleting all older backups there.
-&eg; if you set it to 3, &kbackup; will keep the last 3 backups and delete all older ones.
-</para>
+<para
+>In den <guilabel
+>Profil-Einstellungen</guilabel
+> kann auch festgelegt werden, wie viele komplette Sicherungen maximal in dem Zielordner behalten werden sollen, bevor ältere Sicherungen automatisch gelöscht werden. Wird &eg; ein Wert von 3 eingestellt, wird &kbackup; die letzten 3 Sicherungen behalten und alle älteren Sicherungen werden gelöscht. </para>
 
 </sect1>
 
 
 <sect1 id="incremental-backup">
-<title>Incremental Backup</title>
-<para>
-With an incremental backup not all files will be saved every time the backup runs, but only
-the files which have changed since the last backup. This has the great advantage that the
-incremental backup will usually include much fewer files than a full backup and therefore
-will be finished in a much shorter time.
-</para>
-<para>
-This works as follows: In the profile, you define an interval (in days) for the full backup.
-&eg; when you define 5 days, then &kbackup; will do a full backup of all files every 5 days.
-Whenever you start &kbackup; before the interval expires with this profile - regardless
-how often you run a backup - only the files which have changed since the last backup will
-be saved. &kbackup; stores the time stamp of the last backup into the profile and knows
-therefore what to do when running the next time.
-</para>
-<para>
-The archive slice files created during an incremental backup will contain the text <quote>_inc</quote>, &eg;:
-</para>
-<para>
-backup_2010.06.14-18.50.26_1_inc.tar
-</para>
-<para>
-Full backup slice files will not include <quote>_inc</quote> in the name, &eg;:
-</para>
-<para>
-backup_2010.06.13-20.58.14_1.tar
-</para>
-<para>
-When one wants to restore files from an incremental backup, it's important to look for
-the most recent version of a file to be restored in all <quote>_inc</quote> files and finally also the last full backup
-slice file.
-This exactly is also the disadvantage of the incremental backup (but no advantage without disadvantage ;-) )
-</para>
-<para>
-If you want to do a full backup earlier than the defined incremental cycle time defined in a profile,
-you can do so by checking the <guilabel>Force Full Backup</guilabel> option in the user interface.
-When &kbackup; is started via the command line, this can be achieved by using the option <option>--forceFull</option>
-</para>
-<para>
-A forced full backup will restart the backup cycle, &ie; &kbackup; counts the days to the next full backup
-from the time of the last full backup.
-</para>
+<title
+>Inkrementelle Sicherung</title>
+<para
+>Unter inkrementeller Sicherung versteht man, dass nicht immer alle Dateien gesichert werden, sondern nur jene, die sich seit der letzten Sicherung geändert haben. Dies hat den großen Vorteil, dass die inkrementellen Sicherungen üblicherweise wesentlich weniger Dateien beinhalten und der Sicherungsvorgang daher wesentlich schneller beendet ist. </para>
+<para
+>Die Vorgehensweise ist also folgende: Im Profil definiert man ein Intervall in Tagen für eine Komplett-Sicherung, &eg; 5 Tage. Das bedeutet, &kbackup; sichert alle 5 Tage alle definierten Dateien. An allen Tagen dazwischen - egal wie oft Sie &kbackup; mit diesem Profil starten - werden nur jene Dateien gesichert, die sich seit der letzten Sicherung geändert haben. &kbackup; schreibt dafür die Sicherungs-Zeitstempel in ihr Profil und weiß somit, was das nächste mal zu tun ist. </para>
+<para
+>Die Sicherungsdateien, die hierbei entstehen beinhalten den Text <quote
+>_inc</quote
+> wie &eg;: </para>
+<para
+>backup_2010.06.14-18.50.26_1_inc.tar </para>
+<para
+>Die Dateien einer Komplett-Sicherung haben kein Kürzel <quote
+>_inc</quote
+> im Dateinamen wie &eg;: </para>
+<para
+>backup_2010.06.13-20.58.14_1.tar </para>
+<para
+>Wichtig ist, dass bei einer Wiederherstellung einer Sicherung auf den Rechner nun alle <quote
+>_inc</quote
+> Dateien und zuletzt auch die letzte Komplett-Sicherung durchsucht werden müssen, um den letzten Stand einer Datei zu finden. Genau das ist auch der Nachteil von inkrementellen Sicherungen (kein Vorteil ohne Nachteil ;-) ) </para>
+<para
+>Will man trotz definiertem inkrementellen Zyklus im Profil vorzeitig eine Komplett-Sicherung durchführen, so kann man dies in der Benutzeroberfläche über die Option <guilabel
+>Komplett-Sicherung erzwingen</guilabel
+> starten. Startet man &kbackup; über die Befehlszeile, so kann dies mit der Option -<option
+>-forceFull</option
+> erledigt werden. </para>
+<para
+>Eine erzwungene Komplett-Sicherung startet das Sicherungsintervall neu, &ie; &kbackup; rechnet den Komplett-Sicherungszyklus immer von der zuletzt durchgeführten Komplett-Sicherung. </para>
 </sect1>
 
 
 <sect1 id="archive-compression">
-<title>Archive Compression</title>
-<para>
-&kbackup; will compress the files stored if you activate this
-in the profile settings. Depending on
-the availability on your system it chooses <command>xz</command>, <command>bzip2</command> or <command>gzip</command> compression.
-&kbackup; will compress every single file
-and store all files with an added file extension (<filename class="extension">.xz</filename>, <filename class="extension">.bzip2</filename> or <filename class="extension">.gz</filename>) into the
-then not-compressed <filename class="extension">.tar</filename> archive.
-</para>
+<title
+>Archiv-Komprimierung</title>
+<para
+>&kbackup; komprimiert die gesicherten Dateien, wenn dies im Profil eingestellt wurde. Abhängig von der Verfügbarkeit auf ihrem System wird entweder <command
+>xz</command
+>, <command
+>bzip2</command
+> oder <command
+>gzip</command
+> als Komprimierung verwendet. &kbackup; wird jede einzelne Datei komprimieren und mit einer angehängten Dateierweiterung <filename class="extension"
+>.xz</filename
+>,  (<filename class="extension"
+>.bzip2</filename
+> oder <filename class="extension"
+>.gz</filename
+>) im nicht komprimierten <filename class="extension"
+>.tar</filename
+>-Archiv speichern. </para>
 
-<para>
-When you have selected to create the backup on some local filesystem
-(&eg; your extra disc, ZIP drive, &etc;) - which means you did not
-enter a remote target &URL; - &kbackup; might split the whole backup into several archive slices
-due to media capacity limitations.
-</para>
-<para>
-&eg;:
-</para>
-<para>
-backup_2006.08.26-13.04.44_1.tar
-</para>
-<para>
-backup_2006.08.26-13.04.44_2.tar
-</para>
+<para
+>Wenn Sie als Ziel einen lokalen Ordner gewählt haben (&eg; ihre externe Festplatte, ZIP-Laufwerk, &etc;) - &ie; Sie haben keine &URL; angegeben - kann &kbackup; die gesamte Sicherung aufgrund der beschränkten Medienkapazität in einzelne Teilarchive trennen. </para>
+<para
+>&eg;: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>backup_2006.08.26-13.04.44_2.tar </para>
 
 </sect1>
 
 <sect1 id="automating">
-<title>Automating Backup</title>
+<title
+>Automatische Sicherung</title>
 
-<para>
-If you want to automate the process of the backup, &kbackup; offers different
-command line options to help with this:
-<itemizedlist>
-<listitem><para><option>--auto</option></para>
-<para>
-When you run &kbackup; with this option and a given <filename class="extension">.kbp</filename> profile, it will
-start, load the given profile, run the backup and terminate when done.
-All this is done with a visible &kbackup; user interface.
-</para>
+<para
+>Wenn Sie den Vorgang der Sicherung automatisieren möchten, bietet &kbackup; hier verschiedene Befehlszeilenoptionen an: <itemizedlist>
+<listitem
+><para
+><option
+>--auto</option
+></para>
+<para
+>Wird &kbackup; mit dieser Option und einem <filename class="extension"
+>.kbp</filename
+>-Profil gestartet, so wird das Programm starten, das angegebene Profil laden, die Sicherung durchführen und sich nach Fertigstellung beenden. All das wird mit einer sichtbaren &kbackup; Benutzeroberfläche durchgeführt. </para>
 </listitem>
 
-<listitem><para><option>--autobg</option></para>
-<para>
-When you run &kbackup; with this option and a given <filename class="extension">.kbp</filename> profile, it will
-run the same process as with <option>--auto</option>  but <emphasis>without</emphasis> showing any graphical user interface.
-Therefore the suffix <quote>bg</quote> which stands for <quote>background</quote> - everything is done in the background
-so this is the right option to be used when you do your backups, &eg;, started by a cron job.
-</para>
-<para>
-When using <option>--autobg</option> the output from &kbackup; - showing the progress of the backup - is written
-to stderr. By default, the output includes just a few important messages and a summary at the end.
-If you pass <option>--verbose</option> in addition, then you will also see each file name currently being backed up.
-</para>
+<listitem
+><para
+><option
+>--autobg</option
+></para>
+<para
+>Wird &kbackup; mit dieser Option und einem <filename class="extension"
+>.kbp</filename
+>-Profil gestartet, so wird der selbe Ablauf durchgeführt wie mit der Option <option
+>--auto</option
+>, jedoch wird <emphasis
+>keine</emphasis
+> grafische Benutzeroberfläche angezeigt. Daher die Endung <quote
+>bg</quote
+>, was für <quote
+>Background</quote
+> (Hintergrund) steht - alle Operationen werden also im Hintergrund ausgeführt, was damit die passende Option für eine Sicherung darstellt, die &eg; aus einem cron-job gestartet wurde. </para>
+<para
+>Mit der Option <option
+>--autobg</option
+> werden die Ausgaben von &kbackup;, welche den Fortschritt anzeigen, auf die Standard-Fehlerausgabe (stderr) geschrieben. Die Standardeinstellung enthält ein paar wichtige Angaben zum Fortschritt und eine Zusammenfassung am Schluss. Wird die Option <option
+>--verbose</option
+> noch zusätzlich angegeben, so wird auch der Name jeder einzelnen Datei, die gerade gesichert wird, ausgegeben. </para>
 </listitem>
 </itemizedlist>
 </para>
@@ -340,82 +362,146 @@ If you pass <option>--verbose</option> in addition, then you will also see each 
 </chapter>
 
 <chapter id="commands">
-<title>Command Reference</title>
+<title
+>Befehlsreferenz</title>
 
 <sect1 id="kapp-mainwindow">
-<title>The main &kbackup; window</title>
+<title
+>Das &kbackup;-Hauptfenster</title>
 
-<para>
-</para>
+ 
 
 <sect2>
-<title>The File Menu</title>
+<title
+>Das Menü Datei</title>
 <para>
 <variablelist>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>File</guimenu>
-<guimenuitem>Open Recent</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Shows a submenu with the recently used profiles for easy selection.
-</action></para></listitem>
+<term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Zuletzt geöffnete Dateien</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Zeigt ein Untermenü mit den zuletzt verwendeten Profilen. </action
+></para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>File</guimenu>
-<guimenuitem>New Profile</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Clears the selection and the target input field, to be able to define
-a new profile.</action></para></listitem>
+<term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Neues Profil</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Löscht die Auswahl und das Ziel-Eingabefeld, um ein neues Profil definieren zu können.</action
+></para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>File</guimenu>
-<guimenuitem>Load Profile...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Loads a profile.</action></para></listitem>
+<term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Profil laden</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lädt ein Profil.</action
+></para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>File</guimenu>
-<guimenuitem>Save Profile</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Saves all settings into the currently loaded profile.</action></para></listitem>
+<term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Profil speichern</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Speichert alle Einstellungen in eine Profildatei.</action
+></para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>File</guimenu>
-<guimenuitem>Save Profile As...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Saves all settings into a profile with a new name.</action></para></listitem>
+<term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Profil speichern unter ...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Speichert alle Einstellungen in eine Profildatei mit einem neuen Namen.</action
+></para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>File</guimenu>
-<guimenuitem>Profile Settings...</guimenuitem>
-</menuchoice></term>
-<listitem><para>In the settings, you can define whether the archive-slice files
-start with the default name <quote>backup</quote> or with an alternative name.
-Also you can limit the archive slice size. See chapter <link linkend="archive-slices">Archive Slices</link>.
-These settings are also stored into the profile.
-</para></listitem>
+<term
+><menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Profil-Einstellungen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>In den Profil-Einstellungen kann man definieren, ob eine Archivdatei mit dem Namen <quote
+>Sicherung</quote
+> beginnen soll, oder ob ein alternativer Name verwendet werden soll. Ebenso kann die Größe eines Archivteils begrenzt werden werden. Weitere Informationen finden Sie im Kapitel <link linkend="archive-slices"
+>Archiv aufteilen</link
+>. Diese Einstellungen werden mit in die Profildatei gespeichert. </para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
-</shortcut>
-<guimenu>File</guimenu>
-<guimenuitem>Quit</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Quits</action> &kbackup;.</para></listitem>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Datei</guimenu
+> <guimenuitem
+>Beenden</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Beendet</action
+> &kbackup;</para
+></listitem>
 </varlistentry>
 
 </variablelist>
@@ -423,49 +509,64 @@ These settings are also stored into the profile.
 </sect2>
 
 <sect2>
-<title>The Settings Menu</title>
+<title
+>Das Menü Einstellungen</title>
 <para>
 <variablelist>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Dock in System Tray</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>
-When this option is activated, an icon is shown in the system tray, which reflects the current
-status of a backup operation. An animation is shown when a backup is in progress, else you see
-a static icon.
-If this option is selected, the closing of the main window will not terminate &kbackup;.
-The application must be explicitly terminated by selecting the <guimenuitem>Quit</guimenuitem> action.
-Via the context menu of the &kbackup; system tray icon you can start and cancel a backup operation -
-which is the same as you can do in the main window.
-The tooltip on this icon also gives progress information (Number of saved files, size of the backup and
-the last saved file).
-</action></para></listitem>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+> <guimenuitem
+>Im Systembereich der Kontrollleiste andocken</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Wird diese Option eingeschaltet, wird im Systembereich ein Symbol angezeigt, welches den Status einer Sicherung anzeigt. Eine Animation bedeutet, dass gerade eine Sicherung läuft. Ansonsten wird ein statisches Symbol angezeigt. Wenn diese Option gewählt wurde, wird &kbackup; mit dem Schließen des Hauptfensters nicht beendet. Das Programm bleibt so lange verfügbar, bis es explizit durch die Aktion <guimenuitem
+>Beenden</guimenuitem
+> geschlossen. Über das Kontextmenü am Symbol im Systembereich kann eine Sicherung - genau wie im Hauptfenster - gestartet oder abgebrochen werden. Im Kurzinfo des Symbols wird der Sicherungsstatus angezeigt (Anzahl schon gesicherter Dateien, Summe des Sicherungsvolumens und die zuletzt gesicherte Datei). </action
+></para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Enable All Messages</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>
-Activating this entry clears all internally stored <guilabel>Do not ask again</guilabel> flags for
-the dialogs shown in &kbackup;.
-</action></para></listitem>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+> <guimenuitem
+>Alle Meldungen wieder anzeigen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Die Aktivierung dieser Option löscht alle intern gespeicherten Einstellungen aller Dialoge <guilabel
+>Diese Nachfrage nicht mehr anzeigen</guilabel
+>, die &kbackup; anzeigt. </action
+></para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Show Hidden Files</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Enable or disable</action> the display of hidden files (preceded
-by a dot character) in the tree view. Use this option if you want to exclude some
- hidden files from the backup. If you want to exclude all hidden files,
-use a filename filter in the profile settings.
-</para></listitem>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+> <guimenuitem
+>Versteckte Dateien anzeigen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Schaltet</action
+> die Anzeige von versteckten Dateien (Dateien mit einem Punkt am Anfang des Namens) in der Baumansicht ein oder aus. Aktivieren Sie diese Anzeige, um nur einzelne versteckte Dateien von der Sicherung auszuschließen. Möchten Sie alle Dateien von einer Sicherung ausschließen, verwenden Sie einen Filter für Dateinamen in des Profil-Einstellungen. </para
+></listitem>
 </varlistentry>
 
 </variablelist>
@@ -473,35 +574,39 @@ use a filename filter in the profile settings.
 </sect2>
 
 <sect2 id="help-menu1">
-<title>The Help Menu</title>
-<para>
-&kbackup; has the common &kde; <guimenu>Help</guimenu> menu item, for more information read the section
-about the <ulink url="help:/fundamentals/menus.html#menus-help">Help Menu</ulink> of the &kde; Fundamentals.
-</para>
+<title
+>Das Menü Hilfe</title>
+<para
+>&kbackup; benutzt die bekannten &kde;-Einträge im Menü <guimenu
+>Hilfe</guimenu
+>, weitere Informationen dazu finden Sie im Abschnitt über das Menü <ulink url="help:/fundamentals/menus.html#menus-help"
+>Hilfe</ulink
+> der &kde;-Grundlagen. </para>
 </sect2>
 
 </sect1>
 </chapter>
 
 <chapter id="developers">
-<title>Developer's Guide to &kbackup;</title>
+<title
+>Entwickler-Leitfaden zu &kbackup;</title>
 
-<para>
-&kbackup; can be extended by using a shell script (or any other executable)
-which will be started at three different points during the backup process.
-The idea behind it is to allow to mount, unmount, eject media in a system
-specific way, or do other things with the produced archive files.
-</para>
+<para
+>&kbackup; kann durch Shell-Skripte oder andere ausführbaren Programme erweitert werden, welche an bestimmten Stellen während der Datensicherung gestartet werden. Dadurch soll es ermöglicht werden, Laufwerke einzubinden, Medien auszuwerfen, oder die erzeugten Archivdateien anderweitig zu verarbeiten. </para>
 
-<para>
-The script to execute must be given with the <option>--script</option> command line option.
-</para>
+<para
+>Das Skript, welches ausgeführt werden soll, muss mit dem Befehlszeilenargument <option
+>--script</option
+> angegeben werden. </para>
 
-<para>Here is a sample script:</para>
+<para
+>Hier ist ein Beispiel-Skript:</para>
 
-<example><title>sliceScript.sh</title>
-<programlisting>
-#!/bin/sh
+<example
+><title
+>sliceScript.sh</title>
+<programlisting
+>#!/bin/sh
 
 mode=$1
 archive=$2
@@ -531,40 +636,54 @@ esac
 </programlisting>
 </example>
 
-<para>
-The script is always invoked with four command line arguments:
-</para>
+<para
+>Das Skript wird immer mit vier Befehlszeilenargumenten aufgerufen: </para>
 <itemizedlist>
-<listitem><para>invocation mode</para> </listitem>
-<listitem><para>archive (slice) file name</para> </listitem>
-<listitem><para>target directory/&URL;</para> </listitem>
-<listitem><para>mountpoint of the target directory if it's a local directory, else an empty string</para> </listitem>
+<listitem
+><para
+>Aufrufart</para
+> </listitem>
+<listitem
+><para
+>Dateiname des Archivs oder Archivteils</para
+> </listitem>
+<listitem
+><para
+>Zielordner/&URL;</para
+> </listitem>
+<listitem
+><para
+>Einhängepunkt (mountpoint) des Zielordners, wenn es ein lokaler Ordner ist, ansonsten eine leere Zeichenfolge.</para
+> </listitem>
 </itemizedlist>
 
-<para>
-There are three possible invocation modes:
-</para>
+<para
+>Es gibt drei verschiedene Aufrufarten: </para>
 
 <para>
 <itemizedlist>
 
-<listitem><para>slice_init</para>
-<para>called before a new archive slice is being created on disc</para>
+<listitem
+><para
+>slice_init</para>
+<para
+>wird aufgerufen, bevor ein neuer Archivteil auf der Festplatte erzeugt wird</para>
  </listitem>
 
-<listitem><para>slice_closed</para>
-<para>called after an archive slice has been created, but before it has been put into
-the target directory</para>
-<para>
-This can be used if you want to copy the archive slice to some additional place, &eg;
-the archive is sent to the main server (via a target &URL;), but you want to keep the last
-backup also onto the local disc.
-</para>
+<listitem
+><para
+>slice_closed</para>
+<para
+>wird aufgerufen, nachdem ein Archivteil erzeugt wurde, aber bevor dieser in den Zielordner kopiert wurde</para>
+<para
+>Das kann dazu genutzt werden, um &eg; den Archivteil noch zusätzlich an einem anderen Ort zu speichern. Wurde als Ziel ein zentraler Server angegeben (mit einer Ziel-&URL;), aber Sie wollen die letzte Sicherung auch noch auf ihrer lokalen Festplatte zur Verfügung haben. </para>
 </listitem>
 
-<listitem><para>slice_finished</para>
-<para>called after an archive slice has been successfully transferred into the
-target directory</para>
+<listitem
+><para
+>slice_finished</para>
+<para
+>wird aufgerufen, nachdem ein Archivteil erfolgreich in den Zielordner kopiert wurde</para>
 </listitem>
 
 </itemizedlist>
@@ -574,26 +693,24 @@ target directory</para>
 
 <chapter id="credits">
 
-<title>Credits and License</title>
+<title
+>Mitwirkende und Lizenz</title>
 
-<para>
-&kbackup;
-</para>
-<para>
-Program copyright &copy; 2006 - 2009 Martin Koller <email>kollix@aon.at</email><!--FIXME use entities when kbackup depends on kdoctools >= 5.42-->
-</para>
+<para
+>&kbackup; </para>
+<para
+>Programm Copyright &copy; 2006 - 2010 Martin Koller <email
+>kollix@aon.at</email
+> </para>
 
-<para>
-Documentation Copyright &copy; 2006 - 2009 Martin Koller
-</para>
+<para
+>Dokumentation Copyright &copy; 2006 - 2010 Martin Koller </para>
 
-<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-
-&underFDL;               <!-- FDL: do not remove -->
-
-&underGPL;        	 <!-- GPL License -->
-
-</chapter>
+<para
+>Übersetzung Martin Koller<email
+>kollix@aon.at</email
+></para
+> &underFDL; &underGPL; </chapter>
 
 &documentation.index;
 </book>
