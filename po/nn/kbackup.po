@@ -1,21 +1,21 @@
 # Translation of kbackup to Norwegian Nynorsk
 #
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2018, 2019.
-# Karl Ove Hufthammer <karl@huftis.org>, 2018, 2019.
+# Karl Ove Hufthammer <karl@huftis.org>, 2018, 2019, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2019-12-19 10:49+0100\n"
-"Last-Translator: Øystein Steffensen-Alværvik <kjake@posteo.no>\n"
+"PO-Revision-Date: 2023-01-15 11:56+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -60,13 +60,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "Lag ny mappe"
 
 #: Archiver.cxx:464
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Lag"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -219,13 +219,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr ""
+msgstr "Opna fil"
 
 #: Archiver.cxx:952
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr ""
+msgstr "Prøv på nytt"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -608,12 +608,12 @@ msgstr "Ei reservekopiering pågår. Vil du avbryta ho?"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Backup in Progress"
-msgstr ""
+msgstr "Reservekopiering pågår"
 
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Avbryt"
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
