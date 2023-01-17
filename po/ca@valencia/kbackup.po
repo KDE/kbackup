@@ -573,7 +573,7 @@ msgstr "Anomena i guarda el perfil..."
 #: MainWindow.cxx:72
 #, kde-format
 msgid "Profile Settings..."
-msgstr "Configuració del perfil..."
+msgstr "Configureu el perfil..."
 
 #: MainWindow.cxx:75
 #, kde-format
@@ -751,7 +751,7 @@ msgstr "A mida"
 #: SettingsDialog.ui:16
 #, kde-format
 msgid "Profile Settings"
-msgstr "Configuració del perfil"
+msgstr "Configureu el perfil"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:38
