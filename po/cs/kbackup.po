@@ -3,7 +3,7 @@
 #
 # Pavel Fric, 2010.
 # Pavel Fric <fripohled.blogspot.com>, 2011.
-# Vit Pelcak <vit@pelcak.org>, 2018, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2018, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-Language: de_AT\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
