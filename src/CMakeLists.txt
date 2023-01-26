@@ -21,16 +21,16 @@ ki18n_wrap_ui(kbackup MainWidgetBase.ui SettingsDialog.ui)
 target_link_libraries(kbackup
                       Qt${QT_MAJOR_VERSION}::Core
                       Qt${QT_MAJOR_VERSION}::Widgets
-                      KF5::GuiAddons
-                      KF5::I18n
-                      KF5::KIOCore
-                      KF5::KIOFileWidgets
-                      KF5::KIOWidgets
-                      KF5::WidgetsAddons
-                      KF5::XmlGui
-                      KF5::Notifications
-                      KF5::IconThemes
-                      KF5::Archive
+                      KF${KF_MAJOR_VERSION}::GuiAddons
+                      KF${KF_MAJOR_VERSION}::I18n
+                      KF${KF_MAJOR_VERSION}::KIOCore
+                      KF${KF_MAJOR_VERSION}::KIOFileWidgets
+                      KF${KF_MAJOR_VERSION}::KIOWidgets
+                      KF${KF_MAJOR_VERSION}::WidgetsAddons
+                      KF${KF_MAJOR_VERSION}::XmlGui
+                      KF${KF_MAJOR_VERSION}::Notifications
+                      KF${KF_MAJOR_VERSION}::IconThemes
+                      KF${KF_MAJOR_VERSION}::Archive
 )
 
 install(TARGETS kbackup ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
