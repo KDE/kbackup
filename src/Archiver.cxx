@@ -967,10 +967,7 @@ bool Archiver::getNextSlice()
 
 void Archiver::emitArchiveError()
 {
-  QString err;
-
-  if ( archive->device() )
-    err = archive->device()->errorString();
+  QString err = archive->errorString();
 
   if ( err.isEmpty() )
   {
@@ -979,7 +976,7 @@ void Archiver::emitArchiveError()
   else
   {
     Q_EMIT warning(i18n("Could not write to archive.\n"
-                      "The operating system reports: %1", err));
+                        "The operating system reports: %1", err));
   }
 }
 
