@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-01-27 01:02+0000\n"
 "PO-Revision-Date: 2022-12-08 22:23+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -225,12 +225,12 @@ msgctxt "@action:button"
 msgid "Retry"
 msgstr "Berriz saiatu"
 
-#: Archiver.cxx:977
+#: Archiver.cxx:974
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Ezin da artxibora idatzi. Beharbada euskarria beteta dago."
 
-#: Archiver.cxx:981
+#: Archiver.cxx:978
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -239,12 +239,12 @@ msgstr ""
 "Ezin izan da artxibora idatzi.\n"
 "Sistema eragileak jakinarazi du: %1"
 
-#: Archiver.cxx:1000
+#: Archiver.cxx:997
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "...iragazitako %1 direktorioa baztertzen"
 
-#: Archiver.cxx:1011
+#: Archiver.cxx:1008
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -253,12 +253,12 @@ msgstr ""
 "Ezin izan da direktorioaren informazioa lortu: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1021
+#: Archiver.cxx:1018
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "'%1' direktorioa ez da irakurgarria. Baztertzen."
 
-#: Archiver.cxx:1037
+#: Archiver.cxx:1034
 #, kde-format
 msgid ""
 "Could not write directory '%1' to archive.\n"
@@ -267,7 +267,7 @@ msgstr ""
 "Ezin izan da '%1' direktorioa artxibora idatzi.\n"
 "Behar bada euskarria beteta dago."
 
-#: Archiver.cxx:1158 Archiver.cxx:1239
+#: Archiver.cxx:1155 Archiver.cxx:1236
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -276,7 +276,7 @@ msgstr ""
 "Ezin izan da lortu fitxategiari buruzko informazioa: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1186 Archiver.cxx:1283
+#: Archiver.cxx:1183 Archiver.cxx:1280
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -285,17 +285,17 @@ msgstr ""
 "Ezin izan da '%1' fitxategitik irakurri\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1253
+#: Archiver.cxx:1250
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "Ezin da '%1' fitxategia irakurtzeko ireki."
 
-#: Archiver.cxx:1316
+#: Archiver.cxx:1313
 #, kde-format
 msgid "...archiving file %1"
 msgstr "...%1 fitxategia artxibatzen"
 
-#: Archiver.cxx:1354
+#: Archiver.cxx:1351
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -304,7 +304,7 @@ msgstr ""
 "Ezin izan da fitxategia irakurri: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1368
+#: Archiver.cxx:1365
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -313,17 +313,17 @@ msgstr ""
 "Ezin izan da sortu konprimitzeko aldiuneko fitxategia: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1393
+#: Archiver.cxx:1390
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "Ezin izan da idatzi aldi baterako fitxategira"
 
-#: Archiver.cxx:1414
+#: Archiver.cxx:1411
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...%1 fitxategia konprimitzen"
 
-#: Archiver.cxx:1458
+#: Archiver.cxx:1455
 #, kde-format
 msgid "WARNING:"
 msgstr "ABISUA:"

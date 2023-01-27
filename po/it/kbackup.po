@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-01-27 01:02+0000\n"
 "PO-Revision-Date: 2022-12-08 00:19+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -222,12 +222,12 @@ msgctxt "@action:button"
 msgid "Retry"
 msgstr "Riprova"
 
-#: Archiver.cxx:977
+#: Archiver.cxx:974
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Impossibile scrivere sull'archivio. Forse il supporto è pieno."
 
-#: Archiver.cxx:981
+#: Archiver.cxx:978
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -236,12 +236,12 @@ msgstr ""
 "Impossibile scrivere nell'archivio.\n"
 "Il sistema operativo riporta: %1"
 
-#: Archiver.cxx:1000
+#: Archiver.cxx:997
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "...esclusione della cartella filtrata %1"
 
-#: Archiver.cxx:1011
+#: Archiver.cxx:1008
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -250,12 +250,12 @@ msgstr ""
 "Impossibile ottenere informazioni sulla cartella: %1\n"
 "Il sistema operativo riporta: %2"
 
-#: Archiver.cxx:1021
+#: Archiver.cxx:1018
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "La cartella «%1» non è leggibile. Viene saltata."
 
-#: Archiver.cxx:1037
+#: Archiver.cxx:1034
 #, kde-format
 msgid ""
 "Could not write directory '%1' to archive.\n"
@@ -264,7 +264,7 @@ msgstr ""
 "Impossibile scrivere la cartella «%1» sull'archivio.\n"
 "Forse il supporto è pieno."
 
-#: Archiver.cxx:1158 Archiver.cxx:1239
+#: Archiver.cxx:1155 Archiver.cxx:1236
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -273,7 +273,7 @@ msgstr ""
 "Impossibile ottenere informazioni sul file: %1\n"
 "Il sistema operativo riporta: %2"
 
-#: Archiver.cxx:1186 Archiver.cxx:1283
+#: Archiver.cxx:1183 Archiver.cxx:1280
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -282,17 +282,17 @@ msgstr ""
 "Impossibile leggere dal file: «%1»\n"
 "Il sistema operativo riporta: %2"
 
-#: Archiver.cxx:1253
+#: Archiver.cxx:1250
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "Impossibile aprire il file «%1» in lettura."
 
-#: Archiver.cxx:1316
+#: Archiver.cxx:1313
 #, kde-format
 msgid "...archiving file %1"
 msgstr "...archiviazione del file %1"
 
-#: Archiver.cxx:1354
+#: Archiver.cxx:1351
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -301,7 +301,7 @@ msgstr ""
 "Impossibile leggere il file: %1\n"
 "Il sistema operativo riporta: %2"
 
-#: Archiver.cxx:1368
+#: Archiver.cxx:1365
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -310,17 +310,17 @@ msgstr ""
 "Impossibile creare un file temporaneo per la compressione: %1\n"
 "Il sistema operativo riporta: %2"
 
-#: Archiver.cxx:1393
+#: Archiver.cxx:1390
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "Impossibile scrivere nel file temporaneo"
 
-#: Archiver.cxx:1414
+#: Archiver.cxx:1411
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...compressione file %1"
 
-#: Archiver.cxx:1458
+#: Archiver.cxx:1455
 #, kde-format
 msgid "WARNING:"
 msgstr "AVVISO:"
