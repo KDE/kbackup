@@ -33,6 +33,10 @@ target_link_libraries(kbackup
                       KF${KF_MAJOR_VERSION}::Archive
 )
 
+if (TARGET Qt::Core5Compat)
+    target_link_libraries(kbackup Qt::Core5Compat)
+endif()
+
 install(TARGETS kbackup ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 find_package(SharedMimeInfo REQUIRED)
