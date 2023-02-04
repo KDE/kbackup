@@ -1,5 +1,5 @@
 //**************************************************************************
-//   Copyright 2006 - 2022 Martin Koller, kollix@aon.at
+//   Copyright 2006 - 2023 Martin Koller, kollix@aon.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -27,7 +27,6 @@
 #include <kio/udsentry.h>
 #include <KCompressionDevice>
 
-class KTar;
 class QDir;
 class QFileInfo;
 class QFile;
@@ -137,7 +136,7 @@ class Archiver : public QObject
     void addFile(const QFileInfo &info);
 
     enum AddFileStatus { Error, Added, Skipped };
-    AddFileStatus addLocalFile(const QFileInfo &info);
+    AddFileStatus addLocalFile(const QFileInfo &info, struct archive_entry *entry);
 
     bool compressFile(const QString &origName, QFile &comprFile);
 
@@ -166,10 +165,10 @@ class Archiver : public QObject
     QStringList sliceList;
     QString loadedProfile;
 
-    KTar *archive;
-    KIO::filesize_t totalBytes;
-    int totalFiles;
-    int filteredFiles;  // filter or time filter (incremental backup)
+    struct archive *archive = nullptr;
+    KIO::filesize_t totalBytes = 0;
+    int totalFiles = 0;
+    int filteredFiles = 0;  // filter or time filter (incremental backup)
     QElapsedTimer elapsed;
 
     QList<QRegExp> filters;
@@ -177,34 +176,33 @@ class Archiver : public QObject
 
     QUrl targetURL;
     QString baseName;
-    int sliceNum;
-    int maxSliceMBs;
-    bool mediaNeedsChange;
-    bool compressFiles;
+    int sliceNum = 0;
+    int maxSliceMBs = Archiver::UNLIMITED;
+    bool mediaNeedsChange = false;
 
-    int numKeptBackups;
+    int numKeptBackups = Archiver::UNLIMITED;
     KIO::UDSEntryList targetDirList;
 
     QDateTime lastFullBackup;
     QDateTime lastBackup;
-    int fullBackupInterval;
-    bool incrementalBackup;
-    bool forceFullBackup;
+    int fullBackupInterval = 1;
+    bool incrementalBackup = false;
+    bool forceFullBackup = false;
 
-    KIO::filesize_t sliceBytes;
-    KIO::filesize_t sliceCapacity;
+    KIO::filesize_t sliceBytes = 0;
+    KIO::filesize_t sliceCapacity = 0;
 
     QString ext;
-    KCompressionDevice::CompressionType compressionType;
+    KCompressionDevice::CompressionType compressionType = KCompressionDevice::None;
 
     bool interactive;
-    bool cancelled;
-    bool runs;
-    bool skippedFiles;  // did we skip files during backup ?
-    bool verbose;
+    bool cancelled = false;
+    bool runs = false;
+    bool skippedFiles = false;  // did we skip files during backup ?
+    bool verbose = false;
 
     QPointer<KIO::CopyJob> job;
-    int jobResult;
+    int jobResult = 0;
 };
 
 #endif

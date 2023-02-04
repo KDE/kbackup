@@ -18,7 +18,10 @@ target_sources(kbackup PRIVATE
 
 ki18n_wrap_ui(kbackup MainWidgetBase.ui SettingsDialog.ui)
 
+find_package(LibArchive REQUIRED)
+
 target_link_libraries(kbackup
+                      archive
                       Qt${QT_MAJOR_VERSION}::Core
                       Qt${QT_MAJOR_VERSION}::Widgets
                       KF${KF_MAJOR_VERSION}::GuiAddons
