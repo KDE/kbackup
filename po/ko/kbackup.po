@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 01:02+0000\n"
+"POT-Creation-Date: 2023-02-05 01:01+0000\n"
 "PO-Revision-Date: 2020-10-04 18:48+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,23 +28,23 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "daemul72@gmail.com"
 
-#: Archiver.cxx:437
+#: Archiver.cxx:433
 #, kde-format
 msgid "Nothing selected for backup"
 msgstr "백업하도록 선택한 항목 없음"
 
-#: Archiver.cxx:443
+#: Archiver.cxx:439
 #, kde-format
 msgid "The target dir '%1' is not valid"
 msgstr "대상 dir '%1'이(가) 유효하지 않음"
 
-#: Archiver.cxx:450
+#: Archiver.cxx:446
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "대상 디렉터리 '%1'은(는) 로컬 파일 시스템 디렉터리이고 원격 URL은 없어야 함"
 
-#: Archiver.cxx:463
+#: Archiver.cxx:459
 #, kde-format
 msgid ""
 "The target directory '%1' does not exist.\n"
@@ -55,19 +55,19 @@ msgstr ""
 "\n"
 "제가 만들까요?"
 
-#: Archiver.cxx:464
+#: Archiver.cxx:461
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
 msgstr ""
 
-#: Archiver.cxx:464
+#: Archiver.cxx:462
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr ""
 
-#: Archiver.cxx:468
+#: Archiver.cxx:467
 #, kde-format
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -147,57 +147,57 @@ msgstr "합계: %1, 크기: %2, 기간: %3"
 msgid "...Backup aborted!"
 msgstr "...백업 중단됨!"
 
-#: Archiver.cxx:727
+#: Archiver.cxx:726
 #, kde-format
 msgid "Backup cancelled"
 msgstr "백업 취소됨"
 
-#: Archiver.cxx:744
+#: Archiver.cxx:746
 #, kde-format
 msgid "...finished slice %1"
 msgstr "...완료된 슬라이스 %1"
 
-#: Archiver.cxx:759
+#: Archiver.cxx:761
 #, kde-format
 msgid "...uploading archive %1 to %2"
 msgstr "...보관 파일 %1을(를) %2(으)로 업로드하는 중"
 
-#: Archiver.cxx:777
+#: Archiver.cxx:779
 #, kde-format
 msgid "How shall we proceed with the upload?"
 msgstr "업로드를 어떻게 진행할까요?"
 
-#: Archiver.cxx:777
+#: Archiver.cxx:779
 #, kde-format
 msgid "Upload Failed"
 msgstr "업로드 실패"
 
-#: Archiver.cxx:778
+#: Archiver.cxx:780
 #, kde-format
 msgid "Retry"
 msgstr "다시 시도"
 
-#: Archiver.cxx:778
+#: Archiver.cxx:780
 #, kde-format
 msgid "Change Target"
 msgstr "대상 변경"
 
-#: Archiver.cxx:872
+#: Archiver.cxx:871
 #, kde-format
 msgid "The script '%1' could not be started."
 msgstr "'%1' 스크립트를 시작할 수 없습니다."
 
-#: Archiver.cxx:911
+#: Archiver.cxx:910
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "매체가 꽉 찼습니다. %1번 매체를 넣으십시오."
 
-#: Archiver.cxx:947
+#: Archiver.cxx:954
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
 msgstr "'%1' 파일에 쓰려고 열 수 없습니다."
 
-#: Archiver.cxx:951
+#: Archiver.cxx:958
 #, kde-format
 msgid ""
 "The file '%1' can not be opened for writing.\n"
@@ -208,26 +208,26 @@ msgstr ""
 "\n"
 "다시 시도하시겠습니까?"
 
-#: Archiver.cxx:952
+#: Archiver.cxx:959
 #, fuzzy, kde-format
 #| msgid "Open failed"
 msgctxt "@title"
 msgid "Open File"
 msgstr "열기 실패"
 
-#: Archiver.cxx:952
+#: Archiver.cxx:960
 #, fuzzy, kde-format
 #| msgid "Retry"
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "다시 시도"
 
-#: Archiver.cxx:974
+#: Archiver.cxx:980
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "보관 파일에 쓸 수 없습니다. 매체가 가득 차 있을 수도 있습니다."
 
-#: Archiver.cxx:978
+#: Archiver.cxx:984
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -236,12 +236,12 @@ msgstr ""
 "보관 파일에 쓸 수 없습니다.\n"
 "운영 체제 반환값: %1"
 
-#: Archiver.cxx:997
+#: Archiver.cxx:1003
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "...필터링된 디렉터리 %1 건너뛰기"
 
-#: Archiver.cxx:1008
+#: Archiver.cxx:1014
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -250,21 +250,12 @@ msgstr ""
 "디렉터리 정보를 가져올 수 없음: %1\n"
 "운영 체제 보고서: %2"
 
-#: Archiver.cxx:1018
+#: Archiver.cxx:1024
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "'%1' 디렉터리에서 읽을 수 없습니다. 건너뛰는 중."
 
-#: Archiver.cxx:1034
-#, kde-format
-msgid ""
-"Could not write directory '%1' to archive.\n"
-"Maybe the medium is full."
-msgstr ""
-"'%1' 디렉터리를 파일 보관에 쓸 수 없습니다.\n"
-"매체가 가득 차 있을 수도 있습니다."
-
-#: Archiver.cxx:1155 Archiver.cxx:1236
+#: Archiver.cxx:1124
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -273,7 +264,12 @@ msgstr ""
 "파일 정보를 가져올 수 없음: %1\n"
 "운영 체제 반환값: %2"
 
-#: Archiver.cxx:1183 Archiver.cxx:1280
+#: Archiver.cxx:1135
+#, kde-format
+msgid "Can not archive file type 'socket': %1\n"
+msgstr ""
+
+#: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -282,17 +278,17 @@ msgstr ""
 "'%1' 파일에서 읽을 수 없습니다.\n"
 "운영 체제 반환값: %2"
 
-#: Archiver.cxx:1250
+#: Archiver.cxx:1267
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "'%1' 파일에서 읽으려고 열 수 없습니다."
 
-#: Archiver.cxx:1313
+#: Archiver.cxx:1334
 #, kde-format
 msgid "...archiving file %1"
 msgstr "...파일 %1 보관 중"
 
-#: Archiver.cxx:1351
+#: Archiver.cxx:1367
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -301,7 +297,7 @@ msgstr ""
 "파일을 읽을 수 없음: %1\n"
 "운영 체제 반환값: %2"
 
-#: Archiver.cxx:1365
+#: Archiver.cxx:1381
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -310,17 +306,17 @@ msgstr ""
 "압축할 임시 파일을 만들 수 없음: %1\n"
 "운영 체제 반환값: %2"
 
-#: Archiver.cxx:1390
+#: Archiver.cxx:1409
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "임시 파일에 쓸 수 없음"
 
-#: Archiver.cxx:1411
+#: Archiver.cxx:1430
 #, kde-format
 msgid "...compressing file %1"
 msgstr "... 파일 %1 압축 중"
 
-#: Archiver.cxx:1455
+#: Archiver.cxx:1475
 #, kde-format
 msgid "WARNING:"
 msgstr "경고:"
@@ -869,3 +865,10 @@ msgstr "파일 압축"
 #, kde-format
 msgid "backup"
 msgstr "백업"
+
+#~ msgid ""
+#~ "Could not write directory '%1' to archive.\n"
+#~ "Maybe the medium is full."
+#~ msgstr ""
+#~ "'%1' 디렉터리를 파일 보관에 쓸 수 없습니다.\n"
+#~ "매체가 가득 차 있을 수도 있습니다."

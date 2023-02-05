@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 01:02+0000\n"
+"POT-Creation-Date: 2023-02-05 01:01+0000\n"
 "PO-Revision-Date: 2022-12-15 11:37-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -31,24 +31,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "marciopanto@gmail.com, elchevive@opensuse.org"
 
-#: Archiver.cxx:437
+#: Archiver.cxx:433
 #, kde-format
 msgid "Nothing selected for backup"
 msgstr "Nada selecionado para a cópia de segurança"
 
-#: Archiver.cxx:443
+#: Archiver.cxx:439
 #, kde-format
 msgid "The target dir '%1' is not valid"
 msgstr "A pasta de destino %1 não é válida"
 
-#: Archiver.cxx:450
+#: Archiver.cxx:446
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "A pasta de destino '%1' deve ser uma pasta do sistema local de arquivos e "
 "não uma URL remota"
 
-#: Archiver.cxx:463
+#: Archiver.cxx:459
 #, kde-format
 msgid ""
 "The target directory '%1' does not exist.\n"
@@ -59,19 +59,19 @@ msgstr ""
 "\n"
 "Devo criá-la?"
 
-#: Archiver.cxx:464
+#: Archiver.cxx:461
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
 msgstr "Criar pasta"
 
-#: Archiver.cxx:464
+#: Archiver.cxx:462
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Criar"
 
-#: Archiver.cxx:468
+#: Archiver.cxx:467
 #, kde-format
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -154,57 +154,57 @@ msgstr "Total: Arquivos: %1, Tamanho: %2, Duração: %3"
 msgid "...Backup aborted!"
 msgstr "...Cópia de segurança cancelada!"
 
-#: Archiver.cxx:727
+#: Archiver.cxx:726
 #, kde-format
 msgid "Backup cancelled"
 msgstr "Cópia de segurança cancelada"
 
-#: Archiver.cxx:744
+#: Archiver.cxx:746
 #, kde-format
 msgid "...finished slice %1"
 msgstr "...concluída a divisão %1"
 
-#: Archiver.cxx:759
+#: Archiver.cxx:761
 #, kde-format
 msgid "...uploading archive %1 to %2"
 msgstr "...enviando arquivo %1 para %2"
 
-#: Archiver.cxx:777
+#: Archiver.cxx:779
 #, kde-format
 msgid "How shall we proceed with the upload?"
 msgstr "Como devemos proceder com o envio?"
 
-#: Archiver.cxx:777
+#: Archiver.cxx:779
 #, kde-format
 msgid "Upload Failed"
 msgstr "Falha no envio"
 
-#: Archiver.cxx:778
+#: Archiver.cxx:780
 #, kde-format
 msgid "Retry"
 msgstr "Tentar novamente"
 
-#: Archiver.cxx:778
+#: Archiver.cxx:780
 #, kde-format
 msgid "Change Target"
 msgstr "Alterar destino"
 
-#: Archiver.cxx:872
+#: Archiver.cxx:871
 #, kde-format
 msgid "The script '%1' could not be started."
 msgstr "O script '%1' não pôde ser iniciado."
 
-#: Archiver.cxx:911
+#: Archiver.cxx:910
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "O disco está cheio. Insira o disco Nr. %1"
 
-#: Archiver.cxx:947
+#: Archiver.cxx:954
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
 msgstr "O arquivo '%1' não pode ser aberto para escrita."
 
-#: Archiver.cxx:951
+#: Archiver.cxx:958
 #, kde-format
 msgid ""
 "The file '%1' can not be opened for writing.\n"
@@ -215,24 +215,24 @@ msgstr ""
 "\n"
 "Você deseja tentar novamente?"
 
-#: Archiver.cxx:952
+#: Archiver.cxx:959
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: Archiver.cxx:952
+#: Archiver.cxx:960
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Repetir"
 
-#: Archiver.cxx:974
+#: Archiver.cxx:980
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Não foi possível escrever para o arquivo. Talvez o disco esteja cheio."
 
-#: Archiver.cxx:978
+#: Archiver.cxx:984
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -241,12 +241,12 @@ msgstr ""
 "Não foi possível escrever no arquivo.\n"
 "O sistema operacional reportou: %1"
 
-#: Archiver.cxx:997
+#: Archiver.cxx:1003
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "...ignorando a pasta filtrado %1"
 
-#: Archiver.cxx:1008
+#: Archiver.cxx:1014
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -255,21 +255,12 @@ msgstr ""
 "Não foi possível obter informações da pasta: %1\n"
 "O sistema operacional reportou: %2"
 
-#: Archiver.cxx:1018
+#: Archiver.cxx:1024
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "A pasta '%1' não está acessível. Ignorando."
 
-#: Archiver.cxx:1034
-#, kde-format
-msgid ""
-"Could not write directory '%1' to archive.\n"
-"Maybe the medium is full."
-msgstr ""
-"Não foi possível escrever na pasta '%1' para arquivar.\n"
-"Talvez o disco esteja cheio."
-
-#: Archiver.cxx:1155 Archiver.cxx:1236
+#: Archiver.cxx:1124
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -278,7 +269,12 @@ msgstr ""
 "Não foi possível obter informações do arquivo: %1\n"
 "O sistema operacional reportou: %2"
 
-#: Archiver.cxx:1183 Archiver.cxx:1280
+#: Archiver.cxx:1135
+#, kde-format
+msgid "Can not archive file type 'socket': %1\n"
+msgstr ""
+
+#: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -287,17 +283,17 @@ msgstr ""
 "Não foi possível ler do arquivo: '%1'\n"
 "O sistema operacional reportou: %2"
 
-#: Archiver.cxx:1250
+#: Archiver.cxx:1267
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "Não foi possível abrir o arquivo '%1' para leitura."
 
-#: Archiver.cxx:1313
+#: Archiver.cxx:1334
 #, kde-format
 msgid "...archiving file %1"
 msgstr "...armazenando o arquivo %1"
 
-#: Archiver.cxx:1351
+#: Archiver.cxx:1367
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -306,7 +302,7 @@ msgstr ""
 "Não foi possível ler o arquivo: %1\n"
 "O sistema operacional reportou: %2"
 
-#: Archiver.cxx:1365
+#: Archiver.cxx:1381
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -315,17 +311,17 @@ msgstr ""
 "Não foi possível criar um arquivo temporário para compressão: %1\n"
 "O sistema operacional reportou: %2"
 
-#: Archiver.cxx:1390
+#: Archiver.cxx:1409
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "Não foi possível escrever no arquivo temporário"
 
-#: Archiver.cxx:1411
+#: Archiver.cxx:1430
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...comprimindo arquivo %1"
 
-#: Archiver.cxx:1455
+#: Archiver.cxx:1475
 #, kde-format
 msgid "WARNING:"
 msgstr "AVISO:"
@@ -881,3 +877,10 @@ msgstr "Comprimir arquivos"
 #, kde-format
 msgid "backup"
 msgstr "cópia de segurança"
+
+#~ msgid ""
+#~ "Could not write directory '%1' to archive.\n"
+#~ "Maybe the medium is full."
+#~ msgstr ""
+#~ "Não foi possível escrever na pasta '%1' para arquivar.\n"
+#~ "Talvez o disco esteja cheio."
