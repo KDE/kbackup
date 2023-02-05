@@ -12,7 +12,7 @@
 
 #include <QWidget>
 #include <QTime>
-#include "kio/global.h"
+#include <kio/global.h>
 #include <ui_MainWidgetBase.h>
 
 class Selector;
