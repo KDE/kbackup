@@ -1,16 +1,16 @@
 # Translation of kbackup.po to Catalan
-# Copyright (C) 2018-2022 This_file_is_part_of_KDE
+# Copyright (C) 2018-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2018.
-# Josep M. Ferrer <txemaq@gmail.com>, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-05 01:01+0000\n"
-"PO-Revision-Date: 2022-12-07 11:15+0100\n"
+"PO-Revision-Date: 2023-02-05 10:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -271,7 +271,7 @@ msgstr ""
 #: Archiver.cxx:1135
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "No es pot arxivar el tipus de fitxer «socket»: %1\n"
 
 #: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
@@ -876,10 +876,3 @@ msgstr "Comprimeix els fitxers"
 #, kde-format
 msgid "backup"
 msgstr "Còpia de seguretat"
-
-#~ msgid ""
-#~ "Could not write directory '%1' to archive.\n"
-#~ "Maybe the medium is full."
-#~ msgstr ""
-#~ "No s'ha pogut escriure el directori «%1» a l'arxiu.\n"
-#~ "Potser el suport està ple."
