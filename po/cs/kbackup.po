@@ -859,10 +859,3 @@ msgstr "Komprimovat soubory"
 #, kde-format
 msgid "backup"
 msgstr "záloha"
-
-#~ msgid ""
-#~ "Could not write directory '%1' to archive.\n"
-#~ "Maybe the medium is full."
-#~ msgstr ""
-#~ "Adresář '%1' se nepodařilo zapsat do archivu.\n"
-#~ "Je možné, že nosič je plný."
