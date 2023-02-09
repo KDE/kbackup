@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-04 00:49+0000\n"
-"PO-Revision-Date: 2022-10-10 09:17+0200\n"
+"PO-Revision-Date: 2023-02-08 08:17+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,12 +31,12 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: Archiver.cxx:437
 #, kde-format
 msgid "Nothing selected for backup"
-msgstr ""
+msgstr "მარქაფისთვის მონიშნული არაფერი არაა"
 
 #: Archiver.cxx:443
 #, kde-format
 msgid "The target dir '%1' is not valid"
-msgstr ""
+msgstr "სამიზნე საქაღალდე '%1' არასწორია"
 
 #: Archiver.cxx:450
 #, kde-format
@@ -61,7 +61,7 @@ msgstr ""
 #: Archiver.cxx:475
 #, kde-format
 msgid "The target dir does not exist"
-msgstr ""
+msgstr "სამიზნე საქაღალდე არ არსებობს"
 
 #: Archiver.cxx:548
 #, kde-format
@@ -71,7 +71,7 @@ msgstr ""
 #: Archiver.cxx:606
 #, kde-format
 msgid "...deleting %1"
-msgstr ""
+msgstr "...%1-ის წაშლა"
 
 #: Archiver.cxx:630
 #, kde-format
@@ -87,7 +87,7 @@ msgstr ""
 #: Archiver.cxx:657
 #, kde-format
 msgid "-- Filtered Files: %1"
-msgstr ""
+msgstr "-- გაფილტრული ფაილები: %1"
 
 #: Archiver.cxx:660
 #, kde-format
@@ -97,7 +97,7 @@ msgstr ""
 #: Archiver.cxx:662
 #, kde-format
 msgid "-- Backup successfully finished --"
-msgstr ""
+msgstr "-- მარქაფი წარმატებით დასრულდა --"
 
 #: Archiver.cxx:668
 #, kde-format
@@ -121,7 +121,7 @@ msgstr ""
 #: Archiver.cxx:699
 #, kde-format
 msgid "...Backup aborted!"
-msgstr ""
+msgstr "...მარქაფი გაუქმდა!"
 
 #: Archiver.cxx:727
 #, kde-format
@@ -156,7 +156,7 @@ msgstr "გამეორება"
 #: Archiver.cxx:778
 #, kde-format
 msgid "Change Target"
-msgstr ""
+msgstr "სამიზნის შეცვლა"
 
 #: Archiver.cxx:872
 #, kde-format
@@ -296,7 +296,7 @@ msgstr ""
 #: main.cxx:48
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
-msgstr ""
+msgstr "(c) 2006 - 2018 Martin Koller"
 
 #: main.cxx:52
 #, kde-format
@@ -311,7 +311,7 @@ msgstr "პროგრამისტი"
 #: main.cxx:60
 #, kde-format
 msgid "Start with given profile."
-msgstr ""
+msgstr "მითითებული პროფილით დაწყება."
 
 #: main.cxx:62
 #, kde-format
@@ -511,12 +511,12 @@ msgstr "პროფილის მორგება..."
 #: MainWindow.cxx:75
 #, kde-format
 msgid "Enable All Messages"
-msgstr ""
+msgstr "ყველა შეტყობინების ჩართვა"
 
 #: MainWindow.cxx:77
 #, kde-format
 msgid "Dock in System Tray"
-msgstr ""
+msgstr "სისტემის კუთხეში ჩაკეცვა"
 
 #: MainWindow.cxx:81
 #, kde-format
@@ -531,17 +531,17 @@ msgstr ""
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
 msgid "Select Profile"
-msgstr ""
+msgstr "აირჩიეთ პროფილი"
 
 #: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
-msgstr ""
+msgstr "KBackup-ის პროფილი (*.kbp)"
 
 #: MainWindow.cxx:213 MainWindow.cxx:285
 #, kde-format
 msgid "Open failed"
-msgstr ""
+msgstr "გახსნის შეცდომა"
 
 #: MainWindow.cxx:262
 #, kde-format
@@ -553,7 +553,7 @@ msgstr ""
 #: MainWindow.cxx:265
 #, kde-format
 msgid "Profile exists"
-msgstr ""
+msgstr "პროფილი არსებობს"
 
 #: MainWindow.cxx:282
 #, kde-format
@@ -566,6 +566,8 @@ msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
 msgstr ""
+"ფაილი: %1 ზომა: %2 მბ\n"
+"%3"
 
 #: Selector.cxx:257
 #, kde-format
@@ -610,7 +612,7 @@ msgstr "წაშლა"
 #: Selector.cxx:619
 #, kde-format
 msgid "Could not delete directory '%1'."
-msgstr ""
+msgstr "საქაღალდის (\"%1\") წაშლის შეცდომა."
 
 #: Selector.cxx:628
 #, kde-format
@@ -618,6 +620,8 @@ msgid ""
 "Could not delete file '%1'.\n"
 "Reason: %2"
 msgstr ""
+"ფაილის ('%1') წაშლის შეცდომა.\n"
+"მიზეზი: %2"
 
 #: Selector.cxx:696
 #, kde-format
@@ -688,7 +692,7 @@ msgstr ""
 #: SettingsDialog.ui:48
 #, kde-format
 msgid "Exclude Paths Filter:"
-msgstr ""
+msgstr "გამოსარიცხი ბილიკების ფილტრი:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: SettingsDialog.ui:57
@@ -708,7 +712,7 @@ msgstr ""
 #: SettingsDialog.ui:77
 #, kde-format
 msgid "Full Backup Interval"
-msgstr ""
+msgstr "სრული მარქაფის ინტერვალი"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:84
@@ -732,7 +736,7 @@ msgstr " დღე"
 #: SettingsDialog.ui:105
 #, kde-format
 msgid "Archive Prefix:"
-msgstr ""
+msgstr "არქივის პრეფიქსი:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
 #: SettingsDialog.ui:115
@@ -746,7 +750,7 @@ msgstr ""
 #: SettingsDialog.ui:122
 #, kde-format
 msgid "Maximum Archive Size:"
-msgstr ""
+msgstr "არქივის მაქსიმალური ზომა:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
 #: SettingsDialog.ui:139
@@ -758,7 +762,7 @@ msgstr " მბ"
 #: SettingsDialog.ui:157
 #, kde-format
 msgid "Exclude Filename Filter:"
-msgstr ""
+msgstr "გამოსარიცხი ფაილების სახელის ფილტრი:"
 
 #. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
 #: SettingsDialog.ui:164
