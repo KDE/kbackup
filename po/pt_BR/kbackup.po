@@ -4,13 +4,13 @@
 #
 # Carlos Gonçalves <mail@cgoncalves.info>, 2006, 2007, 2009.
 # Márcio Moraes <marciopanto@gmail.com>, 2009.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2018, 2019, 2020, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2018, 2019, 2020, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-05 01:01+0000\n"
-"PO-Revision-Date: 2022-12-15 11:37-0300\n"
+"PO-Revision-Date: 2023-02-14 10:52-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -272,7 +272,7 @@ msgstr ""
 #: Archiver.cxx:1135
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "Não foi possível arquivar o tipo de arquivo 'socket': %1\n"
 
 #: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
