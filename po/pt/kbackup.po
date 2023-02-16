@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-05 01:01+0000\n"
-"PO-Revision-Date: 2022-12-12 17:27+0000\n"
+"PO-Revision-Date: 2023-02-15 15:12+0000\n"
 "Last-Translator: Carlos Gonçalves <mail@cgoncalves.info>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -270,7 +270,7 @@ msgstr ""
 #: Archiver.cxx:1135
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "Não é possível arquivar um ficheiro do tipo 'socket': %1\n"
 
 #: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
@@ -875,10 +875,3 @@ msgstr "Comprimir os Ficheiros"
 #, kde-format
 msgid "backup"
 msgstr "cópia-segurança"
-
-#~ msgid ""
-#~ "Could not write directory '%1' to archive.\n"
-#~ "Maybe the medium is full."
-#~ msgstr ""
-#~ "Não foi possível gravar a pasta '%1' no pacote.\n"
-#~ "Talvez o disco esteja cheio."
