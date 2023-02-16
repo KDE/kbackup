@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-04 00:49+0000\n"
-"PO-Revision-Date: 2023-02-07 11:05\n"
+"PO-Revision-Date: 2023-02-15 11:07\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -178,7 +178,7 @@ msgstr "介质已满。请插入介质编号 %1"
 #: Archiver.cxx:947
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
-msgstr "无法写入文件 “%1”。"
+msgstr "无法打开文件“%1”进行写入。"
 
 #: Archiver.cxx:951
 #, kde-format
@@ -187,9 +187,9 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
-"无法写入文件 “%1”。\n"
+"无法打开文件“%1”进行写入。\n"
 "\n"
-"是否需要重试？"
+"您想要重试吗？"
 
 #: Archiver.cxx:977
 #, kde-format
@@ -252,7 +252,7 @@ msgstr ""
 #: Archiver.cxx:1253
 #, kde-format
 msgid "Could not open file '%1' for reading."
-msgstr "无法读取文件 “%1”。"
+msgstr "无法打开文件“%1”进行读取。"
 
 #: Archiver.cxx:1316
 #, kde-format
@@ -369,7 +369,7 @@ msgstr "在自动/自动后台模式，强制备份为完整备份，而不是�
 #: main.cxx:151 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
-msgstr "无法读取配置文件 “%1”：%2"
+msgstr "无法打开配置文件“%1”进行读取：%2"
 
 #: MainWidget.cxx:68
 #, kde-format
@@ -582,7 +582,7 @@ msgstr "配置文件已存在"
 #: MainWindow.cxx:282
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
-msgstr "无法写入配置文件 “%1”：%2"
+msgstr "无法打开配置文件“%1”进行写入：%2"
 
 #: MainWindow.cxx:358
 #, kde-format
