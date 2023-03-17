@@ -4,13 +4,13 @@
 #
 # Martin Koller <kollix@aon.at>, 2006 - 2010.
 # Burkhard Lück <lueck@hube-lueck.de>, 2018.
-# Frederik Schwarzer <schwarzer@kde.org>, 2018, 2022.
+# Frederik Schwarzer <schwarzer@kde.org>, 2018, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-05 01:01+0000\n"
-"PO-Revision-Date: 2022-12-19 10:27+0100\n"
+"PO-Revision-Date: 2023-03-12 19:56+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -271,7 +271,7 @@ msgstr ""
 #: Archiver.cxx:1135
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "Dateityp „Socket“ kann nicht archiviert werden: %1\n"
 
 #: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
