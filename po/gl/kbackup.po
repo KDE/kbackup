@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2018, 2019, 2023.
 #
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-05 01:01+0000\n"
-"PO-Revision-Date: 2019-09-29 09:24+0200\n"
+"PO-Revision-Date: 2023-04-30 11:43+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -59,13 +59,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "Crear un directorio"
 
 #: Archiver.cxx:462
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Crear"
 
 #: Archiver.cxx:467
 #, kde-format
@@ -74,7 +74,7 @@ msgid ""
 "The operating system reports: %2"
 msgstr ""
 "Non se puido crear o directorio de destino «%1».\n"
-"O sistema operativo informa do segunte: %2"
+"O sistema operativo informa do seguinte: %2"
 
 #: Archiver.cxx:475
 #, kde-format
@@ -211,18 +211,16 @@ msgstr ""
 "Quere intentalo de novo?"
 
 #: Archiver.cxx:959
-#, fuzzy, kde-format
-#| msgid "Open failed"
+#, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr "A apertura fallou."
+msgstr "Abrir un ficheiro"
 
 #: Archiver.cxx:960
-#, fuzzy, kde-format
-#| msgid "Retry"
+#, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr "Intentalo de novo"
+msgstr "Intentar de novo"
 
 #: Archiver.cxx:980
 #, kde-format
@@ -269,7 +267,7 @@ msgstr ""
 #: Archiver.cxx:1135
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "Non se pode arquivar o tipo de ficheiro «socket»: %1\n"
 
 #: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
@@ -402,7 +400,7 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
 msgstr ""
-"Nos modos aumáticos en primeiro ou segundo plano facer que a copia de "
+"Nos modos automáticos en primeiro ou segundo plano facer que a copia de "
 "seguranza sexa completa en vez de basearse na configuración do perfil."
 
 #: main.cxx:151 MainWindow.cxx:210
@@ -592,12 +590,12 @@ msgstr "Hai unha copia de seguranza en progreso. Quere interrompela?"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Backup in Progress"
-msgstr ""
+msgstr "Copia de seguridade en progreso…"
 
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Interromper"
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
