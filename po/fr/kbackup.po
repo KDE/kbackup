@@ -6,7 +6,7 @@
 # Alain Portal <alain.portal@univ-montp2.fr>, 2006, 2007, 2010, 2011.
 # Simon Depiets <sdepiets@gmail.com>, 2018.
 # Xavier Besnard <xavier.besnard@neuf.fr>, 2021, 2022.
-# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
+# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
