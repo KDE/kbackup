@@ -187,7 +187,7 @@ msgstr "Cambiar de destino"
 #: Archiver.cxx:871
 #, kde-format
 msgid "The script '%1' could not be started."
-msgstr "Non se puido iniciar o script «%1»."
+msgstr "Non se puido iniciar o guión «%1»."
 
 #: Archiver.cxx:910
 #, kde-format
