@@ -12,6 +12,7 @@
   <name xml:lang="de">KBackup</name>
   <name xml:lang="el">KBackup</name>
   <name xml:lang="en-GB">KBackup</name>
+  <name xml:lang="eo">KBackup</name>
   <name xml:lang="es">KBackup</name>
   <name xml:lang="et">KBackup</name>
   <name xml:lang="eu">KBackup</name>
@@ -46,6 +47,7 @@
   <summary xml:lang="de">Erstellt Sicherungen als „.tar“-Dateien in einem lokalen Ordner oder einer entfernten URL</summary>
   <summary xml:lang="el">Δημιουργία εφεδρικών αντιγράφων ως αρχεία .tar σε τοπικό φάκελο ή σε απομακρυσμένο URL</summary>
   <summary xml:lang="en-GB">Create backups as .tar files to a local folder or remote URL</summary>
+  <summary xml:lang="eo">Kreu sekurkopiojn kiel .tar-dosieroj al loka dosierujo aŭ fora URL</summary>
   <summary xml:lang="es">Crear copias de seguridad como archivos .tar en una carpeta local o URL remota</summary>
   <summary xml:lang="eu">Sortu babes-kopiak  «.tar»  fitxategi gisa karpeta lokal edo urruneko URL batean</summary>
   <summary xml:lang="fi">Luo varmuuskopioita .tar-tiedostoina paikalliseen kansioon tai etäverkko-osoitteeseen</summary>
@@ -79,6 +81,7 @@
     <p xml:lang="de">KBackup ist ein Programm welches Datensicherung in einer benutzerfreundlichen Weise ermöglicht</p>
     <p xml:lang="el">Το KBackup είναι μια εφαρμογή που σας επιτρέπει να δημιουργήσετε εφεδρικά αντίγραφα με έναν απλό και φιλικό στη χρήση τρόπο</p>
     <p xml:lang="en-GB">KBackup is an application which lets you back up your data in a simple, user friendly way</p>
+    <p xml:lang="eo">KBackup estas aplikaĵo kiu ebligas vin sekurkopii viajn datenojn en facila, uzantema maniero</p>
     <p xml:lang="es">KBackup es una aplicación que le permite hacer copias de seguridad de sus datos de una manera sencilla y fácil de usar</p>
     <p xml:lang="et">KBackup on rakendus, mis lubab hõlpsalt ja kasutajasõbralikult teha oma andmetest varukoopia</p>
     <p xml:lang="eu">KBackup zure datuen babes-kopia era erraz eta atsegin batean egiten  uzten dizun aplikazio bat da.</p>
@@ -112,6 +115,7 @@
     <p xml:lang="de">Funktionen:</p>
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
+    <p xml:lang="eo">Trajtoj:</p>
     <p xml:lang="es">Características:</p>
     <p xml:lang="et">Omadused:</p>
     <p xml:lang="eu">Eginbideak:</p>
