@@ -151,6 +151,7 @@
       <li xml:lang="de">Verwendet Profildateien mit Definition der Dateien und Ordner, die in der Sicherung ein- oder ausgeschlossen werden</li>
       <li xml:lang="el">Χρήση αρχείων προφίλ με ορισμούς για φακέλους και αρχεία που θα αποκλείονται από το εφεδρικό αντίγραφο</li>
       <li xml:lang="en-GB">Using profile files with definitions for Folders and files to be included or excluded from the backup</li>
+      <li xml:lang="eo">Uzante profildosierojn kun difinoj por Dosierujoj kaj dosieroj inkluditaj aŭ ekskluditaj de la sekurkopio</li>
       <li xml:lang="es">Use perfiles con definiciones para las carpetas y archivos a ser incluidos o excluidos de la copia de seguridad</li>
       <li xml:lang="et">Profiilifailide kasutamine, milles sisalduvad kataloogide ja failide definitsioonid määravad, mida varundamisel kaasata või välistada</li>
       <li xml:lang="eu">Profil fitxategiak erabiltzen ditu karpetak eta fitxategiak barneratu edo kanporatzeko definizioekin</li>
@@ -182,6 +183,7 @@
       <li xml:lang="de">Die Sicherung kann auf ein lokal eingehängtes Gerät wie ein ZIP-Laufwerk, einen USB-Stick oder auf eine Adresse (URL) auf einem Fremdrechner gespeichert werden.</li>
       <li xml:lang="el">Ο προορισμός του εφεδρικού αντιγράφου μπορεί να είναι μια τοπικά προσαρτημένη συσκευή όπως μια ZIP ή USB συσκευή, κλπ. ή ένα απομακρυσμένο URL</li>
       <li xml:lang="en-GB">The backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URL</li>
+      <li xml:lang="eo">La sekurkopia celo povas esti aŭ loke muntita aparato kiel ZIP-disko, USB-memoro, ktp. aŭ iu ajn fora URL</li>
       <li xml:lang="es">El objetivo de la copia de seguridad puede ser un dispositivo montado localmente como una memoria USB, una unidad ZIP, etc; o cualquier URL remota</li>
       <li xml:lang="et">Varundamise sihtkoht võib olla kas kohapeal ühendatud seade, näiteks ZIP-ketas, USB-pulk või midagi muud, või ka mujal asuv URL</li>
       <li xml:lang="eu">Babes-kopiaren jomuga bertan muntatutako gailu bat izan daiteke, ZIP unitate bat, USB makil bat, etab. edo urruneko edozein URL</li>
@@ -213,6 +215,7 @@
       <li xml:lang="de">Ausführung automatischer ohne eine grafische Benutzeroberfläche</li>
       <li xml:lang="el">Εκτέλεση αυτοματοποιημένων εργασιών δημιουργίας εφεδρικών αντιγράφων χωρίς τη χρήση γραφικού περιβάλλοντος</li>
       <li xml:lang="en-GB">Running automated backups without using a graphical user interface</li>
+      <li xml:lang="eo">Rulante aŭtomatigitajn sekurkopiojn sen uzi grafikan uzantinterfacon</li>
       <li xml:lang="es">Ejecución automática de copias de seguridad sin usar una interfaz gráfica de usuario</li>
       <li xml:lang="et">Automaatne varundamine ilma graafilise kasutajaliideseta</li>
       <li xml:lang="eu">Babes-kopia automatikoak exekutatzea erabiltzaile-interfaze grafiko bat erabili gabe</li>
