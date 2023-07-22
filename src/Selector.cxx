@@ -794,3 +794,5 @@ void Selector::setShowHiddenFiles(bool show)
 }
 
 //--------------------------------------------------------------------------------
+
+#include "moc_Selector.cpp"

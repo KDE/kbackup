@@ -1491,3 +1491,5 @@ bool Archiver::UDSlessThan(const KIO::UDSEntry &left, const KIO::UDSEntry &right
 }
 
 //--------------------------------------------------------------------------------
+
+#include "moc_Archiver.cpp"

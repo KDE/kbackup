@@ -93,3 +93,5 @@ void SettingsDialog::setMaxMB(int mb)
 }
 
 //--------------------------------------------------------------------------------
+
+#include "moc_SettingsDialog.cpp"

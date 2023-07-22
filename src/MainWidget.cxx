@@ -173,3 +173,5 @@ void MainWidget::setCapacity(KIO::filesize_t bytes)
 }
 
 //--------------------------------------------------------------------------------
+
+#include "moc_MainWidget.cpp"

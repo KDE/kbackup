@@ -480,3 +480,5 @@ void MainWindow::setLoadedProfile(const QString &name)
 }
 
 //--------------------------------------------------------------------------------
+
+#include "moc_MainWindow.cpp"
