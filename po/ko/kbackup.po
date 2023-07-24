@@ -692,7 +692,7 @@ msgstr ""
 #: Selector.cxx:696
 #, kde-format
 msgid "Other Application..."
-msgstr "기타 프로그램..."
+msgstr "기타 앱..."
 
 #: Selector.cxx:698
 #, kde-format
