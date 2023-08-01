@@ -4,20 +4,20 @@
 #
 # Martin Koller <koller@etm.at>, 2007.
 # Mikael Martinsson <mikael.martinsson@jamtnet.se>, 2007.
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2018.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2018, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-05 01:01+0000\n"
-"PO-Revision-Date: 2018-11-27 07:27+0100\n"
+"PO-Revision-Date: 2023-07-24 11:56+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 20.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -62,13 +62,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "Skapa katalog"
 
 #: Archiver.cxx:462
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Skapa"
 
 #: Archiver.cxx:467
 #, kde-format
@@ -212,15 +212,13 @@ msgstr ""
 "Vill du försöka igen?"
 
 #: Archiver.cxx:959
-#, fuzzy, kde-format
-#| msgid "Open failed"
+#, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr "Misslyckades öppna"
+msgstr "Öppna fil"
 
 #: Archiver.cxx:960
-#, fuzzy, kde-format
-#| msgid "Retry"
+#, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Försök igen"
@@ -270,7 +268,7 @@ msgstr ""
 #: Archiver.cxx:1135
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "Kan inte arkivera filtypen 'socket': %1\n"
 
 #: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
@@ -593,12 +591,12 @@ msgstr "En säkerhetskopiering pågår. Vill du avbryta den?"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Backup in Progress"
-msgstr ""
+msgstr "Säkerhetskopiering pågår"
 
 #: MainWindow.cxx:146
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Avbryt"
 
 #: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
 #, kde-format
