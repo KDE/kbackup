@@ -14,6 +14,7 @@ target_sources(kbackup PRIVATE
     MainWidget.hxx
     MainWindow.hxx
     SettingsDialog.hxx
+    kbackup.qrc
     )
 
 ki18n_wrap_ui(kbackup MainWidgetBase.ui SettingsDialog.ui)
@@ -48,7 +49,6 @@ install(FILES kbackup.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 
 install(FILES  org.kde.kbackup.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES  kbackupui.rc DESTINATION ${KDE_INSTALL_KXMLGUIDIR}/kbackup)
 install(FILES org.kde.kbackup.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
