@@ -35,6 +35,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 )
 if (QT_MAJOR_VERSION STREQUAL "6")
     find_package(Qt6Core5Compat)
+    find_package(KF6StatusNotifierItem ${KF_MIN_VERSION} REQUIRED)
 endif()
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     GuiAddons

@@ -31,6 +31,7 @@ Dependencies:
     'frameworks/kiconthemes': '@latest-kf6'
     'frameworks/karchive': '@latest-kf6'
     'frameworks/kwidgetsaddons': '@latest-kf6'
+    'frameworks/kstatusnotifieritem': '@latest-kf6'
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']

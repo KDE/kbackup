@@ -41,6 +41,11 @@ if (TARGET Qt::Core5Compat)
     target_link_libraries(kbackup Qt::Core5Compat)
 endif()
 
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(kbackup KF6::StatusNotifierItem)
+endif()
+
+
 install(TARGETS kbackup ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 find_package(SharedMimeInfo REQUIRED)
