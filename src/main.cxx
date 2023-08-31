@@ -9,8 +9,9 @@
 
 #include <signal.h>
 
+#include <memory>
+
 #include <QApplication>
-#include <QScopedPointer>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QString>
@@ -39,7 +40,7 @@ void sigHandler(int sig)
 
 int main(int argc, char **argv)
 {
-  QScopedPointer<QCoreApplication> app(new QCoreApplication(argc, argv));
+  std::unique_ptr<QCoreApplication> app(new QCoreApplication(argc, argv));
 
   KLocalizedString::setApplicationDomain("kbackup");
 
@@ -83,10 +84,10 @@ int main(int argc, char **argv)
 
   if ( interactive )
   {
-    delete app.take();  // must make explicitly. Only reset() leads to error
+    delete app.release();  // must make explicitly. Only reset() leads to error
     // kf5.kcoreaddons.kaboutdata: Could not initialize the equivalent properties of Q*Application: no instance (yet) existing.
     app.reset(new QApplication(argc, argv));
-    QApplication *qapp = qobject_cast<QApplication *>(app.data());
+    QApplication *qapp = qobject_cast<QApplication *>(app.get());
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qapp->setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 #endif
