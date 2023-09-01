@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-05 01:01+0000\n"
+"POT-Creation-Date: 2023-09-01 00:48+0000\n"
 "PO-Revision-Date: 2023-02-05 09:37+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -337,43 +337,43 @@ msgid "&Settings"
 msgstr "П&араметри"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: main.cxx:46 MainWidgetBase.ui:16
+#: main.cxx:47 MainWidgetBase.ui:16
 #, kde-format
 msgid "KBackup"
 msgstr "KBackup"
 
-#: main.cxx:47
+#: main.cxx:48
 #, kde-format
 msgid "An easy to use backup program"
 msgstr "Проста у користуванні програма для створення резервних копій"
 
-#: main.cxx:48
+#: main.cxx:49
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
 msgstr "© Martin Koller, 2006–2018"
 
-#: main.cxx:52
+#: main.cxx:53
 #, kde-format
 msgid "Martin Koller"
 msgstr "Martin Koller"
 
-#: main.cxx:52
+#: main.cxx:53
 #, kde-format
 msgid "Developer"
 msgstr "Розробник"
 
-#: main.cxx:60
+#: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
 msgstr "Запустити із вказаним профілем."
 
-#: main.cxx:62
+#: main.cxx:63
 #, kde-format
 msgid "Script to run after finishing one archive slice."
 msgstr ""
 "Скрипт, який слід запустити після завершення створення одного зрізу архіву."
 
-#: main.cxx:64
+#: main.cxx:65
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
@@ -381,7 +381,7 @@ msgstr ""
 "Автоматично запустити резервне копіювання із вказаним профілем і перервати "
 "роботу після його завершення."
 
-#: main.cxx:67
+#: main.cxx:68
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile in the background "
@@ -390,7 +390,7 @@ msgstr ""
 "Автоматично запустити резервне копіювання із вказаним профілем у фоновому "
 "режимі (без показу головного вікна) і перервати роботу після його завершення."
 
-#: main.cxx:72
+#: main.cxx:73
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
@@ -398,7 +398,7 @@ msgstr ""
 "У режимі autobg виводити докладні повідомлення щодо кожного файла під час "
 "резервного копіювання."
 
-#: main.cxx:75
+#: main.cxx:76
 #, kde-format
 msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
@@ -407,7 +407,7 @@ msgstr ""
 "У режимі auto/autobg примусово створити повну резервну копію, ігноруючи "
 "параметри профілю."
 
-#: main.cxx:151 MainWindow.cxx:210
+#: main.cxx:152 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Не вдалося відкрити профіль «%1» для читання: %2"

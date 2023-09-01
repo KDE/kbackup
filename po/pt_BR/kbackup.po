@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-05 01:01+0000\n"
+"POT-Creation-Date: 2023-09-01 00:48+0000\n"
 "PO-Revision-Date: 2023-02-14 10:52-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -339,42 +339,42 @@ msgid "&Settings"
 msgstr "Configuraçõe&s"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: main.cxx:46 MainWidgetBase.ui:16
+#: main.cxx:47 MainWidgetBase.ui:16
 #, kde-format
 msgid "KBackup"
 msgstr "KBackup"
 
-#: main.cxx:47
+#: main.cxx:48
 #, kde-format
 msgid "An easy to use backup program"
 msgstr "Um programa de cópia de segurança fácil de usar"
 
-#: main.cxx:48
+#: main.cxx:49
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
 msgstr "(c) 2006 - 2018 Martin Koller"
 
-#: main.cxx:52
+#: main.cxx:53
 #, kde-format
 msgid "Martin Koller"
 msgstr "Martin Koller"
 
-#: main.cxx:52
+#: main.cxx:53
 #, kde-format
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: main.cxx:60
+#: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
 msgstr "Iniciar com um determinado perfil."
 
-#: main.cxx:62
+#: main.cxx:63
 #, kde-format
 msgid "Script to run after finishing one archive slice."
 msgstr "Script a executar após concluída uma divisão de arquivo."
 
-#: main.cxx:64
+#: main.cxx:65
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
@@ -382,7 +382,7 @@ msgstr ""
 "Executar automaticamente a cópia de segurança com o perfil escolhido e "
 "fechar quando concluído."
 
-#: main.cxx:67
+#: main.cxx:68
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile in the background "
@@ -391,7 +391,7 @@ msgstr ""
 "Executar automaticamente a cópia de segurança com o perfil escolhido em "
 "segundo plano (sem exibir uma janela) e fechar quando concluído."
 
-#: main.cxx:72
+#: main.cxx:73
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
@@ -399,7 +399,7 @@ msgstr ""
 "No modo autobg ser detalhado e imprimir cada um dos nomes dos arquivos "
 "durante a cópia de segurança."
 
-#: main.cxx:75
+#: main.cxx:76
 #, kde-format
 msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
@@ -408,7 +408,7 @@ msgstr ""
 "No modo auto/autobg forçar a cópia de segurança a ser uma cópia de segurança "
 "completa ao invés de atuar nas configurações do perfil."
 
-#: main.cxx:151 MainWindow.cxx:210
+#: main.cxx:152 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Não foi possível abrir o perfil '%1' para ler: %2"

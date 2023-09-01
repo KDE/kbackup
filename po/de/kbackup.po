@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-05 01:01+0000\n"
+"POT-Creation-Date: 2023-09-01 00:48+0000\n"
 "PO-Revision-Date: 2023-03-12 19:56+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -338,42 +338,42 @@ msgid "&Settings"
 msgstr "&Einstellungen"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: main.cxx:46 MainWidgetBase.ui:16
+#: main.cxx:47 MainWidgetBase.ui:16
 #, kde-format
 msgid "KBackup"
 msgstr "KBackup"
 
-#: main.cxx:47
+#: main.cxx:48
 #, kde-format
 msgid "An easy to use backup program"
 msgstr "Ein einfach zu bedienendes Sicherungs-Programm"
 
-#: main.cxx:48
+#: main.cxx:49
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
 msgstr "Copyright © 2006-2018 Martin Koller"
 
-#: main.cxx:52
+#: main.cxx:53
 #, kde-format
 msgid "Martin Koller"
 msgstr "Martin Koller"
 
-#: main.cxx:52
+#: main.cxx:53
 #, kde-format
 msgid "Developer"
 msgstr "Entwickler"
 
-#: main.cxx:60
+#: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
 msgstr "Mit angegebenem Profil starten."
 
-#: main.cxx:62
+#: main.cxx:63
 #, kde-format
 msgid "Script to run after finishing one archive slice."
 msgstr "Skript, welches nach der Fertigstellung eines Archivs gestartet wird."
 
-#: main.cxx:64
+#: main.cxx:65
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
@@ -381,7 +381,7 @@ msgstr ""
 "Automatischer Start der Sicherung mit angegebenem Profil und Programmende "
 "nach fertiger Sicherung."
 
-#: main.cxx:67
+#: main.cxx:68
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile in the background "
@@ -390,14 +390,14 @@ msgstr ""
 "Automatischer Start der Sicherung im Hintergrund (ohne Fenster anzuzeigen) "
 "mit angegebenem Profil und Programmende nach fertiger Sicherung."
 
-#: main.cxx:72
+#: main.cxx:73
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
 msgstr ""
 "Jeden einzelnen Dateinamen während der Sicherung im Modus „autobg“ anzeigen."
 
-#: main.cxx:75
+#: main.cxx:76
 #, kde-format
 msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
@@ -406,7 +406,7 @@ msgstr ""
 "Im Modus „auto/autobg“  eine Komplett-Sicherung erzwingen anstatt die Profil-"
 "Einstellung zu berücksichtigen."
 
-#: main.cxx:151 MainWindow.cxx:210
+#: main.cxx:152 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Das Profil „%1“ kann nicht geladen werden: %2"

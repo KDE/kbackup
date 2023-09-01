@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-05 01:01+0000\n"
+"POT-Creation-Date: 2023-09-01 00:48+0000\n"
 "PO-Revision-Date: 2023-02-07 07:37+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -336,42 +336,42 @@ msgid "&Settings"
 msgstr "E&zarpenak"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
-#: main.cxx:46 MainWidgetBase.ui:16
+#: main.cxx:47 MainWidgetBase.ui:16
 #, kde-format
 msgid "KBackup"
 msgstr "Kbabes-kopia"
 
-#: main.cxx:47
+#: main.cxx:48
 #, kde-format
 msgid "An easy to use backup program"
 msgstr "Erabiltzeko erraza den babes-kopia programa bat"
 
-#: main.cxx:48
+#: main.cxx:49
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
 msgstr "(c) 2006 - 2018 Martin Koller"
 
-#: main.cxx:52
+#: main.cxx:53
 #, kde-format
 msgid "Martin Koller"
 msgstr "Martin Koller"
 
-#: main.cxx:52
+#: main.cxx:53
 #, kde-format
 msgid "Developer"
 msgstr "Garatzailea"
 
-#: main.cxx:60
+#: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
 msgstr "Abiatu adierazitako profilarekin."
 
-#: main.cxx:62
+#: main.cxx:63
 #, kde-format
 msgid "Script to run after finishing one archive slice."
 msgstr "Artxibo zati bat amaitu ondoren ibili beharreko script-a."
 
-#: main.cxx:64
+#: main.cxx:65
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
@@ -379,7 +379,7 @@ msgstr ""
 "Automatikoki exekutatu babes-kopia adierazitako proiflarekin eta amaitu "
 "egindakoan."
 
-#: main.cxx:67
+#: main.cxx:68
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile in the background "
@@ -388,7 +388,7 @@ msgstr ""
 "Automatikoki exekutatu babes-kopia adierazitako profilarekin atzealdean "
 "(leihorik erakutsi gabe) eta amaitu egindakoan."
 
-#: main.cxx:72
+#: main.cxx:73
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
@@ -396,7 +396,7 @@ msgstr ""
 "Autobg moduan izan berritsu eta inprimatu fitxategi-izen bakoitza babes-"
 "kopia egiterakoan."
 
-#: main.cxx:75
+#: main.cxx:76
 #, kde-format
 msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
@@ -405,7 +405,7 @@ msgstr ""
 "Auto/autobg moduan behartu babes-kopia osoa izatea profilaren ezarpenen "
 "arabera jokatu ordez."
 
-#: main.cxx:151 MainWindow.cxx:210
+#: main.cxx:152 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Ezin izan da ireki '%1' profila irakurtzeko: %2"
