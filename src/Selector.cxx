@@ -23,11 +23,7 @@
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/OpenUrlJob>
 #include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
 #include <KIO/JobUiDelegateFactory>
-#else
-#include <KIO/JobUiDelegate>
-#endif
 
 #include <QDir>
 #include <QPixmap>
@@ -725,11 +721,7 @@ void Selector::open()
 
   auto *job = new KIO::OpenUrlJob(sourceUrl, window());
   job->setRunExecutables(false);
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
   job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#else
-  job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#endif
   job->start();
 }
 
@@ -750,11 +742,7 @@ void Selector::openWith(QAction *action)
   {
     KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob();
     job->setUrls(QList<QUrl>() << sourceUrl);
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#else
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#endif
     job->start();
     return;
   }
@@ -762,11 +750,7 @@ void Selector::openWith(QAction *action)
   if ( name == QLatin1String("-") )  // File Manager
   {
     KIO::OpenUrlJob *job = new KIO::OpenUrlJob(sourceUrl.adjusted(QUrl::RemoveFilename), QStringLiteral("inode/directory"));
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#else
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#endif
     job->start();
 
     return;
@@ -775,11 +759,7 @@ void Selector::openWith(QAction *action)
   KService::Ptr service = serviceForName[name];
   KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(service);
   job->setUrls(QList<QUrl>() << sourceUrl);
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
   job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#else
-  job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#endif
   job->start();
 }
 

@@ -23,27 +23,23 @@ find_package(LibArchive REQUIRED)
 
 target_link_libraries(kbackup
                       archive
-                      Qt${QT_MAJOR_VERSION}::Core
-                      Qt${QT_MAJOR_VERSION}::Widgets
-                      KF${KF_MAJOR_VERSION}::GuiAddons
-                      KF${KF_MAJOR_VERSION}::I18n
-                      KF${KF_MAJOR_VERSION}::KIOCore
-                      KF${KF_MAJOR_VERSION}::KIOFileWidgets
-                      KF${KF_MAJOR_VERSION}::KIOWidgets
-                      KF${KF_MAJOR_VERSION}::WidgetsAddons
-                      KF${KF_MAJOR_VERSION}::XmlGui
-                      KF${KF_MAJOR_VERSION}::Notifications
-                      KF${KF_MAJOR_VERSION}::IconThemes
-                      KF${KF_MAJOR_VERSION}::Archive
+                      Qt6::Core
+                      Qt6::Widgets
+                      KF6::GuiAddons
+                      KF6::I18n
+                      KF6::KIOCore
+                      KF6::KIOFileWidgets
+                      KF6::KIOWidgets
+                      KF6::WidgetsAddons
+                      KF6::XmlGui
+                      KF6::Notifications
+                      KF6::IconThemes
+                      KF6::Archive
 )
 
-if (TARGET Qt::Core5Compat)
-    target_link_libraries(kbackup Qt::Core5Compat)
-endif()
+target_link_libraries(kbackup Qt::Core5Compat)
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(kbackup KF6::StatusNotifierItem)
-endif()
+target_link_libraries(kbackup KF6::StatusNotifierItem)
 
 
 install(TARGETS kbackup ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
