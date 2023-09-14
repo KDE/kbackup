@@ -45,6 +45,9 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
 )
 ecm_set_disabled_deprecation_versions(QT 6.5.0  KF 5.99.0)
 
+find_package(LibArchive REQUIRED)
+
+find_package(SharedMimeInfo REQUIRED)
 
 add_subdirectory(src)
 

@@ -19,8 +19,6 @@ target_sources(kbackup PRIVATE
 
 ki18n_wrap_ui(kbackup MainWidgetBase.ui SettingsDialog.ui)
 
-find_package(LibArchive REQUIRED)
-
 target_link_libraries(kbackup
                       archive
                       Qt6::Core
@@ -43,8 +41,6 @@ target_link_libraries(kbackup KF6::StatusNotifierItem)
 
 
 install(TARGETS kbackup ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-
-find_package(SharedMimeInfo REQUIRED)
 
 install(FILES kbackup.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
