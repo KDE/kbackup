@@ -27,7 +27,6 @@ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
 )
 find_package(Qt6Core5Compat)
-find_package(KF6StatusNotifierItem ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     GuiAddons
     Notifications
@@ -37,6 +36,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     IconThemes
     Archive
     WidgetsAddons
+    StatusNotifierItem
 )
 find_package(KF6DocTools ${KF_MIN_VERSION})
 set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
@@ -52,7 +52,7 @@ find_package(SharedMimeInfo REQUIRED)
 add_subdirectory(src)
 
 ki18n_install(po)
-if (KF5DocTools_FOUND)
+if (KF6DocTools_FOUND)
     kdoctools_install(po)
     add_subdirectory(doc)
 endif()

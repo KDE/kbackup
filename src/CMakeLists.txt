@@ -23,6 +23,7 @@ target_link_libraries(kbackup
                       archive
                       Qt6::Core
                       Qt6::Widgets
+                      Qt6::Core5Compat
                       KF6::GuiAddons
                       KF6::I18n
                       KF6::KIOCore
@@ -33,11 +34,8 @@ target_link_libraries(kbackup
                       KF6::Notifications
                       KF6::IconThemes
                       KF6::Archive
+                      KF6::StatusNotifierItem
 )
-
-target_link_libraries(kbackup Qt::Core5Compat)
-
-target_link_libraries(kbackup KF6::StatusNotifierItem)
 
 
 install(TARGETS kbackup ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
