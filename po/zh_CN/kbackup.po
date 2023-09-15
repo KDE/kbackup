@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:48+0000\n"
+"POT-Creation-Date: 2023-09-15 01:54+0000\n"
 "PO-Revision-Date: 2023-09-02 02:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -388,7 +388,7 @@ msgid ""
 "on the profile settings."
 msgstr "在自动/自动后台模式，强制备份为完整备份，而不是基于配置设置行动。"
 
-#: main.cxx:152 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "无法打开配置文件“%1”进行读取：%2"
@@ -625,52 +625,52 @@ msgstr ""
 "文件: %1 大小: %2 MB\n"
 "%3"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Name"
 msgstr "名称"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Size"
 msgstr "大小"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Last Modified"
 msgstr "最后更新"
 
-#: Selector.cxx:289
+#: Selector.cxx:285
 #, kde-format
 msgid "Open With"
 msgstr "打开方式"
 
-#: Selector.cxx:297
+#: Selector.cxx:293
 #, kde-format
 msgid "Delete File"
 msgstr "删除文件"
 
-#: Selector.cxx:303
+#: Selector.cxx:299
 #, kde-format
 msgid "Properties..."
 msgstr "属性..."
 
-#: Selector.cxx:607
+#: Selector.cxx:603
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "您真的想删除 “%1” 吗？"
 
-#: Selector.cxx:608
+#: Selector.cxx:604
 #, kde-format
 msgid "Delete"
 msgstr "删除"
 
-#: Selector.cxx:619
+#: Selector.cxx:615
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "无法删除文件夹 “%1”。"
 
-#: Selector.cxx:628
+#: Selector.cxx:624
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -679,12 +679,12 @@ msgstr ""
 "无法删除文件“%1”。\n"
 "原因：%2"
 
-#: Selector.cxx:696
+#: Selector.cxx:692
 #, kde-format
 msgid "Other Application..."
 msgstr "其他应用程序..."
 
-#: Selector.cxx:698
+#: Selector.cxx:694
 #, kde-format
 msgid "File Manager"
 msgstr "文件管理器"

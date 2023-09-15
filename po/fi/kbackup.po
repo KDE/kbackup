@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:48+0000\n"
+"POT-Creation-Date: 2023-09-15 01:54+0000\n"
 "PO-Revision-Date: 2023-03-05 17:27+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -397,7 +397,7 @@ msgstr ""
 "Pakota auto- tai autobg-tilassa täysi varmuuskopio profiiliasetusten "
 "mukaisen toiminnan sijaan."
 
-#: main.cxx:152 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Ei voitu avata profiilia ”%1” luettavaksi: %2"
@@ -634,52 +634,52 @@ msgstr ""
 "Tiedostoja: %1 Koko: %2 Mt\n"
 "%3"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Name"
 msgstr "Nimi"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Size"
 msgstr "Koko"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Last Modified"
 msgstr "Viimeksi muutettu"
 
-#: Selector.cxx:289
+#: Selector.cxx:285
 #, kde-format
 msgid "Open With"
 msgstr "Avaa ohjelmalla"
 
-#: Selector.cxx:297
+#: Selector.cxx:293
 #, kde-format
 msgid "Delete File"
 msgstr "Poista tiedosto"
 
-#: Selector.cxx:303
+#: Selector.cxx:299
 #, kde-format
 msgid "Properties..."
 msgstr "Ominaisuudet…"
 
-#: Selector.cxx:607
+#: Selector.cxx:603
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Haluatko varmasti poistaa kohteen ”%1”?"
 
-#: Selector.cxx:608
+#: Selector.cxx:604
 #, kde-format
 msgid "Delete"
 msgstr "Poista"
 
-#: Selector.cxx:619
+#: Selector.cxx:615
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Ei voitu poistaa kansiota ”%1”."
 
-#: Selector.cxx:628
+#: Selector.cxx:624
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -688,12 +688,12 @@ msgstr ""
 "Ei voitu poistaa tiedostoa ”%1”.\n"
 "Syy: %2"
 
-#: Selector.cxx:696
+#: Selector.cxx:692
 #, kde-format
 msgid "Other Application..."
 msgstr "Muu sovellus…"
 
-#: Selector.cxx:698
+#: Selector.cxx:694
 #, kde-format
 msgid "File Manager"
 msgstr "Tiedostonhallinta"

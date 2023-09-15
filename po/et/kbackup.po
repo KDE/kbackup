@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:48+0000\n"
+"POT-Creation-Date: 2023-09-15 01:54+0000\n"
 "PO-Revision-Date: 2019-11-15 17:42+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -402,7 +402,7 @@ msgstr ""
 "Auto/autobg režiimis täieliku varundamise läbiviimine sõltumata profiili "
 "seadistusest."
 
-#: main.cxx:152 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Profiili '%1' avamine lugemiseks nurjus: %2"
@@ -637,52 +637,52 @@ msgstr ""
 "Faile: %1 Suurus: %2 MB\n"
 "%3"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Name"
 msgstr "Nimi"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Size"
 msgstr "Suurus"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Last Modified"
 msgstr "Viimati muudetud"
 
-#: Selector.cxx:289
+#: Selector.cxx:285
 #, kde-format
 msgid "Open With"
 msgstr "Ava rakendusega"
 
-#: Selector.cxx:297
+#: Selector.cxx:293
 #, kde-format
 msgid "Delete File"
 msgstr "Kustuta fail"
 
-#: Selector.cxx:303
+#: Selector.cxx:299
 #, kde-format
 msgid "Properties..."
 msgstr "Omadused ..."
 
-#: Selector.cxx:607
+#: Selector.cxx:603
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Kas tõesti kustutada '%1'?"
 
-#: Selector.cxx:608
+#: Selector.cxx:604
 #, kde-format
 msgid "Delete"
 msgstr "Kustutamine"
 
-#: Selector.cxx:619
+#: Selector.cxx:615
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Kataloogi '%1' kustutamine nurjus."
 
-#: Selector.cxx:628
+#: Selector.cxx:624
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -691,12 +691,12 @@ msgstr ""
 "Faili '%1' kustutamine nurjus.\n"
 "Põhjus: %2"
 
-#: Selector.cxx:696
+#: Selector.cxx:692
 #, kde-format
 msgid "Other Application..."
 msgstr "Muu rakendus ..."
 
-#: Selector.cxx:698
+#: Selector.cxx:694
 #, kde-format
 msgid "File Manager"
 msgstr "Failihaldur"

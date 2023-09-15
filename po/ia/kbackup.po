@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:48+0000\n"
+"POT-Creation-Date: 2023-09-15 01:54+0000\n"
 "PO-Revision-Date: 2023-02-08 12:17+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -404,7 +404,7 @@ msgstr ""
 "In modo auto/autobg il fortia le retrocopia a esser un retrocopia complete "
 "in loco de ager sur le preferentias de profilo."
 
-#: main.cxx:152 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Il non pote aperir profile '%1'  in lectura: %2"
@@ -641,52 +641,52 @@ msgstr ""
 "Files: %1 Grandor: %2 MB\n"
 "%3"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Name"
 msgstr "Nomine"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Size"
 msgstr "Grandor"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Last Modified"
 msgstr "Ultime modificate"
 
-#: Selector.cxx:289
+#: Selector.cxx:285
 #, kde-format
 msgid "Open With"
 msgstr "Aperi con"
 
-#: Selector.cxx:297
+#: Selector.cxx:293
 #, kde-format
 msgid "Delete File"
 msgstr "Dele file"
 
-#: Selector.cxx:303
+#: Selector.cxx:299
 #, kde-format
 msgid "Properties..."
 msgstr "Proprietates..."
 
-#: Selector.cxx:607
+#: Selector.cxx:603
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Tu realmente tu vole deler '%1'?"
 
-#: Selector.cxx:608
+#: Selector.cxx:604
 #, kde-format
 msgid "Delete"
 msgstr "Dele"
 
-#: Selector.cxx:619
+#: Selector.cxx:615
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Non pote deler dossier '%1'."
 
-#: Selector.cxx:628
+#: Selector.cxx:624
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -695,12 +695,12 @@ msgstr ""
 "Il non pote aperir profile '%1'.\n"
 "Motivation: %2"
 
-#: Selector.cxx:696
+#: Selector.cxx:692
 #, kde-format
 msgid "Other Application..."
 msgstr "Altere application..."
 
-#: Selector.cxx:698
+#: Selector.cxx:694
 #, kde-format
 msgid "File Manager"
 msgstr "Gerente de File"

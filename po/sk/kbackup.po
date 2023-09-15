@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KBackUp\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:48+0000\n"
+"POT-Creation-Date: 2023-09-15 01:54+0000\n"
 "PO-Revision-Date: 2020-02-02 09:40+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -405,7 +405,7 @@ msgstr ""
 "V režime auto/autobg vynútite, aby bola záloha úplnou zálohou namiesto toho, "
 "aby sa vykonala podľa nastavení profilu."
 
-#: main.cxx:152 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Nepodarilo sa otvoriť profil  '%1' na čítanie: %2"
@@ -642,52 +642,52 @@ msgstr ""
 "Súborov: %1 Veľkosť: %2 MB\n"
 "%3"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Name"
 msgstr "Názov"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Size"
 msgstr "Veľkosť"
 
-#: Selector.cxx:257
+#: Selector.cxx:253
 #, kde-format
 msgid "Last Modified"
 msgstr "Posledná úprava"
 
-#: Selector.cxx:289
+#: Selector.cxx:285
 #, kde-format
 msgid "Open With"
 msgstr "Otvoriť s"
 
-#: Selector.cxx:297
+#: Selector.cxx:293
 #, kde-format
 msgid "Delete File"
 msgstr "Vymazať súbor"
 
-#: Selector.cxx:303
+#: Selector.cxx:299
 #, kde-format
 msgid "Properties..."
 msgstr "Vlastnosti..."
 
-#: Selector.cxx:607
+#: Selector.cxx:603
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Naozaj chcete vymazať '%1'?"
 
-#: Selector.cxx:608
+#: Selector.cxx:604
 #, kde-format
 msgid "Delete"
 msgstr "Vymazať"
 
-#: Selector.cxx:619
+#: Selector.cxx:615
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Nepodarilo sa vymazať priečinok '%1'."
 
-#: Selector.cxx:628
+#: Selector.cxx:624
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -696,12 +696,12 @@ msgstr ""
 "Nepodarilo sa vymazať súbor '%1'.\n"
 "Dôvod: %2"
 
-#: Selector.cxx:696
+#: Selector.cxx:692
 #, kde-format
 msgid "Other Application..."
 msgstr "Iná aplikácia..."
 
-#: Selector.cxx:698
+#: Selector.cxx:694
 #, kde-format
 msgid "File Manager"
 msgstr "Správca súborov"
