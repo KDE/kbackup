@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-05 01:01+0000\n"
-"PO-Revision-Date: 2023-01-27 08:28+0100\n"
+"PO-Revision-Date: 2023-09-16 23:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,6 +42,8 @@ msgstr "სამიზნე საქაღალდე '%1' არასწ�
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
+"სამიზნე საქაღალდე '%1' ლოკალური ფაილური სისტემის საქაღალდე უნდა იყოს და არა "
+"დაშორებული ბმული"
 
 #: Archiver.cxx:459
 #, kde-format
@@ -50,6 +52,9 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
+"სამიზნე საქაღალდე '%1' არ არსებობს.\n"
+"\n"
+"შევქმნა?"
 
 #: Archiver.cxx:461
 #, kde-format
@@ -69,6 +74,8 @@ msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
+"სამიზნე საქაღალდის ('%1') შექმნა შეუძლებელია.\n"
+"შეცდომა ოპერაციული სისტემიდან: %2"
 
 #: Archiver.cxx:475
 #, kde-format
@@ -78,7 +85,7 @@ msgstr "სამიზნე საქაღალდე არ არსებ
 #: Archiver.cxx:548
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
-msgstr ""
+msgstr "...შენარჩუნებული არქივების რაოდენობის %1-მდე შემცირება"
 
 #: Archiver.cxx:606
 #, kde-format
@@ -90,11 +97,13 @@ msgstr "...%1-ის წაშლა"
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
+"სამიზნის საქაღალდეების სიის მოთხოვნა ჩავარდა. შენარჩუნებული არქივების "
+"შემცირება შეუძლებელია."
 
 #: Archiver.cxx:653
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
-msgstr ""
+msgstr "პროფილში %1 მარქაფის დროის შტამპების ჩაწერა შეუძლებელია: %2"
 
 #: Archiver.cxx:657
 #, kde-format
@@ -104,7 +113,7 @@ msgstr "-- გაფილტრული ფაილები: %1"
 #: Archiver.cxx:660
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
-msgstr ""
+msgstr "!! თუ მარქაფი დასრულდა, მაგრამ <b>ფაილები გამოტოვებულია</b> !!"
 
 #: Archiver.cxx:662
 #, kde-format
@@ -117,6 +126,8 @@ msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
 msgstr ""
+"მარქაფი დასრულდა, მაგრამ ფაილები გამოტოვებულია.\n"
+"რა გნებავთ, ვქნა?"
 
 #: Archiver.cxx:670
 #, kde-format
@@ -124,11 +135,13 @@ msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
 msgstr ""
+"მარქაფი წარმატებით დასრულდა.\n"
+"რა გნებავთ, ვქნა?"
 
 #: Archiver.cxx:688
 #, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
-msgstr ""
+msgstr "სულ: ფაილები %1, ზომა: %2, ხანგრძლივობა: %3"
 
 #: Archiver.cxx:699
 #, kde-format
@@ -143,17 +156,17 @@ msgstr "მარქაფი გაუქმდა"
 #: Archiver.cxx:746
 #, kde-format
 msgid "...finished slice %1"
-msgstr ""
+msgstr "...დასრულდა ნაწილი %1"
 
 #: Archiver.cxx:761
 #, kde-format
 msgid "...uploading archive %1 to %2"
-msgstr ""
+msgstr "... მიმდინარეობს %1 არქივის ატვირთვა %2-ზე"
 
 #: Archiver.cxx:779
 #, kde-format
 msgid "How shall we proceed with the upload?"
-msgstr ""
+msgstr "როგორ მოვექცეთ ატვირთვას?"
 
 #: Archiver.cxx:779
 #, kde-format
@@ -173,17 +186,17 @@ msgstr "სამიზნის შეცვლა"
 #: Archiver.cxx:871
 #, kde-format
 msgid "The script '%1' could not be started."
-msgstr ""
+msgstr "სკრიპტის '%1' გაშვება შეუძლებელია."
 
 #: Archiver.cxx:910
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
-msgstr ""
+msgstr "მედია სავსეა. ჩართეთ მედია # %1"
 
 #: Archiver.cxx:954
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
-msgstr ""
+msgstr "ფაილის ('%1') ჩასაწერად გახსნა შეუძლებელია."
 
 #: Archiver.cxx:958
 #, kde-format
@@ -192,6 +205,9 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
+"ფაილის ('%1') ჩასაწერად გახსნა შეუძლებელია.\n"
+"\n"
+"გნებავთ, თავიდან ვცადო?"
 
 #: Archiver.cxx:959
 #, kde-format
@@ -208,7 +224,7 @@ msgstr "თავიდან ცდა"
 #: Archiver.cxx:980
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
-msgstr ""
+msgstr "არქივში ჩაწერის შეცდომა. შეიძლება მედია სავსეა."
 
 #: Archiver.cxx:984
 #, kde-format
@@ -216,11 +232,13 @@ msgid ""
 "Could not write to archive.\n"
 "The operating system reports: %1"
 msgstr ""
+"არქივში ჩაწერა შეუძლებელია.\n"
+"შეცდომა ოპერაციული სისტემიდან: %1"
 
 #: Archiver.cxx:1003
 #, kde-format
 msgid "...skipping filtered directory %1"
-msgstr ""
+msgstr "... გამოტოვებულია გაფილტრული საქაღალდე %1"
 
 #: Archiver.cxx:1014
 #, kde-format
@@ -228,11 +246,13 @@ msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"საქაღალდის (%1) შესახებ ინფორმაციის მიღება შეუძლებელია.\n"
+"შეცდომა ოპერაციული სისტემიდან: %2"
 
 #: Archiver.cxx:1024
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
-msgstr ""
+msgstr "საქაღალდე '%1' წაკითხვადი არაა. გამოტოვება."
 
 #: Archiver.cxx:1124
 #, kde-format
@@ -240,11 +260,13 @@ msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"ფაილის %1 შესახებ ინფორმაციის მიღება შეუძლებელია.\n"
+"შეცდომა ოპერაციული სისტემიდან: %2"
 
 #: Archiver.cxx:1135
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "ფაილის ტიპის 'socket' დაარქივება შეუძლებელია: %1\n"
 
 #: Archiver.cxx:1219 Archiver.cxx:1298
 #, kde-format
@@ -252,16 +274,18 @@ msgid ""
 "Could not read from file '%1'\n"
 "The operating system reports: %2"
 msgstr ""
+"ფაილიდან '%1' წაკითხვა შეუძლებელია.\n"
+"შეცდომა ოპერაციული სისტემიდან: %2"
 
 #: Archiver.cxx:1267
 #, kde-format
 msgid "Could not open file '%1' for reading."
-msgstr ""
+msgstr "ფაილის (\"%1\") წასაკითხად გახსნის შეცდომა."
 
 #: Archiver.cxx:1334
 #, kde-format
 msgid "...archiving file %1"
-msgstr ""
+msgstr "... ფაილის %1 დაარქივება"
 
 #: Archiver.cxx:1367
 #, kde-format
@@ -269,6 +293,8 @@ msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"ფაილის '%1' წაკითხვა შეუძლებელია.\n"
+"შეცდომა ოპერაციული სისტემიდან: %2"
 
 #: Archiver.cxx:1381
 #, kde-format
@@ -276,16 +302,18 @@ msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"შეკუმშვისთვის დროებითი ფაილის შექმნა შეუძლებელია: %1\n"
+"შეცდომა ოპერაციული სისტემიდან: %2"
 
 #: Archiver.cxx:1409
 #, kde-format
 msgid "Could not write to temporary file"
-msgstr ""
+msgstr "დროებით ფაილის ჩაწერის შეცდომა"
 
 #: Archiver.cxx:1430
 #, kde-format
 msgid "...compressing file %1"
-msgstr ""
+msgstr "... მიმდინარეობს ფაილის შეკუმშვა: %1"
 
 #: Archiver.cxx:1475
 #, kde-format
@@ -313,7 +341,7 @@ msgstr "KBackup"
 #: main.cxx:47
 #, kde-format
 msgid "An easy to use backup program"
-msgstr ""
+msgstr "ადვილი მარქაფის პროგრამა"
 
 #: main.cxx:48
 #, kde-format
@@ -338,13 +366,14 @@ msgstr "მითითებული პროფილით დაწყე�
 #: main.cxx:62
 #, kde-format
 msgid "Script to run after finishing one archive slice."
-msgstr ""
+msgstr "სკრიპტი, რომელიც არქივის თითოეული ნაჭრის დასრულების შემდეგ გაეშვება."
 
 #: main.cxx:64
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
 msgstr ""
+"მარქაფის ავტომატური გაშვება მითითებულ პროფილით და შეწყვეტა, როცა დასრულდება."
 
 #: main.cxx:67
 #, kde-format
@@ -352,12 +381,16 @@ msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
 msgstr ""
+"მარქაფის ავტომატური გაშვება მითითებული პროფილით, ფონად (ფანჯრის ჩვენების "
+"გარეშე) და შეწყვეტა, როცა დასრულება."
 
 #: main.cxx:72
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
 msgstr ""
+"რეჟიმში autobg უფრო მეტი შეტყობინება იქნება ნაჩვენები და დაიბეჭდება ყველა "
+"ფაილის სახელი, რომლის მარქაფიც ხდება."
 
 #: main.cxx:75
 #, kde-format
@@ -365,11 +398,13 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
 msgstr ""
+"რეჟიმებში auto/autobg მარქაფი ყოველთვის სრული იქნება, პროფილის "
+"პარამეტრებისთვის ყურადღების მიქცევის გარეშე."
 
 #: main.cxx:151 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
-msgstr ""
+msgstr "პროფილის '%1' წასაკითხად გახსნა შეუძლებელია: %2"
 
 #: MainWidget.cxx:68
 #, kde-format
@@ -548,7 +583,7 @@ msgstr "დამალული ფაილების ჩვენება"
 #: MainWindow.cxx:146
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
-msgstr ""
+msgstr "მიმდინარეობს მარქაფი. გნებავთ, შეწყვიტოთ ის?"
 
 #: MainWindow.cxx:146
 #, kde-format
@@ -581,6 +616,8 @@ msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
+"პროფილი '%1' უკვე არსებობს.\n"
+"გნებავთ, თავზე გადააწეროთ?"
 
 #: MainWindow.cxx:265
 #, kde-format
@@ -590,7 +627,7 @@ msgstr "პროფილი არსებობს"
 #: MainWindow.cxx:282
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
-msgstr ""
+msgstr "პროფილის '%1' ჩასაწერად გახსნა შეუძლებელია: %2"
 
 #: MainWindow.cxx:358
 #, kde-format
@@ -713,12 +750,14 @@ msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
 msgstr ""
+"გამორთეთ, რომ თავიდან აიცილოთ ფანჯარა მედიის გამოცვლის შესახებ, როცა ნაჭერი "
+"დასრულდება"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:41
 #, kde-format
 msgid "Target needs media change"
-msgstr ""
+msgstr "სამიზნეს მედიის შეცვლა სჭირდება"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: SettingsDialog.ui:48
@@ -730,7 +769,7 @@ msgstr "გამოსარიცხი ბილიკების ფილ�
 #: SettingsDialog.ui:57
 #, kde-format
 msgid "Number of full backups to keep"
-msgstr ""
+msgstr "შესანარჩუნებელი სრული მარქაფების რაოდენობა"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
 #: SettingsDialog.ui:64
@@ -739,6 +778,8 @@ msgid ""
 "How many full backups shall be kept in the target directory before older "
 "ones will be deleted"
 msgstr ""
+"რამდენი სრული მარქაფი უნდა შევინარჩუნოთ სამიზნე საქაღალდეში, სანამ ძველების "
+"წაშლას დავიწყებთ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: SettingsDialog.ui:77
@@ -750,7 +791,7 @@ msgstr "სრული მარქაფის ინტერვალი"
 #: SettingsDialog.ui:84
 #, kde-format
 msgid "How often shall a full backup, instead of an incremental one, be done"
-msgstr ""
+msgstr "რამდენად ხშირად უნდა მოხდეს სრული მარქაფი, ინკრემენტულის მაგიერ"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:87
@@ -777,6 +818,8 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
+"აღწერს ვაილდკარდებს ფაილის სახელებისთვის, რომლებიც მარქაფის დროს "
+"გამოტოვებული იქნება. გამოყოფილი გამოტოვებებით. მაგ: \"*.ogg *.wav\""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: SettingsDialog.ui:122
@@ -809,7 +852,7 @@ msgstr ""
 #: SettingsDialog.ui:171
 #, kde-format
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr ""
+msgstr "გამორთეთ მარქაფის ფაილების შეკუმშვის თავიდან ასაცილებლად"
 
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:174
