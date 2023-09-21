@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 01:54+0000\n"
-"PO-Revision-Date: 2023-02-05 10:47+0100\n"
+"PO-Revision-Date: 2023-09-19 20:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -769,7 +769,7 @@ msgstr "La destinació necessita un canvi de suport"
 #: SettingsDialog.ui:48
 #, kde-format
 msgid "Exclude Paths Filter:"
-msgstr "Filtre per excloure els camins:"
+msgstr "Filtre d'exclusió de camins:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: SettingsDialog.ui:57
@@ -845,7 +845,7 @@ msgstr " MB"
 #: SettingsDialog.ui:157
 #, kde-format
 msgid "Exclude Filename Filter:"
-msgstr "Filtre per excloure el nom de fitxer:"
+msgstr "Filtre d'exclusió de noms de fitxer:"
 
 #. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
 #: SettingsDialog.ui:164
