@@ -84,7 +84,7 @@
 <para
 >El &kbackup; és un programa que permet fer una còpia de seguretat de qualsevol carpeta o fitxer, per la qual cosa utilitza un arbre de carpetes fàcil d'emprar per a seleccionar els elements per a fer la còpia de seguretat. Permet desar la configuració en els anomenats fitxers de <quote
 >perfil</quote
->, on un perfil és un senzill fitxer de text que conté les definicions per a les carpetes i fitxers que s'inclouran o s'exclouran del procés de còpia de seguretat. A més, permet definir on es desarà la còpia de seguretat. La destinació pot ser una carpeta local (&pex;, un dispositiu muntat localment com un dispositiu ZIP, memòria USB, &etc;), però també pot ser qualsevol &URL; remot (&pex;, smb://remot/algun_camí) per a fer la còpia de seguretat de les vostres dades a algun servidor central, &etc; </para>
+>, on un perfil és un senzill fitxer de text que conté les definicions per a les carpetes i fitxers que s'inclouran o s'exclouran del procés de còpia de seguretat. A més, permet definir on es desarà la còpia de seguretat. La destinació pot ser una carpeta local (&pex;, un dispositiu muntat localment com un dispositiu ZIP, memòria USB, &etc;), però també pot ser qualsevol &URL; remot (&pex;, smb://remot/un_camí) per a fer la còpia de seguretat de les vostres dades a algun servidor central, &etc; </para>
 
 <para
 >El programa també pot executar una còpia de seguretat automàtica sense utilitzar una interfície gràfica d'usuari. Senzillament cal crear un perfil i utilitzar aquesta configuració per a dir-li al &kbackup; què s'ha de fer quan s'executa en el mode no interactiu, &pex;, iniciant-lo des d'un treball del «cron». </para>
