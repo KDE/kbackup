@@ -52,7 +52,7 @@
   <summary xml:lang="eu">Sortu babes-kopiak  «.tar»  fitxategi gisa karpeta lokal edo urruneko URL batean</summary>
   <summary xml:lang="fi">Luo varmuuskopioita .tar-tiedostoina paikalliseen kansioon tai etäverkko-osoitteeseen</summary>
   <summary xml:lang="fr">Créer des archives comme des fichiers « .tar » vers un dossier local ou une URL distante.</summary>
-  <summary xml:lang="gl">Crear copias de seguridade como ficheiros .tar nun cartafol local ou nun URL remoto</summary>
+  <summary xml:lang="gl">Crear salvagardas como ficheiros .tar nun cartafol local ou nun URL remoto</summary>
   <summary xml:lang="ia">Crea retrocopias como file .tar al dossier local e URL remote</summary>
   <summary xml:lang="id">Buat cadangan sebagai file .tar ke sebuah folder lokal atau URL jarak jauh</summary>
   <summary xml:lang="ie">Crear archives quam files .tar in local fólderes o lontan URLs</summary>
@@ -88,7 +88,7 @@
     <p xml:lang="eu">KBackup zure datuen babes-kopia era erraz eta atsegin batean egiten  uzten dizun aplikazio bat da.</p>
     <p xml:lang="fi">KBackup on sovellus, jolla voit varmuuskopioida tietosi yksinkertaisesti ja helposti</p>
     <p xml:lang="fr">KBackup est une application qui vous permet de sauvegarder vos données de manière simple et intuitive</p>
-    <p xml:lang="gl">KBackup é unha aplicación que lle permite facer unha copia de seguridade dos seus datos dunha maneira sinxela e fácil.</p>
+    <p xml:lang="gl">KBackup é unha aplicación que lle permite facer unha salvagarda dos seus datos dunha maneira sinxela e fácil.</p>
     <p xml:lang="ia">KBackup es un application que te permitte retro copiar tu datos in un modo simplice e amical</p>
     <p xml:lang="id">KBackup adalah aplikasi yang memungkinkan kamu mencadangkan data dengan cara yang sederhana dan ramah pengguna</p>
     <p xml:lang="ie">KBackup es un application quel permisse vos archivar vor data in un simplic comprensibil maniere</p>
@@ -159,7 +159,7 @@
       <li xml:lang="eu">Profil fitxategiak erabiltzen ditu karpetak eta fitxategiak barneratu edo kanporatzeko definizioekin</li>
       <li xml:lang="fi">Profiilein voi määrittää varmuuskopioon otettavat tai siitä pois jätettävät kansiot ja tiedostot</li>
       <li xml:lang="fr">Utilisation de fichiers de profils contenant les définitions des fichiers et dossiers à inclure ou à exclure de la sauvegarde</li>
-      <li xml:lang="gl">Uso de ficheiros de perfil que definen cartafoles e ficheiros que incluír ou excluír da copia de seguridade.</li>
+      <li xml:lang="gl">Uso de ficheiros de perfil que definen cartafoles e ficheiros que incluír ou excluír da salvagarda.</li>
       <li xml:lang="ia">Usante files de profilo con definitiones per dossieres e files que essera includite o excludite ex le retrocopia</li>
       <li xml:lang="id">Menggunakan file profil dengan definisi untuk folder dan file yang akan dimasukkan atau dikecualikan dari cadangan</li>
       <li xml:lang="it">Utilizzo di file di profilo con le definizioni di cartelle e file da includere o escludere nella copia di sicurezza</li>
@@ -192,7 +192,7 @@
       <li xml:lang="eu">Babes-kopiaren jomuga bertan muntatutako gailu bat izan daiteke, ZIP unitate bat, USB makil bat, etab. edo urruneko edozein URL</li>
       <li xml:lang="fi">Varmuuskopiokansio voi olla paikallisesti liitetty tietoväline (kuten USB-muistitikku) tai mikä tahansa etäosoite</li>
       <li xml:lang="fr">La destination de l'archive peut être n'importe quel dossier monté en local : lecteur ZIP, clé USB ou URL distante</li>
-      <li xml:lang="gl">O destino da copia de seguridade pode ser ou un dispositivo montado de maneira local, como un dispositivo ZIP ou unha memoria USB, ou un URL remoto.</li>
+      <li xml:lang="gl">O destino da salvagarda pode ser ou un dispositivo montado de maneira local, como un dispositivo ZIP ou unha memoria USB, ou un URL remoto.</li>
       <li xml:lang="ia">Le objectivo de retrocopiar pote esser un dispositivo montate localmentetal como un drive ZIP, un clave USB, etc. o ulle URL remote</li>
       <li xml:lang="id">Target cadangan dapat berupa peranti yang dikaitkan secara lokal seperti drive ZIP, stik USB, dll. atau URL jarak jauh apa pun</li>
       <li xml:lang="it">La posizione di destinazione della copia può essere un dispositivo montato localmente come un disco ZIP, una memoria USB, ecc, o un qualsiasi URL remoto</li>
@@ -225,7 +225,7 @@
       <li xml:lang="eu">Babes-kopia automatikoak exekutatzea erabiltzaile-interfaze grafiko bat erabili gabe</li>
       <li xml:lang="fi">Automaattiset varmuuskopiot ajetaan ilman graafista käyttöliittymää</li>
       <li xml:lang="fr">Lancement de sauvegardes automatisées sans passer par l'interface graphique utilisateur</li>
-      <li xml:lang="gl">Execución de copias de seguridade automatizadas sen usar unha interface gráfica de usuario.</li>
+      <li xml:lang="gl">Execución de salvagardas automatizadas sen usar unha interface gráfica de usuario.</li>
       <li xml:lang="ia">Executante retrocopias automatic sin usar un interfacie de usator graphic</li>
       <li xml:lang="id">Cadangan yang diotomatiskan berjalan tanpa menggunakan antarmuka pengguna grafis</li>
       <li xml:lang="ie">Automatic archivation sin usage de un interfacie grafical</li>
