@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kbackup package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 01:54+0000\n"
-"PO-Revision-Date: 2023-08-02 01:21+0300\n"
+"PO-Revision-Date: 2023-10-16 20:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -49,9 +49,9 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
-"Hedef dizin '%1' mevcut değil.\n"
+"Hedef dizin '%1' yok.\n"
 "\n"
-"Oluşturulsun mu?s"
+"Oluşturulsun mu?"
 
 #: Archiver.cxx:461
 #, kde-format
@@ -71,13 +71,13 @@ msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
-"Hedef dizin '%1\"'oluşturulamadı.\n"
+"Hedef dizin '%1' oluşturulamadı.\n"
 "İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:475
 #, kde-format
 msgid "The target dir does not exist"
-msgstr "Hedef dizin mevcut değil"
+msgstr "Hedef dizin yok"
 
 #: Archiver.cxx:548
 #, kde-format
@@ -99,7 +99,7 @@ msgstr ""
 #: Archiver.cxx:653
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
-msgstr "Yedek zaman damgaları %1 profiline yazılamadı: %2"
+msgstr "%1 profiline yedek zaman damgaları yazılamadı: %2"
 
 #: Archiver.cxx:657
 #, kde-format
@@ -192,7 +192,7 @@ msgstr "Ortam dolu; lütfen %1 numaralı ortamı takın"
 #: Archiver.cxx:954
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
-msgstr "'%1' dosyası yazma için açılamadı."
+msgstr "'%1' dosyası yazmak için açılamadı."
 
 #: Archiver.cxx:958
 #, kde-format
@@ -201,9 +201,9 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
-"'%1 dosyası yazma için açılamadı.\n"
+"'%1 dosyası yazmak için açılamadı.\n"
 "\n"
-"Yeniden denemek ister misiniz?"
+"Yeniden denemek istiyor musunuz?"
 
 #: Archiver.cxx:959
 #, kde-format
@@ -276,7 +276,7 @@ msgstr ""
 #: Archiver.cxx:1267
 #, kde-format
 msgid "Could not open file '%1' for reading."
-msgstr "'%1' dosyası okuma için açılamadı."
+msgstr "'%1' dosyası okumak için açılamadı."
 
 #: Archiver.cxx:1334
 #, kde-format
@@ -298,7 +298,7 @@ msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Sıkıştırma için geçici dosya oluşturulamadı: %1\n"
+"Sıkıştırmak için geçici dosya oluşturulamadı: %1\n"
 "İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:1409
@@ -399,7 +399,7 @@ msgstr ""
 #: main.cxx:149 MainWindow.cxx:210
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
-msgstr "'%1' profili okuma için açılamadı: %2"
+msgstr "'%1' profili okumak için açılamadı: %2"
 
 #: MainWidget.cxx:68
 #, kde-format
@@ -435,7 +435,7 @@ msgstr "Yedeklemeyi İptal Et"
 #: MainWidgetBase.ui:92
 #, kde-format
 msgid "Next Backup:"
-msgstr "Sonraki Yedekleme:"
+msgstr "Sonraki yedekleme:"
 
 #. i18n: ectx: property (text), widget (QLabel, backupType)
 #: MainWidgetBase.ui:99
@@ -543,7 +543,7 @@ msgstr "Yeni Profil"
 #: MainWindow.cxx:60
 #, kde-format
 msgid "Load Profile..."
-msgstr "Profili Yükle..."
+msgstr "Profil Yükle..."
 
 #: MainWindow.cxx:64
 #, kde-format
@@ -611,18 +611,18 @@ msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"'%1' profili halihazırda mevcut.\n"
+"'%1' profili halihazırda var.\n"
 "Üzerine yazmak istiyor musunuz?"
 
 #: MainWindow.cxx:265
 #, kde-format
 msgid "Profile exists"
-msgstr "Profil mevcut"
+msgstr "Profil var"
 
 #: MainWindow.cxx:282
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
-msgstr "'%1' profili yazma için açılamadı: %2"
+msgstr "'%1' profili yazmak için açılamadı: %2"
 
 #: MainWindow.cxx:358
 #, kde-format
@@ -758,7 +758,7 @@ msgstr "Hedef için ortam değişikliği gerekiyor"
 #: SettingsDialog.ui:48
 #, kde-format
 msgid "Exclude Paths Filter:"
-msgstr "Hariç Tutulacak Yollar Süzgeci:"
+msgstr "Dışarıda tutulacak yollar süzgeci:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: SettingsDialog.ui:57
@@ -803,7 +803,7 @@ msgstr " gün"
 #: SettingsDialog.ui:105
 #, kde-format
 msgid "Archive Prefix:"
-msgstr "Arşiv Profili:"
+msgstr "Arşiv profili:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
 #: SettingsDialog.ui:115
@@ -819,7 +819,7 @@ msgstr ""
 #: SettingsDialog.ui:122
 #, kde-format
 msgid "Maximum Archive Size:"
-msgstr "En Büyük Arşiv Boyutu:"
+msgstr "En büyük arşiv boyutu:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
 #: SettingsDialog.ui:139
@@ -831,7 +831,7 @@ msgstr " MB"
 #: SettingsDialog.ui:157
 #, kde-format
 msgid "Exclude Filename Filter:"
-msgstr "Dışarıda Tutulacak Dosya Adları Süzgeci:"
+msgstr "Dışarıda tutulacak dosya adları süzgeci:"
 
 #. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
 #: SettingsDialog.ui:164
@@ -848,7 +848,7 @@ msgstr ""
 #: SettingsDialog.ui:171
 #, kde-format
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr "Dosya sıkıştırmak istemiyorsanız imi kaldırın"
+msgstr "Dosya sıkıştırmak istemiyorsanız işareti kaldırın"
 
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:174
@@ -861,10 +861,3 @@ msgstr "Dosyaları Sıkıştır"
 #, kde-format
 msgid "backup"
 msgstr "yedek"
-
-#~ msgid ""
-#~ "Could not write directory '%1' to archive.\n"
-#~ "Maybe the medium is full."
-#~ msgstr ""
-#~ "'%1' dizini arşive yazılamadı.\n"
-#~ "Ortam dolu olabilir."
