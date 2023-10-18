@@ -1,0 +1,306 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "/usr/share/kf5/kdoctools/customization/dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<!--Rename this template to man-$applicationname.x.docbook,
+where x is the manual section, see https://en.wikipedia.org/wiki/Man_page#Manual_sections
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<!-- replace Foo with the application name-->
+<title
+>K Yedek Kullanıcı Kılavuzu</title>
+<author
+><personname
+> <firstname
+>Scarlett</firstname
+> <surname
+>Moore</surname
+> </personname
+> <email
+>sgmoore@kde.org</email
+></author>
+<!--Date when this manpage was written, in the ISO 8601 format 'yyyy-mm-dd'-->
+<date
+>2020-07-23</date>
+<!--version information of application this manpage is valid for.
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   docbook is proofreaded and verified to be valid for the current app version
+-->
+<releaseinfo
+>Uygulamalar 20.04</releaseinfo>
+<!-- replace $applicationname with the application name; &kde; as prefix/namespace could
+be not needed, ask the promo team in case of doubt
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+
+<productname
+>KDE Uygulamaları</productname>
+<!-- no productname in man pages for extragear applications -->
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbackup</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbackup</command
+></refname>
+<refpurpose
+>Kullanımı kolay arayüze sahip yedekleme programı</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="_synopsis">
+<cmdsynopsis
+><command
+>kbackup</command
+> <arg rep="repeat"
+><replaceable
+>SEÇENEKLER</replaceable
+></arg
+> <arg rep="repeat"
+><replaceable
+>Modül adı | Modül kümesi adı</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1>
+<title
+>AÇIKLAMA</title>
+<para
+>K Yedek, herhangi bir dizini veya dosyayı yedeklemenizi sağlayan bir programdır. Yedeklenecek şeyleri seçmek için kullanımı kolay bir dizin ağacı kullanır ve ayarlarınızı "profil" dosyalarına kaydetmenize olanak tanır. Bunlar, yedekleme sürecinde içerilecek veya yedekleme işleminin dışında tutulacak dizinler ve dosyalar için tanımları içeren basit metin dosyalarıdır.</para
+> 
+
+</refsect1>
+
+<refsect1>
+<title
+>SEÇENEKLER</title>
+<!--App options, in a variablelist-->
+<variablelist>
+<varlistentry>
+<term>
+    <option
+>-v, --version</option>
+</term>
+<listitem>
+    <para
+>Sürüm bilgisini görüntüler.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>-h, --help</option>
+</term>
+<listitem>
+    <para
+>Komut satırı seçenekleri için yardımı görüntüler.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--help-all</option>
+</term>
+<listitem>
+    <para
+>Qt'a özel seçenekler için yardımı görüntüler.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--help-all --qmljsdebugger <replaceable
+>değer</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>QML/JS hata ayıklayıcısını belirli bir kapıyla etkinleştirir. Değer, kapı:1234[,blok] kipinde olmalıdır; "blok", uygulamayı bir bağlantı için bekletir.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--script <replaceable
+>dosya</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Bir arşiv dilimini tamamladıktan sonra çalıştırılacak betik.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--auto <replaceable
+>profil</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Yedeklemeyi verilen profille kendiliğinden çalıştırın ve bittiğinde sonlandırın.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--autobg <replaceable
+>profil</replaceable
+> </option>
+</term>
+<listitem>
+    <para
+>Yedeklemeyi arka planda verilen profille (pencere göstermeden) kendiliğinden çalıştırın ve bittiğinde sonlandırın.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--verbose <replaceable
+>profil</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>autobg kipinde ayrıntılı olun ve yedekleme sırasında her bir dosya adını yazdırın.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--forceFull </option>
+</term>
+<listitem>
+    <para
+>auto/autobg kipinde, profil ayarlarına göre davranmak yerine yedeklemeyi tam bir yedeğe zorlayın.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--author</option>
+</term>
+<listitem>
+    <para
+>Yazar bilgisini gösterin.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--license</option>
+</term>
+<listitem>
+    <para
+>Lisans bilgisini gösterin.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--desktopfile <replaceable
+>dosya</replaceable
+> </option>
+</term>
+<listitem>
+    <para
+>Bu uygulamanın masaüstü girdisinin temel dosya adı.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<!--The Following sections are optional, but recommended if they are
+applicable.-->
+
+<refsect1>
+<title
+>ORTAM</title>
+<para
+><!--Environment variables that affect this command, how to set
+them, who sets them, how they affect it, probably in a variablelist.  Only for
+man sections 1, 6, 7 and 8--></para>
+</refsect1>
+
+<refsect1>
+<title
+>DOSYALAR</title>
+<para
+>.kbp profil dosyaları. Profil kaydedilirken kullanıcı tarafından üretilir.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Ayrıca</title>
+<simplelist>
+<member
+>Daha ayrıntılı kullanıcı belgelendirmesi <ulink url="help:/ --commandname-- "
+>help:/kbackup</ulink
+> adresinde bulunabilir (ya bu &URL;'yi &konqueror;,'a girin veya <userinput
+><command
+>khelpcenter</command
+> <parameter
+>man:/kbackup</parameter
+></userinput
+> komutunu çalıştırın).</member>
+<!--for man pages replace "help:/" with "man:/" in this member-->
+<member
+>kf5options(7)</member
+> <!-- only for application with a GUI-->
+<member
+>qt5options(7)</member
+> <!-- only for application with a GUI-->
+<!--<member
+>foo(1)</member
+> more man page references if applicable-->
+<member
+>Ayrıca <ulink url="https://kde.org/applications/en/utilities/org.kde.kbackup"
+>https://kde.org/applications/en/utilities/org.kde.kbackup</ulink
+> adresinde ek bilgi bulunabilir </member>
+</simplelist>
+</refsect1>
+
+<refsect1>
+<title
+>Örnekler</title>
+<para
+>kbackup verim.kbp Var olan profili yüklemek için kullanılır. </para>
+</refsect1>
+
+
+<refsect1>
+<title
+>Yazarlar</title>
+<para
+>K Yedek Martin Koller <email
+> kollix@aon.at</email
+> tarafından yazıldı. Bu man sayfası Scott Kitterman <email
+>scott@kitterman.com</email
+> tarafından oluşturuldu ve Scarlett Moore <email
+>sgmoore@kde.org</email
+> tarafından güncellendi; K Yedek ile aynı lisans koşulları altında sunulur.</para>
+</refsect1>
+
+</refentry
+> 
