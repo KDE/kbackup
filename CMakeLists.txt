@@ -43,7 +43,7 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"
     TYPE OPTIONAL
 )
-ecm_set_disabled_deprecation_versions(QT 6.5.0  KF 5.99.0)
+ecm_set_disabled_deprecation_versions(QT 6.6.0  KF 5.240.0)
 
 find_package(LibArchive REQUIRED)
 
