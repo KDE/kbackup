@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 {
   std::unique_ptr<QCoreApplication> app(new QCoreApplication(argc, argv));
 
-  KLocalizedString::setApplicationDomain("kbackup");
+  KLocalizedString::setApplicationDomain(QByteArrayLiteral("kbackup"));
 
   KAboutData about(QStringLiteral("kbackup"), i18n("KBackup"),
                    QStringLiteral(KBACKUP_VERSION), i18n("An easy to use backup program"), KAboutLicense::GPL_V2,
