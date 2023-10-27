@@ -82,9 +82,7 @@
 >Introducció</title>
 
 <para
->El &kbackup; és un programa que permet fer una còpia de seguretat de qualsevol carpeta o fitxer, per la qual cosa utilitza un arbre de carpetes fàcil d'emprar per a seleccionar els elements per a fer la còpia de seguretat. Permet desar la configuració en els anomenats fitxers de <quote
->perfil</quote
->, on un perfil és un senzill fitxer de text que conté les definicions per a les carpetes i fitxers que s'inclouran o s'exclouran del procés de còpia de seguretat. A més, permet definir on es desarà la còpia de seguretat. La destinació pot ser una carpeta local (&pex;, un dispositiu muntat localment com un dispositiu ZIP, memòria USB, &etc;), però també pot ser qualsevol &URL; remot (&pex;, smb://remot/un_camí) per a fer la còpia de seguretat de les vostres dades a algun servidor central, &etc; </para>
+>El &kbackup; és un programa que permet fer una còpia de seguretat de qualsevol carpeta o fitxer, per la qual cosa utilitza un arbre de carpetes fàcil d'emprar per a seleccionar els elements per a fer la còpia de seguretat. Permet desar la configuració en els anomenats fitxers de «perfil», on un perfil és un senzill fitxer de text que conté les definicions per a les carpetes i fitxers que s'inclouran o s'exclouran del procés de còpia de seguretat. A més, permet definir on es desarà la còpia de seguretat. La destinació pot ser una carpeta local (&pex;, un dispositiu muntat localment com un dispositiu ZIP, memòria USB, &etc;), però també pot ser qualsevol &URL; remot (&pex;, smb://remot/un_camí) per a fer la còpia de seguretat de les vostres dades a algun servidor central, &etc; </para>
 
 <para
 >El programa també pot executar una còpia de seguretat automàtica sense utilitzar una interfície gràfica d'usuari. Senzillament cal crear un perfil i utilitzar aquesta configuració per a dir-li al &kbackup; què s'ha de fer quan s'executa en el mode no interactiu, &pex;, iniciant-lo des d'un treball del «cron». </para>
@@ -199,18 +197,14 @@
 > <guimenuitem
 >Configuració del perfil...</guimenuitem
 ></menuchoice
->, podreu definir un prefix d'arxiu diferent del valor predeterminat <quote
->backup</quote
->. </para>
+>, podreu definir un prefix d'arxiu diferent del valor predeterminat «backup». </para>
 
 <para
 >Al diàleg <guilabel
 >Configuració del perfil</guilabel
 >, també podreu definir una mida màxima per a la porció de l'arxiu, la qual limita la mida de la porció, fins i tot si hi ha més espai al dispositiu de destinació. Això ajuda a crear porcions de l'arxiu que després es poden gravar en un &CD;/&DVD;, &etc; Si limiteu explícitament la mida d'una porció de l'arxiu, la mida disponible estarà marcada amb (*) a la finestra principal. </para>
 <para
->Però, fins i tot si definiu que una porció sigui <quote
->Sense límit</quote
->, hi ha altres restriccions que limiten la mida d'una porció: <itemizedlist>
+>Però, fins i tot si definiu que una porció sigui «Sense límit», hi ha altres restriccions que limiten la mida d'una porció: <itemizedlist>
 <listitem
 ><para
 >limitada per la carpeta de destinació (quan s'emmagatzema directament en una carpeta local)</para
@@ -240,21 +234,15 @@
 <para
 >Això funciona de la següent manera: al perfil, definiu un interval (en dies) per a la còpia de seguretat completa. &pex;, quan definiu 5 dies, llavors el &kbackup; farà una còpia de seguretat completa de tots els fitxers cada 5 dies. Sempre que inicieu el &kbackup; abans que caduqui l'interval amb aquest perfil -independentment de la freqüència amb què feu una còpia de seguretat- només es desaran els fitxers que hagin canviat des de l'última còpia de seguretat. El &kbackup; emmagatzema el segell de temps de l'última còpia de seguretat al perfil i, per tant, sap què haurà de fer quan s'executi la pròxima vegada. </para>
 <para
->Els fitxers de porció de l'arxiu creats durant una còpia de seguretat incremental contenen el text <quote
->_inc</quote
->, &pex;: </para>
+>Els fitxers de porció de l'arxiu creats durant una còpia de seguretat incremental contenen el text «_inc», &pex;: </para>
 <para
 >backup_2010.06.14-18.50.26_1_inc.tar </para>
 <para
->Els fitxers de porció d'una còpia de seguretat completa no inclouran <quote
->_inc</quote
-> al nom, &pex;: </para>
+>Els fitxers de porció d'una còpia de seguretat completa no inclouran «_inc» al nom, &pex;: </para>
 <para
 >backup_2010.06.13-20.58.14_1.tar </para>
 <para
->Quan es volen recuperar els fitxers des d'una còpia de seguretat incremental, és important cercar la versió més recent del fitxer que es restaurarà entre tots els fitxers <quote
->_inc</quote
-> i, finalment, també l'últim full del fitxer de porció de la còpia de seguretat completa. Això també és exactament el desavantatge de la còpia de seguretat incremental (però sense avantatge no hi ha desavantatge ;-) ). </para>
+>Quan es volen recuperar els fitxers des d'una còpia de seguretat incremental, és important cercar la versió més recent del fitxer que es restaurarà entre tots els fitxers «_inc» i, finalment, també l'últim full del fitxer de porció de la còpia de seguretat completa. Això també és exactament el desavantatge de la còpia de seguretat incremental (però sense avantatge no hi ha desavantatge ;-) ). </para>
 <para
 >Si voleu fer una còpia de seguretat completa abans del temps de cicle incremental definit en un perfil, podeu fer-ho marcant l'opció <guilabel
 >Força una còpia de seguretat completa</guilabel
@@ -326,11 +314,7 @@
 >--auto</option
 >, però <emphasis
 >sense</emphasis
-> mostrar cap interfície gràfica d'usuari. Per tant, el sufix <quote
->bg</quote
-> significa <quote
->en segon pla</quote
->; tot es fa en segon pla, de manera que aquesta és l'opció adequada per a fer-ho quan realitzeu les vostres còpies de seguretat, &pex;, les iniciades per un treball del «cron». </para>
+> mostrar cap interfície gràfica d'usuari. Per tant, el sufix «bg» significa «en segon pla»; tot es fa en segon pla, de manera que aquesta és l'opció adequada per a fer-ho quan realitzeu les vostres còpies de seguretat, &pex;, les iniciades per un treball del «cron». </para>
 <para
 >Quan s'utilitza l'opció <option
 >--autobg</option
@@ -457,9 +441,7 @@
 ></term>
 <listitem
 ><para
->A la configuració, podeu definir si els fitxers de porció de l'arxiu començaran amb el nom predeterminat <quote
->backup</quote
-> o amb un nom alternatiu. També podeu limitar la mida de la porció de l'arxiu. Vegeu el capítol <link linkend="archive-slices"
+>A la configuració, podeu definir si els fitxers de porció de l'arxiu començaran amb el nom predeterminat «backup» o amb un nom alternatiu. També podeu limitar la mida de la porció de l'arxiu. Vegeu el capítol <link linkend="archive-slices"
 >Porcions de l'arxiu</link
 >. Aquestes opcions de configuració també s'emmagatzemaran dins del perfil. </para
 ></listitem>
