@@ -1,0 +1,725 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+  <!ENTITY kbackup "<application
+>KBackup</application
+>"
+><!--FIXME remove entitiy when kbackup depends on kdoctools
+>= 5.42-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Turkish "INCLUDE">
+]>
+
+<book id="kbackup" lang="&language;">
+
+<bookinfo>
+<title
+>&kbackup; El Kitabı</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Martin</firstname
+> <surname
+>Koller</surname
+> </personname
+> <email
+>kollix@aon.at</email
+> </author>
+</authorgroup>
+
+<othercredit role="translator"
+><firstname
+>Emir</firstname
+><surname
+>SARI</surname
+><affiliation
+><address
+><email
+>emir_sari@icloud.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+
+<copyright>
+<year
+>2006 - 2017</year>
+<holder
+>Martin Koller</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2018-01-05</date>
+<releaseinfo
+>Uygulamalar 18.04</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&kbackup;, verilerinizi basit, kullanıcı dostu bir şekilde yedeklemenizi sağlayan bir uygulamadır. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>sistem</keyword>
+<keyword
+>K Yedek</keyword>
+<keyword
+>yedek</keyword>
+<keyword
+>depolama</keyword>
+<keyword
+>arşiv</keyword>
+<keyword
+>zip</keyword>
+<keyword
+>gzip</keyword>
+<keyword
+>bzip2</keyword>
+<keyword
+>xz</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Giriş</title>
+
+<para
+>&kbackup;, herhangi bir klasörü veya dosyayı yedeklemenizi sağlayan bir programdır; bu sayede, yedeklenecek şeyleri seçmek için kullanımı kolay bir klasör ağacı kullanır. Ayarlarınızı <quote
+>profil</quote
+> adı verilen dosyalara kaydetmenize olanak tanır; burada profil, yedekleme işlemine dahil edilecek veya yedekleme işleminin dışında tutulacak klasörler ve dosyalar için tanımları içeren basit bir metin dosyasıdır. Ayrıca yedeğin nereye kaydedileceğini tanımlamanıza da olanak tanır. Bu, bir yerel klasör olabileceği gibi (örn. yerel olarak bağlanmış bir ZIP sürücüsü, USB bellek vb.) verinizi herhangi merkezi bir sunucuya yedeklemek için uzak bir &URL; de olabilir (&eg; smb://uzak/yol). </para>
+
+<para
+>Program ayrıca grafiksel bir kullanıcı arayüzü kullanmadan otomatik bir yedekleme çalıştırabilir. Bir profil oluşturulup bu ayarları kullanarak &kbackup;'e etkileşimli olmayan kipte kullanılırken ne yapacağını söyleyebilir; örneğin, bir cron işinden başlatılarak. </para>
+
+<para
+>Program, bilgisayar uzmanı olmayan kişilerin de kullanabileceği şekilde kullanımı oldukça basit olacak şekilde tasarlandı. </para>
+
+<para
+>Depolama biçimi, iyi bilinen TAR biçimidir, bu sayede veriler hâlâ sıkıştırılmış biçimde (xz, bzip2 veya gzip) saklanabilir. </para>
+
+<para
+>Geçerli uygulama şekli yalnızca yedekleme adımını içerir. Veriyi sisteminize geri yüklemek için şu anda; örneğin, TAR yedekleme dosyalarını açmak ve dosyaları dosya sisteminize geri sürükleyip bırakmak için &dolphin; kullanmanız gerekir. Bu aynı zamanda iyi bilinen ve iyi desteklenen TAR dosya biçimini kullanmanın da bir avantajıdır. </para>
+<para
+>Dosyalar sıkıştırılmışsa aşağıdaki komutu kullanarak geçerli klasördeki tüm dosyaları özyineli olarak açabilirsiniz: </para>
+<para>
+<programlisting
+>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
+</para>
+<para
+>Alternatif olarak, tam bir yedeklemeyi çıkarmak veya yedek içinden birkaç dosya seçmek için &ark; kullanabilirsiniz.</para>
+</chapter>
+
+<chapter id="using-kbackup">
+<title
+>&kbackup; Kullanımı</title>
+
+<para
+>Tek yapmanız gereken hangi klasörleri depolamak istediğinizi seçmektir. Bu, ana pencerenin sol tarafındaki ağaç görünümündeki tüm klasörlerin seçilmesiyle yapılır. </para>
+
+<para
+>Bir klasör seçerseniz &kbackup;, altındaki tüm dosyaları ve alt klasörleri kendiliğinden depolayacaktır. Seçilen bir klasörün bazı kısımlarını dışarıda tutmak istiyorsanız hâlâ seçili olan klasördeki dosyaların/klasörlerin seçimini kaldırmanız yeterlidir. </para>
+
+<para
+>Genel olarak bu şu anlama gelir: Seçili bir klasör, içindeki seçili olmayan parçalar dışında, içindeki ve altındaki her şeyi depolar. Bu aynı zamanda, bir profili daha sonra yeniden kullandığınızda (aşağıya bakın) ve yedekleme için önceden seçilmiş bir klasöre yeni dosyalar eklendiğinde, tüm yeni dosyaların da depolanacağı anlamına gelir. </para>
+
+<para>
+
+<screenshot>
+<screeninfo
+>İşte bir &kbackup; ekran görüntüsü</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="mainwindow.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>Ana Pencerenin Ekran Görüntüsü</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="kbackup-profiles">
+<title
+>Profilleri kullanmak</title>
+
+<para
+>Bir seçimi daha sonrası için kaydetmek isterseniz onu bir &kbackup; profil dosyasına kaydedin. <guimenu
+>Dosya</guimenu
+> menüsünden <guimenuitem
+>Profili Kaydet</guimenuitem
+> seçeneğini kullanın. </para>
+
+<para
+>Bir seçimi &kbackup;'e yeniden yüklemek için <menuchoice
+><guimenu
+>Dosya</guimenu
+><guimenuitem
+>Profil Yükle...</guimenuitem
+></menuchoice
+> seçeneğini kullanın. </para>
+
+<para
+>&kbackup; bir profil içine şunları kaydeder: İçerilen dosyalar/klasörler, dışarıda tutulan dosyalar/klasörler, hedef klasör/&URL;, tanımlı arşiv öneki, tanımlı en büyük dilim boyutu &etc; </para>
+
+<para
+>Aynı dosyalar kümesini kullanan yedeğinizin yürütülmesini daha kolay kılmak için ayarlarınızı bir &kbackup; dosyasına (bir <filename class="extension"
+>.kbp</filename
+> dosyası) kaydedin ve bunu komut satırına geçirin. </para>
+
+<para
+>&eg;: </para>
+
+<para>
+<programlisting
+>kbackup verim.kbp</programlisting>
+</para>
+
+<para
+>İpucu: Bir <filename class="extension"
+>.kbp</filename
+> dosyasına kısayol oluşturabilir ve o kısayola çift tıklayarak da çalıştırabilirsiniz. Bu dosya türü, çift tıklanıldığında &kbackup;'i çalıştıracak biçimde kaydedilmiştir. </para>
+
+</sect1>
+
+<sect1 id="archive-slices">
+<title
+>Arşiv dilimleri</title>
+<para
+>Bir ortamın genelde kapasitesi sınırlı olduğundan (&eg; 100 MB ZIP diski), &kbackup; birkaç arşiv dilimleri oluşturur. </para>
+<para
+>Her arşiv dilimi şu şekilde görünen kendi adını alacaktır: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>Ad, oluşturma tarihini ve saatini (bir yedeklemenin tüm dilimleri için aynı olacaktır) ve sondaki dilim sıra numarasını (bu örnekte _1) içerir. </para>
+<para
+><menuchoice
+><guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Profil Ayarları...</guimenuitem
+></menuchoice
+> menüsünden, öntanımlı <quote
+>backup</quote
+> yerine başka bir yedek öneki tanımlayabilirsiniz. </para>
+
+<para
+><guilabel
+>Profil Ayarları</guilabel
+> iletişim kutusunda, hedef aygıtta daha çok alan kalsa bile dilim boyutunu sınırlayan en büyük arşiv dilim boyutunu da tanımlayabilirsiniz. Bu, daha sonra &CD;/&DVD;, &etc;. üzerine yazılabilecek arşiv dilimleri oluşturmaya yardımcı olur. Bir arşiv diliminin boyutunu açıkça sınırlandırırsanız kullanılabilir boyut ana pencerede (*) ile işaretlenecektir. </para>
+<para
+>Ancak bir dilimi <quote
+>sınırsız</quote
+> boyutta tanımlasanız bile dilimin boyutunu sınırlayan başka kısıtlamalar da vardır: <itemizedlist>
+<listitem
+><para
+>hedef klasörle sınırlıdır (doğrudan yerel bir klasöre depolandığında)</para
+></listitem>
+<listitem
+><para
+>daha sonra uzak bir &URL;'ye yüklemek üzere bir tmp dosyası oluşturduğumuzda <filename class="directory"
+>/tmp</filename
+> klasörüyle sınırlıdır</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+><guilabel
+>Profil Ayarları</guilabel
+> bölümünde, hedef klasörde saklanacak en çok tam yedekleme sayısını da tanımlayabilir ve dolayısıyla oradaki tüm eski yedeklemelerin kendiliğinden silinmesini sağlayabilirsiniz. Örneğin, 3'e ayarlarsanız &kbackup; son 3 yedeği saklar ve eskilerin tümünü siler. </para>
+
+</sect1>
+
+
+<sect1 id="incremental-backup">
+<title
+>Artımlı Yedek</title>
+<para
+>Artımlı yedeklemede, yedekleme her çalıştırıldığında tüm dosyalar kaydedilmez, yalnızca son yedeklemeden bu yana değişen dosyalar kaydedilir. Bunun büyük avantajı, artımlı yedeklemenin genellikle tam yedeklemeden çok daha az dosya içermesi ve dolayısıyla çok daha kısa sürede tamamlanmasıdır. </para>
+<para
+>Bu şöyle çalışır: Profilde tam yedekleme için bir aralık (gün olarak) tanımlarsınız. Örneğin, 5 gün tanımladığınızda, &kbackup; tüm dosyaların her 5 günde bir tam yedeğini alır. Bu profille aralık dolmadan önce &kbackup;'i başlattığınızda - ne sıklıkta yedekleme yaptığınıza bakılmaksızın - yalnızca son yedeklemeden bu yana değişen dosyalar kaydedilecektir. &kbackup;, son yedeklemenin zaman damgasını profile kaydeder ve bu nedenle bir dahaki kez çalıştırıldığında ne yapacağını bilir. </para>
+<para
+>Artımlı yedek sırasında oluşturulan arşiv dilimi dosyaları, <quote
+>_inc</quote
+> metnini içerir; örneğin: </para>
+<para
+>backup_2010.06.14-18.50.26_1_inc.tar </para>
+<para
+>Tam yedek dilimi dosyaları adlarında <quote
+>_inc</quote
+> içermez; örneğin: </para>
+<para
+>backup_2010.06.13-20.58.14_1.tar </para>
+<para
+>Dosyaları artımlı bir yedeklemeden geri yüklemek istediğinizde, tüm <quote
+>_inc</quote
+> dosyalarında ve son olarak son tam yedek dilim dosyasında geri yüklenecek dosyanın en son sürümünü aramak önemlidir. Bu tam olarak artımlı yedeklemenin dezavantajıdır (ancak dezavantaj olmadan avantaj yoktur ;-)) </para>
+<para
+>Bir profilde tanımlanan tanımlı artımlı döngü süresinden daha erken bir tam yedekleme yapmak istiyorsanız bunu kullanıcı arayüzündeki <guilabel
+>Tam Yedeklemeyi Zorla</guilabel
+> seçeneğini işaretleyerek yapabilirsiniz. &kbackup; komut satırı aracılığıyla başlatıldığında bu, <option
+>--forceFull</option
+> seçeneği kullanılarak gerçekleştirilebilir. </para>
+<para
+>Zorlanan tam bir yedekleme, yedek döngüsünü yeniden başlatır; örneğin, &kbackup; son tam yedekleme zamanından itibaren bir sonraki tam yedeklemeye kadar geçen günleri sayar. </para>
+</sect1>
+
+
+<sect1 id="archive-compression">
+<title
+>Arşiv Sıkıştırma</title>
+<para
+>Profil ayarlarında bunu etkinleştirirseniz &kbackup;, depolanan dosyaları sıkıştırır. Sisteminizde neyin kullanılabilir olduğuna bağlı olarak <command
+>xz</command
+>, <command
+>bzip2</command
+> veya <command
+>gzip</command
+> sıkıştırmalarından birini kullanır. &kbackup;, her bir dosyayı sıkıştırıp depolar ve henüz sıkıştırılmamış <filename class="extension"
+>.tar</filename
+> dosyasının sonuna bir uzantı ekler (<filename class="extension"
+>.xz</filename
+>, <filename class="extension"
+>.bzip2</filename
+> veya <filename class="extension"
+>.gz</filename
+>). </para>
+
+<para
+>Yedeklemeyi bazı yerel dosya sistemlerinde (&eg; ek diskiniz, ZIP sürücünüz vb.) oluşturmayı seçtiğinizde; bu, uzak bir hedef &URL; girmediğiniz anlamına gelir; - &kbackup; ortam kapasitesi sınırlamaları nedeniyle tüm yedeği birkaç arşiv dilimine bölebilir. </para>
+<para
+>&eg;: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>backup_2006.08.26-13.04.44_2.tar </para>
+
+</sect1>
+
+<sect1 id="automating">
+<title
+>Yedeği Otomatikleştirmek</title>
+
+<para
+>Yedekleme işlemini otomatikleştirmek istiyorsanız &kbackup; bu konuda yardımcı olacak farklı komut satırı seçenekleri sunar: <itemizedlist>
+<listitem
+><para
+><option
+>--auto</option
+></para>
+<para
+>&kbackup;'i bu seçenekle çalıştırıp bir <filename class="extension"
+>.kbp</filename
+> profili verirseniz başlar, verilen profili yükler, yedeklemeyi çalıştırır ve işi bitince sonlanır. Bunların tümü yapılırken bir &kbackup; arayüzü görünür. </para>
+</listitem>
+
+<listitem
+><para
+><option
+>--autobg</option
+></para>
+<para
+>&kbackup;'i bu seçenekle çalıştırıp bir <filename class="extension"
+>.kbp</filename
+> profili verirseniz <option
+>--auto</option
+> seçeneğiyle aynı işlemi yapar; ancak bir grafiksel kullanıcı arayüzü <emphasis
+>olmadan</emphasis
+> süreci tamamlar. <quote
+>bg</quote
+> eki burada <quote
+>background</quote
+> (arka plan) anlamına gelir - her şey arka planda yapılır. Bu nedenle, yedeklerinizi genelde bir cron işiyle yapıyorsanız en uygun seçenektir. </para>
+<para
+><option
+>--autobg</option
+> seçeneği kullanılırken, yedeklemenin ilerlemesini gösteren &kbackup; çıktısı stderr'e yazılır. Öntanımlı olarak, çıktı genelde birkaç önemli ileti ve sonunda bir özet içerir. Ek olarak <option
+>--verbose</option
+> seçeneğini eklerseniz yedeklenen her bir dosyanın adını görürsünüz. </para>
+</listitem>
+</itemizedlist>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title
+>Komut Başvurusu</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Ana &kbackup; penceresi</title>
+
+ 
+
+<sect2>
+<title
+>Dosya Menüsü</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Son Kullanılanı Aç</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Kolay seçim için son kullanılan profilleri içeren bir alt menüyü gösterir. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Yeni Profil</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Yeni bir profil tanımlayabilmek için seçimi ve hedef giriş alanını temizler.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Profil Yükle...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Bir profil yükler.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Profili Kaydet</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Tüm ayarları o anda yüklü olan profile kaydeder.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Profili Farklı Kaydet...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Tüm ayarları yeni bir adla bir profile kaydeder.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Profil Ayarları...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ayarlarda, arşiv dilimi dosyalarının <quote
+>backup</quote
+> öntanımlı adıyla mı yoksa alternatif bir adla mı başlayacağını tanımlayabilirsiniz. Ayrıca arşiv dilim boyutunu da sınırlayabilirsiniz. <link linkend="archive-slices"
+>Arşiv Dilimleri</link
+> bölümüne bakın. Bu ayarlar ayrıca profile de kaydedilirler. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Çık</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>&kbackup; uygulamasından <action
+>çıkar</action
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Ayarlar Menüsü</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ayarlar</guimenu
+> <guimenuitem
+>Sistem Tepsisine Rıhtımla</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Bu seçenek etkinleştirildiğinde sistem tepsisinde yedekleme işleminin geçerli durumunu yansıtan bir simge gösterilir. Yedekleme sürerken bir canlandırma gösterilir, aksi takdirde statik bir simge görürsünüz. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ayarlar</guimenu
+> <guimenuitem
+>Tüm İletileri Etkinleştir</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Bu girdiyi etkinleştirmek, &kbackup; içinde gösterilen tüm <guilabel
+>Bir kez daha sorma</guilabel
+> iletilerinin temizlenmesine neden olur. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ayarlar</guimenu
+> <guimenuitem
+>Gizli Dosyaları Göster</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ağaç görünümünde gizli dosyaların (öncesinde nokta karakteri olan) görüntülenmesini <action
+>etkinleştirin veya devre dışı bırakın</action
+>. Bazı gizli dosyaları yedeklemenin dışında bırakmak istiyorsanız bu seçeneği kullanın. Tüm gizli dosyaları dışarıda tutmak istiyorsanız profil ayarlarında bir dosya adı süzgeci kullanın. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2 id="help-menu1">
+<title
+>Yardım Menüsü</title>
+<para
+>&kbackup;, ortak &kde; <guimenu
+>Yardım</guimenu
+> menüsüne sahiptir; daha fazla bilgi için &kde; Temelleri'nin <ulink url="help:/fundamentals/menus.html#menus-help"
+>Yardım Menüsü</ulink
+> bölümünü okuyun. </para>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>&kbackup; Geliştirici Kılavuzu</title>
+
+<para
+>&kbackup; yedekleme işlemi sırasında üç farklı noktada başlatılacak olan bir kabuk betiği (veya başka bir yürütülebilir dosya) kullanılarak genişletilebilir. Bunun arkasındaki düşünce, ortamı sisteme özel bir şekilde bağlamaya, bağlantısını kesmeye, çıkarmaya veya üretilen arşiv dosyalarıyla başka şeyler yapmaya izin vermektir. </para>
+
+<para
+>Yürütülecek betik <option
+>--script</option
+> komut satırı seçeneğiyle verilmelidir. </para>
+
+<para
+>İşte örnek bir betik:</para>
+
+<example
+><title
+>dilimBetiği.sh</title>
+<programlisting
+>#!/bin/sh
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+    if [ "$mountPoint" != "" ]
+    then
+      mount /media/zip
+      rm -f /media/zip/backup_2*.tar*
+    fi
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+    if [ "$mountPoint" != "" ]
+    then
+      umount /media/zip
+      eject /media/zip
+    fi
+ ;;
+esac
+</programlisting>
+</example>
+
+<para
+>Betik her zaman dört komut satırı argümanıyla çağrılır: </para>
+<itemizedlist>
+<listitem
+><para
+>çağırma kipi</para
+> </listitem>
+<listitem
+><para
+>arşiv (dilim) dosya adı</para
+> </listitem>
+<listitem
+><para
+>hedef dizin/&URL;</para
+> </listitem>
+<listitem
+><para
+>hedef dizinin bağlanma noktası, eğer yerel bir dizinse aksi takdirde boş bir dizi</para
+> </listitem>
+</itemizedlist>
+
+<para
+>Üç olası çağırma kipi vardır: </para>
+
+<para>
+<itemizedlist>
+
+<listitem
+><para
+>slice_init</para>
+<para
+>diskte yeni bir arşiv dilimi oluşturulmadan önce çağrılır</para>
+ </listitem>
+
+<listitem
+><para
+>slice_closed</para>
+<para
+>bir arşiv dilimi oluşturulduktan sonra; ancak hedef dizine yerleştirilmeden önce çağrılır</para>
+<para
+>Arşiv dilimini ek bir yere kopyalamak istiyorsanız bu kullanılabilir; örneğin, arşiv ana sunucuya gönderildiğinde (bir hedef &URL; aracılığıyla); ancak son yedeği de yerel diskte tutmak istediğinizde. </para>
+</listitem>
+
+<listitem
+><para
+>slice_finished</para>
+<para
+>bir arşiv dilimi başarıyla hedef dizine aktarıldıktan sonra çağrılır</para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Emeği Geçenler ve Lisans</title>
+
+<para
+>&kbackup; </para>
+<para
+>Program telif hakkı &copy; 2006 - 2009 Martin Koller <email
+>kollix@aon.at</email
+> </para>
+
+<para
+>Belgelendirme telif hakkı &copy; 2006 - 2009 Martin Koller </para>
+
+<para
+>Çeviri: Emir SARI <email
+>emir_sari@icloud.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
