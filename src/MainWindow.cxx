@@ -84,7 +84,7 @@ MainWindow::MainWindow()
 
   recentFiles = KStandardAction::openRecent(this, SLOT(recentProfileSelected(const QUrl &)), actionCollection());
   recentFiles->setObjectName(QStringLiteral("recentProfiles"));
-  recentFiles->loadEntries(KSharedConfig::openConfig()->group(""));
+  recentFiles->loadEntries(KSharedConfig::openConfig()->group(QString()));
 
   createGUI();
 
@@ -98,8 +98,8 @@ MainWindow::MainWindow()
 
   setCentralWidget(splitter);
 
-  splitter->restoreState(KSharedConfig::openConfig()->group("geometry").readEntry<QByteArray>("splitter", QByteArray()));
-  selector->header()->restoreState(KSharedConfig::openConfig()->group("geometry").readEntry<QByteArray>("tree", QByteArray()));
+  splitter->restoreState(KSharedConfig::openConfig()->group(QStringLiteral("geometry")).readEntry<QByteArray>("splitter", QByteArray()));
+  selector->header()->restoreState(KSharedConfig::openConfig()->group(QStringLiteral("geometry")).readEntry<QByteArray>("tree", QByteArray()));
 
   // save/restore window settings and size
   setAutoSaveSettings();
@@ -117,9 +117,9 @@ MainWindow::MainWindow()
   cancelBackupAction->setIcon(QIcon::fromTheme(QStringLiteral("kbackup_cancel")));
   cancelBackupAction->setEnabled(false);
 
-  showHidden->setChecked(KSharedConfig::openConfig()->group("settings").readEntry<bool>("showHiddenFiles", false));
+  showHidden->setChecked(KSharedConfig::openConfig()->group(QStringLiteral("settings")).readEntry<bool>("showHiddenFiles", false));
   showHiddenFiles(showHidden->isChecked());
-  docked->setChecked(KSharedConfig::openConfig()->group("settings").readEntry<bool>("dockInSysTray", false));
+  docked->setChecked(KSharedConfig::openConfig()->group(QStringLiteral("settings")).readEntry<bool>("dockInSysTray", false));
   dockInSysTray(docked->isChecked());
 
   // for convenience, open the tree at the HOME directory
@@ -149,8 +149,8 @@ bool MainWindow::stopAllowed()
     Archiver::instance->cancel();
   }
 
-  KSharedConfig::openConfig()->group("geometry").writeEntry("splitter", splitter->saveState());
-  KSharedConfig::openConfig()->group("geometry").writeEntry("tree", selector->header()->saveState());
+  KSharedConfig::openConfig()->group(QStringLiteral("geometry")).writeEntry("splitter", splitter->saveState());
+  KSharedConfig::openConfig()->group(QStringLiteral("geometry")).writeEntry("tree", selector->header()->saveState());
 
   return true;
 }
@@ -412,8 +412,8 @@ void MainWindow::inProgress(bool runs)
 
 void MainWindow::dockInSysTray(bool checked)
 {
-  KSharedConfig::openConfig()->group("settings").writeEntry("dockInSysTray", checked);
-  KSharedConfig::openConfig()->group("settings").sync();
+  KSharedConfig::openConfig()->group(QStringLiteral("settings")).writeEntry("dockInSysTray", checked);
+  KSharedConfig::openConfig()->group(QStringLiteral("settings")).sync();
 
   if ( checked )
   {
@@ -448,8 +448,8 @@ void MainWindow::dockInSysTray(bool checked)
 
 void MainWindow::showHiddenFiles(bool checked)
 {
-  KSharedConfig::openConfig()->group("settings").writeEntry("showHiddenFiles", checked);
-  KSharedConfig::openConfig()->group("settings").sync();
+  KSharedConfig::openConfig()->group(QStringLiteral("settings")).writeEntry("showHiddenFiles", checked);
+  KSharedConfig::openConfig()->group(QStringLiteral("settings")).sync();
 
   selector->setShowHiddenFiles(checked);
 }
@@ -474,8 +474,8 @@ void MainWindow::setLoadedProfile(const QString &name)
     QUrl url;
     url.setPath(name);
     recentFiles->addUrl(url);
-    recentFiles->saveEntries(KSharedConfig::openConfig()->group(""));
-    KSharedConfig::openConfig()->group("").sync();
+    recentFiles->saveEntries(KSharedConfig::openConfig()->group(QString()));
+    KSharedConfig::openConfig()->group(QString()).sync();
   }
 }
 
