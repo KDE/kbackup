@@ -39,7 +39,7 @@ Keywords[sv]=säkerhetskopiering;arkivering;
 Keywords[tr]=yedekleme;arşivleme;
 Keywords[uk]=backup;archiving;резерв;копіювання;резервне;архівування;
 Keywords[x-test]=xxbackupxx;xxarchivingxx;
-Keywords[zh_CN]=backup;archiving;备份;归档;存档;保存;
+Keywords[zh_CN]=backup;archiving;备份;归档;存档;保存;beifen;guifang;cundang;baocun;
 Keywords[zh_TW]=backup;archiving;備份;封存;
 
 Name=KBackup
