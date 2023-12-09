@@ -756,7 +756,7 @@ msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
 msgstr ""
-"Desmarqueu-la si voleu evitar un diàleg de confirmació per a canviar el "
+"Desseleccioneu-la si voleu evitar un diàleg de confirmació per a canviar el "
 "suport quan s'haja finalitzat una porció"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
@@ -863,7 +863,7 @@ msgstr ""
 #: SettingsDialog.ui:171
 #, kde-format
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr "Desmarqueu-la si voleu evitar la compressió dels fitxers"
+msgstr "Desseleccioneu-la si voleu evitar la compressió dels fitxers"
 
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:174

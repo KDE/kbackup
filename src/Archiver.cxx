@@ -550,7 +550,7 @@ bool Archiver::createArchive(const QStringList &includes, const QStringList &exc
     if ( !targetURL.isLocalFile() )  // KIO needs $DISPLAY; non-interactive only allowed for local targets
     {
       QPointer<KIO::ListJob> listJob;
-      listJob = KIO::listDir(targetURL, KIO::DefaultFlags, false);
+      listJob = KIO::listDir(targetURL, KIO::DefaultFlags, KIO::ListJob::ListFlag{});
 
       connect(listJob.data(), &KIO::ListJob::entries,
               this, &Archiver::slotListResult);
