@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 01:54+0000\n"
-"PO-Revision-Date: 2023-10-21 18:29+0900\n"
+"PO-Revision-Date: 2023-12-15 20:10+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.01.80\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -307,13 +307,13 @@ msgstr ""
 #: kbackupui.rc:4
 #, kde-format
 msgid "&File"
-msgstr ""
+msgstr "檔案(&F)"
 
 #. i18n: ectx: Menu (settings)
 #: kbackupui.rc:12
 #, kde-format
 msgid "&Settings"
-msgstr ""
+msgstr "設定(&S)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
 #: main.cxx:47 MainWidgetBase.ui:16
@@ -324,7 +324,7 @@ msgstr ""
 #: main.cxx:48
 #, kde-format
 msgid "An easy to use backup program"
-msgstr ""
+msgstr "一個簡單易用的備份程式"
 
 #: main.cxx:49
 #, kde-format
@@ -344,7 +344,7 @@ msgstr "開發者"
 #: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
-msgstr ""
+msgstr "以指定的設定檔啟動。"
 
 #: main.cxx:63
 #, kde-format
@@ -422,7 +422,7 @@ msgstr "下次備份："
 #: MainWidgetBase.ui:99
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "文字標籤"
 
 #. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
 #: MainWidgetBase.ui:106
@@ -434,13 +434,13 @@ msgstr "強制使用完整備份"
 #: MainWidgetBase.ui:121
 #, kde-format
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: MainWidgetBase.ui:127
 #, kde-format
 msgid "Folder:"
-msgstr ""
+msgstr "資料夾："
 
 #. i18n: ectx: property (text), widget (QLabel, sliceLabel)
 #: MainWidgetBase.ui:143
@@ -459,7 +459,7 @@ msgstr ""
 #: MainWidgetBase.ui:185 MainWidgetBase.ui:277
 #, kde-format
 msgid "Size:"
-msgstr ""
+msgstr "大小："
 
 #. i18n: ectx: property (text), widget (QLabel, capacity)
 #: MainWidgetBase.ui:201
@@ -549,7 +549,7 @@ msgstr "啟用所有訊息"
 #: MainWindow.cxx:77
 #, kde-format
 msgid "Dock in System Tray"
-msgstr ""
+msgstr "嵌入在系統匣內"
 
 #: MainWindow.cxx:81
 #, kde-format
@@ -592,11 +592,13 @@ msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
+"設定檔 '%1' 已存在。\n"
+"您要覆寫它嗎？"
 
 #: MainWindow.cxx:265
 #, kde-format
 msgid "Profile exists"
-msgstr ""
+msgstr "設定檔已存在"
 
 #: MainWindow.cxx:282
 #, kde-format
@@ -713,7 +715,7 @@ msgstr "自訂"
 #: SettingsDialog.ui:16
 #, kde-format
 msgid "Profile Settings"
-msgstr ""
+msgstr "設定檔選項"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:38
