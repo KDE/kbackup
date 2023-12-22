@@ -2,12 +2,13 @@
 # This file is distributed under the same license as the kbackup package.
 #
 # SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 01:54+0000\n"
-"PO-Revision-Date: 2023-12-19 18:34+0900\n"
+"PO-Revision-Date: 2023-12-22 02:21+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.80\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -103,7 +104,7 @@ msgstr "無法將備份時間時間戳寫入設定檔 %1 內：%2"
 #: Archiver.cxx:657
 #, kde-format
 msgid "-- Filtered Files: %1"
-msgstr ""
+msgstr "-- 已過濾檔案：%1"
 
 #: Archiver.cxx:660
 #, kde-format
@@ -156,7 +157,7 @@ msgstr ""
 #: Archiver.cxx:761
 #, kde-format
 msgid "...uploading archive %1 to %2"
-msgstr ""
+msgstr "...正在上傳封存 %1 到 %2"
 
 #: Archiver.cxx:779
 #, kde-format
@@ -176,12 +177,12 @@ msgstr "重試"
 #: Archiver.cxx:780
 #, kde-format
 msgid "Change Target"
-msgstr ""
+msgstr "變更目的地"
 
 #: Archiver.cxx:871
 #, kde-format
 msgid "The script '%1' could not be started."
-msgstr ""
+msgstr "文稿 '%1' 無法被啟動"
 
 #: Archiver.cxx:910
 #, kde-format
@@ -227,11 +228,13 @@ msgid ""
 "Could not write to archive.\n"
 "The operating system reports: %1"
 msgstr ""
+"無法寫入封存。\n"
+"作業系統回報：%1"
 
 #: Archiver.cxx:1003
 #, kde-format
 msgid "...skipping filtered directory %1"
-msgstr ""
+msgstr "...略過已過濾的目錄 %1"
 
 #: Archiver.cxx:1014
 #, kde-format
@@ -239,6 +242,8 @@ msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"無法取得目錄資訊：'%1'。\n"
+"作業系統回報：%2"
 
 #: Archiver.cxx:1024
 #, kde-format
@@ -363,27 +368,27 @@ msgstr ""
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
-msgstr ""
+msgstr "自動使用指定設定檔執行備份，並在完成後關閉。"
 
 #: main.cxx:68
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
-msgstr ""
+msgstr "自動在背景（不顯示視窗）使用指定設定檔執行備份，並在完成後關閉。"
 
 #: main.cxx:73
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
-msgstr ""
+msgstr "自動背景模式時，在備份時囉嗦一點並印出每一個檔案名稱。"
 
 #: main.cxx:76
 #, kde-format
 msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
-msgstr ""
+msgstr "使用自動/自動背景模式時強制使用完整備份模式而非依設定檔所設定。"
 
 #: main.cxx:149 MainWindow.cxx:210
 #, kde-format
@@ -759,7 +764,7 @@ msgstr "要保留的完整備份數量"
 msgid ""
 "How many full backups shall be kept in the target directory before older "
 "ones will be deleted"
-msgstr ""
+msgstr "目的地目錄中要保留幾個完整備份，超過這個數字時舊的會被刪除"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: SettingsDialog.ui:77
@@ -798,6 +803,7 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
+"設定要忽略備份的檔案，可使用萬用字元，以空白分隔。例如：\"*.ogg *.wav\""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: SettingsDialog.ui:122
