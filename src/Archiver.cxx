@@ -18,6 +18,7 @@
 #include <KMountPoint>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KIO/ListJob>
 
 #include <QApplication>
 #include <QDir>
