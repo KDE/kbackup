@@ -1,0 +1,19 @@
+{
+    "id": "org.kde.kbackup",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.6-kf6preview",
+    "sdk": "org.kde.Sdk",
+    "command": "kbackup",
+    "tags": ["nightly"],
+    "desktop-file-name-suffix": " (Nightly)",
+    "finish-args": ["--share=ipc", "--socket=fallback-x11", "--socket=wayland" ],
+
+    "modules": [
+        {
+            "name": "kbackup",
+            "buildsystem": "cmake-ninja",
+            "sources": [ { "type": "dir", "path": "." } ]
+        }
+    ]
+}
