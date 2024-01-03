@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru.po_[8daEob]\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 01:54+0000\n"
+"POT-Creation-Date: 2024-01-03 01:37+0000\n"
 "PO-Revision-Date: 2023-03-12 19:11+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -35,24 +35,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Alexey.Kouznetsov@gmail.com,juliette.tux@gmail.com"
 
-#: Archiver.cxx:433
+#: Archiver.cxx:434
 #, kde-format
 msgid "Nothing selected for backup"
 msgstr "Не выбрано ни одного объекта для резервного копирования"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:440
 #, kde-format
 msgid "The target dir '%1' is not valid"
 msgstr "Недопустимый целевой каталог '%1'"
 
-#: Archiver.cxx:446
+#: Archiver.cxx:447
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "Целевой каталог '%1' должен располагаться в локальной файловой системе, это "
 "не может быть удалённый URL."
 
-#: Archiver.cxx:459
+#: Archiver.cxx:460
 #, kde-format
 msgid ""
 "The target directory '%1' does not exist.\n"
@@ -63,19 +63,19 @@ msgstr ""
 "\n"
 "Создать его?"
 
-#: Archiver.cxx:461
+#: Archiver.cxx:462
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
 msgstr "Создание каталога"
 
-#: Archiver.cxx:462
+#: Archiver.cxx:463
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Создать"
 
-#: Archiver.cxx:467
+#: Archiver.cxx:468
 #, kde-format
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -84,22 +84,22 @@ msgstr ""
 "Не могу создать целевой каталог \"%1\"\n"
 "Сообщение операционной системы: %2"
 
-#: Archiver.cxx:475
+#: Archiver.cxx:476
 #, kde-format
 msgid "The target dir does not exist"
 msgstr "Целевой каталог не существует"
 
-#: Archiver.cxx:548
+#: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
 msgstr "…уменьшение количества хранимых архивов до наиб. числа %1"
 
-#: Archiver.cxx:606
+#: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
 msgstr "…удаление %1"
 
-#: Archiver.cxx:630
+#: Archiver.cxx:631
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
@@ -107,30 +107,30 @@ msgstr ""
 "не удалось прочесть содержимое целевого каталога. Не могу уменьшить число "
 "хранимых архивов."
 
-#: Archiver.cxx:653
+#: Archiver.cxx:654
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr ""
 "Не удалось записать метки времени создания резервной копии в профиль %1: %2"
 
-#: Archiver.cxx:657
+#: Archiver.cxx:658
 #, kde-format
 msgid "-- Filtered Files: %1"
 msgstr "-- Отфильтровано файлов: %1"
 
-#: Archiver.cxx:660
+#: Archiver.cxx:661
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 "!! Создание резервной копии завершено,  <b>но некоторые файлы были "
 "пропущены</b> !!"
 
-#: Archiver.cxx:662
+#: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
 msgstr "-- Резервное копирование завершено успешно --"
 
-#: Archiver.cxx:668
+#: Archiver.cxx:669
 #, kde-format
 msgid ""
 "The backup has finished but files were skipped.\n"
@@ -139,7 +139,7 @@ msgstr ""
 "Резервное копирование завершено, но некоторые файлы были пропущены.\n"
 "Что делать?"
 
-#: Archiver.cxx:670
+#: Archiver.cxx:671
 #, kde-format
 msgid ""
 "The backup has finished successfully.\n"
@@ -148,67 +148,67 @@ msgstr ""
 "Резервное копирование успешно завершено.\n"
 "Что делать?"
 
-#: Archiver.cxx:688
+#: Archiver.cxx:689
 #, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Файлов: %1 Размер: %2, длительность: %3"
 
-#: Archiver.cxx:699
+#: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
 msgstr "...Резервирование прервано"
 
-#: Archiver.cxx:726
+#: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
 msgstr "Резервирование было отменено"
 
-#: Archiver.cxx:746
+#: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
 msgstr "…срез %1 создан"
 
-#: Archiver.cxx:761
+#: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
 msgstr "...выгрузка архива %1 в %2"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "How shall we proceed with the upload?"
 msgstr "Что делать дальше с выгрузкой?"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "Upload Failed"
 msgstr "Сбой выгрузки"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Retry"
 msgstr "Попробовать снова"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Change Target"
 msgstr "Изменить назначение"
 
-#: Archiver.cxx:871
+#: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
 msgstr "Не удалось запустить сценарий '%1'"
 
-#: Archiver.cxx:910
+#: Archiver.cxx:911
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Носитель полон. Вставьте носитель № %1"
 
-#: Archiver.cxx:954
+#: Archiver.cxx:955
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
 msgstr "Файл '%1' не может быть открыт для записи."
 
-#: Archiver.cxx:958
+#: Archiver.cxx:959
 #, kde-format
 msgid ""
 "The file '%1' can not be opened for writing.\n"
@@ -219,24 +219,24 @@ msgstr ""
 "\n"
 "Попытаться ещё раз?"
 
-#: Archiver.cxx:959
+#: Archiver.cxx:960
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
 msgstr "Открытие файла"
 
-#: Archiver.cxx:960
+#: Archiver.cxx:961
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Повторить"
 
-#: Archiver.cxx:980
+#: Archiver.cxx:981
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Не удалось произвести запись в архив. Вероятно, носитель полон."
 
-#: Archiver.cxx:984
+#: Archiver.cxx:985
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -245,12 +245,12 @@ msgstr ""
 "Запись в архив не удалась.\n"
 "Сообщение операционной системы: %1"
 
-#: Archiver.cxx:1003
+#: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "…пропускается отфильтрованный каталог %1"
 
-#: Archiver.cxx:1014
+#: Archiver.cxx:1015
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -259,12 +259,12 @@ msgstr ""
 "Не могу получить информацию о каталоге %1\n"
 "Сообщение операционной системы: %2"
 
-#: Archiver.cxx:1024
+#: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Невозможно прочесть каталог '%1'. Пропускаю."
 
-#: Archiver.cxx:1124
+#: Archiver.cxx:1125
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -273,12 +273,12 @@ msgstr ""
 "Не удалось получить информацию о файле: %1\n"
 "Сообщение операционной системы: %2"
 
-#: Archiver.cxx:1135
+#: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
 msgstr "Файлы типа «socket» не могут быть помещены в архив: %1\n"
 
-#: Archiver.cxx:1219 Archiver.cxx:1298
+#: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -287,17 +287,17 @@ msgstr ""
 "Не удалось прочитать файл '%1'\n"
 "Сообщение операционной системы: %2"
 
-#: Archiver.cxx:1267
+#: Archiver.cxx:1268
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "Не удалось открыть файл '%1' для чтения"
 
-#: Archiver.cxx:1334
+#: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
 msgstr "...архивирую файл '%1'"
 
-#: Archiver.cxx:1367
+#: Archiver.cxx:1368
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -306,7 +306,7 @@ msgstr ""
 "Не удалось прочесть файл: %1\n"
 "Сообщение операционной системы: %2"
 
-#: Archiver.cxx:1381
+#: Archiver.cxx:1382
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -315,17 +315,17 @@ msgstr ""
 "Не удалось создать временный файл для сжатия: %1\n"
 "Сообщение операционной системы: %2"
 
-#: Archiver.cxx:1409
+#: Archiver.cxx:1410
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "Не могу записать временный файл"
 
-#: Archiver.cxx:1430
+#: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
 msgstr "…сжимаю файл '%1'"
 
-#: Archiver.cxx:1475
+#: Archiver.cxx:1476
 #, kde-format
 msgid "WARNING:"
 msgstr "ПРЕДУПРЕЖДЕНИЕ"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 01:54+0000\n"
+"POT-Creation-Date: 2024-01-03 01:37+0000\n"
 "PO-Revision-Date: 2023-09-19 20:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,24 +30,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "antonibella5@yahoo.com"
 
-#: Archiver.cxx:433
+#: Archiver.cxx:434
 #, kde-format
 msgid "Nothing selected for backup"
 msgstr "No hi ha res seleccionat per a la còpia de seguretat"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:440
 #, kde-format
 msgid "The target dir '%1' is not valid"
 msgstr "El directori de destinació «%1» no és vàlid"
 
-#: Archiver.cxx:446
+#: Archiver.cxx:447
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "El directori de destinació «%1» haurà de ser un directori al sistema de "
 "fitxers local i no un URL remot"
 
-#: Archiver.cxx:459
+#: Archiver.cxx:460
 #, kde-format
 msgid ""
 "The target directory '%1' does not exist.\n"
@@ -58,19 +58,19 @@ msgstr ""
 "\n"
 "Voleu crear-lo?"
 
-#: Archiver.cxx:461
+#: Archiver.cxx:462
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
 msgstr "Crea un directori"
 
-#: Archiver.cxx:462
+#: Archiver.cxx:463
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Crea"
 
-#: Archiver.cxx:467
+#: Archiver.cxx:468
 #, kde-format
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -79,22 +79,22 @@ msgstr ""
 "No s'ha pogut crear el directori de destinació «%1».\n"
 "El sistema operatiu informa: %2"
 
-#: Archiver.cxx:475
+#: Archiver.cxx:476
 #, kde-format
 msgid "The target dir does not exist"
 msgstr "El directori de destinació no existix"
 
-#: Archiver.cxx:548
+#: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...s'està reduint la quantitat d'arxius guardats al màxim. %1"
 
-#: Archiver.cxx:606
+#: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
 msgstr "...s'està suprimint %1"
 
-#: Archiver.cxx:630
+#: Archiver.cxx:631
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
@@ -102,30 +102,30 @@ msgstr ""
 "ha fallat en obtindre el llistat de directoris de l'objectiu. No es poden "
 "reduir els arxius guardats."
 
-#: Archiver.cxx:653
+#: Archiver.cxx:654
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr ""
 "No s'han pogut escriure les marques de temps de la còpia de seguretat al "
 "perfil %1: %2"
 
-#: Archiver.cxx:657
+#: Archiver.cxx:658
 #, kde-format
 msgid "-- Filtered Files: %1"
 msgstr "-- Fitxers filtrats: %1"
 
-#: Archiver.cxx:660
+#: Archiver.cxx:661
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 "S'ha completat la còpia de seguretat <b>però s'han omés alguns fitxers</b>!"
 
-#: Archiver.cxx:662
+#: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
 msgstr "-- La còpia de seguretat s'ha completat amb èxit --"
 
-#: Archiver.cxx:668
+#: Archiver.cxx:669
 #, kde-format
 msgid ""
 "The backup has finished but files were skipped.\n"
@@ -134,7 +134,7 @@ msgstr ""
 "S'ha completat la còpia de seguretat però s'han omés alguns fitxers.\n"
 "Què voleu fer ara?"
 
-#: Archiver.cxx:670
+#: Archiver.cxx:671
 #, kde-format
 msgid ""
 "The backup has finished successfully.\n"
@@ -143,67 +143,67 @@ msgstr ""
 "S'ha completat amb èxit la còpia de seguretat.\n"
 "Què voleu fer ara?"
 
-#: Archiver.cxx:688
+#: Archiver.cxx:689
 #, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Totals: Fitxers: %1, Mida: %2, Duració: %3"
 
-#: Archiver.cxx:699
+#: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
 msgstr "...s'ha interromput la còpia de seguretat!"
 
-#: Archiver.cxx:726
+#: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
 msgstr "S'ha cancel·lat la còpia de seguretat"
 
-#: Archiver.cxx:746
+#: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
 msgstr "...s'ha finalitzat la porció %1"
 
-#: Archiver.cxx:761
+#: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
 msgstr "...s'està pujant l'arxiu %1 a %2"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "How shall we proceed with the upload?"
 msgstr "Com procedirem amb la pujada?"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "Upload Failed"
 msgstr "Ha fallat la pujada"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Retry"
 msgstr "Torna-ho a intentar"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Change Target"
 msgstr "Canvia la destinació"
 
-#: Archiver.cxx:871
+#: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
 msgstr "L'script «%1» no s'ha pogut iniciar."
 
-#: Archiver.cxx:910
+#: Archiver.cxx:911
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "El suport està ple. Inseriu el suport núm. %1"
 
-#: Archiver.cxx:954
+#: Archiver.cxx:955
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
 msgstr "El fitxer «%1» no s'ha pogut obrir per a escriptura."
 
-#: Archiver.cxx:958
+#: Archiver.cxx:959
 #, kde-format
 msgid ""
 "The file '%1' can not be opened for writing.\n"
@@ -214,24 +214,24 @@ msgstr ""
 "\n"
 "Voleu tornar a intentar-ho?"
 
-#: Archiver.cxx:959
+#: Archiver.cxx:960
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
 msgstr "Obri un fitxer"
 
-#: Archiver.cxx:960
+#: Archiver.cxx:961
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Torna-ho a intentar"
 
-#: Archiver.cxx:980
+#: Archiver.cxx:981
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "No s'ha pogut escriure a l'arxiu. Potser el suport està ple."
 
-#: Archiver.cxx:984
+#: Archiver.cxx:985
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -240,12 +240,12 @@ msgstr ""
 "No s'ha pogut escriure a l'arxiu.\n"
 "El sistema operatiu informa: %1"
 
-#: Archiver.cxx:1003
+#: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "...s'està saltant el directori filtrat %1"
 
-#: Archiver.cxx:1014
+#: Archiver.cxx:1015
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -254,12 +254,12 @@ msgstr ""
 "No s'ha pogut obtindre informació del directori: %1\n"
 "El sistema operatiu informa: %2"
 
-#: Archiver.cxx:1024
+#: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "El directori «%1» no es pot llegir. Se saltarà."
 
-#: Archiver.cxx:1124
+#: Archiver.cxx:1125
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -268,12 +268,12 @@ msgstr ""
 "No s'ha pogut obtindre informació del fitxer: %1\n"
 "El sistema operatiu informa: %2"
 
-#: Archiver.cxx:1135
+#: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
 msgstr "No es pot arxivar el tipus de fitxer «socket»: %1\n"
 
-#: Archiver.cxx:1219 Archiver.cxx:1298
+#: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -282,17 +282,17 @@ msgstr ""
 "No s'ha pogut llegir des del fitxer «%1»\n"
 "El sistema operatiu informa: %2"
 
-#: Archiver.cxx:1267
+#: Archiver.cxx:1268
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "No s'ha pogut obrir el fitxer «%1» per a lectura."
 
-#: Archiver.cxx:1334
+#: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
 msgstr "...s'està arxivant el fitxer %1"
 
-#: Archiver.cxx:1367
+#: Archiver.cxx:1368
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -301,7 +301,7 @@ msgstr ""
 "No s'ha pogut llegir el fitxer: %1\n"
 "El sistema operatiu informa: %2"
 
-#: Archiver.cxx:1381
+#: Archiver.cxx:1382
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -310,17 +310,17 @@ msgstr ""
 "No s'ha pogut crear el fitxer temporal per a comprimir: %1\n"
 "El sistema operatiu informa: %2"
 
-#: Archiver.cxx:1409
+#: Archiver.cxx:1410
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "No s'ha pogut escriure en el fitxer temporal"
 
-#: Archiver.cxx:1430
+#: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...s'està comprimint el fitxer %1"
 
-#: Archiver.cxx:1475
+#: Archiver.cxx:1476
 #, kde-format
 msgid "WARNING:"
 msgstr "AVÍS:"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 01:54+0000\n"
+"POT-Creation-Date: 2024-01-03 01:37+0000\n"
 "PO-Revision-Date: 2023-02-07 07:37+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,24 +30,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: Archiver.cxx:433
+#: Archiver.cxx:434
 #, kde-format
 msgid "Nothing selected for backup"
 msgstr "Ez da ezer hautatu babes-kopia egiteko"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:440
 #, kde-format
 msgid "The target dir '%1' is not valid"
 msgstr "Jomuga direktorioak '%1' ez du balio"
 
-#: Archiver.cxx:446
+#: Archiver.cxx:447
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "Jomuga direktorioak '%1' bertako fitxategi-sistemako direktorioa izan behar "
 "du eta ez urruneko URL"
 
-#: Archiver.cxx:459
+#: Archiver.cxx:460
 #, kde-format
 msgid ""
 "The target directory '%1' does not exist.\n"
@@ -58,19 +58,19 @@ msgstr ""
 "\n"
 "Sortu behar nuke?"
 
-#: Archiver.cxx:461
+#: Archiver.cxx:462
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
 msgstr "Sortu direktorioa"
 
-#: Archiver.cxx:462
+#: Archiver.cxx:463
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Sortu"
 
-#: Archiver.cxx:467
+#: Archiver.cxx:468
 #, kde-format
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -79,22 +79,22 @@ msgstr ""
 "Ezin izan da sortu jomuga direktorioa '%1'.\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:475
+#: Archiver.cxx:476
 #, kde-format
 msgid "The target dir does not exist"
 msgstr "Jomuga direktorioa ez dago"
 
-#: Archiver.cxx:548
+#: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...mantendutako artxibo kopurua murrizten, gehienez %1"
 
-#: Archiver.cxx:606
+#: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
 msgstr "...%1 ezabatzen"
 
-#: Archiver.cxx:630
+#: Archiver.cxx:631
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
@@ -102,28 +102,28 @@ msgstr ""
 "jomugako direktorio-zerrenda ekartzeak huts egin du. Ezin da mantendutako "
 "artxibo kopurua murriztu."
 
-#: Archiver.cxx:653
+#: Archiver.cxx:654
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr "Ezin izan da idatzi babes-kopiaren denbora-zigilua profilean %1: %2"
 
-#: Archiver.cxx:657
+#: Archiver.cxx:658
 #, kde-format
 msgid "-- Filtered Files: %1"
 msgstr "-- Iragazitako fitxategiak: %1"
 
-#: Archiver.cxx:660
+#: Archiver.cxx:661
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 "!! babes-kopia amaitu da <b>baino fitxategi batzuk baztertu dira</b> !!"
 
-#: Archiver.cxx:662
+#: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
 msgstr "-- babes-kopia amaiera arrakastatsua --"
 
-#: Archiver.cxx:668
+#: Archiver.cxx:669
 #, kde-format
 msgid ""
 "The backup has finished but files were skipped.\n"
@@ -132,7 +132,7 @@ msgstr ""
 "babes-kopia amaitu da baino fitxategi batzuk bazterrean utzi ditu.\n"
 "Zer egin nahi duzu orain?"
 
-#: Archiver.cxx:670
+#: Archiver.cxx:671
 #, kde-format
 msgid ""
 "The backup has finished successfully.\n"
@@ -141,67 +141,67 @@ msgstr ""
 "babes-kopia arrakastatsua izan da.\n"
 "Orain zer egin nahi duzu?"
 
-#: Archiver.cxx:688
+#: Archiver.cxx:689
 #, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Guztizkoak: Fitxategiak: %1, Neurria: %2, Iraupena: %3"
 
-#: Archiver.cxx:699
+#: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
 msgstr "...babes-kopia galarazi egin da!"
 
-#: Archiver.cxx:726
+#: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
 msgstr "babes-kopia bertan behera utzi da"
 
-#: Archiver.cxx:746
+#: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
 msgstr "...%1 zatia amaituta"
 
-#: Archiver.cxx:761
+#: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
 msgstr "...%1 artxiboa %2-(e)ra igotzen"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "How shall we proceed with the upload?"
 msgstr "Nola jarraitu behar genuke igoerarekin?"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "Upload Failed"
 msgstr "Igotzeak huts egin du"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Retry"
 msgstr "Berriz saiatu"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Change Target"
 msgstr "Aldatu jomuga"
 
-#: Archiver.cxx:871
+#: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
 msgstr "'%1' script-a ezin izan da abiarazi."
 
-#: Archiver.cxx:910
+#: Archiver.cxx:911
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Euskarria beteta dago. Sartu zk. %1 euskarria"
 
-#: Archiver.cxx:954
+#: Archiver.cxx:955
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
 msgstr "'%1' fitxategia ezin da idazteko ireki."
 
-#: Archiver.cxx:958
+#: Archiver.cxx:959
 #, kde-format
 msgid ""
 "The file '%1' can not be opened for writing.\n"
@@ -212,24 +212,24 @@ msgstr ""
 "\n"
 "Berriz saiatu nahi duzu?"
 
-#: Archiver.cxx:959
+#: Archiver.cxx:960
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
 msgstr "Irekitze fitxategia"
 
-#: Archiver.cxx:960
+#: Archiver.cxx:961
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Berriz saiatu"
 
-#: Archiver.cxx:980
+#: Archiver.cxx:981
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Ezin da artxibora idatzi. Beharbada euskarria beteta dago."
 
-#: Archiver.cxx:984
+#: Archiver.cxx:985
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -238,12 +238,12 @@ msgstr ""
 "Ezin izan da artxibora idatzi.\n"
 "Sistema eragileak jakinarazi du: %1"
 
-#: Archiver.cxx:1003
+#: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "...iragazitako %1 direktorioa baztertzen"
 
-#: Archiver.cxx:1014
+#: Archiver.cxx:1015
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -252,12 +252,12 @@ msgstr ""
 "Ezin izan da direktorioaren informazioa lortu: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1024
+#: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "'%1' direktorioa ez da irakurgarria. Baztertzen."
 
-#: Archiver.cxx:1124
+#: Archiver.cxx:1125
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -266,12 +266,12 @@ msgstr ""
 "Ezin izan da lortu fitxategiari buruzko informazioa: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1135
+#: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
 msgstr "Ezin da 'socket' motako fitxategia artxibatu: %1\n"
 
-#: Archiver.cxx:1219 Archiver.cxx:1298
+#: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -280,17 +280,17 @@ msgstr ""
 "Ezin izan da '%1' fitxategitik irakurri\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1267
+#: Archiver.cxx:1268
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "Ezin da '%1' fitxategia irakurtzeko ireki."
 
-#: Archiver.cxx:1334
+#: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
 msgstr "...%1 fitxategia artxibatzen"
 
-#: Archiver.cxx:1367
+#: Archiver.cxx:1368
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -299,7 +299,7 @@ msgstr ""
 "Ezin izan da fitxategia irakurri: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1381
+#: Archiver.cxx:1382
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -308,17 +308,17 @@ msgstr ""
 "Ezin izan da sortu konprimitzeko aldiuneko fitxategia: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1409
+#: Archiver.cxx:1410
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "Ezin izan da idatzi aldi baterako fitxategira"
 
-#: Archiver.cxx:1430
+#: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...%1 fitxategia konprimitzen"
 
-#: Archiver.cxx:1475
+#: Archiver.cxx:1476
 #, kde-format
 msgid "WARNING:"
 msgstr "ABISUA:"

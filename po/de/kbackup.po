@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 01:54+0000\n"
+"POT-Creation-Date: 2024-01-03 01:37+0000\n"
 "PO-Revision-Date: 2023-03-12 19:56+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -30,24 +30,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kollix@aon.at"
 
-#: Archiver.cxx:433
+#: Archiver.cxx:434
 #, kde-format
 msgid "Nothing selected for backup"
 msgstr "Nichts zum Sichern ausgewählt"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:440
 #, kde-format
 msgid "The target dir '%1' is not valid"
 msgstr "Der Zielordner „%1“ ist ungültig"
 
-#: Archiver.cxx:446
+#: Archiver.cxx:447
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "Der Zielordner „%1“ muss ein Ordner im lokalen Dateisystem sein und keine "
 "entfernte URL"
 
-#: Archiver.cxx:459
+#: Archiver.cxx:460
 #, kde-format
 msgid ""
 "The target directory '%1' does not exist.\n"
@@ -58,19 +58,19 @@ msgstr ""
 "\n"
 "Möchten Sie ihn erstellen?"
 
-#: Archiver.cxx:461
+#: Archiver.cxx:462
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
 msgstr "Ordner erstellen"
 
-#: Archiver.cxx:462
+#: Archiver.cxx:463
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Erstellen"
 
-#: Archiver.cxx:467
+#: Archiver.cxx:468
 #, kde-format
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -79,23 +79,23 @@ msgstr ""
 "Zielordner „%1“ kann nicht erstellt werden.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:475
+#: Archiver.cxx:476
 #, kde-format
 msgid "The target dir does not exist"
 msgstr "Der Zielordner existiert nicht"
 
-#: Archiver.cxx:548
+#: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
 msgstr ""
 "... die Anzahl der zu erhaltenden Sicherungen wird auf max. %1 reduziert"
 
-#: Archiver.cxx:606
+#: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
 msgstr "... %1 wird gelöscht"
 
-#: Archiver.cxx:630
+#: Archiver.cxx:631
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
@@ -103,27 +103,27 @@ msgstr ""
 "Auflisten des Zielordners ist fehlgeschlagen. Die Anzahl der zu erhaltenden "
 "Sicherungen kann nicht verringert werden."
 
-#: Archiver.cxx:653
+#: Archiver.cxx:654
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr "Sicherungs-Zeitstempel kann nicht ins Profil %1 geschrieben werden: %2"
 
-#: Archiver.cxx:657
+#: Archiver.cxx:658
 #, kde-format
 msgid "-- Filtered Files: %1"
 msgstr "-- Gefilterte Dateien: %1"
 
-#: Archiver.cxx:660
+#: Archiver.cxx:661
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr "!! Sicherung abgeschlossen <b>aber Dateien wurden übersprungen</b> !!"
 
-#: Archiver.cxx:662
+#: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
 msgstr "-- Sicherung erfolgreich abgeschlossen --"
 
-#: Archiver.cxx:668
+#: Archiver.cxx:669
 #, kde-format
 msgid ""
 "The backup has finished but files were skipped.\n"
@@ -132,7 +132,7 @@ msgstr ""
 "Die Sicherung ist abgeschlossen, aber Dateien wurden übersprungen.\n"
 "Was möchten Sie jetzt tun?"
 
-#: Archiver.cxx:670
+#: Archiver.cxx:671
 #, kde-format
 msgid ""
 "The backup has finished successfully.\n"
@@ -141,67 +141,67 @@ msgstr ""
 "Die Sicherung wurde erfolgreich beendet.\n"
 "Was möchten Sie jetzt tun?"
 
-#: Archiver.cxx:688
+#: Archiver.cxx:689
 #, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Summen: Dateien: %1, Größe: %2, Dauer: %3"
 
-#: Archiver.cxx:699
+#: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
 msgstr "... Sicherung abgebrochen!"
 
-#: Archiver.cxx:726
+#: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
 msgstr "Sicherung abgebrochen"
 
-#: Archiver.cxx:746
+#: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
 msgstr "... Archiv %1 abgeschlossen"
 
-#: Archiver.cxx:761
+#: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
 msgstr "... Archiv %1 wird zu %2 kopiert"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "How shall we proceed with the upload?"
 msgstr "Wie möchten Sie mit dem Kopieren weitermachen?"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "Upload Failed"
 msgstr "Übertragung fehlgeschlagen"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Retry"
 msgstr "Nochmals versuchen"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Change Target"
 msgstr "Ziel ändern"
 
-#: Archiver.cxx:871
+#: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
 msgstr "Das Skript „%1“ kann nicht gestartet werden."
 
-#: Archiver.cxx:910
+#: Archiver.cxx:911
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Das Medium ist voll. Bitte geben Sie das Medium Nr. %1 in das Laufwerk"
 
-#: Archiver.cxx:954
+#: Archiver.cxx:955
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
 msgstr "Die Datei „%1“ kann nicht zum Schreiben geöffnet werden."
 
-#: Archiver.cxx:958
+#: Archiver.cxx:959
 #, kde-format
 msgid ""
 "The file '%1' can not be opened for writing.\n"
@@ -212,26 +212,26 @@ msgstr ""
 "\n"
 "Möchten Sie es nochmals versuchen?"
 
-#: Archiver.cxx:959
+#: Archiver.cxx:960
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
 msgstr "Datei öffnen"
 
-#: Archiver.cxx:960
+#: Archiver.cxx:961
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Erneut versuchen"
 
-#: Archiver.cxx:980
+#: Archiver.cxx:981
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr ""
 "Es kann nicht in das Archiv geschrieben werden. Vielleicht ist das Medium "
 "voll."
 
-#: Archiver.cxx:984
+#: Archiver.cxx:985
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -240,12 +240,12 @@ msgstr ""
 "Es kann nicht in das Archiv geschrieben werden.\n"
 "Meldung des Betriebssystems: %1"
 
-#: Archiver.cxx:1003
+#: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "... gefilterter Ordner %1 wird übersprungen"
 
-#: Archiver.cxx:1014
+#: Archiver.cxx:1015
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -254,12 +254,12 @@ msgstr ""
 "Über den Ordner „%1“ können keine Informationen gelesen werden.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:1024
+#: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Der Ordner „%1“ ist nicht lesbar und wird übersprungen."
 
-#: Archiver.cxx:1124
+#: Archiver.cxx:1125
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -268,12 +268,12 @@ msgstr ""
 "Über die Datei „%1“ können keine Informationen gelesen werden.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:1135
+#: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
 msgstr "Dateityp „Socket“ kann nicht archiviert werden: %1\n"
 
-#: Archiver.cxx:1219 Archiver.cxx:1298
+#: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -282,17 +282,17 @@ msgstr ""
 "Aus Datei „%1“ kann nicht gelesen werden.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:1267
+#: Archiver.cxx:1268
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "Die Datei „%1“ kann nicht zum Lesen geöffnet werden."
 
-#: Archiver.cxx:1334
+#: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
 msgstr "... Datei %1 wird archiviert"
 
-#: Archiver.cxx:1367
+#: Archiver.cxx:1368
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -301,7 +301,7 @@ msgstr ""
 "Die Datei „%1“ kann nicht gelesen werden.\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:1381
+#: Archiver.cxx:1382
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -310,17 +310,17 @@ msgstr ""
 "Für die Kompression kann keine temporäre Datei %1 erzeugt werden\n"
 "Meldung des Betriebssystems: %2"
 
-#: Archiver.cxx:1409
+#: Archiver.cxx:1410
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "In die temporäre Datei nicht geschrieben werden"
 
-#: Archiver.cxx:1430
+#: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
 msgstr "... Datei %1 wird komprimiert"
 
-#: Archiver.cxx:1475
+#: Archiver.cxx:1476
 #, kde-format
 msgid "WARNING:"
 msgstr "Warnung:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 01:54+0000\n"
+"POT-Creation-Date: 2024-01-03 01:37+0000\n"
 "PO-Revision-Date: 2023-07-30 00:28+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -28,24 +28,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sstavra@gmail.com"
 
-#: Archiver.cxx:433
+#: Archiver.cxx:434
 #, kde-format
 msgid "Nothing selected for backup"
 msgstr "Δεν επιλέχθηκε τίποτα για εφεδρικό αντίγραφο"
 
-#: Archiver.cxx:439
+#: Archiver.cxx:440
 #, kde-format
 msgid "The target dir '%1' is not valid"
 msgstr "Ο κατάλογος προορισμού '%1' δεν είναι έγκυρος"
 
-#: Archiver.cxx:446
+#: Archiver.cxx:447
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
 "Ο κατάλογος προορισμού '%1' πρέπει να είναι ένας κατάλογος στο τοπικό "
 "σύστημα αρχείων και όχι ένα απομακρυσμένο URL"
 
-#: Archiver.cxx:459
+#: Archiver.cxx:460
 #, kde-format
 msgid ""
 "The target directory '%1' does not exist.\n"
@@ -56,19 +56,19 @@ msgstr ""
 "\n"
 "Να δημιουργηθεί;"
 
-#: Archiver.cxx:461
+#: Archiver.cxx:462
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
 msgstr "Δημιουργία καταλόγου"
 
-#: Archiver.cxx:462
+#: Archiver.cxx:463
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Δημιουργία"
 
-#: Archiver.cxx:467
+#: Archiver.cxx:468
 #, kde-format
 msgid ""
 "Could not create the target directory '%1'.\n"
@@ -77,22 +77,22 @@ msgstr ""
 "Αδυναμία δημιουργίας του καταλόγου προορισμού '%1'.\n"
 "Το λειτουργικό σύστημα αναφέρει: %2"
 
-#: Archiver.cxx:475
+#: Archiver.cxx:476
 #, kde-format
 msgid "The target dir does not exist"
 msgstr "Ο κατάλογος προορισμού δεν υπάρχει"
 
-#: Archiver.cxx:548
+#: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
 msgstr "...μειώνεται το πλήθος των διατηρούμενων αρχειοθηκών στο μέγιστο. %1"
 
-#: Archiver.cxx:606
+#: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
 msgstr "...διαγράφεται το %1"
 
-#: Archiver.cxx:630
+#: Archiver.cxx:631
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
@@ -100,31 +100,31 @@ msgstr ""
 "αποτυχία ανάκτησης της λίστας καταλόγων προορισμού. Αδυναμία μείωσης των "
 "διατηρούμενων αρχειοθηκών."
 
-#: Archiver.cxx:653
+#: Archiver.cxx:654
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
 msgstr ""
 "Αδυναμία εγγραφής των χρονικών σφραγίδων του εφεδρικού αντιγράφου στο προφίλ "
 "%1: %2"
 
-#: Archiver.cxx:657
+#: Archiver.cxx:658
 #, kde-format
 msgid "-- Filtered Files: %1"
 msgstr "-- Φιλτραρισμένα αρχεία: %1"
 
-#: Archiver.cxx:660
+#: Archiver.cxx:661
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
 msgstr ""
 "!! Η δημιουργία εφεδρικού αντιγράφου ολοκληρώθηκε <b>αλλά με παράλειψη "
 "αρχείων</b> !!"
 
-#: Archiver.cxx:662
+#: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
 msgstr "-- Η δημιουργία εφεδρικού αντιγράφου ολοκληρώθηκε με επιτυχία --"
 
-#: Archiver.cxx:668
+#: Archiver.cxx:669
 #, kde-format
 msgid ""
 "The backup has finished but files were skipped.\n"
@@ -134,7 +134,7 @@ msgstr ""
 "αρχείων.\n"
 "Τι θέλετε να κάνετε τώρα;"
 
-#: Archiver.cxx:670
+#: Archiver.cxx:671
 #, kde-format
 msgid ""
 "The backup has finished successfully.\n"
@@ -143,67 +143,67 @@ msgstr ""
 "Η δημιουργία εφεδρικού αντιγράφου έχει ολοκληρωθεί με επιτυχία.\n"
 "Τι θέλετε να κάνετε τώρα;"
 
-#: Archiver.cxx:688
+#: Archiver.cxx:689
 #, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
 msgstr "Σύνολα: Αρχεία: %1, Μέγεθος: %2, Διάρκεια: %3"
 
-#: Archiver.cxx:699
+#: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
 msgstr "...Η δημιουργία εφεδρικού αντιγράφου διακόπηκε!"
 
-#: Archiver.cxx:726
+#: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
 msgstr "Η δημιουργία εφεδρικού αντιγράφου ακυρώθηκε"
 
-#: Archiver.cxx:746
+#: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
 msgstr "...ολοκληρωμένο τμήμα %1"
 
-#: Archiver.cxx:761
+#: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
 msgstr "...αποστολή αρχειοθήκης %1 σε %2"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "How shall we proceed with the upload?"
 msgstr "Πώς να συνεχίσουμε με την αποστολή;"
 
-#: Archiver.cxx:779
+#: Archiver.cxx:780
 #, kde-format
 msgid "Upload Failed"
 msgstr "Αποτυχία αποστολής"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Retry"
 msgstr "Επανάληψη"
 
-#: Archiver.cxx:780
+#: Archiver.cxx:781
 #, kde-format
 msgid "Change Target"
 msgstr "Αλλαγή προορισμού"
 
-#: Archiver.cxx:871
+#: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
 msgstr "Αδυναμία εκκίνησης του σεναρίου '%1'."
 
-#: Archiver.cxx:910
+#: Archiver.cxx:911
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
 msgstr "Το μέσο είναι γεμάτο. Εισαγάγετε μέσο Νο. %1"
 
-#: Archiver.cxx:954
+#: Archiver.cxx:955
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
 msgstr "Αδυναμία ανοίγματος του αρχείου '%1' για εγγραφή."
 
-#: Archiver.cxx:958
+#: Archiver.cxx:959
 #, kde-format
 msgid ""
 "The file '%1' can not be opened for writing.\n"
@@ -214,24 +214,24 @@ msgstr ""
 "\n"
 "Θέλετε να ξαναπροσπαθήσετε;"
 
-#: Archiver.cxx:959
+#: Archiver.cxx:960
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
 msgstr "Άνοιγμα αρχείου"
 
-#: Archiver.cxx:960
+#: Archiver.cxx:961
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
 msgstr "Επανάληψη"
 
-#: Archiver.cxx:980
+#: Archiver.cxx:981
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
 msgstr "Αδυναμία εγγραφής στην αρχειοθήκη. Ίσως το μέσο να είναι γεμάτο."
 
-#: Archiver.cxx:984
+#: Archiver.cxx:985
 #, kde-format
 msgid ""
 "Could not write to archive.\n"
@@ -240,12 +240,12 @@ msgstr ""
 "Αδυναμία εγγραφής στην αρχειοθήκη.\n"
 "Το λειτουργικό σύστημα αναφέρει: %1"
 
-#: Archiver.cxx:1003
+#: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
 msgstr "...παράλειψη φιλτραρισμένου καταλόγου %1"
 
-#: Archiver.cxx:1014
+#: Archiver.cxx:1015
 #, kde-format
 msgid ""
 "Could not get information of directory: %1\n"
@@ -254,12 +254,12 @@ msgstr ""
 "Αδυναμία ανάκτησης πληροφοριών καταλόγου: %1\n"
 "Το λειτουργικό σύστημα αναφέρει: %2"
 
-#: Archiver.cxx:1024
+#: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
 msgstr "Ο κατάλογος '%1' δεν είναι αναγνώσιμος. Παραλείπεται."
 
-#: Archiver.cxx:1124
+#: Archiver.cxx:1125
 #, kde-format
 msgid ""
 "Could not get information of file: %1\n"
@@ -268,12 +268,12 @@ msgstr ""
 "Αδυναμία ανάκτησης πληροφοριών αρχείου: %1\n"
 "Το λειτουργικό σύστημα αναφέρει: %2"
 
-#: Archiver.cxx:1135
+#: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
 msgstr "Δεν είναι δυνατή η αρχειοθέτηση αρχείου τύπου 'socket': %1\n"
 
-#: Archiver.cxx:1219 Archiver.cxx:1298
+#: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
 msgid ""
 "Could not read from file '%1'\n"
@@ -282,17 +282,17 @@ msgstr ""
 "Αδυναμία ανάγνωσης από αρχείο: '%1'\n"
 "Το λειτουργικό σύστημα αναφέρει: %2"
 
-#: Archiver.cxx:1267
+#: Archiver.cxx:1268
 #, kde-format
 msgid "Could not open file '%1' for reading."
 msgstr "Αδυναμία ανοίγματος του αρχείου '%1' για ανάγνωση."
 
-#: Archiver.cxx:1334
+#: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
 msgstr "...αρχειοθέτηση του αρχείου %1"
 
-#: Archiver.cxx:1367
+#: Archiver.cxx:1368
 #, kde-format
 msgid ""
 "Could not read file: %1\n"
@@ -301,7 +301,7 @@ msgstr ""
 "Αδυναμία ανάγνωσης αρχείου: %1\n"
 "Το λειτουργικό σύστημα αναφέρει: %2"
 
-#: Archiver.cxx:1381
+#: Archiver.cxx:1382
 #, kde-format
 msgid ""
 "Could not create temporary file for compressing: %1\n"
@@ -310,17 +310,17 @@ msgstr ""
 "Αδυναμία δημιουργίας προσωρινού αρχείου για συμπίεση: %1\n"
 "Το λειτουργικό σύστημα αναφέρει: %2"
 
-#: Archiver.cxx:1409
+#: Archiver.cxx:1410
 #, kde-format
 msgid "Could not write to temporary file"
 msgstr "Αδυναμία εγγραφής σε προσωρινό αρχείο"
 
-#: Archiver.cxx:1430
+#: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...γίνεται συμπίεση του αρχείου %1"
 
-#: Archiver.cxx:1475
+#: Archiver.cxx:1476
 #, kde-format
 msgid "WARNING:"
 msgstr "ΠΡΟΕΙΔΟΠΟΙΗΣΗ:"
