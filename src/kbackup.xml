@@ -2,6 +2,39 @@
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
   <mime-type type="text/x-kbp">
     <comment>KBackup Profile</comment>
+    <comment xml:lang="ar">تشكيلة النسخ الاحتياطي</comment>
+    <comment xml:lang="ca">Perfil del KBackup</comment>
+    <comment xml:lang="ca@valencia">Perfil de KBackup</comment>
+    <comment xml:lang="cs">Profil KBackup</comment>
+    <comment xml:lang="de">KBackup-Profil</comment>
+    <comment xml:lang="el">KBackup προφίλ</comment>
+    <comment xml:lang="en_GB">KBackup Profile</comment>
+    <comment xml:lang="eo">KBackup-Profilo</comment>
+    <comment xml:lang="es">Perfil de KBackup</comment>
+    <comment xml:lang="eu">KBackup-en profila</comment>
+    <comment xml:lang="fi">KBackup-profiili</comment>
+    <comment xml:lang="fr">Profil pour KBackup</comment>
+    <comment xml:lang="gl">Perfil de KBackup</comment>
+    <comment xml:lang="ia">Profilo de KBackup</comment>
+    <comment xml:lang="ie">Profil de KBackup</comment>
+    <comment xml:lang="it">Profilo di KBackup</comment>
+    <comment xml:lang="ka">KBackup -ის პროფილი</comment>
+    <comment xml:lang="ko">KBackup 프로필</comment>
+    <comment xml:lang="lt">KBackup profilis</comment>
+    <comment xml:lang="nl">KBackup-profiel</comment>
+    <comment xml:lang="nn">KBackup-profil</comment>
+    <comment xml:lang="pl">Profil KBackup</comment>
+    <comment xml:lang="pt">Perfil do KBackup</comment>
+    <comment xml:lang="pt_BR">Perfil do KBackup</comment>
+    <comment xml:lang="ro">Profil KBackup</comment>
+    <comment xml:lang="ru">Профиль KBackup</comment>
+    <comment xml:lang="sk">Profil KBackup</comment>
+    <comment xml:lang="sl">Profil Kbackupa</comment>
+    <comment xml:lang="sv">Kbackup-profil</comment>
+    <comment xml:lang="tr">K Yedek Profili</comment>
+    <comment xml:lang="uk">профіль KBackup</comment>
+    <comment xml:lang="zh_CN">KBackup 配置文件</comment>
+    <comment xml:lang="zh_TW">KBackup 設定檔</comment>
     <glob pattern="*.kbp"/>
   </mime-type>
 </mime-info>
