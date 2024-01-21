@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kbackup package.
 #
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 # Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-03 01:37+0000\n"
-"PO-Revision-Date: 2023-12-22 02:21+0900\n"
+"PO-Revision-Date: 2024-01-21 01:41+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.01.80\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -83,7 +83,7 @@ msgstr "目的地目錄不存在"
 #: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
-msgstr ""
+msgstr "...正在將所保留的封存檔數量降低至最大值。%1"
 
 #: Archiver.cxx:607
 #, kde-format
@@ -94,7 +94,7 @@ msgstr "...正在刪除 %1"
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
-msgstr ""
+msgstr "取得目的地的目錄列表時失敗。無法降低所保留的封存檔數量。"
 
 #: Archiver.cxx:654
 #, kde-format
@@ -152,7 +152,7 @@ msgstr "已取消備份"
 #: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
-msgstr ""
+msgstr "...已完成片段 %1"
 
 #: Archiver.cxx:762
 #, kde-format
@@ -362,7 +362,7 @@ msgstr "以指定的設定檔啟動。"
 #: main.cxx:63
 #, kde-format
 msgid "Script to run after finishing one archive slice."
-msgstr ""
+msgstr "完成一個封存片段之後要執行的文稿。"
 
 #: main.cxx:65
 #, kde-format
@@ -738,13 +738,13 @@ msgstr "設定檔選項"
 msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
-msgstr ""
+msgstr "取消勾選來避免在完成一個片段之後彈出一個確認變更媒體的對話框"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:41
 #, kde-format
 msgid "Target needs media change"
-msgstr ""
+msgstr "目標需要更換媒體"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: SettingsDialog.ui:48
