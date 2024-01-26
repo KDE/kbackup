@@ -275,9 +275,9 @@ man sections 1, 6, 7 and 8--></para>
 >foo(1)</member
 > more man page references if applicable-->
 <member
->También existe más información disponible en <ulink url="https://kde.org/applications/en/utilities/org.kde.kbackup"
->https://kde.org/applications/en/utilities/org.kde.kbackup</ulink
->. </member>
+>Dispone de más información en <ulink url="https://apps.kde.org/kbackup"
+>https://apps.kde.org/kbackup</ulink
+> </member>
 </simplelist>
 </refsect1>
 
