@@ -88,6 +88,7 @@ int main(int argc, char **argv)
     // kf5.kcoreaddons.kaboutdata: Could not initialize the equivalent properties of Q*Application: no instance (yet) existing.
     app.reset(new QApplication(argc, argv));
     QApplication *qapp = qobject_cast<QApplication *>(app.get());
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kbackup")));
     qapp->setWindowIcon(QIcon::fromTheme(QStringLiteral("kbackup")));
 
     KAboutData::setApplicationData(about);

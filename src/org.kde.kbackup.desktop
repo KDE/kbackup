@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Exec=kbackup %f
-Icon=kbackup
+Icon=org.kde.kbackup
 X-DocPath=kbackup/index.html
 MimeType=text/x-kbp;
 Categories=Qt;KDE;Utility;Archiving;
