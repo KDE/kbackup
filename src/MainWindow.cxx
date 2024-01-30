@@ -89,6 +89,7 @@ MainWindow::MainWindow()
   createGUI();
 
   splitter = new QSplitter(Qt::Horizontal, this);
+  splitter->setContentsMargins(0, 1, 0, 0);
 
   selector = new Selector(splitter, actionCollection());
 
