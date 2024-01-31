@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:37+0000\n"
+"POT-Creation-Date: 2024-01-31 00:39+0000\n"
 "PO-Revision-Date: 2023-02-07 07:37+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -405,7 +405,7 @@ msgstr ""
 "Auto/autobg moduan behartu babes-kopia osoa izatea profilaren ezarpenen "
 "arabera jokatu ordez."
 
-#: main.cxx:149 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:211
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Ezin izan da ireki '%1' profila irakurtzeko: %2"
@@ -429,13 +429,13 @@ msgid "unlimited"
 msgstr "mugagabea"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: MainWidgetBase.ui:41 MainWindow.cxx:113
+#: MainWidgetBase.ui:41 MainWindow.cxx:114
 #, kde-format
 msgid "Start Backup"
 msgstr "Abiatu babes-kopia"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: MainWidgetBase.ui:69 MainWindow.cxx:116
+#: MainWidgetBase.ui:69 MainWindow.cxx:117
 #, kde-format
 msgid "Cancel Backup"
 msgstr "Utzi babes-kopia"
@@ -584,37 +584,37 @@ msgstr "Ainguratu sistemaren erretiluan"
 msgid "Show Hidden Files"
 msgstr "Erakutsi ezkutuko fitxategiak"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "babes-kopia bat egiten ari da. Hura galarazi nahi duzu?"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Backup in Progress"
 msgstr "Babeskopia egiten"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Abort"
 msgstr "Galarazi"
 
-#: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "Select Profile"
 msgstr "Hautatu profila"
 
-#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
 msgstr "Kbabes-kopia profila (*.kbp)"
 
-#: MainWindow.cxx:213 MainWindow.cxx:285
+#: MainWindow.cxx:214 MainWindow.cxx:286
 #, kde-format
 msgid "Open failed"
 msgstr "Irekitzea huts egin du"
 
-#: MainWindow.cxx:262
+#: MainWindow.cxx:263
 #, kde-format
 msgid ""
 "The profile '%1' does already exist.\n"
@@ -623,17 +623,17 @@ msgstr ""
 "'%1' profila badago dagoeneko.\n"
 "Hura gainidatzi nahi duzu?"
 
-#: MainWindow.cxx:265
+#: MainWindow.cxx:266
 #, kde-format
 msgid "Profile exists"
 msgstr "Profila badago"
 
-#: MainWindow.cxx:282
+#: MainWindow.cxx:283
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Ezin izan da ireki '%1' profila idazteko: %2"
 
-#: MainWindow.cxx:358
+#: MainWindow.cxx:359
 #, kde-format
 msgid ""
 "Files: %1 Size: %2 MB\n"

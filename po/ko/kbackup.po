@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:37+0000\n"
+"POT-Creation-Date: 2024-01-31 00:39+0000\n"
 "PO-Revision-Date: 2023-03-01 01:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -398,7 +398,7 @@ msgstr ""
 "auto/autobg 모드에서는 프로필 설정에 대해 작업하는 대신 백업을 전체 백업으로 "
 "강제 설정합니다."
 
-#: main.cxx:149 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:211
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "프로필 '%1'을(를) 읽을 수 없습니다: %2"
@@ -422,13 +422,13 @@ msgid "unlimited"
 msgstr "무제한"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: MainWidgetBase.ui:41 MainWindow.cxx:113
+#: MainWidgetBase.ui:41 MainWindow.cxx:114
 #, kde-format
 msgid "Start Backup"
 msgstr "백업 시작"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: MainWidgetBase.ui:69 MainWindow.cxx:116
+#: MainWidgetBase.ui:69 MainWindow.cxx:117
 #, kde-format
 msgid "Cancel Backup"
 msgstr "백업 취소"
@@ -577,37 +577,37 @@ msgstr "시스템 트레이에 도킹"
 msgid "Show Hidden Files"
 msgstr "숨겨진 파일 표시"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "진행 중인 백업이 있습니다. 중단하시겠습니까?"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Backup in Progress"
 msgstr "백업 진행 중"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Abort"
 msgstr "중지"
 
-#: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "Select Profile"
 msgstr "프로필 선택"
 
-#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
 msgstr "KBackup 프로필 (*.kbp)"
 
-#: MainWindow.cxx:213 MainWindow.cxx:285
+#: MainWindow.cxx:214 MainWindow.cxx:286
 #, kde-format
 msgid "Open failed"
 msgstr "열기 실패"
 
-#: MainWindow.cxx:262
+#: MainWindow.cxx:263
 #, kde-format
 msgid ""
 "The profile '%1' does already exist.\n"
@@ -616,17 +616,17 @@ msgstr ""
 "'%1' 프로필이 이미 존재합니다.\n"
 "덮어 쓰시겠습니까?"
 
-#: MainWindow.cxx:265
+#: MainWindow.cxx:266
 #, kde-format
 msgid "Profile exists"
 msgstr "프로필 존재"
 
-#: MainWindow.cxx:282
+#: MainWindow.cxx:283
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "프로필 '%1'에 기록하려고 열 수 없습니다: %2"
 
-#: MainWindow.cxx:358
+#: MainWindow.cxx:359
 #, kde-format
 msgid ""
 "Files: %1 Size: %2 MB\n"

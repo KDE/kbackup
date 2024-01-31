@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:37+0000\n"
+"POT-Creation-Date: 2024-01-31 00:39+0000\n"
 "PO-Revision-Date: 2023-10-16 20:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -396,7 +396,7 @@ msgstr ""
 "auto/autobg kipinde, profil ayarlarına göre davranmak yerine yedeğin tam bir "
 "yedekleme olmasını zorla."
 
-#: main.cxx:149 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:211
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "'%1' profili okumak için açılamadı: %2"
@@ -420,13 +420,13 @@ msgid "unlimited"
 msgstr "sınırsız"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: MainWidgetBase.ui:41 MainWindow.cxx:113
+#: MainWidgetBase.ui:41 MainWindow.cxx:114
 #, kde-format
 msgid "Start Backup"
 msgstr "Yedeklemeyi Başlat"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: MainWidgetBase.ui:69 MainWindow.cxx:116
+#: MainWidgetBase.ui:69 MainWindow.cxx:117
 #, kde-format
 msgid "Cancel Backup"
 msgstr "Yedeklemeyi İptal Et"
@@ -575,37 +575,37 @@ msgstr "Sistem Tepsisine Rıhtımla"
 msgid "Show Hidden Files"
 msgstr "Gizli Dosyaları Göster"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Sürmekte olan bir yedekleme var. İptal etmek istiyor musunuz?"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Backup in Progress"
 msgstr "Yedekleme Sürüyor"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Abort"
 msgstr "İptal Et"
 
-#: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "Select Profile"
 msgstr "Profil Seç"
 
-#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
 msgstr "K Yedek Profili (*.kbp)"
 
-#: MainWindow.cxx:213 MainWindow.cxx:285
+#: MainWindow.cxx:214 MainWindow.cxx:286
 #, kde-format
 msgid "Open failed"
 msgstr "Açma başarısız"
 
-#: MainWindow.cxx:262
+#: MainWindow.cxx:263
 #, kde-format
 msgid ""
 "The profile '%1' does already exist.\n"
@@ -614,17 +614,17 @@ msgstr ""
 "'%1' profili halihazırda var.\n"
 "Üzerine yazmak istiyor musunuz?"
 
-#: MainWindow.cxx:265
+#: MainWindow.cxx:266
 #, kde-format
 msgid "Profile exists"
 msgstr "Profil var"
 
-#: MainWindow.cxx:282
+#: MainWindow.cxx:283
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "'%1' profili yazmak için açılamadı: %2"
 
-#: MainWindow.cxx:358
+#: MainWindow.cxx:359
 #, kde-format
 msgid ""
 "Files: %1 Size: %2 MB\n"

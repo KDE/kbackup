@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:37+0000\n"
+"POT-Creation-Date: 2024-01-31 00:39+0000\n"
 "PO-Revision-Date: 2023-02-05 17:24+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -405,7 +405,7 @@ msgstr ""
 "Forceer een complete reservekopie in auto/autobg mode in plaats van de "
 "profielinstellingen te volgen."
 
-#: main.cxx:149 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:211
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "Kon profiel '%1' niet openen voor lezen: %2"
@@ -429,13 +429,13 @@ msgid "unlimited"
 msgstr "onbeperkt"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: MainWidgetBase.ui:41 MainWindow.cxx:113
+#: MainWidgetBase.ui:41 MainWindow.cxx:114
 #, kde-format
 msgid "Start Backup"
 msgstr "Start het maken van de reservekopie"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: MainWidgetBase.ui:69 MainWindow.cxx:116
+#: MainWidgetBase.ui:69 MainWindow.cxx:117
 #, kde-format
 msgid "Cancel Backup"
 msgstr "Breek het maken van de reservekopie af."
@@ -584,37 +584,37 @@ msgstr "In systeemvak plaatsen"
 msgid "Show Hidden Files"
 msgstr "Verborgen bestanden tonen"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "Er wordt een reservekopie gemaakt. Wilt u dit afbreken?"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Backup in Progress"
 msgstr "Reservekopie maken is bezig"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Abort"
 msgstr "Afbreken"
 
-#: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "Select Profile"
 msgstr "Profiel selecteren"
 
-#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
 msgstr "KBackup-profiel (*.kbp)"
 
-#: MainWindow.cxx:213 MainWindow.cxx:285
+#: MainWindow.cxx:214 MainWindow.cxx:286
 #, kde-format
 msgid "Open failed"
 msgstr "Openen is mislukt"
 
-#: MainWindow.cxx:262
+#: MainWindow.cxx:263
 #, kde-format
 msgid ""
 "The profile '%1' does already exist.\n"
@@ -623,17 +623,17 @@ msgstr ""
 "Het profiel '%1' bestaat al.\n"
 "Wilt u het overschrijven?"
 
-#: MainWindow.cxx:265
+#: MainWindow.cxx:266
 #, kde-format
 msgid "Profile exists"
 msgstr "Profiel bestaat"
 
-#: MainWindow.cxx:282
+#: MainWindow.cxx:283
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "Kon profiel '%1' niet openen voor schrijven: %2"
 
-#: MainWindow.cxx:358
+#: MainWindow.cxx:359
 #, kde-format
 msgid ""
 "Files: %1 Size: %2 MB\n"

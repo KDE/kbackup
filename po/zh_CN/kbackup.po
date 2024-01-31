@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:37+0000\n"
+"POT-Creation-Date: 2024-01-31 00:39+0000\n"
 "PO-Revision-Date: 2024-01-21 14:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -388,7 +388,7 @@ msgid ""
 "on the profile settings."
 msgstr "在自动/自动后台模式，强制备份为完整备份，而不是基于配置设置行动。"
 
-#: main.cxx:149 MainWindow.cxx:210
+#: main.cxx:149 MainWindow.cxx:211
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
 msgstr "无法打开配置文件“%1”进行读取：%2"
@@ -412,13 +412,13 @@ msgid "unlimited"
 msgstr "不限制"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
-#: MainWidgetBase.ui:41 MainWindow.cxx:113
+#: MainWidgetBase.ui:41 MainWindow.cxx:114
 #, kde-format
 msgid "Start Backup"
 msgstr "开始备份"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
-#: MainWidgetBase.ui:69 MainWindow.cxx:116
+#: MainWidgetBase.ui:69 MainWindow.cxx:117
 #, kde-format
 msgid "Cancel Backup"
 msgstr "取消备份"
@@ -567,37 +567,37 @@ msgstr "停靠在系统托盘"
 msgid "Show Hidden Files"
 msgstr "显示隐藏文件"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
 msgstr "正在进行备份。您确定要中止吗？"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Backup in Progress"
 msgstr "正在进行备份"
 
-#: MainWindow.cxx:146
+#: MainWindow.cxx:147
 #, kde-format
 msgid "Abort"
 msgstr "中止"
 
-#: MainWindow.cxx:188 MainWindow.cxx:234 MainWindow.cxx:251
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "Select Profile"
 msgstr "选择配置文件"
 
-#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
 msgstr "KBackup 配置文件 (*.kbp)"
 
-#: MainWindow.cxx:213 MainWindow.cxx:285
+#: MainWindow.cxx:214 MainWindow.cxx:286
 #, kde-format
 msgid "Open failed"
 msgstr "打开失败"
 
-#: MainWindow.cxx:262
+#: MainWindow.cxx:263
 #, kde-format
 msgid ""
 "The profile '%1' does already exist.\n"
@@ -606,17 +606,17 @@ msgstr ""
 "已经存在文件“%1”。\n"
 "您想要覆盖吗？"
 
-#: MainWindow.cxx:265
+#: MainWindow.cxx:266
 #, kde-format
 msgid "Profile exists"
 msgstr "配置文件已存在"
 
-#: MainWindow.cxx:282
+#: MainWindow.cxx:283
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
 msgstr "无法打开配置文件“%1”进行写入：%2"
 
-#: MainWindow.cxx:358
+#: MainWindow.cxx:359
 #, kde-format
 msgid ""
 "Files: %1 Size: %2 MB\n"
