@@ -69,7 +69,7 @@
   <summary xml:lang="sk">Vytvorí zálohy ako .tar súbory pre miestny priečinok alebo vzdialené URL</summary>
   <summary xml:lang="sl">Ustvari varovalne kopije kot datoteke .tar v lokalni mapi ali na oddaljenem naslovu</summary>
   <summary xml:lang="sv">Skapa säkerhetskopior som .tar-filer i en lokal katalog eller fjärrwebbadress</summary>
-  <summary xml:lang="tr">Yerel bir klasöre veya uzak konum URL'sine .tar dosyalarında yedekler yapar</summary>
+  <summary xml:lang="tr">Yerel bir klasöre veya uzak konum URL’sine .tar dosyalarında yedekler yapar</summary>
   <summary xml:lang="uk">Створює резервні копії у форматі .tar у локальній теці або на віддаленому сервері</summary>
   <summary xml:lang="x-test">xxCreate backups as .tar files to a local folder or remote URLxx</summary>
   <summary xml:lang="zh-CN">创建备份为 .tar 文件到本地文件夹或远程 URL</summary>
@@ -209,7 +209,7 @@
       <li xml:lang="sk">Zálohovací cieľ môže byť buď lokálne pripojené zariadenie ako napr. USB kľúč alebo vzdialená adresa URL</li>
       <li xml:lang="sl">Cilj varnostnega kopiranja je lahko lokalno nameščena naprava, kot je ZIP pogon, USB ključ itd. ali kateri koli oddaljeni spletni naslov</li>
       <li xml:lang="sv">Målet för säkerhetskopieringen kan antingen vara en lokalt monterad enhet som en ZIP-enhet, USB-sticka, etc. eller en fjärrwebbadress</li>
-      <li xml:lang="tr">Yedekleme hedefi, yerel olarak takılmış bir ZIP sürücüsü, USB bellek vb. veya herhangi bir uzak konum URL'si olabilir</li>
+      <li xml:lang="tr">Yedekleme hedefi, yerel olarak takılmış bir ZIP sürücüsü, USB bellek vb. veya herhangi bir uzak konum URL’si olabilir</li>
       <li xml:lang="uk">Резервні копії можуть зберігатися на локально змонтованому пристрої, зокрема диску ZIP, флеш-накопичувачі USB тощо, або за будь-якою віддаленою адресою</li>
       <li xml:lang="x-test">xxThe backup target can be either a locally mounted device like a ZIP drive, USB stick, etc. or any remote URLxx</li>
       <li xml:lang="zh-CN">备份目标可以是挂载在本地的设备，例如 ZIP 驱动器或者 USB 存储器等，也可以是任何远程 URL</li>
