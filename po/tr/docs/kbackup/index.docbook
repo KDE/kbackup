@@ -241,7 +241,7 @@
 <para
 ><guilabel
 >Profil Ayarları</guilabel
-> bölümünde, hedef klasörde saklanacak en çok tam yedekleme sayısını da tanımlayabilir ve dolayısıyla oradaki tüm eski yedeklemelerin kendiliğinden silinmesini sağlayabilirsiniz. Örneğin, 3'e ayarlarsanız &kbackup; son 3 yedeği saklar ve eskilerin tümünü siler. </para>
+> bölümünde, hedef klasörde saklanacak en çok tam yedekleme sayısını da tanımlayabilir ve dolayısıyla oradaki tüm eski yedeklemelerin kendiliğinden silinmesini sağlayabilirsiniz. Örneğin, 3’e ayarlarsanız &kbackup; son 3 yedeği saklar ve eskilerin tümünü siler. </para>
 
 </sect1>
 
@@ -348,7 +348,7 @@
 <para
 ><option
 >--autobg</option
-> seçeneği kullanılırken, yedeklemenin ilerlemesini gösteren &kbackup; çıktısı stderr'e yazılır. Öntanımlı olarak, çıktı genelde birkaç önemli ileti ve sonunda bir özet içerir. Ek olarak <option
+> seçeneği kullanılırken, yedeklemenin ilerlemesini gösteren &kbackup; çıktısı stderr’e yazılır. Öntanımlı olarak, çıktı genelde birkaç önemli ileti ve sonunda bir özet içerir. Ek olarak <option
 >--verbose</option
 > seçeneğini eklerseniz yedeklenen her bir dosyanın adını görürsünüz. </para>
 </listitem>
@@ -575,7 +575,7 @@
 <para
 >&kbackup;, ortak &kde; <guimenu
 >Yardım</guimenu
-> menüsüne sahiptir; daha fazla bilgi için &kde; Temelleri'nin <ulink url="help:/fundamentals/menus.html#menus-help"
+> menüsüne sahiptir; daha fazla bilgi için &kde; Temelleri’nin <ulink url="help:/fundamentals/menus.html#menus-help"
 >Yardım Menüsü</ulink
 > bölümünü okuyun. </para>
 </sect2>
