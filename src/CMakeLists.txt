@@ -49,6 +49,7 @@ install(FILES org.kde.kbackup.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR}
 ecm_install_icons(ICONS
                   16-apps-kbackup.png
                   32-apps-kbackup.png
+                  128-apps-kbackup.png
                   16-mimetypes-text-x-kbp.png
                   32-mimetypes-text-x-kbp.png
                   DESTINATION ${KDE_INSTALL_ICONDIR}
