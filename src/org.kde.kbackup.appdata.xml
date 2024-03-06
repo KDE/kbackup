@@ -250,6 +250,7 @@
       <li xml:lang="zh-TW">執行自動備份而不使用圖形使用者介面</li>
     </ul>
   </description>
+  <url type="homepage">https://apps.kde.org/kbackup/</url>
   <launchable type="desktop-id">org.kde.kbackup.desktop</launchable>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kbackup</url>
   <url type="help">https://docs.kde.org/?application=kbackup</url>
