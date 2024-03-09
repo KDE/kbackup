@@ -1,0 +1,869 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kbackup package.
+#
+# SPDX-FileCopyrightText: 2024 Guðmundur Erlingsson <gudmundure@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kbackup\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-01-31 00:39+0000\n"
+"PO-Revision-Date: 2024-02-25 16:07+0000\n"
+"Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Guðmundur Erlingsson"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "gudmundure@gmail.com"
+
+#: Archiver.cxx:434
+#, kde-format
+msgid "Nothing selected for backup"
+msgstr "Ekkert valið til afritunar"
+
+#: Archiver.cxx:440
+#, kde-format
+msgid "The target dir '%1' is not valid"
+msgstr "Viðtökumappan '%1' er ekki gild"
+
+#: Archiver.cxx:447
+#, kde-format
+msgid "The target dir '%1' must be a local file system dir and no remote URL"
+msgstr ""
+"Viðtökumappan '%1' verður að vera staðbundin mappa en ekki fjartengd slóð"
+
+#: Archiver.cxx:460
+#, kde-format
+msgid ""
+"The target directory '%1' does not exist.\n"
+"\n"
+"Shall I create it?"
+msgstr ""
+"Viðtökumappan '%1' er ekki til.\n"
+"\n"
+"Á ég að búa hana til?"
+
+#: Archiver.cxx:462
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr "Búa til möppu"
+
+#: Archiver.cxx:463
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr "Búa til"
+
+#: Archiver.cxx:468
+#, kde-format
+msgid ""
+"Could not create the target directory '%1'.\n"
+"The operating system reports: %2"
+msgstr ""
+"Gat ekki búið til viðtökumöppuna '%1'.\n"
+"Stýrikerfið segir: %2"
+
+#: Archiver.cxx:476
+#, kde-format
+msgid "The target dir does not exist"
+msgstr "Viðtökumappan er ekki til"
+
+#: Archiver.cxx:549
+#, kde-format
+msgid "...reducing number of kept archives to max. %1"
+msgstr "...dreg úr fjölda geymdra safnskráa að hámarki. %1"
+
+#: Archiver.cxx:607
+#, kde-format
+msgid "...deleting %1"
+msgstr "...eyði %1"
+
+#: Archiver.cxx:631
+#, kde-format
+msgid ""
+"fetching directory listing of target failed. Can not reduce kept archives."
+msgstr ""
+"mistókst að sækja möppulista af viðtökustað. Get ekki dregið úr fjölda "
+"geymdra safnskráa."
+
+#: Archiver.cxx:654
+#, kde-format
+msgid "Could not write backup timestamps into profile %1: %2"
+msgstr "Gat ekki skrifað tímastimpla öryggisafrita í snið %1: %2"
+
+#: Archiver.cxx:658
+#, kde-format
+msgid "-- Filtered Files: %1"
+msgstr "-- Síaðar skrár: %1"
+
+#: Archiver.cxx:661
+#, kde-format
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr "!! Öryggisafritun lokið<b>en skrám var sleppt</b> !!"
+
+#: Archiver.cxx:663
+#, kde-format
+msgid "-- Backup successfully finished --"
+msgstr "-- Öryggisafritun tókst --"
+
+#: Archiver.cxx:669
+#, kde-format
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"Öryggisafrituninni er lokið en skrám var sleppt.\n"
+"Hvað viltu gera núna?"
+
+#: Archiver.cxx:671
+#, kde-format
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"Öryggisafritunin tókst og er lokið.\n"
+"Hvað viltu gera núna?"
+
+#: Archiver.cxx:689
+#, kde-format
+msgid "Totals: Files: %1, Size: %2, Duration: %3"
+msgstr "Samtals: Skrár: %1, Stærð: %2, Tímalengd: %3"
+
+#: Archiver.cxx:700
+#, kde-format
+msgid "...Backup aborted!"
+msgstr "...öryggisafritun stöðvuð!"
+
+#: Archiver.cxx:727
+#, kde-format
+msgid "Backup cancelled"
+msgstr "Hætt við öryggisafritun"
+
+#: Archiver.cxx:747
+#, kde-format
+msgid "...finished slice %1"
+msgstr "...lauk við sneið %1"
+
+#: Archiver.cxx:762
+#, kde-format
+msgid "...uploading archive %1 to %2"
+msgstr "...hleð upp safnskrá %1 á %2"
+
+#: Archiver.cxx:780
+#, kde-format
+msgid "How shall we proceed with the upload?"
+msgstr "Hvernig á að halda áfram með upphleðsluna?"
+
+#: Archiver.cxx:780
+#, kde-format
+msgid "Upload Failed"
+msgstr "Upphleðsla mistókst"
+
+#: Archiver.cxx:781
+#, kde-format
+msgid "Retry"
+msgstr "Reyna aftur"
+
+#: Archiver.cxx:781
+#, kde-format
+msgid "Change Target"
+msgstr "Breyta viðtökustað"
+
+#: Archiver.cxx:872
+#, kde-format
+msgid "The script '%1' could not be started."
+msgstr "Ekki tókst að ræsa skriftuna '%1'."
+
+#: Archiver.cxx:911
+#, kde-format
+msgid "The medium is full. Please insert medium Nr. %1"
+msgstr "Miðillinn er fullur. Settu inn miðil nr. %1"
+
+#: Archiver.cxx:955
+#, kde-format
+msgid "The file '%1' can not be opened for writing."
+msgstr "Ekki er hægt að opna skrána '%1' til að skrifa."
+
+#: Archiver.cxx:959
+#, kde-format
+msgid ""
+"The file '%1' can not be opened for writing.\n"
+"\n"
+"Do you want to retry?"
+msgstr ""
+"Ekki er hægt að opna skrána '%1' til að skrifa.\n"
+"\n"
+"Viltu reyna aftur?"
+
+#: Archiver.cxx:960
+#, kde-format
+msgctxt "@title"
+msgid "Open File"
+msgstr "Opna skrá"
+
+#: Archiver.cxx:961
+#, kde-format
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Reyna aftur"
+
+#: Archiver.cxx:981
+#, kde-format
+msgid "Could not write to archive. Maybe the medium is full."
+msgstr "Gat ekki skrifað í safnskrána. Ef til vill er miðillinn fullur."
+
+#: Archiver.cxx:985
+#, kde-format
+msgid ""
+"Could not write to archive.\n"
+"The operating system reports: %1"
+msgstr ""
+"Gat ekki skrifað í safnskrána.\n"
+"Stýrikerfið tilkynnir: %1"
+
+#: Archiver.cxx:1004
+#, kde-format
+msgid "...skipping filtered directory %1"
+msgstr "...sleppi síaðri möppu %1"
+
+#: Archiver.cxx:1015
+#, kde-format
+msgid ""
+"Could not get information of directory: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Gat ekki fengið upplýsingar frá möppu: %1\n"
+"Stýrikerfið tilkynnir: %2"
+
+#: Archiver.cxx:1025
+#, kde-format
+msgid "Directory '%1' is not readable. Skipping."
+msgstr "Mappan '%1' er ólæsileg. Sleppi henni."
+
+#: Archiver.cxx:1125
+#, kde-format
+msgid ""
+"Could not get information of file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Gat ekki sótt upplýsingar um skrá: %1\n"
+"Stýrikerfið tilkynnir: %2"
+
+#: Archiver.cxx:1136
+#, kde-format
+msgid "Can not archive file type 'socket': %1\n"
+msgstr "Get ekki safnvistað skrá af gerðinni 'socket': %1\n"
+
+#: Archiver.cxx:1220 Archiver.cxx:1299
+#, kde-format
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"Gat ekki lesið úr skránni '%1'\n"
+"Stýrikerfið tilkynnir: %2"
+
+#: Archiver.cxx:1268
+#, kde-format
+msgid "Could not open file '%1' for reading."
+msgstr "Gat ekki opnað skrána '%1' til að lesa."
+
+#: Archiver.cxx:1335
+#, kde-format
+msgid "...archiving file %1"
+msgstr "...safnvista skrá %1"
+
+#: Archiver.cxx:1368
+#, kde-format
+msgid ""
+"Could not read file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Gat ekki lesið skrá: %1\n"
+"Stýrikerfið tilkynnir: %2"
+
+#: Archiver.cxx:1382
+#, kde-format
+msgid ""
+"Could not create temporary file for compressing: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Gat ekki búið til bráðabirgðaskrá fyrir þjöppun: %1\n"
+"Stýrikerfið tilkynnir: %2"
+
+#: Archiver.cxx:1410
+#, kde-format
+msgid "Could not write to temporary file"
+msgstr "Gat ekki skrifað í bráðabirgðaskrá"
+
+#: Archiver.cxx:1431
+#, kde-format
+msgid "...compressing file %1"
+msgstr "...þjappa skrá %1"
+
+#: Archiver.cxx:1476
+#, kde-format
+msgid "WARNING:"
+msgstr "VIÐVÖRUN:"
+
+#. i18n: ectx: Menu (file)
+#: kbackupui.rc:4
+#, kde-format
+msgid "&File"
+msgstr "&Skrá"
+
+#. i18n: ectx: Menu (settings)
+#: kbackupui.rc:12
+#, kde-format
+msgid "&Settings"
+msgstr "&Stillingar"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: main.cxx:47 MainWidgetBase.ui:16
+#, kde-format
+msgid "KBackup"
+msgstr "KBackup"
+
+#: main.cxx:48
+#, kde-format
+msgid "An easy to use backup program"
+msgstr "Einfalt og þægilegt öryggisafritunarforrit"
+
+#: main.cxx:49
+#, kde-format
+msgid "(c) 2006 - 2018 Martin Koller"
+msgstr "(c) 2006 - 2018 Martin Koller"
+
+#: main.cxx:53
+#, kde-format
+msgid "Martin Koller"
+msgstr "Martin Koller"
+
+#: main.cxx:53
+#, kde-format
+msgid "Developer"
+msgstr "Forritari"
+
+#: main.cxx:61
+#, kde-format
+msgid "Start with given profile."
+msgstr "Byrja með tilgreint snið"
+
+#: main.cxx:63
+#, kde-format
+msgid "Script to run after finishing one archive slice."
+msgstr "Skrifta sem á að keyra þegar lokið er við eina safnskrársneið."
+
+#: main.cxx:65
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile and terminate when done."
+msgstr ""
+"Keyra sjálfkrafa öryggisafritun með tilgreindu sniði og hætta þegar því er "
+"lokið."
+
+#: main.cxx:68
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile in the background "
+"(without showing a window) and terminate when done."
+msgstr ""
+"Keyra sjálfkrafa öryggisafritun með tilgreindu sniði í bakgrunni (án þess að "
+"sýna glugga) og hætta þegar því er lokið."
+
+#: main.cxx:73
+#, kde-format
+msgid ""
+"In autobg mode be verbose and print every single filename during backup."
+msgstr ""
+"Í sjálfvirku bakgrunnssniði á að skila ítarlegum upplýsingum og prenta öll "
+"skrárheiti við öryggisafritun."
+
+#: main.cxx:76
+#, kde-format
+msgid ""
+"In auto/autobg mode force the backup to be a full backup instead of acting "
+"on the profile settings."
+msgstr ""
+"Í sjálfv./sjálfv. bakgrunnssniði á að þvinga fram fullt öryggisafrit í stað "
+"þess að fara eftir stillingum sniðsins."
+
+#: main.cxx:149 MainWindow.cxx:211
+#, kde-format
+msgid "Could not open profile '%1' for reading: %2"
+msgstr "Gat ekki opnað sniðið '%1' til að lesa: %2"
+
+#: MainWidget.cxx:68
+#, kde-format
+msgid "Incremental Backup"
+msgstr "Öryggisafrit að hluta"
+
+#: MainWidget.cxx:70
+#, kde-format
+msgid "Full Backup"
+msgstr "Fullt öryggisafrit"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#: MainWidget.cxx:165 SettingsDialog.cxx:21 SettingsDialog.ui:67
+#: SettingsDialog.ui:136
+#, kde-format
+msgid "unlimited"
+msgstr "ótakmarkað"
+
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: MainWidgetBase.ui:41 MainWindow.cxx:114
+#, kde-format
+msgid "Start Backup"
+msgstr "Byrja öryggisafritun"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: MainWidgetBase.ui:69 MainWindow.cxx:117
+#, kde-format
+msgid "Cancel Backup"
+msgstr "Hætta við afritun"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: MainWidgetBase.ui:92
+#, kde-format
+msgid "Next Backup:"
+msgstr "Næsta afritun:"
+
+#. i18n: ectx: property (text), widget (QLabel, backupType)
+#: MainWidgetBase.ui:99
+#, kde-format
+msgid "TextLabel"
+msgstr "Textamerking"
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
+#: MainWidgetBase.ui:106
+#, kde-format
+msgid "Force Full Backup"
+msgstr "Þvinga fulla öryggisafritun"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: MainWidgetBase.ui:121
+#, kde-format
+msgid "Target"
+msgstr "Áfangastaður"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: MainWidgetBase.ui:127
+#, kde-format
+msgid "Folder:"
+msgstr "Mappa:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: MainWidgetBase.ui:143
+#, kde-format
+msgid "Medium:"
+msgstr "Miðill:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#: MainWidgetBase.ui:165
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: MainWidgetBase.ui:185 MainWidgetBase.ui:277
+#, kde-format
+msgid "Size:"
+msgstr "Stærð:"
+
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: MainWidgetBase.ui:201
+#, kde-format
+msgid "0 MB"
+msgstr "0 MB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: MainWidgetBase.ui:236
+#, kde-format
+msgid "Totals"
+msgstr "Samtals"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: MainWidgetBase.ui:248
+#, kde-format
+msgid "Files:"
+msgstr "Skrár"
+
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: MainWidgetBase.ui:258 MainWidgetBase.ui:287
+#, kde-format
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#: MainWidgetBase.ui:300
+#, kde-format
+msgid "MB"
+msgstr "MB"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: MainWidgetBase.ui:335
+#, kde-format
+msgid "Duration:"
+msgstr "Tímalengd:"
+
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: MainWidgetBase.ui:345
+#, kde-format
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: MainWidgetBase.ui:387
+#, kde-format
+msgid "Warnings:"
+msgstr "Viðvaranir:"
+
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: MainWidgetBase.ui:413
+#, kde-format
+msgid "Progress:"
+msgstr "Framvinda:"
+
+#: MainWindow.cxx:56
+#, kde-format
+msgid "New Profile"
+msgstr "Nýtt snið"
+
+#: MainWindow.cxx:60
+#, kde-format
+msgid "Load Profile..."
+msgstr "Hlaða inn sniði..."
+
+#: MainWindow.cxx:64
+#, kde-format
+msgid "Save Profile"
+msgstr "Vista snið"
+
+#: MainWindow.cxx:68
+#, kde-format
+msgid "Save Profile As..."
+msgstr "Vista snið sem..."
+
+#: MainWindow.cxx:72
+#, kde-format
+msgid "Profile Settings..."
+msgstr "Stillingar sniðs..."
+
+#: MainWindow.cxx:75
+#, kde-format
+msgid "Enable All Messages"
+msgstr "Virkja öll skilaboð"
+
+#: MainWindow.cxx:77
+#, kde-format
+msgid "Dock in System Tray"
+msgstr "Setja í kerfisbakka"
+
+#: MainWindow.cxx:81
+#, kde-format
+msgid "Show Hidden Files"
+msgstr "Sýna faldar skrár"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr "Það er afritun í gangi. Viltu hætta henni?"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "Backup in Progress"
+msgstr "Afritun í gangi"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "Abort"
+msgstr "Hætta"
+
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#, kde-format
+msgid "Select Profile"
+msgstr "Velja snið"
+
+#: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
+#, kde-format
+msgid "KBackup Profile (*.kbp)"
+msgstr "KBackup-snið (*.kbp)"
+
+#: MainWindow.cxx:214 MainWindow.cxx:286
+#, kde-format
+msgid "Open failed"
+msgstr "Mistókst að opna"
+
+#: MainWindow.cxx:263
+#, kde-format
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Sniðið '%1' er nú þegar til.\n"
+"Viltu skrifa yfir það?"
+
+#: MainWindow.cxx:266
+#, kde-format
+msgid "Profile exists"
+msgstr "Sniðið er til"
+
+#: MainWindow.cxx:283
+#, kde-format
+msgid "Could not open profile '%1' for writing: %2"
+msgstr "Gat ekki opnað snið '%1' til að skrifa: %2"
+
+#: MainWindow.cxx:359
+#, kde-format
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
+"Skrár: %1 Stærð: %2 MB\n"
+"%3"
+
+#: Selector.cxx:253
+#, kde-format
+msgid "Name"
+msgstr "Heiti"
+
+#: Selector.cxx:253
+#, kde-format
+msgid "Size"
+msgstr "Stærð"
+
+#: Selector.cxx:253
+#, kde-format
+msgid "Last Modified"
+msgstr "Síðast breytt"
+
+#: Selector.cxx:285
+#, kde-format
+msgid "Open With"
+msgstr "Opna með"
+
+#: Selector.cxx:293
+#, kde-format
+msgid "Delete File"
+msgstr "Eyða skrá"
+
+#: Selector.cxx:299
+#, kde-format
+msgid "Properties..."
+msgstr "Eiginleikar..."
+
+#: Selector.cxx:603
+#, kde-format
+msgid "Do you really want to delete '%1'?"
+msgstr "Viltu örugglega eyða '%1'?"
+
+#: Selector.cxx:604
+#, kde-format
+msgid "Delete"
+msgstr "Eyða"
+
+#: Selector.cxx:615
+#, kde-format
+msgid "Could not delete directory '%1'."
+msgstr "Gat ekki eytt möppu '%1'."
+
+#: Selector.cxx:624
+#, kde-format
+msgid ""
+"Could not delete file '%1'.\n"
+"Reason: %2"
+msgstr ""
+"Gat ekki eytt skrá '%1'.\n"
+"Ástæða: %2"
+
+#: Selector.cxx:692
+#, kde-format
+msgid "Other Application..."
+msgstr "Annað forrit..."
+
+#: Selector.cxx:694
+#, kde-format
+msgid "File Manager"
+msgstr "Skráastjóri"
+
+#: SettingsDialog.cxx:22
+#, kde-format
+msgid "650 MB CD"
+msgstr "650 MB CD"
+
+#: SettingsDialog.cxx:23
+#, kde-format
+msgid "700 MB CD"
+msgstr "700 MB CD"
+
+#: SettingsDialog.cxx:24
+#, kde-format
+msgid "4.7 GB DVD"
+msgstr "4.7 GB DVD"
+
+#: SettingsDialog.cxx:25
+#, kde-format
+msgid "8.5 GB DVD"
+msgstr "8.5 GB DVD"
+
+#: SettingsDialog.cxx:26
+#, kde-format
+msgid "9.4 GB DVD"
+msgstr "9.4 GB DVD"
+
+#: SettingsDialog.cxx:27
+#, kde-format
+msgid "17.1 GB DVD"
+msgstr "17.1 GB DVD"
+
+#: SettingsDialog.cxx:28
+#, kde-format
+msgid "custom"
+msgstr "sérsniðið"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: SettingsDialog.ui:16
+#, kde-format
+msgid "Profile Settings"
+msgstr "Stillingar sniðs"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:38
+#, kde-format
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Afhakaðu ef þú vilt forðast staðfestingarglugga til að breyta miðlinum þegar "
+"sneið var lokið"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:41
+#, kde-format
+msgid "Target needs media change"
+msgstr "Áfangastaður þarf að breyta miðli"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: SettingsDialog.ui:48
+#, kde-format
+msgid "Exclude Paths Filter:"
+msgstr "Sía fyrir útilokaðar slóðir:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: SettingsDialog.ui:57
+#, kde-format
+msgid "Number of full backups to keep"
+msgstr "Fjöldi fullra öryggisafrita sem á að geyma"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: SettingsDialog.ui:64
+#, kde-format
+msgid ""
+"How many full backups shall be kept in the target directory before older "
+"ones will be deleted"
+msgstr ""
+"Hversu mörg full öryggisafrit skal geyma í viðtökumöppunni áður en þeim "
+"eldri er eytt"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: SettingsDialog.ui:77
+#, kde-format
+msgid "Full Backup Interval"
+msgstr "Tímabil á milli fullra öryggisafritana"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:84
+#, kde-format
+msgid "How often shall a full backup, instead of an incremental one, be done"
+msgstr "Hversu oft á að taka fullt öryggisafrit í stað öryggisafrits að hluta"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:87
+#, kde-format
+msgid "Every Day"
+msgstr "Á hverjum degi"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:90
+#, kde-format
+msgid " days"
+msgstr " dagar"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: SettingsDialog.ui:105
+#, kde-format
+msgid "Archive Prefix:"
+msgstr "Forskeyti safnskrár:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
+#: SettingsDialog.ui:115
+#, kde-format
+msgid ""
+"Defines wildcards for filenames which will be ignored for backup, separated "
+"by a space. E.g.: \"*.ogg *.wav\""
+msgstr ""
+"Skilgreinir algildistákn fyrir skrárheiti sem verða hunsuð í öryggisafritun, "
+"aðskilin með bili. T.d.: \"*.ogg *.wav\""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: SettingsDialog.ui:122
+#, kde-format
+msgid "Maximum Archive Size:"
+msgstr "Hámarksstærð safnskrár:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: SettingsDialog.ui:139
+#, kde-format
+msgid " MB"
+msgstr " MB"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: SettingsDialog.ui:157
+#, kde-format
+msgid "Exclude Filename Filter:"
+msgstr "Sía fyrir útilokuð skrárheiti:"
+
+#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
+#: SettingsDialog.ui:164
+#, kde-format
+msgid ""
+"<html><head/><body><p>Defines a list of absolute path patterns which are "
+"used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
+"body></html>"
+msgstr ""
+"<html><head/><body><p>Skilgreinir lista yfir algild slóðamynstur sem eru "
+"notuð til að sía út möppur sem er lokið,<br/>t.d. /home/*/.mozilla/*/Cache</"
+"p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:171
+#, kde-format
+msgid "Uncheck if you want to avoid compressing files at all"
+msgstr "Afhakaðu ef þú vilt sleppa því alveg að þjappa skrár"
+
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:174
+#, kde-format
+msgid "Compress Files"
+msgstr "Þjappa skrár"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
+#: SettingsDialog.ui:181
+#, kde-format
+msgid "backup"
+msgstr "öryggisafrit"
