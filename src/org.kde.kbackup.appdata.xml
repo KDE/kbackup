@@ -23,6 +23,7 @@
   <name xml:lang="ia">KBackup</name>
   <name xml:lang="id">KBackup</name>
   <name xml:lang="ie">KBackup</name>
+  <name xml:lang="is">KBackup</name>
   <name xml:lang="it">KBackup</name>
   <name xml:lang="ka">KBackup</name>
   <name xml:lang="ko">KBackup</name>
@@ -57,6 +58,7 @@
   <summary xml:lang="ia">Crea retrocopias como file .tar al dossier local e URL remote</summary>
   <summary xml:lang="id">Buat cadangan sebagai file .tar ke sebuah folder lokal atau URL jarak jauh</summary>
   <summary xml:lang="ie">Crear archives quam files .tar in local fólderes o lontan URLs</summary>
+  <summary xml:lang="is">Taktu öryggisafrit sem .tar-skrár í staðbundinni möppu eða á fjartengdri slóð</summary>
   <summary xml:lang="it">Crea copie di sicurezza come file .tar in cartelle locali o URL remoti</summary>
   <summary xml:lang="ka">შექმენით მარქაფები .tar ფაილის სახით ლოკალურ საქაღალდეში ან დაშორებულ ბმულზე</summary>
   <summary xml:lang="ko">백업을 로컬 폴더에 .tar 파일로 저장하거나 원격 URL로 생성</summary>
@@ -94,6 +96,7 @@
     <p xml:lang="ia">KBackup es un application que te permitte retro copiar tu datos in un modo simplice e amical</p>
     <p xml:lang="id">KBackup adalah aplikasi yang memungkinkan kamu mencadangkan data dengan cara yang sederhana dan ramah pengguna</p>
     <p xml:lang="ie">KBackup es un application quel permisse vos archivar vor data in un simplic comprensibil maniere</p>
+    <p xml:lang="is">KBackup er forrit sem gerir þér kleift að taka afrit af gögnunum þínum á einfaldan og þægilegan hátt</p>
     <p xml:lang="it">KBackup è un'applicazione che permette di salvare i tuoi dai in modo semplice e intuitivo</p>
     <p xml:lang="ka">KBackup წარმაოდგენს აპლიკაციას, რომელიც თქვენი მონაცემების მარქაფის იოლ და მოხერხებულ გზას გთავაზობთ</p>
     <p xml:lang="ko">KBackup은 쉽고 간편하게 데이터를 백업할 수 있는 앱입니다</p>
@@ -129,6 +132,7 @@
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="ie">Caracteristicas:</p>
+    <p xml:lang="is">Eiginleikar:</p>
     <p xml:lang="it">Caratteristiche:</p>
     <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
@@ -164,6 +168,7 @@
       <li xml:lang="gl">Uso de ficheiros de perfil que definen cartafoles e ficheiros que incluír ou excluír da salvagarda.</li>
       <li xml:lang="ia">Usante files de profilo con definitiones per dossieres e files que essera includite o excludite ex le retrocopia</li>
       <li xml:lang="id">Menggunakan file profil dengan definisi untuk folder dan file yang akan dimasukkan atau dikecualikan dari cadangan</li>
+      <li xml:lang="is">Sniðskrár með skilgreiningum notaðar fyrir möppur og skrár sem á að taka með eða sleppa úr öryggisafritinu</li>
       <li xml:lang="it">Utilizzo di file di profilo con le definizioni di cartelle e file da includere o escludere nella copia di sicurezza</li>
       <li xml:lang="ka">პროფილის ფაილებით, რომლებიც შეიცავენ საქაღალდეების და ფაილების სია, რომელიც მარქაფიდან ამოღებული ან მასში ჩამატებული უნდა იყოს</li>
       <li xml:lang="ko">백업에 포함하거나 제외할 폴더나 파일을 정의하는 프로필</li>
@@ -197,6 +202,7 @@
       <li xml:lang="gl">O destino da salvagarda pode ser ou un dispositivo montado de maneira local, como un dispositivo ZIP ou unha memoria USB, ou un URL remoto.</li>
       <li xml:lang="ia">Le objectivo de retrocopiar pote esser un dispositivo montate localmentetal como un drive ZIP, un clave USB, etc. o ulle URL remote</li>
       <li xml:lang="id">Target cadangan dapat berupa peranti yang dikaitkan secara lokal seperti drive ZIP, stik USB, dll. atau URL jarak jauh apa pun</li>
+      <li xml:lang="is">Viðtökustaður afritsins getur verið annað hvort staðbundið tæki eins og ZIP-drif, USB-lykill o.s.frv eða fjartengd slóð</li>
       <li xml:lang="it">La posizione di destinazione della copia può essere un dispositivo montato localmente come un disco ZIP, una memoria USB, ecc, o un qualsiasi URL remoto</li>
       <li xml:lang="ka">მარქაფს მოწყობილობა შეიძლება ლოკალურად მიმაგრებული მოწყობილობა, ისეთები, როგორიცაა ZIP დისკი, USB დისკი და ა.შ., ან ნებისმიერი დაშორებული ბმული იყოს</li>
       <li xml:lang="ko">ZIP 드라이브, USB 메모리 등 로컬에 연결된 장치나 임의의 원격 URL로 백업</li>
@@ -231,6 +237,7 @@
       <li xml:lang="ia">Executante retrocopias automatic sin usar un interfacie de usator graphic</li>
       <li xml:lang="id">Cadangan yang diotomatiskan berjalan tanpa menggunakan antarmuka pengguna grafis</li>
       <li xml:lang="ie">Automatic archivation sin usage de un interfacie grafical</li>
+      <li xml:lang="is">Sjálfvirk afritun keyrð án þess að nota myndrænt notendaviðmót</li>
       <li xml:lang="it">Esecuzione automatica del backup senza l'utilizzo dell'interfaccia grafica</li>
       <li xml:lang="ka">ავტომატური მარქაფების გაშვება გრაფიკული ინტერფეისის გამოყენების გარეშე</li>
       <li xml:lang="ko">그래픽 사용자 인터페이스 없이 자동으로 백업 실행</li>
