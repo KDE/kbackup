@@ -85,7 +85,7 @@ $applicationname xx.yy for applications with independent release schedule (extra
 <title
 >AÇIKLAMA</title>
 <para
->K Yedek, herhangi bir dizini veya dosyayı yedeklemenizi sağlayan bir programdır. Yedeklenecek şeyleri seçmek için kullanımı kolay bir dizin ağacı kullanır ve ayarlarınızı "profil" dosyalarına kaydetmenize olanak tanır. Bunlar, yedekleme sürecinde içerilecek veya yedekleme işleminin dışında tutulacak dizinler ve dosyalar için tanımları içeren basit metin dosyalarıdır.</para
+>K Yedek, herhangi bir dizini veya dosyayı yedeklemenizi sağlayan bir programdır. Yedeklenecek şeyleri seçmek için kullanımı kolay bir dizin ağacı kullanır ve ayarlarınızı "profil" dosyalarına kaydetmenize olanak tanır. Bunlar, yedekleme sürecinde içerilecek veya yedekleme işleminden dışlanacak dizinler ve dosyalar için tanımları içeren basit metin dosyalarıdır.</para
 > 
 
 </refsect1>

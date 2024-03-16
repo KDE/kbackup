@@ -98,7 +98,7 @@
 <para
 >&kbackup;, herhangi bir klasörü veya dosyayı yedeklemenizi sağlayan bir programdır; bu sayede, yedeklenecek şeyleri seçmek için kullanımı kolay bir klasör ağacı kullanır. Ayarlarınızı <quote
 >profil</quote
-> adı verilen dosyalara kaydetmenize olanak tanır; burada profil, yedekleme işlemine dahil edilecek veya yedekleme işleminin dışında tutulacak klasörler ve dosyalar için tanımları içeren basit bir metin dosyasıdır. Ayrıca yedeğin nereye kaydedileceğini tanımlamanıza da olanak tanır. Bu, bir yerel klasör olabileceği gibi (örn. yerel olarak bağlanmış bir ZIP sürücüsü, USB bellek vb.) verinizi herhangi merkezi bir sunucuya yedeklemek için uzak bir &URL; de olabilir (&eg; smb://uzak/yol). </para>
+> adı verilen dosyalara kaydetmenize olanak tanır; burada profil, yedekleme işlemine dahil edilecek veya yedekleme işleminden dışlanacak klasörler ve dosyalar için tanımları içeren basit bir metin dosyasıdır. Ayrıca yedeğin nereye kaydedileceğini tanımlamanıza da olanak tanır. Bu, bir yerel klasör olabileceği gibi (örn. yerel olarak bağlanmış bir ZIP sürücüsü, USB bellek vb.) verinizi herhangi merkezi bir sunucuya yedeklemek için uzak bir &URL; de olabilir (&eg; smb://uzak/yol). </para>
 
 <para
 >Program ayrıca grafiksel bir kullanıcı arayüzü kullanmadan otomatik bir yedekleme çalıştırabilir. Bir profil oluşturulup bu ayarları kullanarak &kbackup;'e etkileşimli olmayan kipte kullanılırken ne yapacağını söyleyebilir; örneğin, bir cron işinden başlatılarak. </para>
@@ -129,7 +129,7 @@
 >Tek yapmanız gereken hangi klasörleri depolamak istediğinizi seçmektir. Bu, ana pencerenin sol tarafındaki ağaç görünümündeki tüm klasörlerin seçilmesiyle yapılır. </para>
 
 <para
->Bir klasör seçerseniz &kbackup;, altındaki tüm dosyaları ve alt klasörleri kendiliğinden depolayacaktır. Seçilen bir klasörün bazı kısımlarını dışarıda tutmak istiyorsanız hâlâ seçili olan klasördeki dosyaların/klasörlerin seçimini kaldırmanız yeterlidir. </para>
+>Bir klasör seçerseniz &kbackup;, altındaki tüm dosyaları ve alt klasörleri kendiliğinden depolayacaktır. Seçilen bir klasörün bazı kısımlarını dışlamak istiyorsanız hâlâ seçili olan klasördeki dosyaların/klasörlerin seçimini kaldırmanız yeterlidir. </para>
 
 <para
 >Genel olarak bu şu anlama gelir: Seçili bir klasör, içindeki seçili olmayan parçalar dışında, içindeki ve altındaki her şeyi depolar. Bu aynı zamanda, bir profili daha sonra yeniden kullandığınızda (aşağıya bakın) ve yedekleme için önceden seçilmiş bir klasöre yeni dosyalar eklendiğinde, tüm yeni dosyaların da depolanacağı anlamına gelir. </para>
@@ -173,7 +173,7 @@
 > seçeneğini kullanın. </para>
 
 <para
->&kbackup; bir profil içine şunları kaydeder: İçerilen dosyalar/klasörler, dışarıda tutulan dosyalar/klasörler, hedef klasör/&URL;, tanımlı arşiv öneki, tanımlı en büyük dilim boyutu &etc; </para>
+>&kbackup; bir profil içine şunları kaydeder: İçerilen dosyalar/klasörler, dışlanan dosyalar/klasörler, hedef klasör/&URL;, tanımlı arşiv öneki, tanımlı en büyük dilim boyutu &etc; </para>
 
 <para
 >Aynı dosyalar kümesini kullanan yedeğinizin yürütülmesini daha kolay kılmak için ayarlarınızı bir &kbackup; dosyasına (bir <filename class="extension"
@@ -561,7 +561,7 @@
 ><para
 >Ağaç görünümünde gizli dosyaların (öncesinde nokta karakteri olan) görüntülenmesini <action
 >etkinleştirin veya devre dışı bırakın</action
->. Bazı gizli dosyaları yedeklemenin dışında bırakmak istiyorsanız bu seçeneği kullanın. Tüm gizli dosyaları dışarıda tutmak istiyorsanız profil ayarlarında bir dosya adı süzgeci kullanın. </para
+>. Bazı gizli dosyaları yedekten dışlamak istiyorsanız bu seçeneği kullanın. Tüm gizli dosyaları dışlamak istiyorsanız profil ayarlarında bir dosya adı süzgeci kullanın. </para
 ></listitem>
 </varlistentry>
 
