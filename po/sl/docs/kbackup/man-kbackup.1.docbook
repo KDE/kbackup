@@ -1,0 +1,306 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "/usr/share/kf5/kdoctools/customization/dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<!--Rename this template to man-$applicationname.x.docbook,
+where x is the manual section, see https://en.wikipedia.org/wiki/Man_page#Manual_sections
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<!-- replace Foo with the application name-->
+<title
+>Uporabniški priročnik za KBackup</title>
+<author
+><personname
+> <firstname
+>Scarlett</firstname
+> <surname
+>Moore</surname
+> </personname
+> <email
+>sgmoore@kde.org</email
+></author>
+<!--Date when this manpage was written, in the ISO 8601 format 'yyyy-mm-dd'-->
+<date
+>23.07.2020</date>
+<!--version information of application this manpage is valid for.
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   docbook is proofreaded and verified to be valid for the current app version
+-->
+<releaseinfo
+>Aplikacije 20.04</releaseinfo>
+<!-- replace $applicationname with the application name; &kde; as prefix/namespace could
+be not needed, ask the promo team in case of doubt
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+
+<productname
+>KDE Aplikacije</productname>
+<!-- no productname in man pages for extragear applications -->
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbackup</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbackup</command
+></refname>
+<refpurpose
+>Program za varnostno kopiranje z vmesnikom, ki je enostaven za uporabo</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="_synopsis">
+<cmdsynopsis
+><command
+>kbackup</command
+> <arg rep="repeat"
+><replaceable
+>MOŽNOSTI</replaceable
+></arg
+> <arg rep="repeat"
+><replaceable
+>Ime modula | Ime sklopa modulov</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1>
+<title
+>OPIS</title>
+<para
+>Kbackup je program, ki omogoča varnostno kopiranje vseh imenikov ali datotek. Za izbiro stvari za varnostno kopiranje uporablja enostavno drevo imenikov in omogoča shranjevanje nastavitev v datotekah "profilov". To so preproste besedilne datoteke, ki vsebujejo definicije imenikov in datotek, ki se vključijo ali izključijo iz postopka varnostnega kopiranja.</para
+> 
+
+</refsect1>
+
+<refsect1>
+<title
+>MOŽNOSTI</title>
+<!--App options, in a variablelist-->
+<variablelist>
+<varlistentry>
+<term>
+    <option
+>-v, --version</option>
+</term>
+<listitem>
+    <para
+>Prikaže informacije o različici.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>-h, --help</option>
+</term>
+<listitem>
+    <para
+>Prikaže pomoč za možnosti ukazne vrstice.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--help-all</option>
+</term>
+<listitem>
+    <para
+>Prikaže pomoč, vključno s posebnimi možnostmi Qt.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--help-all --qmljsdebugger <replaceable
+>vrednost</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Vključi razhroščevalnik QML/JS z določenimi vrati. Vrednost mora biti v obliki port:1234[,block]. "block" povzroči, da aplikacija počaka na povezavo.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--script <replaceable
+>file</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Skript za zagon po dokončanju ene arhivske rezine.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--auto <replaceable
+>profile</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Samodejno zažene varnostno kopijo z danim profilom in jo zaključi, ko je končana.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--autobg <replaceable
+>profil</replaceable
+> </option>
+</term>
+<listitem>
+    <para
+>Samodejno zažene varnostno kopijo z danim profilom v ozadju (brez prikaza okna) in jo zaključi, ko je končana.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--verbose <replaceable
+>profil</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>V načinu autobg je med varnostnim kopiranjem beseden in izpiše vsako posamezno ime datoteke.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--forceFull </option>
+</term>
+<listitem>
+    <para
+>V načinu auto/autobg prisili varnostno kopijo, da je popolna varnostna kopija, namesto da bi delovala na podlagi nastavitev profila.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--author</option>
+</term>
+<listitem>
+    <para
+>Pokaži informacije o avtorju.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--license</option>
+</term>
+<listitem>
+    <para
+>Pokaži informacije o licenci.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--desktopfile <replaceable
+>datoteka</replaceable
+> </option>
+</term>
+<listitem>
+    <para
+>Ime osnovne datoteke vnosa namizja za to aplikacijo.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<!--The Following sections are optional, but recommended if they are
+applicable.-->
+
+<refsect1>
+<title
+>OKOLJE</title>
+<para
+><!--Environment variables that affect this command, how to set
+them, who sets them, how they affect it, probably in a variablelist.  Only for
+man sections 1, 6, 7 and 8--></para>
+</refsect1>
+
+<refsect1>
+<title
+>DATOTEKE</title>
+<para
+>.kbp profilne datoteke. Ustvari uporabnik ob shranjevanju profila.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Glej tudi</title>
+<simplelist>
+<member
+>Podrobnejša uporabniška dokumentacija je na voljo v <ulink url="help:/ --commandname--"
+>help:/kbackup</ulink
+> (vnesite ta &URL; v &konqueror; ali zaženite <userinput
+><command
+>khelpcenter</command
+> <parameter
+>man:/kbackup</parameter
+></userinput
+>).</member>
+<!--for man pages replace "help:/" with "man:/" in this member-->
+<member
+>kf5options(7)</member
+> <!-- only for application with a GUI-->
+<member
+>qt5options(7)</member
+> <!-- only for application with a GUI-->
+<!--<member
+>foo(1)</member
+> more man page references if applicable-->
+<member
+>Dodatne informacije so na voljo tudi na <ulink url="https://kde.org/applications/en/utilities/org.kde.kbackup"
+>https://kde.org/applications/en/utilities/org.kde.kbackup</ulink
+> </member>
+</simplelist>
+</refsect1>
+
+<refsect1>
+<title
+>Primeri</title>
+<para
+>kbackup myData.kbp Uporablja se za nalaganje obstoječega profila. </para>
+</refsect1>
+
+
+<refsect1>
+<title
+>Avtorji</title>
+<para
+>Kbackup je napisal Martin Koller <email
+> kollix@aon.at</email
+> To priročniško stran je ustvaril Scott Kitterman <email
+>scott@kitterman.com</email
+>, posodobila pa Scarlett Moore <email
+>sgmoore@kde.org</email
+>, licencirana je pod enakimi pogoji kot kbackup.</para>
+</refsect1>
+
+</refentry
+> 
