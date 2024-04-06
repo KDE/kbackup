@@ -266,10 +266,10 @@ man sections 1, 6, 7 and 8--></para>
 >)</member>
 <!--for man pages replace "help:/" with "man:/" in this member-->
 <member
->kf5options(7)</member
+>kf6options(7)</member
 > <!-- only for application with a GUI-->
 <member
->qt5options(7)</member
+>qt6options(7)</member
 > <!-- only for application with a GUI-->
 <!--<member
 >foo(1)</member
