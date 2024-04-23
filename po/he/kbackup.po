@@ -1,46 +1,47 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kbackup package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-31 00:39+0000\n"
-"PO-Revision-Date: 2024-04-22 15:58\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-04-22 22:51+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/kbackup/kbackup.pot\n"
-"X-Crowdin-File-ID: 44985\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "KDE 中国"
+msgstr "צוות התרגום של KDE ישראל"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org"
+msgstr "kde-l10n-he@kde.org"
 
 #: Archiver.cxx:434
 #, kde-format
 msgid "Nothing selected for backup"
-msgstr "没有为备份选择任何项目"
+msgstr "לא נבחר שום דבר לגיבוי"
 
 #: Archiver.cxx:440
 #, kde-format
 msgid "The target dir '%1' is not valid"
-msgstr "目标文件夹 “%1” 无效"
+msgstr "תיקיית היעד ‚%1’ שגויה"
 
 #: Archiver.cxx:447
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
-msgstr "目标文件夹 “%1” 必须为本地文件系统而不是远程 URL。"
+msgstr "תיקיית היעד ‚%1’ חייבת להיות מערכת קבצים מקומית ולא כתובת מרוחקת"
 
 #: Archiver.cxx:460
 #, kde-format
@@ -49,20 +50,21 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
-"目标文件夹 “%1” 不存在。\n"
-"是否创建它？"
+"תיקיית היעד ‚%1’ לא קיימת.\n"
+"\n"
+"ליצור אותה?"
 
 #: Archiver.cxx:462
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr "创建目录"
+msgstr "יצירת תיקייה"
 
 #: Archiver.cxx:463
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "创建"
+msgstr "יצירה"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -70,49 +72,49 @@ msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
-"无法创建目标文件夹 “%1”。\n"
-"操作系统报告为：%2"
+"לא ניתן ליצור את תיקיית היעד ‚%1’:\n"
+"מערכת ההפעלה דיווחה: %2"
 
 #: Archiver.cxx:476
 #, kde-format
 msgid "The target dir does not exist"
-msgstr "目标文件夹不存在"
+msgstr "תיקיית היעד לא קיימת"
 
 #: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
-msgstr "...降低保存的存档数量到最多 %1 个"
+msgstr "…מס׳ הארכיונים שיאוחסנו מופחת ל־%1 לכל היותר"
 
 #: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
-msgstr "...正在删除 %1"
+msgstr "…%1 נמחק"
 
 #: Archiver.cxx:631
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
-msgstr "获取目标的目录列表失败。无法降低保存的存档数量。"
+msgstr "משיכת רשימת התיקיות של היעד נכשלה. אי אפשר לצמצם את הארכיונים שנשמרו."
 
 #: Archiver.cxx:654
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
-msgstr "无法将备份时间戳写入配置文件 %1: %2"
+msgstr "לא ניתן לכתוב את חותמות זמן הגיבוי לפרופיל %1: %2"
 
 #: Archiver.cxx:658
 #, kde-format
 msgid "-- Filtered Files: %1"
-msgstr "-- 已过滤的文件：%1"
+msgstr "-- קבצים שסוננו: %1"
 
 #: Archiver.cxx:661
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
-msgstr "！！备份完成 <b>但有些文件被跳过</b>！！"
+msgstr "!! הגיבוי הסתיים <b>אבל היו קבצים שלא גובו</b> !!"
 
 #: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
-msgstr "-- 备份成功完成 --"
+msgstr "-- הגיבוי הסתיים בהצלחה --"
 
 #: Archiver.cxx:669
 #, kde-format
@@ -120,8 +122,8 @@ msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
 msgstr ""
-"备份已完成，不过有些文件被跳过了。\n"
-"您现在想做什么？"
+"הגיבוי הסתיים אבל חלק מהקבצים לא גובו.\n"
+"מה לעשות עכשיו?"
 
 #: Archiver.cxx:671
 #, kde-format
@@ -129,68 +131,68 @@ msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
 msgstr ""
-"当前备份已成功完成\n"
-"您现在想做什么？"
+"הגיבוי הסתיים בהצלחה.\n"
+"מה לעשות עכשיו?"
 
 #: Archiver.cxx:689
 #, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
-msgstr "总共：文件：%1, 大小：%2, 用时：%3"
+msgstr "סיכומים: קבצים: %1, גודל: %2, משך: %3"
 
 #: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
-msgstr "...备份已中止！"
+msgstr "…הגיבוי בוטל באופן גורף!"
 
 #: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
-msgstr "备份已取消"
+msgstr "הגיבוי בוטל"
 
 #: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
-msgstr "...已完成分片 %1"
+msgstr "…הסתיימה הפרוסה %1"
 
 #: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
-msgstr "...正在上传存档 %1 到 %2"
+msgstr "…הארכיון %1 נשלח אל %2"
 
 #: Archiver.cxx:780
 #, kde-format
 msgid "How shall we proceed with the upload?"
-msgstr "我们要怎么上传？"
+msgstr "איך להמשיך עם ההעלאה?"
 
 #: Archiver.cxx:780
 #, kde-format
 msgid "Upload Failed"
-msgstr "上传失败"
+msgstr "ההעלאה נכשלה"
 
 #: Archiver.cxx:781
 #, kde-format
 msgid "Retry"
-msgstr "重试"
+msgstr "ניסיון חוזר"
 
 #: Archiver.cxx:781
 #, kde-format
 msgid "Change Target"
-msgstr "更改目标"
+msgstr "החלפת יעד"
 
 #: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
-msgstr "无法启动脚本 \"%1\"。"
+msgstr "לא ניתן להפעיל את הסקריפט ‚%1’."
 
 #: Archiver.cxx:911
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
-msgstr "介质已满。请插入介质编号 %1"
+msgstr "האמצעי מלא. נא לחבר אמצעי מס׳ %1"
 
 #: Archiver.cxx:955
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
-msgstr "无法打开文件“%1”进行写入。"
+msgstr "אי אפשר לפתוח את הקובץ ‚%1’ לכתיבה."
 
 #: Archiver.cxx:959
 #, kde-format
@@ -199,26 +201,26 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
-"无法打开文件“%1”进行写入。\n"
+"אי אפשר לפתוח את הקובץ ‚%1’ לכתיבה.\n"
 "\n"
-"您想要重试吗？"
+"לנסות שוב?"
 
 #: Archiver.cxx:960
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr "打开文件"
+msgstr "פתיחת קובץ"
 
 #: Archiver.cxx:961
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr "重试"
+msgstr "ניסיון חוזר"
 
 #: Archiver.cxx:981
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
-msgstr "无法写入存档。媒体可能已满。"
+msgstr "לא ניתן לכתוב לארכיון. אולי האמצעי מלא."
 
 #: Archiver.cxx:985
 #, kde-format
@@ -226,13 +228,13 @@ msgid ""
 "Could not write to archive.\n"
 "The operating system reports: %1"
 msgstr ""
-"无法写入存档。\n"
-"操作系统报告为：%1"
+"לא ניתן לכתוב לארכיון.\n"
+"מערכת ההפעלה מדווחת: %1"
 
 #: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
-msgstr "...跳过了过滤掉的目录 %1"
+msgstr "…התיקייה שסוננה %1 לא נכללת"
 
 #: Archiver.cxx:1015
 #, kde-format
@@ -240,13 +242,13 @@ msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"无法获取目录的信息: %1\n"
-"操作系统报告为：%2"
+"לא ניתן לקבל מידע על התיקייה: %1\n"
+"מערכת ההפעלה מדווחת: %2"
 
 #: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
-msgstr "文件夹 “%1” 无法读取。已跳过。"
+msgstr "התיקייה ‚%1’ אינה זמינה לקריאה. לא תיכלל."
 
 #: Archiver.cxx:1125
 #, kde-format
@@ -254,13 +256,13 @@ msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"无法获取文件信息：%1\n"
-"操作系统报告为：%2"
+"לא ניתן לקבל מידע על הקובץ: %1\n"
+"מערכת ההפעלה מדווחת: %2"
 
 #: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr "无法存档文件类型“socket”：%1\n"
+msgstr "לא ניתן להעביר לארכיון קבצים מסוג ‚socket’ (שקע): %1\n"
 
 #: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
@@ -268,18 +270,18 @@ msgid ""
 "Could not read from file '%1'\n"
 "The operating system reports: %2"
 msgstr ""
-"无法读取文件 “%1”\n"
-"操作系统报告为：%2"
+"לא ניתן לקרוא מהקובץ: ‚%1’\n"
+"מערכת ההפעלה מדווחת: %2"
 
 #: Archiver.cxx:1268
 #, kde-format
 msgid "Could not open file '%1' for reading."
-msgstr "无法打开文件“%1”进行读取。"
+msgstr "לא ניתן לפתוח את הקובץ ‚%1’ לקריאה."
 
 #: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
-msgstr "...正在保存文件 “%1”"
+msgstr "…הקובץ %1 מועבר לארכיון"
 
 #: Archiver.cxx:1368
 #, kde-format
@@ -287,8 +289,8 @@ msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"无法读取文件：%1\n"
-"操作系统报告为：%2"
+"לא ניתן לקרוא את הקובץ: %1\n"
+"מערכת ההפעלה מדווחת: %2"
 
 #: Archiver.cxx:1382
 #, kde-format
@@ -296,35 +298,35 @@ msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"无法创建用于压缩的临时文件: %1\n"
-"操作系统报告为：%2"
+"לא ניתן ליצור קובץ זמני לדחיסה: %1\n"
+"מערבת ההפעלה מדווחת: %2"
 
 #: Archiver.cxx:1410
 #, kde-format
 msgid "Could not write to temporary file"
-msgstr "无法写入临时文件"
+msgstr "לא ניתן לכתוב לקובץ זמני"
 
 #: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
-msgstr "...正在压缩文件 %1"
+msgstr "…הקובץ %1 נדחס"
 
 #: Archiver.cxx:1476
 #, kde-format
 msgid "WARNING:"
-msgstr "警告："
+msgstr "אזהרה:"
 
 #. i18n: ectx: Menu (file)
 #: kbackupui.rc:4
 #, kde-format
 msgid "&File"
-msgstr "文件(&F)"
+msgstr "&קובץ"
 
 #. i18n: ectx: Menu (settings)
 #: kbackupui.rc:12
 #, kde-format
 msgid "&Settings"
-msgstr "设置(&S)"
+msgstr "ה&גדרות"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
 #: main.cxx:47 MainWidgetBase.ui:16
@@ -335,73 +337,77 @@ msgstr "KBackup"
 #: main.cxx:48
 #, kde-format
 msgid "An easy to use backup program"
-msgstr "一款易用的备份程序"
+msgstr "תוכנית גיבוי פשוטה לשימוש"
 
 #: main.cxx:49
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
-msgstr "(c) 2006 - 2018 Martin Koller"
+msgstr "(c) 2006‏ - 2018 מרטין קולר"
 
 #: main.cxx:53
 #, kde-format
 msgid "Martin Koller"
-msgstr "Martin Koller"
+msgstr "מרטין קולר"
 
 #: main.cxx:53
 #, kde-format
 msgid "Developer"
-msgstr "开发者"
+msgstr "מפתח"
 
 #: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
-msgstr "从给定的配置文件开始。"
+msgstr "התחלה עם פרופיל שצוין."
 
 #: main.cxx:63
 #, kde-format
 msgid "Script to run after finishing one archive slice."
-msgstr "完成一个存档分片之后要运行的脚本。"
+msgstr "סקריפט להרצה לאחר סיום פלח ארכיון אחד."
 
 #: main.cxx:65
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
-msgstr "使用给定的配置文件自动运行备份, 并在完成时终止。"
+msgstr "להריץ את הגיבוי אוטומטית עם הפרופיל שסופק ולהשמיד בעת הסיום."
 
 #: main.cxx:68
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
-msgstr "在后台自动运行具有给定配置文件的备份 (不显示窗口) 并在完成时终止。"
+msgstr ""
+"להריץ את הגיבוי אוטומטית ברקע (מבלי להציג את החלון) עם הפרופיל שסופק ולהשמיד "
+"בעת הסיום."
 
 #: main.cxx:73
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
-msgstr "在自动后台模式给出详细信息，备份时输出每个文件名。"
+msgstr "במצב autobg (אוטומטית ברקע) לפרט ולהציג כל שם קובץ וקובץ במהלך הגיבוי."
 
 #: main.cxx:76
 #, kde-format
 msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
-msgstr "在自动/自动后台模式，强制备份为完整备份，而不是基于配置设置行动。"
+msgstr ""
+"במצב auto/autobg (אוטומטי/אוטומטי ברקע) לאלץ גיבוי מלא במקום לפעול לפי "
+"הגדרות הפרופיל."
 
 #: main.cxx:149 MainWindow.cxx:211
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
-msgstr "无法打开配置文件“%1”进行读取：%2"
+msgstr "לא ניתן לפתוח את הפרופיל ‚%1’ לקריאה: %2"
 
 #: MainWidget.cxx:68
 #, kde-format
 msgid "Incremental Backup"
-msgstr "增量备份"
+msgstr "גיבוי מצטבר"
 
 #: MainWidget.cxx:70
 #, kde-format
 msgid "Full Backup"
-msgstr "完整备份"
+msgstr "גיבוי מלא"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
@@ -409,55 +415,55 @@ msgstr "完整备份"
 #: SettingsDialog.ui:136
 #, kde-format
 msgid "unlimited"
-msgstr "不限制"
+msgstr "ללא הגבלה"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
 #: MainWidgetBase.ui:41 MainWindow.cxx:114
 #, kde-format
 msgid "Start Backup"
-msgstr "开始备份"
+msgstr "התחלת גיבוי"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #: MainWidgetBase.ui:69 MainWindow.cxx:117
 #, kde-format
 msgid "Cancel Backup"
-msgstr "取消备份"
+msgstr "ביטול גיבוי"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: MainWidgetBase.ui:92
 #, kde-format
 msgid "Next Backup:"
-msgstr "下一个备份："
+msgstr "הגיבוי הבא:"
 
 #. i18n: ectx: property (text), widget (QLabel, backupType)
 #: MainWidgetBase.ui:99
 #, kde-format
 msgid "TextLabel"
-msgstr "文字标签"
+msgstr "תווית טקסט"
 
 #. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
 #: MainWidgetBase.ui:106
 #, kde-format
 msgid "Force Full Backup"
-msgstr "强制完整备份"
+msgstr "אילוץ גיבוי מלא"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: MainWidgetBase.ui:121
 #, kde-format
 msgid "Target"
-msgstr "目标文本"
+msgstr "יעד"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: MainWidgetBase.ui:127
 #, kde-format
 msgid "Folder:"
-msgstr "文件夹："
+msgstr "תיקייה:"
 
 #. i18n: ectx: property (text), widget (QLabel, sliceLabel)
 #: MainWidgetBase.ui:143
 #, kde-format
 msgid "Medium:"
-msgstr "介质："
+msgstr "בינוני:"
 
 #. i18n: ectx: property (text), widget (QLabel, sliceNum)
 #: MainWidgetBase.ui:165
@@ -470,25 +476,25 @@ msgstr "1"
 #: MainWidgetBase.ui:185 MainWidgetBase.ui:277
 #, kde-format
 msgid "Size:"
-msgstr "大小："
+msgstr "גודל:"
 
 #. i18n: ectx: property (text), widget (QLabel, capacity)
 #: MainWidgetBase.ui:201
 #, kde-format
 msgid "0 MB"
-msgstr "0 MB"
+msgstr "0 מ״ב"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: MainWidgetBase.ui:236
 #, kde-format
 msgid "Totals"
-msgstr "总计"
+msgstr "סיכומים"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #: MainWidgetBase.ui:248
 #, kde-format
 msgid "Files:"
-msgstr "文件："
+msgstr "קבצים:"
 
 #. i18n: ectx: property (text), widget (QLabel, totalFiles)
 #. i18n: ectx: property (text), widget (QLabel, totalSize)
@@ -501,13 +507,13 @@ msgstr "0"
 #: MainWidgetBase.ui:300
 #, kde-format
 msgid "MB"
-msgstr "MB"
+msgstr "מ״ב"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #: MainWidgetBase.ui:335
 #, kde-format
 msgid "Duration:"
-msgstr "间隔："
+msgstr "משך:"
 
 #. i18n: ectx: property (text), widget (QLabel, elapsedTime)
 #: MainWidgetBase.ui:345
@@ -519,83 +525,83 @@ msgstr "00:00:00"
 #: MainWidgetBase.ui:387
 #, kde-format
 msgid "Warnings:"
-msgstr "警告："
+msgstr "אזהרות:"
 
 #. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
 #: MainWidgetBase.ui:413
 #, kde-format
 msgid "Progress:"
-msgstr "进度："
+msgstr "התקדמות:"
 
 #: MainWindow.cxx:56
 #, kde-format
 msgid "New Profile"
-msgstr "新建配置方案"
+msgstr "פרופיל חדש"
 
 #: MainWindow.cxx:60
 #, kde-format
 msgid "Load Profile..."
-msgstr "加载配置文件..."
+msgstr "טעינת פרופיל..."
 
 #: MainWindow.cxx:64
 #, kde-format
 msgid "Save Profile"
-msgstr "保存方案"
+msgstr "שמירת פרופיל"
 
 #: MainWindow.cxx:68
 #, kde-format
 msgid "Save Profile As..."
-msgstr "另存为..."
+msgstr "שמירת פרופיל בשם..."
 
 #: MainWindow.cxx:72
 #, kde-format
 msgid "Profile Settings..."
-msgstr "配置文件设置..."
+msgstr "הגדרות פרופיל..."
 
 #: MainWindow.cxx:75
 #, kde-format
 msgid "Enable All Messages"
-msgstr "启用所有消息"
+msgstr "הפעלת כל ההודעות"
 
 #: MainWindow.cxx:77
 #, kde-format
 msgid "Dock in System Tray"
-msgstr "停靠在系统托盘"
+msgstr "עיגון לשורת המשימות"
 
 #: MainWindow.cxx:81
 #, kde-format
 msgid "Show Hidden Files"
-msgstr "显示隐藏文件"
+msgstr "הצגת קבצים מוסתרים"
 
 #: MainWindow.cxx:147
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
-msgstr "正在进行备份。您确定要中止吗？"
+msgstr "מתגצע גיבוי ברקע. לבטל אותו לחלוטין?"
 
 #: MainWindow.cxx:147
 #, kde-format
 msgid "Backup in Progress"
-msgstr "正在进行备份"
+msgstr "מתבצע גיבוי"
 
 #: MainWindow.cxx:147
 #, kde-format
 msgid "Abort"
-msgstr "中止"
+msgstr "ביטול גורף"
 
 #: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "Select Profile"
-msgstr "选择配置文件"
+msgstr "בחירת פרופיל"
 
 #: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
-msgstr "KBackup 配置文件 (*.kbp)"
+msgstr "פרופיל KBackup‏ (‎*.kbp)"
 
 #: MainWindow.cxx:214 MainWindow.cxx:286
 #, kde-format
 msgid "Open failed"
-msgstr "打开失败"
+msgstr "הפתיחה נכשלה"
 
 #: MainWindow.cxx:263
 #, kde-format
@@ -603,18 +609,18 @@ msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"已经存在文件“%1”。\n"
-"您想要覆盖吗？"
+"הפרופיל ‚%1’ כבר קיים.\n"
+"לדרוס אותו?"
 
 #: MainWindow.cxx:266
 #, kde-format
 msgid "Profile exists"
-msgstr "配置文件已存在"
+msgstr "הפרופיל קיים"
 
 #: MainWindow.cxx:283
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
-msgstr "无法打开配置文件“%1”进行写入：%2"
+msgstr "לא ניתן לפתוח את הפרופיל ‚%1’ לכתיבה: %2"
 
 #: MainWindow.cxx:359
 #, kde-format
@@ -622,53 +628,53 @@ msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
 msgstr ""
-"文件: %1 大小: %2 MB\n"
+"קבצים: %1 גודל: %2 מ״ב\n"
 "%3"
 
 #: Selector.cxx:253
 #, kde-format
 msgid "Name"
-msgstr "名称"
+msgstr "שם"
 
 #: Selector.cxx:253
 #, kde-format
 msgid "Size"
-msgstr "大小"
+msgstr "גודל"
 
 #: Selector.cxx:253
 #, kde-format
 msgid "Last Modified"
-msgstr "最后更新"
+msgstr "שינוי אחרון"
 
 #: Selector.cxx:285
 #, kde-format
 msgid "Open With"
-msgstr "打开方式"
+msgstr "פתיחה באמצעות"
 
 #: Selector.cxx:293
 #, kde-format
 msgid "Delete File"
-msgstr "删除文件"
+msgstr "מחיקת קובץ"
 
 #: Selector.cxx:299
 #, kde-format
 msgid "Properties..."
-msgstr "属性..."
+msgstr "מאפיינים…"
 
 #: Selector.cxx:603
 #, kde-format
 msgid "Do you really want to delete '%1'?"
-msgstr "您真的想删除 “%1” 吗？"
+msgstr "למחוק את ‚%1’?"
 
 #: Selector.cxx:604
 #, kde-format
 msgid "Delete"
-msgstr "删除"
+msgstr "למחוק"
 
 #: Selector.cxx:615
 #, kde-format
 msgid "Could not delete directory '%1'."
-msgstr "无法删除文件夹 “%1”。"
+msgstr "לא ניתן למחוק את התיקייה ‚%1’."
 
 #: Selector.cxx:624
 #, kde-format
@@ -676,59 +682,59 @@ msgid ""
 "Could not delete file '%1'.\n"
 "Reason: %2"
 msgstr ""
-"无法删除文件“%1”。\n"
-"原因：%2"
+"לא ניתן למחוק את הקובץ ‚%1’.\n"
+"הסיבה: %2"
 
 #: Selector.cxx:692
 #, kde-format
 msgid "Other Application..."
-msgstr "其他应用程序..."
+msgstr "יישום אחר…"
 
 #: Selector.cxx:694
 #, kde-format
 msgid "File Manager"
-msgstr "文件管理器"
+msgstr "מנהל קבצים"
 
 #: SettingsDialog.cxx:22
 #, kde-format
 msgid "650 MB CD"
-msgstr "650 MB CD"
+msgstr "תקליטור 650 מ״ב"
 
 #: SettingsDialog.cxx:23
 #, kde-format
 msgid "700 MB CD"
-msgstr "700 MB CD"
+msgstr "תקליטור 700 מ״ב"
 
 #: SettingsDialog.cxx:24
 #, kde-format
 msgid "4.7 GB DVD"
-msgstr "4.7 GB DVD"
+msgstr "DVD 4.7 ג״ב"
 
 #: SettingsDialog.cxx:25
 #, kde-format
 msgid "8.5 GB DVD"
-msgstr "8.5 GB DVD"
+msgstr "DVD 8.5 ג״ב"
 
 #: SettingsDialog.cxx:26
 #, kde-format
 msgid "9.4 GB DVD"
-msgstr "9.4 GB DVD"
+msgstr "DVD 9.4 ג״ב"
 
 #: SettingsDialog.cxx:27
 #, kde-format
 msgid "17.1 GB DVD"
-msgstr "17.1 GB DVD"
+msgstr "DVD 17.1 ג״ב"
 
 #: SettingsDialog.cxx:28
 #, kde-format
 msgid "custom"
-msgstr "自定义"
+msgstr "מותאם אישית"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
 #: SettingsDialog.ui:16
 #, kde-format
 msgid "Profile Settings"
-msgstr "配置文件设置"
+msgstr "הגדרות פרופיל"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:38
@@ -736,25 +742,26 @@ msgstr "配置文件设置"
 msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
-msgstr "如果您想要跳过在一个分片完成后弹出更换介质的确认对话框，勾选此项"
+msgstr ""
+"נא לבטל את הסימון כדי להימנע מחלונית אישור לשינוי המדיה כשמסתיימת פרוסה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:41
 #, kde-format
 msgid "Target needs media change"
-msgstr "目标需要更换介质。"
+msgstr "היעד צריך החלפת אמצעי אחסון"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: SettingsDialog.ui:48
 #, kde-format
 msgid "Exclude Paths Filter:"
-msgstr "排出的路径过滤器："
+msgstr "מסנן החרגת נתיבים:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: SettingsDialog.ui:57
 #, kde-format
 msgid "Number of full backups to keep"
-msgstr "保持完整备份的数目"
+msgstr "מספר הגיבויים המלאים לאחסון"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
 #: SettingsDialog.ui:64
@@ -762,37 +769,37 @@ msgstr "保持完整备份的数目"
 msgid ""
 "How many full backups shall be kept in the target directory before older "
 "ones will be deleted"
-msgstr "删除旧备份之前要在目标目录中保留多少完整备份"
+msgstr "כמה גיבויים מלאים יישמרו בתיקיית היעד לפני שהקודמים יימחקו"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: SettingsDialog.ui:77
 #, kde-format
 msgid "Full Backup Interval"
-msgstr "完整备份间隔："
+msgstr "הפרש בין גיבויים מלאים"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:84
 #, kde-format
 msgid "How often shall a full backup, instead of an incremental one, be done"
-msgstr "每过多久要进行一次完整备份，而不是使用增量备份"
+msgstr "באיזו תכיפות יבוצע גיבוי מלא, במקום גיבוי מתווסף"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:87
 #, kde-format
 msgid "Every Day"
-msgstr "每天"
+msgstr "כל יום"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:90
 #, kde-format
 msgid " days"
-msgstr " 天"
+msgstr " ימים"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: SettingsDialog.ui:105
 #, kde-format
 msgid "Archive Prefix:"
-msgstr "存档前缀："
+msgstr "קידומת ארכיון:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
 #: SettingsDialog.ui:115
@@ -800,25 +807,27 @@ msgstr "存档前缀："
 msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
-msgstr "定义指定备份时忽略的文件名的通配符，用空格分隔，例如：“*.ogg *.wav”"
+msgstr ""
+"ציון תווי הכללה לשמות קבצים שיוחרגו מהגיבוי, עם רווח ביניהם. למשל: „‎*.ogg‏ ‎*."
+"wav”"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: SettingsDialog.ui:122
 #, kde-format
 msgid "Maximum Archive Size:"
-msgstr "最大文件大小"
+msgstr "גודל ארכיון מרבי:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
 #: SettingsDialog.ui:139
 #, kde-format
 msgid " MB"
-msgstr " MB"
+msgstr " מ״ב"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: SettingsDialog.ui:157
 #, kde-format
 msgid "Exclude Filename Filter:"
-msgstr "排除文件名过滤器："
+msgstr "מסנן החרגת קבצים:"
 
 #. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
 #: SettingsDialog.ui:164
@@ -828,23 +837,23 @@ msgid ""
 "used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>定义绝对路径列表，用于过滤整个目录，<br/>例如 /home/*/."
-"mozilla/*/Cache</p></body></html>"
+"<html><head/><body><p>מגדיר רשימה של תבניות נתיבים מלאות שמשמשות לסינון "
+"תיקיות במלואן,<br/>למשל: /home/*/.mozilla/*/Cache</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:171
 #, kde-format
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr "如果您完全不想压缩文件，那请取消勾选"
+msgstr "יש לבטל את הסימון כדי להימנע מדחיסת הקבצים באופן גורף"
 
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:174
 #, kde-format
 msgid "Compress Files"
-msgstr "压缩文件"
+msgstr "דחיסת קבצים"
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
 #: SettingsDialog.ui:181
 #, kde-format
 msgid "backup"
-msgstr "备份"
+msgstr "גיבוי"
