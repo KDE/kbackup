@@ -87,12 +87,12 @@ msgstr "El directori de destinació no existix"
 #: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
-msgstr "...s'està reduint la quantitat d'arxius guardats al màxim. %1"
+msgstr "…s'està reduint la quantitat d'arxius guardats al màxim. %1"
 
 #: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
-msgstr "...s'està suprimint %1"
+msgstr "…s'està suprimint %1"
 
 #: Archiver.cxx:631
 #, kde-format
@@ -151,7 +151,7 @@ msgstr "Totals: Fitxers: %1, Mida: %2, Duració: %3"
 #: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
-msgstr "...s'ha interromput la còpia de seguretat!"
+msgstr "…s'ha interromput la còpia de seguretat!"
 
 #: Archiver.cxx:727
 #, kde-format
@@ -161,12 +161,12 @@ msgstr "S'ha cancel·lat la còpia de seguretat"
 #: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
-msgstr "...s'ha finalitzat la porció %1"
+msgstr "…s'ha finalitzat la porció %1"
 
 #: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
-msgstr "...s'està pujant l'arxiu %1 a %2"
+msgstr "…s'està pujant l'arxiu %1 a %2"
 
 #: Archiver.cxx:780
 #, kde-format
@@ -243,7 +243,7 @@ msgstr ""
 #: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
-msgstr "...s'està saltant el directori filtrat %1"
+msgstr "…s'està saltant el directori filtrat %1"
 
 #: Archiver.cxx:1015
 #, kde-format
@@ -290,7 +290,7 @@ msgstr "No s'ha pogut obrir el fitxer «%1» per a lectura."
 #: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
-msgstr "...s'està arxivant el fitxer %1"
+msgstr "…s'està arxivant el fitxer %1"
 
 #: Archiver.cxx:1368
 #, kde-format
@@ -318,7 +318,7 @@ msgstr "No s'ha pogut escriure en el fitxer temporal"
 #: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
-msgstr "...s'està comprimint el fitxer %1"
+msgstr "…s'està comprimint el fitxer %1"
 
 #: Archiver.cxx:1476
 #, kde-format
@@ -554,7 +554,7 @@ msgstr "Perfil nou"
 #: MainWindow.cxx:60
 #, kde-format
 msgid "Load Profile..."
-msgstr "Carrega un perfil..."
+msgstr "Carrega un perfil…"
 
 #: MainWindow.cxx:64
 #, kde-format
@@ -564,12 +564,12 @@ msgstr "Guarda el perfil"
 #: MainWindow.cxx:68
 #, kde-format
 msgid "Save Profile As..."
-msgstr "Anomena i guarda el perfil..."
+msgstr "Anomena i guarda el perfil…"
 
 #: MainWindow.cxx:72
 #, kde-format
 msgid "Profile Settings..."
-msgstr "Configureu el perfil..."
+msgstr "Configureu el perfil…"
 
 #: MainWindow.cxx:75
 #, kde-format
@@ -672,7 +672,7 @@ msgstr "Suprimix el fitxer"
 #: Selector.cxx:299
 #, kde-format
 msgid "Properties..."
-msgstr "Propietats..."
+msgstr "Propietats…"
 
 #: Selector.cxx:603
 #, kde-format
@@ -701,7 +701,7 @@ msgstr ""
 #: Selector.cxx:692
 #, kde-format
 msgid "Other Application..."
-msgstr "Una altra aplicació..."
+msgstr "Una altra aplicació…"
 
 #: Selector.cxx:694
 #, kde-format
@@ -756,7 +756,7 @@ msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
 msgstr ""
-"Desseleccioneu-la si voleu evitar un diàleg de confirmació per a canviar el "
+"Desmarqueu-la si voleu evitar un diàleg de confirmació per a canviar el "
 "suport quan s'haja finalitzat una porció"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
@@ -863,7 +863,7 @@ msgstr ""
 #: SettingsDialog.ui:171
 #, kde-format
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr "Desseleccioneu-la si voleu evitar la compressió dels fitxers"
+msgstr "Desmarqueu-la si voleu evitar la compressió dels fitxers"
 
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:174
