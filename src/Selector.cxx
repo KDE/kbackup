@@ -22,7 +22,6 @@
 
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/OpenUrlJob>
-#include <kio_version.h>
 #include <KIO/JobUiDelegateFactory>
 
 #include <QDir>
