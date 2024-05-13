@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-31 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2023-02-09 21:44+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -655,52 +655,52 @@ msgstr ""
 "Filer: %1. Storleik: %2 MiB\n"
 "%3"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Name"
 msgstr "Namn"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Size"
 msgstr "Storleik"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Last Modified"
 msgstr "Sist endra"
 
-#: Selector.cxx:285
+#: Selector.cxx:284
 #, kde-format
 msgid "Open With"
 msgstr "Opna med"
 
-#: Selector.cxx:293
+#: Selector.cxx:292
 #, kde-format
 msgid "Delete File"
 msgstr "Slett fil"
 
-#: Selector.cxx:299
+#: Selector.cxx:298
 #, kde-format
 msgid "Properties..."
 msgstr "Eigenskapar …"
 
-#: Selector.cxx:603
+#: Selector.cxx:602
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Er du sikker på at du vil sletta «%1»?"
 
-#: Selector.cxx:604
+#: Selector.cxx:603
 #, kde-format
 msgid "Delete"
 msgstr "Slett"
 
-#: Selector.cxx:615
+#: Selector.cxx:614
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Klarte ikkje sletta mappa «%1»."
 
-#: Selector.cxx:624
+#: Selector.cxx:623
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -709,12 +709,12 @@ msgstr ""
 "Klarte ikkje sletta fila «%1».\n"
 "Årsak: %2"
 
-#: Selector.cxx:692
+#: Selector.cxx:691
 #, kde-format
 msgid "Other Application..."
 msgstr "Anna program …"
 
-#: Selector.cxx:694
+#: Selector.cxx:693
 #, kde-format
 msgid "File Manager"
 msgstr "Filhandsamar"

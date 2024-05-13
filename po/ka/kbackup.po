@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-31 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2023-09-06 07:20+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -638,52 +638,52 @@ msgstr ""
 "ფაილი: %1 ზომა: %2 მბ\n"
 "%3"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Size"
 msgstr "ზომა"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Last Modified"
 msgstr "ბოლოს შეიცვლა"
 
-#: Selector.cxx:285
+#: Selector.cxx:284
 #, kde-format
 msgid "Open With"
 msgstr "გამხსნელი პროგრამა"
 
-#: Selector.cxx:293
+#: Selector.cxx:292
 #, kde-format
 msgid "Delete File"
 msgstr "ფაილის წაშლა"
 
-#: Selector.cxx:299
+#: Selector.cxx:298
 #, kde-format
 msgid "Properties..."
 msgstr "თვისებები..."
 
-#: Selector.cxx:603
+#: Selector.cxx:602
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ %1?"
 
-#: Selector.cxx:604
+#: Selector.cxx:603
 #, kde-format
 msgid "Delete"
 msgstr "წაშლა"
 
-#: Selector.cxx:615
+#: Selector.cxx:614
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "საქაღალდის (\"%1\") წაშლის შეცდომა."
 
-#: Selector.cxx:624
+#: Selector.cxx:623
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -692,12 +692,12 @@ msgstr ""
 "ფაილის ('%1') წაშლის შეცდომა.\n"
 "მიზეზი: %2"
 
-#: Selector.cxx:692
+#: Selector.cxx:691
 #, kde-format
 msgid "Other Application..."
 msgstr "სხვა პროგრამა..."
 
-#: Selector.cxx:694
+#: Selector.cxx:693
 #, kde-format
 msgid "File Manager"
 msgstr "ფაილების მმართველი"

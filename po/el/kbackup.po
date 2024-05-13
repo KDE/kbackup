@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-31 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2023-07-30 00:28+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -646,52 +646,52 @@ msgstr ""
 "Αρχεία: %1 Μέγεθος: %2 MB\n"
 "%3"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Name"
 msgstr "Όνομα"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Last Modified"
 msgstr "Τελευταία τροποποίηση"
 
-#: Selector.cxx:285
+#: Selector.cxx:284
 #, kde-format
 msgid "Open With"
 msgstr "Άνοιγμα με"
 
-#: Selector.cxx:293
+#: Selector.cxx:292
 #, kde-format
 msgid "Delete File"
 msgstr "Διαγραφή αρχείου"
 
-#: Selector.cxx:299
+#: Selector.cxx:298
 #, kde-format
 msgid "Properties..."
 msgstr "Ιδιότητες..."
 
-#: Selector.cxx:603
+#: Selector.cxx:602
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Θέλετε πράγματι να διαγράψετε το '%1';"
 
-#: Selector.cxx:604
+#: Selector.cxx:603
 #, kde-format
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: Selector.cxx:615
+#: Selector.cxx:614
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Αδυναμία διαγραφής καταλόγου '%1'."
 
-#: Selector.cxx:624
+#: Selector.cxx:623
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -700,12 +700,12 @@ msgstr ""
 "Αδυναμία διαγραφής αρχείου '%1'.\n"
 "Αιτία: %2"
 
-#: Selector.cxx:692
+#: Selector.cxx:691
 #, kde-format
 msgid "Other Application..."
 msgstr "Άλλη εφαρμογή..."
 
-#: Selector.cxx:694
+#: Selector.cxx:693
 #, kde-format
 msgid "File Manager"
 msgstr "Διαχειριστής αρχείων"

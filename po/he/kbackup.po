@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-31 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 22:51+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -631,52 +631,52 @@ msgstr ""
 "קבצים: %1 גודל: %2 מ״ב\n"
 "%3"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Name"
 msgstr "שם"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Size"
 msgstr "גודל"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Last Modified"
 msgstr "שינוי אחרון"
 
-#: Selector.cxx:285
+#: Selector.cxx:284
 #, kde-format
 msgid "Open With"
 msgstr "פתיחה באמצעות"
 
-#: Selector.cxx:293
+#: Selector.cxx:292
 #, kde-format
 msgid "Delete File"
 msgstr "מחיקת קובץ"
 
-#: Selector.cxx:299
+#: Selector.cxx:298
 #, kde-format
 msgid "Properties..."
 msgstr "מאפיינים…"
 
-#: Selector.cxx:603
+#: Selector.cxx:602
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "למחוק את ‚%1’?"
 
-#: Selector.cxx:604
+#: Selector.cxx:603
 #, kde-format
 msgid "Delete"
 msgstr "למחוק"
 
-#: Selector.cxx:615
+#: Selector.cxx:614
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "לא ניתן למחוק את התיקייה ‚%1’."
 
-#: Selector.cxx:624
+#: Selector.cxx:623
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -685,12 +685,12 @@ msgstr ""
 "לא ניתן למחוק את הקובץ ‚%1’.\n"
 "הסיבה: %2"
 
-#: Selector.cxx:692
+#: Selector.cxx:691
 #, kde-format
 msgid "Other Application..."
 msgstr "יישום אחר…"
 
-#: Selector.cxx:694
+#: Selector.cxx:693
 #, kde-format
 msgid "File Manager"
 msgstr "מנהל קבצים"

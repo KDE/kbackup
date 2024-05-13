@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-31 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2022-11-02 08:15+0700\n"
 "Last-Translator: OIS <mistresssilvara@hotmail.com>\n"
 "Language-Team: Interlingue <kde-i18n-doc@kde.org>\n"
@@ -604,64 +604,64 @@ msgstr ""
 "Files: %1 Grandore: %2 Mo\n"
 "%3"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Name"
 msgstr "Nómine"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Size"
 msgstr "Grandore"
 
-#: Selector.cxx:253
+#: Selector.cxx:252
 #, kde-format
 msgid "Last Modified"
 msgstr "Modificat"
 
-#: Selector.cxx:285
+#: Selector.cxx:284
 #, kde-format
 msgid "Open With"
 msgstr "Aperter per"
 
-#: Selector.cxx:293
+#: Selector.cxx:292
 #, kde-format
 msgid "Delete File"
 msgstr "Remover li file"
 
-#: Selector.cxx:299
+#: Selector.cxx:298
 #, kde-format
 msgid "Properties..."
 msgstr "Proprietás..."
 
-#: Selector.cxx:603
+#: Selector.cxx:602
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Esque vu vole remover «%1»?"
 
-#: Selector.cxx:604
+#: Selector.cxx:603
 #, kde-format
 msgid "Delete"
 msgstr "Remover"
 
-#: Selector.cxx:615
+#: Selector.cxx:614
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Ne successat remover li fólder «%1»."
 
-#: Selector.cxx:624
+#: Selector.cxx:623
 #, fuzzy, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
 "Reason: %2"
 msgstr "Ne successat remover li file %1."
 
-#: Selector.cxx:692
+#: Selector.cxx:691
 #, kde-format
 msgid "Other Application..."
 msgstr "Altri application..."
 
-#: Selector.cxx:694
+#: Selector.cxx:693
 #, kde-format
 msgid "File Manager"
 msgstr "Gerente de files"
