@@ -1,0 +1,867 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kbackup package.
+#
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: kbackup\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"PO-Revision-Date: 2024-06-03 22:24+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 24.02.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Toms Trasūns"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toms.trasuns@posteo.net"
+
+#: Archiver.cxx:434
+#, kde-format
+msgid "Nothing selected for backup"
+msgstr "Nekas nav atlasīts dublēšanai"
+
+#: Archiver.cxx:440
+#, kde-format
+msgid "The target dir '%1' is not valid"
+msgstr "Mērķa mape „%1“ nav derīga"
+
+#: Archiver.cxx:447
+#, kde-format
+msgid "The target dir '%1' must be a local file system dir and no remote URL"
+msgstr ""
+"Mērķa mapei „%1“ jābūt lokālai datņu sistēmas mapei, bet ne attālinātai URL"
+
+#: Archiver.cxx:460
+#, kde-format
+msgid ""
+"The target directory '%1' does not exist.\n"
+"\n"
+"Shall I create it?"
+msgstr ""
+"Mērķa mape „%1“ nepastāv.\n"
+"\n"
+"Vai to izveidot?"
+
+#: Archiver.cxx:462
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr "Izveidot mapi"
+
+#: Archiver.cxx:463
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr "Izveidot"
+
+#: Archiver.cxx:468
+#, kde-format
+msgid ""
+"Could not create the target directory '%1'.\n"
+"The operating system reports: %2"
+msgstr ""
+"Neizdevās izveidot mērķa mapi „%1“.\n"
+"Operētājsistēma ziņo: %2"
+
+#: Archiver.cxx:476
+#, kde-format
+msgid "The target dir does not exist"
+msgstr "Mērķa mape nepastāv"
+
+#: Archiver.cxx:549
+#, kde-format
+msgid "...reducing number of kept archives to max. %1"
+msgstr "...samazina paturēto arhīvu skaitu līdz maks %1"
+
+#: Archiver.cxx:607
+#, kde-format
+msgid "...deleting %1"
+msgstr "... dzēš „%1“"
+
+#: Archiver.cxx:631
+#, kde-format
+msgid ""
+"fetching directory listing of target failed. Can not reduce kept archives."
+msgstr ""
+"mapes mērķa sarakstu ienešana neizdevās. Nevar samazināt uzkrāto arhīvu "
+"skaitu."
+
+#: Archiver.cxx:654
+#, kde-format
+msgid "Could not write backup timestamps into profile %1: %2"
+msgstr "Neizdevās rakstīt rezerves datu laika zīmogus profilā %1: %2"
+
+#: Archiver.cxx:658
+#, kde-format
+msgid "-- Filtered Files: %1"
+msgstr "— Filtrētas datnes: %1"
+
+#: Archiver.cxx:661
+#, kde-format
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr "!! Dublēšana beidzās, <b>bet dažas datnes tika izlaistas</b> !!"
+
+#: Archiver.cxx:663
+#, kde-format
+msgid "-- Backup successfully finished --"
+msgstr "— Dublēšana ir veiksmīgi pabeigta —"
+
+#: Archiver.cxx:669
+#, kde-format
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"Dublēšana ir pabeigta, bet atsevišķas datnes ir izlaistas.\n"
+"Ko vēlaties darīt tagad?"
+
+#: Archiver.cxx:671
+#, kde-format
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"Dublējums ir veiksmīgi pabeigts.\n"
+"Ko vēlaties darīt?"
+
+#: Archiver.cxx:689
+#, kde-format
+msgid "Totals: Files: %1, Size: %2, Duration: %3"
+msgstr "Kopā: datnes: %1, izmērs: %2, ilgums: %3"
+
+#: Archiver.cxx:700
+#, kde-format
+msgid "...Backup aborted!"
+msgstr "...Dublēšana pārtraukta!"
+
+#: Archiver.cxx:727
+#, kde-format
+msgid "Backup cancelled"
+msgstr "Dublēšana ir atcelta"
+
+#: Archiver.cxx:747
+#, kde-format
+msgid "...finished slice %1"
+msgstr "...pabeigta sadaļa %1"
+
+#: Archiver.cxx:762
+#, kde-format
+msgid "...uploading archive %1 to %2"
+msgstr "...augšupielādē „%1“ uz „%2“"
+
+#: Archiver.cxx:780
+#, kde-format
+msgid "How shall we proceed with the upload?"
+msgstr "Kā mums turpināt ar augšupielādi?"
+
+#: Archiver.cxx:780
+#, kde-format
+msgid "Upload Failed"
+msgstr "Augšupielāde neizdevās"
+
+#: Archiver.cxx:781
+#, kde-format
+msgid "Retry"
+msgstr "Mēģināt vēlreiz"
+
+#: Archiver.cxx:781
+#, kde-format
+msgid "Change Target"
+msgstr "Mainīt mērķi"
+
+#: Archiver.cxx:872
+#, kde-format
+msgid "The script '%1' could not be started."
+msgstr "Neizdevās palaist „%1“ skriptu."
+
+#: Archiver.cxx:911
+#, kde-format
+msgid "The medium is full. Please insert medium Nr. %1"
+msgstr "Datu nesējs ir pilns. Ievietojiet %1. datu nesēju"
+
+#: Archiver.cxx:955
+#, kde-format
+msgid "The file '%1' can not be opened for writing."
+msgstr "Datni „%1“ nevar atvērt rakstīšanai."
+
+#: Archiver.cxx:959
+#, kde-format
+msgid ""
+"The file '%1' can not be opened for writing.\n"
+"\n"
+"Do you want to retry?"
+msgstr ""
+"Datni „%1“ nevar atvērt rakstīšanai.\n"
+"\n"
+"Vai vēlaties mēģināt vēlreiz?"
+
+#: Archiver.cxx:960
+#, kde-format
+msgctxt "@title"
+msgid "Open File"
+msgstr "Atvērt datni"
+
+#: Archiver.cxx:961
+#, kde-format
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Mēģināt vēlreiz"
+
+#: Archiver.cxx:981
+#, kde-format
+msgid "Could not write to archive. Maybe the medium is full."
+msgstr "Nevarēja rakstīt arhīvā. Iespējams, datu nesējā trūkst vietas."
+
+#: Archiver.cxx:985
+#, kde-format
+msgid ""
+"Could not write to archive.\n"
+"The operating system reports: %1"
+msgstr ""
+"Nevarēja rakstīt arhīvā.\n"
+"Operētājsistēma ziņo: %1"
+
+#: Archiver.cxx:1004
+#, kde-format
+msgid "...skipping filtered directory %1"
+msgstr "...izlaiž filtrētu mapi „%1“"
+
+#: Archiver.cxx:1015
+#, kde-format
+msgid ""
+"Could not get information of directory: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Neizdevās iegūt informāciju par mapi: %1\n"
+"Operētājsistēma ziņo: %2"
+
+#: Archiver.cxx:1025
+#, kde-format
+msgid "Directory '%1' is not readable. Skipping."
+msgstr "Mape „%1“ nav lasāma. Izlaiž."
+
+#: Archiver.cxx:1125
+#, kde-format
+msgid ""
+"Could not get information of file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Neizdevās iegūt informāciju par datni: %1\n"
+"Operētājsistēma ziņo: %2"
+
+#: Archiver.cxx:1136
+#, kde-format
+msgid "Can not archive file type 'socket': %1\n"
+msgstr "Nevarēja arhivēt datnes tipu „ligzda“: %1\n"
+
+#: Archiver.cxx:1220 Archiver.cxx:1299
+#, kde-format
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"Nevarēja nolasīt no datnes: „%1“\n"
+"Operētājsistēma ziņo: %2"
+
+#: Archiver.cxx:1268
+#, kde-format
+msgid "Could not open file '%1' for reading."
+msgstr "Nevarēja lasīšanai atvērt datni „%1“."
+
+#: Archiver.cxx:1335
+#, kde-format
+msgid "...archiving file %1"
+msgstr "...arhivē datni „%1“"
+
+#: Archiver.cxx:1368
+#, kde-format
+msgid ""
+"Could not read file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Nevarēja nolasīt datni: %1\n"
+"Operētājsistēma ziņo: %2"
+
+#: Archiver.cxx:1382
+#, kde-format
+msgid ""
+"Could not create temporary file for compressing: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Neizdevās saspiešanai izveidot pagaidu datni: %1\n"
+"Operētājsistēma ziņo: %2"
+
+#: Archiver.cxx:1410
+#, kde-format
+msgid "Could not write to temporary file"
+msgstr "Neizdevās rakstīt pagaidu datni"
+
+#: Archiver.cxx:1431
+#, kde-format
+msgid "...compressing file %1"
+msgstr "...saspiež datni „%1“"
+
+#: Archiver.cxx:1476
+#, kde-format
+msgid "WARNING:"
+msgstr "UZMANĪBU:"
+
+#. i18n: ectx: Menu (file)
+#: kbackupui.rc:4
+#, kde-format
+msgid "&File"
+msgstr "&Datne"
+
+#. i18n: ectx: Menu (settings)
+#: kbackupui.rc:12
+#, kde-format
+msgid "&Settings"
+msgstr "&Iestatījumi"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: main.cxx:47 MainWidgetBase.ui:16
+#, kde-format
+msgid "KBackup"
+msgstr "KBackup"
+
+#: main.cxx:48
+#, kde-format
+msgid "An easy to use backup program"
+msgstr "Vienkārša programma dublējumu veidošanai"
+
+#: main.cxx:49
+#, kde-format
+msgid "(c) 2006 - 2018 Martin Koller"
+msgstr "(c) 2006—2018 Martin Koller"
+
+#: main.cxx:53
+#, kde-format
+msgid "Martin Koller"
+msgstr "Martin Koller"
+
+#: main.cxx:53
+#, kde-format
+msgid "Developer"
+msgstr "Izstrādātājs"
+
+#: main.cxx:61
+#, kde-format
+msgid "Start with given profile."
+msgstr "Sākt ar doto profilu."
+
+#: main.cxx:63
+#, kde-format
+msgid "Script to run after finishing one archive slice."
+msgstr "Palaist skriptu pēc vienas arhīva sadaļas pabeigšanas."
+
+#: main.cxx:65
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile and terminate when done."
+msgstr ""
+"Automātiski palaist dublēšanu ar doto profilu un iziet pēc pabeigšanas."
+
+#: main.cxx:68
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile in the background "
+"(without showing a window) and terminate when done."
+msgstr ""
+"Automātiski palaist dublēšanu ar doto profilu fonā (nerādot logu) un iziet "
+"pēc pabeigšanas."
+
+#: main.cxx:73
+#, kde-format
+msgid ""
+"In autobg mode be verbose and print every single filename during backup."
+msgstr ""
+"„autobg“ režīmā dublēšanas laikā būt informatīvam un drukāt katras datnes "
+"nosaukumu."
+
+#: main.cxx:76
+#, kde-format
+msgid ""
+"In auto/autobg mode force the backup to be a full backup instead of acting "
+"on the profile settings."
+msgstr ""
+"„auto/autobg“ režīmā piespiest dublējumam būt pilnam dublējumam, bet ne "
+"atbilstoši profila iestatījumiem."
+
+#: main.cxx:149 MainWindow.cxx:211
+#, kde-format
+msgid "Could not open profile '%1' for reading: %2"
+msgstr "Nevarēja atrast profilu „%1“, lai nolasītu: „%2“"
+
+#: MainWidget.cxx:68
+#, kde-format
+msgid "Incremental Backup"
+msgstr "Inkrementālā dublēšana"
+
+#: MainWidget.cxx:70
+#, kde-format
+msgid "Full Backup"
+msgstr "Pilna dublēšana"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#: MainWidget.cxx:165 SettingsDialog.cxx:21 SettingsDialog.ui:67
+#: SettingsDialog.ui:136
+#, kde-format
+msgid "unlimited"
+msgstr "neierobežota"
+
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: MainWidgetBase.ui:41 MainWindow.cxx:114
+#, kde-format
+msgid "Start Backup"
+msgstr "Sākt dublēšanu"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: MainWidgetBase.ui:69 MainWindow.cxx:117
+#, kde-format
+msgid "Cancel Backup"
+msgstr "Atcelt dublēšanu"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: MainWidgetBase.ui:92
+#, kde-format
+msgid "Next Backup:"
+msgstr "Nākamais dublējums:"
+
+#. i18n: ectx: property (text), widget (QLabel, backupType)
+#: MainWidgetBase.ui:99
+#, kde-format
+msgid "TextLabel"
+msgstr "Teksta etiķete"
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
+#: MainWidgetBase.ui:106
+#, kde-format
+msgid "Force Full Backup"
+msgstr "Piespiest pilnu dublēšanu"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: MainWidgetBase.ui:121
+#, kde-format
+msgid "Target"
+msgstr "Mērķis"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: MainWidgetBase.ui:127
+#, kde-format
+msgid "Folder:"
+msgstr "Mape:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: MainWidgetBase.ui:143
+#, kde-format
+msgid "Medium:"
+msgstr "Datu nesējs:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#: MainWidgetBase.ui:165
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: MainWidgetBase.ui:185 MainWidgetBase.ui:277
+#, kde-format
+msgid "Size:"
+msgstr "Izmērs:"
+
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: MainWidgetBase.ui:201
+#, kde-format
+msgid "0 MB"
+msgstr "0 MB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: MainWidgetBase.ui:236
+#, kde-format
+msgid "Totals"
+msgstr "Kopā"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: MainWidgetBase.ui:248
+#, kde-format
+msgid "Files:"
+msgstr "Datnes:"
+
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: MainWidgetBase.ui:258 MainWidgetBase.ui:287
+#, kde-format
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#: MainWidgetBase.ui:300
+#, kde-format
+msgid "MB"
+msgstr "MB"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: MainWidgetBase.ui:335
+#, kde-format
+msgid "Duration:"
+msgstr "Ilgums:"
+
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: MainWidgetBase.ui:345
+#, kde-format
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: MainWidgetBase.ui:387
+#, kde-format
+msgid "Warnings:"
+msgstr "Brīdinājumi:"
+
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: MainWidgetBase.ui:413
+#, kde-format
+msgid "Progress:"
+msgstr "Progress:"
+
+#: MainWindow.cxx:56
+#, kde-format
+msgid "New Profile"
+msgstr "Jauns profils"
+
+#: MainWindow.cxx:60
+#, kde-format
+msgid "Load Profile..."
+msgstr "Ielādēt profilu..."
+
+#: MainWindow.cxx:64
+#, kde-format
+msgid "Save Profile"
+msgstr "Saglabāt profilu"
+
+#: MainWindow.cxx:68
+#, kde-format
+msgid "Save Profile As..."
+msgstr "Saglabāt profilu kā..."
+
+#: MainWindow.cxx:72
+#, kde-format
+msgid "Profile Settings..."
+msgstr "Profila iestatījumi"
+
+#: MainWindow.cxx:75
+#, kde-format
+msgid "Enable All Messages"
+msgstr "Ieslēgt visus ziņojumus"
+
+#: MainWindow.cxx:77
+#, kde-format
+msgid "Dock in System Tray"
+msgstr "Atstāt sistēmas ikonu joslā"
+
+#: MainWindow.cxx:81
+#, kde-format
+msgid "Show Hidden Files"
+msgstr "Rādīt slēptās datnes"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr "Notiek dublēšana. Vai vēlaties to apturēt?"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "Backup in Progress"
+msgstr "Notiek dublēšana"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "Abort"
+msgstr "Apturēt"
+
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#, kde-format
+msgid "Select Profile"
+msgstr "Atlasīt profilu"
+
+#: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
+#, kde-format
+msgid "KBackup Profile (*.kbp)"
+msgstr "„KBackup“ profils (*.kbp)"
+
+#: MainWindow.cxx:214 MainWindow.cxx:286
+#, kde-format
+msgid "Open failed"
+msgstr "Atvēršana neizdevās"
+
+#: MainWindow.cxx:263
+#, kde-format
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Profils ar nosaukumu „%1“ jau pastāv.\n"
+"Vai vēlaties to pārrakstīt?"
+
+#: MainWindow.cxx:266
+#, kde-format
+msgid "Profile exists"
+msgstr "Profils pastāv"
+
+#: MainWindow.cxx:283
+#, kde-format
+msgid "Could not open profile '%1' for writing: %2"
+msgstr "Neizdevās rakstīšanai atvērt profilu „%1“: %2"
+
+#: MainWindow.cxx:359
+#, kde-format
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
+"Datnes: %1 Izmērs: %2 MB\n"
+"%3"
+
+#: Selector.cxx:252
+#, kde-format
+msgid "Name"
+msgstr "Nosaukums"
+
+#: Selector.cxx:252
+#, kde-format
+msgid "Size"
+msgstr "Izmērs"
+
+#: Selector.cxx:252
+#, kde-format
+msgid "Last Modified"
+msgstr "Pēdējo reizi mainīts"
+
+#: Selector.cxx:284
+#, kde-format
+msgid "Open With"
+msgstr "Atvērt ar"
+
+#: Selector.cxx:292
+#, kde-format
+msgid "Delete File"
+msgstr "Dzēst datni"
+
+#: Selector.cxx:298
+#, kde-format
+msgid "Properties..."
+msgstr "Īpašības..."
+
+#: Selector.cxx:602
+#, kde-format
+msgid "Do you really want to delete '%1'?"
+msgstr "Vai tiešām vēlaties dzēst „%1“?"
+
+#: Selector.cxx:603
+#, kde-format
+msgid "Delete"
+msgstr "Dzēst"
+
+#: Selector.cxx:614
+#, kde-format
+msgid "Could not delete directory '%1'."
+msgstr "Neizdevās dzēst mapi „%1“."
+
+#: Selector.cxx:623
+#, kde-format
+msgid ""
+"Could not delete file '%1'.\n"
+"Reason: %2"
+msgstr ""
+"Neizdevās dzēst datni „%1“.\n"
+"Iemesls: %2"
+
+#: Selector.cxx:691
+#, kde-format
+msgid "Other Application..."
+msgstr "Citas programmas"
+
+#: Selector.cxx:693
+#, kde-format
+msgid "File Manager"
+msgstr "Datņu pārvaldnieks"
+
+#: SettingsDialog.cxx:22
+#, kde-format
+msgid "650 MB CD"
+msgstr "650 MB CD"
+
+#: SettingsDialog.cxx:23
+#, kde-format
+msgid "700 MB CD"
+msgstr "700 MB CD"
+
+#: SettingsDialog.cxx:24
+#, kde-format
+msgid "4.7 GB DVD"
+msgstr "4,7 GB DVD"
+
+#: SettingsDialog.cxx:25
+#, kde-format
+msgid "8.5 GB DVD"
+msgstr "8,5 GB DVD"
+
+#: SettingsDialog.cxx:26
+#, kde-format
+msgid "9.4 GB DVD"
+msgstr "9,4 GB DVD"
+
+#: SettingsDialog.cxx:27
+#, kde-format
+msgid "17.1 GB DVD"
+msgstr "17,1 GB DVD"
+
+#: SettingsDialog.cxx:28
+#, kde-format
+msgid "custom"
+msgstr "pielāgots"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: SettingsDialog.ui:16
+#, kde-format
+msgid "Profile Settings"
+msgstr "Profila iestatījumi"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:38
+#, kde-format
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Noņemiet atzīmi, ja nevēlaties redzēt apstiprināšanas lodziņu, lai mainītu "
+"datu nesēju, kad ir pabeigta sadaļa"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:41
+#, kde-format
+msgid "Target needs media change"
+msgstr "Jānomaina mērķa datu nesējs"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: SettingsDialog.ui:48
+#, kde-format
+msgid "Exclude Paths Filter:"
+msgstr "Ignorējamo ceļu filtri:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: SettingsDialog.ui:57
+#, kde-format
+msgid "Number of full backups to keep"
+msgstr "Paturamo pilno dublējumu skaits"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: SettingsDialog.ui:64
+#, kde-format
+msgid ""
+"How many full backups shall be kept in the target directory before older "
+"ones will be deleted"
+msgstr "Cik daudz pilno dublējumu jāpatur mērķa mapē pirms vecāko dzēšanas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: SettingsDialog.ui:77
+#, kde-format
+msgid "Full Backup Interval"
+msgstr "Pilnas rezerves kopijas intervāls"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:84
+#, kde-format
+msgid "How often shall a full backup, instead of an incremental one, be done"
+msgstr "Cik bieži jāveido pilna rezerves kopija (pretstatā inkrementālai)"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:87
+#, kde-format
+msgid "Every Day"
+msgstr "Katru dienu"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:90
+#, kde-format
+msgid " days"
+msgstr " dienas"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: SettingsDialog.ui:105
+#, kde-format
+msgid "Archive Prefix:"
+msgstr "Arhīva prefikss:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
+#: SettingsDialog.ui:115
+#, kde-format
+msgid ""
+"Defines wildcards for filenames which will be ignored for backup, separated "
+"by a space. E.g.: \"*.ogg *.wav\""
+msgstr ""
+"Definē aizstājējzīmes datņu nosaukumiem, kas dublēšanas laikā tiks "
+"ignorētas. Atdalīt ar atstarpi, piemēram: „*.ogg *.wav“"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: SettingsDialog.ui:122
+#, kde-format
+msgid "Maximum Archive Size:"
+msgstr "Maksimālais arhīva izmērs:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: SettingsDialog.ui:139
+#, kde-format
+msgid " MB"
+msgstr " MB"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: SettingsDialog.ui:157
+#, kde-format
+msgid "Exclude Filename Filter:"
+msgstr "Ignorējamo datņu nosaukumu filtri:"
+
+#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
+#: SettingsDialog.ui:164
+#, kde-format
+msgid ""
+"<html><head/><body><p>Defines a list of absolute path patterns which are "
+"used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
+"body></html>"
+msgstr ""
+"<html><head/><body><p>Definē sarakstu ar absolūtajiem ceļu šabloniem, kas ir "
+"izmantojami, lai filtrētu pilnus ceļus,<br/>piemēram, „/home/*/.mozilla/*/"
+"Cache“</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:171
+#, kde-format
+msgid "Uncheck if you want to avoid compressing files at all"
+msgstr "Noņemiet atzīmi, ja vispār nevēlaties saspiest datnes"
+
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:174
+#, kde-format
+msgid "Compress Files"
+msgstr "Saspiest datnes"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
+#: SettingsDialog.ui:181
+#, kde-format
+msgid "backup"
+msgstr "dublējums"
