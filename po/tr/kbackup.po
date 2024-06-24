@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-31 00:39+0000\n"
-"PO-Revision-Date: 2024-03-23 16:09+0300\n"
+"PO-Revision-Date: 2024-06-24 00:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,7 +35,7 @@ msgstr "Yedek için bir şey seçilmedi"
 #: Archiver.cxx:440
 #, kde-format
 msgid "The target dir '%1' is not valid"
-msgstr "Hedef dizin '%1' geçerli değil"
+msgstr "Hedef dizin “%1” geçerli değil"
 
 #: Archiver.cxx:447
 #, kde-format
@@ -49,7 +49,7 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
-"Hedef dizin '%1' yok.\n"
+"Hedef dizin “%1” yok.\n"
 "\n"
 "Oluşturulsun mu?"
 
@@ -71,7 +71,7 @@ msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
-"Hedef dizin '%1' oluşturulamadı.\n"
+"Hedef dizin “%1” oluşturulamadı.\n"
 "İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:476
@@ -82,12 +82,12 @@ msgstr "Hedef dizin yok"
 #: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
-msgstr "...tutulan en fazla arşiv sayısı %1 olarak azaltılıyor"
+msgstr "…tutulan en fazla arşiv sayısı %1 olarak azaltılıyor"
 
 #: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
-msgstr "...%1 siliniyor"
+msgstr "…%1 siliniyor"
 
 #: Archiver.cxx:631
 #, kde-format
@@ -104,7 +104,7 @@ msgstr "%1 profiline yedek zaman damgaları yazılamadı: %2"
 #: Archiver.cxx:658
 #, kde-format
 msgid "-- Filtered Files: %1"
-msgstr "-- Süzülen Dosyalar: %1"
+msgstr "— Süzülen dosyalar: %1"
 
 #: Archiver.cxx:661
 #, kde-format
@@ -114,7 +114,7 @@ msgstr "!! Yedek tamamlandı; <b>ancak atlanan dosyalar var</b> !!"
 #: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
-msgstr "-- Yedek başarıyla tamamlandı --"
+msgstr "— Yedek başarıyla tamamlandı —"
 
 #: Archiver.cxx:669
 #, kde-format
@@ -142,7 +142,7 @@ msgstr "Toplamlar: Dosyalar: %1, Boyut: %2, Süre: %3"
 #: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
-msgstr "...Yedek iptal edildi!"
+msgstr "…Yedek iptal edildi!"
 
 #: Archiver.cxx:727
 #, kde-format
@@ -152,12 +152,12 @@ msgstr "Yedek iptal edildi"
 #: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
-msgstr "...%1 dilimi tamamlandı"
+msgstr "…%1 dilimi tamamlandı"
 
 #: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
-msgstr "...%1 arşivi %2 konumuna yükleniyor"
+msgstr "…%1 arşivi %2 konumuna yükleniyor"
 
 #: Archiver.cxx:780
 #, kde-format
@@ -182,7 +182,7 @@ msgstr "Hedef Değiştir"
 #: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
-msgstr "'%1' betiği başlatılamadı."
+msgstr "“%1” betiği başlatılamadı."
 
 #: Archiver.cxx:911
 #, kde-format
@@ -192,7 +192,7 @@ msgstr "Ortam dolu; lütfen %1 numaralı ortamı takın"
 #: Archiver.cxx:955
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
-msgstr "'%1' dosyası yazmak için açılamadı."
+msgstr "“%1” dosyası yazmak için açılamadı."
 
 #: Archiver.cxx:959
 #, kde-format
@@ -201,7 +201,7 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
-"'%1 dosyası yazmak için açılamadı.\n"
+"“%1” dosyası yazmak için açılamadı.\n"
 "\n"
 "Yeniden denemek istiyor musunuz?"
 
@@ -234,7 +234,7 @@ msgstr ""
 #: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
-msgstr "...süzülen %1 dizini atlanıyor"
+msgstr "…süzülen %1 dizini atlanıyor"
 
 #: Archiver.cxx:1015
 #, kde-format
@@ -248,7 +248,7 @@ msgstr ""
 #: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
-msgstr "'%1' dizini okunabilir değil. Atlanıyor."
+msgstr "“%1” dizini okunabilir değil. Atlanıyor."
 
 #: Archiver.cxx:1125
 #, kde-format
@@ -262,7 +262,7 @@ msgstr ""
 #: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr "'socket' dosya türü arşivlenemiyor: %1\n"
+msgstr "“socket” dosya türü arşivlenemiyor: %1\n"
 
 #: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
@@ -270,18 +270,18 @@ msgid ""
 "Could not read from file '%1'\n"
 "The operating system reports: %2"
 msgstr ""
-"'%1' dosyasından okunamadı.\n"
+"“%1” dosyasından okunamadı.\n"
 "İşletim sistemi yanıtı: %2"
 
 #: Archiver.cxx:1268
 #, kde-format
 msgid "Could not open file '%1' for reading."
-msgstr "'%1' dosyası okumak için açılamadı."
+msgstr "“%1” dosyası okumak için açılamadı."
 
 #: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
-msgstr "...%1 dosyası arşivleniyor"
+msgstr "…%1 dosyası arşivleniyor"
 
 #: Archiver.cxx:1368
 #, kde-format
@@ -309,7 +309,7 @@ msgstr "Geçici dosyaya yazılamadı"
 #: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
-msgstr "...%1 dosyası sıkıştırılıyor"
+msgstr "…%1 dosyası sıkıştırılıyor"
 
 #: Archiver.cxx:1476
 #, kde-format
@@ -342,7 +342,7 @@ msgstr "Kullanımı kolay bir yedek programı"
 #: main.cxx:49
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
-msgstr "(c) 2006 - 2018 Martin Koller"
+msgstr "(c) 2006–2018 Martin Koller"
 
 #: main.cxx:53
 #, kde-format
@@ -357,7 +357,7 @@ msgstr "Geliştirici"
 #: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
-msgstr "Verilen profille başlat."
+msgstr "Verilen profille başlatın."
 
 #: main.cxx:63
 #, kde-format
@@ -399,7 +399,7 @@ msgstr ""
 #: main.cxx:149 MainWindow.cxx:211
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
-msgstr "'%1' profili okumak için açılamadı: %2"
+msgstr "“%1” profili okumak için açılamadı: %2"
 
 #: MainWidget.cxx:68
 #, kde-format
@@ -543,7 +543,7 @@ msgstr "Yeni Profil"
 #: MainWindow.cxx:60
 #, kde-format
 msgid "Load Profile..."
-msgstr "Profil Yükle..."
+msgstr "Profil Yükle…"
 
 #: MainWindow.cxx:64
 #, kde-format
@@ -553,12 +553,12 @@ msgstr "Profili Kaydet"
 #: MainWindow.cxx:68
 #, kde-format
 msgid "Save Profile As..."
-msgstr "Profili Farklı Kaydet..."
+msgstr "Profili Farklı Kaydet…"
 
 #: MainWindow.cxx:72
 #, kde-format
 msgid "Profile Settings..."
-msgstr "Profil Ayarları..."
+msgstr "Profil Ayarları…"
 
 #: MainWindow.cxx:75
 #, kde-format
@@ -611,7 +611,7 @@ msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"'%1' profili halihazırda var.\n"
+"“%1” profili halihazırda var.\n"
 "Üzerine yazmak istiyor musunuz?"
 
 #: MainWindow.cxx:266
@@ -622,7 +622,7 @@ msgstr "Profil var"
 #: MainWindow.cxx:283
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
-msgstr "'%1' profili yazmak için açılamadı: %2"
+msgstr "“%1” profili yazmak için açılamadı: %2"
 
 #: MainWindow.cxx:359
 #, kde-format
@@ -661,12 +661,12 @@ msgstr "Dosyayı Sil"
 #: Selector.cxx:299
 #, kde-format
 msgid "Properties..."
-msgstr "Özellikler..."
+msgstr "Özellikler…"
 
 #: Selector.cxx:603
 #, kde-format
 msgid "Do you really want to delete '%1'?"
-msgstr "'%1' ögesini gerçekten silmek istiyor musunuz?"
+msgstr "“%1” ögesini gerçekten silmek istiyor musunuz?"
 
 #: Selector.cxx:604
 #, kde-format
@@ -676,7 +676,7 @@ msgstr "Sil"
 #: Selector.cxx:615
 #, kde-format
 msgid "Could not delete directory '%1'."
-msgstr "'%1' dizini silinemedi."
+msgstr "“%1” dizini silinemedi."
 
 #: Selector.cxx:624
 #, kde-format
@@ -684,13 +684,13 @@ msgid ""
 "Could not delete file '%1'.\n"
 "Reason: %2"
 msgstr ""
-"'%1' dosyası silinemedi.\n"
+"“%1” dosyası silinemedi.\n"
 "Neden: %2"
 
 #: Selector.cxx:692
 #, kde-format
 msgid "Other Application..."
-msgstr "Diğer Uygulama..."
+msgstr "Diğer Uygulama…"
 
 #: Selector.cxx:694
 #, kde-format
@@ -813,7 +813,7 @@ msgid ""
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
 "Yedekleme için yok sayılacak dosyalar için virgülle ayrılmış jokerler "
-"tanımlayın; örn. \"*.ogg, *.wav\""
+"tanımlayın; örneğin, “*.ogg, *.wav”"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: SettingsDialog.ui:122
