@@ -364,16 +364,19 @@ void Selector::fillTree(ListItem *parent, const QString &path, bool on)
 
       if ( folderIcon.isNull() )  // only get the icons once
       {
-        KIconEffect effect;
-
         folderIcon = QIcon::fromTheme(QStringLiteral("folder")).pixmap(KIconLoader::SizeSmall);
-        folderIconHidden = effect.apply(folderIcon, KIconEffect::DeSaturate, 0, QColor(), true);
+
+        QImage hiddenImg = folderIcon.toImage();
+        KIconEffect::deSaturate(hiddenImg, 0);
+        folderIconHidden = QPixmap::fromImage(hiddenImg);
 
         folderLinkIcon = KIconUtils::addOverlay(folderIcon,
                                                 QIcon::fromTheme(QStringLiteral("emblem-symbolic-link")),
                                                 Qt::BottomRightCorner).pixmap(KIconLoader::SizeSmall);
 
-        folderLinkIconHidden = effect.apply(folderLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
+        QImage folderLinkHiddenImage = folderLinkIcon.toImage();
+        KIconEffect::deSaturate(folderLinkHiddenImage, 0);
+        folderLinkIconHidden = QPixmap::fromImage(folderLinkHiddenImage);
       }
 
       item->setIcon(list[i].isSymLink() ?
@@ -389,16 +392,22 @@ void Selector::fillTree(ListItem *parent, const QString &path, bool on)
 
       if ( documentIcon.isNull() )  // only get the icons once
       {
-        KIconEffect effect;
-
         documentIcon = QIcon::fromTheme(QStringLiteral("text-x-generic")).pixmap(KIconLoader::SizeSmall);
-        documentIconHidden = effect.apply(documentIcon, KIconEffect::DeSaturate, 0, QColor(), true);
+        QImage img = documentIcon.toImage();
+        KIconEffect::deSaturate(img, 0);
+        documentIcon = QPixmap::fromImage(img);
+
+        img = documentIconHidden.toImage();
+        KIconEffect::deSaturate(img, 0);
+        documentIconHidden = QPixmap::fromImage(img);
 
         documentLinkIcon = KIconUtils::addOverlay(documentIcon,
                                                 QIcon::fromTheme(QStringLiteral("emblem-symbolic-link")),
                                                 Qt::BottomRightCorner).pixmap(KIconLoader::SizeSmall);
 
-        documentLinkIconHidden = effect.apply(documentLinkIcon, KIconEffect::DeSaturate, 0, QColor(), true);
+        img = documentLinkIcon.toImage();
+        KIconEffect::deSaturate(img, 0);
+        documentLinkIconHidden = QPixmap::fromImage(img);
       }
 
       item->setIcon(list[i].isSymLink() ?
