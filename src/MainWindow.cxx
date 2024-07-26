@@ -372,14 +372,6 @@ void MainWindow::inProgress(bool runs)
   {
     if ( sysTray )
     {
-      /*
-      QMovie *movie = KIconLoader::global()->loadMovie("kbackup_runs", KIconLoader::Panel);
-      if ( movie )
-      {
-        sysTray->setMovie(movie);
-        movie->start();
-      }
-      */
       sysTray->setIconByName(QStringLiteral("kbackup_runs"));
       sysTray->setStatus(KStatusNotifierItem::Active);
     }
@@ -391,12 +383,6 @@ void MainWindow::inProgress(bool runs)
   {
     if ( sysTray )
     {
-      /*
-      if ( sysTray->movie() )
-        const_cast<QMovie*>(sysTray->movie())->stop();  // why does it return a const pointer ? :-(
-
-      sysTray->setIcon(sysTray->loadIcon("kbackup"));
-      */
       sysTray->setIconByName(QStringLiteral("kbackup"));
       sysTray->setStatus(KStatusNotifierItem::Passive);
     }
