@@ -15,8 +15,10 @@ apps:
     desktop: usr/share/applications/org.kde.kbackup.desktop
     command: usr/bin/kbackup
     plugs:
+      - home
       - system-backup
       - removable-media
+      - udisks2
 slots:
   session-dbus-interface:
     interface: dbus
