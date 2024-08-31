@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:41+0000\n"
 "PO-Revision-Date: 2023-02-18 08:32+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -668,22 +668,22 @@ msgstr "Usuń plik"
 msgid "Properties..."
 msgstr "Właściwości..."
 
-#: Selector.cxx:602
+#: Selector.cxx:611
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Czy na pewno chcesz usunąć '%1'?"
 
-#: Selector.cxx:603
+#: Selector.cxx:612
 #, kde-format
 msgid "Delete"
 msgstr "Usuń"
 
-#: Selector.cxx:614
+#: Selector.cxx:623
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Nie można usunąć katalogu '%1'."
 
-#: Selector.cxx:623
+#: Selector.cxx:632
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -692,12 +692,12 @@ msgstr ""
 "Nie można usunąć pliku '%1'.\n"
 "Powód: %2"
 
-#: Selector.cxx:691
+#: Selector.cxx:700
 #, kde-format
 msgid "Other Application..."
 msgstr "Inny program..."
 
-#: Selector.cxx:693
+#: Selector.cxx:702
 #, kde-format
 msgid "File Manager"
 msgstr "Zarządzanie plikami"

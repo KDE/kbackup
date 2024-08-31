@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:41+0000\n"
 "PO-Revision-Date: 2023-07-24 11:56+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -671,22 +671,22 @@ msgstr "Ta bort fil"
 msgid "Properties..."
 msgstr "Egenskaper..."
 
-#: Selector.cxx:602
+#: Selector.cxx:611
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Vill du verkligen ta bort '%1?"
 
-#: Selector.cxx:603
+#: Selector.cxx:612
 #, kde-format
 msgid "Delete"
 msgstr "Ta bort"
 
-#: Selector.cxx:614
+#: Selector.cxx:623
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Kunde inte ta bort katalogen '%1'."
 
-#: Selector.cxx:623
+#: Selector.cxx:632
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -695,12 +695,12 @@ msgstr ""
 "Kunde inte ta bort filen '%1'.\n"
 "Orsak: %2"
 
-#: Selector.cxx:691
+#: Selector.cxx:700
 #, kde-format
 msgid "Other Application..."
 msgstr "Annat program..."
 
-#: Selector.cxx:693
+#: Selector.cxx:702
 #, kde-format
 msgid "File Manager"
 msgstr "Filhanterare"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:41+0000\n"
 "PO-Revision-Date: 2023-06-17 14:05+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -668,22 +668,22 @@ msgstr "Eliminar o ficheiro"
 msgid "Properties..."
 msgstr "Propiedades…"
 
-#: Selector.cxx:602
+#: Selector.cxx:611
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Seguro que quere eliminar «%1»?"
 
-#: Selector.cxx:603
+#: Selector.cxx:612
 #, kde-format
 msgid "Delete"
 msgstr "Eliminar"
 
-#: Selector.cxx:614
+#: Selector.cxx:623
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Non foi posíbel eliminar o directorio «%1»."
 
-#: Selector.cxx:623
+#: Selector.cxx:632
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -692,12 +692,12 @@ msgstr ""
 "Non foi posíbel eliminar o ficheiro «%1».\n"
 "Motivo: %2"
 
-#: Selector.cxx:691
+#: Selector.cxx:700
 #, kde-format
 msgid "Other Application..."
 msgstr "Outra aplicación…"
 
-#: Selector.cxx:693
+#: Selector.cxx:702
 #, kde-format
 msgid "File Manager"
 msgstr "Xestor de ficheiros"

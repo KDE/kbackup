@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:41+0000\n"
 "PO-Revision-Date: 2024-06-24 00:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -663,22 +663,22 @@ msgstr "Dosyayı Sil"
 msgid "Properties..."
 msgstr "Özellikler…"
 
-#: Selector.cxx:602
+#: Selector.cxx:611
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "“%1” ögesini gerçekten silmek istiyor musunuz?"
 
-#: Selector.cxx:603
+#: Selector.cxx:612
 #, kde-format
 msgid "Delete"
 msgstr "Sil"
 
-#: Selector.cxx:614
+#: Selector.cxx:623
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "“%1” dizini silinemedi."
 
-#: Selector.cxx:623
+#: Selector.cxx:632
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -687,12 +687,12 @@ msgstr ""
 "“%1” dosyası silinemedi.\n"
 "Neden: %2"
 
-#: Selector.cxx:691
+#: Selector.cxx:700
 #, kde-format
 msgid "Other Application..."
 msgstr "Diğer Uygulama…"
 
-#: Selector.cxx:693
+#: Selector.cxx:702
 #, kde-format
 msgid "File Manager"
 msgstr "Dosya Yöneticisi"

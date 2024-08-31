@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:41+0000\n"
 "PO-Revision-Date: 2024-01-21 01:41+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -657,22 +657,22 @@ msgstr "刪除檔案"
 msgid "Properties..."
 msgstr "屬性…"
 
-#: Selector.cxx:602
+#: Selector.cxx:611
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "您確定要刪除 '%1' 嗎？"
 
-#: Selector.cxx:603
+#: Selector.cxx:612
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
 
-#: Selector.cxx:614
+#: Selector.cxx:623
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "無法刪除目錄 '%1'。"
 
-#: Selector.cxx:623
+#: Selector.cxx:632
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -681,12 +681,12 @@ msgstr ""
 "無法刪除檔案 '%1'。\n"
 "原因：%2"
 
-#: Selector.cxx:691
+#: Selector.cxx:700
 #, kde-format
 msgid "Other Application..."
 msgstr "其他應用程式…"
 
-#: Selector.cxx:693
+#: Selector.cxx:702
 #, kde-format
 msgid "File Manager"
 msgstr "檔案管理員"

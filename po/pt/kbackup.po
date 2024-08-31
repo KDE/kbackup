@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"POT-Creation-Date: 2024-08-31 00:41+0000\n"
 "PO-Revision-Date: 2023-02-15 15:12+0000\n"
 "Last-Translator: Carlos Gonçalves <mail@cgoncalves.info>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -673,22 +673,22 @@ msgstr "Apagar o Ficheiro"
 msgid "Properties..."
 msgstr "Propriedades..."
 
-#: Selector.cxx:602
+#: Selector.cxx:611
 #, kde-format
 msgid "Do you really want to delete '%1'?"
 msgstr "Deseja realmente apagar o '%1'?"
 
-#: Selector.cxx:603
+#: Selector.cxx:612
 #, kde-format
 msgid "Delete"
 msgstr "Apagar"
 
-#: Selector.cxx:614
+#: Selector.cxx:623
 #, kde-format
 msgid "Could not delete directory '%1'."
 msgstr "Não foi possível apagar a pasta '%1'."
 
-#: Selector.cxx:623
+#: Selector.cxx:632
 #, kde-format
 msgid ""
 "Could not delete file '%1'.\n"
@@ -697,12 +697,12 @@ msgstr ""
 "Não foi possível apagar o ficheiro '%1'.\n"
 "Razão: %2"
 
-#: Selector.cxx:691
+#: Selector.cxx:700
 #, kde-format
 msgid "Other Application..."
 msgstr "Outra Aplicação..."
 
-#: Selector.cxx:693
+#: Selector.cxx:702
 #, kde-format
 msgid "File Manager"
 msgstr "Gestor de Ficheiros"
