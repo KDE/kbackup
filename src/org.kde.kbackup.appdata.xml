@@ -4,7 +4,7 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBackup</name>
-  <name xml:lang="ar">النسخ الاحتياطي</name>
+  <name xml:lang="ar">النسخ الاحتياطي ك</name>
   <name xml:lang="ast">KBackup</name>
   <name xml:lang="ca">KBackup</name>
   <name xml:lang="ca-valencia">KBackup</name>
@@ -84,7 +84,7 @@
     <p>
       KBackup is an application which lets you back up your data in a simple, user friendly way
     </p>
-    <p xml:lang="ar">النسخ الاحتياطي هو تطبيق يتيح لك إجراء نسخ احتياطي لبياناتك بطريقة بسيطة وسهلة الاستخدام</p>
+    <p xml:lang="ar">النسخ الاحتياطي ك هو تطبيق يتيح لك إجراء نسخ احتياطي لبياناتك بطريقة بسيطة وسهلة الاستخدام</p>
     <p xml:lang="ca">El KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i fàcil d'emprar</p>
     <p xml:lang="ca-valencia">KBackup és una aplicació que permet fer còpies de seguretat de les dades d'una manera senzilla i fàcil d'emprar</p>
     <p xml:lang="de">KBackup ist ein Programm welches Datensicherung in einer benutzerfreundlichen Weise ermöglicht</p>
