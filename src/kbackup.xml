@@ -3,6 +3,7 @@
   <mime-type type="text/x-kbp">
     <comment>KBackup Profile</comment>
     <comment xml:lang="ar">تشكيلة النسخ الاحتياطي ك</comment>
+    <comment xml:lang="bg">Профилен файл на KBackup</comment>
     <comment xml:lang="ca">Perfil del KBackup</comment>
     <comment xml:lang="ca@valencia">Perfil de KBackup</comment>
     <comment xml:lang="cs">Profil KBackup</comment>
