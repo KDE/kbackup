@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: Archiver.cxx:434
 #, kde-format
@@ -56,13 +56,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "निर्देशिका रचयन्तु"
 
 #: Archiver.cxx:463
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "निर्मियताम्"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -207,7 +207,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr ""
+msgstr "सञ्चिकां उद्घाटयन्तु"
 
 #: Archiver.cxx:961
 #, kde-format
