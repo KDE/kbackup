@@ -22,6 +22,7 @@
   <name xml:lang="fr">KBackup</name>
   <name xml:lang="gl">KBackup</name>
   <name xml:lang="he">KBackup</name>
+  <name xml:lang="hi">केबैकअप</name>
   <name xml:lang="ia">KBackup</name>
   <name xml:lang="id">KBackup</name>
   <name xml:lang="ie">KBackup</name>
@@ -61,6 +62,7 @@
   <summary xml:lang="fr">Créer des archives comme des fichiers « .tar » vers un dossier local ou une URL distante.</summary>
   <summary xml:lang="gl">Crear salvagardas como ficheiros .tar nun cartafol local ou nun URL remoto</summary>
   <summary xml:lang="he">יצירת גיבויים כקובצי ‎.tar לתיקייה מקומית או כתובת מרוחקת</summary>
+  <summary xml:lang="hi">स्थानीय फ़ोल्डर या दूरस्थ URL पर .tar फ़ाइल के रूप में बैकअप बनाएँ</summary>
   <summary xml:lang="ia">Crea retrocopias como file .tar al dossier local e URL remote</summary>
   <summary xml:lang="id">Buat cadangan sebagai file .tar ke sebuah folder lokal atau URL jarak jauh</summary>
   <summary xml:lang="ie">Crear archives quam files .tar in local fólderes o lontan URLs</summary>
@@ -103,6 +105,7 @@
     <p xml:lang="fr">KBackup est une application qui vous permet de sauvegarder vos données de manière simple et intuitive</p>
     <p xml:lang="gl">KBackup é unha aplicación que lle permite facer unha salvagarda dos seus datos dunha maneira sinxela e fácil.</p>
     <p xml:lang="he">KBackup הוא יישום שמאפשר לך לגבות את הנתונים שלך בצורה פשוטה וידידותית למשתמש</p>
+    <p xml:lang="hi">KBackup एक ऐसा एप्लिकेशन है जो आपको सरल, उपयोगकर्ता अनुकूल तरीके से अपने डेटा का बैकअप लेने की सुविधा देता है</p>
     <p xml:lang="ia">KBackup es un application que te permitte retro copiar tu datos in un modo simplice e amical</p>
     <p xml:lang="id">KBackup adalah aplikasi yang memungkinkan kamu mencadangkan data dengan cara yang sederhana dan ramah pengguna</p>
     <p xml:lang="ie">KBackup es un application quel permisse vos archivar vor data in un simplic comprensibil maniere</p>
@@ -143,6 +146,7 @@
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
     <p xml:lang="he">יכולות:</p>
+    <p xml:lang="hi">विशेषताएँ:</p>
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="ie">Caracteristicas:</p>
@@ -184,6 +188,7 @@
       <li xml:lang="fr">Utilisation de fichiers de profils contenant les définitions des fichiers et dossiers à inclure ou à exclure de la sauvegarde</li>
       <li xml:lang="gl">Uso de ficheiros de perfil que definen cartafoles e ficheiros que incluír ou excluír da salvagarda.</li>
       <li xml:lang="he">באמצעות קובצי פרופילים והגדרות לתיקיות ולקבצים שיגובו או יוחרגו מהגיבוי</li>
+      <li xml:lang="hi">बैकअप में शामिल या बाहर किए जाने वाले फ़ोल्डरों और फ़ाइलों की परिभाषाओं के साथ प्रोफ़ाइल फ़ाइलों का उपयोग करना</li>
       <li xml:lang="ia">Usante files de profilo con definitiones per dossieres e files que essera includite o excludite ex le retrocopia</li>
       <li xml:lang="id">Menggunakan file profil dengan definisi untuk folder dan file yang akan dimasukkan atau dikecualikan dari cadangan</li>
       <li xml:lang="is">Sniðskrár með skilgreiningum notaðar fyrir möppur og skrár sem á að taka með eða sleppa úr öryggisafritinu</li>
@@ -222,6 +227,7 @@
       <li xml:lang="fr">La destination de l'archive peut être n'importe quel dossier monté en local : lecteur ZIP, clé USB ou URL distante</li>
       <li xml:lang="gl">O destino da salvagarda pode ser ou un dispositivo montado de maneira local, como un dispositivo ZIP ou unha memoria USB, ou un URL remoto.</li>
       <li xml:lang="he">יעד הגיבוי יכול להיות התקן מעוגן מקומית כמו כונן גיבוי, החסן נייד ועוד או כתובת מרוחקת</li>
+      <li xml:lang="hi">बैकअप लक्ष्य या तो स्थानीय रूप से माउंट किया गया डिवाइस जैसे ज़िप ड्राइव, यूएसबी स्टिक आदि या कोई दूरस्थ यूआरएल हो सकता है</li>
       <li xml:lang="ia">Le objectivo de retrocopiar pote esser un dispositivo montate localmentetal como un drive ZIP, un clave USB, etc. o ulle URL remote</li>
       <li xml:lang="id">Target cadangan dapat berupa peranti yang dikaitkan secara lokal seperti drive ZIP, stik USB, dll. atau URL jarak jauh apa pun</li>
       <li xml:lang="is">Viðtökustaður afritsins getur verið annað hvort staðbundið tæki eins og ZIP-drif, USB-lykill o.s.frv eða fjartengd slóð</li>
@@ -260,6 +266,7 @@
       <li xml:lang="fr">Lancement de sauvegardes automatisées sans passer par l'interface graphique utilisateur</li>
       <li xml:lang="gl">Execución de salvagardas automatizadas sen usar unha interface gráfica de usuario.</li>
       <li xml:lang="he">הרצת גיבויים אוטומטית מבלי צורך להשתמש בממשק חזותי</li>
+      <li xml:lang="hi">ग्राफ़िकल यूज़र इंटरफ़ेस का उपयोग किए बिना स्वचालित बैकअप चलाना</li>
       <li xml:lang="ia">Executante retrocopias automatic sin usar un interfacie de usator graphic</li>
       <li xml:lang="id">Cadangan yang diotomatiskan berjalan tanpa menggunakan antarmuka pengguna grafis</li>
       <li xml:lang="ie">Automatic archivation sin usage de un interfacie grafical</li>
