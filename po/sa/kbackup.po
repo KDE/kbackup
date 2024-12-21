@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the kbackup package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-31 00:41+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:51+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -432,7 +434,7 @@ msgstr "बैकअप रद्दं कुर्वन्तु"
 #: MainWidgetBase.ui:92
 #, kde-format
 msgid "Next Backup:"
-msgstr "अग्रिमः बैकअपः : १."
+msgstr "अग्रिमः बैकअपः :"
 
 #. i18n: ectx: property (text), widget (QLabel, backupType)
 #: MainWidgetBase.ui:99
@@ -456,7 +458,7 @@ msgstr "लक्ष्य"
 #: MainWidgetBase.ui:127
 #, kde-format
 msgid "Folder:"
-msgstr "पुटम् : १."
+msgstr "पुटम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, sliceLabel)
 #: MainWidgetBase.ui:143
@@ -493,7 +495,7 @@ msgstr "कुलम्"
 #: MainWidgetBase.ui:248
 #, kde-format
 msgid "Files:"
-msgstr "सञ्चिकाः : १."
+msgstr "सञ्चिकाः :"
 
 #. i18n: ectx: property (text), widget (QLabel, totalFiles)
 #. i18n: ectx: property (text), widget (QLabel, totalSize)
@@ -524,7 +526,7 @@ msgstr "००:००:०० वादनम्"
 #: MainWidgetBase.ui:387
 #, kde-format
 msgid "Warnings:"
-msgstr "चेतावनी : १."
+msgstr "चेतावनी :"
 
 #. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
 #: MainWidgetBase.ui:413
@@ -755,7 +757,7 @@ msgstr "लक्ष्यं मीडियापरिवर्तनस्�
 #: SettingsDialog.ui:48
 #, kde-format
 msgid "Exclude Paths Filter:"
-msgstr "मार्गाः बहिष्कृत्य फ़िल्टरः : १."
+msgstr "मार्गाः बहिष्कृत्य फ़िल्टरः :"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: SettingsDialog.ui:57
@@ -800,7 +802,7 @@ msgstr " दिवसाः"
 #: SettingsDialog.ui:105
 #, kde-format
 msgid "Archive Prefix:"
-msgstr "संग्रह उपसर्गः : १."
+msgstr "संग्रह उपसर्गः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
 #: SettingsDialog.ui:115
@@ -816,7 +818,7 @@ msgstr ""
 #: SettingsDialog.ui:122
 #, kde-format
 msgid "Maximum Archive Size:"
-msgstr "अधिकतमः अभिलेखागारस्य आकारः : १."
+msgstr "अधिकतमः अभिलेखागारस्य आकारः :"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
 #: SettingsDialog.ui:139
