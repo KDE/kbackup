@@ -1,4 +1,6 @@
-# Translation of kbackup.po to Spanish
+# Spanish translations for kbackup.po package.
+# Copyright (C) 2007-2025 This file is copyright:
+# This file is distributed under the same license as the kbackup package.
 #
 # SPDX-FileCopyrightText: 2007 gerardo <gejobj@gmail.com>
 # SPDX-FileCopyrightText: 2018 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
@@ -8,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-31 00:41+0000\n"
-"PO-Revision-Date: 2025-02-20 01:20+0100\n"
+"PO-Revision-Date: 2025-05-11 22:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -873,16 +875,3 @@ msgstr "Comprimir archivos"
 #, kde-format
 msgid "backup"
 msgstr "copia de seguridad"
-
-#~ msgid ""
-#~ "Could not write directory '%1' to archive.\n"
-#~ "Maybe the medium is full."
-#~ msgstr ""
-#~ "No se puede escribir el directorio '%1' en el archivo.\n"
-#~ "Quizás el medio esté lleno."
-
-#~ msgid "OK"
-#~ msgstr "Aceptar"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
