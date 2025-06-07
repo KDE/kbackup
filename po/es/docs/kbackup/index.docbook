@@ -166,7 +166,7 @@
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Cargar perfil...</guimenuitem
+>Cargar perfil…</guimenuitem
 ></menuchoice
 >. </para>
 
@@ -209,7 +209,7 @@
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Preferencias del perfil...</guimenuitem
+>Preferencias del perfil…</guimenuitem
 ></menuchoice
 > puede definir un prefijo distinto del predeterminado «backup». </para>
 
@@ -399,7 +399,7 @@
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Cargar perfil...</guimenuitem
+>Cargar perfil…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -433,7 +433,7 @@
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Guardar perfil como...</guimenuitem
+>Guardar perfil como…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -450,7 +450,7 @@
 ><guimenu
 >Archivo</guimenu
 > <guimenuitem
->Preferencias del perfil...</guimenuitem
+>Preferencias del perfil…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
