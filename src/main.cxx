@@ -48,7 +48,7 @@ int main(int argc, char **argv)
                    QStringLiteral(KBACKUP_VERSION), i18n("An easy to use backup program"), KAboutLicense::GPL_V2,
                    i18n("(c) 2006 - 2018 Martin Koller"),  // copyright
                    QString(),  // added text
-                   QStringLiteral("https://www.linux-apps.com/content/show.php?content=44998"));  // homepage
+                   QStringLiteral("https://apps.kde.org/kbackup"));  // homepage
 
   about.addAuthor(i18n("Martin Koller"), i18n("Developer"), QStringLiteral("martin@kollix.at"));
 

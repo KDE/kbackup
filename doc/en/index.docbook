@@ -17,7 +17,7 @@
 <firstname>Martin</firstname>
 <surname>Koller</surname>
 </personname>
-<email>kollix@aon.at</email>
+<email>martin@kollix.at</email>
 </author>
 </authorgroup>
 
@@ -580,7 +580,7 @@ target directory</para>
 &kbackup;
 </para>
 <para>
-Program copyright &copy; 2006 - 2009 Martin Koller <email>kollix@aon.at</email><!--FIXME use entities when kbackup depends on kdoctools >= 5.42-->
+Program copyright &copy; 2006 - 2009 Martin Koller <email>martin@kollix.at</email><!--FIXME use entities when kbackup depends on kdoctools >= 5.42-->
 </para>
 
 <para>
