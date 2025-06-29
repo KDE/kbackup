@@ -1,5 +1,5 @@
 //**************************************************************************
-//   Copyright 2006 - 2022 Martin Koller, kollix@aon.at
+//   Copyright 2006 - 2022 Martin Koller, martin@kollix.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by

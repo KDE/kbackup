@@ -1,5 +1,5 @@
 //**************************************************************************
-//   Copyright 2006 - 2018 Martin Koller, kollix@aon.at
+//   Copyright 2006 - 2018 Martin Koller, martin@kollix.at
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
                    QString(),  // added text
                    QStringLiteral("https://www.linux-apps.com/content/show.php?content=44998"));  // homepage
 
-  about.addAuthor(i18n("Martin Koller"), i18n("Developer"), QStringLiteral("kollix@aon.at"));
+  about.addAuthor(i18n("Martin Koller"), i18n("Developer"), QStringLiteral("martin@kollix.at"));
 
   about.setDesktopFileName(QStringLiteral("org.kde.kbackup"));
 
