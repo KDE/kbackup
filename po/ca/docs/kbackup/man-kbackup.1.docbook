@@ -293,13 +293,13 @@ man sections 1, 6, 7 and 8--></para>
 <title
 >Autors</title>
 <para
->El KBackup ha estat escrit per en Martin Koller <email
->kollix@aon.at</email
-> Aquesta pàgina del manual ha estat creada per en Scott Kitterman <email
+>El KBackup ha estat escrit per Martin Koller <email
+>martin@kollix.at</email
+> Aquesta pàgina del manual ha estat creada per Scott Kitterman <email
 >scott@kitterman.com</email
-> i actualitzada per en Scarlett Moore <email
+> i actualitzada per Scarlett Moore <email
 >sgmoore@kde.org</email
->, està llicenciada sota els mateixos termes que el KBackup.</para>
+>, està llicenciada amb les mateixes clàusules que el KBackup.</para>
 </refsect1>
 
 </refentry
