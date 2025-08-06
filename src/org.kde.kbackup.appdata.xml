@@ -251,7 +251,7 @@
       <li xml:lang="zh-CN">备份目标可以是挂载在本地的设备，例如 ZIP 驱动器或者 USB 存储器等，也可以是任何远程 URL</li>
       <li xml:lang="zh-TW">備份目標位置可以是任一掛載於本機的位置，例如 ZIP 硬碟、USB 隨身碟或任意遠端 URL 等等</li>
       <li>Running automated backups without using a graphical user interface</li>
-      <li xml:lang="ar">تشغيل النسخ الاحتياطية الآلية دون استخدام واجهة مستخدم رسومية</li>
+      <li xml:lang="ar">تشغيل النسخ الاحتياطية الآليّة دون استخدام واجهة مستخدم رسومية</li>
       <li xml:lang="bg">Изпълнение на автоматизирани резервни копия без използване на графичен потребителски интерфейс</li>
       <li xml:lang="ca">Executa còpies de seguretat automatitzades sense usar cap interfície gràfica d'usuari</li>
       <li xml:lang="ca-valencia">Executa còpies de seguretat automatitzades sense utilitzar cap interfície gràfica d'usuari</li>
