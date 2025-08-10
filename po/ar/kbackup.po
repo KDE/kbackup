@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kbackup package.
+# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-31 00:41+0000\n"
-"PO-Revision-Date: 2024-09-06 23:15+0400\n"
+"PO-Revision-Date: 2025-08-09 14:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -548,7 +548,7 @@ msgstr "حمّل تشكيلة..."
 #: MainWindow.cxx:64
 #, kde-format
 msgid "Save Profile"
-msgstr "احفظ اللاحة"
+msgstr "احفظ التشكيلة"
 
 #: MainWindow.cxx:68
 #, kde-format
@@ -630,7 +630,7 @@ msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
 msgstr ""
-"الملفات: %1 الحجم: %2 ميجابايت\n"
+"الملفات: %1 الحجم: %2 ميغابايت\n"
 "%3"
 
 #: Selector.cxx:252
@@ -700,32 +700,32 @@ msgstr "مدير ملفات"
 #: SettingsDialog.cxx:22
 #, kde-format
 msgid "650 MB CD"
-msgstr "قرص مضغوط بحجم 650 ميجابايت"
+msgstr "قرص مضغوط بحجم 650 ميغابايت"
 
 #: SettingsDialog.cxx:23
 #, kde-format
 msgid "700 MB CD"
-msgstr "قرص مضغوط بحجم 700 ميجابايت"
+msgstr "قرص مضغوط بحجم 700 ميغابايت"
 
 #: SettingsDialog.cxx:24
 #, kde-format
 msgid "4.7 GB DVD"
-msgstr "دي في دي بحجم 4.7 جيجا بايت"
+msgstr "دي في دي بحجم 4.7 غيغا بايت"
 
 #: SettingsDialog.cxx:25
 #, kde-format
 msgid "8.5 GB DVD"
-msgstr "دي في دي بحجم 8.5 جيجا بايت"
+msgstr "دي في دي بحجم 8.5 غيغا بايت"
 
 #: SettingsDialog.cxx:26
 #, kde-format
 msgid "9.4 GB DVD"
-msgstr "دي في دي بحجم 9.4 جيجا بايت"
+msgstr "دي في دي بحجم 9.4 غيغا بايت"
 
 #: SettingsDialog.cxx:27
 #, kde-format
 msgid "17.1 GB DVD"
-msgstr "دي في دي بحجم 17.1 جيجا بايت"
+msgstr "دي في دي بحجم 17.1 غيغا بايت"
 
 #: SettingsDialog.cxx:28
 #, kde-format
@@ -814,7 +814,7 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
-"يحدد أحرف البدل لأسماء الملفات التي سيتم تجاهلها للنسخ الاحتياطي، مفصولة "
+"يحدد أحرف البدل لأسماء الملفات التي ستُتجاهل عند النسخ الاحتياطي، مفصولة "
 "بمسافة. على سبيل المثال: \"‎*.ogg *.wav\""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
