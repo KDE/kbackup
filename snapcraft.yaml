@@ -33,8 +33,10 @@ parts:
     source-type: local
     build-packages:
       - libarchive-dev
+      - libpulse0
     stage-packages:
       - libarchive13
+      - libpulse0
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
