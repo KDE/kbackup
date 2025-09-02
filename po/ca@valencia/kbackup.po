@@ -604,7 +604,7 @@ msgstr "Interromp"
 #: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "Select Profile"
-msgstr "Seleccioneu el perfil"
+msgstr "Trieu el perfil"
 
 #: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
 #, kde-format
