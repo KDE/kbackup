@@ -39,7 +39,6 @@
     <comment xml:lang="sv">Kbackup-profil</comment>
     <comment xml:lang="tr">K Yedek Profili</comment>
     <comment xml:lang="uk">профіль KBackup</comment>
-    <comment xml:lang="x_test">xxKBackup Profilexx</comment>
     <comment xml:lang="zh_CN">KBackup 配置文件</comment>
     <comment xml:lang="zh_TW">KBackup 設定檔</comment>
     <glob pattern="*.kbp"/>
