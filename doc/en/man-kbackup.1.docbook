@@ -191,7 +191,7 @@ man sections 1, 6, 7 and 8--></para>
 <title>See Also</title>
 <simplelist>
 <member>More detailed user documentation is available from <ulink
-url="help:/ --commandname-- ">help:/kbackup</ulink>
+url="help:/kbackup">help:/kbackup</ulink>
 (either enter this &URL; into &konqueror;, or run
 <userinput><command>khelpcenter</command>
 <parameter>man:/kbackup</parameter></userinput>).</member>
