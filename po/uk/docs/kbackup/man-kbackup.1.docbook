@@ -255,7 +255,7 @@ man sections 1, 6, 7 and 8--></para>
 >Додаткові відомості</title>
 <simplelist>
 <member
->Докладніша документація для користувачів доступна у <ulink url="help:/ --commandname-- "
+>Докладніша документація для користувачів доступна у <ulink url="help:/kbackup"
 >help:/kbackup</ulink
 > (або введіть цю адресу URL у поле адреси &konqueror;, або виконайте команду <userinput
 ><command
