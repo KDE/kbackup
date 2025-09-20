@@ -255,7 +255,7 @@ man sections 1, 6, 7 and 8--></para>
 >Se också</title>
 <simplelist>
 <member
->Mer detaljerad användardokumentation är tillgänglig med <ulink url="help:/ --commandname-- "
+>Mer detaljerad användardokumentation är tillgänglig med <ulink url="help:/kbackup"
 >help:/kbackup</ulink
 > (skriv antingen in webbadressen i &konqueror;, eller kör <userinput
 ><command

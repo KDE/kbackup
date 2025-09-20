@@ -255,7 +255,7 @@ man sections 1, 6, 7 and 8--></para>
 >Siehe auch</title>
 <simplelist>
 <member
->Weitere ausführliche Dokumentation finden Sie unter <ulink url="help:/ --commandname-- "
+>Weitere ausführliche Dokumentation finden Sie unter <ulink url="help:/kbackup"
 >help:/kbackup</ulink
 > (geben Sie diese &URL; entweder im &konqueror; ein oder starten Sie <userinput
 ><command

@@ -255,7 +255,7 @@ man sections 1, 6, 7 and 8--></para>
 >Ayrıca</title>
 <simplelist>
 <member
->Daha ayrıntılı kullanıcı belgelendirmesi <ulink url="help:/ --commandname-- "
+>Daha ayrıntılı kullanıcı belgelendirmesi <ulink url="help:/kbackup"
 >help:/kbackup</ulink
 > adresinde bulunabilir (ya bu &URL;'yi &konqueror;,'a girin veya <userinput
 ><command
