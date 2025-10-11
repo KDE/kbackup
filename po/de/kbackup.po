@@ -1,10 +1,9 @@
 # translation of de.po to Deutsch
 # translation of kbackup.po to
 # This file is put in the public domain.
-#
+# SPDX-FileCopyrightText: 2018 Burkhard Lück <lueck@hube-lueck.de>
 # Martin Koller <kollix@aon.at>, 2006 - 2010.
-# Burkhard Lück <lueck@hube-lueck.de>, 2018.
-# Frederik Schwarzer <schwarzer@kde.org>, 2018, 2022, 2023.
+# SPDX-FileCopyrightText: 2018, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
