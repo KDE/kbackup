@@ -75,6 +75,7 @@
   <summary xml:lang="pl">Twórz kopie zapasowe jako pliki .tar do katalogów lokalnych lub zdalnych adresów URL</summary>
   <summary xml:lang="pt">Criar as cópias de segurança como ficheiros .tar numa pasta local ou URL remoto</summary>
   <summary xml:lang="pt-BR">Cria cópias de segurança como arquivos .TAR em uma pasta local ou URL remota</summary>
+  <summary xml:lang="ro">Creați copii de rezervă ca fișiere .tar într-un dosar local sau URL distant</summary>
   <summary xml:lang="ru">Создание резервных копий в формате .tar в локальных или сетевых папках</summary>
   <summary xml:lang="sa">स्थानीयपुटं वा दूरस्थं URL वा .tar सञ्चिकारूपेण बैकअपं रचयन्तु</summary>
   <summary xml:lang="sk">Vytvorí zálohy ako .tar súbory pre miestny priečinok alebo vzdialené URL</summary>
@@ -117,6 +118,7 @@
     <p xml:lang="pl">KBackup jest aplikacją, która umożliwia łatwe utworzenie kopii zapasowych w prosty i przyjazny sposób</p>
     <p xml:lang="pt">O KBackup é uma aplicação que lhe permite salvaguardar os seus dados de forma simples e amigável</p>
     <p xml:lang="pt-BR">O KBackup é um aplicativo que lhe permite fazer cópias de segurança dos seus dados de forma simples e amigável</p>
+    <p xml:lang="ro">KBackup e o aplicație ce vă ajută să faceți o copie de rezervă a datelor într-un mod simplu și prietenos</p>
     <p xml:lang="ru">С помощью приложения KBackup резервные копии создаются просто и в дружественном для пользователя режиме</p>
     <p xml:lang="sa">KBackup एकः अनुप्रयोगः अस्ति यः भवन्तं सरलतया, उपयोक्तृ-अनुकूलतया स्वदत्तांशस्य बैकअपं ग्रहीतुं शक्नोति</p>
     <p xml:lang="sk">KBackup je aplikácia, ktorá vám umožnuje zálohovať údaje jednoduchým, používateľsky priateľským spôsobom</p>
@@ -197,6 +199,7 @@
       <li xml:lang="pl">Używanie plików profili z podanymi katalogami i plikami do wykonania lub wykluczenia z kopii zapasowej</li>
       <li xml:lang="pt">Uso de ficheiros de perfis com definições das pastas e ficheiros a incluir ou excluir na cópia de segurança</li>
       <li xml:lang="pt-BR">Uso de arquivos de perfis com definições das pastas e arquivos a serem incluídos ou excluídos na cópia de segurança</li>
+      <li xml:lang="ro">Folosind fișiere-profil cu definiții pentru dosare și fișiere de inclus sau exclus din copia de rezervă</li>
       <li xml:lang="ru">Использование профилей для настройки каталогов и файлов, включаемых или исключаемых из создаваемых резервных копий</li>
       <li xml:lang="sa">Folders इत्यस्य परिभाषाभिः सह profile files इत्यस्य उपयोगः तथा च backup तः समाविष्टाः वा बहिष्कृताः वा भवेयुः</li>
       <li xml:lang="sk">Používanie súborov s definíciami pre priečinky a súbory, ktoré sa majú zahrnúť alebo vynechať do zálohy</li>
@@ -235,6 +238,7 @@
       <li xml:lang="pl">Miejscem docelowym kopii zapasowej może być np. lokalnie podpięte urządzenie, takie jak napęd ZIP, pendrive, itp. lub zdalny adres URL</li>
       <li xml:lang="pt">O destino da cópia de segurança poderá ser um dispositivo montado localmente, como um disco ZIP, disco USB, etc. ou qualquer URL remoto</li>
       <li xml:lang="pt-BR">O destino da cópia de segurança poderá ser um dispositivo montado localmente, como um disco ZIP, dispositivo USB, etc. ou qualquer URL remota</li>
+      <li xml:lang="ro">Destinația copiei de rezervă poate fi un dispozitiv montat local ca unitate ZIP, memorie USB, etc., sau orice URL distant</li>
       <li xml:lang="ru">Целевой объект создаваемой резервной копии может быть локально смонтированным накопителем ZIP, носителем USB, а также любым удалённым URL</li>
       <li xml:lang="sa">बैकअप लक्ष्यं स्थानीयरूपेण माउण्ट् कृतं उपकरणं यथा ZIP ड्राइव्, USB stick इत्यादीनि अथवा कोऽपि दूरस्थः URL भवितुम् अर्हति</li>
       <li xml:lang="sk">Zálohovací cieľ môže byť buď lokálne pripojené zariadenie ako napr. USB kľúč alebo vzdialená adresa URL</li>
@@ -274,6 +278,7 @@
       <li xml:lang="pl">Wykonywanie zautomatyzowanych kopii zapasowych bez używania graficznego interfejsu użytkownika</li>
       <li xml:lang="pt">Execução de cópias de segurança automatizadas sem usar uma interface gráfica</li>
       <li xml:lang="pt-BR">Execução de cópias de segurança automatizadas sem usar uma interface gráfica</li>
+      <li xml:lang="ro">Rularea copierii automate fără folosirea interfeței grafice</li>
       <li xml:lang="ru">Автоматическое создание резервных копий без использования графического интерфейса пользователя</li>
       <li xml:lang="sa">चित्रात्मकस्य उपयोक्तृ-अन्तरफलकस्य उपयोगं विना स्वचालित-बैकअप-चालनम्</li>
       <li xml:lang="sk">Spúšťanie automatizovaných záloh bez použitia grafického používateľského prostredia</li>
