@@ -2,20 +2,21 @@
 # This file is distributed under the same license as the kbackup package.
 #
 # SPDX-FileCopyrightText: 2024 Guðmundur Erlingsson <gudmundure@gmail.com>
+# SPDX-FileCopyrightText: 2025 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2024-02-25 16:07+0000\n"
-"Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
-"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-12-02 10:58+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -389,7 +390,7 @@ msgid ""
 "In autobg mode be verbose and print every single filename during backup."
 msgstr ""
 "Í sjálfvirku bakgrunnssniði á að skila ítarlegum upplýsingum og prenta öll "
-"skrárheiti við öryggisafritun."
+"skráaheiti við öryggisafritun."
 
 #: main.cxx:76
 #, kde-format
@@ -817,7 +818,7 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
-"Skilgreinir algildistákn fyrir skrárheiti sem verða hunsuð í öryggisafritun, "
+"Skilgreinir algildistákn fyrir skráaheiti sem verða hunsuð í öryggisafritun, "
 "aðskilin með bili. T.d.: \"*.ogg *.wav\""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
@@ -836,7 +837,7 @@ msgstr " MB"
 #: SettingsDialog.ui:157
 #, kde-format
 msgid "Exclude Filename Filter:"
-msgstr "Sía fyrir útilokuð skrárheiti:"
+msgstr "Sía fyrir útilokuð skráaheiti:"
 
 #. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
 #: SettingsDialog.ui:164
