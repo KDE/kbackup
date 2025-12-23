@@ -25,7 +25,7 @@
 >Koller</surname
 > </personname
 > <email
->kollix@aon.at</email
+>martin@kollix.at</email
 > </author>
 </authorgroup>
 
@@ -55,7 +55,7 @@
 >&FDLNotice;</legalnotice>
 
 <date
->2018-01-05</date>
+>2018‒01‒05</date>
 <releaseinfo
 >Uygulamalar 18.04</releaseinfo>
 
@@ -101,7 +101,7 @@
 > adı verilen dosyalara kaydetmenize olanak tanır; burada profil, yedekleme işlemine dahil edilecek veya yedekleme işleminden dışlanacak klasörler ve dosyalar için tanımları içeren basit bir metin dosyasıdır. Ayrıca yedeğin nereye kaydedileceğini tanımlamanıza da olanak tanır. Bu, bir yerel klasör olabileceği gibi (örn. yerel olarak bağlanmış bir ZIP sürücüsü, USB bellek vb.) verinizi herhangi merkezi bir sunucuya yedeklemek için uzak bir &URL; de olabilir (&eg; smb://uzak/yol). </para>
 
 <para
->Program ayrıca grafiksel bir kullanıcı arayüzü kullanmadan otomatik bir yedekleme çalıştırabilir. Bir profil oluşturulup bu ayarları kullanarak &kbackup;'e etkileşimli olmayan kipte kullanılırken ne yapacağını söyleyebilir; örneğin, bir cron işinden başlatılarak. </para>
+>Program ayrıca grafiksel bir kullanıcı arayüzü kullanmadan otomatik bir yedekleme çalıştırabilir. Bir profil oluşturulup bu ayarları kullanarak &kbackup;’e etkileşimli olmayan kipte kullanılırken ne yapacağını söyleyebilir; örneğin, bir cron işinden başlatılarak. </para>
 
 <para
 >Program, bilgisayar uzmanı olmayan kişilerin de kullanabileceği şekilde kullanımı oldukça basit olacak şekilde tasarlandı. </para>
@@ -164,11 +164,11 @@
 > seçeneğini kullanın. </para>
 
 <para
->Bir seçimi &kbackup;'e yeniden yüklemek için <menuchoice
+>Bir seçimi &kbackup;’e yeniden yüklemek için <menuchoice
 ><guimenu
 >Dosya</guimenu
 ><guimenuitem
->Profil Yükle...</guimenuitem
+>Profil Yükle…</guimenuitem
 ></menuchoice
 > seçeneğini kullanın. </para>
 
@@ -191,7 +191,7 @@
 <para
 >İpucu: Bir <filename class="extension"
 >.kbp</filename
-> dosyasına kısayol oluşturabilir ve o kısayola çift tıklayarak da çalıştırabilirsiniz. Bu dosya türü, çift tıklanıldığında &kbackup;'i çalıştıracak biçimde kaydedilmiştir. </para>
+> dosyasına kısayol oluşturabilir ve o kısayola çift tıklayarak da çalıştırabilirsiniz. Bu dosya türü, çift tıklanıldığında &kbackup;’i çalıştıracak biçimde kaydedilmiştir. </para>
 
 </sect1>
 
@@ -199,7 +199,7 @@
 <title
 >Arşiv dilimleri</title>
 <para
->Bir ortamın genelde kapasitesi sınırlı olduğundan (&eg; 100 MB ZIP diski), &kbackup; birkaç arşiv dilimleri oluşturur. </para>
+>Bir ortamın genelde sığası sınırlı olduğundan (&eg; 100 MB ZIP diski), &kbackup; birkaç arşiv dilimleri oluşturur. </para>
 <para
 >Her arşiv dilimi şu şekilde görünen kendi adını alacaktır: </para>
 <para
@@ -211,7 +211,7 @@
 ><guimenu
 >Dosya</guimenu
 > <guimenuitem
->Profil Ayarları...</guimenuitem
+>Profil Ayarları…</guimenuitem
 ></menuchoice
 > menüsünden, öntanımlı <quote
 >backup</quote
@@ -231,7 +231,7 @@
 ></listitem>
 <listitem
 ><para
->daha sonra uzak bir &URL;'ye yüklemek üzere bir tmp dosyası oluşturduğumuzda <filename class="directory"
+>daha sonra uzak bir &URL;’ye yüklemek üzere bir tmp dosyası oluşturduğumuzda <filename class="directory"
 >/tmp</filename
 > klasörüyle sınırlıdır</para
 ></listitem>
@@ -252,7 +252,7 @@
 <para
 >Artımlı yedeklemede, yedekleme her çalıştırıldığında tüm dosyalar kaydedilmez, yalnızca son yedeklemeden bu yana değişen dosyalar kaydedilir. Bunun büyük avantajı, artımlı yedeklemenin genellikle tam yedeklemeden çok daha az dosya içermesi ve dolayısıyla çok daha kısa sürede tamamlanmasıdır. </para>
 <para
->Bu şöyle çalışır: Profilde tam yedekleme için bir aralık (gün olarak) tanımlarsınız. Örneğin, 5 gün tanımladığınızda, &kbackup; tüm dosyaların her 5 günde bir tam yedeğini alır. Bu profille aralık dolmadan önce &kbackup;'i başlattığınızda - ne sıklıkta yedekleme yaptığınıza bakılmaksızın - yalnızca son yedeklemeden bu yana değişen dosyalar kaydedilecektir. &kbackup;, son yedeklemenin zaman damgasını profile kaydeder ve bu nedenle bir dahaki kez çalıştırıldığında ne yapacağını bilir. </para>
+>Bu şöyle çalışır: Profilde tam yedekleme için bir aralık (gün olarak) tanımlarsınız. Örneğin, 5 gün tanımladığınızda, &kbackup; tüm dosyaların her 5 günde bir tam yedeğini alır. Bu profille aralık dolmadan önce &kbackup;’i başlattığınızda —ne sıklıkta yedekleme yaptığınıza bakılmaksızın— yalnızca son yedeklemeden bu yana değişen dosyalar kaydedilecektir. &kbackup;, son yedeklemenin zaman damgasını profile kaydeder ve bu nedenle bir dahaki kez çalıştırıldığında ne yapacağını bilir. </para>
 <para
 >Artımlı yedek sırasında oluşturulan arşiv dilimi dosyaları, <quote
 >_inc</quote
@@ -301,7 +301,7 @@
 >). </para>
 
 <para
->Yedeklemeyi bazı yerel dosya sistemlerinde (&eg; ek diskiniz, ZIP sürücünüz vb.) oluşturmayı seçtiğinizde; bu, uzak bir hedef &URL; girmediğiniz anlamına gelir; - &kbackup; ortam kapasitesi sınırlamaları nedeniyle tüm yedeği birkaç arşiv dilimine bölebilir. </para>
+>Yedeklemeyi bazı yerel dosya sistemlerinde (&eg; ek diskiniz, ZIP sürücünüz vb.) oluşturmayı seçtiğinizde; bu, uzak bir hedef &URL; girmediğiniz anlamına gelir; — &kbackup; ortam sığası sınırlamaları nedeniyle tüm yedeği birkaç arşiv dilimine bölebilir. </para>
 <para
 >&eg;: </para>
 <para
@@ -323,7 +323,7 @@
 >--auto</option
 ></para>
 <para
->&kbackup;'i bu seçenekle çalıştırıp bir <filename class="extension"
+>&kbackup;’i bu seçenekle çalıştırıp bir <filename class="extension"
 >.kbp</filename
 > profili verirseniz başlar, verilen profili yükler, yedeklemeyi çalıştırır ve işi bitince sonlanır. Bunların tümü yapılırken bir &kbackup; arayüzü görünür. </para>
 </listitem>
@@ -334,7 +334,7 @@
 >--autobg</option
 ></para>
 <para
->&kbackup;'i bu seçenekle çalıştırıp bir <filename class="extension"
+>&kbackup;’i bu seçenekle çalıştırıp bir <filename class="extension"
 >.kbp</filename
 > profili verirseniz <option
 >--auto</option
@@ -344,7 +344,7 @@
 >bg</quote
 > eki burada <quote
 >background</quote
-> (arka plan) anlamına gelir - her şey arka planda yapılır. Bu nedenle, yedeklerinizi genelde bir cron işiyle yapıyorsanız en uygun seçenektir. </para>
+> (arka plan) anlamına gelir — her şey arka planda yapılır. Bu nedenle, yedeklerinizi genelde bir cron işiyle yapıyorsanız en uygun seçenektir. </para>
 <para
 ><option
 >--autobg</option
@@ -415,7 +415,7 @@
 ><guimenu
 >Dosya</guimenu
 > <guimenuitem
->Profil Yükle...</guimenuitem
+>Profil Yükle…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -449,7 +449,7 @@
 ><guimenu
 >Dosya</guimenu
 > <guimenuitem
->Profili Farklı Kaydet...</guimenuitem
+>Profili Farklı Kaydet…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -466,7 +466,7 @@
 ><guimenu
 >Dosya</guimenu
 > <guimenuitem
->Profil Ayarları...</guimenuitem
+>Profil Ayarları…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -695,12 +695,12 @@ esac
 <para
 >&kbackup; </para>
 <para
->Program telif hakkı &copy; 2006 - 2009 Martin Koller <email
->kollix@aon.at</email
+>Program telif hakkı &copy; 2006–2009 Martin Koller <email
+>martin@kollix.at</email
 > </para>
 
 <para
->Belgelendirme telif hakkı &copy; 2006 - 2009 Martin Koller </para>
+>Belgelendirme telif hakkı &copy; 2006–2009 Martin Koller </para>
 
 <para
 >Çeviri: Emir SARI <email

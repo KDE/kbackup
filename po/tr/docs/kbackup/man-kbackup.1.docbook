@@ -24,7 +24,7 @@ where x is the manual section, see https://en.wikipedia.org/wiki/Man_page#Manual
 ></author>
 <!--Date when this manpage was written, in the ISO 8601 format 'yyyy-mm-dd'-->
 <date
->2020-07-23</date>
+>2020‒07‒23</date>
 <!--version information of application this manpage is valid for.
 Change date/releaseinfo only if
    docbook is updated and verified to be valid for the current app version
@@ -257,7 +257,7 @@ man sections 1, 6, 7 and 8--></para>
 <member
 >Daha ayrıntılı kullanıcı belgelendirmesi <ulink url="help:/kbackup"
 >help:/kbackup</ulink
-> adresinde bulunabilir (ya bu &URL;'yi &konqueror;,'a girin veya <userinput
+> adresinde bulunabilir (ya bu &URL;’yi &konqueror;,’a girin veya <userinput
 ><command
 >khelpcenter</command
 > <parameter
@@ -266,10 +266,10 @@ man sections 1, 6, 7 and 8--></para>
 > komutunu çalıştırın).</member>
 <!--for man pages replace "help:/" with "man:/" in this member-->
 <member
->kf5options(7)</member
+>kf6options(7)</member
 > <!-- only for application with a GUI-->
 <member
->qt5options(7)</member
+>qt6options(7)</member
 > <!-- only for application with a GUI-->
 <!--<member
 >foo(1)</member
@@ -293,8 +293,8 @@ man sections 1, 6, 7 and 8--></para>
 <title
 >Yazarlar</title>
 <para
->K Yedek Martin Koller <email
-> kollix@aon.at</email
+>K Yedek, Martin Koller <email
+>martin@kollix.at</email
 > tarafından yazıldı. Bu man sayfası Scott Kitterman <email
 >scott@kitterman.com</email
 > tarafından oluşturuldu ve Scarlett Moore <email
