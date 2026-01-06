@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2018-11-29 03:19+0100\n"
+"PO-Revision-Date: 2026-01-05 17:23+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,31 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Moo"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "<>"
 
 #: Archiver.cxx:434
 #, kde-format
 msgid "Nothing selected for backup"
-msgstr ""
+msgstr "Nepasirinkti jokie elementai, kurių atsarginę kopiją daryti"
 
 #: Archiver.cxx:440
 #, kde-format
 msgid "The target dir '%1' is not valid"
-msgstr ""
+msgstr "Paskirties katalogas „%1“ yra netinkamas"
 
 #: Archiver.cxx:447
 #, kde-format
 msgid "The target dir '%1' must be a local file system dir and no remote URL"
 msgstr ""
+"Paskirties katalogas „%1“ privalo būti vietinės failų sistemos katalogas, o "
+"ne nuotolinis URL adresas"
 
 #: Archiver.cxx:460
 #, kde-format
@@ -50,18 +53,21 @@ msgid ""
 "\n"
 "Shall I create it?"
 msgstr ""
+"Paskirties katalogo „%1“ nėra.\n"
+"\n"
+"Ar sukurti jį?"
 
 #: Archiver.cxx:462
 #, kde-format
 msgctxt "@title"
 msgid "Create Directory"
-msgstr ""
+msgstr "Sukurti katalogą"
 
 #: Archiver.cxx:463
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Sukurti"
 
 #: Archiver.cxx:468
 #, kde-format
@@ -69,47 +75,51 @@ msgid ""
 "Could not create the target directory '%1'.\n"
 "The operating system reports: %2"
 msgstr ""
+"Nepavyko sukurti paskirties katalogo „%1“.\n"
+"Operacinė sistema praneša: %2"
 
 #: Archiver.cxx:476
 #, kde-format
 msgid "The target dir does not exist"
-msgstr ""
+msgstr "Paskirties katalogo nėra"
 
 #: Archiver.cxx:549
 #, kde-format
 msgid "...reducing number of kept archives to max. %1"
-msgstr ""
+msgstr "...sumažinamas laikomų archyvų skaičius iki daugiausiai %1"
 
 #: Archiver.cxx:607
 #, kde-format
 msgid "...deleting %1"
-msgstr ""
+msgstr "...ištrinama %1"
 
 #: Archiver.cxx:631
 #, kde-format
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
+"nepavyko gauti paskirties vietos katalogų sąrašo. Nepavyksta sumažinti "
+"laikomų archyvų skaičiaus."
 
 #: Archiver.cxx:654
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
-msgstr ""
+msgstr "Nepavyko rašyti atsarginės kopijos laiko žymų į profilį %1: %2"
 
 #: Archiver.cxx:658
 #, kde-format
 msgid "-- Filtered Files: %1"
-msgstr ""
+msgstr "-- Filtruoti failai: %1"
 
 #: Archiver.cxx:661
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
-msgstr ""
+msgstr "!! Atsarginė kopija padaryta, <b>bet buvo praleisti failai</b> !!"
 
 #: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
-msgstr ""
+msgstr "-- Atsarginė kopija sėkmingai padaryta --"
 
 #: Archiver.cxx:669
 #, kde-format
@@ -117,6 +127,8 @@ msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
 msgstr ""
+"Atsarginė kopija padaryta, bet buvo praleisti failai.\n"
+"Ką norėtumėte dabar daryti?"
 
 #: Archiver.cxx:671
 #, kde-format
@@ -124,66 +136,68 @@ msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
 msgstr ""
+"Atsarginė kopija sėkmingai padaryta.\n"
+"Ką norėtumėte dabar daryti?"
 
 #: Archiver.cxx:689
 #, kde-format
 msgid "Totals: Files: %1, Size: %2, Duration: %3"
-msgstr ""
+msgstr "Iš viso: Failų: %1, Dydis: %2, Trukmė: %3"
 
 #: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
-msgstr ""
+msgstr "...Atsarginės kopijos darymas nutrauktas!"
 
 #: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
-msgstr ""
+msgstr "Atsarginės kopijos atsisakyta"
 
 #: Archiver.cxx:747
 #, kde-format
 msgid "...finished slice %1"
-msgstr ""
+msgstr "...užbaigiama dalis %1"
 
 #: Archiver.cxx:762
 #, kde-format
 msgid "...uploading archive %1 to %2"
-msgstr ""
+msgstr "...išsiunčiamas archyvas %1 į %2"
 
 #: Archiver.cxx:780
 #, kde-format
 msgid "How shall we proceed with the upload?"
-msgstr ""
+msgstr "Kaip tęsti išsiuntimą?"
 
 #: Archiver.cxx:780
 #, kde-format
 msgid "Upload Failed"
-msgstr ""
+msgstr "Nepavyko išsiųsti"
 
 #: Archiver.cxx:781
 #, kde-format
 msgid "Retry"
-msgstr ""
+msgstr "Bandyti dar kartą"
 
 #: Archiver.cxx:781
 #, kde-format
 msgid "Change Target"
-msgstr ""
+msgstr "Keisti paskirties vietą"
 
 #: Archiver.cxx:872
 #, kde-format
 msgid "The script '%1' could not be started."
-msgstr ""
+msgstr "Nepavyko paleisti scenarijaus „%1“."
 
 #: Archiver.cxx:911
 #, kde-format
 msgid "The medium is full. Please insert medium Nr. %1"
-msgstr ""
+msgstr "Laikmena yra pilna. Įdėkite laikmeną nr. %1"
 
 #: Archiver.cxx:955
 #, kde-format
 msgid "The file '%1' can not be opened for writing."
-msgstr ""
+msgstr "Failas „%1“ negali būti atvertas rašymui."
 
 #: Archiver.cxx:959
 #, kde-format
@@ -192,23 +206,26 @@ msgid ""
 "\n"
 "Do you want to retry?"
 msgstr ""
+"Failas „%1“ negali būti atvertas rašymui.\n"
+"\n"
+"Ar norite bandyti dar kartą?"
 
 #: Archiver.cxx:960
 #, kde-format
 msgctxt "@title"
 msgid "Open File"
-msgstr ""
+msgstr "Atverti failą"
 
 #: Archiver.cxx:961
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr ""
+msgstr "Bandyti dar kartą"
 
 #: Archiver.cxx:981
 #, kde-format
 msgid "Could not write to archive. Maybe the medium is full."
-msgstr ""
+msgstr "Nepavyko rašyti į archyvą. Galbūt, laikmena yra pilna."
 
 #: Archiver.cxx:985
 #, kde-format
@@ -216,11 +233,13 @@ msgid ""
 "Could not write to archive.\n"
 "The operating system reports: %1"
 msgstr ""
+"Nepavyko rašyti į archyvą.\n"
+"Operacinė sistema praneša: %1"
 
 #: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
-msgstr ""
+msgstr "...praleidžiamas filtruotas katalogas %1"
 
 #: Archiver.cxx:1015
 #, kde-format
@@ -228,11 +247,13 @@ msgid ""
 "Could not get information of directory: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"Nepavyko gauti katalogo informacijos: %1\n"
+"Operacinė sistema praneša: %2"
 
 #: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
-msgstr ""
+msgstr "Katalogas „%1“' yra neperskaitomas. Praleidžiama."
 
 #: Archiver.cxx:1125
 #, kde-format
@@ -240,11 +261,13 @@ msgid ""
 "Could not get information of file: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"Nepavyko gauti failo informacijos: %1\n"
+"Operacinė sistema praneša: %2"
 
 #: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "Nepavyko archyvuoti failo tipą „socket“: %1\n"
 
 #: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
@@ -252,16 +275,18 @@ msgid ""
 "Could not read from file '%1'\n"
 "The operating system reports: %2"
 msgstr ""
+"Nepavyko skaityti iš failo „%1“\n"
+"Operacinė sistema praneša: %2"
 
 #: Archiver.cxx:1268
 #, kde-format
 msgid "Could not open file '%1' for reading."
-msgstr ""
+msgstr "Nepavyko atverti failo „%1“ skaitymui."
 
 #: Archiver.cxx:1335
 #, kde-format
 msgid "...archiving file %1"
-msgstr ""
+msgstr "...archyvuojamas failas %1"
 
 #: Archiver.cxx:1368
 #, kde-format
@@ -269,6 +294,8 @@ msgid ""
 "Could not read file: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"Nepavyko perskaityti failo: %1\n"
+"Operacinė sistema praneša: %2"
 
 #: Archiver.cxx:1382
 #, kde-format
@@ -276,75 +303,79 @@ msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
+"Nepavyko sukurti laikino glaudinimui skirto failo: %1\n"
+"Operacinė sistema praneša: %2"
 
 #: Archiver.cxx:1410
 #, kde-format
 msgid "Could not write to temporary file"
-msgstr ""
+msgstr "Nepavyko rašyti į laikinąjį failą"
 
 #: Archiver.cxx:1431
 #, kde-format
 msgid "...compressing file %1"
-msgstr ""
+msgstr "...glaudinamas failas %1"
 
 #: Archiver.cxx:1476
 #, kde-format
 msgid "WARNING:"
-msgstr ""
+msgstr "ĮSPĖJIMAS:"
 
 #. i18n: ectx: Menu (file)
 #: kbackupui.rc:4
 #, kde-format
 msgid "&File"
-msgstr ""
+msgstr "&Failas"
 
 #. i18n: ectx: Menu (settings)
 #: kbackupui.rc:12
 #, kde-format
 msgid "&Settings"
-msgstr ""
+msgstr "Nuo&statos"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
 #: main.cxx:47 MainWidgetBase.ui:16
 #, kde-format
 msgid "KBackup"
-msgstr ""
+msgstr "KBackup"
 
 #: main.cxx:48
 #, kde-format
 msgid "An easy to use backup program"
-msgstr ""
+msgstr "Lengvai naudojama atsarginių kopijų programa"
 
 #: main.cxx:49
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
-msgstr ""
+msgstr "(c) 2006 – 2018 Martin Koller"
 
 #: main.cxx:53
 #, kde-format
 msgid "Martin Koller"
-msgstr ""
+msgstr "Martin Koller"
 
 #: main.cxx:53
 #, kde-format
 msgid "Developer"
-msgstr ""
+msgstr "Plėtotojas"
 
 #: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
-msgstr ""
+msgstr "Pradėti naudojant nurodytą profilį."
 
 #: main.cxx:63
 #, kde-format
 msgid "Script to run after finishing one archive slice."
-msgstr ""
+msgstr "Scenarijus, kurį vykdyti po to, kai užbaigta viena archyvo dalis."
 
 #: main.cxx:65
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
 msgstr ""
+"Automatiškai pradėti daryti atsarginę kopiją naudojant nurodytą profilį ir "
+"nutraukti, kai ji bus padaryta."
 
 #: main.cxx:68
 #, kde-format
@@ -352,12 +383,16 @@ msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
 msgstr ""
+"Automatiškai pradėti daryti atsarginę kopiją fone naudojant nurodytą profilį "
+"(nerodant lango) ir nutraukti, kai ji bus padaryta."
 
 #: main.cxx:73
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
 msgstr ""
+"Autobg veiksenoje būti išsamiems ir atsarginės kopijos darymo metu rodyti "
+"kiekvieną failo pavadinimą."
 
 #: main.cxx:76
 #, kde-format
@@ -365,21 +400,23 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
 msgstr ""
+"Auto/autobg veiksenoje priverstinai daryti taip, kad atsarginė kopija būtų "
+"visa atsarginė kopija, o ne veikti remiantis profilio nuostatomis."
 
 #: main.cxx:149 MainWindow.cxx:211
 #, kde-format
 msgid "Could not open profile '%1' for reading: %2"
-msgstr ""
+msgstr "Nepavyko atverti profilio „%1“ skaitymui: %2"
 
 #: MainWidget.cxx:68
 #, kde-format
 msgid "Incremental Backup"
-msgstr ""
+msgstr "Prieauginė atsarginė kopija"
 
 #: MainWidget.cxx:70
 #, kde-format
 msgid "Full Backup"
-msgstr ""
+msgstr "Visa atsarginė kopija"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
@@ -387,193 +424,193 @@ msgstr ""
 #: SettingsDialog.ui:136
 #, kde-format
 msgid "unlimited"
-msgstr ""
+msgstr "neribotas"
 
 #. i18n: ectx: property (text), widget (QPushButton, startButton)
 #: MainWidgetBase.ui:41 MainWindow.cxx:114
 #, kde-format
 msgid "Start Backup"
-msgstr ""
+msgstr "Daryti atsarginę kopiją"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #: MainWidgetBase.ui:69 MainWindow.cxx:117
 #, kde-format
 msgid "Cancel Backup"
-msgstr ""
+msgstr "Atsisakyti atsarginės kopijos darymo"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: MainWidgetBase.ui:92
 #, kde-format
 msgid "Next Backup:"
-msgstr ""
+msgstr "Kita atsarginė kopija:"
 
 #. i18n: ectx: property (text), widget (QLabel, backupType)
 #: MainWidgetBase.ui:99
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "TextLabel"
 
 #. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
 #: MainWidgetBase.ui:106
 #, kde-format
 msgid "Force Full Backup"
-msgstr ""
+msgstr "Priverstinai daryti visą atsarginę kopiją"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: MainWidgetBase.ui:121
 #, kde-format
 msgid "Target"
-msgstr ""
+msgstr "Paskirties vieta"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: MainWidgetBase.ui:127
 #, kde-format
 msgid "Folder:"
-msgstr ""
+msgstr "Aplankas:"
 
 #. i18n: ectx: property (text), widget (QLabel, sliceLabel)
 #: MainWidgetBase.ui:143
 #, kde-format
 msgid "Medium:"
-msgstr ""
+msgstr "Laikmena:"
 
 #. i18n: ectx: property (text), widget (QLabel, sliceNum)
 #: MainWidgetBase.ui:165
 #, kde-format
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, textLabel6)
 #: MainWidgetBase.ui:185 MainWidgetBase.ui:277
 #, kde-format
 msgid "Size:"
-msgstr ""
+msgstr "Dydis:"
 
 #. i18n: ectx: property (text), widget (QLabel, capacity)
 #: MainWidgetBase.ui:201
 #, kde-format
 msgid "0 MB"
-msgstr ""
+msgstr "0 MB"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: MainWidgetBase.ui:236
 #, kde-format
 msgid "Totals"
-msgstr ""
+msgstr "Iš viso"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #: MainWidgetBase.ui:248
 #, kde-format
 msgid "Files:"
-msgstr ""
+msgstr "Failai:"
 
 #. i18n: ectx: property (text), widget (QLabel, totalFiles)
 #. i18n: ectx: property (text), widget (QLabel, totalSize)
 #: MainWidgetBase.ui:258 MainWidgetBase.ui:287
 #, kde-format
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #. i18n: ectx: property (text), widget (QLabel, totalSize_2)
 #: MainWidgetBase.ui:300
 #, kde-format
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #: MainWidgetBase.ui:335
 #, kde-format
 msgid "Duration:"
-msgstr ""
+msgstr "Trukmė:"
 
 #. i18n: ectx: property (text), widget (QLabel, elapsedTime)
 #: MainWidgetBase.ui:345
 #, kde-format
 msgid "00:00:00"
-msgstr ""
+msgstr "00:00:00"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: MainWidgetBase.ui:387
 #, kde-format
 msgid "Warnings:"
-msgstr ""
+msgstr "Įspėjimai:"
 
 #. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
 #: MainWidgetBase.ui:413
 #, kde-format
 msgid "Progress:"
-msgstr ""
+msgstr "Eiga:"
 
 #: MainWindow.cxx:56
 #, kde-format
 msgid "New Profile"
-msgstr ""
+msgstr "Naujas profilis"
 
 #: MainWindow.cxx:60
 #, kde-format
 msgid "Load Profile..."
-msgstr ""
+msgstr "Įkelti profilį..."
 
 #: MainWindow.cxx:64
 #, kde-format
 msgid "Save Profile"
-msgstr ""
+msgstr "Įrašyti profilį"
 
 #: MainWindow.cxx:68
 #, kde-format
 msgid "Save Profile As..."
-msgstr ""
+msgstr "Įrašyti profilį kaip..."
 
 #: MainWindow.cxx:72
 #, kde-format
 msgid "Profile Settings..."
-msgstr ""
+msgstr "Profilio nuostatos..."
 
 #: MainWindow.cxx:75
 #, kde-format
 msgid "Enable All Messages"
-msgstr ""
+msgstr "Įjungti visus pranešimus"
 
 #: MainWindow.cxx:77
 #, kde-format
 msgid "Dock in System Tray"
-msgstr ""
+msgstr "Įstatyti į sistemos dėklą"
 
 #: MainWindow.cxx:81
 #, kde-format
 msgid "Show Hidden Files"
-msgstr ""
+msgstr "Rodyti paslėptus failus"
 
 #: MainWindow.cxx:147
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
-msgstr ""
+msgstr "Šiuo metu daroma atsarginė kopija. Ar norite nutraukti?"
 
 #: MainWindow.cxx:147
 #, kde-format
 msgid "Backup in Progress"
-msgstr ""
+msgstr "Daroma atsarginė kopija"
 
 #: MainWindow.cxx:147
 #, kde-format
 msgid "Abort"
-msgstr ""
+msgstr "Nutraukti"
 
 #: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
 #, kde-format
 msgid "Select Profile"
-msgstr ""
+msgstr "Pasirinkti profilį"
 
 #: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
 #, kde-format
 msgid "KBackup Profile (*.kbp)"
-msgstr ""
+msgstr "KBackup profilis (*.kbp)"
 
 #: MainWindow.cxx:214 MainWindow.cxx:286
 #, kde-format
 msgid "Open failed"
-msgstr ""
+msgstr "Nepavyko atverti"
 
 #: MainWindow.cxx:263
 #, kde-format
@@ -581,16 +618,18 @@ msgid ""
 "The profile '%1' does already exist.\n"
 "Do you want to overwrite it?"
 msgstr ""
+"Profilis „%1“ jau yra.\n"
+"Ar norite jį perrašyti?"
 
 #: MainWindow.cxx:266
 #, kde-format
 msgid "Profile exists"
-msgstr ""
+msgstr "Profilis yra"
 
 #: MainWindow.cxx:283
 #, kde-format
 msgid "Could not open profile '%1' for writing: %2"
-msgstr ""
+msgstr "Nepavyko atverti profilio „%1“ rašymui: %2"
 
 #: MainWindow.cxx:359
 #, kde-format
@@ -598,51 +637,53 @@ msgid ""
 "Files: %1 Size: %2 MB\n"
 "%3"
 msgstr ""
+"Failų: %1 Dydis: %2 MB\n"
+"%3"
 
 #: Selector.cxx:252
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Pavadinimas"
 
 #: Selector.cxx:252
 #, kde-format
 msgid "Size"
-msgstr ""
+msgstr "Dydis"
 
 #: Selector.cxx:252
 #, kde-format
 msgid "Last Modified"
-msgstr ""
+msgstr "Paskutinis modifikavimas"
 
 #: Selector.cxx:284
 #, kde-format
 msgid "Open With"
-msgstr ""
+msgstr "Atverti naudojant"
 
 #: Selector.cxx:292
 #, kde-format
 msgid "Delete File"
-msgstr ""
+msgstr "Ištrinti failą"
 
 #: Selector.cxx:298
 #, kde-format
 msgid "Properties..."
-msgstr ""
+msgstr "Savybės..."
 
 #: Selector.cxx:611
 #, kde-format
 msgid "Do you really want to delete '%1'?"
-msgstr ""
+msgstr "Ar tikrai norite ištrinti „%1“?"
 
 #: Selector.cxx:612
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Ištrinti"
 
 #: Selector.cxx:623
 #, kde-format
 msgid "Could not delete directory '%1'."
-msgstr ""
+msgstr "Nepavyko ištrinti katalogo „%1“."
 
 #: Selector.cxx:632
 #, kde-format
@@ -650,57 +691,59 @@ msgid ""
 "Could not delete file '%1'.\n"
 "Reason: %2"
 msgstr ""
+"Nepavyko ištrinti failo „%1“.\n"
+"Priežastis: %2"
 
 #: Selector.cxx:700
 #, kde-format
 msgid "Other Application..."
-msgstr ""
+msgstr "Kita programa..."
 
 #: Selector.cxx:702
 #, kde-format
 msgid "File Manager"
-msgstr ""
+msgstr "Failų tvarkytuvė"
 
 #: SettingsDialog.cxx:22
 #, kde-format
 msgid "650 MB CD"
-msgstr ""
+msgstr "650 MB CD"
 
 #: SettingsDialog.cxx:23
 #, kde-format
 msgid "700 MB CD"
-msgstr ""
+msgstr "700 MB CD"
 
 #: SettingsDialog.cxx:24
 #, kde-format
 msgid "4.7 GB DVD"
-msgstr ""
+msgstr "4.7 GB DVD"
 
 #: SettingsDialog.cxx:25
 #, kde-format
 msgid "8.5 GB DVD"
-msgstr ""
+msgstr "8.5 GB DVD"
 
 #: SettingsDialog.cxx:26
 #, kde-format
 msgid "9.4 GB DVD"
-msgstr ""
+msgstr "9.4 GB DVD"
 
 #: SettingsDialog.cxx:27
 #, kde-format
 msgid "17.1 GB DVD"
-msgstr ""
+msgstr "17.1 GB DVD"
 
 #: SettingsDialog.cxx:28
 #, kde-format
 msgid "custom"
-msgstr ""
+msgstr "tinkintas"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
 #: SettingsDialog.ui:16
 #, kde-format
 msgid "Profile Settings"
-msgstr ""
+msgstr "Profilio nuostatos"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:38
@@ -709,24 +752,26 @@ msgid ""
 "Uncheck if you want to avoid a confirmation dialog to change the medium when "
 "a slice was finished"
 msgstr ""
+"Nuimkite žymėjimą, kad užbaigus dalį būtų išvengta su laikmenos pakeitimu "
+"susijusio patvirtinimo dialogo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:41
 #, kde-format
 msgid "Target needs media change"
-msgstr ""
+msgstr "Paskirties vieta reikalauja pakeisti laikmeną"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: SettingsDialog.ui:48
 #, kde-format
 msgid "Exclude Paths Filter:"
-msgstr ""
+msgstr "Išbraukiamų kelių filtras:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: SettingsDialog.ui:57
 #, kde-format
 msgid "Number of full backups to keep"
-msgstr ""
+msgstr "Kiek laikyti visų atsarginių kopijų"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
 #: SettingsDialog.ui:64
@@ -735,36 +780,38 @@ msgid ""
 "How many full backups shall be kept in the target directory before older "
 "ones will be deleted"
 msgstr ""
+"Kiek paskirties kataloge turėtų būti laikoma visų atsarginių kopijų, prieš "
+"ištrinant senesnes"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: SettingsDialog.ui:77
 #, kde-format
 msgid "Full Backup Interval"
-msgstr ""
+msgstr "Visos atsarginės kopijos intervalas"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:84
 #, kde-format
 msgid "How often shall a full backup, instead of an incremental one, be done"
-msgstr ""
+msgstr "Kaip dažnai turėtų būti daroma visa atsarginė kopija, o ne prieauginė"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:87
 #, kde-format
 msgid "Every Day"
-msgstr ""
+msgstr "Kasdieną"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:90
 #, kde-format
 msgid " days"
-msgstr ""
+msgstr " d."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: SettingsDialog.ui:105
 #, kde-format
 msgid "Archive Prefix:"
-msgstr ""
+msgstr "Archyvo priešdėlis:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
 #: SettingsDialog.ui:115
@@ -773,24 +820,26 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
+"Apibrėžia pakaitos simbolius tų failų pavadinimams, kurių bus nepaisoma. "
+"Atskirkite tarpais. Pvz., „*.ogg *.wav“"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: SettingsDialog.ui:122
 #, kde-format
 msgid "Maximum Archive Size:"
-msgstr ""
+msgstr "Didžiausias archyvo dydis:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
 #: SettingsDialog.ui:139
 #, kde-format
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: SettingsDialog.ui:157
 #, kde-format
 msgid "Exclude Filename Filter:"
-msgstr ""
+msgstr "Išbraukiamų failo pavadinimų filtras:"
 
 #. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
 #: SettingsDialog.ui:164
@@ -800,21 +849,24 @@ msgid ""
 "used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Apibrėžia absoliutaus kelio šablonų sąrašą, kurie yra "
+"naudojami filtruoti visą katalogą,<br/>pvz., /home/*/.mozilla/*/Cache</p></"
+"body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:171
 #, kde-format
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr ""
+msgstr "Nuimkite žymėjimą, kad visiškai būtų vengiama failų glaudinimo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:174
 #, kde-format
 msgid "Compress Files"
-msgstr ""
+msgstr "Glaudinti failus"
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
 #: SettingsDialog.ui:181
 #, kde-format
 msgid "backup"
-msgstr ""
+msgstr "atsarginė_kopija"
