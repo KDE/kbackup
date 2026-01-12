@@ -99,8 +99,8 @@ msgstr "…s'està suprimint %1"
 msgid ""
 "fetching directory listing of target failed. Can not reduce kept archives."
 msgstr ""
-"ha fallat en obtindre el llistat de directoris de l'objectiu. No es poden "
-"reduir els arxius guardats."
+"ha fallat mentre s'obtenia el llistat de directoris de l'objectiu. No es "
+"poden reduir els arxius guardats."
 
 #: Archiver.cxx:654
 #, kde-format
