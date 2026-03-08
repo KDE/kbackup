@@ -154,7 +154,7 @@
 
 <sect1 id="kbackup-profiles">
 <title
->Profilleri kullanmak</title>
+>Profilleri Kullanmak</title>
 
 <para
 >Bir seçimi daha sonrası için kaydetmek isterseniz onu bir &kbackup; profil dosyasına kaydedin. <guimenu
@@ -197,7 +197,7 @@
 
 <sect1 id="archive-slices">
 <title
->Arşiv dilimleri</title>
+>Arşiv Dilimleri</title>
 <para
 >Bir ortamın genelde sığası sınırlı olduğundan (&eg; 100 MB ZIP diski), &kbackup; birkaç arşiv dilimleri oluşturur. </para>
 <para
@@ -365,7 +365,7 @@
 
 <sect1 id="kapp-mainwindow">
 <title
->Ana &kbackup; penceresi</title>
+>Ana &kbackup; Penceresi</title>
 
  
 
@@ -695,12 +695,12 @@ esac
 <para
 >&kbackup; </para>
 <para
->Program telif hakkı &copy; 2006–2009 Martin Koller <email
+>Program telif hakkı © 2006–2009 Martin Koller <email
 >martin@kollix.at</email
 > </para>
 
 <para
->Belgelendirme telif hakkı &copy; 2006–2009 Martin Koller </para>
+>Belgelendirme telif hakkı © 2006–2009 Martin Koller </para>
 
 <para
 >Çeviri: Emir SARI <email
