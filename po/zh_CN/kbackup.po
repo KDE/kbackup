@@ -433,7 +433,7 @@ msgstr "下一个备份："
 #: MainWidgetBase.ui:99
 #, kde-format
 msgid "TextLabel"
-msgstr "文字标签"
+msgstr "文本标签"
 
 #. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
 #: MainWidgetBase.ui:106
