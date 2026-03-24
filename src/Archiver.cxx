@@ -1409,7 +1409,8 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
         if ( msgShown && interactive )
           QApplication::restoreOverrideCursor();
 
-        Q_EMIT warning(i18n("Could not write to temporary file"));
+        Q_EMIT warning(i18n("Could not write to temporary file. "
+                            "Use the TMPDIR env-var to change the temporary directory used"));
         skippedFiles = true;
         return false;
       }
