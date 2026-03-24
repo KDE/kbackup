@@ -1383,6 +1383,8 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
                           "The operating system reports: %2",
                      origName,
                      filter.errorString()));
+
+      skippedFiles = true;
       return false;
     }
 
@@ -1408,6 +1410,7 @@ bool Archiver::compressFile(const QString &origName, QFile &comprFile)
           QApplication::restoreOverrideCursor();
 
         Q_EMIT warning(i18n("Could not write to temporary file"));
+        skippedFiles = true;
         return false;
       }
 
