@@ -111,7 +111,7 @@ void MainWidget::getMediaSize()
 
   if ( url.isEmpty() ) return;  // cancelled
 
-  ui.targetDir->setText(url.toLocalFile());
+  ui.targetDir->setText(url.toString(QUrl::PreferLocalFile));
   Archiver::instance->setTarget(QUrl::fromUserInput(ui.targetDir->text()));
 }
 

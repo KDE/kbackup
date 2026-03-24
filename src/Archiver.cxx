@@ -1187,7 +1187,7 @@ void Archiver::addFile(const QFileInfo &info)
 
     // here we have the compressed file in tmpFile
 
-    tmpFile.open();  // size() only works if open
+    (void)tmpFile.open();  // size() only works if open
 
     if ( (sliceBytes + tmpFile.size()) > sliceCapacity )
       if ( ! getNextSlice() ) return;
