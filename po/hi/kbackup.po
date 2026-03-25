@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-03-25 00:48+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -300,17 +300,19 @@ msgstr ""
 "संपीड़न के लिए अस्थायी फ़ाइल नहीं बनाई जा सकी: %1\n"
 "ऑपरेटिंग सिस्टम रिपोर्ट करता है: %2"
 
-#: Archiver.cxx:1410
+#: Archiver.cxx:1412
 #, kde-format
-msgid "Could not write to temporary file"
-msgstr "अस्थायी फ़ाइल में नहीं लिखा जा सका"
+msgid ""
+"Could not write to temporary file. Use the TMPDIR env-var to change the "
+"temporary directory used"
+msgstr ""
 
-#: Archiver.cxx:1431
+#: Archiver.cxx:1435
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...फ़ाइल %1 संपीड़ित हो रही है"
 
-#: Archiver.cxx:1476
+#: Archiver.cxx:1480
 #, kde-format
 msgid "WARNING:"
 msgstr "चेतावनी:"
@@ -856,3 +858,6 @@ msgstr "फ़ाइलें संपीड़ित करें"
 #, kde-format
 msgid "backup"
 msgstr "बैकअप"
+
+#~ msgid "Could not write to temporary file"
+#~ msgstr "अस्थायी फ़ाइल में नहीं लिखा जा सका"

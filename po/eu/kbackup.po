@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-03-25 00:48+0000\n"
 "PO-Revision-Date: 2023-02-07 07:37+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -308,17 +308,19 @@ msgstr ""
 "Ezin izan da sortu konprimitzeko aldiuneko fitxategia: %1\n"
 "Sistema eragileak jakinarazi du: %2"
 
-#: Archiver.cxx:1410
+#: Archiver.cxx:1412
 #, kde-format
-msgid "Could not write to temporary file"
-msgstr "Ezin izan da idatzi aldi baterako fitxategira"
+msgid ""
+"Could not write to temporary file. Use the TMPDIR env-var to change the "
+"temporary directory used"
+msgstr ""
 
-#: Archiver.cxx:1431
+#: Archiver.cxx:1435
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...%1 fitxategia konprimitzen"
 
-#: Archiver.cxx:1476
+#: Archiver.cxx:1480
 #, kde-format
 msgid "WARNING:"
 msgstr "ABISUA:"
@@ -873,6 +875,9 @@ msgstr "Konprimitu fitxategiak"
 #, kde-format
 msgid "backup"
 msgstr "babes-kopia"
+
+#~ msgid "Could not write to temporary file"
+#~ msgstr "Ezin izan da idatzi aldi baterako fitxategira"
 
 #~ msgid ""
 #~ "Could not write directory '%1' to archive.\n"

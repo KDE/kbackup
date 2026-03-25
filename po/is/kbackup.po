@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-03-25 00:48+0000\n"
 "PO-Revision-Date: 2025-12-02 10:58+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -304,17 +304,19 @@ msgstr ""
 "Gat ekki búið til bráðabirgðaskrá fyrir þjöppun: %1\n"
 "Stýrikerfið tilkynnir: %2"
 
-#: Archiver.cxx:1410
+#: Archiver.cxx:1412
 #, kde-format
-msgid "Could not write to temporary file"
-msgstr "Gat ekki skrifað í bráðabirgðaskrá"
+msgid ""
+"Could not write to temporary file. Use the TMPDIR env-var to change the "
+"temporary directory used"
+msgstr ""
 
-#: Archiver.cxx:1431
+#: Archiver.cxx:1435
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...þjappa skrá %1"
 
-#: Archiver.cxx:1476
+#: Archiver.cxx:1480
 #, kde-format
 msgid "WARNING:"
 msgstr "VIÐVÖRUN:"
@@ -868,3 +870,6 @@ msgstr "Þjappa skrár"
 #, kde-format
 msgid "backup"
 msgstr "öryggisafrit"
+
+#~ msgid "Could not write to temporary file"
+#~ msgstr "Gat ekki skrifað í bráðabirgðaskrá"

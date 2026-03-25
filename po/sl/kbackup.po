@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-03-25 00:48+0000\n"
 "PO-Revision-Date: 2023-02-06 07:59+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -309,17 +309,19 @@ msgstr ""
 "Ni bilo mogoče ustvariti začasne datoteke za stiskanje: %1\n"
 "Operacijski sistem poroča: %2"
 
-#: Archiver.cxx:1410
+#: Archiver.cxx:1412
 #, kde-format
-msgid "Could not write to temporary file"
-msgstr "Ni bilo mogoče pisati na začasno datoteko"
+msgid ""
+"Could not write to temporary file. Use the TMPDIR env-var to change the "
+"temporary directory used"
+msgstr ""
 
-#: Archiver.cxx:1431
+#: Archiver.cxx:1435
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...stiskam datoteko %1"
 
-#: Archiver.cxx:1476
+#: Archiver.cxx:1480
 #, kde-format
 msgid "WARNING:"
 msgstr "OPOZORILO:"
@@ -875,6 +877,9 @@ msgstr "Stiskaj datoteke"
 #, kde-format
 msgid "backup"
 msgstr "varovalna kopija"
+
+#~ msgid "Could not write to temporary file"
+#~ msgstr "Ni bilo mogoče pisati na začasno datoteko"
 
 #~ msgid ""
 #~ "Could not write directory '%1' to archive.\n"

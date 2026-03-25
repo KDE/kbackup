@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-03-25 00:48+0000\n"
 "PO-Revision-Date: 2023-03-05 17:27+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -302,17 +302,19 @@ msgstr ""
 "Ei voitu luoda pakkausta varten väliaikaistiedostoa: %1\n"
 "Käyttöjärjestelmä ilmoittaa: %2"
 
-#: Archiver.cxx:1410
+#: Archiver.cxx:1412
 #, kde-format
-msgid "Could not write to temporary file"
-msgstr "Ei voitu kirjoittaa väliaikaistiedostoon"
+msgid ""
+"Could not write to temporary file. Use the TMPDIR env-var to change the "
+"temporary directory used"
+msgstr ""
 
-#: Archiver.cxx:1431
+#: Archiver.cxx:1435
 #, kde-format
 msgid "...compressing file %1"
 msgstr "…pakataan tiedostoa %1"
 
-#: Archiver.cxx:1476
+#: Archiver.cxx:1480
 #, kde-format
 msgid "WARNING:"
 msgstr "VAROITUS:"
@@ -862,6 +864,9 @@ msgstr "Pakkaa tiedostot"
 #, kde-format
 msgid "backup"
 msgstr "varmuuskopio"
+
+#~ msgid "Could not write to temporary file"
+#~ msgstr "Ei voitu kirjoittaa väliaikaistiedostoon"
 
 #~ msgid ""
 #~ "Could not write directory '%1' to archive.\n"

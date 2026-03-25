@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-03-25 00:48+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -302,17 +302,19 @@ msgstr ""
 "संपीडनार्थं अस्थायीसञ्चिकां निर्मातुं न शक्यते: %1\n"
 "प्रचालनतन्त्रं प्रतिवेदयति: %2"
 
-#: Archiver.cxx:1410
+#: Archiver.cxx:1412
 #, kde-format
-msgid "Could not write to temporary file"
-msgstr "अस्थायीसञ्चिकायां लिखितुं न शक्तवान्"
+msgid ""
+"Could not write to temporary file. Use the TMPDIR env-var to change the "
+"temporary directory used"
+msgstr ""
 
-#: Archiver.cxx:1431
+#: Archiver.cxx:1435
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...सञ्चिकां संपीडयन् %1"
 
-#: Archiver.cxx:1476
+#: Archiver.cxx:1480
 #, kde-format
 msgid "WARNING:"
 msgstr "चेतवानी:"
@@ -861,3 +863,6 @@ msgstr "सञ्चिकाः संपीडयन्तु"
 #, kde-format
 msgid "backup"
 msgstr "backup इति"
+
+#~ msgid "Could not write to temporary file"
+#~ msgstr "अस्थायीसञ्चिकायां लिखितुं न शक्तवान्"

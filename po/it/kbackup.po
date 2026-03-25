@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-03-25 00:48+0000\n"
 "PO-Revision-Date: 2023-02-06 18:09+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -306,17 +306,19 @@ msgstr ""
 "Impossibile creare un file temporaneo per la compressione: %1\n"
 "Il sistema operativo riporta: %2"
 
-#: Archiver.cxx:1410
+#: Archiver.cxx:1412
 #, kde-format
-msgid "Could not write to temporary file"
-msgstr "Impossibile scrivere nel file temporaneo"
+msgid ""
+"Could not write to temporary file. Use the TMPDIR env-var to change the "
+"temporary directory used"
+msgstr ""
 
-#: Archiver.cxx:1431
+#: Archiver.cxx:1435
 #, kde-format
 msgid "...compressing file %1"
 msgstr "...compressione file %1"
 
-#: Archiver.cxx:1476
+#: Archiver.cxx:1480
 #, kde-format
 msgid "WARNING:"
 msgstr "AVVISO:"
@@ -872,6 +874,9 @@ msgstr "Comprimi file"
 #, kde-format
 msgid "backup"
 msgstr "backup"
+
+#~ msgid "Could not write to temporary file"
+#~ msgstr "Impossibile scrivere nel file temporaneo"
 
 #~ msgid ""
 #~ "Could not write directory '%1' to archive.\n"
