@@ -1,23 +1,23 @@
 # Spanish translations for kbackup.po package.
-# Copyright (C) 2007-2025 This file is copyright:
+# Copyright (C) 2007-2026 This file is copyright:
 # This file is distributed under the same license as the kbackup package.
 #
 # SPDX-FileCopyrightText: 2007 gerardo <gejobj@gmail.com>
 # SPDX-FileCopyrightText: 2018 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
-# SPDX-FileCopyrightText: 2018, 2022, 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2018, 2022, 2023, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-25 00:48+0000\n"
-"PO-Revision-Date: 2025-05-11 22:19+0100\n"
+"PO-Revision-Date: 2026-03-25 12:30+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -315,6 +315,8 @@ msgid ""
 "Could not write to temporary file. Use the TMPDIR env-var to change the "
 "temporary directory used"
 msgstr ""
+"No se ha podido escribir en el archivo temporal. Use la variable de entorno "
+"TMPDIR para cambiar el directorio temporal que se usa."
 
 #: Archiver.cxx:1435
 #, kde-format
@@ -877,6 +879,3 @@ msgstr "Comprimir archivos"
 #, kde-format
 msgid "backup"
 msgstr "copia de seguridad"
-
-#~ msgid "Could not write to temporary file"
-#~ msgstr "No se ha podido escribir en el archivo temporal"

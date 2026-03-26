@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-25 00:48+0000\n"
-"PO-Revision-Date: 2023-02-06 07:59+0100\n"
+"PO-Revision-Date: 2026-03-25 06:26+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -315,6 +315,8 @@ msgid ""
 "Could not write to temporary file. Use the TMPDIR env-var to change the "
 "temporary directory used"
 msgstr ""
+"Ni bilo mogoče pisati v začasno datoteko. Za spremembo uporabljenega "
+"začasnega imenika uporabite spremenljivko okolja TMPDIR"
 
 #: Archiver.cxx:1435
 #, kde-format
