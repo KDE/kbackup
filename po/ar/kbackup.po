@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kbackup package.
-# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-25 00:48+0000\n"
-"PO-Revision-Date: 2025-08-14 13:23+0400\n"
+"PO-Revision-Date: 2026-03-26 10:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -308,6 +308,8 @@ msgid ""
 "Could not write to temporary file. Use the TMPDIR env-var to change the "
 "temporary directory used"
 msgstr ""
+"تعذر الكتابة إلى الملف المؤقت. استخدم متغير البيئة TMPDIR لتغيير الدليل "
+"المؤقت المستخدم"
 
 #: Archiver.cxx:1435
 #, kde-format

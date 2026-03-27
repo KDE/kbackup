@@ -850,6 +850,3 @@ msgstr "压缩文件"
 #, kde-format
 msgid "backup"
 msgstr "备份"
-
-#~ msgid "Could not write to temporary file"
-#~ msgstr "无法写入临时文件"
