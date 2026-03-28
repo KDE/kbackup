@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "KDE 中国"
+msgstr "KDE 中国, Tyson Tan"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org"
+msgstr "kde-china@kde.org, tds00@qq.com"
 
 #: Archiver.cxx:434
 #, kde-format
@@ -304,7 +304,7 @@ msgstr ""
 msgid ""
 "Could not write to temporary file. Use the TMPDIR env-var to change the "
 "temporary directory used"
-msgstr ""
+msgstr "无法写入临时文件。请使用 TMPDIR env-var 更改所用的临时目录"
 
 #: Archiver.cxx:1435
 #, kde-format
