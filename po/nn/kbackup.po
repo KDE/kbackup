@@ -900,6 +900,3 @@ msgstr "Komprimer filer"
 #, kde-format
 msgid "backup"
 msgstr "Reservekopi"
-
-#~ msgid "Could not write to temporary file"
-#~ msgstr "Klarte ikkje skriva til mellombels fil"
