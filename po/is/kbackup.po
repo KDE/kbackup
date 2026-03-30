@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the kbackup package.
 #
 # SPDX-FileCopyrightText: 2024 Guðmundur Erlingsson <gudmundure@gmail.com>
-# SPDX-FileCopyrightText: 2025 Sveinn í Felli <sv1@fellsnet.is>
+# SPDX-FileCopyrightText: 2025, 2026 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-25 00:48+0000\n"
-"PO-Revision-Date: 2025-12-02 10:58+0000\n"
+"PO-Revision-Date: 2026-03-29 14:48+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -21,12 +21,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Guðmundur Erlingsson"
+msgstr "Guðmundur Erlingsson, Sveinn í Felli"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "gudmundure@gmail.com"
+msgstr "gudmundure@gmail.com, sv1@fellsnet.is"
 
 #: Archiver.cxx:434
 #, kde-format
@@ -310,6 +310,8 @@ msgid ""
 "Could not write to temporary file. Use the TMPDIR env-var to change the "
 "temporary directory used"
 msgstr ""
+"Gat ekki skrifað í bráðabirgðaskrá. Notaðu TMPDIR umhverfisbreytuna til að "
+"skipta um bráðabirgðamöppu sem á að nota"
 
 #: Archiver.cxx:1435
 #, kde-format
