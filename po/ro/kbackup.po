@@ -1,0 +1,880 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the kbackup package.
+# SPDX-FileCopyrightText: 2026 Sergiu Bivol <sergiu@cip.md>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kbackup\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-03-25 00:48+0000\n"
+"PO-Revision-Date: 2026-03-31 14:33+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sergiu Bivol"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sergiu@cip.md"
+
+#: Archiver.cxx:434
+#, kde-format
+msgid "Nothing selected for backup"
+msgstr "Nu a fost ales nimic pentru copiere"
+
+#: Archiver.cxx:440
+#, kde-format
+msgid "The target dir '%1' is not valid"
+msgstr "Directorul de destinație „%1” nu este valabil"
+
+#: Archiver.cxx:447
+#, kde-format
+msgid "The target dir '%1' must be a local file system dir and no remote URL"
+msgstr ""
+"Directorul de destinație „%1” trebuie să fie un director de pe sistem de "
+"fișiere local și nu un URL distant"
+
+#: Archiver.cxx:460
+#, kde-format
+msgid ""
+"The target directory '%1' does not exist.\n"
+"\n"
+"Shall I create it?"
+msgstr ""
+"Directorul de destinație „%1” nu există.\n"
+"\n"
+"Să fie creat?"
+
+#: Archiver.cxx:462
+#, kde-format
+msgctxt "@title"
+msgid "Create Directory"
+msgstr "Creează director"
+
+#: Archiver.cxx:463
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr "Creează"
+
+#: Archiver.cxx:468
+#, kde-format
+msgid ""
+"Could not create the target directory '%1'.\n"
+"The operating system reports: %2"
+msgstr ""
+"Directorul de destinație „%1” nu a putut fi creat.\n"
+"Sistemul de operare raportează: %2"
+
+#: Archiver.cxx:476
+#, kde-format
+msgid "The target dir does not exist"
+msgstr "Directorul de destinație nu există"
+
+#: Archiver.cxx:549
+#, kde-format
+msgid "...reducing number of kept archives to max. %1"
+msgstr "…se reduce numărul de arhive păstrate la maximum %1"
+
+#: Archiver.cxx:607
+#, kde-format
+msgid "...deleting %1"
+msgstr "…se șterge %1"
+
+#: Archiver.cxx:631
+#, kde-format
+msgid ""
+"fetching directory listing of target failed. Can not reduce kept archives."
+msgstr ""
+"enumerarea elementelor din directorul de destinație a eșuat. Nu se pot "
+"reduce arhivele păstrate."
+
+#: Archiver.cxx:654
+#, kde-format
+msgid "Could not write backup timestamps into profile %1: %2"
+msgstr ""
+"Amprentele temporale pentru rezervă nu au putut fi scrise în profilul %1: %2"
+
+#: Archiver.cxx:658
+#, kde-format
+msgid "-- Filtered Files: %1"
+msgstr "-- Fișiere filtrate: %1"
+
+#: Archiver.cxx:661
+#, kde-format
+msgid "!! Backup finished <b>but files were skipped</b> !!"
+msgstr ""
+"!! Copierea de rezervă s-a încheiat <b>dar unele fișiere au fost sărite</"
+"b> !!"
+
+#: Archiver.cxx:663
+#, kde-format
+msgid "-- Backup successfully finished --"
+msgstr "-- Copierea de rezervă s-a încheiat cu succes --"
+
+#: Archiver.cxx:669
+#, kde-format
+msgid ""
+"The backup has finished but files were skipped.\n"
+"What do you want to do now?"
+msgstr ""
+"Copierea de rezervă s-a încheiat dar unele fișiere au fost sărite.\n"
+"Ce doriți să faceți acum?"
+
+#: Archiver.cxx:671
+#, kde-format
+msgid ""
+"The backup has finished successfully.\n"
+"What do you want to do now?"
+msgstr ""
+"Copierea de rezervă s-a încheiat cu succes.\n"
+"Ce doriți să faceți acum?"
+
+#: Archiver.cxx:689
+#, kde-format
+msgid "Totals: Files: %1, Size: %2, Duration: %3"
+msgstr "Totaluri: Fișiere: %1, Dimensiune: %2, Durată: %3"
+
+#: Archiver.cxx:700
+#, kde-format
+msgid "...Backup aborted!"
+msgstr "...Copiere de rezervă abandonată!"
+
+#: Archiver.cxx:727
+#, kde-format
+msgid "Backup cancelled"
+msgstr "Copiere anulată"
+
+#: Archiver.cxx:747
+#, kde-format
+msgid "...finished slice %1"
+msgstr "...s-a finalizat segmentul %1"
+
+#: Archiver.cxx:762
+#, kde-format
+msgid "...uploading archive %1 to %2"
+msgstr "...se încarcă arhiva %1 la %2"
+
+#: Archiver.cxx:780
+#, kde-format
+msgid "How shall we proceed with the upload?"
+msgstr "Cum să procedăm cu încărcarea?"
+
+#: Archiver.cxx:780
+#, kde-format
+msgid "Upload Failed"
+msgstr "Încărcare eșuată"
+
+#: Archiver.cxx:781
+#, kde-format
+msgid "Retry"
+msgstr "Reîncearcă"
+
+#: Archiver.cxx:781
+#, kde-format
+msgid "Change Target"
+msgstr "Schimba destinația"
+
+#: Archiver.cxx:872
+#, kde-format
+msgid "The script '%1' could not be started."
+msgstr "Scriptul „%1” nu a putut fi pornit."
+
+#: Archiver.cxx:911
+#, kde-format
+msgid "The medium is full. Please insert medium Nr. %1"
+msgstr "Suportul e plin. Introduceți suportul nr. %1"
+
+#: Archiver.cxx:955
+#, kde-format
+msgid "The file '%1' can not be opened for writing."
+msgstr "Fișierul „%1” nu poate fi deschis pentru scriere."
+
+#: Archiver.cxx:959
+#, kde-format
+msgid ""
+"The file '%1' can not be opened for writing.\n"
+"\n"
+"Do you want to retry?"
+msgstr ""
+"Fișierul „%1” nu poate fi deschis pentru scriere.\n"
+"\n"
+"Doriți să reîncercați?"
+
+#: Archiver.cxx:960
+#, kde-format
+msgctxt "@title"
+msgid "Open File"
+msgstr "Deschide fișierul"
+
+#: Archiver.cxx:961
+#, kde-format
+msgctxt "@action:button"
+msgid "Retry"
+msgstr "Reîncearcă"
+
+#: Archiver.cxx:981
+#, kde-format
+msgid "Could not write to archive. Maybe the medium is full."
+msgstr "Nu s-a putut scrie în arhivă. Poate suportul e plin."
+
+#: Archiver.cxx:985
+#, kde-format
+msgid ""
+"Could not write to archive.\n"
+"The operating system reports: %1"
+msgstr ""
+"Nu s-a putut scrie în arhivă.\n"
+"Sistemul de operare raportează: %1"
+
+#: Archiver.cxx:1004
+#, kde-format
+msgid "...skipping filtered directory %1"
+msgstr "...se sare peste dosarul filtrat %1"
+
+#: Archiver.cxx:1015
+#, kde-format
+msgid ""
+"Could not get information of directory: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Nu s-au putut obține informații despre director: %1\n"
+"Sistemul de operare raportează: %2"
+
+#: Archiver.cxx:1025
+#, kde-format
+msgid "Directory '%1' is not readable. Skipping."
+msgstr "Directorul „%1” nu poate fi citit. Se sare."
+
+#: Archiver.cxx:1125
+#, kde-format
+msgid ""
+"Could not get information of file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Nu s-au putut obține informații despre fișier: %1\n"
+"Sistemul de operare raportează: %2"
+
+#: Archiver.cxx:1136
+#, kde-format
+msgid "Can not archive file type 'socket': %1\n"
+msgstr "Nu se poate arhiva tipul de fișier „soclu”: %1\n"
+
+#: Archiver.cxx:1220 Archiver.cxx:1299
+#, kde-format
+msgid ""
+"Could not read from file '%1'\n"
+"The operating system reports: %2"
+msgstr ""
+"Nu s-a putut citi din fișierul „%1”\n"
+"Sistemul de operare raportează: %2"
+
+#: Archiver.cxx:1268
+#, kde-format
+msgid "Could not open file '%1' for reading."
+msgstr "Fișierul „%1” nu a putut fi deschis pentru citire."
+
+#: Archiver.cxx:1335
+#, kde-format
+msgid "...archiving file %1"
+msgstr "...se arhivează fișierul %1"
+
+#: Archiver.cxx:1368
+#, kde-format
+msgid ""
+"Could not read file: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Nu s-a putut citi fișierul: %1\n"
+"Sistemul de operare raportează: %2"
+
+#: Archiver.cxx:1382
+#, kde-format
+msgid ""
+"Could not create temporary file for compressing: %1\n"
+"The operating system reports: %2"
+msgstr ""
+"Nu s-a putut crea fișierul temporar pentru comprimare: %1\n"
+"Sistemul de operare raportează: %2"
+
+#: Archiver.cxx:1412
+#, kde-format
+msgid ""
+"Could not write to temporary file. Use the TMPDIR env-var to change the "
+"temporary directory used"
+msgstr ""
+"Nu s-a putut scrie în fișierul temporar. Folosiți variabila de mediu TMPDIR "
+"pentru a schimba directorul temporar folosit"
+
+#: Archiver.cxx:1435
+#, kde-format
+msgid "...compressing file %1"
+msgstr "...se comprimă fișierul %1"
+
+#: Archiver.cxx:1480
+#, kde-format
+msgid "WARNING:"
+msgstr "ATENȚIE:"
+
+#. i18n: ectx: Menu (file)
+#: kbackupui.rc:4
+#, kde-format
+msgid "&File"
+msgstr "&Fișier"
+
+#. i18n: ectx: Menu (settings)
+#: kbackupui.rc:12
+#, kde-format
+msgid "&Settings"
+msgstr "&Configurări"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, MainWidgetBase)
+#: main.cxx:47 MainWidgetBase.ui:16
+#, kde-format
+msgid "KBackup"
+msgstr "KBackup"
+
+#: main.cxx:48
+#, kde-format
+msgid "An easy to use backup program"
+msgstr "Program pentru copiere de rezervă ușor de utilizat"
+
+#: main.cxx:49
+#, kde-format
+msgid "(c) 2006 - 2018 Martin Koller"
+msgstr "(c) 2006 - 2018 Martin Koller"
+
+#: main.cxx:53
+#, kde-format
+msgid "Martin Koller"
+msgstr "Martin Koller"
+
+#: main.cxx:53
+#, kde-format
+msgid "Developer"
+msgstr "Dezvoltator"
+
+#: main.cxx:61
+#, kde-format
+msgid "Start with given profile."
+msgstr "Începe cu profilul dat."
+
+#: main.cxx:63
+#, kde-format
+msgid "Script to run after finishing one archive slice."
+msgstr "Script de rulat după finalizarea unui segment de arhivă."
+
+#: main.cxx:65
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile and terminate when done."
+msgstr ""
+"Rulează automat copierea de rezervă cu profilul dat și termină aplicația la "
+"încheiere."
+
+#: main.cxx:68
+#, kde-format
+msgid ""
+"Automatically run the backup with the given profile in the background "
+"(without showing a window) and terminate when done."
+msgstr ""
+"Rulează automat copierea de rezervă cu profilul dat în fundal (fără a arăta "
+"o fereastră) și termină aplicația la încheiere."
+
+#: main.cxx:73
+#, kde-format
+msgid ""
+"In autobg mode be verbose and print every single filename during backup."
+msgstr ""
+"În regim „autobg”, prezintă mai multe informații și tipărește fiecare "
+"denumire de fișier în timpul copierii."
+
+#: main.cxx:76
+#, kde-format
+msgid ""
+"In auto/autobg mode force the backup to be a full backup instead of acting "
+"on the profile settings."
+msgstr ""
+"În regim auto/autobg, forțează copia de rezervă să fie una deplină în loc de "
+"a ține cont de configurările profilului."
+
+#: main.cxx:149 MainWindow.cxx:211
+#, kde-format
+msgid "Could not open profile '%1' for reading: %2"
+msgstr "Nu s-a putut deschide profilul „%1” pentru citire: %2"
+
+#: MainWidget.cxx:68
+#, kde-format
+msgid "Incremental Backup"
+msgstr "Rezervă incrementală"
+
+#: MainWidget.cxx:70
+#, kde-format
+msgid "Full Backup"
+msgstr "Rezervă deplină"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
+#: MainWidget.cxx:165 SettingsDialog.cxx:21 SettingsDialog.ui:67
+#: SettingsDialog.ui:136
+#, kde-format
+msgid "unlimited"
+msgstr "nelimitat"
+
+#. i18n: ectx: property (text), widget (QPushButton, startButton)
+#: MainWidgetBase.ui:41 MainWindow.cxx:114
+#, kde-format
+msgid "Start Backup"
+msgstr "Pornește copierea"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: MainWidgetBase.ui:69 MainWindow.cxx:117
+#, kde-format
+msgid "Cancel Backup"
+msgstr "Renunță la copiere"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: MainWidgetBase.ui:92
+#, kde-format
+msgid "Next Backup:"
+msgstr "Următoarea copiere:"
+
+#. i18n: ectx: property (text), widget (QLabel, backupType)
+#: MainWidgetBase.ui:99
+#, kde-format
+msgid "TextLabel"
+msgstr "EtichetăTextuală"
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceFullBackup)
+#: MainWidgetBase.ui:106
+#, kde-format
+msgid "Force Full Backup"
+msgstr "Forțează copia de rezervă deplină"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: MainWidgetBase.ui:121
+#, kde-format
+msgid "Target"
+msgstr "Destinație"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: MainWidgetBase.ui:127
+#, kde-format
+msgid "Folder:"
+msgstr "Dosar:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceLabel)
+#: MainWidgetBase.ui:143
+#, kde-format
+msgid "Medium:"
+msgstr "Suport:"
+
+#. i18n: ectx: property (text), widget (QLabel, sliceNum)
+#: MainWidgetBase.ui:165
+#, kde-format
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: MainWidgetBase.ui:185 MainWidgetBase.ui:277
+#, kde-format
+msgid "Size:"
+msgstr "Dimensiune:"
+
+#. i18n: ectx: property (text), widget (QLabel, capacity)
+#: MainWidgetBase.ui:201
+#, kde-format
+msgid "0 MB"
+msgstr "0 MO"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: MainWidgetBase.ui:236
+#, kde-format
+msgid "Totals"
+msgstr "Totaluri"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: MainWidgetBase.ui:248
+#, kde-format
+msgid "Files:"
+msgstr "Fișiere:"
+
+#. i18n: ectx: property (text), widget (QLabel, totalFiles)
+#. i18n: ectx: property (text), widget (QLabel, totalSize)
+#: MainWidgetBase.ui:258 MainWidgetBase.ui:287
+#, kde-format
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), widget (QLabel, totalSize_2)
+#: MainWidgetBase.ui:300
+#, kde-format
+msgid "MB"
+msgstr "MO"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: MainWidgetBase.ui:335
+#, kde-format
+msgid "Duration:"
+msgstr "Durată:"
+
+#. i18n: ectx: property (text), widget (QLabel, elapsedTime)
+#: MainWidgetBase.ui:345
+#, kde-format
+msgid "00:00:00"
+msgstr "00:00:00"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: MainWidgetBase.ui:387
+#, kde-format
+msgid "Warnings:"
+msgstr "Avertismente:"
+
+#. i18n: ectx: property (text), widget (QLabel, fileProgressLabel)
+#: MainWidgetBase.ui:413
+#, kde-format
+msgid "Progress:"
+msgstr "Progres:"
+
+#: MainWindow.cxx:56
+#, kde-format
+msgid "New Profile"
+msgstr "Profil nou"
+
+#: MainWindow.cxx:60
+#, kde-format
+msgid "Load Profile..."
+msgstr "Încarcă profil…"
+
+#: MainWindow.cxx:64
+#, kde-format
+msgid "Save Profile"
+msgstr "Salvează profilul"
+
+#: MainWindow.cxx:68
+#, kde-format
+msgid "Save Profile As..."
+msgstr "Salvează profilul ca…"
+
+#: MainWindow.cxx:72
+#, kde-format
+msgid "Profile Settings..."
+msgstr "Configurări de profil…"
+
+#: MainWindow.cxx:75
+#, kde-format
+msgid "Enable All Messages"
+msgstr "Activează toate mesajele"
+
+#: MainWindow.cxx:77
+#, kde-format
+msgid "Dock in System Tray"
+msgstr "Andochează în tava de sistem"
+
+#: MainWindow.cxx:81
+#, kde-format
+msgid "Show Hidden Files"
+msgstr "Arată fișierele ascunse"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "There is a backup in progress. Do you want to abort it?"
+msgstr "Este o copiere de rezervă în curs. Doriți s-o abandonați?"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "Backup in Progress"
+msgstr "Copiere de rezervă în curs"
+
+#: MainWindow.cxx:147
+#, kde-format
+msgid "Abort"
+msgstr "Abandonează"
+
+#: MainWindow.cxx:189 MainWindow.cxx:235 MainWindow.cxx:252
+#, kde-format
+msgid "Select Profile"
+msgstr "Alegeți profilul"
+
+#: MainWindow.cxx:190 MainWindow.cxx:236 MainWindow.cxx:253
+#, kde-format
+msgid "KBackup Profile (*.kbp)"
+msgstr "Profil KBackup (*.kbp)"
+
+#: MainWindow.cxx:214 MainWindow.cxx:286
+#, kde-format
+msgid "Open failed"
+msgstr "Deschiderea a eșuat"
+
+#: MainWindow.cxx:263
+#, kde-format
+msgid ""
+"The profile '%1' does already exist.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Profilul „%1” există deja.\n"
+"Doriți să-l suprascrieți?"
+
+#: MainWindow.cxx:266
+#, kde-format
+msgid "Profile exists"
+msgstr "Profilul există"
+
+#: MainWindow.cxx:283
+#, kde-format
+msgid "Could not open profile '%1' for writing: %2"
+msgstr "Profilul „%1” nu poate fi deschis pentru scriere: %2"
+
+#: MainWindow.cxx:359
+#, kde-format
+msgid ""
+"Files: %1 Size: %2 MB\n"
+"%3"
+msgstr ""
+"Fișiere: %1 Dimensiune: %2 MO\n"
+"%3"
+
+#: Selector.cxx:252
+#, kde-format
+msgid "Name"
+msgstr "Denumire"
+
+#: Selector.cxx:252
+#, kde-format
+msgid "Size"
+msgstr "Dimensiune"
+
+#: Selector.cxx:252
+#, kde-format
+msgid "Last Modified"
+msgstr "Ultima modificare"
+
+#: Selector.cxx:284
+#, kde-format
+msgid "Open With"
+msgstr "Deschide cu"
+
+#: Selector.cxx:292
+#, kde-format
+msgid "Delete File"
+msgstr "Șterge fișierul"
+
+#: Selector.cxx:298
+#, kde-format
+msgid "Properties..."
+msgstr "Proprietăți…"
+
+#: Selector.cxx:611
+#, kde-format
+msgid "Do you really want to delete '%1'?"
+msgstr "Sigur doriți să ștergeți „%1”?"
+
+#: Selector.cxx:612
+#, kde-format
+msgid "Delete"
+msgstr "Șterge"
+
+#: Selector.cxx:623
+#, kde-format
+msgid "Could not delete directory '%1'."
+msgstr "Directorul „%1” nu a putut fi șters."
+
+#: Selector.cxx:632
+#, kde-format
+msgid ""
+"Could not delete file '%1'.\n"
+"Reason: %2"
+msgstr ""
+"Fișierul „%1” nu a putut fi șters.\n"
+"Motiv: %2"
+
+#: Selector.cxx:700
+#, kde-format
+msgid "Other Application..."
+msgstr "Altă aplicație…"
+
+#: Selector.cxx:702
+#, kde-format
+msgid "File Manager"
+msgstr "Gestionar de fișiere"
+
+#: SettingsDialog.cxx:22
+#, kde-format
+msgid "650 MB CD"
+msgstr "CD de 650 MO"
+
+#: SettingsDialog.cxx:23
+#, kde-format
+msgid "700 MB CD"
+msgstr "CD de 700 MO"
+
+#: SettingsDialog.cxx:24
+#, kde-format
+msgid "4.7 GB DVD"
+msgstr "DVD de 4.7 GO"
+
+#: SettingsDialog.cxx:25
+#, kde-format
+msgid "8.5 GB DVD"
+msgstr "DVD de 8.5 GO"
+
+#: SettingsDialog.cxx:26
+#, kde-format
+msgid "9.4 GB DVD"
+msgstr "DVD de 9.4 GO"
+
+#: SettingsDialog.cxx:27
+#, kde-format
+msgid "17.1 GB DVD"
+msgstr "DVD de 17.1 GO"
+
+#: SettingsDialog.cxx:28
+#, kde-format
+msgid "custom"
+msgstr "personalizat"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, SettingsDialog)
+#: SettingsDialog.ui:16
+#, kde-format
+msgid "Profile Settings"
+msgstr "Configurări de profil"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:38
+#, kde-format
+msgid ""
+"Uncheck if you want to avoid a confirmation dialog to change the medium when "
+"a slice was finished"
+msgstr ""
+"Scoateți bifa dacă doriți să evitați un dialog de confirmare pentru "
+"schimbarea suportului la finalizarea unui segment"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
+#: SettingsDialog.ui:41
+#, kde-format
+msgid "Target needs media change"
+msgstr "Destinația necesită schimbarea suportului"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: SettingsDialog.ui:48
+#, kde-format
+msgid "Exclude Paths Filter:"
+msgstr "Filtru de excludere a căilor:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: SettingsDialog.ui:57
+#, kde-format
+msgid "Number of full backups to keep"
+msgstr "Numărul de copii de rezervă depline de păstrat"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
+#: SettingsDialog.ui:64
+#, kde-format
+msgid ""
+"How many full backups shall be kept in the target directory before older "
+"ones will be deleted"
+msgstr ""
+"Câte copii de rezervă depline să fie păstrate în directorul de destinație "
+"înainte ca cele mai vechi să fie șterse"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: SettingsDialog.ui:77
+#, kde-format
+msgid "Full Backup Interval"
+msgstr "Interval de copiere deplină"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:84
+#, kde-format
+msgid "How often shall a full backup, instead of an incremental one, be done"
+msgstr ""
+"Cât de des să fie efectuată o copiere de rezervă deplină în locul uneia "
+"incrementale"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:87
+#, kde-format
+msgid "Every Day"
+msgstr "În fiecare zi"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, fullBackupInterval)
+#: SettingsDialog.ui:90
+#, kde-format
+msgid " days"
+msgstr " zile"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: SettingsDialog.ui:105
+#, kde-format
+msgid "Archive Prefix:"
+msgstr "Prefixul arhivei:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, filter)
+#: SettingsDialog.ui:115
+#, kde-format
+msgid ""
+"Defines wildcards for filenames which will be ignored for backup, separated "
+"by a space. E.g.: \"*.ogg *.wav\""
+msgstr ""
+"Definește metacaractere pentru denumirile de fișiere ce vor fi ignorate la "
+"copierea de rezervă, separate prin spațiu. De exemplu: „*.ogg *.wav”"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: SettingsDialog.ui:122
+#, kde-format
+msgid "Maximum Archive Size:"
+msgstr "Dimensiune maximă de arhivă:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxSliceSize)
+#: SettingsDialog.ui:139
+#, kde-format
+msgid " MB"
+msgstr " MO"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: SettingsDialog.ui:157
+#, kde-format
+msgid "Exclude Filename Filter:"
+msgstr "Filtru de excludere a fișierelor:"
+
+#. i18n: ectx: property (toolTip), widget (QPlainTextEdit, dirFilter)
+#: SettingsDialog.ui:164
+#, kde-format
+msgid ""
+"<html><head/><body><p>Defines a list of absolute path patterns which are "
+"used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
+"body></html>"
+msgstr ""
+"<html><head/><body><p>Definește o listă cu modele de căi absolute ce sunt "
+"folosite pentru a filtra dosare întregi,<br/>cum ar fi /home/*/.mozilla/*/"
+"Cache</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:171
+#, kde-format
+msgid "Uncheck if you want to avoid compressing files at all"
+msgstr "Scoateți bifa dacă doriți să evitați comprimarea fișierelor"
+
+#. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
+#: SettingsDialog.ui:174
+#, kde-format
+msgid "Compress Files"
+msgstr "Comprimă fișierele"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, prefix)
+#: SettingsDialog.ui:181
+#, kde-format
+msgid "backup"
+msgstr "copie"
