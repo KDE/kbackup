@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kbackup package.
 #
-# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2024, 2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-25 00:48+0000\n"
-"PO-Revision-Date: 2024-11-10 20:12+0100\n"
+"PO-Revision-Date: 2026-04-03 00:50+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -310,6 +310,8 @@ msgid ""
 "Could not write to temporary file. Use the TMPDIR env-var to change the "
 "temporary directory used"
 msgstr ""
+"Не можа да се запише във временен файл. Използвайте TMPDIR env-var, за да "
+"промените използваната временна директория."
 
 #: Archiver.cxx:1435
 #, kde-format
