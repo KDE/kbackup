@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-25 00:48+0000\n"
-"PO-Revision-Date: 2026-03-25 09:01+0200\n"
+"PO-Revision-Date: 2026-04-13 21:26+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -545,7 +545,7 @@ msgstr "פרופיל חדש"
 #: MainWindow.cxx:60
 #, kde-format
 msgid "Load Profile..."
-msgstr "טעינת פרופיל..."
+msgstr "טעינת פרופיל…"
 
 #: MainWindow.cxx:64
 #, kde-format
@@ -555,12 +555,12 @@ msgstr "שמירת פרופיל"
 #: MainWindow.cxx:68
 #, kde-format
 msgid "Save Profile As..."
-msgstr "שמירת פרופיל בשם..."
+msgstr "שמירת פרופיל בשם…"
 
 #: MainWindow.cxx:72
 #, kde-format
 msgid "Profile Settings..."
-msgstr "הגדרות פרופיל..."
+msgstr "הגדרות פרופיל…"
 
 #: MainWindow.cxx:75
 #, kde-format
