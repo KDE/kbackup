@@ -44,6 +44,7 @@
   <name xml:lang="sl">KBackup</name>
   <name xml:lang="sv">Kbackup</name>
   <name xml:lang="tr">K Yedek</name>
+  <name xml:lang="ug">K زاپاسلاش</name>
   <name xml:lang="uk">KBackup</name>
   <name xml:lang="zh-CN">KBackup</name>
   <name xml:lang="zh-TW">KBackup</name>
@@ -170,6 +171,7 @@
     <p xml:lang="sl">Možnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikler:</p>
+    <p xml:lang="ug">ئىقتىدار:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能：</p>
