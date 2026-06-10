@@ -4,6 +4,9 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBackup</name>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
   <name xml:lang="ar">النسخ الاحتياطي ك</name>
   <name xml:lang="ast">KBackup</name>
   <name xml:lang="bg">KBackup</name>
