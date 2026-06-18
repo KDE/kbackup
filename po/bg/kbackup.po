@@ -874,6 +874,3 @@ msgstr "Компресиране на файлове"
 #, kde-format
 msgid "backup"
 msgstr "резервно копие"
-
-#~ msgid "Could not write to temporary file"
-#~ msgstr "Не можа да се запише във временния файл"
