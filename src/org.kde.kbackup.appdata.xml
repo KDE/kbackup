@@ -4,9 +4,6 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBackup</name>
-  <developer id="org.kde">
-    <name translate="no">KDE</name>
-  </developer>
   <name xml:lang="ar">النسخ الاحتياطي ك</name>
   <name xml:lang="ast">KBackup</name>
   <name xml:lang="bg">KBackup</name>
@@ -50,6 +47,9 @@
   <name xml:lang="uk">KBackup</name>
   <name xml:lang="zh-CN">KBackup</name>
   <name xml:lang="zh-TW">KBackup</name>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
   <summary>Create backups as .tar files to a local folder or remote URL</summary>
   <summary xml:lang="ar">أنشئ نسخ احتياطية كملفات .tar إلى مجلد محلي أو عنوان بعيد</summary>
   <summary xml:lang="bg">Създаване на резервни копия като .tar файлове в локална папка или отдалечен URL адрес</summary>
