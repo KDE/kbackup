@@ -257,7 +257,7 @@ msgstr ""
 #: Archiver.cxx:1025
 #, kde-format
 msgid "Directory '%1' is not readable. Skipping."
-msgstr "El directori «%1» no es pot llegir. Se saltarà."
+msgstr "La carpeta «%1» no es pot llegir. Se saltarà."
 
 #: Archiver.cxx:1125
 #, kde-format
@@ -355,7 +355,7 @@ msgstr "Un programa fàcil d'utilitzar de còpies de seguretat"
 #: main.cxx:49
 #, kde-format
 msgid "(c) 2006 - 2018 Martin Koller"
-msgstr "(c) 2006 - 2018 Martin Koller"
+msgstr "(c) 2006 – 2018 Martin Koller"
 
 #: main.cxx:53
 #, kde-format
