@@ -3,32 +3,33 @@
 #
 # Pavel Fric, 2010.
 # Pavel Fric <fripohled.blogspot.com>, 2011.
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 # Vit Pelcak <vit@pelcak.org>, 2018, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-25 00:48+0000\n"
-"PO-Revision-Date: 2023-02-07 09:38+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-14 23:21+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.2\n"
-"X-Language: de_AT\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.9\n"
+"X-Language: de_AT\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Pavel Fric"
+msgstr "Pavel Fric,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pavelfric@seznam.cz"
+msgstr "pavelfric@seznam.cz,libor.filipek@gmail.com"
 
 #: Archiver.cxx:434
 #, kde-format
@@ -241,7 +242,7 @@ msgstr ""
 #: Archiver.cxx:1004
 #, kde-format
 msgid "...skipping filtered directory %1"
-msgstr ""
+msgstr "...přeskočení filtrovaného adresáře %1"
 
 #: Archiver.cxx:1015
 #, kde-format
@@ -269,7 +270,7 @@ msgstr ""
 #: Archiver.cxx:1136
 #, kde-format
 msgid "Can not archive file type 'socket': %1\n"
-msgstr ""
+msgstr "Nelze archivovat soubor typu 'socket': %1\n"
 
 #: Archiver.cxx:1220 Archiver.cxx:1299
 #, kde-format
@@ -305,7 +306,7 @@ msgid ""
 "Could not create temporary file for compressing: %1\n"
 "The operating system reports: %2"
 msgstr ""
-"Nepodařilo se vytvořit dočasný soubor pro stlačení: %1\n"
+"Nepodařilo se vytvořit dočasný soubor pro komprimaci: %1\n"
 "Operační systém hlásí: %2"
 
 #: Archiver.cxx:1412
@@ -314,11 +315,13 @@ msgid ""
 "Could not write to temporary file. Use the TMPDIR env-var to change the "
 "temporary directory used"
 msgstr ""
+"Nelze zapisovat do dočasného souboru. Chcete-li změnit adresář pro dočasné "
+"soubory, použijte proměnnou prostředí TMPDIR"
 
 #: Archiver.cxx:1435
 #, kde-format
 msgid "...compressing file %1"
-msgstr "...stlačuje se soubor %1"
+msgstr "...komprimuje se soubor %1"
 
 #: Archiver.cxx:1480
 #, kde-format
@@ -366,18 +369,20 @@ msgstr "Vývojář"
 #: main.cxx:61
 #, kde-format
 msgid "Start with given profile."
-msgstr "Spustit s daným profilem"
+msgstr "Spustit s daným profilem."
 
 #: main.cxx:63
 #, kde-format
 msgid "Script to run after finishing one archive slice."
-msgstr ""
+msgstr "Skript, který se spustí po dokončení jednoho segmentu archivu."
 
 #: main.cxx:65
 #, kde-format
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
 msgstr ""
+"Automaticky spustit zálohování s daným profilem a po dokončení ukončit "
+"proces."
 
 #: main.cxx:68
 #, kde-format
@@ -385,12 +390,16 @@ msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
 msgstr ""
+"Zálohu s daným profilem spustit automaticky na pozadí (bez zobrazení okna) a "
+"po dokončení ukončit."
 
 #: main.cxx:73
 #, kde-format
 msgid ""
 "In autobg mode be verbose and print every single filename during backup."
 msgstr ""
+"V režimu autobg zobrazovat podrobné informace a během zálohování vypisovat "
+"každý jednotlivý název souboru."
 
 #: main.cxx:76
 #, kde-format
@@ -398,6 +407,8 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
 msgstr ""
+"V režimu auto/autobg vynutit provedení úplné zálohy namísto použití "
+"nastavení profilu."
 
 #: main.cxx:149 MainWindow.cxx:211
 #, kde-format
@@ -438,7 +449,7 @@ msgstr "Zastavit zálohování"
 #: MainWidgetBase.ui:92
 #, kde-format
 msgid "Next Backup:"
-msgstr "Další zálohování"
+msgstr "Další zálohování:"
 
 #. i18n: ectx: property (text), widget (QLabel, backupType)
 #: MainWidgetBase.ui:99
@@ -679,7 +690,7 @@ msgstr "Smazat"
 #: Selector.cxx:623
 #, kde-format
 msgid "Could not delete directory '%1'."
-msgstr ""
+msgstr "Nelze smazat adresář '%1'."
 
 #: Selector.cxx:632
 #, kde-format
@@ -687,6 +698,8 @@ msgid ""
 "Could not delete file '%1'.\n"
 "Reason: %2"
 msgstr ""
+"Nelze smazat soubor '%1'.\n"
+"Důvod: %2"
 
 #: Selector.cxx:700
 #, kde-format
@@ -747,7 +760,7 @@ msgid ""
 "a slice was finished"
 msgstr ""
 "Vypněte, pokud se chcete vyhnout potvrzovacímu dialogu při výměně nosiče, "
-"když byla dokončena jedna část archivu."
+"když byla dokončena jedna část archivu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mediaNeedsChange)
 #: SettingsDialog.ui:41
@@ -759,7 +772,7 @@ msgstr "Cíl potřebuje, aby byl nosič vyměněn"
 #: SettingsDialog.ui:48
 #, kde-format
 msgid "Exclude Paths Filter:"
-msgstr ""
+msgstr "Filtr vyřazení cest:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: SettingsDialog.ui:57
@@ -843,12 +856,15 @@ msgid ""
 "used to filter complete directories,<br/>e.g. /home/*/.mozilla/*/Cache</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Definuje seznam vzorů absolutních cest, které se "
+"používají k filtrování celých adresářů,<br/>např. /home/*/.mozilla/*/Cache</"
+"p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:171
 #, kde-format
 msgid "Uncheck if you want to avoid compressing files at all"
-msgstr "Vypněte, pokud se úplně chcete vyhnout stlačení souborů"
+msgstr "Vypněte, pokud se úplně chcete vyhnout komprimaci souborů"
 
 #. i18n: ectx: property (text), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:174
