@@ -25,7 +25,7 @@
 >Koller</surname
 > </personname
 > <email
->kollix@aon.at</email
+>martin@kollix.at</email
 > </author>
 </authorgroup>
 
@@ -55,7 +55,7 @@
 >&FDLNotice;</legalnotice>
 
 <date
->2018-01-05</date>
+>2018–01–05</date>
 <releaseinfo
 >Anwendungen 18.04</releaseinfo>
 
@@ -110,7 +110,7 @@
 >Das Archivierungsformat ist das wohl bekannte Tar-Format, wobei die Daten komprimiert gespeichert werden (xz, bzip2 oder gzip) können. </para>
 
 <para
->Die aktuelle Implementierung enthält nur den Sicherungsschritt. Um die Daten wieder in das System zurück zuspielen muss man derzeit &eg; &dolphin; benutzen, um eine TAR-Sicherungsdatei zu öffnen, und dann Teile daraus &eg; via Ziehen und Ablegen in das System zurückbringen. Das ist einer der Vorteile der Verwendung des weit verbreiteten TAR-Dateiformates. </para>
+>Die aktuelle Implementierung enthält nur den Sicherungsschritt. Um die Daten wieder in das System zurück zuspielen muss man derzeit &eg; &dolphin; verwenden, um eine TAR-Sicherungsdatei zu öffnen, und dann Teile daraus &eg; via Ziehen und Ablegen in das System zurückbringen. Das ist einer der Vorteile der Verwendung des weit verbreiteten TAR-Dateiformates. </para>
 <para
 >Wenn die Dateien komprimiert wurden, so kann man alle vom aktuellen Ordner aus rekursiv absteigend mit folgendem Befehl wieder entpacken: </para>
 <para>
@@ -129,7 +129,7 @@
 >Alles was Sie tun müssen, ist die Auswahl der Ordner, die gesichert werden sollen. Dies wird erreicht, indem man in der Baumansicht auf der linken Seite des Hauptfensters die Ordner anwählt. </para>
 
 <para
->Wenn Sie einen Ordner wählen, wird &kbackup; automatisch alle Dateien und Unterordner darin sichern. Wenn Sie Teile in einem ausgewählten Ordner von der Sicherung ausnehmen wollen, müssen Sie einfach die entsprechenden Ordner oder Dateien darin abwählen. </para>
+>Wenn Sie einen Ordner wählen, wird &kbackup; automatisch alle Dateien und Unterordner darin sichern. Wenn Sie Teile in einem ausgewählten Ordner von der Sicherung ausnehmen möchten, müssen Sie einfach die entsprechenden Ordner oder Dateien darin abwählen. </para>
 
 <para
 >Generell bedeutet das: Ein ausgewählter Ordner wird alle Dateien und Unterordner darin sichern, außer den abgewählten Einträgen. Das bedeutet auch, wann immer Sie ein Profil (siehe weiter unten) wiederverwenden, werden auch alle neuen Ordner und Dateien, die in der Zwischenzeit dazugekommen sind, ebenfalls gesichert. </para>
@@ -176,7 +176,7 @@
 >&kbackup; speichert in einem Profil die Auswahl für alle ein- und ausgeschlossenen Dateien und Ordner, das Ziel für die Sicherung, das gewählte Archiv-Präfix, das gewählte Größenlimit für einen Archivteil und anderes. </para>
 
 <para
->Wenn Sie sich die Aufgabe der täglichen Datensicherung einfach machen wollen, speichern Sie ihre Auswahl in einem Profil (eine Datei mit der Endung <filename class="extension"
+>Wenn Sie sich die Aufgabe der täglichen Datensicherung einfach machen möchten, speichern Sie ihre Auswahl in einem Profil (eine Datei mit der Endung <filename class="extension"
 >.kbp</filename
 >) und geben dieses Profil beim Start von &kbackup; als Argument mit an. </para>
 
@@ -254,7 +254,7 @@
 <para
 >Unter inkrementeller Sicherung versteht man, dass nicht immer alle Dateien gesichert werden, sondern nur jene, die sich seit der letzten Sicherung geändert haben. Dies hat den großen Vorteil, dass die inkrementellen Sicherungen üblicherweise wesentlich weniger Dateien beinhalten und der Sicherungsvorgang daher wesentlich schneller beendet ist. </para>
 <para
->Die Vorgehensweise ist also folgende: Im Profil definiert man ein Intervall in Tagen für eine Komplett-Sicherung, &eg; 5 Tage. Das bedeutet, &kbackup; sichert alle 5 Tage alle definierten Dateien. An allen Tagen dazwischen - egal wie oft Sie &kbackup; mit diesem Profil starten - werden nur jene Dateien gesichert, die sich seit der letzten Sicherung geändert haben. &kbackup; schreibt dafür die Sicherungs-Zeitstempel in ihr Profil und weiß somit, was das nächste mal zu tun ist. </para>
+>Die Vorgehensweise ist also folgende: Im Profil definiert man ein Intervall in Tagen für eine Komplett-Sicherung, &eg; 5 Tage. Das bedeutet, &kbackup; sichert alle 5 Tage alle definierten Dateien. An allen Tagen dazwischen – egal wie oft Sie &kbackup; mit diesem Profil starten – werden nur jene Dateien gesichert, die sich seit der letzten Sicherung geändert haben. &kbackup; schreibt dafür die Sicherungs-Zeitstempel in ihr Profil und weiß somit, was das nächste mal zu tun ist. </para>
 <para
 >Die Sicherungsdateien, die hierbei entstehen beinhalten den Text <quote
 >_inc</quote
@@ -303,7 +303,7 @@
 >-Archiv speichern. </para>
 
 <para
->Wenn Sie als Ziel einen lokalen Ordner gewählt haben (&eg; ihre externe Festplatte, ZIP-Laufwerk, &etc;) - &ie; Sie haben keine &URL; angegeben - kann &kbackup; die gesamte Sicherung aufgrund der beschränkten Medienkapazität in einzelne Teilarchive trennen. </para>
+>Wenn Sie als Ziel einen lokalen Ordner gewählt haben (&eg; ihre externe Festplatte, ZIP-Laufwerk, &etc;) – &ie; Sie haben keine &URL; angegeben – kann &kbackup; die gesamte Sicherung aufgrund der beschränkten Medienkapazität in einzelne Teilarchive trennen. </para>
 <para
 >&eg;: </para>
 <para
@@ -346,7 +346,7 @@
 >bg</quote
 >, was für <quote
 >Background</quote
-> (Hintergrund) steht - alle Operationen werden also im Hintergrund ausgeführt, was damit die passende Option für eine Sicherung darstellt, die &eg; aus einem cron-job gestartet wurde. </para>
+> (Hintergrund) steht – alle Operationen werden also im Hintergrund ausgeführt, was damit die passende Option für eine Sicherung darstellt, die &eg; aus einem cron-job gestartet wurde. </para>
 <para
 >Mit der Option <option
 >--autobg</option
@@ -451,7 +451,7 @@
 ><guimenu
 >Datei</guimenu
 > <guimenuitem
->Profil speichern unter ...</guimenuitem
+>Profil speichern unter …</guimenuitem
 > </menuchoice
 ></term>
 <listitem
@@ -526,9 +526,9 @@
 <listitem
 ><para
 ><action
->Wird diese Option eingeschaltet, wird im Systembereich ein Symbol angezeigt, welches den Status einer Sicherung anzeigt. Eine Animation bedeutet, dass gerade eine Sicherung läuft. Ansonsten wird ein statisches Symbol angezeigt. Wenn diese Option gewählt wurde, wird &kbackup; mit dem Schließen des Hauptfensters nicht beendet. Das Programm bleibt so lange verfügbar, bis es explizit durch die Aktion <guimenuitem
+>Wird diese Option aktiviert, wird im Systembereich ein Symbol angezeigt, welches den Status einer Sicherung anzeigt. Eine Animation bedeutet, dass gerade eine Sicherung läuft. Ansonsten wird ein statisches Symbol angezeigt. Wenn diese Option gewählt wurde, wird &kbackup; mit dem Schließen des Hauptfensters nicht beendet. Das Programm bleibt so lange verfügbar, bis es explizit durch die Aktion <guimenuitem
 >Beenden</guimenuitem
-> geschlossen. Über das Kontextmenü am Symbol im Systembereich kann eine Sicherung - genau wie im Hauptfenster - gestartet oder abgebrochen werden. Im Kurzinfo des Symbols wird der Sicherungsstatus angezeigt (Anzahl schon gesicherter Dateien, Summe des Sicherungsvolumens und die zuletzt gesicherte Datei). </action
+> geschlossen. Über das Kontextmenü am Symbol im Systembereich kann eine Sicherung – genau wie im Hauptfenster – gestartet oder abgebrochen werden. Im Kurzinfo des Symbols wird der Sicherungsstatus angezeigt (Anzahl schon gesicherter Dateien, Summe des Sicherungsvolumens und die zuletzt gesicherte Datei). </action
 ></para
 ></listitem>
 </varlistentry>
@@ -577,7 +577,7 @@
 <title
 >Das Menü Hilfe</title>
 <para
->&kbackup; benutzt die bekannten &kde;-Einträge im Menü <guimenu
+>&kbackup; verwendet die bekannten &kde;-Einträge im Menü <guimenu
 >Hilfe</guimenu
 >, weitere Informationen dazu finden Sie im Abschnitt über das Menü <ulink url="help:/fundamentals/menus.html#menus-help"
 >Hilfe</ulink
@@ -676,7 +676,7 @@ esac
 <para
 >wird aufgerufen, nachdem ein Archivteil erzeugt wurde, aber bevor dieser in den Zielordner kopiert wurde</para>
 <para
->Das kann dazu genutzt werden, um &eg; den Archivteil noch zusätzlich an einem anderen Ort zu speichern. Wurde als Ziel ein zentraler Server angegeben (mit einer Ziel-&URL;), aber Sie wollen die letzte Sicherung auch noch auf ihrer lokalen Festplatte zur Verfügung haben. </para>
+>Das kann dazu genutzt werden, um &eg; den Archivteil noch zusätzlich an einem anderen Ort zu speichern. Wurde als Ziel ein zentraler Server angegeben (mit einer Ziel-&URL;), aber Sie möchten die letzte Sicherung auch noch auf ihrer lokalen Festplatte zur Verfügung haben. </para>
 </listitem>
 
 <listitem
@@ -699,12 +699,12 @@ esac
 <para
 >&kbackup; </para>
 <para
->Programm Copyright &copy; 2006 - 2010 Martin Koller <email
->kollix@aon.at</email
+>Copyright des Programms &copy; 2006–2009 Martin Koller <email
+>martin@kollix.at</email
 > </para>
 
 <para
->Dokumentation Copyright &copy; 2006 - 2010 Martin Koller </para>
+>Copyright der Dokumentation &copy; 2006–2009 Martin Koller </para>
 
 <para
 >Übersetzung Martin Koller<email

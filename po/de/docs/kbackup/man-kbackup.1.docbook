@@ -24,7 +24,7 @@ where x is the manual section, see https://en.wikipedia.org/wiki/Man_page#Manual
 ></author>
 <!--Date when this manpage was written, in the ISO 8601 format 'yyyy-mm-dd'-->
 <date
->2020-07-23</date>
+>2020–07–23</date>
 <!--version information of application this manpage is valid for.
 Change date/releaseinfo only if
    docbook is updated and verified to be valid for the current app version
@@ -85,7 +85,7 @@ $applicationname xx.yy for applications with independent release schedule (extra
 <title
 >Beschreibung</title>
 <para
->Kbackup ist ein Programm zur Sicherung beliebiger Ordner und Dateien. Ein Ordnerbaum wird zur Auswahl der Sicherung benutzt. Einstellungen können in Profil-Dateien gespeichert werden. Dies sind einfache Textdateien mit Definitionen von Ordnern und Dateien, die in der Sicherung ein- oder ausgeschlossen werden sollen.</para
+>KBackup ist ein Programm zur Sicherung beliebiger Ordner und Dateien. Ein Ordnerbaum wird zur Auswahl der Sicherung verwendet. Einstellungen können in Profil-Dateien gespeichert werden. Dies sind einfache Textdateien mit Definitionen von Ordnern und Dateien, die in der Sicherung ein- oder ausgeschlossen werden sollen.</para
 > 
 
 </refsect1>
@@ -266,17 +266,17 @@ man sections 1, 6, 7 and 8--></para>
 >).</member>
 <!--for man pages replace "help:/" with "man:/" in this member-->
 <member
->kf5options(7)</member
+>kf6options(7)</member
 > <!-- only for application with a GUI-->
 <member
->qt5options(7)</member
+>qt6options(7)</member
 > <!-- only for application with a GUI-->
 <!--<member
 >foo(1)</member
 > more man page references if applicable-->
 <member
->Weitere Informationen finden Sie auf der Webseite <ulink url="https://kde.org/applications/en/utilities/org.kde.kbackup"
->https://kde.org/applications/en/utilities/org.kde.kbackup</ulink
+>Weitere Informationen finden Sie auf der Webseite <ulink url="https://apps.kde.org/kbackup"
+>https://apps.kde.org/kbackup</ulink
 > </member>
 </simplelist>
 </refsect1>
@@ -294,12 +294,12 @@ man sections 1, 6, 7 and 8--></para>
 >Autoren</title>
 <para
 >Kbackup wurde von Martin Koller <email
-> kollix@aon.at</email
+> martin@kollix.at</email
 > geschrieben. Diese Handbuchseite wurde von Scott Kitterman <email
 >scott@kitterman.com</email
 > erstellt und von Scarlett Moore <email
 >sgmoore@kde.org</email
-> aktualisiert, sie ist unter den gleichen Bedingungen wie  kbackup lizenziert.</para>
+> aktualisiert, sie ist unter den gleichen Bedingungen wie kbackup lizenziert.</para>
 </refsect1>
 
 </refentry
