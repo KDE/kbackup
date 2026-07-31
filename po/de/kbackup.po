@@ -827,7 +827,7 @@ msgid ""
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
 "Definiert Muster, getrennt durch je ein Leerzeichen, für Dateinamen, die bei "
-"einer Sicherung ignoriert werden. Z.B.: „*.ogg *.wav“"
+"einer Sicherung ignoriert werden. z. B.: „*.ogg *.wav“"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: SettingsDialog.ui:122
@@ -856,8 +856,8 @@ msgid ""
 "body></html>"
 msgstr ""
 "<html><head/><body><p>Definiert eine Liste von absoluten Pfadmustern, welche "
-"verwendet werden um gesamte Ordner zu ignorieren,<br/>z.B.: /home/*/.mozilla/"
-"*/Cache</p></body></html>"
+"verwendet werden um gesamte Ordner zu ignorieren,<br/>z. B.: /home/*/."
+"mozilla/*/Cache</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, compressFiles)
 #: SettingsDialog.ui:171
