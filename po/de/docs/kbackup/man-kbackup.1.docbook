@@ -24,7 +24,7 @@ where x is the manual section, see https://en.wikipedia.org/wiki/Man_page#Manual
 ></author>
 <!--Date when this manpage was written, in the ISO 8601 format 'yyyy-mm-dd'-->
 <date
->2020–07–23</date>
+>2020-07-23</date>
 <!--version information of application this manpage is valid for.
 Change date/releaseinfo only if
    docbook is updated and verified to be valid for the current app version
