@@ -397,7 +397,7 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
 msgstr ""
-"في وضع auto/autobg اجعل النسخ الاحتياطي ليكون نسخة احتياطية كاملة بدلاً من "
+"في وضع auto/autobg اجعل النسخ الاحتياطي ليكون نسخة احتياطية كاملة بدلًا من "
 "العمل على حسب إعدادات التشكيلة."
 
 #: main.cxx:149 MainWindow.cxx:211
@@ -791,7 +791,7 @@ msgstr "فترة النسخ الاحتياطي الكاملة"
 #, kde-format
 msgid "How often shall a full backup, instead of an incremental one, be done"
 msgstr ""
-"كم مرة يجب إجراء النسخ الاحتياطي الكامل، بدلاً من النسخ الاحتياطي التدريجي؟"
+"كم مرة يجب إجراء النسخ الاحتياطي الكامل، بدلًا من النسخ الاحتياطي التدريجي؟"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:87
