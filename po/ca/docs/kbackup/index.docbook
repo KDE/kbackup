@@ -250,7 +250,7 @@
 >--forceFull</option
 >. </para>
 <para
->Una còpia de seguretat completa forçada reiniciarà el cicle de la còpia de seguretat, &ead;, el &kbackup; comptarà els dies fins a la propera còpia de seguretat completa des del moment de la darrera còpia de seguretat completa. </para>
+>Una còpia de seguretat completa forçada reiniciarà el cicle de la còpia de seguretat, &ead;, el &kbackup; comptarà els dies fins a la següent còpia de seguretat completa des del moment de la darrera còpia de seguretat completa. </para>
 </sect1>
 
 
