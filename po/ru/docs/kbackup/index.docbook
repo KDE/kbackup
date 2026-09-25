@@ -1,0 +1,727 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+  <!ENTITY kbackup "<application
+>KBackup</application
+>"
+><!--FIXME remove entitiy when kbackup depends on kdoctools
+>= 5.42-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE">
+]>
+
+<book id="kbackup" lang="&language;">
+
+<bookinfo>
+<title
+>Руководство пользователя &kbackup;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Martin</firstname
+> <surname
+>Koller</surname
+> </personname
+> <email
+>martin@kollix.at</email
+> </author>
+</authorgroup>
+
+<othercredit role="translator"
+><firstname
+>Алексей</firstname
+><surname
+>Кузнецов</surname
+><affiliation
+><address
+><email
+>Alexey.Kouznetsov@gmail.com</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+
+<copyright>
+<year
+>2006 - 2017</year>
+<holder
+>Martin Koller</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>5 января 2018 г.</date>
+<releaseinfo
+>Приложения KDE 18.04</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&kbackup; &mdash; инструмент для создания резервных копий. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>system</keyword>
+<keyword
+>KBackup</keyword>
+<keyword
+>backup</keyword>
+<keyword
+>storage</keyword>
+<keyword
+>archive</keyword>
+<keyword
+>zip</keyword>
+<keyword
+>gzip</keyword>
+<keyword
+>bzip2</keyword>
+<keyword
+>xz</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Введение</title>
+
+<para
+>&kbackup; &mdash; программа, позволяющая создавать резервные копии любых файлов и каталогов, выбирая их в удобном дереве каталогов. Программа позволяет сохранять параметры резервирования в так называемых файлах <quote
+>профилей</quote
+>; это обычные текстовые файлы, где записывается информация о файлах и каталогах, включённых в процесс резервирования или исключённых из него. Также можно определять место хранения архива. Это может быть как локальный каталог (например локально подключённое устройство, такое как привод&nbsp;ZIP, USB-накопитель и т. п.), так и любой удалённый &URL; (например smb://remote/some_path) для резервирования данных на центральном сервере и т. п. </para>
+
+<para
+>Программа также позволяет автоматически создавать резервные копии без использования графического интерфейса пользователя. Достаточно создать профиль и с помощью этих параметров указать &kbackup;, что делать при работе в неинтерактивном режиме, например, при запуске из задания cron. </para>
+
+<para
+>Основное назначение программы &mdash; быть достаточно простой для использования людьми, далёкими от компьютеров. </para>
+
+<para
+>Форматом хранения архивов является широко известный формат TAR, причём данные можно хранить в сжатом виде (xz, bzip2 или gzip). </para>
+
+<para
+>В текущей версии реализовано только создание резервных копий. Чтобы восстановить данные, сейчас нужно открыть архивы TAR, например, в &dolphin; и перетащить файлы обратно в файловую систему. В этом тоже преимущество широко известного и хорошо поддерживаемого формата TAR. </para>
+<para
+>Если файлы сжаты, распаковать все файлы из текущего каталога и его подкаталогов можно следующей командой: </para>
+<para>
+<programlisting
+>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
+</para>
+<para
+>Кроме того, извлечь полную резервную копию или отдельные файлы из копии можно с помощью &ark;.</para>
+</chapter>
+
+<chapter id="using-kbackup">
+<title
+>Использование &kbackup;</title>
+
+<para
+>Всё, что нужно, — это выбрать копируемые каталоги. Для этого выставьте отметки напротив нужных каталогов в дереве в левой части главного окна. </para>
+
+<para
+>При выборе каталога &kbackup; автоматически включит в резервную копию все его подкаталоги и входящие в них файлы. Чтобы исключить часть содержимого каталога, просто снимите отметку с соответствующих файлов и подкаталогов внутри него. </para>
+
+<para
+>В целом это означает: выбранный каталог будет содержать всё, что находится в нём и во вложенных каталогах, кроме тех частей, выбор которых снят. Кроме того, при повторном использовании профиля (см.&nbsp;ниже) новые файлы, добавленные в уже выбранный для резервирования каталог, также будут сохранены. </para>
+
+<para>
+
+<screenshot>
+<screeninfo
+>Снимок &kbackup;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="mainwindow.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>Снимок экрана главного окна</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="kbackup-profiles">
+<title
+>Работа с профилями</title>
+
+<para
+>Выбор каталогов, предназначенных для резервного копирования, можно сохранять в файлах профилей &kbackup;. Для этого выберите пункт <guimenuitem
+>Сохранить профиль</guimenuitem
+> в меню <guimenu
+>Файл</guimenu
+>. </para>
+
+<para
+>Для загрузки сохранённого выделения в &kbackup; используйте пункт меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Загрузить профиль…</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>&kbackup; сохраняет в профиле выбор включённых и исключённых каталогов и файлов, каталог/&URL; назначения, префикс (общее имя) архива, наибольший допустимый размер тома и т. п. </para>
+
+<para
+>Для упрощения ежедневного резервирования одних и тех же файлов сохраните настройки в профиль &kbackup; (файл <filename class="extension"
+>.kbp</filename
+>), а затем передавайте этот файл в командной строке. </para>
+
+<para
+>например: </para>
+
+<para>
+<programlisting
+>kbackup myData.kbp</programlisting>
+</para>
+
+<para
+>Подсказка: можно также создать на рабочем столе ярлык на файл <filename class="extension"
+>.kbp</filename
+>, так как этот тип файлов зарегистрирован для запуска &kbackup; при двойном щелчке. </para>
+
+</sect1>
+
+<sect1 id="archive-slices">
+<title
+>Тома архива</title>
+<para
+>Так как ёмкость носителя обычно ограничена (например ZIP-диск на 100 МБ), &kbackup; разбивает архив на несколько томов. </para>
+<para
+>Наждый том имеет собственное имя, вроде: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>Имя содержит дату и время копирования (одинаковые для всех томов архива) и порядковый номер тома (в этом примере&nbsp;&mdash;&nbsp;_1) </para>
+<para
+>В меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Параметры профиля…</guimenuitem
+></menuchoice
+> можно задать префикс архива, отличный от используемого по умолчанию (<quote
+>backup</quote
+>). </para>
+
+<para
+>В диалоговом окне <guilabel
+>Параметры профиля</guilabel
+> можно также задать наибольший допустимый размер тома, причём это ограничение будет работать, даже если на носителе ещё остаётся свободное место. Это нужно для создания томов архива, которые позже можно записать на &CD;/&DVD; и т. п. Если размер тома ограничен, то доступный размер будет отмечен значком (*) в главном окне. </para>
+<para
+>Но даже если задать для тома <quote
+>неограниченный</quote
+> размер, существуют и другие ограничения размера тома: <itemizedlist>
+<listitem
+><para
+>ограничен каталогом назначения (при сохранении непосредственно в локальный каталог)</para
+></listitem>
+<listitem
+><para
+>ограничивается каталогом <filename class="directory"
+>/tmp</filename
+> при создании временного файла для последующей отправки на удалённый &URL;</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>В разделе <guilabel
+>Параметры профиля</guilabel
+> можно также задать максимальное число полных резервных копий, хранимых в каталоге назначения, — тогда все более старые копии в нём будут удаляться автоматически. Например, если задать значение 3, &kbackup; сохранит последние 3 копии, а все более старые удалит. </para>
+
+</sect1>
+
+
+<sect1 id="incremental-backup">
+<title
+>Инкрементное резервное копирование</title>
+<para
+>При инкрементном резервном копировании сохраняются не все файлы, а только изменённые с момента последнего резервного копирования. Большое преимущество в том, что инкрементная копия обычно содержит гораздо меньше файлов, чем полная, и поэтому создаётся значительно быстрее. </para>
+<para
+>Это работает так: в профиле задаётся интервал (в днях) для полного резервирования. Например, если задать 5 дней, то &kbackup; будет выполнять полное резервирование всех файлов каждые 5 дней. Если запустить &kbackup; с этим профилем до истечения интервала — независимо от того, как часто выполняется резервирование, — будут сохранены только файлы, изменившиеся с момента последнего резервирования. &kbackup; сохраняет отметку времени последнего резервирования в профиле и поэтому знает, что делать при следующем запуске. </para>
+<para
+>Файлы томов архива, созданные при инкрементном резервном копировании, содержат в имени текст <quote
+>_inc</quote
+>, например: </para>
+<para
+>backup_2010.06.14-18.50.26_1_inc.tar </para>
+<para
+>Имена файлов томов полной резервной копии не содержат <quote
+>_inc</quote
+>, например: </para>
+<para
+>backup_2010.06.13-20.58.14_1.tar </para>
+<para
+>При восстановлении файлов из инкрементной резервной копии важно искать самую последнюю версию восстанавливаемого файла во всех файлах <quote
+>_inc</quote
+> и, наконец, в последнем томе полной резервной копии. В этом и заключается недостаток инкрементного резервного копирования (но не бывает преимуществ без недостатков ;-) ) </para>
+<para
+>Если требуется создать полную резервную копию раньше, чем истечёт заданный в профиле цикл инкрементного резервного копирования, установите флажок <guilabel
+>Принудительное полное резервное копирование</guilabel
+> в пользовательском интерфейсе. При запуске &kbackup; из командной строки для этого служит параметр <option
+>--forceFull</option
+> </para>
+<para
+>Принудительное полное резервное копирование перезапускает цикл резервного копирования, &ie; &kbackup; отсчитывает дни до следующего полного резервного копирования от момента последнего полного резервного копирования. </para>
+</sect1>
+
+
+<sect1 id="archive-compression">
+<title
+>Сжатие архива</title>
+<para
+>&kbackup; сжимает сохраняемые файлы, если включить эту возможность в параметрах профиля. В зависимости от наличия в системе выбирается сжатие <command
+>xz</command
+>, <command
+>bzip2</command
+> или <command
+>gzip</command
+>. &kbackup; сжимает каждый файл по отдельности и помещает все файлы с добавленным расширением (<filename class="extension"
+>.xz</filename
+>, <filename class="extension"
+>.bzip2</filename
+> или <filename class="extension"
+>.gz</filename
+>) в архив <filename class="extension"
+>.tar</filename
+>, который при этом не сжимается. </para>
+
+<para
+>Если выбрано создание резервной копии на локальной файловой системе (например дополнительный диск, ZIP-дисковод и т. п.) — то есть удалённый &URL; назначения не указан — &kbackup; может разбить всю резервную копию на несколько томов архива из-за ограничений ёмкости носителя. </para>
+<para
+>например: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>backup_2006.08.26-13.04.44_2.tar </para>
+
+</sect1>
+
+<sect1 id="automating">
+<title
+>Автоматизация резервного копирования</title>
+
+<para
+>Чтобы автоматизировать создание резервных копий, &kbackup; предлагает различные параметры командной строки: <itemizedlist>
+<listitem
+><para
+><option
+>--auto</option
+></para>
+<para
+>Если запустить &kbackup; с этим параметром и указанным профилем <filename class="extension"
+>.kbp</filename
+>, приложение запустится, загрузит указанный профиль, выполнит резервное копирование и по его завершении закончит работу. Всё это происходит при видимом пользовательском интерфейсе &kbackup;. </para>
+</listitem>
+
+<listitem
+><para
+><option
+>--autobg</option
+></para>
+<para
+>Если запустить &kbackup; с этим параметром и указанным профилем <filename class="extension"
+>.kbp</filename
+>, будет выполнен тот же процесс, что и с <option
+>--auto</option
+>, но <emphasis
+>без</emphasis
+> показа какого-либо графического интерфейса пользователя. Поэтому суффикс <quote
+>bg</quote
+>, означающий <quote
+>background</quote
+>, — всё выполняется в фоне, так что этот параметр подходит для создания резервных копий, например, запускаемых заданием cron. </para>
+<para
+>При использовании <option
+>--autobg</option
+> вывод &kbackup; — показывающий ход создания резервной копии — записывается в stderr. По умолчанию вывод содержит лишь несколько важных сообщений и сводку в конце. Если дополнительно указать <option
+>--verbose</option
+>, будут показаны также имена всех файлов, для которых в данный момент создаётся резервная копия. </para>
+</listitem>
+</itemizedlist>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title
+>Список команд</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>Главное окно &kbackup;</title>
+
+ 
+
+<sect2>
+<title
+>Меню «Файл»</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Последние файлы</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Показывает подменю с недавно использованными профилями для быстрого выбора. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Новый профиль</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Убирает выделение и очищает строку ввода каталога назначения, так что можно создать новый профиль резервирования.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Загрузить профиль…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Загружает профиль.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>файл</guimenu
+> <guimenuitem
+>Сохранить профиль</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Сохраняет все параметры в текущий загруженный профиль.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Сохранить профиль как…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Сохраняет все параметры в профиль под новым именем.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Параметры профиля…</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Здесь можно указать, начинаются ли имена файлов томов архива с имени по умолчанию <quote
+>backup</quote
+> или с другого имени. Также можно ограничить размер тома архива. См. главу <link linkend="archive-slices"
+>Тома архива</link
+>. Эти параметры сохраняются в профиле. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Завершение работы</action
+> &kbackup;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Меню «Настройка»</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Убирать в системный лоток</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Когда этот параметр включён, в системном лотке показывается значок программы. Он отражает текущее состояние резервирования. Во время резервирования показывается анимация, в остальное время — статичный значок. При этом закрытие главного окна программы не приведёт к выходу из неё. Для завершения работы нужно будет выбрать пункт <guimenuitem
+>Выход</guimenuitem
+> меню «Файл». С помощью контекстного меню значка &kbackup; в системном лотке можно запустить и отменить резервирование — то же самое, что можно сделать в главном окне. Всплывающая подсказка этого значка также даёт информацию о ходе резервирования (число сохранённых файлов, размер резервной копии и имя последнего сохранённого файла). </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Включить все сообщения</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>При выборе этого пункта сбрасываются все внутренние флажки <guilabel
+>Не задавать больше этот вопрос</guilabel
+> для диалоговых окон &kbackup;. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Показывать скрытые файлы</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Включает или отключает</action
+> показ скрытых файлов (имя которых начинается с точки) в дереве каталогов. Этот параметр позволяет исключить из резервной копии отдельные скрытые файлы. Чтобы исключить все скрытые файлы, задайте фильтр имён файлов в параметрах профиля. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2 id="help-menu1">
+<title
+>Меню «Справка»</title>
+<para
+>В &kbackup; есть стандартное для &kde; меню <guimenu
+>Справка</guimenu
+>. Подробнее о нём — в разделе <ulink url="help:/fundamentals/menus.html#menus-help"
+>Меню «Справка»</ulink
+> документа «Основы &kde;». </para>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Справка для разработчиков &kbackup;</title>
+
+<para
+>Функциональность &kbackup; может быть расширена за счёт сценария оболочки (или другого исполняемого файла), который будет запускаться в трёх точках процесса резервного копирования. Идея в том, чтобы позволить подключать, отключать и извлекать носители способом, зависящим от системы, или выполнять другие действия с созданными файлами архива. </para>
+
+<para
+>Сценарий для исполнения должен быть передан с помощью параметра командной строки <option
+>--script</option
+>. </para>
+
+<para
+>Пример сценария:</para>
+
+<example
+><title
+>sliceScript.sh</title>
+<programlisting
+>#!/bin/sh
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+    if [ "$mountPoint" != "" ]
+    then
+      mount /media/zip
+      rm -f /media/zip/backup_2*.tar*
+    fi
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+    if [ "$mountPoint" != "" ]
+    then
+      umount /media/zip
+      eject /media/zip
+    fi
+ ;;
+esac
+</programlisting>
+</example>
+
+<para
+>Сценарию всегда передаются четыре аргумента командной строки: </para>
+<itemizedlist>
+<listitem
+><para
+>режим вызова</para
+> </listitem>
+<listitem
+><para
+>имя архива (тома)</para
+> </listitem>
+<listitem
+><para
+>каталог назначения/&URL;</para
+> </listitem>
+<listitem
+><para
+>точка монтирования каталога назначения, если это локальный каталог, иначе пустая строка</para
+> </listitem>
+</itemizedlist>
+
+<para
+>Возможны три режима вызова: </para>
+
+<para>
+<itemizedlist>
+
+<listitem
+><para
+>slice_init</para>
+<para
+>вызывается перед созданием нового тома архива на диске</para>
+ </listitem>
+
+<listitem
+><para
+>slice_closed</para>
+<para
+>после завершения создания тома, но до перемещения его в каталог назначения</para>
+<para
+>Этот режим может пригодиться для дополнительного копирования тома архива в другое место (например, для отправки его на центральный сервер через &URL; назначения), если нужно сохранить последнюю резервную копию также на локальном диске. </para>
+</listitem>
+
+<listitem
+><para
+>slice_finished</para>
+<para
+>вызывается после успешной передачи тома архива в каталог назначения</para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Авторские права и лицензия</title>
+
+<para
+>&kbackup; </para>
+<para
+>&copy; Martin Koller <email
+>martin@kollix.at</email
+>, 2006–2009 (программа) </para>
+
+<para
+>Права на документацию (2006 - 2009) &copy; 2006 - 2009 Martin Koller </para>
+
+<para
+>Перевод на русский язык: Алексей Кузнецов <email
+>Alexey.Kouznetsov@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
