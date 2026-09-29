@@ -1,0 +1,306 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "/usr/share/kf5/kdoctools/customization/dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<!--Rename this template to man-$applicationname.x.docbook,
+where x is the manual section, see https://en.wikipedia.org/wiki/Man_page#Manual_sections
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<!-- replace Foo with the application name-->
+<title
+>Руководство пользователя KBackup</title>
+<author
+><personname
+> <firstname
+>Scarlett</firstname
+> <surname
+>Moore</surname
+> </personname
+> <email
+>sgmoore@kde.org</email
+></author>
+<!--Date when this manpage was written, in the ISO 8601 format 'yyyy-mm-dd'-->
+<date
+>2020-07-23</date>
+<!--version information of application this manpage is valid for.
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   docbook is proofreaded and verified to be valid for the current app version
+-->
+<releaseinfo
+>Приложения 20.04</releaseinfo>
+<!-- replace $applicationname with the application name; &kde; as prefix/namespace could
+be not needed, ask the promo team in case of doubt
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+
+<productname
+>Приложения KDE</productname>
+<!-- no productname in man pages for extragear applications -->
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbackup</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbackup</command
+></refname>
+<refpurpose
+>Программа резервного копирования с удобным интерфейсом</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="_synopsis">
+<cmdsynopsis
+><command
+>kbackup</command
+> <arg rep="repeat"
+><replaceable
+>OPTIONS</replaceable
+></arg
+> <arg rep="repeat"
+><replaceable
+>Module name | Module set name</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1>
+<title
+>ОПИСАНИЕ</title>
+<para
+>KBackup — приложение для резервного копирования любых каталогов и файлов. Для выбора объектов резервного копирования служит простое в использовании дерево каталогов, а параметры сохраняются в файлах «профилей». Это простые текстовые файлы, содержащие определения каталогов и файлов, включаемых в резервную копию или исключаемых из неё.</para
+> 
+
+</refsect1>
+
+<refsect1>
+<title
+>ПАРАМЕТРЫ</title>
+<!--App options, in a variablelist-->
+<variablelist>
+<varlistentry>
+<term>
+    <option
+>-v, --version</option>
+</term>
+<listitem>
+    <para
+>Показывает сведения о версии.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>-h, --help</option>
+</term>
+<listitem>
+    <para
+>Показывает справку по параметрам командной строки.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--help-all</option>
+</term>
+<listitem>
+    <para
+>Показывает справку, включая параметры, специфичные для Qt.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--help-all --qmljsdebugger <replaceable
+>value</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Активирует отладчик QML/JS на указанном порту. Значение должно иметь формат port:1234[,block]; при указании «block» приложение ожидает подключения.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--script <replaceable
+>file</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Сценарий, выполняемый после создания каждого среза архива.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--auto <replaceable
+>profile</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Автоматически запускает резервное копирование с указанным профилем и завершает работу по его окончании.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--autobg <replaceable
+>profile</replaceable
+> </option>
+</term>
+<listitem>
+    <para
+>Автоматически запускает резервное копирование с указанным профилем в фоне (без показа окна) и завершает работу после его окончания.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--verbose <replaceable
+>profile</replaceable
+></option>
+</term>
+<listitem>
+    <para
+>Выводит подробные сведения и показывает имя каждого файла при резервном копировании в автоматическом фоновом режиме.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--forceFull </option>
+</term>
+<listitem>
+    <para
+>В режиме auto/autobg принудительно создаёт полную резервную копию вместо использования параметров профиля.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--author</option>
+</term>
+<listitem>
+    <para
+>Показывает сведения об авторе.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--license</option>
+</term>
+<listitem>
+    <para
+>Показывает сведения о лицензии.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+    <option
+>--desktopfile <replaceable
+>file</replaceable
+> </option>
+</term>
+<listitem>
+    <para
+>Базовое имя файла записи рабочего стола для этого приложения.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<!--The Following sections are optional, but recommended if they are
+applicable.-->
+
+<refsect1>
+<title
+>ОКРУЖЕНИЕ</title>
+<para
+><!--Environment variables that affect this command, how to set
+them, who sets them, how they affect it, probably in a variablelist.  Only for
+man sections 1, 6, 7 and 8--></para>
+</refsect1>
+
+<refsect1>
+<title
+>ФАЙЛЫ</title>
+<para
+>Файлы профилей .kbp. Создаются пользователем при сохранении профиля.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Смотрите также</title>
+<simplelist>
+<member
+>Более подробная документация для пользователя доступна по адресу <ulink url="help:/kbackup"
+>help:/kbackup</ulink
+> (введите этот &URL; в &konqueror; или выполните <userinput
+><command
+>khelpcenter</command
+> <parameter
+>man:/kbackup</parameter
+></userinput
+>).</member>
+<!--for man pages replace "help:/" with "man:/" in this member-->
+<member
+>kf6options(7)</member
+> <!-- only for application with a GUI-->
+<member
+>qt6options(7)</member
+> <!-- only for application with a GUI-->
+<!--<member
+>foo(1)</member
+> more man page references if applicable-->
+<member
+>Дополнительные сведения также доступны на странице <ulink url="https://apps.kde.org/kbackup"
+>https://apps.kde.org/kbackup</ulink
+> </member>
+</simplelist>
+</refsect1>
+
+<refsect1>
+<title
+>Примеры</title>
+<para
+>kbackup myData.kbp Используется для загрузки существующего профиля. </para>
+</refsect1>
+
+
+<refsect1>
+<title
+>Авторы</title>
+<para
+>Автор KBackup — Martin Koller <email
+> martin@kollix.at</email
+>. Страница руководства создана Scott Kitterman <email
+>scott@kitterman.com</email
+> и обновлена Scarlett Moore <email
+>sgmoore@kde.org</email
+>; она распространяется на тех же условиях, что и KBackup.</para>
+</refsect1>
+
+</refentry
+> 
