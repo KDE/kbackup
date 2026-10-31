@@ -880,6 +880,3 @@ msgstr "Comprimeix els fitxers"
 #, kde-format
 msgid "backup"
 msgstr "Còpia de seguretat"
-
-#~ msgid "Could not write to temporary file"
-#~ msgstr "No s'ha pogut escriure al fitxer temporal"
