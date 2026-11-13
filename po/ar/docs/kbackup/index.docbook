@@ -1,0 +1,709 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+  <!ENTITY kbackup "<application
+>KBackup</application
+>"
+><!--FIXME remove entitiy when kbackup depends on kdoctools
+>= 5.42-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE">
+]>
+
+<book id="kbackup" lang="&language;">
+
+<bookinfo>
+<title
+>دليل النسخ الاحتياطي ك</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Martin</firstname
+> <surname
+>Koller</surname
+> </personname
+> <email
+>martin@kollix.at</email
+> </author>
+</authorgroup>
+
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+
+<copyright>
+<year
+>2006 - 2017</year>
+<holder
+>Martin Koller</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2018-01-05</date>
+<releaseinfo
+>تطبيقات 18.04</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>النسخ الاحتياطي ك هو تطبيق يتيح لك إجراء نسخ احتياطي لبياناتك بطريقة بسيطة وسهلة الاستخدام. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>نظام</keyword>
+<keyword
+>النسخ الاحتياطي ك</keyword>
+<keyword
+>نسخة احتياطية</keyword>
+<keyword
+>التخزين</keyword>
+<keyword
+>أرشيف</keyword>
+<keyword
+>zip</keyword>
+<keyword
+>gzip</keyword>
+<keyword
+>bzip2</keyword>
+<keyword
+>xz</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+
+<para
+>النسخ الاحتياطي ك هو برنامج يتيح لك نسخ أي مجلدات أو ملفات احتياطيًا، حيث يستخدم شجرة مجلدات سهلة الاستخدام لاختيار الأشياء المراد نسخها. كما يتيح لك حفظ إعداداتك في ملفات تسمى «تشكيلة»، والتشكيلة هي ملف نصي بسيط يحتوي على تعريفات للمجلدات والملفات التي ستُضمن أو تُستثنى من عملية النسخ الاحتياطي. كذلك يتيح لك تحديد مكان حفظ النسخة الاحتياطية. يمكن أن يكون الهدف إما مجلدًا محليًا (على سبيل المثال جهاز موصول محليًا مثل محرك ZIP، أو عصا USB، إلخ) أو يمكن أن يكون أي عنوان URL بعيد (مثلًا smb://remote/some_path) لنسخ بياناتك إلى خادم مركزي، إلخ. </para>
+
+<para
+>يمكن للبرنامج أيضًا تشغيل نسخ احتياطي آلي دون استخدام واجهة مستخدم رسومية. يمكن ببساطة إنشاء تشكيلة واستخدام هذه الإعدادات لإخبار النسخ الاحتياطي ك بما يجب فعله عند التشغيل في الوضع غير التفاعلي، مثلًا عبر تشغيله من مهمة مجدولة (cron job). </para>
+
+<para
+>صُمم البرنامج ليكون بسيطًا جدًا في استخدامه بحيث يمكن استخدامه من قبل غير الخبراء في الحاسوب. </para>
+
+<para
+>تنسيق التخزين هو تنسيق TAR المعروف، حيث يمكن تخزين البيانات بتنسيق مضغوط (xz أو bzip2 أو gzip). </para>
+
+<para
+>يوفر التنفيذ الحالي خطوة النسخ الاحتياطي فقط. لاستعادة البيانات إلى نظامك، يجب عليك حاليًا استخدام دولفين (Dolphin) مثلًا لفتح ملفات النسخ الاحتياطي TAR وسحب وإسقاط الملفات مرة أخرى إلى نظام ملفاتك. هذه أيضًا ميزة لاستخدام تنسيق ملفات TAR المعروف والمدعوم جيدًا. </para>
+<para
+>إذا كانت الملفات مضغوطة، يمكنك فك ضغط جميع الملفات من المجلد الحالي والنزول تفرعيًا عبر الأمر التالي: </para>
+<para>
+<programlisting
+>find . -name \*bz2 -print0 | xargs -0 bunzip2</programlisting>
+</para>
+<para
+>بدلًا من ذلك، يمكنك استخدام آرك (Ark) لاستخراج نسخة احتياطية كاملة أو مجرد بضعة ملفات من النسخة الاحتياطية.</para>
+</chapter>
+
+<chapter id="using-kbackup">
+<title
+>استخدام النسخ الاحتياطي ك</title>
+
+<para
+>كل ما عليك فعله هو اختيار المجلدات التي تريد تخزينها. يُفعل ذلك عبر اختيار جميع المجلدات في عرض الشجرة على الجانب الأيسر من النافذة الرئيسة. </para>
+
+<para
+>إذا اخترت مجلدًا، فسيقوم النسخ الاحتياطي ك آليًا بتخزين جميع الملفات والمجلدات الفرعية الموجودة تحته. إذا كنت تريد استثناء أجزاء من مجلد مختار، فما عليك سوى إلغاء اختيار تلك الملفات/المجلدات داخل المجلد المختار. </para>
+
+<para
+>بشكل عام، هذا يعني: المجلد المختار سيخزن كل شيء فيه وتحته، باستثناء الأجزاء الملغى اختيارها فيه. وهذا يعني أيضًا أنه كلما أعدت استخدام تشكيلة (انظر أدناه) لاحقًا وأُضيفت ملفات جديدة إلى مجلد مختار مسبقًا للنسخ الاحتياطي، فستُخزن جميع الملفات الجديدة أيضًا. </para>
+
+<para>
+
+<screenshot>
+<screeninfo
+>هذه لقطة شاشة للنسخ الاحتياطي ك</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="mainwindow.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>لقطة شاشة للنافذة الرئيسة</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+<sect1 id="kbackup-profiles">
+<title
+>استخدام التشكيلات</title>
+
+<para
+>للاحتفاظ باختيار لاستخدامه لاحقًا، ما عليك سوى حفظه في ملف تشكيلة للنسخ الاحتياطي ك. استخدم قائمة <guimenu
+>ملف</guimenu
+> واختر <guimenuitem
+>احفظ التشكيلة</guimenuitem
+>. </para>
+
+<para
+>لإعادة تحميل اختيار إلى النسخ الاحتياطي ك، استخدم عنصر قائمة <menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>حمّل تشكيلة...</guimenuitem
+></menuchoice
+>. </para>
+
+<para
+>يحفظ النسخ الاحتياطي ك في التشكيلة الاختيارات لجميع المجلدات/الملفات المضمنة، والمجلدات/الملفات المستثناة، ومجلد الهدف/عنوان URL، وبادئة الأرشيف المحددة، والحد الأقصى لحجم ملف الشريحة المحدد، إلخ. </para>
+
+<para
+>إذا كنت تريد تسهيل عملية النسخ الاحتياطي اليومي لمجموعة الملفات نفسها، فما عليك سوى تخزين إعداداتك في تشكيلة للنسخ الاحتياطي ك (ملف بامتداد <filename class="extension"
+>.kbp</filename
+>) وتمرير هذا الملف في سطر الأوامر. </para>
+
+<para
+>مثلًا: </para>
+
+<para>
+<programlisting
+>kbackup myData.kbp</programlisting>
+</para>
+
+<para
+>تلميحة: يمكنك أيضًا إنشاء اختصار على سطح مكتبك لملف <filename class="extension"
+>.kbp</filename
+> لأن نوع الملف مسجل لتشغيل النسخ الاحتياطي ك عند النقر المزدوج. </para>
+
+</sect1>
+
+<sect1 id="archive-slices">
+<title
+>شرائح الأرشيف</title>
+<para
+>بما أن الوسيط عادة ما يكون ذا سعة محدودة (مثل قرص ZIP بسعة 100 ميجابايت)، فسيقوم النسخ الاحتياطي ك بإنشاء عدة شرائح أرشيف. </para>
+<para
+>ستحصل كل شريحة أرشيف على اسمها الخاص، الذي يبدو كالتالي: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>يحتوي الاسم على تاريخ ووقت الإنشاء (والذي سيكون نفسه لجميع شرائح النسخة الاحتياطية الواحدة) ورقم تسلسل شريحة لاحق (_1 في هذا المثال). </para>
+<para
+>في قائمة <menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>إعدادات التشكيلة...</guimenuitem
+></menuchoice
+>، يمكنك تحديد بادئة أرشيف مختلفة عن القيمة المبدئية «backup». </para>
+
+<para
+>في حوار <guilabel
+>إعدادات التشكيلة</guilabel
+>، يمكنك أيضًا تحديد حد أقصى لحجم شريحة الأرشيف، مما يحد من حجم الشريحة حتى لو كانت هناك مساحة متبقية أكبر على جهاز الهدف. يساعد هذا في إنشاء شرائح أرشيف يمكن حرقها لاحقًا على أقراص مضغوطة أو رقمية، إلخ. إذا حددت صراحة حجم شريحة الأرشيف، فستُعلم المساحة المتاحة بعلامة (*) في النافذة الرئيسة. </para>
+<para
+>ولكن حتى لو عرفت شريحة لتكون بحجم «غير محدود»، فهناك قيود أخرى تحد من حجم الشريحة: <itemizedlist>
+<listitem
+><para
+>محدودة بمجلد الهدف (عند التخزين مباشرة في مجلد محلي)</para
+></listitem>
+<listitem
+><para
+>محدودة بمجلد <filename class="directory"
+>/tmp</filename
+> عندما ننشئ ملفًا مؤقتًا لرفعه لاحقًا إلى عنوان URL بعيد</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>في <guilabel
+>إعدادات التشكيلة</guilabel
+>، يمكنك أيضًا تحديد الحد الأقصى لعدد النسخ الاحتياطية الكاملة التي سيُحتفظ بها في مجلد الهدف، وبالتالي تُحذف جميع النسخ الاحتياطية الأقدم هناك آليًا. مثلًا إذا ضبطتها على 3، فسيحتفظ النسخ الاحتياطي ك بآخر 3 نسخ ويحذف جميع النسخ الأقدم. </para>
+
+</sect1>
+
+
+<sect1 id="incremental-backup">
+<title
+>النسخ الاحتياطي التزايدي</title>
+<para
+>مع النسخ الاحتياطي التزايدي، لن تُحفظ جميع الملفات في كل مرة يُشغل فيها النسخ الاحتياطي، بل فقط الملفات التي تغيرت منذ آخر عملية نسخ احتياطي. يتميز هذا بميزة كبيرة وهي أن النسخ التزايدي سيشمل عادةً ملفات أقل بكثير من النسخ الكامل، وبالتالي سيُنتهي منه في وقت أقصر بكثير. </para>
+<para
+>يعمل هذا كالتالي: في التشكيلة، تحدد فترة (بالأيام) للنسخ الاحتياطي الكامل. مثلًا عندما تحدد 5 أيام، فسيقوم النسخ الاحتياطي ك بعمل نسخة احتياطية كاملة لجميع الملفات كل 5 أيام. كلما بدأت النسخ الاحتياطي ك قبل انتهاء الفترة مع هذه التشكيلة - بغض النظر عن عدد مرات تشغيل النسخ الاحتياطي - فستُحفظ فقط الملفات التي تغيرت منذ آخر نسخة احتياطية. يخزن النسخ الاحتياطي ك الطابع الزمني لآخر نسخة احتياطية في التشكيلة، وبالتالي يعرف ما يجب فعله عند التشغيل في المرة القادمة. </para>
+<para
+>ستحتوي ملفات شرائح الأرشيف المنشأة أثناء النسخ الاحتياطي التزايدي على النص «_inc»، مثلًا: </para>
+<para
+>backup_2010.06.14-18.50.26_1_inc.tar </para>
+<para
+>ملفات شرائح النسخ الاحتياطي الكامل لن تتضمن «_inc» في الاسم، مثلًا: </para>
+<para
+>backup_2010.06.13-20.58.14_1.tar </para>
+<para
+>عندما يريد المرء استعادة ملفات من نسخة احتياطية تزايدية، فمن المهم البحث عن أحدث إصدار للملف المراد استعادته في جميع ملفات «_inc» وأخيرًا أيضًا في آخر ملف شريحة لنسخة احتياطية كاملة. وهذا بالضبط هو عيب النسخ الاحتياطي التزايدي (ولكن لا توجد ميزة بلا عيب 😉). </para>
+<para
+>إذا كنت تريد إجراء نسخة احتياطية كاملة قبل وقت دورة التزايد المحدد في التشكيلة، يمكنك فعل ذلك عبر تفعيل خيار <guilabel
+>أجبر النسخ الاحتياطي الكامل</guilabel
+> في واجهة المستخدم. عندما يُشغل النسخ الاحتياطي ك عبر سطر الأوامر، يمكن تحقيق ذلك باستخدام الخيار <option
+>--forceFull</option
+>. </para>
+<para
+>سيؤدي النسخ الاحتياطي الكامل المجبر إلى إعادة تشغيل دورة النسخ الاحتياطي، أي أن النسخ الاحتياطي ك سيحسب الأيام حتى النسخة الاحتياطية الكاملة التالية بدءًا من وقت آخر نسخة احتياطية كاملة. </para>
+</sect1>
+
+
+<sect1 id="archive-compression">
+<title
+>ضغط الأرشيف</title>
+<para
+>سيقوم النسخ الاحتياطي ك بضغط الملفات المخزنة إذا فعلت ذلك في إعدادات التشكيلة. واعتمادًا على توافره في نظامك، فإنه يختار ضغط <command
+>xz</command
+> أو <command
+>bzip2</command
+> أو <command
+>gzip</command
+>. سيقوم النسخ الاحتياطي ك بضغط كل ملف على حدة وتخزين جميع الملفات بامتداد ملف مضاف (<filename class="extension"
+>.xz</filename
+> أو <filename class="extension"
+>.bzip2</filename
+> أو <filename class="extension"
+>.gz</filename
+>) داخل أرشيف <filename class="extension"
+>.tar</filename
+> غير مضغوط حينها. </para>
+
+<para
+>عندما تختار إنشاء النسخة الاحتياطية على نظام ملفات محلي ما (مثل قرصك الإضافي، أو محرك ZIP، إلخ) - مما يعني أنك لم تدخل عنوان URL لهدف بعيد - فقد يقسم النسخ الاحتياطي ك النسخة الاحتياطية الكاملة إلى عدة شرائح أرشيف بسبب محدودية سعة الوسائط. </para>
+<para
+>مثلًا: </para>
+<para
+>backup_2006.08.26-13.04.44_1.tar </para>
+<para
+>backup_2006.08.26-13.04.44_2.tar </para>
+
+</sect1>
+
+<sect1 id="automating">
+<title
+>أتمتة النسخ الاحتياطي</title>
+
+<para
+>إذا كنت تريد أتمتة عملية النسخ الاحتياطي، فإن النسخ الاحتياطي ك يقدم خيارات سطر أوامر مختلفة للمساعدة في ذلك: <itemizedlist>
+<listitem
+><para
+><option
+>--auto</option
+></para>
+<para
+>عند تشغيل النسخ الاحتياطي ك بهذا الخيار وتشكيلة <filename class="extension"
+>.kbp</filename
+> معينة، فإنه سيبدأ ويحمل التشكيلة المعطاة ويشغل النسخ الاحتياطي ثم ينتهي عند الفراغ. يُفعل كل ذلك بواجهة مستخدم مرئية للنسخ الاحتياطي ك. </para>
+</listitem>
+
+<listitem
+><para
+><option
+>--autobg</option
+></para>
+<para
+>عند تشغيل النسخ الاحتياطي ك بهذا الخيار وتشكيلة <filename class="extension"
+>.kbp</filename
+> معينة، فإنه سيشغل العملية نفسها كما في <option
+>--auto</option
+> ولكن <emphasis
+>دون</emphasis
+> إظهار أي واجهة مستخدم رسومية. ومن هنا جاءت اللاحقة «bg» التي ترمز إلى «الخلفية» (background) - حيث يُفعل كل شيء في الخلفية، لذا فهذا هو الخيار المناسب للاستخدام عند إجراء نسخ احتياطي يُشغل مثلًا بواسطة مهمة مجدولة (cron job). </para>
+<para
+>عند استخدام <option
+>--autobg</option
+>، فإن مخرجات النسخ الاحتياطي ك - التي تظهر تقدم النسخ الاحتياطي - تُكتب في مخرجات الخطأ القياسية (stderr). المخرجات مبدئيًا لا تتضمن سوى بضع رسائل مهمة وملخص في النهاية. إذا مررت الخيار <option
+>--verbose</option
+> بالإضافة إلى ذلك، فسترى أيضًا اسم كل ملف يُنسخ احتياطيًا حاليًا. </para>
+</listitem>
+</itemizedlist>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title
+>مرجع الأوامر</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>نافذة النسخ الاحتياطي ك الرئيسة</title>
+
+ 
+
+<sect2>
+<title
+>قائمة ملف</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>افتح الأخير</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يُظهر قائمة فرعية تحتوي على التشكيلات المستخدمة مؤخرًا لسهولة الاختيار. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>تشكيلة جديدة</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يمسح الاختيار وحقل إدخال الهدف، لتتمكن من تعريف تشكيلة جديدة.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>حمّل تشكيلة...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يُحمل تشكيلة.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>احفظ التشكيلة</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يحفظ جميع الإعدادات في التشكيلة المحملة حاليًا.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>احفظ التشكيلة باسم...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يحفظ جميع الإعدادات في تشكيلة باسم جديد.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>إعدادات التشكيلة...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>في الإعدادات، يمكنك تحديد ما إذا كانت ملفات شرائح الأرشيف تبدأ بالاسم المبدئي «backup» أو باسم بديل. كما يمكنك تحديد حجم شريحة الأرشيف. انظر فصل <link linkend="archive-slices"
+>شرائح الأرشيف</link
+>. تُخزن هذه الإعدادات أيضًا في التشكيلة. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>أنهِ</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يُنهي</action
+> النسخ الاحتياطي ك.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>قائمة الإعدادات</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>الإعدادات</guimenu
+> <guimenuitem
+>أرسِ في صينية النظام</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>عند تفعيل هذا الخيار، ستظهر أيقونة في صينية النظام تعكس الحالة الحالية لعملية النسخ الاحتياطي. ستظهر حركة عند تقدم عملية النسخ الاحتياطي، وإلا فسترى أيقونة ثابتة. إذا اختير هذا الخيار، فإن إغلاق النافذة الرئيسة لن ينهي النسخ الاحتياطي ك. يجب إنهاء التطبيق صراحةً باختيار إجراء <guimenuitem
+>أنهِ</guimenuitem
+>. عبر القائمة السياقية لأيقونة النسخ الاحتياطي ك في صينية النظام، يمكنك بدء وإلغاء عملية النسخ الاحتياطي - وهو ما يمكنك فعله نفسه في النافذة الرئيسة. كما تعطي تلميحة هذه الأيقونة معلومات عن التقدم (عدد الملفات المحفوظة، وحجم النسخة الاحتياطية، وآخر ملف حُفظ). </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>الإعدادات</guimenu
+> <guimenuitem
+>مكّن جميع الرسائل</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يؤدي تفعيل هذا المدخل إلى مسح جميع أعلام <guilabel
+>لا تسألني مرة أخرى</guilabel
+> المخزنة داخليًا للحوارات التي تظهر في النسخ الاحتياطي ك. </action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>الإعدادات</guimenu
+> <guimenuitem
+>أظهر الملفات المخفية</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يمكّن أو يعطل</action
+> عرض الملفات المخفية (التي تبدأ بنقطة) في عرض الشجرة. استخدم هذا الخيار إذا كنت تريد استثناء بعض الملفات المخفية من النسخ الاحتياطي. إذا كنت تريد استثناء جميع الملفات المخفية، فاستخدم مرشح أسماء الملفات في إعدادات التشكيلة. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</sect2>
+
+<sect2 id="help-menu1">
+<title
+>قائمة مساعدة</title>
+<para
+>يحتوي النسخ الاحتياطي ك على عنصر قائمة <guimenu
+>مساعدة</guimenu
+> الشائع في كيدي، لمزيد من المعلومات اقرأ القسم الخاص بـ <ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة مساعدة</ulink
+> في أساسيات كيدي. </para>
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>دليل المطور للنسخ الاحتياطي ك</title>
+
+<para
+>يمكن توسيع النسخ الاحتياطي ك باستخدام سكربت صدفة (أو أي ملف تنفيذي آخر) والذي سيُبدأ في ثلاث نقاط مختلفة أثناء عملية النسخ الاحتياطي. الفكرة من وراء ذلك هي السماح بوصل وفصل وإخراج الوسائط بطريقة مخصصة للنظام، أو القيام بأشياء أخرى بملفات الأرشيف المنتجة. </para>
+
+<para
+>يجب إعطاء السكربت المراد تنفيذه عبر خيار سطر الأوامر <option
+>--script</option
+>. </para>
+
+<para
+>إليك سكربت عينة:</para>
+
+<example
+><title
+>sliceScript.sh</title>
+<programlisting
+>#!/bin/sh
+
+mode=$1
+archive=$2
+target=$3
+mountPoint=$4
+
+case "$mode" in
+ "slice_init" )
+    if [ "$mountPoint" != "" ]
+    then
+      mount /media/zip
+      rm -f /media/zip/backup_2*.tar*
+    fi
+ ;;
+
+ "slice_closed" )
+ ;;
+
+ "slice_finished" )
+    if [ "$mountPoint" != "" ]
+    then
+      umount /media/zip
+      eject /media/zip
+    fi
+ ;;
+esac
+</programlisting>
+</example>
+
+<para
+>يُستدعى السكربت دائمًا بأربعة معاملات في سطر الأوامر: </para>
+<itemizedlist>
+<listitem
+><para
+>وضع الاستدعاء</para
+> </listitem>
+<listitem
+><para
+>اسم ملف (شريحة) الأرشيف</para
+> </listitem>
+<listitem
+><para
+>دليل/عنوان URL الهدف</para
+> </listitem>
+<listitem
+><para
+>نقطة وصل دليل الهدف إذا كان دليلًا محليًا، وإلا ستكون سلسلة نصية فارغة</para
+> </listitem>
+</itemizedlist>
+
+<para
+>هناك ثلاثة أوضاع استدعاء ممكنة: </para>
+
+<para>
+<itemizedlist>
+
+<listitem
+><para
+>slice_init</para>
+<para
+>تُستدعى قبل إنشاء شريحة أرشيف جديدة على القرص</para>
+ </listitem>
+
+<listitem
+><para
+>slice_closed</para>
+<para
+>تُستدعى بعد إنشاء شريحة الأرشيف، ولكن قبل وضعها في دليل الهدف</para>
+<para
+>يمكن استخدام هذا إذا كنت تريد نسخ شريحة الأرشيف إلى مكان إضافي، مثلًا يُرسل الأرشيف إلى الخادم الرئيس (عبر عنوان URL للهدف)، ولكنك تريد الاحتفاظ بآخر نسخة احتياطية أيضًا على القرص المحلي. </para>
+</listitem>
+
+<listitem
+><para
+>slice_finished</para>
+<para
+>تُستدعى بعد نقل شريحة الأرشيف بنجاح إلى دليل الهدف</para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>الحقوق والترخيص</title>
+
+<para
+>النسخ الاحتياطي ك </para>
+<para
+>حقوق كود البرنامج محفوظة &copy; 2006 - 2009 لمارتن كولر <email
+>martin@kollix.at</email
+> </para>
+
+<para
+>حقوق التوثيق محفوظة &copy; 2006 - 2009 لمارتن كولر </para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
