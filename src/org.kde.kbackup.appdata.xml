@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>org.kde.kbackup</id>
   <metadata_license>FSFAP</metadata_license>
-  <project_license>GPL-2.0+</project_license>
+  <project_license>GPL-2.0-or-later</project_license>
   <name>KBackup</name>
   <name xml:lang="ar">النسخ الاحتياطي ك</name>
   <name xml:lang="ast">KBackup</name>
@@ -311,6 +311,9 @@
   <launchable type="desktop-id">org.kde.kbackup.desktop</launchable>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kbackup</url>
   <url type="help">https://docs.kde.org/?application=kbackup</url>
+  <url type="vcs-browser">https://invent.kde.org/utilities/kbackup</url>
+  <url type="contribute">https://community.kde.org/Get_Involved</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kbackup&amp;source=appdata</url>
   <content_rating type="oars-1.1"/>
   <screenshots>
     <screenshot type="default">
