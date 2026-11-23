@@ -14,6 +14,7 @@
 
 #include <QTreeView>
 #include <QStandardItemModel>
+#include <QMap>
 
 #include <KService>
 
