@@ -213,7 +213,7 @@
 > <guimenuitem
 >Profil Ayarları…</guimenuitem
 ></menuchoice
-> menüsünden, öntanımlı <quote
+> menüsünden, varsayılan <quote
 >backup</quote
 > yerine başka bir yedek öneki tanımlayabilirsiniz. </para>
 
@@ -348,7 +348,7 @@
 <para
 ><option
 >--autobg</option
-> seçeneği kullanılırken, yedeklemenin ilerlemesini gösteren &kbackup; çıktısı stderr’e yazılır. Öntanımlı olarak, çıktı genelde birkaç önemli ileti ve sonunda bir özet içerir. Ek olarak <option
+> seçeneği kullanılırken, yedeklemenin ilerlemesini gösteren &kbackup; çıktısı stderr’e yazılır. Varsayılan olarak, çıktı genelde birkaç önemli ileti ve sonunda bir özet içerir. Ek olarak <option
 >--verbose</option
 > seçeneğini eklerseniz yedeklenen her bir dosyanın adını görürsünüz. </para>
 </listitem>
@@ -473,7 +473,7 @@
 ><para
 >Ayarlarda, arşiv dilimi dosyalarının <quote
 >backup</quote
-> öntanımlı adıyla mı yoksa alternatif bir adla mı başlayacağını tanımlayabilirsiniz. Ayrıca arşiv dilim boyutunu da sınırlayabilirsiniz. <link linkend="archive-slices"
+> varsayılan adıyla mı yoksa alternatif bir adla mı başlayacağını tanımlayabilirsiniz. Ayrıca arşiv dilim boyutunu da sınırlayabilirsiniz. <link linkend="archive-slices"
 >Arşiv Dilimleri</link
 > bölümüne bakın. Bu ayarlar ayrıca profile de kaydedilirler. </para
 ></listitem>
