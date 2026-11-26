@@ -11,31 +11,31 @@ msgstr ""
 "Project-Id-Version: kbackup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-25 00:48+0000\n"
-"PO-Revision-Date: 2026-03-25 09:11-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@kde.org>\n"
+"PO-Revision-Date: 2026-11-25 07:25-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Language: pt_BR\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Márcio Moraes, Luiz Fernando Ranghetti"
+msgstr "Márcio Moraes, Luiz Fernando Ranghetti, Marcus Gama"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "marciopanto@gmail.com, elchevive@opensuse.org"
+msgstr "marciopanto@gmail.com, elchevive@opensuse.org, marcus.gama@kde.org"
 
 #: Archiver.cxx:434
 #, kde-format
 msgid "Nothing selected for backup"
-msgstr "Nada selecionado para a cópia de segurança"
+msgstr "Nada selecionado para backup"
 
 #: Archiver.cxx:440
 #, kde-format
@@ -107,9 +107,7 @@ msgstr ""
 #: Archiver.cxx:654
 #, kde-format
 msgid "Could not write backup timestamps into profile %1: %2"
-msgstr ""
-"Não foi possível escrever a data e hora da cópia de segurança no perfil %1: "
-"%2"
+msgstr "Não foi possível escrever a data e hora do backup no perfil %1: %2"
 
 #: Archiver.cxx:658
 #, kde-format
@@ -119,13 +117,12 @@ msgstr "-- Arquivos filtrados: %1"
 #: Archiver.cxx:661
 #, kde-format
 msgid "!! Backup finished <b>but files were skipped</b> !!"
-msgstr ""
-"!! Cópia de segurança concluída, <b>mas alguns arquivos foram pulados</b> !!"
+msgstr "!! Backup concluído, <b>mas alguns arquivos foram pulados</b> !!"
 
 #: Archiver.cxx:663
 #, kde-format
 msgid "-- Backup successfully finished --"
-msgstr "-- Cópia de segurança concluída com sucesso --"
+msgstr "-- Backup concluído com sucesso --"
 
 #: Archiver.cxx:669
 #, kde-format
@@ -133,7 +130,7 @@ msgid ""
 "The backup has finished but files were skipped.\n"
 "What do you want to do now?"
 msgstr ""
-"A cópia de segurança foi concluída, mas alguns arquivos foram pulados.\n"
+"O backup foi concluído, mas alguns arquivos foram pulados.\n"
 "O que deseja fazer agora?"
 
 #: Archiver.cxx:671
@@ -142,7 +139,7 @@ msgid ""
 "The backup has finished successfully.\n"
 "What do you want to do now?"
 msgstr ""
-"A cópia de segurança foi concluída com sucesso.\n"
+"O backup foi concluído com sucesso.\n"
 "O que deseja fazer agora?"
 
 #: Archiver.cxx:689
@@ -153,12 +150,12 @@ msgstr "Total: Arquivos: %1, Tamanho: %2, Duração: %3"
 #: Archiver.cxx:700
 #, kde-format
 msgid "...Backup aborted!"
-msgstr "...Cópia de segurança cancelada!"
+msgstr "...Backup cancelado!"
 
 #: Archiver.cxx:727
 #, kde-format
 msgid "Backup cancelled"
-msgstr "Cópia de segurança cancelada"
+msgstr "Backup cancelado"
 
 #: Archiver.cxx:747
 #, kde-format
@@ -352,7 +349,7 @@ msgstr "KBackup"
 #: main.cxx:48
 #, kde-format
 msgid "An easy to use backup program"
-msgstr "Um programa de cópia de segurança fácil de usar"
+msgstr "Um programa de backup fácil de usar"
 
 #: main.cxx:49
 #, kde-format
@@ -384,8 +381,8 @@ msgstr "Script a executar após concluída uma divisão de arquivo."
 msgid ""
 "Automatically run the backup with the given profile and terminate when done."
 msgstr ""
-"Executar automaticamente a cópia de segurança com o perfil escolhido e "
-"fechar quando concluído."
+"Executar automaticamente o backup com o perfil escolhido e fechar quando "
+"concluído."
 
 #: main.cxx:68
 #, kde-format
@@ -393,8 +390,8 @@ msgid ""
 "Automatically run the backup with the given profile in the background "
 "(without showing a window) and terminate when done."
 msgstr ""
-"Executar automaticamente a cópia de segurança com o perfil escolhido em "
-"segundo plano (sem exibir uma janela) e fechar quando concluído."
+"Executar automaticamente o backup com o perfil escolhido em segundo plano "
+"(sem exibir uma janela) e fechar quando concluído."
 
 #: main.cxx:73
 #, kde-format
@@ -402,7 +399,7 @@ msgid ""
 "In autobg mode be verbose and print every single filename during backup."
 msgstr ""
 "No modo autobg ser detalhado e imprimir cada um dos nomes dos arquivos "
-"durante a cópia de segurança."
+"durante o backup."
 
 #: main.cxx:76
 #, kde-format
@@ -410,8 +407,8 @@ msgid ""
 "In auto/autobg mode force the backup to be a full backup instead of acting "
 "on the profile settings."
 msgstr ""
-"No modo auto/autobg forçar a cópia de segurança a ser uma cópia de segurança "
-"completa ao invés de atuar nas configurações do perfil."
+"No modo auto/autobg forçar o backup a ser um backup completo ao invés de "
+"atuar nas configurações do perfil."
 
 #: main.cxx:149 MainWindow.cxx:211
 #, kde-format
@@ -421,12 +418,12 @@ msgstr "Não foi possível abrir o perfil '%1' para ler: %2"
 #: MainWidget.cxx:68
 #, kde-format
 msgid "Incremental Backup"
-msgstr "Cópia de segurança incremental"
+msgstr "Backup incremental"
 
 #: MainWidget.cxx:70
 #, kde-format
 msgid "Full Backup"
-msgstr "Cópia de segurança completa"
+msgstr "Backup completo"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, numBackups)
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, maxSliceSize)
@@ -440,19 +437,19 @@ msgstr "ilimitado"
 #: MainWidgetBase.ui:41 MainWindow.cxx:114
 #, kde-format
 msgid "Start Backup"
-msgstr "Iniciar cópia de segurança"
+msgstr "Iniciar backup"
 
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
 #: MainWidgetBase.ui:69 MainWindow.cxx:117
 #, kde-format
 msgid "Cancel Backup"
-msgstr "Cancelar cópia de segurança"
+msgstr "Cancelar backup"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: MainWidgetBase.ui:92
 #, kde-format
 msgid "Next Backup:"
-msgstr "Próxima cópia de segurança:"
+msgstr "Próximo backup:"
 
 #. i18n: ectx: property (text), widget (QLabel, backupType)
 #: MainWidgetBase.ui:99
@@ -464,7 +461,7 @@ msgstr "Etiqueta de texto"
 #: MainWidgetBase.ui:106
 #, kde-format
 msgid "Force Full Backup"
-msgstr "Forçar cópia de segurança completa"
+msgstr "Forçar backup completo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: MainWidgetBase.ui:121
@@ -595,12 +592,12 @@ msgstr "Exibir arquivos ocultos"
 #: MainWindow.cxx:147
 #, kde-format
 msgid "There is a backup in progress. Do you want to abort it?"
-msgstr "Existe uma cópia de segurança em progresso. Você deseja cancelá-la?"
+msgstr "Existe um backup em progresso. Você deseja cancelá-lo?"
 
 #: MainWindow.cxx:147
 #, kde-format
 msgid "Backup in Progress"
-msgstr "Cópia de segurança em andamento"
+msgstr "Backup em andamento"
 
 #: MainWindow.cxx:147
 #, kde-format
@@ -781,7 +778,7 @@ msgstr "Filtro de exclusão de caminhos:"
 #: SettingsDialog.ui:57
 #, kde-format
 msgid "Number of full backups to keep"
-msgstr "Número de cópias de segurança completas a manter"
+msgstr "Número de backups completos a manter"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, numBackups)
 #: SettingsDialog.ui:64
@@ -790,22 +787,21 @@ msgid ""
 "How many full backups shall be kept in the target directory before older "
 "ones will be deleted"
 msgstr ""
-"Quantas cópias de segurança completas devem ser mantidas na pasta de destino "
-"antes que outras mais antigas sejam excluídas"
+"Quantos backups completos devem ser mantidos na pasta de destino antes que "
+"outros mais antigos sejam excluídos"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: SettingsDialog.ui:77
 #, kde-format
 msgid "Full Backup Interval"
-msgstr "Intervalo entre cópias de segurança completas"
+msgstr "Intervalo entre backups completos"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:84
 #, kde-format
 msgid "How often shall a full backup, instead of an incremental one, be done"
 msgstr ""
-"Quantas vezes será feito uma cópia de segurança completa ao invés de uma "
-"incremental?"
+"Quantas vezes será feito um backup completo ao invés de um incremental?"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, fullBackupInterval)
 #: SettingsDialog.ui:87
@@ -832,8 +828,8 @@ msgid ""
 "Defines wildcards for filenames which will be ignored for backup, separated "
 "by a space. E.g.: \"*.ogg *.wav\""
 msgstr ""
-"Define os caracteres curinga para nomes de arquivos que serão ignorados na "
-"cópia de segurança, separados por espaço. Ex.: \"*.ogg *.wav\""
+"Define os caracteres curinga para nomes de arquivos que serão ignorados no "
+"backup, separados por espaço. Ex.: \"*.ogg *.wav\""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: SettingsDialog.ui:122
@@ -881,7 +877,7 @@ msgstr "Comprimir arquivos"
 #: SettingsDialog.ui:181
 #, kde-format
 msgid "backup"
-msgstr "cópia de segurança"
+msgstr "backup"
 
 #~ msgid "Could not write to temporary file"
 #~ msgstr "Não foi possível escrever no arquivo temporário"
